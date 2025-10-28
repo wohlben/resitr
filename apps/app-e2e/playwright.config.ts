@@ -31,17 +31,17 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'chromium',
+      value: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
 
     {
-      name: 'firefox',
+      value: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
 
     {
-      name: 'webkit',
+      value: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
 
