@@ -1,11 +1,12 @@
 import 'dotenv/config';
 import { defineConfig } from 'drizzle-kit';
+import * as path from 'path';
 
 export default defineConfig({
-  out: './apps/server/src/app/core/persistence/migrations',
+  out: './drizzle/migrations',
   schema: './apps/server/src/app/core/persistence/schemas/*',
   dialect: 'sqlite',
   dbCredentials: {
-    url: 'data/server.db',
+    url: `file:${path.resolve(process.cwd(), 'data', 'server.db')}`,
   },
 });

@@ -2,6 +2,8 @@ import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/libsql';
 import type { LibSQLDatabase } from 'drizzle-orm/libsql';
 import { migrate } from 'drizzle-orm/libsql/migrator';
+import { workspaceRoot } from '@nx/devkit';
+import * as path from 'path';
 
 export const DATABASE = Symbol('DATABASE');
 
@@ -10,8 +12,15 @@ export type Database = LibSQLDatabase<Record<string, never>>;
 export const provideDatabase = () => {
   return {
     provide: DATABASE,
-    useFactory: (): Database => {
-      return drizzle({ connection: { url: 'data/server.db' } });
+    useFactory: async () => {
+      const dbPath = path.join(workspaceRoot, 'data', 'server.db');
+
+      const db = drizzle({
+        connection: { url: `file:${dbPath}` },
+      });
+
+
+      return db;
     },
   };
 };
@@ -45,7 +54,8 @@ export const provideTestDatabase = () => {
       });
 
       // Apply migrations to create tables
-      await migrate(db, { migrationsFolder: __dirname + '/migrations' });
+      const migrationsPath = path.join(workspaceRoot, 'drizzle', 'migrations');
+      await migrate(db, { migrationsFolder: migrationsPath });
 
       return db;
     },
