@@ -45,7 +45,6 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
       const fulfillmentData: CompendiumEquipmentFulfillment = {
         equipmentId: equipment1.templateId,
         fulfillsEquipmentId: equipment2.templateId,
-        strength: 0.8,
         createdBy: 'user-1',
       };
 
@@ -54,22 +53,8 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
       expect(result).toBeDefined();
       expect(result.equipmentId).toBe(equipment1.templateId);
       expect(result.fulfillsEquipmentId).toBe(equipment2.templateId);
-      expect(result.strength).toBe(0.8);
       expect(result.createdBy).toBe('user-1');
       expect(result.createdAt).toBeDefined();
-    });
-
-    it('should create fulfillment with default strength', async () => {
-      const fulfillmentData: CompendiumEquipmentFulfillment = {
-        equipmentId: equipment1.templateId,
-        fulfillsEquipmentId: equipment2.templateId,
-        createdBy: 'user-1',
-      };
-
-      const result = await repository.create(fulfillmentData);
-
-      expect(result).toBeDefined();
-      expect(result.strength).toBe(1.0);
     });
 
     it('should fail when creating duplicate fulfillment', async () => {
@@ -82,6 +67,30 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
       await repository.create(fulfillmentData);
 
       await expect(repository.create(fulfillmentData)).rejects.toThrow();
+    });
+
+    it('should create multiple fulfillments for one equipment', async () => {
+      const equipment3 = await equipmentRepository.create({
+        templateId: 'eq-3',
+        name: 'kettlebell',
+        displayName: 'Kettlebell',
+        category: EquipmentCategory.free_weights,
+      });
+
+      await repository.create({
+        equipmentId: equipment1.templateId,
+        fulfillsEquipmentId: equipment2.templateId,
+        createdBy: 'user-1',
+      });
+
+      await repository.create({
+        equipmentId: equipment1.templateId,
+        fulfillsEquipmentId: equipment3.templateId,
+        createdBy: 'user-1',
+      });
+
+      const fulfillments = await repository.findByEquipmentId(equipment1.templateId);
+      expect(fulfillments).toHaveLength(2);
     });
   });
 
@@ -182,7 +191,6 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
       await repository.create({
         equipmentId: equipment1.templateId,
         fulfillsEquipmentId: equipment2.templateId,
-        strength: 0.9,
         createdBy: 'user-1',
       });
 
@@ -191,7 +199,7 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
       expect(result).toBeDefined();
       expect(result.equipmentId).toBe(equipment1.templateId);
       expect(result.fulfillsEquipmentId).toBe(equipment2.templateId);
-      expect(result.strength).toBe(0.9);
+      expect(result.createdBy).toBe('user-1');
     });
 
     it('should return undefined when fulfillment not found', async () => {
@@ -201,23 +209,24 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
   });
 
   describe('update', () => {
-    it('should update fulfillment strength', async () => {
+    it('should update fulfillment createdBy', async () => {
       await repository.create({
         equipmentId: equipment1.templateId,
         fulfillsEquipmentId: equipment2.templateId,
-        strength: 0.5,
         createdBy: 'user-1',
       });
 
-      const result = await repository.update(equipment1.templateId, equipment2.templateId, { strength: 0.9 });
+      const result = await repository.update(equipment1.templateId, equipment2.templateId, { createdBy: 'user-2' });
 
       expect(result).toBeDefined();
-      expect(result.strength).toBe(0.9);
+      expect(result.createdBy).toBe('user-2');
+      expect(result.equipmentId).toBe(equipment1.templateId);
+      expect(result.fulfillsEquipmentId).toBe(equipment2.templateId);
     });
 
     it('should return undefined when updating non-existent fulfillment', async () => {
       const result = await repository.update('non-existent', 'non-existent', {
-        strength: 0.5,
+        createdBy: 'user-2',
       });
 
       expect(result).toBeUndefined();
@@ -259,12 +268,13 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
       const newFulfillment = await repository.create({
         equipmentId: equipment1.templateId,
         fulfillsEquipmentId: equipment2.templateId,
-        strength: 0.7,
         createdBy: 'user-2',
       });
 
       expect(newFulfillment).toBeDefined();
-      expect(newFulfillment.strength).toBe(0.7);
+      expect(newFulfillment.createdBy).toBe('user-2');
+      expect(newFulfillment.equipmentId).toBe(equipment1.templateId);
+      expect(newFulfillment.fulfillsEquipmentId).toBe(equipment2.templateId);
     });
   });
 });

@@ -1,18 +1,23 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CompendiumEquipmentRepository } from './compendium-equipment.repository';
+import { CompendiumEquipmentFulfillmentRepository } from './compendium-equipment-fulfillment.repository';
 import { provideTestDatabase } from '../database';
 import { EquipmentCategory } from '@resitr/api';
 import type { CompendiumEquipment } from '../schemas';
 
 describe('CompendiumEquipmentRepository', () => {
   let repository: CompendiumEquipmentRepository;
+  let fulfillmentRepository: CompendiumEquipmentFulfillmentRepository;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [provideTestDatabase(), CompendiumEquipmentRepository],
+      providers: [provideTestDatabase(), CompendiumEquipmentRepository, CompendiumEquipmentFulfillmentRepository],
     }).compile();
 
     repository = module.get<CompendiumEquipmentRepository>(CompendiumEquipmentRepository);
+    fulfillmentRepository = module.get<CompendiumEquipmentFulfillmentRepository>(
+      CompendiumEquipmentFulfillmentRepository
+    );
   });
 
   it('should be defined', () => {
@@ -102,7 +107,7 @@ describe('CompendiumEquipmentRepository', () => {
       expect(result).toEqual([]);
     });
 
-    it('should return all equipment', async () => {
+    it('should return all equipment with empty substitutesFor array', async () => {
       const equipment1: CompendiumEquipment = {
         templateId: 'eq-1',
         name: 'barbell',
@@ -124,12 +129,14 @@ describe('CompendiumEquipmentRepository', () => {
 
       expect(result).toHaveLength(2);
       expect(result[0].name).toBe('barbell');
+      expect(result[0].substitutesFor).toEqual([]);
       expect(result[1].name).toBe('bench');
+      expect(result[1].substitutesFor).toEqual([]);
     });
   });
 
   describe('findById', () => {
-    it('should find equipment by templateId', async () => {
+    it('should find equipment by templateId with empty substitutesFor', async () => {
       const equipmentData: CompendiumEquipment = {
         templateId: 'eq-1',
         name: 'dumbbell',
@@ -144,6 +151,7 @@ describe('CompendiumEquipmentRepository', () => {
       expect(result).toBeDefined();
       expect(result.templateId).toBe('eq-1');
       expect(result.name).toBe('dumbbell');
+      expect(result.substitutesFor).toEqual([]);
     });
 
     it('should return undefined when equipment not found', async () => {
@@ -297,6 +305,134 @@ describe('CompendiumEquipmentRepository', () => {
       const result = await repository.create(newEquipmentData);
       expect(result).toBeDefined();
       expect(result.templateId).toBe('eq-2');
+    });
+  });
+
+  describe('substitutesFor relationship', () => {
+    it('should include substitutesFor IDs when equipment has fulfillments', async () => {
+      const barbell = await repository.create({
+        templateId: 'barbell',
+        name: 'barbell',
+        displayName: 'Barbell',
+        category: EquipmentCategory.free_weights,
+      });
+
+      const olympicBarbell = await repository.create({
+        templateId: 'olympic-barbell',
+        name: 'olympic-barbell',
+        displayName: 'Olympic Barbell',
+        category: EquipmentCategory.free_weights,
+      });
+
+      const ezBar = await repository.create({
+        templateId: 'ez-bar',
+        name: 'ez-bar',
+        displayName: 'EZ Curl Bar',
+        category: EquipmentCategory.free_weights,
+      });
+
+      // Create fulfillments: barbell can substitute for olympic-barbell and ez-bar
+      await fulfillmentRepository.create({
+        equipmentId: barbell.templateId,
+        fulfillsEquipmentId: olympicBarbell.templateId,
+        createdBy: 'test-user',
+      });
+
+      await fulfillmentRepository.create({
+        equipmentId: barbell.templateId,
+        fulfillsEquipmentId: ezBar.templateId,
+        createdBy: 'test-user',
+      });
+
+      const result = await repository.findById('barbell');
+
+      expect(result).toBeDefined();
+      expect(result.substitutesFor).toHaveLength(2);
+      expect(result.substitutesFor).toContain('olympic-barbell');
+      expect(result.substitutesFor).toContain('ez-bar');
+    });
+
+    it('should include substitutesFor in findAll results', async () => {
+      const dumbbell = await repository.create({
+        templateId: 'dumbbell',
+        name: 'dumbbell',
+        displayName: 'Dumbbell',
+        category: EquipmentCategory.free_weights,
+      });
+
+      const barbell = await repository.create({
+        templateId: 'barbell',
+        name: 'barbell',
+        displayName: 'Barbell',
+        category: EquipmentCategory.free_weights,
+      });
+
+      const kettlebell = await repository.create({
+        templateId: 'kettlebell',
+        name: 'kettlebell',
+        displayName: 'Kettlebell',
+        category: EquipmentCategory.free_weights,
+      });
+
+      // dumbbell can substitute for barbell
+      await fulfillmentRepository.create({
+        equipmentId: dumbbell.templateId,
+        fulfillsEquipmentId: barbell.templateId,
+        createdBy: 'test-user',
+      });
+
+      // kettlebell can substitute for dumbbell
+      await fulfillmentRepository.create({
+        equipmentId: kettlebell.templateId,
+        fulfillsEquipmentId: dumbbell.templateId,
+        createdBy: 'test-user',
+      });
+
+      const results = await repository.findAll();
+
+      expect(results).toHaveLength(3);
+
+      const dumbbellResult = results.find((e) => e.templateId === 'dumbbell');
+      expect(dumbbellResult.substitutesFor).toEqual(['barbell']);
+
+      const barbellResult = results.find((e) => e.templateId === 'barbell');
+      expect(barbellResult.substitutesFor).toEqual([]);
+
+      const kettlebellResult = results.find((e) => e.templateId === 'kettlebell');
+      expect(kettlebellResult.substitutesFor).toEqual(['dumbbell']);
+    });
+
+    it('should cascade delete fulfillments when equipment is deleted', async () => {
+      const bench = await repository.create({
+        templateId: 'bench',
+        name: 'bench',
+        displayName: 'Bench',
+        category: EquipmentCategory.benches,
+      });
+
+      const inclineBench = await repository.create({
+        templateId: 'incline-bench',
+        name: 'incline-bench',
+        displayName: 'Incline Bench',
+        category: EquipmentCategory.benches,
+      });
+
+      await fulfillmentRepository.create({
+        equipmentId: bench.templateId,
+        fulfillsEquipmentId: inclineBench.templateId,
+        createdBy: 'test-user',
+      });
+
+      // Verify fulfillment exists
+      const benchResult = await repository.findById('bench');
+      expect(benchResult.substitutesFor).toEqual(['incline-bench']);
+
+      // Delete the bench
+      await repository.delete('bench');
+
+      // Verify fulfillment was cascade deleted
+      const fulfillments = await fulfillmentRepository.findByEquipmentId('bench');
+      expect(fulfillments).toEqual([]);
     });
   });
 });

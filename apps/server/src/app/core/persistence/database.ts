@@ -4,10 +4,11 @@ import type { LibSQLDatabase } from 'drizzle-orm/libsql';
 import { migrate } from 'drizzle-orm/libsql/migrator';
 import { workspaceRoot } from '@nx/devkit';
 import * as path from 'path';
+import * as schema from './schemas';
 
 export const DATABASE = Symbol('DATABASE');
 
-export type Database = LibSQLDatabase<Record<string, never>>;
+export type Database = LibSQLDatabase<typeof schema>;
 
 export const provideDatabase = () => {
   return {
@@ -15,12 +16,10 @@ export const provideDatabase = () => {
     useFactory: async () => {
       const dbPath = path.join(workspaceRoot, 'data', 'server.db');
 
-      const db = drizzle({
+      return drizzle({
         connection: { url: `file:${dbPath}` },
+        schema,
       });
-
-
-      return db;
     },
   };
 };
@@ -51,6 +50,7 @@ export const provideTestDatabase = () => {
     useFactory: async (): Promise<Database> => {
       const db = drizzle({
         connection: { url: ':memory:' },
+        schema,
       });
 
       // Apply migrations to create tables

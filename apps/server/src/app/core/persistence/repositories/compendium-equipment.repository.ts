@@ -13,15 +13,34 @@ export class CompendiumEquipmentRepository {
   }
 
   async findAll() {
-    return this.db.select().from(compendiumEquipment);
+    const results = await this.db.query.compendiumEquipment.findMany({
+      with: {
+        substitutesFor: true,
+      },
+    });
+
+    return results.map((equipment) => ({
+      ...equipment,
+      substitutesFor: equipment.substitutesFor.map((f) => f.fulfillsEquipmentId),
+    }));
   }
 
   async findById(templateId: string) {
-    const [result] = await this.db
-      .select()
-      .from(compendiumEquipment)
-      .where(eq(compendiumEquipment.templateId, templateId));
-    return result;
+    const result = await this.db.query.compendiumEquipment.findFirst({
+      where: eq(compendiumEquipment.templateId, templateId),
+      with: {
+        substitutesFor: true,
+      },
+    });
+
+    if (!result) {
+      return undefined;
+    }
+
+    return {
+      ...result,
+      substitutesFor: result.substitutesFor.map((f) => f.fulfillsEquipmentId),
+    };
   }
 
   async findByName(name: string) {
