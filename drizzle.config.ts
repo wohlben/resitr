@@ -3,7 +3,7 @@ import { defineConfig } from 'drizzle-kit';
 import * as path from 'path';
 
 export default defineConfig({
-  out: './drizzle/migrations',
+  out: './drizzle',
   schema: './apps/server/src/app/core/persistence/schemas/*',
   dialect: 'sqlite',
   dbCredentials: {

@@ -54,7 +54,7 @@ export const provideTestDatabase = () => {
       });
 
       // Apply migrations to create tables
-      const migrationsPath = path.join(workspaceRoot, 'drizzle', 'migrations');
+      const migrationsPath = path.join(workspaceRoot, 'drizzle');
       await migrate(db, { migrationsFolder: migrationsPath });
 
       return db;
