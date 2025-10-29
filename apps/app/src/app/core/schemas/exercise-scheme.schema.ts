@@ -1,4 +1,4 @@
-import { MeasurementParadigm } from './measurement-paradigm';
+import {type MeasurementParadigm } from '@resitr/api';
 
 export type ExerciseScheme = {
   id: number;

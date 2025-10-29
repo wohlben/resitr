@@ -1,4 +1,4 @@
-import { ExerciseTemplate } from './exercise-template';
+import { type ExerciseTemplate } from '@resitr/api';
 
 export type Exercise = Omit<ExerciseTemplate, 'templateId'> & {
   id: string;

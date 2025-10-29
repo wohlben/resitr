@@ -1,9 +1,8 @@
-export type Equipment = {
-  id: string;
-  name: string;
-  image?: string;
-  description?: string;
-  substitutesFor: string[]
-}
+import { type EquipmentTemplate } from '@resitr/api';
 
-export type NewEquipment = Omit<Equipment, 'id'>
+export type Equipment = Omit<EquipmentTemplate, 'templateId'> & {
+  id: string;
+  templateId?: string;
+};
+
+export type NewEquipment = Omit<Equipment, 'id'>;

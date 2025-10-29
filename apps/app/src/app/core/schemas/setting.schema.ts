@@ -1,5 +1,5 @@
-import { TechnicalDifficulty } from './technical-difficulty';
 import { WeightUnitValue } from './weight-unit';
+import {type TechnicalDifficulty } from '@resitr/api';
 
 export type Settings = {
   weightUnit: WeightUnitValue;
