@@ -1,14 +1,3 @@
-CREATE TABLE `compendium_equipment_fulfillments` (
-	`equipment_id` text NOT NULL,
-	`fulfills_equipment_id` text NOT NULL,
-	`strength` real DEFAULT 1,
-	`created_by` text NOT NULL,
-	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
-	PRIMARY KEY(`equipment_id`, `fulfills_equipment_id`),
-	FOREIGN KEY (`equipment_id`) REFERENCES `compendium_equipment`(`id`) ON UPDATE no action ON DELETE cascade,
-	FOREIGN KEY (`fulfills_equipment_id`) REFERENCES `compendium_equipment`(`id`) ON UPDATE no action ON DELETE cascade
-);
---> statement-breakpoint
 CREATE TABLE `compendium_equipment` (
 	`id` text PRIMARY KEY NOT NULL,
 	`name` text NOT NULL,
@@ -19,6 +8,16 @@ CREATE TABLE `compendium_equipment` (
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `compendium_equipment_name_unique` ON `compendium_equipment` (`name`);--> statement-breakpoint
+CREATE TABLE `compendium_equipment_fulfillments` (
+	`equipment_id` text NOT NULL,
+	`fulfills_equipment_id` text NOT NULL,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	PRIMARY KEY(`equipment_id`, `fulfills_equipment_id`),
+	FOREIGN KEY (`equipment_id`) REFERENCES `compendium_equipment`(`id`) ON UPDATE no action ON DELETE cascade,
+	FOREIGN KEY (`fulfills_equipment_id`) REFERENCES `compendium_equipment`(`id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
 CREATE TABLE `compendium_exercise_group_member` (
 	`exercise_id` text NOT NULL,
 	`group_id` text NOT NULL,
@@ -75,7 +74,7 @@ CREATE TABLE `compendium_exercises` (
 	`primary_muscles` text NOT NULL,
 	`secondary_muscles` text NOT NULL,
 	`technical_difficulty` text NOT NULL,
-	`equipments` text NOT NULL,
+	`equipment_ids` text NOT NULL,
 	`body_weight_scaling` real DEFAULT 0 NOT NULL,
 	`suggested_measurement_paradigms` text,
 	`description` text,
@@ -105,7 +104,7 @@ CREATE TABLE `compendium_exercises_history` (
 	`primary_muscles` text NOT NULL,
 	`secondary_muscles` text NOT NULL,
 	`technical_difficulty` text NOT NULL,
-	`equipments` text NOT NULL,
+	`equipment_ids` text NOT NULL,
 	`body_weight_scaling` real DEFAULT 0 NOT NULL,
 	`suggested_measurement_paradigms` text,
 	`description` text,

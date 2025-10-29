@@ -19,7 +19,7 @@ const exerciseFields = {
   secondaryMuscles: text('secondary_muscles', { mode: 'json' }).$type<Muscle[]>().notNull(),
 
   technicalDifficulty: text('technical_difficulty').$type<TechnicalDifficulty>().notNull(),
-  equipments: text('equipments', { mode: 'json' }).$type<string[]>().notNull(),
+  equipmentIds: text('equipment_ids', { mode: 'json' }).$type<string[]>().notNull(),
   bodyWeightScaling: real('body_weight_scaling').notNull().default(0),
 
   suggestedMeasurementParadigms: text('suggested_measurement_paradigms', { mode: 'json' }).$type<
