@@ -1,0 +1,10 @@
+{
+  "id": "Clean_and_Press-Dumbbell_Clean-accessory",
+  "relationship_type": "accessory",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Clean_and_Press",
+  "to_exercise_template_id": "Dumbbell_Clean"
+}

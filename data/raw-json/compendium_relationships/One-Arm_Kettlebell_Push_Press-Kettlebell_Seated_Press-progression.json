@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Push_Press-Kettlebell_Seated_Press-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Push_Press",
+  "to_exercise_template_id": "Kettlebell_Seated_Press"
+}

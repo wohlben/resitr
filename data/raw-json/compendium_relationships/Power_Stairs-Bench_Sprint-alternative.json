@@ -1,0 +1,10 @@
+{
+  "id": "Power_Stairs-Bench_Sprint-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Power_Stairs",
+  "to_exercise_template_id": "Bench_Sprint"
+}

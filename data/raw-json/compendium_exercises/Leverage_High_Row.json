@@ -1,0 +1,47 @@
+{
+  "name": "Leverage High Row",
+  "slug": "leverage-high-row",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "LATS"
+  ],
+  "secondary_muscles": [
+    "BICEPS",
+    "REAR_DELTS",
+    "RHOMBOIDS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "machine"
+  ],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "High row variation using leverage machine, targeting upper back muscles with horizontal pull.",
+  "instructions": [
+    "Load an appropriate weight onto the pins and adjust the seat height so that you can just reach the handles above you. Adjust the knee pad to help keep you down. Grasp the handles with a pronated grip. This will be your starting position.",
+    "Pull the handles towards your torso, retracting your shoulder blades as you flex the elbow.",
+    "Pause at the bottom of the motion, and then slowly return the handles to the starting position.",
+    "For multiple repetitions, avoid completely returning the weight to the stops to keep tension on the muscles being worked."
+  ],
+  "images": [
+    "/img/exercises/Leverage_High_Row/0.jpg",
+    "/img/exercises/Leverage_High_Row/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Leverage_High_Row"
+}

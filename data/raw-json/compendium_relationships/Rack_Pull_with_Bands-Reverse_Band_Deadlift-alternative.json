@@ -1,0 +1,10 @@
+{
+  "id": "Rack_Pull_with_Bands-Reverse_Band_Deadlift-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761511019,
+  "from_exercise_template_id": "Rack_Pull_with_Bands",
+  "to_exercise_template_id": "Reverse_Band_Deadlift"
+}

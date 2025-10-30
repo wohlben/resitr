@@ -1,0 +1,10 @@
+{
+  "id": "Chest_Push_with_Run_Release-Return_Push_from_Stance-regression",
+  "relationship_type": "regression",
+  "strength": 0.75,
+  "description": "Return push from stance focuses on catching and throwing coordination from athletic stance without the added complexity of sprinting",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Chest_Push_with_Run_Release",
+  "to_exercise_template_id": "Return_Push_from_Stance"
+}

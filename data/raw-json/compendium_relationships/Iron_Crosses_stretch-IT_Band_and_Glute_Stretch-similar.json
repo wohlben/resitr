@@ -1,0 +1,10 @@
+{
+  "id": "Iron_Crosses_stretch-IT_Band_and_Glute_Stretch-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": "Both stretch glutes by bringing leg across body; IT Band is supine static stretch with band, while Iron Crosses is prone dynamic alternating movement",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Iron_Crosses_stretch",
+  "to_exercise_template_id": "IT_Band_and_Glute_Stretch"
+}

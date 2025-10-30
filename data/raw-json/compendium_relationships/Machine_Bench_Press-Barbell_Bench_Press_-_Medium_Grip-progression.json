@@ -1,0 +1,10 @@
+{
+  "id": "Machine_Bench_Press-Barbell_Bench_Press_-_Medium_Grip-progression",
+  "relationship_type": "progression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Machine_Bench_Press",
+  "to_exercise_template_id": "Barbell_Bench_Press_-_Medium_Grip"
+}

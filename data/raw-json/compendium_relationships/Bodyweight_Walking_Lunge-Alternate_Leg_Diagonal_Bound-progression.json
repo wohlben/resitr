@@ -1,0 +1,10 @@
+{
+  "id": "Bodyweight_Walking_Lunge-Alternate_Leg_Diagonal_Bound-progression",
+  "relationship_type": "progression",
+  "strength": 0.63,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761461533,
+  "from_exercise_template_id": "Bodyweight_Walking_Lunge",
+  "to_exercise_template_id": "Alternate_Leg_Diagonal_Bound"
+}

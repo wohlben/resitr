@@ -1,0 +1,10 @@
+{
+  "id": "Deficit_Deadlift-Barbell_Deadlift-regression",
+  "relationship_type": "regression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Deficit_Deadlift",
+  "to_exercise_template_id": "Barbell_Deadlift"
+}

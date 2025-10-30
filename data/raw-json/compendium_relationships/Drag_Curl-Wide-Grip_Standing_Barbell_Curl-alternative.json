@@ -1,0 +1,10 @@
+{
+  "id": "Drag_Curl-Wide-Grip_Standing_Barbell_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Drag_Curl",
+  "to_exercise_template_id": "Wide-Grip_Standing_Barbell_Curl"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Plate Twist",
+  "slug": "plate-twist",
+  "type": "STRENGTH",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "weight-plate",
+    "mat"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Rotational core exercise holding weight plate and twisting torso side to side, targeting obliques.",
+  "instructions": [
+    "Lie down on the floor or an exercise mat with your legs fully extended and your upper body upright. Grab the plate by its sides with both hands out in front of your abdominals with your arms slightly bent.",
+    "Slowly cross your legs near your ankles and lift them up off the ground. Your knees should also be bent slightly. Note: Move your upper body back slightly to help keep you balanced turning this exercise. This is the starting position.",
+    "Move the plate to the left side and touch the floor with it. Breathe out as you perform that movement.",
+    "Come back to the starting position as you breathe in and then repeat the movement but this time to the right side of the body. Tip: Use a slow controlled movement at all times. Jerking motions can injure the back.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Plate_Twist/0.jpg",
+    "/img/exercises/Plate_Twist/1.jpg"
+  ],
+  "alternative_names": [
+    "Plate-Twist"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Plate_Twist"
+}

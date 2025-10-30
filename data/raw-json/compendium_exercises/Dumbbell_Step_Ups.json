@@ -1,0 +1,47 @@
+{
+  "name": "Dumbbell Step Ups",
+  "slug": "dumbbell-step-ups",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "2x dumbbell"
+  ],
+  "body_weight_scaling": 0.4,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Unilateral step-up with dumbbells building single-leg strength and addressing imbalances",
+  "instructions": [
+    "Stand up straight while holding a dumbbell on each hand (palms facing the side of your legs).",
+    "Place the right foot on the elevated platform. Step on the platform by extending the hip and the knee of your right leg. Use the heel mainly to lift the rest of your body up and place the foot of the left leg on the platform as well. Breathe out as you execute the force required to come up.",
+    "Step down with the left leg by flexing the hip and knee of the right leg as you inhale. Return to the original standing position by placing the right foot of to next to the left foot on the initial position.",
+    "Repeat with the right leg for the recommended amount of repetitions and then perform with the left leg."
+  ],
+  "images": [
+    "/img/exercises/Dumbbell_Step_Ups/0.jpg",
+    "/img/exercises/Dumbbell_Step_Ups/1.jpg"
+  ],
+  "alternative_names": [
+    "DB Step Ups",
+    "Dumbell Step Ups"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Dumbbell_Step_Ups"
+}

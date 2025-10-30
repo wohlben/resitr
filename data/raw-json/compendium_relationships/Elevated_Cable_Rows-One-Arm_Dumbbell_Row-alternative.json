@@ -1,0 +1,10 @@
+{
+  "id": "Elevated_Cable_Rows-One-Arm_Dumbbell_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": "One-Arm Dumbbell Row is a free-weight alternative to Elevated Cable Rows targeting similar muscles",
+  "created_by": "system",
+  "created_at": 1761412213,
+  "from_exercise_template_id": "Elevated_Cable_Rows",
+  "to_exercise_template_id": "One-Arm_Dumbbell_Row"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Side to Side Box Shuffle",
+  "slug": "side-to-side-box-shuffle",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Lateral shuffle over box, quick side-to-side movement for agility and conditioning.",
+  "instructions": [
+    "Stand to one side of the box with your left foot resting on the middle of it.",
+    "To begin, jump up and over to the other side of the box, landing with your right foot on top of the box and your left foot on the floor. Swing your arms to aid your movement.",
+    "Continue shuffling back and forth across the box."
+  ],
+  "images": [
+    "/img/exercises/Side_to_Side_Box_Shuffle/0.jpg",
+    "/img/exercises/Side_to_Side_Box_Shuffle/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Side_to_Side_Box_Shuffle"
+}

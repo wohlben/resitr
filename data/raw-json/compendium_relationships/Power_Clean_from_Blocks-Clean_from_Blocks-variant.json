@@ -1,0 +1,10 @@
+{
+  "id": "Power_Clean_from_Blocks-Clean_from_Blocks-variant",
+  "relationship_type": "variant",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761511266,
+  "from_exercise_template_id": "Power_Clean_from_Blocks",
+  "to_exercise_template_id": "Clean_from_Blocks"
+}

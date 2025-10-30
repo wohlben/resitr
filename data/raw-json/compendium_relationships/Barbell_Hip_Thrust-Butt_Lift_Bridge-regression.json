@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Hip_Thrust-Butt_Lift_Bridge-regression",
+  "relationship_type": "regression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761464685,
+  "from_exercise_template_id": "Barbell_Hip_Thrust",
+  "to_exercise_template_id": "Butt_Lift_Bridge"
+}

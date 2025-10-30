@@ -1,0 +1,10 @@
+{
+  "id": "Crunches-3_4_Sit-Up-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Crunches",
+  "to_exercise_template_id": "3_4_Sit-Up"
+}

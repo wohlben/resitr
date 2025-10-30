@@ -1,0 +1,10 @@
+{
+  "id": "Dynamic_Chest_Stretch-Behind_Head_Chest_Stretch-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Dynamic_Chest_Stretch",
+  "to_exercise_template_id": "Behind_Head_Chest_Stretch"
+}

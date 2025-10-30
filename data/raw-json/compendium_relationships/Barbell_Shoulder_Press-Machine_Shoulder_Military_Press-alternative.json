@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Shoulder_Press-Machine_Shoulder_Military_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Barbell_Shoulder_Press",
+  "to_exercise_template_id": "Machine_Shoulder_Military_Press"
+}

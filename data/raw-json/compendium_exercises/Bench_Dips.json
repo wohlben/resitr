@@ -1,0 +1,47 @@
+{
+  "name": "Bench Dips",
+  "slug": "bench-dips",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "TRICEPS"
+  ],
+  "secondary_muscles": [
+    "FRONT_DELTS",
+    "CHEST"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Bodyweight triceps dip on bench isolating triceps through elbow extension movement",
+  "instructions": [
+    "For this exercise you will need to place a bench behind your back. With the bench perpendicular to your body, and while looking away from it, hold on to the bench on its edge with the hands fully extended, separated at shoulder width. The legs will be extended forward, bent at the waist and perpendicular to your torso. This will be your starting position.",
+    "Slowly lower your body as you inhale by bending at the elbows until you lower yourself far enough to where there is an angle slightly smaller than 90 degrees between the upper arm and the forearm. Tip: Keep the elbows as close as possible throughout the movement. Forearms should always be pointing down.",
+    "Using your triceps to bring your torso up again, lift yourself back to the starting position.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Bench_Dips/0.jpg",
+    "/img/exercises/Bench_Dips/1.jpg"
+  ],
+  "alternative_names": [
+    "Bench-Dips"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Bench_Dips"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "gym-shoulder-press-machine",
+  "display_name": "Shoulder Press Machine",
+  "description": "A machine for overhead pressing movements with guided motion.",
+  "category": "machines",
+  "image_url": null,
+  "template_id": "gym-shoulder-press-machine"
+}

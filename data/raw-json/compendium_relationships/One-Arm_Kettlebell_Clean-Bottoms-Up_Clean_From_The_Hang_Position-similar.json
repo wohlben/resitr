@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Clean-Bottoms-Up_Clean_From_The_Hang_Position-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Clean",
+  "to_exercise_template_id": "Bottoms-Up_Clean_From_The_Hang_Position"
+}

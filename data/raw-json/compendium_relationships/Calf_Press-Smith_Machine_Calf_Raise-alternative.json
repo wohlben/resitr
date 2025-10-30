@@ -1,0 +1,10 @@
+{
+  "id": "Calf_Press-Smith_Machine_Calf_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761479684,
+  "from_exercise_template_id": "Calf_Press",
+  "to_exercise_template_id": "Smith_Machine_Calf_Raise"
+}

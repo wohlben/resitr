@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Squat_To_A_Bench-Barbell_Squat_To_A_Bench-progression",
+  "relationship_type": "progression",
+  "strength": 0.92,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Dumbbell_Squat_To_A_Bench",
+  "to_exercise_template_id": "Barbell_Squat_To_A_Bench"
+}

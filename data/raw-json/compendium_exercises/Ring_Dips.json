@@ -1,0 +1,47 @@
+{
+  "name": "Ring Dips",
+  "slug": "ring-dips",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "dip-bars"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Dips performed on gymnastic rings, adding instability challenge to standard dip movement.",
+  "instructions": [
+    "Grip a ring in each hand, and then take a small jump to help you get into the starting position with your arms locked out.",
+    "Begin by flexing the elbow, lowering your body until your arms break 90 degrees. Avoid swinging, and maintain good posture throughout the descent.",
+    "Reverse the motion by extending the elbow, pushing yourself back up into the starting position.",
+    "Repeat for the desired number of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Ring_Dips/0.jpg",
+    "/img/exercises/Ring_Dips/1.jpg"
+  ],
+  "alternative_names": [
+    "Ring-Dips"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Ring_Dips"
+}

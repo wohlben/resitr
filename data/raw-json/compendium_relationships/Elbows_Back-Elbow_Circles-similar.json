@@ -1,0 +1,10 @@
+{
+  "id": "Elbows_Back-Elbow_Circles-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Elbows_Back",
+  "to_exercise_template_id": "Elbow_Circles"
+}

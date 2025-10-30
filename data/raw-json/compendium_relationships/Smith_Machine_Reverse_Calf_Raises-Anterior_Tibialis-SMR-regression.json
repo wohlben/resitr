@@ -1,0 +1,10 @@
+{
+  "id": "Smith_Machine_Reverse_Calf_Raises-Anterior_Tibialis-SMR-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Smith_Machine_Reverse_Calf_Raises",
+  "to_exercise_template_id": "Anterior_Tibialis-SMR"
+}

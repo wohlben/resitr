@@ -1,0 +1,10 @@
+{
+  "id": "Stomach_Vacuum-Barbell_Ab_Rollout-preparation",
+  "relationship_type": "preparation",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Stomach_Vacuum",
+  "to_exercise_template_id": "Barbell_Ab_Rollout"
+}

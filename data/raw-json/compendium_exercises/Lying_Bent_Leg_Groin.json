@@ -1,0 +1,40 @@
+{
+  "name": "Lying Bent Leg Groin",
+  "slug": "lying-bent-leg-groin",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "ADDUCTORS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "partner"
+  ],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Groin stretch performed lying down with bent leg position, targeting inner thigh adductor muscles.",
+  "instructions": [
+    "Lie on your back with your knees bent and the soles of the feet pressed together. Have your partner hold your knees. This will be your starting position.",
+    "Attempt to squeeze your knees together, while your partner prevents any movement from occurring.",
+    "After 10-20 seconds, relax your muscles as your partner gently pushes your knees towards the floor. Be sure to inform your helper when the stretch is adequate to prevent injury or overstretching."
+  ],
+  "images": [
+    "/img/exercises/Lying_Bent_Leg_Groin/0.jpg",
+    "/img/exercises/Lying_Bent_Leg_Groin/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Lying_Bent_Leg_Groin"
+}

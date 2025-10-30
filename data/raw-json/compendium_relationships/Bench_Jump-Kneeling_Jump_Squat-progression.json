@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Jump-Kneeling_Jump_Squat-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Bench_Jump",
+  "to_exercise_template_id": "Kneeling_Jump_Squat"
+}

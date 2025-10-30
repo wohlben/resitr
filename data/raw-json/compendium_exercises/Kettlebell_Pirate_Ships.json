@@ -1,0 +1,45 @@
+{
+  "name": "Kettlebell Pirate Ships",
+  "slug": "kettlebell-pirate-ships",
+  "type": "STRENGTH",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Kettlebell exercise swinging bell side to side in arc like pirate ship motion, engaging obliques.",
+  "instructions": [
+    "With a wide stance, hold a kettlebell with both hands. Allow it to hang at waist level with your arms extended. This will be your starting position.",
+    "Initiate the movement by turning to one side, swinging the kettlebell to head height. Briefly pause at the top of the motion.",
+    "Allow the bell to drop as you rotate to the opposite side, again raising the kettlebell to head height.",
+    "Repeat for the desired amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Pirate_Ships/0.jpg",
+    "/img/exercises/Kettlebell_Pirate_Ships/1.jpg"
+  ],
+  "alternative_names": [
+    "KB Pirate Ships"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Pirate_Ships"
+}

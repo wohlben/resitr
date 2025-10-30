@@ -1,0 +1,10 @@
+{
+  "id": "One_Arm_Dumbbell_Preacher_Curl-Standing_One-Arm_Cable_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761548543,
+  "from_exercise_template_id": "One_Arm_Dumbbell_Preacher_Curl",
+  "to_exercise_template_id": "Standing_One-Arm_Cable_Curl"
+}

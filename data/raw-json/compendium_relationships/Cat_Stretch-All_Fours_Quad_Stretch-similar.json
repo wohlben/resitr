@@ -1,0 +1,10 @@
+{
+  "id": "Cat_Stretch-All_Fours_Quad_Stretch-similar",
+  "relationship_type": "similar",
+  "strength": null,
+  "description": "Both exercises share the same quadruped starting position (on hands and knees), making them part of the same movement family and easily combined in mobility routines",
+  "created_by": "system",
+  "created_at": 1761024000,
+  "from_exercise_template_id": "Cat_Stretch",
+  "to_exercise_template_id": "All_Fours_Quad_Stretch"
+}

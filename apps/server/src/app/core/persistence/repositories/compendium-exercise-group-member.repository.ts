@@ -23,7 +23,7 @@ export class CompendiumExerciseGroupMemberRepository {
     return this.db
       .select()
       .from(compendiumExerciseGroupMember)
-      .where(eq(compendiumExerciseGroupMember.exerciseId, exerciseId));
+      .where(eq(compendiumExerciseGroupMember.exerciseTemplateId, exerciseId));
   }
 
   async findByGroupId(groupId: string) {
@@ -39,7 +39,7 @@ export class CompendiumExerciseGroupMemberRepository {
       .from(compendiumExerciseGroupMember)
       .where(
         and(
-          eq(compendiumExerciseGroupMember.exerciseId, exerciseId),
+          eq(compendiumExerciseGroupMember.exerciseTemplateId, exerciseId),
           eq(compendiumExerciseGroupMember.groupId, groupId)
         )
       );
@@ -51,7 +51,7 @@ export class CompendiumExerciseGroupMemberRepository {
       .delete(compendiumExerciseGroupMember)
       .where(
         and(
-          eq(compendiumExerciseGroupMember.exerciseId, exerciseId),
+          eq(compendiumExerciseGroupMember.exerciseTemplateId, exerciseId),
           eq(compendiumExerciseGroupMember.groupId, groupId)
         )
       )

@@ -1,0 +1,46 @@
+{
+  "name": "Backward Drag",
+  "slug": "backward-drag",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "HAMSTRINGS",
+    "GLUTES",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-sled"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Reverse sled drag walking backward to build quadriceps strength and knee health with zero eccentric stress",
+  "instructions": [
+    "Load a sled with the desired weight, attaching a rope or straps to the sled that you can hold onto.",
+    "Begin the exercise by moving backwards for a given distance. Leaning back, extend through the legs for short steps to move as quickly as possible."
+  ],
+  "images": [
+    "/img/exercises/Backward_Drag/0.jpg",
+    "/img/exercises/Backward_Drag/1.jpg"
+  ],
+  "alternative_names": [
+    "Backward-Drag"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Backward_Drag"
+}

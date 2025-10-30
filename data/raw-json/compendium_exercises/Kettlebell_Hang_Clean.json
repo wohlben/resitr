@@ -1,0 +1,49 @@
+{
+  "name": "Kettlebell Hang Clean",
+  "slug": "kettlebell-hang-clean",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK",
+    "FRONT_DELTS",
+    "TRAPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Kettlebell clean from hang position starting above ground, focusing on hip drive and catch.",
+  "instructions": [
+    "Place kettlebell between your feet. To get in the starting position, push your butt back and look straight ahead.",
+    "Clean kettlebell to your shoulder. Clean the kettlebell to your shoulders by extending through the legs and hips as you raise the kettlebell towards your shoulder. The wrist should rotate as you do so.",
+    "Lower kettlebell to a hanging position between your legs while keeping the hamstrings loaded. Keep your head up at all times."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Hang_Clean/0.jpg",
+    "/img/exercises/Kettlebell_Hang_Clean/1.jpg"
+  ],
+  "alternative_names": [
+    "Barbell Clean",
+    "KB Hang Clean",
+    "Power Clean"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Hang_Clean"
+}

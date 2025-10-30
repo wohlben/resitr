@@ -1,0 +1,10 @@
+{
+  "id": "Front_Box_Jump-Side_Standing_Long_Jump-related",
+  "relationship_type": "related",
+  "strength": 0.55,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Front_Box_Jump",
+  "to_exercise_template_id": "Side_Standing_Long_Jump"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Catch and Overhead Throw",
+  "slug": "catch-and-overhead-throw",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "ABS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "medicine-ball"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Explosive overhead medicine ball throw with catch and repeat, developing upper body power and coordination",
+  "instructions": [
+    "Begin standing while facing a wall or a partner.",
+    "Using both hands, position the ball behind your head, stretching as much as possible, and forcefully throw the ball forward.",
+    "Ensure that you follow your throw through, being prepared to receive your rebound from your throw. If you are throwing against the wall, make sure that you stand close enough to the wall to receive the rebound, and aim a little higher than you would with a partner."
+  ],
+  "images": [
+    "/img/exercises/Catch_and_Overhead_Throw/0.jpg",
+    "/img/exercises/Catch_and_Overhead_Throw/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Catch_and_Overhead_Throw"
+}

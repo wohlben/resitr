@@ -1,0 +1,10 @@
+{
+  "id": "Groin_and_Back_Stretch-Lying_Bent_Leg_Groin-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": "Both target the groin/adductors with feet together in butterfly position. Groin and Back Stretch is a seated dynamic stretch with curling motion that also engages the lower back, while Lying Bent Leg Groin is a static partner-assisted stretch lying down.",
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Groin_and_Back_Stretch",
+  "to_exercise_template_id": "Lying_Bent_Leg_Groin"
+}

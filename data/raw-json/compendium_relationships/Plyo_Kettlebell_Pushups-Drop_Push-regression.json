@@ -1,0 +1,10 @@
+{
+  "id": "Plyo_Kettlebell_Pushups-Drop_Push-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Plyo_Kettlebell_Pushups",
+  "to_exercise_template_id": "Drop_Push"
+}

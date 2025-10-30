@@ -1,0 +1,10 @@
+{
+  "id": "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension-Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730016000,
+  "from_exercise_template_id": "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension",
+  "to_exercise_template_id": "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension"
+}

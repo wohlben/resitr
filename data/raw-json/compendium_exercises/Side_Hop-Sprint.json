@@ -1,0 +1,46 @@
+{
+  "name": "Side Hop-Sprint",
+  "slug": "side-hop-sprint",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "Lateral hop followed by sprint, combining side-to-side explosiveness with forward speed.",
+  "instructions": [
+    "Stand to the side of a cone or hurdle.",
+    "Begin this drill by hopping sideways over the obstacle, rebounding out of your landing to hop back to where you started.",
+    "Hop for a prescribed number or repetitions as quickly as possible, and finish this drill by sprinting a short distance upon landing the last hop."
+  ],
+  "images": [
+    "/img/exercises/Side_Hop-Sprint/0.jpg",
+    "/img/exercises/Side_Hop-Sprint/1.jpg"
+  ],
+  "alternative_names": [
+    "Side Hop Sprint"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Side_Hop-Sprint"
+}

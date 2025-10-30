@@ -1,0 +1,10 @@
+{
+  "id": "Brachialis-SMR-Neck-SMR-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Brachialis-SMR",
+  "to_exercise_template_id": "Neck-SMR"
+}

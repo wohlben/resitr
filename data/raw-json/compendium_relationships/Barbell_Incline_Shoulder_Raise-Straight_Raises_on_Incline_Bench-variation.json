@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Incline_Shoulder_Raise-Straight_Raises_on_Incline_Bench-variation",
+  "relationship_type": "variation",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Barbell_Incline_Shoulder_Raise",
+  "to_exercise_template_id": "Straight_Raises_on_Incline_Bench"
+}

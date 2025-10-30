@@ -1,0 +1,10 @@
+{
+  "id": "Calf_Raise_On_A_Dumbbell-Balance_Board-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761464222,
+  "from_exercise_template_id": "Calf_Raise_On_A_Dumbbell",
+  "to_exercise_template_id": "Balance_Board"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Band_Skull_Crusher-Dumbbell_Tricep_Extension_-Pronated_Grip-equipment_variation",
+  "relationship_type": "equipment_variation",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729951200,
+  "from_exercise_template_id": "Band_Skull_Crusher",
+  "to_exercise_template_id": "Dumbbell_Tricep_Extension_-Pronated_Grip"
+}

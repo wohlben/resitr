@@ -1,0 +1,41 @@
+{
+  "name": "Plank",
+  "slug": "plank",
+  "type": "STRENGTH",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.7,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Core exercise holding body in straight position supported on forearms and toes, building isometric core strength.",
+  "instructions": [
+    "Get into a prone position on the floor, supporting your weight on your toes and your forearms. Your arms are bent and directly below the shoulder.",
+    "Keep your body straight at all times, and hold this position as long as possible. To increase difficulty, an arm or leg can be raised."
+  ],
+  "images": [
+    "/img/exercises/Plank/0.jpg",
+    "/img/exercises/Plank/1.jpg"
+  ],
+  "alternative_names": [
+    "Abdominal Plank",
+    "Front Plank"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Plank"
+}

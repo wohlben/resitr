@@ -1,0 +1,10 @@
+{
+  "id": "Flutter_Kicks-Glute_Ham_Raise-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730080800,
+  "from_exercise_template_id": "Flutter_Kicks",
+  "to_exercise_template_id": "Glute_Ham_Raise"
+}

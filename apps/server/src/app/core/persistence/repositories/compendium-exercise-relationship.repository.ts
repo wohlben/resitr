@@ -20,65 +20,83 @@ export class CompendiumExerciseRelationshipRepository {
     return this.db.select().from(compendiumExerciseRelationship);
   }
 
-  async findById(id: string) {
+  async findByCompositeKey(fromExerciseTemplateId: string, toExerciseTemplateId: string, relationshipType: ExerciseRelationshipType) {
     const [result] = await this.db
       .select()
       .from(compendiumExerciseRelationship)
-      .where(eq(compendiumExerciseRelationship.id, id));
+      .where(
+        and(
+          eq(compendiumExerciseRelationship.fromExerciseTemplateId, fromExerciseTemplateId),
+          eq(compendiumExerciseRelationship.toExerciseTemplateId, toExerciseTemplateId),
+          eq(compendiumExerciseRelationship.relationshipType, relationshipType)
+        )
+      );
     return result;
   }
 
-  async findByFromExerciseId(fromExerciseId: string) {
+  async findByFromExerciseId(fromExerciseTemplateId: string) {
     return this.db
       .select()
       .from(compendiumExerciseRelationship)
-      .where(eq(compendiumExerciseRelationship.fromExerciseId, fromExerciseId));
+      .where(eq(compendiumExerciseRelationship.fromExerciseTemplateId, fromExerciseTemplateId));
   }
 
-  async findByToExerciseId(toExerciseId: string) {
+  async findByToExerciseId(toExerciseTemplateId: string) {
     return this.db
       .select()
       .from(compendiumExerciseRelationship)
-      .where(eq(compendiumExerciseRelationship.toExerciseId, toExerciseId));
+      .where(eq(compendiumExerciseRelationship.toExerciseTemplateId, toExerciseTemplateId));
   }
 
-  async findByExerciseId(exerciseId: string) {
+  async findByExerciseId(exerciseTemplateId: string) {
     return this.db
       .select()
       .from(compendiumExerciseRelationship)
       .where(
         or(
-          eq(compendiumExerciseRelationship.fromExerciseId, exerciseId),
-          eq(compendiumExerciseRelationship.toExerciseId, exerciseId)
+          eq(compendiumExerciseRelationship.fromExerciseTemplateId, exerciseTemplateId),
+          eq(compendiumExerciseRelationship.toExerciseTemplateId, exerciseTemplateId)
         )
       );
   }
 
-  async findByRelationshipType(fromExerciseId: string, relationshipType: ExerciseRelationshipType) {
+  async findByRelationshipType(fromExerciseTemplateId: string, relationshipType: ExerciseRelationshipType) {
     return this.db
       .select()
       .from(compendiumExerciseRelationship)
       .where(
         and(
-          eq(compendiumExerciseRelationship.fromExerciseId, fromExerciseId),
+          eq(compendiumExerciseRelationship.fromExerciseTemplateId, fromExerciseTemplateId),
           eq(compendiumExerciseRelationship.relationshipType, relationshipType)
         )
       );
   }
 
-  async update(id: string, data: Partial<CompendiumExerciseRelationship>) {
+  async update(fromExerciseTemplateId: string, toExerciseTemplateId: string, relationshipType: ExerciseRelationshipType, data: Partial<CompendiumExerciseRelationship>) {
     const [result] = await this.db
       .update(compendiumExerciseRelationship)
       .set(data)
-      .where(eq(compendiumExerciseRelationship.id, id))
+      .where(
+        and(
+          eq(compendiumExerciseRelationship.fromExerciseTemplateId, fromExerciseTemplateId),
+          eq(compendiumExerciseRelationship.toExerciseTemplateId, toExerciseTemplateId),
+          eq(compendiumExerciseRelationship.relationshipType, relationshipType)
+        )
+      )
       .returning();
     return result;
   }
 
-  async delete(id: string) {
+  async delete(fromExerciseTemplateId: string, toExerciseTemplateId: string, relationshipType: ExerciseRelationshipType) {
     const [result] = await this.db
       .delete(compendiumExerciseRelationship)
-      .where(eq(compendiumExerciseRelationship.id, id))
+      .where(
+        and(
+          eq(compendiumExerciseRelationship.fromExerciseTemplateId, fromExerciseTemplateId),
+          eq(compendiumExerciseRelationship.toExerciseTemplateId, toExerciseTemplateId),
+          eq(compendiumExerciseRelationship.relationshipType, relationshipType)
+        )
+      )
       .returning();
     return result;
   }

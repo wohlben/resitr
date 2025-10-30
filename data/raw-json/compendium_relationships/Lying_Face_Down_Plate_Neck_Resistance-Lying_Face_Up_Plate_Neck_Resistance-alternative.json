@@ -1,0 +1,10 @@
+{
+  "id": "Lying_Face_Down_Plate_Neck_Resistance-Lying_Face_Up_Plate_Neck_Resistance-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": "Both exercises use plate resistance for neck training with similar mechanics, but target opposite muscle groups - face down works neck extensors while face up works neck flexors.",
+  "created_by": "system",
+  "created_at": 1761509530,
+  "from_exercise_template_id": "Lying_Face_Down_Plate_Neck_Resistance",
+  "to_exercise_template_id": "Lying_Face_Up_Plate_Neck_Resistance"
+}

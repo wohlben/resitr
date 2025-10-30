@@ -1,0 +1,10 @@
+{
+  "id": "Smith_Single-Leg_Split_Squat-Dumbbell_Step_Ups-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": "Both are unilateral leg exercises targeting quads, glutes, and hamstrings with different movement patterns (split squat vs step-up)",
+  "created_by": "system",
+  "created_at": 1761547477,
+  "from_exercise_template_id": "Smith_Single-Leg_Split_Squat",
+  "to_exercise_template_id": "Dumbbell_Step_Ups"
+}

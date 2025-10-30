@@ -1,0 +1,10 @@
+{
+  "id": "Bear_Crawl_Sled_Drags-Backward_Drag-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Bear_Crawl_Sled_Drags",
+  "to_exercise_template_id": "Backward_Drag"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Cat_Stretch-Standing_Pelvic_Tilt-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.5,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Cat_Stretch",
+  "to_exercise_template_id": "Standing_Pelvic_Tilt"
+}

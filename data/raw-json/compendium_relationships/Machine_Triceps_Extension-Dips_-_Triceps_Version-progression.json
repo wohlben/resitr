@@ -1,0 +1,10 @@
+{
+  "id": "Machine_Triceps_Extension-Dips_-_Triceps_Version-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761509910,
+  "from_exercise_template_id": "Machine_Triceps_Extension",
+  "to_exercise_template_id": "Dips_-_Triceps_Version"
+}

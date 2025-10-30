@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Close-Grip_Bench_To_Skull_Crusher-Lying_Dumbbell_Tricep_Extension-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Decline_Close-Grip_Bench_To_Skull_Crusher",
+  "to_exercise_template_id": "Lying_Dumbbell_Tricep_Extension"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Plate_Curls-Reverse_Barbell_Preacher_Curls-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.6,
+  "description": "Barbell version on preacher bench with standard grip and better isolation",
+  "created_by": "system",
+  "created_at": 1761543970,
+  "from_exercise_template_id": "Reverse_Plate_Curls",
+  "to_exercise_template_id": "Reverse_Barbell_Preacher_Curls"
+}

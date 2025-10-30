@@ -1,0 +1,10 @@
+{
+  "id": "Inverted_Row_with_Straps-Suspended_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Inverted_Row_with_Straps",
+  "to_exercise_template_id": "Suspended_Row"
+}

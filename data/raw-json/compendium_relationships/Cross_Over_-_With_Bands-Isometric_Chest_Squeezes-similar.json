@@ -1,0 +1,10 @@
+{
+  "id": "Cross_Over_-_With_Bands-Isometric_Chest_Squeezes-similar",
+  "relationship_type": "similar",
+  "strength": 0.65,
+  "description": "Both involve bringing arms across chest to contract pectorals",
+  "created_by": "system",
+  "created_at": 1729954800,
+  "from_exercise_template_id": "Cross_Over_-_With_Bands",
+  "to_exercise_template_id": "Isometric_Chest_Squeezes"
+}

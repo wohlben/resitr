@@ -1,0 +1,47 @@
+{
+  "name": "Star Jump",
+  "slug": "star-jump",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Explosive jumping jack with arms and legs extended in star position at peak.",
+  "instructions": [
+    "Begin in a relaxed stance with your feet shoulder width apart and hold your arms close to the body.",
+    "To initiate the move, squat down halfway and explode back up as high as possible. Fully extend your entire body, spreading your legs and arms away from the body.",
+    "As you land, bring your limbs back in and absorb your impact through the legs."
+  ],
+  "images": [
+    "/img/exercises/Star_Jump/0.jpg",
+    "/img/exercises/Star_Jump/1.jpg"
+  ],
+  "alternative_names": [
+    "Star-Jump"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Star_Jump"
+}

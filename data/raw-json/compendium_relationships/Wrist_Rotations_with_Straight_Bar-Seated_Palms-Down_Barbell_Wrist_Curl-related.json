@@ -1,0 +1,10 @@
+{
+  "id": "Wrist_Rotations_with_Straight_Bar-Seated_Palms-Down_Barbell_Wrist_Curl-related",
+  "relationship_type": "related",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761551538,
+  "from_exercise_template_id": "Wrist_Rotations_with_Straight_Bar",
+  "to_exercise_template_id": "Seated_Palms-Down_Barbell_Wrist_Curl"
+}

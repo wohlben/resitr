@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Shrug-Shoulder_Raise-regression",
+  "relationship_type": "regression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Barbell_Shrug",
+  "to_exercise_template_id": "Shoulder_Raise"
+}

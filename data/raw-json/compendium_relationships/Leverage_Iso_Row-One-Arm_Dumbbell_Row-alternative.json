@@ -1,0 +1,10 @@
+{
+  "id": "Leverage_Iso_Row-One-Arm_Dumbbell_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729900800,
+  "from_exercise_template_id": "Leverage_Iso_Row",
+  "to_exercise_template_id": "One-Arm_Dumbbell_Row"
+}

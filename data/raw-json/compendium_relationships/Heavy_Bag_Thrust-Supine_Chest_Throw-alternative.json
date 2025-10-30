@@ -1,0 +1,10 @@
+{
+  "id": "Heavy_Bag_Thrust-Supine_Chest_Throw-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729933200,
+  "from_exercise_template_id": "Heavy_Bag_Thrust",
+  "to_exercise_template_id": "Supine_Chest_Throw"
+}

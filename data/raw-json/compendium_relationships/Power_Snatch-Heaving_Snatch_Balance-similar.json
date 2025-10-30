@@ -1,0 +1,10 @@
+{
+  "id": "Power_Snatch-Heaving_Snatch_Balance-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761496481,
+  "from_exercise_template_id": "Power_Snatch",
+  "to_exercise_template_id": "Heaving_Snatch_Balance"
+}

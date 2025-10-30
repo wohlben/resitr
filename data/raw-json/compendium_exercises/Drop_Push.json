@@ -1,0 +1,46 @@
+{
+  "name": "Drop Push",
+  "slug": "drop-push",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Strength training exercise targeting primary muscle groups",
+  "instructions": [
+    "Position low boxes or other platforms 2-3 feet apart.",
+    "Move to a pushup position between them, supporting yourself by placing your hands on the boxes.",
+    "With good posture, drop from the platforms by pressing up and moving your hands to shoulder width, cushioning your landing by absorbing the impact through the arm."
+  ],
+  "images": [
+    "/img/exercises/Drop_Push/0.jpg",
+    "/img/exercises/Drop_Push/1.jpg"
+  ],
+  "alternative_names": [
+    "Drop-Push"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Drop_Push"
+}

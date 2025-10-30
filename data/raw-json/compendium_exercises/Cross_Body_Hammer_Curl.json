@@ -1,0 +1,47 @@
+{
+  "name": "Cross Body Hammer Curl",
+  "slug": "cross-body-hammer-curl",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "BICEPS"
+  ],
+  "secondary_muscles": [
+    "FOREARMS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "2x dumbbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Cross-body hammer curl where dumbbell is curled across the body toward opposite shoulder, emphasizing brachialis and biceps",
+  "instructions": [
+    "Stand up straight with a dumbbell in each hand. Your hands should be down at your side with your palms facing in.",
+    "While keeping your palms facing in and without twisting your arm, curl the dumbbell of the right arm up towards your left shoulder as you exhale. Touch the top of the dumbbell to your shoulder and hold the contraction for a second.",
+    "Slowly lower the dumbbell along the same path as you inhale and then repeat the same movement for the left arm.",
+    "Continue alternating in this fashion until the recommended amount of repetitions is performed for each arm."
+  ],
+  "images": [
+    "/img/exercises/Cross_Body_Hammer_Curl/0.jpg",
+    "/img/exercises/Cross_Body_Hammer_Curl/1.jpg"
+  ],
+  "alternative_names": [
+    "Dumbbell Hammer Curl",
+    "Neutral Grip Curl"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Cross_Body_Hammer_Curl"
+}

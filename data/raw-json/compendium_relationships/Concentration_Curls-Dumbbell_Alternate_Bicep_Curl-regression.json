@@ -1,0 +1,10 @@
+{
+  "id": "Concentration_Curls-Dumbbell_Alternate_Bicep_Curl-regression",
+  "relationship_type": "regression",
+  "strength": 0.65,
+  "description": "Regression from isolated single-arm concentration curl to alternating bicep curl with less stability requirement",
+  "created_by": "system",
+  "created_at": 1729933200,
+  "from_exercise_template_id": "Concentration_Curls",
+  "to_exercise_template_id": "Dumbbell_Alternate_Bicep_Curl"
+}

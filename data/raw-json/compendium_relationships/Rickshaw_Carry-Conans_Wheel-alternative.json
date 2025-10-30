@@ -1,0 +1,10 @@
+{
+  "id": "Rickshaw_Carry-Conans_Wheel-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729900800,
+  "from_exercise_template_id": "Rickshaw_Carry",
+  "to_exercise_template_id": "Conans_Wheel"
+}

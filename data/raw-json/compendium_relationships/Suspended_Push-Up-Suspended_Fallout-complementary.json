@@ -1,0 +1,10 @@
+{
+  "id": "Suspended_Push-Up-Suspended_Fallout-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.7,
+  "description": "Both use suspension trainer in plank position; Push-Up targets chest with pressing while Fallout targets core with anti-extension",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Suspended_Push-Up",
+  "to_exercise_template_id": "Suspended_Fallout"
+}

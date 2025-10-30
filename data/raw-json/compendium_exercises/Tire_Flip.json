@@ -1,0 +1,48 @@
+{
+  "name": "Tire Flip",
+  "slug": "tire-flip",
+  "type": "STRENGTH",
+  "force": [
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "LOWER_BACK",
+    "QUADS",
+    "TRAPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Strongman exercise flipping large tire end over end, full-body explosive power movement.",
+  "instructions": [
+    "Begin by gripping the bottom of the tire on the tread, and position your feet back a bit. Your chest should be driving into the tire.",
+    "To lift the tire, extend through the hips, knees, and ankles, driving into the tire and up.",
+    "As the tire reaches a 45 degree angle, step forward and drive a knee into the tire. As you do so adjust your grip to the upper portion of the tire and push it forward as hard as possible to complete the turn. Repeat as necessary."
+  ],
+  "images": [
+    "/img/exercises/Tire_Flip/0.jpg",
+    "/img/exercises/Tire_Flip/1.jpg"
+  ],
+  "alternative_names": [
+    "Tire-Flip"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Tire_Flip"
+}

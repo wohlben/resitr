@@ -1,0 +1,10 @@
+{
+  "id": "Weighted_Jump_Squat-Weighted_Squat-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761551546,
+  "from_exercise_template_id": "Weighted_Jump_Squat",
+  "to_exercise_template_id": "Weighted_Squat"
+}

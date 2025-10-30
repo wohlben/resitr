@@ -1,0 +1,10 @@
+{
+  "id": "Jerk_Dip_Squat-Squat_Jerk-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761499778,
+  "from_exercise_template_id": "Jerk_Dip_Squat",
+  "to_exercise_template_id": "Squat_Jerk"
+}

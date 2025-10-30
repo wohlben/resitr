@@ -1,0 +1,10 @@
+{
+  "id": "Bicycling_Stationary-Recumbent_Bike-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761476051,
+  "from_exercise_template_id": "Bicycling_Stationary",
+  "to_exercise_template_id": "Recumbent_Bike"
+}

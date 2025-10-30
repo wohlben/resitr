@@ -1,0 +1,41 @@
+{
+  "name": "Chair Lower Back Stretch",
+  "slug": "chair-lower-back-stretch",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "LATS",
+    "OBLIQUES"
+  ],
+  "secondary_muscles": [
+    "LOWER_BACK"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Seated side bend stretch targeting the lats, obliques, and lower back muscles",
+  "instructions": [
+    "Sit upright on a chair.",
+    "Bend to one side with your arm over your head. You can hold onto the chair with your free hand.",
+    "Hold for 10 seconds, and repeat for your other side."
+  ],
+  "images": [
+    "/img/exercises/Chair_Lower_Back_Stretch/0.jpg",
+    "/img/exercises/Chair_Lower_Back_Stretch/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Chair_Lower_Back_Stretch"
+}

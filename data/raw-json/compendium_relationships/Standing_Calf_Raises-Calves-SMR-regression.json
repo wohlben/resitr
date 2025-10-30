@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Calf_Raises-Calves-SMR-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730073600,
+  "from_exercise_template_id": "Standing_Calf_Raises",
+  "to_exercise_template_id": "Calves-SMR"
+}

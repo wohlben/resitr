@@ -1,0 +1,10 @@
+{
+  "id": "Rocket_Jump-Double_Leg_Butt_Kick-progression",
+  "relationship_type": "progression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Rocket_Jump",
+  "to_exercise_template_id": "Double_Leg_Butt_Kick"
+}

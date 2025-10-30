@@ -1,0 +1,10 @@
+{
+  "id": "Chain_Handle_Extension-Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Chain_Handle_Extension",
+  "to_exercise_template_id": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
+}

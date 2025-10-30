@@ -1,9 +1,9 @@
-import { sqliteTable, text, primaryKey, integer } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, primaryKey, integer, index } from 'drizzle-orm/sqlite-core';
 import { relations, sql } from 'drizzle-orm';
 import { EquipmentCategory } from '@resitr/api';
 
-export const compendiumEquipment = sqliteTable('compendium_equipment', {
-  templateId: text('id').primaryKey(),
+export const compendiumEquipment = sqliteTable('compendium_equipments', {
+  templateId: text('template_id').primaryKey(),
   name: text('name').notNull().unique(),
   displayName: text('display_name').notNull(),
   description: text('description'),
@@ -12,14 +12,14 @@ export const compendiumEquipment = sqliteTable('compendium_equipment', {
 });
 
 export const compendiumEquipmentFulfillment = sqliteTable(
-  'compendium_equipment_fulfillments',
+  'compendium_equipment_fulfillment',
   {
-    equipmentId: text('equipment_id')
+    equipmentTemplateId: text('equipment_template_id')
       .notNull()
       .references(() => compendiumEquipment.templateId, {
         onDelete: 'cascade',
       }),
-    fulfillsEquipmentId: text('fulfills_equipment_id')
+    fulfillsEquipmentTemplateId: text('fulfills_equipment_template_id')
       .notNull()
       .references(() => compendiumEquipment.templateId, {
         onDelete: 'cascade',
@@ -32,7 +32,8 @@ export const compendiumEquipmentFulfillment = sqliteTable(
       .default(sql`(unixepoch())`),
   },
   (table) => [
-    primaryKey({ columns: [table.equipmentId, table.fulfillsEquipmentId] }),
+    primaryKey({ columns: [table.equipmentTemplateId, table.fulfillsEquipmentTemplateId] }),
+    index('fulfills_equipment_idx').on(table.fulfillsEquipmentTemplateId),
   ]
 );
 
@@ -46,12 +47,12 @@ export const compendiumEquipmentFulfillmentRelations = relations(
   compendiumEquipmentFulfillment,
   ({ one }) => ({
     equipment: one(compendiumEquipment, {
-      fields: [compendiumEquipmentFulfillment.equipmentId],
+      fields: [compendiumEquipmentFulfillment.equipmentTemplateId],
       references: [compendiumEquipment.templateId],
       relationName: 'equipmentSubstitutions',
     }),
     fulfillsEquipment: one(compendiumEquipment, {
-      fields: [compendiumEquipmentFulfillment.fulfillsEquipmentId],
+      fields: [compendiumEquipmentFulfillment.fulfillsEquipmentTemplateId],
       references: [compendiumEquipment.templateId],
       relationName: 'fulfilledBy',
     }),

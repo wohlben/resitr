@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Push_Press-Alternating_Kettlebell_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.72,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761461533,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Push_Press",
+  "to_exercise_template_id": "Alternating_Kettlebell_Press"
+}

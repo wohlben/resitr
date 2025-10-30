@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Push-Up_Close-Grip-Close-Grip_Push-Up_off_of_a_Dumbbell-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729940400,
+  "from_exercise_template_id": "Incline_Push-Up_Close-Grip",
+  "to_exercise_template_id": "Close-Grip_Push-Up_off_of_a_Dumbbell"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Kettlebell Seated Press",
+  "slug": "kettlebell-seated-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "SIDE_DELTS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Seated overhead kettlebell press, pressing from shoulders overhead while seated for strict form.",
+  "instructions": [
+    "Sit on the floor and spread your legs out comfortably.",
+    "Clean one kettlebell to your shoulder.",
+    "Press the kettlebell up and out until it is locked out overhead. Return to the starting position."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Seated_Press/0.jpg",
+    "/img/exercises/Kettlebell_Seated_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "KB Seated Press",
+    "Single-Arm Kettlebell Seated Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Seated_Press"
+}

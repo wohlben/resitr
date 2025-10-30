@@ -1,0 +1,10 @@
+{
+  "id": "Romanian_Deadlift-Smith_Machine_Stiff-Legged_Deadlift-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761547427,
+  "from_exercise_template_id": "Romanian_Deadlift",
+  "to_exercise_template_id": "Smith_Machine_Stiff-Legged_Deadlift"
+}

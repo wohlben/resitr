@@ -1,0 +1,43 @@
+{
+  "name": "Prone Manual Hamstring",
+  "slug": "prone-manual-hamstring",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "partner"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Partner-assisted hamstring curl performed prone with partner or trainer providing manual resistance throughout the movement.",
+  "instructions": [
+    "You will need a partner for this exercise. Lay face down with your legs straight. Your assistant will place their hand on your heel.",
+    "To begin, flex the knee to curl your leg up. Your partner should provide resistance, starting light and increasing the pressure as the movement is completed. Communicate with your partner to monitor appropriate resistance levels.",
+    "Pause at the top, returning the leg to the starting position as your partner provides resistance going the other direction."
+  ],
+  "images": [
+    "/img/exercises/Prone_Manual_Hamstring/0.jpg",
+    "/img/exercises/Prone_Manual_Hamstring/1.jpg"
+  ],
+  "alternative_names": [
+    "Lying Manual Hamstring"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Prone_Manual_Hamstring"
+}

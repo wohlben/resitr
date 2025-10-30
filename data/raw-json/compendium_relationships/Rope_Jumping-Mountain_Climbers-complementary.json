@@ -1,0 +1,10 @@
+{
+  "id": "Rope_Jumping-Mountain_Climbers-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Rope_Jumping",
+  "to_exercise_template_id": "Mountain_Climbers"
+}

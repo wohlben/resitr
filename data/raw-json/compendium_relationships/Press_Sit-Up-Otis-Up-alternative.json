@@ -1,0 +1,10 @@
+{
+  "id": "Press_Sit-Up-Otis-Up-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": "Both exercises combine sit-up movement with overhead press; Otis-Up uses general weight and is more beginner-friendly",
+  "created_by": "system",
+  "created_at": 1729980000,
+  "from_exercise_template_id": "Press_Sit-Up",
+  "to_exercise_template_id": "Otis-Up"
+}

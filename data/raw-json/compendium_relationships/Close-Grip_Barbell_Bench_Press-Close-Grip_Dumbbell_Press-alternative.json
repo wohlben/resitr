@@ -1,0 +1,10 @@
+{
+  "id": "Close-Grip_Barbell_Bench_Press-Close-Grip_Dumbbell_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761482004,
+  "from_exercise_template_id": "Close-Grip_Barbell_Bench_Press",
+  "to_exercise_template_id": "Close-Grip_Dumbbell_Press"
+}

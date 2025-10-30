@@ -1,0 +1,48 @@
+{
+  "name": "Standing Cable Wood Chop",
+  "slug": "standing-cable-wood-chop",
+  "type": "STRENGTH",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Standing rotational cable chop movement, pulling from high to low across body for obliques.",
+  "instructions": [
+    "Connect a standard handle to a tower, and move the cable to the highest pulley position.",
+    "With your side to the cable, grab the handle with one hand and step away from the tower. You should be approximately arm's length away from the pulley, with the tension of the weight on the cable. Your outstretched arm should be aligned with the cable.",
+    "With your feet positioned shoulder width apart, reach upward with your other hand and grab the handle with both hands. Your arms should still be fully extended.",
+    "In one motion, pull the handle down and across your body to your front knee while rotating your torso.",
+    "Keep your back and arms straight and core tight while you pivot your back foot and bend your knees to get a full range of motion.",
+    "Maintain your stance and straight arms. Return to the neutral position in a slow and controlled manner.",
+    "Repeat to failure.",
+    "Then, reposition and repeat the same series of movements on the opposite side."
+  ],
+  "images": [
+    "/img/exercises/Standing_Cable_Wood_Chop/0.jpg",
+    "/img/exercises/Standing_Cable_Wood_Chop/1.jpg"
+  ],
+  "alternative_names": [
+    "Standing Cable Machine Wood Chop",
+    "Standing Wood Chop"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Standing_Cable_Wood_Chop"
+}

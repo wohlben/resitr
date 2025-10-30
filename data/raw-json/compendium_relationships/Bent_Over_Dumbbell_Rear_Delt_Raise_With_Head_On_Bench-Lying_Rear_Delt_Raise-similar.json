@@ -1,0 +1,10 @@
+{
+  "id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench-Lying_Rear_Delt_Raise-similar",
+  "relationship_type": "similar",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench",
+  "to_exercise_template_id": "Lying_Rear_Delt_Raise"
+}

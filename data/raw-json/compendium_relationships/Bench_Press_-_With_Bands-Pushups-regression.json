@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Press_-_With_Bands-Pushups-regression",
+  "relationship_type": "regression",
+  "strength": 0.5,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761472847,
+  "from_exercise_template_id": "Bench_Press_-_With_Bands",
+  "to_exercise_template_id": "Pushups"
+}

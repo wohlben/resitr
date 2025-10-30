@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Close-Grip_Bench_To_Skull_Crusher-EZ-Bar_Skullcrusher-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Decline_Close-Grip_Bench_To_Skull_Crusher",
+  "to_exercise_template_id": "EZ-Bar_Skullcrusher"
+}

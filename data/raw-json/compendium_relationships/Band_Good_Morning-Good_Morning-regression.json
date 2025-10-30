@@ -1,0 +1,10 @@
+{
+  "id": "Band_Good_Morning-Good_Morning-regression",
+  "relationship_type": "regression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Band_Good_Morning",
+  "to_exercise_template_id": "Good_Morning"
+}

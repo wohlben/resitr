@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Row-Two-Arm_Kettlebell_Row-harder_alternative",
+  "relationship_type": "harder_alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Row",
+  "to_exercise_template_id": "Two-Arm_Kettlebell_Row"
+}

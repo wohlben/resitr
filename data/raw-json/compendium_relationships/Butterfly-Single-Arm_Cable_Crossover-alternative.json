@@ -1,0 +1,10 @@
+{
+  "id": "Butterfly-Single-Arm_Cable_Crossover-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761512062,
+  "from_exercise_template_id": "Butterfly",
+  "to_exercise_template_id": "Single-Arm_Cable_Crossover"
+}

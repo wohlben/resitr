@@ -1,0 +1,10 @@
+{
+  "id": "Seated_Triceps_Press-Standing_One-Arm_Dumbbell_Triceps_Extension-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761545398,
+  "from_exercise_template_id": "Seated_Triceps_Press",
+  "to_exercise_template_id": "Standing_One-Arm_Dumbbell_Triceps_Extension"
+}

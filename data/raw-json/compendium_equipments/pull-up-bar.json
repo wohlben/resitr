@@ -1,0 +1,8 @@
+{
+  "name": "pull-up-bar",
+  "display_name": "Pull-Up Bar",
+  "description": "A horizontal bar mounted overhead for pull-ups, chin-ups, and hanging exercises.",
+  "category": "other",
+  "image_url": null,
+  "template_id": "pull-up-bar"
+}

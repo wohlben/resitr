@@ -1,0 +1,10 @@
+{
+  "id": "Leverage_Chest_Press-Leverage_Decline_Chest_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730051040,
+  "from_exercise_template_id": "Leverage_Chest_Press",
+  "to_exercise_template_id": "Leverage_Decline_Chest_Press"
+}

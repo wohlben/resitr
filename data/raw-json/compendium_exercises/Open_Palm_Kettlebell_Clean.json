@@ -1,0 +1,49 @@
+{
+  "name": "Open Palm Kettlebell Clean",
+  "slug": "open-palm-kettlebell-clean",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK",
+    "FRONT_DELTS",
+    "TRAPS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Kettlebell clean using open palm grip technique for different wrist position and forearm engagement.",
+  "instructions": [
+    "Place one kettlebell between your feet. Clean the kettlebell by extending through the legs and hips as you raise the kettlebell towards your shoulders.",
+    "Release the kettlebell as it comes up, and let it flip so that the ball of the kettlebell lands in the palms of your hands.",
+    "Release the kettlebell out in front of you and catch the handle with both hands. Lower the kettlebell to the starting position and repeat."
+  ],
+  "images": [
+    "/img/exercises/Open_Palm_Kettlebell_Clean/0.jpg",
+    "/img/exercises/Open_Palm_Kettlebell_Clean/1.jpg"
+  ],
+  "alternative_names": [
+    "Barbell Clean",
+    "Open Palm KB Clean",
+    "Power Clean"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Open_Palm_Kettlebell_Clean"
+}

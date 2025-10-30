@@ -1,0 +1,10 @@
+{
+  "id": "Axle_Deadlift-Sumo_Deadlift-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Axle_Deadlift",
+  "to_exercise_template_id": "Sumo_Deadlift"
+}

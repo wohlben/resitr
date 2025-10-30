@@ -9,7 +9,7 @@ import {
 } from '@resitr/api';
 
 const exerciseFields = {
-  id: text('id').notNull(),
+  templateId: text('template_id').notNull(),
   name: text('name').notNull(),
   slug: text('slug').notNull(),
 
@@ -51,13 +51,12 @@ const exerciseFields = {
 
 export const compendiumExercises = sqliteTable('compendium_exercises', {
   ...exerciseFields,
-  id: text('id').primaryKey(), // Override to make it PK
-  slug: text('slug').notNull().unique(), // Override to add unique constraint
-  parentExerciseId: text('parent_exercise_id').references((): any => compendiumExercises.id),
+  templateId: text('template_id').primaryKey(),
+  slug: text('slug').notNull().unique(),
+  parentExerciseId: text('parent_exercise_id').references(() => compendiumExercises.templateId),
 });
 
 export const compendiumExercisesHistory = sqliteTable('compendium_exercises_history', {
-  // Audit metadata
   auditId: integer('history_id').primaryKey({ autoIncrement: true }),
   operation: text('operation', { enum: ['INSERT', 'UPDATE', 'DELETE'] }).notNull(),
   changedAt: integer('changed_at', { mode: 'timestamp' })

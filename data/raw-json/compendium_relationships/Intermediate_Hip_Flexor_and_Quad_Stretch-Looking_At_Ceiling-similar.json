@@ -1,0 +1,10 @@
+{
+  "id": "Intermediate_Hip_Flexor_and_Quad_Stretch-Looking_At_Ceiling-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Intermediate_Hip_Flexor_and_Quad_Stretch",
+  "to_exercise_template_id": "Looking_At_Ceiling"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Bicycling, Stationary",
+  "slug": "bicycling-stationary",
+  "type": "STRENGTH",
+  "force": [
+    "PULL",
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "ABS",
+    "OBLIQUES"
+  ],
+  "secondary_muscles": [
+    "HIP_FLEXORS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Supported leg raises targeting lower abs and hip flexors through controlled movement",
+  "instructions": [
+    "To begin, seat yourself on the bike and adjust the seat to your height.",
+    "Select the desired option from the menu. You may have to start pedaling to turn it on. You can use the manual setting, or you can select a program to use. Typically, you can enter your age and weight to estimate the amount of calories burned during exercise. The level of resistance can be changed throughout the workout. The handles can be used to monitor your heart rate to help you stay at an appropriate intensity."
+  ],
+  "images": [
+    "/img/exercises/Bicycling_Stationary/0.jpg",
+    "/img/exercises/Bicycling_Stationary/1.jpg"
+  ],
+  "alternative_names": [
+    "Bicycling,-Stationary"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Bicycling_Stationary"
+}

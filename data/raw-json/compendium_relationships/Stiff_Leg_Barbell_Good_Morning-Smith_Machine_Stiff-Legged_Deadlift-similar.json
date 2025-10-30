@@ -1,0 +1,10 @@
+{
+  "id": "Stiff_Leg_Barbell_Good_Morning-Smith_Machine_Stiff-Legged_Deadlift-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761547427,
+  "from_exercise_template_id": "Stiff_Leg_Barbell_Good_Morning",
+  "to_exercise_template_id": "Smith_Machine_Stiff-Legged_Deadlift"
+}

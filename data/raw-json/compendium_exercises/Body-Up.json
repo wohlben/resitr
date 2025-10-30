@@ -1,0 +1,46 @@
+{
+  "name": "Body-Up",
+  "slug": "body-up",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Incline cable press emphasizing upper chest with adjustable resistance angle",
+  "instructions": [
+    "Assume a plank position on the ground. You should be supporting your bodyweight on your toes and forearms, keeping your torso straight. Your forearms should be shoulder-width apart. This will be your starting position.",
+    "Pressing your palms firmly into the ground, extend through the elbows to raise your body from the ground. Keep your torso rigid as you perform the movement.",
+    "Slowly lower your forearms back to the ground by allowing the elbows to flex.",
+    "Repeat."
+  ],
+  "images": [
+    "/img/exercises/Body-Up/0.jpg",
+    "/img/exercises/Body-Up/1.jpg"
+  ],
+  "alternative_names": [
+    "Body Up"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Body-Up"
+}

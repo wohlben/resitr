@@ -1,0 +1,10 @@
+{
+  "id": "Push-Up_Wide-Push-Ups_-_Close_Triceps_Position-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Push-Up_Wide",
+  "to_exercise_template_id": "Push-Ups_-_Close_Triceps_Position"
+}

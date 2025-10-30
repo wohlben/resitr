@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Dumbbell_Flyes-Incline_Dumbbell_Flyes_-_With_A_Twist-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761499179,
+  "from_exercise_template_id": "Decline_Dumbbell_Flyes",
+  "to_exercise_template_id": "Incline_Dumbbell_Flyes_-_With_A_Twist"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Power_Jerk-Push_Press_-_Behind_the_Neck-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Power_Jerk",
+  "to_exercise_template_id": "Push_Press_-_Behind_the_Neck"
+}

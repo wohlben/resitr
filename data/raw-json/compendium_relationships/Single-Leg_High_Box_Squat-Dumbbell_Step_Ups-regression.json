@@ -1,0 +1,10 @@
+{
+  "id": "Single-Leg_High_Box_Squat-Dumbbell_Step_Ups-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Single-Leg_High_Box_Squat",
+  "to_exercise_template_id": "Dumbbell_Step_Ups"
+}

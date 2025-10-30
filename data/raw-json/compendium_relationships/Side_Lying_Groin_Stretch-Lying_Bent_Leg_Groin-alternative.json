@@ -1,0 +1,10 @@
+{
+  "id": "Side_Lying_Groin_Stretch-Lying_Bent_Leg_Groin-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": "Both are lying stretches targeting the adductors. Side Lying Groin Stretch is performed on the side, unilateral, and can be done solo, while Lying Bent Leg Groin is performed on the back with partner assistance and bilateral stretch.",
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Side_Lying_Groin_Stretch",
+  "to_exercise_template_id": "Lying_Bent_Leg_Groin"
+}

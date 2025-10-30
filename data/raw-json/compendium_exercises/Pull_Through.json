@@ -1,0 +1,44 @@
+{
+  "name": "Pull Through",
+  "slug": "pull-through",
+  "type": "STRENGTH",
+  "force": [
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "LOWER_BACK"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0.1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Cable pull-through exercise hinging at hips and pulling cable through legs, targeting glutes and hamstrings.",
+  "instructions": [
+    "Begin standing a few feet in front of a low pulley with a rope or handle attached. Face away from the machine, straddling the cable, with your feet set wide apart.",
+    "Begin the movement by reaching through your legs as far as possible, bending at the hips. Keep your knees slightly bent. Keeping your arms straight, extend through the hip to stand straight up. Avoid pulling upward through the shoulders; all of the motion should originate through the hips."
+  ],
+  "images": [
+    "/img/exercises/Pull_Through/0.jpg",
+    "/img/exercises/Pull_Through/1.jpg"
+  ],
+  "alternative_names": [
+    "Pull-Through"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Pull_Through"
+}

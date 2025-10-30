@@ -1,0 +1,10 @@
+{
+  "id": "Glute_Kickback-Flutter_Kicks-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729954800,
+  "from_exercise_template_id": "Glute_Kickback",
+  "to_exercise_template_id": "Flutter_Kicks"
+}

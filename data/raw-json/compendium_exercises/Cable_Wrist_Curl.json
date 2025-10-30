@@ -1,0 +1,46 @@
+{
+  "name": "Cable Wrist Curl",
+  "slug": "cable-wrist-curl",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "FOREARMS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Cable wrist curl isolating forearm flexors through wrist flexion with cable attachment",
+  "instructions": [
+    "Start out by placing a flat bench in front of a low pulley cable that has a straight bar attachment.",
+    "Use your arms to grab the cable bar with a narrow to shoulder width supinated grip (palms up) and bring them up so that your forearms are resting against the top of your thighs. Your wrists should be hanging just beyond your knees.",
+    "Start out by curling your wrist upwards and exhaling. Keep the contraction for a second.",
+    "Slowly lower your wrists back down to the starting position while inhaling.",
+    "Your forearms should be stationary as your wrist is the only movement needed to perform this exercise.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Cable_Wrist_Curl/0.jpg",
+    "/img/exercises/Cable_Wrist_Curl/1.jpg"
+  ],
+  "alternative_names": [
+    "Cable Machine Wrist Curl",
+    "Wrist Curl"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Cable_Wrist_Curl"
+}

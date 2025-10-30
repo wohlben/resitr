@@ -1,0 +1,10 @@
+{
+  "id": "Around_The_Worlds-Dynamic_Chest_Stretch-regression",
+  "relationship_type": "regression",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Around_The_Worlds",
+  "to_exercise_template_id": "Dynamic_Chest_Stretch"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "One_Arm_Chin-Up-Weighted_Pull_Ups-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "One_Arm_Chin-Up",
+  "to_exercise_template_id": "Weighted_Pull_Ups"
+}

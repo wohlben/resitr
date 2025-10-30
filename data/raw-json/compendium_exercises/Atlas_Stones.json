@@ -1,0 +1,53 @@
+{
+  "name": "Atlas Stones",
+  "slug": "atlas-stones",
+  "type": "STRENGTH",
+  "force": [
+    "PULL",
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "GLUTES",
+    "LOWER_BACK",
+    "QUADS",
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "LATS",
+    "TRAPS",
+    "ABS",
+    "FOREARMS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Strongman event lifting atlas stones to develop explosive power, grip strength, and total-body coordination",
+  "instructions": [
+    "Begin with the atlas stone between your feet. Bend at the hips to wrap your arms vertically around the Atlas Stone, attempting to get your fingers underneath the stone. Many stones will have a small flat portion on the bottom, which will make the stone easier to hold.",
+    "Pulling the stone into your torso, drive through the back half of your feet to pull the stone from the ground.",
+    "As the stone passes the knees, lap it by sitting backward, pulling the stone on top of your thighs.",
+    "Sit low, getting the stone high onto your chest as you change your grip to reach over the stone. Stand, driving through with your hips. Close distance to the loading platform, and lean back, extending the hips to get the stone as high as possible."
+  ],
+  "images": [
+    "/img/exercises/Atlas_Stones/0.jpg",
+    "/img/exercises/Atlas_Stones/1.jpg"
+  ],
+  "alternative_names": [
+    "Atlas-Stones"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Atlas_Stones"
+}

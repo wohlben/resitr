@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Push-Up_Medium-Incline_Push-Up_Wide-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Incline_Push-Up_Medium",
+  "to_exercise_template_id": "Incline_Push-Up_Wide"
+}

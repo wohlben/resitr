@@ -1,0 +1,10 @@
+{
+  "id": "Seated_Barbell_Twist-Cable_Russian_Twists-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Seated_Barbell_Twist",
+  "to_exercise_template_id": "Cable_Russian_Twists"
+}

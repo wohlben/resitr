@@ -1,0 +1,10 @@
+{
+  "id": "Crossover_Reverse_Lunge-Dumbbell_Rear_Lunge-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Crossover_Reverse_Lunge",
+  "to_exercise_template_id": "Dumbbell_Rear_Lunge"
+}

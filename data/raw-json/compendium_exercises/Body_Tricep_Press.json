@@ -1,0 +1,48 @@
+{
+  "name": "Body Tricep Press",
+  "slug": "body-tricep-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "TRICEPS"
+  ],
+  "secondary_muscles": [
+    "CHEST",
+    "FRONT_DELTS",
+    "SIDE_DELTS",
+    "REAR_DELTS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "barbell",
+    "rack"
+  ],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Bodyweight tricep press performed by leaning on a racked bar and extending elbows to push away",
+  "instructions": [
+    "Position a bar in a rack at chest height.",
+    "Standing, take a shoulder width grip on the bar and step a yard or two back, feet together and arms extended so that you are leaning on the bar. This will be your starting position.",
+    "Begin by flexing the elbow, lowering yourself towards the bar.",
+    "Pause, and then reverse the motion by extending the elbows.",
+    "Progress from bodyweight by adding chains over your shoulders."
+  ],
+  "images": [
+    "/img/exercises/Body_Tricep_Press/0.jpg",
+    "/img/exercises/Body_Tricep_Press/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Body_Tricep_Press"
+}

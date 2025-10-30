@@ -1,0 +1,10 @@
+{
+  "id": "Bottoms_Up-Flat_Bench_Lying_Leg_Raise-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Bottoms_Up",
+  "to_exercise_template_id": "Flat_Bench_Lying_Leg_Raise"
+}

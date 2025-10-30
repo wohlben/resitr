@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Hammer_Curls_-_Rope_Attachment-Incline_Hammer_Curls-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Cable_Hammer_Curls_-_Rope_Attachment",
+  "to_exercise_template_id": "Incline_Hammer_Curls"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Barbell Seated Calf Raise",
+  "slug": "barbell-seated-calf-raise",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CALVES"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "barbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Seated calf raise with barbell isolating soleus muscle through bent-knee position",
+  "instructions": [
+    "Place a block about 12 inches in front of a flat bench.",
+    "Sit on the bench and place the ball of your feet on the block.",
+    "Have someone place a barbell over your upper thighs about 3 inches above your knees and hold it there. This will be your starting position.",
+    "Raise up on your toes as high as possible as you squeeze the calves and as you breathe out.",
+    "After a second contraction, slowly go back to the starting position. Tip: To get maximum benefit stretch your calves as far as you can.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Barbell_Seated_Calf_Raise/0.jpg",
+    "/img/exercises/Barbell_Seated_Calf_Raise/1.jpg"
+  ],
+  "alternative_names": [
+    "BB Seated Calf Raise",
+    "Bar Seated Calf Raise",
+    "Barbell Standing Calf Raise",
+    "Barbell Seated Calf Raise",
+    "Heel Raise",
+    "Standing Calf Raise"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Barbell_Seated_Calf_Raise"
+}

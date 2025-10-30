@@ -1,0 +1,10 @@
+{
+  "id": "Sled_Push-Bear_Crawl_Sled_Drags-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Sled_Push",
+  "to_exercise_template_id": "Bear_Crawl_Sled_Drags"
+}

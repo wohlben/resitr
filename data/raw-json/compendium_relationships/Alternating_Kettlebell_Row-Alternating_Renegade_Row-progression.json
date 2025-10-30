@@ -1,0 +1,10 @@
+{
+  "id": "Alternating_Kettlebell_Row-Alternating_Renegade_Row-progression",
+  "relationship_type": "progression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Alternating_Kettlebell_Row",
+  "to_exercise_template_id": "Alternating_Renegade_Row"
+}

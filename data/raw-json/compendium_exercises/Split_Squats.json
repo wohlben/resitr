@@ -1,0 +1,45 @@
+{
+  "name": "Split Squats",
+  "slug": "split-squats",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Alternating jump split squat with explosive leg switching, bodyweight plyometric exercise.",
+  "instructions": [
+    "Being in a standing position. Jump into a split leg position, with one leg forward and one leg back, flexing the knees and lowering your hips slightly as you do so.",
+    "As you descend, immediately reverse direction, standing back up and jumping, reversing the position of your legs. Repeat 5-10 times on each leg."
+  ],
+  "images": [
+    "/img/exercises/Split_Squats/0.jpg",
+    "/img/exercises/Split_Squats/1.jpg"
+  ],
+  "alternative_names": [
+    "Split-Squats"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Split_Squats"
+}

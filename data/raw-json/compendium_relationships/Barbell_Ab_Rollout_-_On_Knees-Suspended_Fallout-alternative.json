@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Ab_Rollout_-_On_Knees-Suspended_Fallout-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": "Both are ab rollout exercises with similar mechanics; kneeling barbell rollout uses barbell from knees while Suspended Fallout uses suspension trainer",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Barbell_Ab_Rollout_-_On_Knees",
+  "to_exercise_template_id": "Suspended_Fallout"
+}

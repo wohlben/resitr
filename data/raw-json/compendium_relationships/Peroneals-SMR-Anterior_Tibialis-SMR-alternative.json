@@ -1,0 +1,10 @@
+{
+  "id": "Peroneals-SMR-Anterior_Tibialis-SMR-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Peroneals-SMR",
+  "to_exercise_template_id": "Anterior_Tibialis-SMR"
+}

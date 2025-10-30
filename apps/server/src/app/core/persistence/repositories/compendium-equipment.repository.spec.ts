@@ -333,14 +333,14 @@ describe('CompendiumEquipmentRepository', () => {
 
       // Create fulfillments: barbell can substitute for olympic-barbell and ez-bar
       await fulfillmentRepository.create({
-        equipmentId: barbell.templateId,
-        fulfillsEquipmentId: olympicBarbell.templateId,
+        equipmentTemplateId: barbell.templateId,
+        fulfillsEquipmentTemplateId: olympicBarbell.templateId,
         createdBy: 'test-user',
       });
 
       await fulfillmentRepository.create({
-        equipmentId: barbell.templateId,
-        fulfillsEquipmentId: ezBar.templateId,
+        equipmentTemplateId: barbell.templateId,
+        fulfillsEquipmentTemplateId: ezBar.templateId,
         createdBy: 'test-user',
       });
 
@@ -376,15 +376,15 @@ describe('CompendiumEquipmentRepository', () => {
 
       // dumbbell can substitute for barbell
       await fulfillmentRepository.create({
-        equipmentId: dumbbell.templateId,
-        fulfillsEquipmentId: barbell.templateId,
+        equipmentTemplateId: dumbbell.templateId,
+        fulfillsEquipmentTemplateId: barbell.templateId,
         createdBy: 'test-user',
       });
 
       // kettlebell can substitute for dumbbell
       await fulfillmentRepository.create({
-        equipmentId: kettlebell.templateId,
-        fulfillsEquipmentId: dumbbell.templateId,
+        equipmentTemplateId: kettlebell.templateId,
+        fulfillsEquipmentTemplateId: dumbbell.templateId,
         createdBy: 'test-user',
       });
 
@@ -418,8 +418,8 @@ describe('CompendiumEquipmentRepository', () => {
       });
 
       await fulfillmentRepository.create({
-        equipmentId: bench.templateId,
-        fulfillsEquipmentId: inclineBench.templateId,
+        equipmentTemplateId: bench.templateId,
+        fulfillsEquipmentTemplateId: inclineBench.templateId,
         createdBy: 'test-user',
       });
 

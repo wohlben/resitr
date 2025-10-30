@@ -1,0 +1,10 @@
+{
+  "id": "Overhead_Squat-Olympic_Squat-regression",
+  "relationship_type": "regression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Overhead_Squat",
+  "to_exercise_template_id": "Olympic_Squat"
+}

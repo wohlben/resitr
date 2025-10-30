@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Incline_Row-Bent_Over_Two-Dumbbell_Row_With_Palms_In-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Dumbbell_Incline_Row",
+  "to_exercise_template_id": "Bent_Over_Two-Dumbbell_Row_With_Palms_In"
+}

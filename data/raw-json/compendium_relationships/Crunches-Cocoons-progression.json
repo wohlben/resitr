@@ -1,0 +1,10 @@
+{
+  "id": "Crunches-Cocoons-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730009600,
+  "from_exercise_template_id": "Crunches",
+  "to_exercise_template_id": "Cocoons"
+}

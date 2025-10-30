@@ -1,0 +1,10 @@
+{
+  "id": "Upward_Stretch-Standing_Lateral_Stretch-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.5,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Upward_Stretch",
+  "to_exercise_template_id": "Standing_Lateral_Stretch"
+}

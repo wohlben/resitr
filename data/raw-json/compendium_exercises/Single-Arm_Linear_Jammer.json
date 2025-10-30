@@ -1,0 +1,47 @@
+{
+  "name": "Single-Arm Linear Jammer",
+  "slug": "single-arm-linear-jammer",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "QUADS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "landmine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Landmine press with single arm (linear jammer variation), explosive pressing movement.",
+  "instructions": [
+    "Position a bar into a landmine or securely anchor it in a corner. Load the bar to an appropriate weight.",
+    "Raise the bar from the floor, taking it to your shoulders with one or both hands. Adopt a wide stance. This will be your starting position.",
+    "Perform the movement by extending the elbow, pressing the weight up. Move explosively, extending the hips and knees fully to produce maximal force.",
+    "Return to the starting position."
+  ],
+  "images": [
+    "/img/exercises/Single-Arm_Linear_Jammer/0.jpg",
+    "/img/exercises/Single-Arm_Linear_Jammer/1.jpg"
+  ],
+  "alternative_names": [
+    "Single Arm Linear Jammer"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Single-Arm_Linear_Jammer"
+}

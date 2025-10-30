@@ -1,0 +1,10 @@
+{
+  "id": "Sumo_Deadlift_with_Bands-Rack_Pull_with_Bands-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761511019,
+  "from_exercise_template_id": "Sumo_Deadlift_with_Bands",
+  "to_exercise_template_id": "Rack_Pull_with_Bands"
+}

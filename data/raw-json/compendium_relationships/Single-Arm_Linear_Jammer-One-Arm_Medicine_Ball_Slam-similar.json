@@ -1,0 +1,10 @@
+{
+  "id": "Single-Arm_Linear_Jammer-One-Arm_Medicine_Ball_Slam-similar",
+  "relationship_type": "similar",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761510517,
+  "from_exercise_template_id": "Single-Arm_Linear_Jammer",
+  "to_exercise_template_id": "One-Arm_Medicine_Ball_Slam"
+}

@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
 import { compendiumExerciseVideo, type CompendiumExerciseVideo } from '../schemas';
 
@@ -16,31 +16,34 @@ export class CompendiumExerciseVideoRepository {
     return this.db.select().from(compendiumExerciseVideo);
   }
 
-  async findById(id: number) {
-    const [result] = await this.db.select().from(compendiumExerciseVideo).where(eq(compendiumExerciseVideo.id, id));
+  async findByCompositeKey(exerciseTemplateId: string, url: string) {
+    const [result] = await this.db
+      .select()
+      .from(compendiumExerciseVideo)
+      .where(and(eq(compendiumExerciseVideo.exerciseTemplateId, exerciseTemplateId), eq(compendiumExerciseVideo.url, url)));
     return result;
   }
 
-  async findByExerciseId(compendiumExerciseId: string) {
+  async findByExerciseId(exerciseTemplateId: string) {
     return this.db
       .select()
       .from(compendiumExerciseVideo)
-      .where(eq(compendiumExerciseVideo.compendiumExerciseId, compendiumExerciseId));
+      .where(eq(compendiumExerciseVideo.exerciseTemplateId, exerciseTemplateId));
   }
 
-  async update(id: number, data: Partial<CompendiumExerciseVideo>) {
+  async update(exerciseTemplateId: string, url: string, data: Partial<CompendiumExerciseVideo>) {
     const [result] = await this.db
       .update(compendiumExerciseVideo)
       .set(data)
-      .where(eq(compendiumExerciseVideo.id, id))
+      .where(and(eq(compendiumExerciseVideo.exerciseTemplateId, exerciseTemplateId), eq(compendiumExerciseVideo.url, url)))
       .returning();
     return result;
   }
 
-  async delete(id: number) {
+  async delete(exerciseTemplateId: string, url: string) {
     const [result] = await this.db
       .delete(compendiumExerciseVideo)
-      .where(eq(compendiumExerciseVideo.id, id))
+      .where(and(eq(compendiumExerciseVideo.exerciseTemplateId, exerciseTemplateId), eq(compendiumExerciseVideo.url, url)))
       .returning();
     return result;
   }

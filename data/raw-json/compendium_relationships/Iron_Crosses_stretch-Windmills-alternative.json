@@ -1,0 +1,10 @@
+{
+  "id": "Iron_Crosses_stretch-Windmills-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Iron_Crosses_stretch",
+  "to_exercise_template_id": "Windmills"
+}

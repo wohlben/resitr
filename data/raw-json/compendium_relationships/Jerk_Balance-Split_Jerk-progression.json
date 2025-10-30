@@ -1,0 +1,10 @@
+{
+  "id": "Jerk_Balance-Split_Jerk-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761510000,
+  "from_exercise_template_id": "Jerk_Balance",
+  "to_exercise_template_id": "Split_Jerk"
+}

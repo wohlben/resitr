@@ -1,0 +1,10 @@
+{
+  "id": "Smith_Machine_Bent_Over_Row-Lying_Cambered_Barbell_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Smith_Machine_Bent_Over_Row",
+  "to_exercise_template_id": "Lying_Cambered_Barbell_Row"
+}

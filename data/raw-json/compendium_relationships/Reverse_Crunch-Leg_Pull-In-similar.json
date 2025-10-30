@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Crunch-Leg_Pull-In-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": "Both involve bringing knees toward chest with hip flexion and lower ab engagement",
+  "created_by": "system",
+  "created_at": 1761509905,
+  "from_exercise_template_id": "Reverse_Crunch",
+  "to_exercise_template_id": "Leg_Pull-In"
+}

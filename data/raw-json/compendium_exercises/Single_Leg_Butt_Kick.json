@@ -1,0 +1,45 @@
+{
+  "name": "Single Leg Butt Kick",
+  "slug": "single-leg-butt-kick",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Single-leg butt kick running drill bringing heel to glutes, training hamstring and hip flexor coordination.",
+  "instructions": [
+    "Begin by standing on one leg, with the bent knee raised. This will be your start position.",
+    "Using a countermovement jump, take off upward by extending the hip, knee, and ankle of the grounded leg.",
+    "Immediately flex the knee and attempt to touch your butt with the heel of your jumping leg.",
+    "Return the leg to a partially bent position underneath the hips and land. Your opposite leg should stay in relatively the same position throughout the drill."
+  ],
+  "images": [
+    "/img/exercises/Single_Leg_Butt_Kick/0.jpg",
+    "/img/exercises/Single_Leg_Butt_Kick/1.jpg"
+  ],
+  "alternative_names": [
+    "One Leg Butt Kick"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Single_Leg_Butt_Kick"
+}

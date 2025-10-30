@@ -1,0 +1,10 @@
+{
+  "id": "Ankle_Circles-Calf_Stretch_Elbows_Against_Wall-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761480085,
+  "from_exercise_template_id": "Ankle_Circles",
+  "to_exercise_template_id": "Calf_Stretch_Elbows_Against_Wall"
+}

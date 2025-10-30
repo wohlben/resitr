@@ -1,0 +1,10 @@
+{
+  "id": "Clean-Clean_Deadlift-progression",
+  "relationship_type": "progression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Clean",
+  "to_exercise_template_id": "Clean_Deadlift"
+}

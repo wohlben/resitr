@@ -1,0 +1,47 @@
+{
+  "name": "Scapular Pull-Up",
+  "slug": "scapular-pull-up",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "TRAPS",
+    "RHOMBOIDS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "pull-up-bar"
+  ],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Pull-up focusing on scapular retraction at bottom, targeting scapular muscles before pulling.",
+  "instructions": [
+    "Take a pronated grip on a pull-up bar.",
+    "From a hanging position, raise yourself a few inches without using your arms. Do this by depressing your shoulder girdle in a reverse shrugging motion.",
+    "Pause at the completion of the movement, and then slowly return to the starting position before performing more repetitions."
+  ],
+  "images": [
+    "/img/exercises/Scapular_Pull-Up/0.jpg",
+    "/img/exercises/Scapular_Pull-Up/1.jpg"
+  ],
+  "alternative_names": [
+    "Pull Up",
+    "Pullup",
+    "Pullups",
+    "Scapular Pull Up"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Scapular_Pull-Up"
+}

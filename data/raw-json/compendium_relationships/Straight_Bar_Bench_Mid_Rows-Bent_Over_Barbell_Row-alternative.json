@@ -1,0 +1,10 @@
+{
+  "id": "Straight_Bar_Bench_Mid_Rows-Bent_Over_Barbell_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": "Both barbell rowing exercises targeting lats and mid-back; bench support reduces lower back stress compared to free-standing bent-over position",
+  "created_by": "system",
+  "created_at": 1730012400,
+  "from_exercise_template_id": "Straight_Bar_Bench_Mid_Rows",
+  "to_exercise_template_id": "Bent_Over_Barbell_Row"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Low Cable Crossover",
+  "slug": "low-cable-crossover",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "FRONT_DELTS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Cable crossover from low pulley position, bringing handles up and together to target lower and inner chest.",
+  "instructions": [
+    "To move into the starting position, place the pulleys at the low position, select the resistance to be used and grasp a handle in each hand.",
+    "Step forward, gaining tension in the pulleys. Your palms should be facing forward, hands below the waist, and your arms straight. This will be your starting position.",
+    "With a slight bend in your arms, draw your hands upward and toward the midline of your body. Your hands should come together in front of your chest, palms facing up.",
+    "Return your arms back to the starting position after a brief pause."
+  ],
+  "images": [
+    "/img/exercises/Low_Cable_Crossover/0.jpg",
+    "/img/exercises/Low_Cable_Crossover/1.jpg"
+  ],
+  "alternative_names": [
+    "Low Cable Machine Crossover",
+    "Low Crossover"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Low_Cable_Crossover"
+}

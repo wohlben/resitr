@@ -1,0 +1,55 @@
+{
+  "name": "Muscle Up",
+  "slug": "muscle-up",
+  "type": "STRENGTH",
+  "force": [
+    "PULL",
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "LATS"
+  ],
+  "secondary_muscles": [
+    "ABS",
+    "BICEPS",
+    "FOREARMS",
+    "RHOMBOIDS",
+    "FRONT_DELTS",
+    "TRAPS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "dip-bars"
+  ],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Advanced gymnastics movement combining pull-up and dip, transitioning from below rings to above in one motion.",
+  "instructions": [
+    "Grip the rings using a false grip, with the base of your palms on top of the rings. Initiate a pull up by pulling the elbows down to your side, flexing the elbows.",
+    "As you reach the top position of the pull-up, pull the rings to your armpits as you roll your shoulders forward, allowing your elbows to move straight back behind you. This puts you into the proper position to continue into the dip portion of the movement.",
+    "Maintaining control and stability, extend through the elbow to complete the motion.",
+    "Use care when lowering yourself to the ground."
+  ],
+  "images": [
+    "/img/exercises/Muscle_Up/0.jpg",
+    "/img/exercises/Muscle_Up/1.jpg"
+  ],
+  "alternative_names": [
+    "Muscle-Up"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Muscle_Up"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Single-Arm Cable Crossover",
+  "slug": "single-arm-cable-crossover",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Cable crossover with single arm, bringing handle across body to target chest unilaterally.",
+  "instructions": [
+    "Begin by moving the pulley to the high position, select the resistance to be used, and grasp a handle in one hand.",
+    "Step forward in front of the pulley with your working arm extended across your body toward the midline. Your head and chest should be up as you lean forward slightly, while your feet should be staggered for stability. This will be your starting position.",
+    "Allow your working arm to extend out to the side in a wide arc, maintaining a slight bend at the elbow. The arm should be perpendicular to the body at approximately shoulder level.",
+    "Return your arm back to the starting position by pulling the handle back across your body to the midline, squeezing your chest.",
+    "Hold for a second at the contracted position and repeat for the prescribed number of repetitions before switching arms."
+  ],
+  "images": [
+    "/img/exercises/Single-Arm_Cable_Crossover/0.jpg",
+    "/img/exercises/Single-Arm_Cable_Crossover/1.jpg"
+  ],
+  "alternative_names": [
+    "Single Arm Cable Crossover",
+    "Single-Arm Cable Machine Crossover",
+    "Single-Arm Crossover"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Single-Arm_Cable_Crossover"
+}

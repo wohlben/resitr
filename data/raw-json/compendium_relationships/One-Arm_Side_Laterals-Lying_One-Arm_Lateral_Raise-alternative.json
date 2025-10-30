@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Side_Laterals-Lying_One-Arm_Lateral_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "One-Arm_Side_Laterals",
+  "to_exercise_template_id": "Lying_One-Arm_Lateral_Raise"
+}

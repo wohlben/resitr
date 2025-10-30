@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Barbell_Bench_Press-Decline_Dumbbell_Bench_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761483992,
+  "from_exercise_template_id": "Decline_Barbell_Bench_Press",
+  "to_exercise_template_id": "Decline_Dumbbell_Bench_Press"
+}

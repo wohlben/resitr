@@ -1,0 +1,48 @@
+{
+  "name": "Smith Machine Overhead Shoulder Press",
+  "slug": "smith-machine-overhead-shoulder-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "SIDE_DELTS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-smith-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Overhead shoulder press on Smith machine, pressing bar overhead with fixed vertical path.",
+  "instructions": [
+    "To begin, place a flat bench (or preferably one with back support) underneath a smith machine. Position the barbell at a height so that when seated on the flat bench, the arms must be almost fully extended to reach the barbell.",
+    "Once you have the correct height, sit slightly in behind the barbell so that there is an imaginary straight line from the tip of your nose to the barbell. Your feet should be stationary. Grab the barbell with the palms facing forward, unlock it and lift it up so that your arms are fully extended. This is the starting position.",
+    "Slowly begin to lower the barbell until it is level with your chin while inhaling.",
+    "Then lift the barbell back to the starting position using your shoulders while exhaling.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Smith_Machine_Overhead_Shoulder_Press/0.jpg",
+    "/img/exercises/Smith_Machine_Overhead_Shoulder_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "Smith Machine Machine Overhead Shoulder Press",
+    "Smith Overhead Shoulder Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Smith_Machine_Overhead_Shoulder_Press"
+}

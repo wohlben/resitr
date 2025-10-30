@@ -1,0 +1,10 @@
+{
+  "id": "Front_Squats_With_Two_Kettlebells-Frankenstein_Squat-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730009000,
+  "from_exercise_template_id": "Front_Squats_With_Two_Kettlebells",
+  "to_exercise_template_id": "Frankenstein_Squat"
+}

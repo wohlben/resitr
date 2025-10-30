@@ -1,0 +1,10 @@
+{
+  "id": "Upward_Stretch-Overhead_Stretch-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Upward_Stretch",
+  "to_exercise_template_id": "Overhead_Stretch"
+}

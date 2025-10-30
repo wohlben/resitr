@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_High-Pulley_Cable_Side_Bends-One-Arm_Side_Deadlift-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "One-Arm_High-Pulley_Cable_Side_Bends",
+  "to_exercise_template_id": "One-Arm_Side_Deadlift"
+}

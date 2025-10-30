@@ -1,0 +1,10 @@
+{
+  "id": "Bottoms-Up_Clean_From_The_Hang_Position-Kettlebell_Dead_Clean-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Bottoms-Up_Clean_From_The_Hang_Position",
+  "to_exercise_template_id": "Kettlebell_Dead_Clean"
+}

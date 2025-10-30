@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Biceps_Cable_Curl-Lying_Cable_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761498077,
+  "from_exercise_template_id": "Standing_Biceps_Cable_Curl",
+  "to_exercise_template_id": "Lying_Cable_Curl"
+}

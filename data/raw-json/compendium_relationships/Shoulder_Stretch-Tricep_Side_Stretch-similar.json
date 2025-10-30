@@ -1,0 +1,10 @@
+{
+  "id": "Shoulder_Stretch-Tricep_Side_Stretch-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": "Both use cross-body arm position but target different muscles - deltoids vs triceps",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Shoulder_Stretch",
+  "to_exercise_template_id": "Tricep_Side_Stretch"
+}

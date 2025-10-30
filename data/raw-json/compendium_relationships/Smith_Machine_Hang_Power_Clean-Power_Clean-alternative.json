@@ -1,0 +1,10 @@
+{
+  "id": "Smith_Machine_Hang_Power_Clean-Power_Clean-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Smith_Machine_Hang_Power_Clean",
+  "to_exercise_template_id": "Power_Clean"
+}

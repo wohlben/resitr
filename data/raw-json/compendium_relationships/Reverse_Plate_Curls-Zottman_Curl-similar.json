@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Plate_Curls-Zottman_Curl-similar",
+  "relationship_type": "similar",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Reverse_Plate_Curls",
+  "to_exercise_template_id": "Zottman_Curl"
+}

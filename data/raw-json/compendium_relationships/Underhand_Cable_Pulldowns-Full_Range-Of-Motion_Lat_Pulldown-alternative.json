@@ -1,0 +1,10 @@
+{
+  "id": "Underhand_Cable_Pulldowns-Full_Range-Of-Motion_Lat_Pulldown-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729931400,
+  "from_exercise_template_id": "Underhand_Cable_Pulldowns",
+  "to_exercise_template_id": "Full_Range-Of-Motion_Lat_Pulldown"
+}

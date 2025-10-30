@@ -1,0 +1,46 @@
+{
+  "name": "Seated Head Harness Neck Resistance",
+  "slug": "seated-head-harness-neck-resistance",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "NECK"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "suspension-trainer"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Seated neck resistance training using head harness with weight for neck strengthening.",
+  "instructions": [
+    "Place a neck strap on the floor at the end of a flat bench. Once you have selected the weights, sit at the end of the flat bench with your feet wider than shoulder width apart from each other. Your toes should be pointed out.",
+    "Slowly move your torso forward until it is almost parallel with the floor. Using both hands, securely position the neck strap around your head. Tip: Make sure the weights are still lying on the floor to prevent any strain on the neck. Now grab the weight with both hands while elevating your torso back until it is almost perpendicular to the floor. Note: Your head and torso needs to be slightly tilted forward to perform this exercise.",
+    "Now place both hands on top of your knees. This is the starting position.",
+    "Slowly lower your neck down until your chin touches the upper part of your chest while breathing in.",
+    "While exhaling, bring your neck back to the starting position.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Seated_Head_Harness_Neck_Resistance/0.jpg",
+    "/img/exercises/Seated_Head_Harness_Neck_Resistance/1.jpg"
+  ],
+  "alternative_names": [
+    "Standing Head Harness Neck Resistance"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Seated_Head_Harness_Neck_Resistance"
+}

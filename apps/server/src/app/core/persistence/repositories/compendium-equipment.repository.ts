@@ -21,7 +21,7 @@ export class CompendiumEquipmentRepository {
 
     return results.map((equipment) => ({
       ...equipment,
-      substitutesFor: equipment.substitutesFor.map((f) => f.fulfillsEquipmentId),
+      substitutesFor: equipment.substitutesFor.map((f) => f.fulfillsEquipmentTemplateId),
     }));
   }
 
@@ -39,7 +39,7 @@ export class CompendiumEquipmentRepository {
 
     return {
       ...result,
-      substitutesFor: result.substitutesFor.map((f) => f.fulfillsEquipmentId),
+      substitutesFor: result.substitutesFor.map((f) => f.fulfillsEquipmentTemplateId),
     };
   }
 

@@ -1,0 +1,10 @@
+{
+  "id": "Kettlebell_Figure_8-Landmine_180s-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761499772,
+  "from_exercise_template_id": "Kettlebell_Figure_8",
+  "to_exercise_template_id": "Landmine_180s"
+}

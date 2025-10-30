@@ -1,0 +1,10 @@
+{
+  "id": "High_Cable_Curls-Triceps_Pushdown_-_Rope_Attachment-superset_with",
+  "relationship_type": "superset_with",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761498077,
+  "from_exercise_template_id": "High_Cable_Curls",
+  "to_exercise_template_id": "Triceps_Pushdown_-_Rope_Attachment"
+}

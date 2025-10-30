@@ -8,16 +8,16 @@ export class CompendiumExerciseRepository {
   constructor(@Inject(DATABASE) private readonly db: Database) {}
 
   async create(data: CompendiumExercise) {
-    const [result] = await this.db.insert(compendiumExercises).values(data).returning();
-    return result;
+    const result = await this.db.insert(compendiumExercises).values(data).returning();
+    return result[0];
   }
 
   async findAll() {
     return this.db.select().from(compendiumExercises);
   }
 
-  async findById(id: string) {
-    const [result] = await this.db.select().from(compendiumExercises).where(eq(compendiumExercises.id, id));
+  async findById(templateId: string) {
+    const [result] = await this.db.select().from(compendiumExercises).where(eq(compendiumExercises.templateId, templateId));
     return result;
   }
 
@@ -30,23 +30,23 @@ export class CompendiumExerciseRepository {
     return this.db.select().from(compendiumExercises).where(eq(compendiumExercises.parentExerciseId, parentExerciseId));
   }
 
-  async update(id: string, data: Partial<CompendiumExercise>) {
+  async update(templateId: string, data: Partial<CompendiumExercise>) {
     const updateData = {
       ...data,
       updatedAt: sql`(unixepoch())`,
       version: sql`${compendiumExercises.version} + 1`,
     };
 
-    const [result] = await this.db
+    const result = await this.db
       .update(compendiumExercises)
       .set(updateData)
-      .where(eq(compendiumExercises.id, id))
+      .where(eq(compendiumExercises.templateId, templateId))
       .returning();
-    return result;
+    return result[0];
   }
 
-  async delete(id: string) {
-    const [result] = await this.db.delete(compendiumExercises).where(eq(compendiumExercises.id, id)).returning();
-    return result;
+  async delete(templateId: string) {
+    const result = await this.db.delete(compendiumExercises).where(eq(compendiumExercises.templateId, templateId)).returning();
+    return result[0];
   }
 }

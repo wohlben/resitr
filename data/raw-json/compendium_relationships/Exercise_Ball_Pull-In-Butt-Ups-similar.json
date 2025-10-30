@@ -1,0 +1,10 @@
+{
+  "id": "Exercise_Ball_Pull-In-Butt-Ups-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Exercise_Ball_Pull-In",
+  "to_exercise_template_id": "Butt-Ups"
+}

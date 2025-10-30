@@ -1,0 +1,10 @@
+{
+  "id": "Rack_Pull_with_Bands-Rack_Pulls-regresses_to",
+  "relationship_type": "regresses_to",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761511019,
+  "from_exercise_template_id": "Rack_Pull_with_Bands",
+  "to_exercise_template_id": "Rack_Pulls"
+}

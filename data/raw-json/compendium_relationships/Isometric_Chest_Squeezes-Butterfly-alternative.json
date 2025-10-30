@@ -1,0 +1,10 @@
+{
+  "id": "Isometric_Chest_Squeezes-Butterfly-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": "Both involve squeezing/bringing hands together to contract chest; Butterfly uses machine",
+  "created_by": "system",
+  "created_at": 1729954800,
+  "from_exercise_template_id": "Isometric_Chest_Squeezes",
+  "to_exercise_template_id": "Butterfly"
+}

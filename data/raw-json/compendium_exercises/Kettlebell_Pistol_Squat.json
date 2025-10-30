@@ -1,0 +1,47 @@
+{
+  "name": "Kettlebell Pistol Squat",
+  "slug": "kettlebell-pistol-squat",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Single-leg squat to full depth holding kettlebell (pistol squat), advanced unilateral leg strength.",
+  "instructions": [
+    "Pick up a kettlebell with two hands and hold it by the horns. Hold one leg off of the floor and squat down on the other.",
+    "Squat down by flexing the knee and sitting back with the hips, holding the kettlebell up in front of you.",
+    "Hold the bottom position for a second and then reverse the motion, driving through the heel and keeping your head and chest up.",
+    "Lower yourself again and repeat."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Pistol_Squat/0.jpg",
+    "/img/exercises/Kettlebell_Pistol_Squat/1.jpg"
+  ],
+  "alternative_names": [
+    "KB Pistol Squat"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Pistol_Squat"
+}

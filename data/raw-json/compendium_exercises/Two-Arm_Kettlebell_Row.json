@@ -1,0 +1,50 @@
+{
+  "name": "Two-Arm Kettlebell Row",
+  "slug": "two-arm-kettlebell-row",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "LATS"
+  ],
+  "secondary_muscles": [
+    "BICEPS",
+    "RHOMBOIDS",
+    "REAR_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "2x kettlebell"
+  ],
+  "body_weight_scaling": 0.1,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "Bent-over row with two kettlebells, rowing both to hips for back development.",
+  "instructions": [
+    "Place two kettlebells in front of your feet. Bend your knees slightly and then push your butt out as much as possible as you bend over to get in the starting position.",
+    "Grab both kettlebells and pull them to your stomach, retracting your shoulder blades and flexing the elbows. Keep your back straight. Lower and repeat."
+  ],
+  "images": [
+    "/img/exercises/Two-Arm_Kettlebell_Row/0.jpg",
+    "/img/exercises/Two-Arm_Kettlebell_Row/1.jpg"
+  ],
+  "alternative_names": [
+    "Bilateral Kettlebell Row",
+    "Both Arms Kettlebell Row",
+    "Two Arm Kettlebell Row",
+    "Two-Arm KB Row"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Two-Arm_Kettlebell_Row"
+}

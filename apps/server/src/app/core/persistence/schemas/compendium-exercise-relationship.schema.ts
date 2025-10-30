@@ -1,21 +1,19 @@
-import { text, real, integer, sqliteTable, uniqueIndex } from 'drizzle-orm/sqlite-core';
+import { text, real, integer, sqliteTable, primaryKey, index } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 import { ExerciseRelationshipType } from '@resitr/api';
 import { compendiumExercises } from './compendium-exercise.schema';
 
 export const compendiumExerciseRelationship = sqliteTable(
-  'compendium_relationships',
+  'compendium_exercise_relationships',
   {
-    id: text('id').primaryKey(),
-    fromExerciseId: text('from_exercise_id')
+    fromExerciseTemplateId: text('from_exercise_template_id')
       .notNull()
-      .references(() => compendiumExercises.id, { onDelete: 'cascade' }),
-    toExerciseId: text('to_exercise_id')
+      .references(() => compendiumExercises.templateId, { onDelete: 'cascade' }),
+    toExerciseTemplateId: text('to_exercise_template_id')
       .notNull()
-      .references(() => compendiumExercises.id, { onDelete: 'cascade' }),
+      .references(() => compendiumExercises.templateId, { onDelete: 'cascade' }),
     relationshipType: text('relationship_type').$type<ExerciseRelationshipType>().notNull(),
 
-    // Optional metadata
     strength: real('strength'), // 0-1, how strong is this relationship
     description: text('description'),
 
@@ -26,7 +24,8 @@ export const compendiumExerciseRelationship = sqliteTable(
       .default(sql`(unixepoch())`),
   },
   (table) => [
-    uniqueIndex('unique_relationship_idx').on(table.fromExerciseId, table.toExerciseId, table.relationshipType),
+    primaryKey({ columns: [table.fromExerciseTemplateId, table.toExerciseTemplateId, table.relationshipType] }),
+    index('to_exercise_idx').on(table.toExerciseTemplateId),
   ]
 );
 

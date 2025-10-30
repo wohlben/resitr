@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Iron_Cross-Cable_Rear_Delt_Fly-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761479173,
+  "from_exercise_template_id": "Cable_Iron_Cross",
+  "to_exercise_template_id": "Cable_Rear_Delt_Fly"
+}

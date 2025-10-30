@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Deadlift-Cable_Deadlifts-regression",
+  "relationship_type": "regression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Barbell_Deadlift",
+  "to_exercise_template_id": "Cable_Deadlifts"
+}

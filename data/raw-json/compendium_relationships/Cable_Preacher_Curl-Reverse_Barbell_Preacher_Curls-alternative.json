@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Preacher_Curl-Reverse_Barbell_Preacher_Curls-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": "Barbell version with pronated (reverse) grip emphasizing brachialis and forearms",
+  "created_by": "system",
+  "created_at": 1761543970,
+  "from_exercise_template_id": "Cable_Preacher_Curl",
+  "to_exercise_template_id": "Reverse_Barbell_Preacher_Curls"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Elbow_to_Knee-Oblique_Crunches-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730073600,
+  "from_exercise_template_id": "Elbow_to_Knee",
+  "to_exercise_template_id": "Oblique_Crunches"
+}

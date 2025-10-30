@@ -1,0 +1,10 @@
+{
+  "id": "Resistance_Band_Squat-Bodyweight_Squat-regression",
+  "relationship_type": "regression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Resistance_Band_Squat",
+  "to_exercise_template_id": "Bodyweight_Squat"
+}

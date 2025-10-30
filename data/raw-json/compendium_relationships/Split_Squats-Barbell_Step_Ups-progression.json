@@ -1,0 +1,10 @@
+{
+  "id": "Split_Squats-Barbell_Step_Ups-progression",
+  "relationship_type": "progression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Split_Squats",
+  "to_exercise_template_id": "Barbell_Step_Ups"
+}

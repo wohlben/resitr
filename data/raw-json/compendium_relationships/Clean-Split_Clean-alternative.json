@@ -1,0 +1,10 @@
+{
+  "id": "Clean-Split_Clean-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Clean",
+  "to_exercise_template_id": "Split_Clean"
+}

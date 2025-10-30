@@ -1,0 +1,46 @@
+{
+  "name": "Weighted Ball Hyperextension",
+  "slug": "weighted-ball-hyperextension",
+  "type": "STRENGTH",
+  "force": [
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "LOWER_BACK"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "stability-ball",
+    "weight-plate"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Back extension (hyperextension) holding weighted ball or medicine ball for added resistance.",
+  "instructions": [
+    "To begin, lie down on an exercise ball with your torso pressing against the ball and parallel to the floor. The ball of your feet should be pressed against the floor to help keep you balanced. Place a weighted plate under your chin or behind your neck. This is the starting position.",
+    "Slowly raise your torso up by bending at the waist and lower back. Remember to exhale during this movement.",
+    "Hold the contraction on your lower back for a second and lower your torso back down to the starting position while inhaling.",
+    "Repeat for the recommended amount of repetitions prescribed in your program."
+  ],
+  "images": [
+    "/img/exercises/Weighted_Ball_Hyperextension/0.jpg",
+    "/img/exercises/Weighted_Ball_Hyperextension/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Weighted_Ball_Hyperextension"
+}

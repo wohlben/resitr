@@ -1,0 +1,57 @@
+{
+  "name": "Push-Ups With Feet On An Exercise Ball",
+  "slug": "push-ups-with-feet-on-an-exercise-ball",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS",
+    "ABS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "stability-ball"
+  ],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Unstable push-up with feet on exercise ball, adding balance challenge and core engagement.",
+  "instructions": [
+    "Lie on the floor face down and place your hands about 36 inches apart from each other holding your torso up at arms length.",
+    "Place your toes on top of an exercise ball. This will allow your body to be elevated.",
+    "Lower yourself until your chest almost touches the floor as you inhale.",
+    "Using your pectoral muscles, press your upper body back up to the starting position and squeeze your chest. Breathe out as you perform this step.",
+    "After a second pause at the contracted position, repeat the movement for the prescribed amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Push-Ups_With_Feet_On_An_Exercise_Ball/0.jpg",
+    "/img/exercises/Push-Ups_With_Feet_On_An_Exercise_Ball/1.jpg"
+  ],
+  "alternative_names": [
+    "Press Up",
+    "Push Up",
+    "Push Ups With Feet On An Exercise Ball",
+    "Push-Ups With Feet On An Gym Ball",
+    "Push-Ups With Feet On An Physio Ball",
+    "Push-Ups With Feet On An Stability Ball",
+    "Push-Ups With Feet On An Swiss Ball",
+    "Pushup",
+    "Pushups"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Push-Ups_With_Feet_On_An_Exercise_Ball"
+}

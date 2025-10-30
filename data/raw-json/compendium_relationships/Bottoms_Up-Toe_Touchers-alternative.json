@@ -1,0 +1,10 @@
+{
+  "id": "Bottoms_Up-Toe_Touchers-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730016000,
+  "from_exercise_template_id": "Bottoms_Up",
+  "to_exercise_template_id": "Toe_Touchers"
+}

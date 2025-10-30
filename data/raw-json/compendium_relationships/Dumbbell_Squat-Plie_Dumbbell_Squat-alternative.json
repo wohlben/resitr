@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Squat-Plie_Dumbbell_Squat-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Dumbbell_Squat",
+  "to_exercise_template_id": "Plie_Dumbbell_Squat"
+}

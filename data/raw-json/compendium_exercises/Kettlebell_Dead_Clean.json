@@ -1,0 +1,49 @@
+{
+  "name": "Kettlebell Dead Clean",
+  "slug": "kettlebell-dead-clean",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK",
+    "FRONT_DELTS",
+    "TRAPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Kettlebell clean from dead stop on ground, explosive pull from floor to rack position.",
+  "instructions": [
+    "Place kettlebell between your feet. To get in the starting position, push your butt back and look straight ahead.",
+    "Clean the kettlebell to your shoulder. Clean the kettlebell to your shoulders by extending through the legs and hips as you raise the kettlebell towards your shoulder. The wrist should rotate as you do so.",
+    "Lower the kettlebell, keeping the hamstrings loaded by keeping your back straight and your butt out."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Dead_Clean/0.jpg",
+    "/img/exercises/Kettlebell_Dead_Clean/1.jpg"
+  ],
+  "alternative_names": [
+    "Barbell Clean",
+    "KB Dead Clean",
+    "Power Clean"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Dead_Clean"
+}

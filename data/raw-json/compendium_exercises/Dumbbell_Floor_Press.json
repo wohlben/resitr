@@ -1,0 +1,46 @@
+{
+  "name": "Dumbbell Floor Press",
+  "slug": "dumbbell-floor-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "2x dumbbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Strength training exercise targeting primary muscle groups",
+  "instructions": [
+    "Lay on the floor holding dumbbells in your hands. Your knees can be bent. Begin with the weights fully extended above you.",
+    "Lower the weights until your upper arm comes in contact with the floor. You can tuck your elbows to emphasize triceps size and strength, or to focus on your chest angle your arms to the side.",
+    "Pause at the bottom, and then bring the weight together at the top by extending through the elbows."
+  ],
+  "images": [
+    "/img/exercises/Dumbbell_Floor_Press/0.jpg",
+    "/img/exercises/Dumbbell_Floor_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "DB Floor Press",
+    "Dumbell Floor Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Dumbbell_Floor_Press"
+}

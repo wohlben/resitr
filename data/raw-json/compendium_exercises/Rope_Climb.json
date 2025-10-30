@@ -1,0 +1,48 @@
+{
+  "name": "Rope Climb",
+  "slug": "rope-climb",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "LATS"
+  ],
+  "secondary_muscles": [
+    "BICEPS",
+    "FOREARMS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Climbing thick rope hand-over-hand, building pulling strength, grip, and full-body coordination.",
+  "instructions": [
+    "Grab the rope with both hands above your head. Pull down on the rope as you take a small jump.",
+    "Wrap the rope around one leg, using your feet to pinch the rope. Reach up as high as possible with your arms, gripping the rope tightly.",
+    "Release the rope from your feet as you pull yourself up with your arms, bringing your knees towards your chest.",
+    "Resecure your feet on the rope, and then stand up to take another high hold on the rope. Continue until you reach the top of the rope.",
+    "To lower yourself, loosen the grip of your feet on the rope as you slide down using a hand over hand motion."
+  ],
+  "images": [
+    "/img/exercises/Rope_Climb/0.jpg",
+    "/img/exercises/Rope_Climb/1.jpg"
+  ],
+  "alternative_names": [
+    "Rope-Climb"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Rope_Climb"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "suspension-trainer",
+  "display_name": "Suspension Trainer",
+  "description": "Adjustable straps with handles for bodyweight resistance training (e.g., TRX).",
+  "category": "accessories",
+  "image_url": null,
+  "template_id": "suspension-trainer"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Russian Twist",
+  "slug": "russian-twist",
+  "type": "STRENGTH",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Seated rotational core exercise twisting side to side with weight, targeting obliques.",
+  "instructions": [
+    "Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.",
+    "Elevate your upper body so that it creates an imaginary V-shape with your thighs. Your arms should be fully extended in front of you perpendicular to your torso and with the hands clasped. This is the starting position.",
+    "Twist your torso to the right side until your arms are parallel with the floor while breathing out.",
+    "Hold the contraction for a second and move back to the starting position while breathing out. Now move to the opposite side performing the same techniques you applied to the right side.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Russian_Twist/0.jpg",
+    "/img/exercises/Russian_Twist/1.jpg"
+  ],
+  "alternative_names": [
+    "Russian Twists",
+    "Russian-Twist",
+    "Seated Russian Twist"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Russian_Twist"
+}

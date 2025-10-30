@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Cable_Lift-Pallof_Press_With_Rotation-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730014800,
+  "from_exercise_template_id": "Standing_Cable_Lift",
+  "to_exercise_template_id": "Pallof_Press_With_Rotation"
+}

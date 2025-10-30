@@ -1,0 +1,10 @@
+{
+  "id": "Heavy_Bag_Thrust-Medicine_Ball_Chest_Pass-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729933200,
+  "from_exercise_template_id": "Heavy_Bag_Thrust",
+  "to_exercise_template_id": "Medicine_Ball_Chest_Pass"
+}

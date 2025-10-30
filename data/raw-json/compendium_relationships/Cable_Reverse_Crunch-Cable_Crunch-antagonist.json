@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Reverse_Crunch-Cable_Crunch-antagonist",
+  "relationship_type": "antagonist",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761479425,
+  "from_exercise_template_id": "Cable_Reverse_Crunch",
+  "to_exercise_template_id": "Cable_Crunch"
+}

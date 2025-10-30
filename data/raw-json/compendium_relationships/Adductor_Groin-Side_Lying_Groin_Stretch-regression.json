@@ -1,0 +1,10 @@
+{
+  "id": "Adductor_Groin-Side_Lying_Groin_Stretch-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Adductor_Groin",
+  "to_exercise_template_id": "Side_Lying_Groin_Stretch"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Single-Leg_Lateral_Hop-Carioca_Quick_Step-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "Single-Leg_Lateral_Hop",
+  "to_exercise_template_id": "Carioca_Quick_Step"
+}

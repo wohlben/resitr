@@ -1,0 +1,39 @@
+{
+  "name": "One Handed Hang",
+  "slug": "one-handed-hang",
+  "type": "STRENGTH",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "FOREARMS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "pull-up-bar"
+  ],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Dead hang from bar with one hand, building grip strength and forearm endurance.",
+  "instructions": [
+    "Grab onto a chinup bar with one hand, using a pronated grip. Keep your feet on the floor or a step. Allow the majority of your weight to hang from that hand, while keeping your feet on the ground. Hold for 10-20 seconds and switch sides."
+  ],
+  "images": [
+    "/img/exercises/One_Handed_Hang/0.jpg",
+    "/img/exercises/One_Handed_Hang/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "One_Handed_Hang"
+}

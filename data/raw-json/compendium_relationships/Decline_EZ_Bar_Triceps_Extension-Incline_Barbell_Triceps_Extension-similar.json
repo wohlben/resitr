@@ -1,0 +1,10 @@
+{
+  "id": "Decline_EZ_Bar_Triceps_Extension-Incline_Barbell_Triceps_Extension-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "dev-user",
+  "created_at": 1729932000,
+  "from_exercise_template_id": "Decline_EZ_Bar_Triceps_Extension",
+  "to_exercise_template_id": "Incline_Barbell_Triceps_Extension"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Concentration_Curls-Standing_Concentration_Curl-variation",
+  "relationship_type": "variation",
+  "strength": 0.85,
+  "description": "Seated variation of concentration curl with same isolation focus",
+  "created_by": "system",
+  "created_at": 1729933200,
+  "from_exercise_template_id": "Concentration_Curls",
+  "to_exercise_template_id": "Standing_Concentration_Curl"
+}

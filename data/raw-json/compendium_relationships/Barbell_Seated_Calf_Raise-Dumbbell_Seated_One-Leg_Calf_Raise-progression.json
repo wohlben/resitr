@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Seated_Calf_Raise-Dumbbell_Seated_One-Leg_Calf_Raise-progression",
+  "relationship_type": "progression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Barbell_Seated_Calf_Raise",
+  "to_exercise_template_id": "Dumbbell_Seated_One-Leg_Calf_Raise"
+}

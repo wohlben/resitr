@@ -1,0 +1,10 @@
+{
+  "id": "Face_Pull-Band_Pull_Apart-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Face_Pull",
+  "to_exercise_template_id": "Band_Pull_Apart"
+}

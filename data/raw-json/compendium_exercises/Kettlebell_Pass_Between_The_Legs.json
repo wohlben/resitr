@@ -1,0 +1,45 @@
+{
+  "name": "Kettlebell Pass Between The Legs",
+  "slug": "kettlebell-pass-between-the-legs",
+  "type": "CARDIO",
+  "force": [
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS",
+    "GLUTES"
+  ],
+  "secondary_muscles": [
+    "ABS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0.3,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Dynamic exercise passing kettlebell hand-to-hand between legs, combining hip hinge with coordination.",
+  "instructions": [
+    "Place one kettlebell between your legs and take a comfortable stance. Bend over by pushing your butt out and keeping your back flat.",
+    "Pick up a kettlebell and pass it to your other hand between your legs, in the fashion of a \"W\". Go back and forth for several repetitions."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Pass_Between_The_Legs/0.jpg",
+    "/img/exercises/Kettlebell_Pass_Between_The_Legs/1.jpg"
+  ],
+  "alternative_names": [
+    "KB Pass Between The Legs"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Pass_Between_The_Legs"
+}

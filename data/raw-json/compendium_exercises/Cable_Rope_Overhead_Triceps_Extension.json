@@ -1,0 +1,45 @@
+{
+  "name": "Cable Rope Overhead Triceps Extension",
+  "slug": "cable-rope-overhead-triceps-extension",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "TRICEPS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Overhead cable triceps extension with rope attachment, extending arms overhead to isolate triceps through elbow extension",
+  "instructions": [
+    "Attach a rope to the bottom pulley of the pulley machine.",
+    "Grasping the rope with both hands, extend your arms with your hands directly above your head using a neutral grip (palms facing each other). Your elbows should be in close to your head and the arms should be perpendicular to the floor with the knuckles aimed at the ceiling. This will be your starting position.",
+    "Slowly lower the rope behind your head as you hold the upper arms stationary. Inhale as you perform this movement and pause when your triceps are fully stretched.",
+    "Return to the starting position by flexing your triceps as you breathe out.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Cable_Rope_Overhead_Triceps_Extension/0.jpg",
+    "/img/exercises/Cable_Rope_Overhead_Triceps_Extension/1.jpg"
+  ],
+  "alternative_names": [
+    "Cable Machine Rope Overhead Triceps Extension",
+    "Rope Overhead Triceps Extension"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Cable_Rope_Overhead_Triceps_Extension"
+}

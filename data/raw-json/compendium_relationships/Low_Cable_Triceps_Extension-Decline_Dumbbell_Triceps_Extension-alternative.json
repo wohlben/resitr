@@ -1,0 +1,10 @@
+{
+  "id": "Low_Cable_Triceps_Extension-Decline_Dumbbell_Triceps_Extension-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729893600,
+  "from_exercise_template_id": "Low_Cable_Triceps_Extension",
+  "to_exercise_template_id": "Decline_Dumbbell_Triceps_Extension"
+}

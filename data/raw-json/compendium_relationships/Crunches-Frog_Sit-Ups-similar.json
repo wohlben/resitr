@@ -1,0 +1,10 @@
+{
+  "id": "Crunches-Frog_Sit-Ups-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761494891,
+  "from_exercise_template_id": "Crunches",
+  "to_exercise_template_id": "Frog_Sit-Ups"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Shoulder Raise",
+  "slug": "shoulder-raise",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "TRAPS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Bodyweight shoulder shrug elevating shoulders to isolate upper trapezius without equipment.",
+  "instructions": [
+    "Relax your arms to your sides and raise your shoulders up toward your ears, then back down."
+  ],
+  "images": [
+    "/img/exercises/Shoulder_Raise/0.jpg",
+    "/img/exercises/Shoulder_Raise/1.jpg"
+  ],
+  "alternative_names": [
+    "Shoulder-Raise"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Shoulder_Raise"
+}

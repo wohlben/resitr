@@ -1,0 +1,10 @@
+{
+  "id": "Finger_Curls-Cable_Wrist_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Finger_Curls",
+  "to_exercise_template_id": "Cable_Wrist_Curl"
+}

@@ -23,7 +23,7 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     // Create test exercises
     testExercise1 = await exerciseRepository.create({
-      id: 'exercise-1',
+      templateId: 'exercise-1',
       name: 'Bench Press',
       slug: 'bench-press',
       type: ExerciseType.STRENGTH,
@@ -38,7 +38,7 @@ describe('CompendiumExerciseVideoRepository', () => {
     });
 
     testExercise2 = await exerciseRepository.create({
-      id: 'exercise-2',
+      templateId: 'exercise-2',
       name: 'Squat',
       slug: 'squat',
       type: ExerciseType.STRENGTH,
@@ -60,7 +60,7 @@ describe('CompendiumExerciseVideoRepository', () => {
   describe('create', () => {
     it('should create a new video with all fields', async () => {
       const videoData: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=example1',
         title: 'How to Bench Press',
         description: 'A comprehensive guide to bench pressing',
@@ -71,8 +71,7 @@ describe('CompendiumExerciseVideoRepository', () => {
       const result = await repository.create(videoData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBeDefined();
-      expect(result.compendiumExerciseId).toBe(testExercise1.id);
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
       expect(result.url).toBe('https://youtube.com/watch?v=example1');
       expect(result.title).toBe('How to Bench Press');
       expect(result.description).toBe('A comprehensive guide to bench pressing');
@@ -83,7 +82,7 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should create video with minimal required fields', async () => {
       const videoData: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=example2',
         createdBy: 'user-1',
       };
@@ -91,7 +90,7 @@ describe('CompendiumExerciseVideoRepository', () => {
       const result = await repository.create(videoData);
 
       expect(result).toBeDefined();
-      expect(result.compendiumExerciseId).toBe(testExercise1.id);
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
       expect(result.url).toBe('https://youtube.com/watch?v=example2');
       expect(result.title).toBeNull();
       expect(result.description).toBeNull();
@@ -100,14 +99,14 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should create multiple videos for same exercise', async () => {
       const video1: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video1',
         title: 'Video 1',
         createdBy: 'user-1',
       };
 
       const video2: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video2',
         title: 'Video 2',
         createdBy: 'user-1',
@@ -118,26 +117,26 @@ describe('CompendiumExerciseVideoRepository', () => {
 
       expect(result1).toBeDefined();
       expect(result2).toBeDefined();
-      expect(result1.id).not.toBe(result2.id);
+      expect(result1.url).not.toBe(result2.url);
     });
 
     it('should create videos with different video sources', async () => {
       const youtubeVideo: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=abc',
         video_source: VideoSource.YOUTUBE,
         createdBy: 'user-1',
       };
 
       const tiktokVideo: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://tiktok.com/@user/video/123',
         video_source: VideoSource.TIKTOK,
         createdBy: 'user-1',
       };
 
       const otherVideo: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://example.com/video',
         video_source: VideoSource.OTHER,
         createdBy: 'user-1',
@@ -154,7 +153,7 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should fail when creating duplicate video (same exercise and url)', async () => {
       const videoData: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=duplicate',
         createdBy: 'user-1',
       };
@@ -162,7 +161,7 @@ describe('CompendiumExerciseVideoRepository', () => {
       await repository.create(videoData);
 
       const duplicateData: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id, // Same exercise
+        exerciseTemplateId: testExercise1.templateId, // Same exercise
         url: 'https://youtube.com/watch?v=duplicate', // Same URL
         title: 'Different Title',
         createdBy: 'user-2',
@@ -173,13 +172,13 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should allow same url for different exercises', async () => {
       const video1: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=shared',
         createdBy: 'user-1',
       };
 
       const video2: CompendiumExerciseVideo = {
-        compendiumExerciseId: testExercise2.id, // Different exercise
+        exerciseTemplateId: testExercise2.templateId, // Different exercise
         url: 'https://youtube.com/watch?v=shared', // Same URL
         createdBy: 'user-1',
       };
@@ -193,7 +192,7 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should fail when creating video with non-existent exercise', async () => {
       const videoData: CompendiumExerciseVideo = {
-        compendiumExerciseId: 'non-existent-exercise',
+        exerciseTemplateId: 'non-existent-exercise',
         url: 'https://youtube.com/watch?v=test',
         createdBy: 'user-1',
       };
@@ -210,21 +209,21 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should return all videos', async () => {
       await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video1',
         title: 'Video 1',
         createdBy: 'user-1',
       });
 
       await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video2',
         title: 'Video 2',
         createdBy: 'user-1',
       });
 
       await repository.create({
-        compendiumExerciseId: testExercise2.id,
+        exerciseTemplateId: testExercise2.templateId,
         url: 'https://youtube.com/watch?v=video3',
         title: 'Video 3',
         createdBy: 'user-1',
@@ -236,26 +235,27 @@ describe('CompendiumExerciseVideoRepository', () => {
     });
   });
 
-  describe('findById', () => {
-    it('should find video by id', async () => {
+  describe('findByCompositeKey', () => {
+    it('should find video by composite key', async () => {
       const created = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=test',
         title: 'Test Video',
         description: 'Test description',
         createdBy: 'user-1',
       });
 
-      const result = await repository.findById(created.id);
+      const result = await repository.findByCompositeKey(testExercise1.templateId, created.url);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(created.id);
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.url).toBe(created.url);
       expect(result.title).toBe('Test Video');
       expect(result.description).toBe('Test description');
     });
 
     it('should return undefined when video not found', async () => {
-      const result = await repository.findById(999999);
+      const result = await repository.findByCompositeKey(testExercise1.templateId, 'https://youtube.com/watch?v=nonexistent');
       expect(result).toBeUndefined();
     });
   });
@@ -263,34 +263,34 @@ describe('CompendiumExerciseVideoRepository', () => {
   describe('findByExerciseId', () => {
     it('should find all videos for a specific exercise', async () => {
       await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=ex1-video1',
         title: 'Exercise 1 Video 1',
         createdBy: 'user-1',
       });
 
       await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=ex1-video2',
         title: 'Exercise 1 Video 2',
         createdBy: 'user-1',
       });
 
       await repository.create({
-        compendiumExerciseId: testExercise2.id,
+        exerciseTemplateId: testExercise2.templateId,
         url: 'https://youtube.com/watch?v=ex2-video1',
         title: 'Exercise 2 Video 1',
         createdBy: 'user-1',
       });
 
-      const result = await repository.findByExerciseId(testExercise1.id);
+      const result = await repository.findByExerciseId(testExercise1.templateId);
 
       expect(result).toHaveLength(2);
-      expect(result.every((v) => v.compendiumExerciseId === testExercise1.id)).toBe(true);
+      expect(result.every((v) => v.exerciseTemplateId === testExercise1.templateId)).toBe(true);
     });
 
     it('should return empty array when exercise has no videos', async () => {
-      const result = await repository.findByExerciseId(testExercise1.id);
+      const result = await repository.findByExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
     });
   });
@@ -298,7 +298,7 @@ describe('CompendiumExerciseVideoRepository', () => {
   describe('update', () => {
     it('should update video fields', async () => {
       const created = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=update-test',
         title: 'Original Title',
         createdBy: 'user-1',
@@ -310,35 +310,18 @@ describe('CompendiumExerciseVideoRepository', () => {
         video_source: VideoSource.YOUTUBE,
       };
 
-      const result = await repository.update(created.id, updateData);
+      const result = await repository.update(testExercise1.templateId, created.url, updateData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(created.id);
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
       expect(result.title).toBe('Updated Title');
       expect(result.description).toBe('New description');
       expect(result.video_source).toBe(VideoSource.YOUTUBE);
       expect(result.url).toBe('https://youtube.com/watch?v=update-test'); // Unchanged
     });
 
-    it('should update url field', async () => {
-      const created = await repository.create({
-        compendiumExerciseId: testExercise1.id,
-        url: 'https://youtube.com/watch?v=old',
-        title: 'Test Video',
-        createdBy: 'user-1',
-      });
-
-      const result = await repository.update(created.id, {
-        url: 'https://youtube.com/watch?v=new',
-      });
-
-      expect(result).toBeDefined();
-      expect(result.url).toBe('https://youtube.com/watch?v=new');
-      expect(result.title).toBe('Test Video'); // Unchanged
-    });
-
     it('should return undefined when updating non-existent video', async () => {
-      const result = await repository.update(999999, {
+      const result = await repository.update(testExercise1.templateId, 'https://youtube.com/watch?v=nonexistent', {
         title: 'Updated Title',
       });
 
@@ -347,7 +330,7 @@ describe('CompendiumExerciseVideoRepository', () => {
 
     it('should be able to clear optional fields', async () => {
       const created = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=test',
         title: 'Some Title',
         description: 'Some description',
@@ -355,7 +338,7 @@ describe('CompendiumExerciseVideoRepository', () => {
         createdBy: 'user-1',
       });
 
-      const result = await repository.update(created.id, {
+      const result = await repository.update(testExercise1.templateId, created.url, {
         title: null,
         description: null,
         video_source: null,
@@ -369,135 +352,108 @@ describe('CompendiumExerciseVideoRepository', () => {
   });
 
   describe('delete', () => {
-    it('should delete video by id', async () => {
+    it('should delete video by composite key', async () => {
       const created = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=delete-test',
         title: 'To Be Deleted',
         createdBy: 'user-1',
       });
 
-      const result = await repository.delete(created.id);
+      const result = await repository.delete(testExercise1.templateId, created.url);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(created.id);
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.url).toBe(created.url);
 
       // Verify it's actually deleted
-      const found = await repository.findById(created.id);
+      const found = await repository.findByCompositeKey(testExercise1.templateId, created.url);
       expect(found).toBeUndefined();
     });
 
     it('should return undefined when deleting non-existent video', async () => {
-      const result = await repository.delete(999999);
+      const result = await repository.delete(testExercise1.templateId, 'https://youtube.com/watch?v=nonexistent');
       expect(result).toBeUndefined();
     });
 
     it('should only delete specific video, not others', async () => {
       const video1 = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video1',
         title: 'Video 1',
         createdBy: 'user-1',
       });
 
       const video2 = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video2',
         title: 'Video 2',
         createdBy: 'user-1',
       });
 
-      await repository.delete(video1.id);
+      await repository.delete(testExercise1.templateId, video1.url);
 
       // Verify the other video still exists
-      const found = await repository.findById(video2.id);
+      const found = await repository.findByCompositeKey(testExercise1.templateId, video2.url);
       expect(found).toBeDefined();
     });
 
     it('should delete and allow recreation with same url for same exercise', async () => {
       const created = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=reusable',
         title: 'Original Video',
         createdBy: 'user-1',
       });
 
-      await repository.delete(created.id);
+      await repository.delete(testExercise1.templateId, created.url);
 
       // Should be able to create new video with same exercise and url
       const newVideo = await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=reusable',
         title: 'New Video',
         createdBy: 'user-1',
       });
 
       expect(newVideo).toBeDefined();
-      expect(newVideo.id).not.toBe(created.id);
+      expect(newVideo.url).toBe(created.url);
     });
   });
 
   describe('cascading deletes', () => {
     it('should delete all videos when exercise is deleted', async () => {
       await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video1',
         title: 'Video 1',
         createdBy: 'user-1',
       });
 
       await repository.create({
-        compendiumExerciseId: testExercise1.id,
+        exerciseTemplateId: testExercise1.templateId,
         url: 'https://youtube.com/watch?v=video2',
         title: 'Video 2',
         createdBy: 'user-1',
       });
 
       await repository.create({
-        compendiumExerciseId: testExercise2.id,
+        exerciseTemplateId: testExercise2.templateId,
         url: 'https://youtube.com/watch?v=video3',
         title: 'Video 3',
         createdBy: 'user-1',
       });
 
       // Delete exercise 1
-      await exerciseRepository.delete(testExercise1.id);
+      await exerciseRepository.delete(testExercise1.templateId);
 
       // Verify all videos for exercise 1 are deleted
-      const result = await repository.findByExerciseId(testExercise1.id);
+      const result = await repository.findByExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
 
       // Verify videos for exercise 2 still exist
-      const exercise2Videos = await repository.findByExerciseId(testExercise2.id);
+      const exercise2Videos = await repository.findByExerciseId(testExercise2.templateId);
       expect(exercise2Videos).toHaveLength(1);
-    });
-  });
-
-  describe('auto-increment id', () => {
-    it('should auto-increment id for each new video', async () => {
-      const video1 = await repository.create({
-        compendiumExerciseId: testExercise1.id,
-        url: 'https://youtube.com/watch?v=auto1',
-        createdBy: 'user-1',
-      });
-
-      const video2 = await repository.create({
-        compendiumExerciseId: testExercise1.id,
-        url: 'https://youtube.com/watch?v=auto2',
-        createdBy: 'user-1',
-      });
-
-      const video3 = await repository.create({
-        compendiumExerciseId: testExercise2.id,
-        url: 'https://youtube.com/watch?v=auto3',
-        createdBy: 'user-1',
-      });
-
-      expect(video1.id).toBeDefined();
-      expect(video2.id).toBeDefined();
-      expect(video3.id).toBeDefined();
-      expect(video2.id).toBeGreaterThan(video1.id);
-      expect(video3.id).toBeGreaterThan(video2.id);
     });
   });
 });

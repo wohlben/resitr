@@ -1,0 +1,10 @@
+{
+  "id": "Seated_Dumbbell_Palms-Down_Wrist_Curl-Cable_Wrist_Curl-antagonist",
+  "relationship_type": "antagonist",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761479701,
+  "from_exercise_template_id": "Seated_Dumbbell_Palms-Down_Wrist_Curl",
+  "to_exercise_template_id": "Cable_Wrist_Curl"
+}

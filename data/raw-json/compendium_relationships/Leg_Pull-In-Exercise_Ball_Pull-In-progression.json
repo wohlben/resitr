@@ -1,0 +1,10 @@
+{
+  "id": "Leg_Pull-In-Exercise_Ball_Pull-In-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": "Ball version adds plank position and instability for greater core challenge",
+  "created_by": "system",
+  "created_at": 1761509905,
+  "from_exercise_template_id": "Leg_Pull-In",
+  "to_exercise_template_id": "Exercise_Ball_Pull-In"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Low_Cable_Triceps_Extension-Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729893600,
+  "from_exercise_template_id": "Low_Cable_Triceps_Extension",
+  "to_exercise_template_id": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
+}

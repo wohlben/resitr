@@ -1,0 +1,44 @@
+{
+  "name": "Rope Jumping",
+  "slug": "rope-jumping",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CALVES"
+  ],
+  "secondary_muscles": [
+    "QUADS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Jump rope cardio exercise for conditioning, coordination, and calf endurance.",
+  "instructions": [
+    "Hold an end of the rope in each hand. Position the rope behind you on the ground. Raise your arms up and turn the rope over your head bringing it down in front of you. When it reaches the ground, jump over it. Find a good turning pace that can be maintained. Different speeds and techniques can be used to introduce variation.",
+    "Rope jumping is exciting, challenges your coordination, and requires a lot of energy. A 150 lb person will burn about 350 calories jumping rope for 30 minutes, compared to over 450 calories running."
+  ],
+  "images": [
+    "/img/exercises/Rope_Jumping/0.jpg",
+    "/img/exercises/Rope_Jumping/1.jpg"
+  ],
+  "alternative_names": [
+    "Rope-Jumping"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Rope_Jumping"
+}

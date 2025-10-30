@@ -1,0 +1,10 @@
+{
+  "id": "T-Bar_Row_with_Handle-Leverage_Iso_Row-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729900800,
+  "from_exercise_template_id": "T-Bar_Row_with_Handle",
+  "to_exercise_template_id": "Leverage_Iso_Row"
+}

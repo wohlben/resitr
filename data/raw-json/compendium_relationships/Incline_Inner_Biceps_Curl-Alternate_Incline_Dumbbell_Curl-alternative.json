@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Inner_Biceps_Curl-Alternate_Incline_Dumbbell_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Incline_Inner_Biceps_Curl",
+  "to_exercise_template_id": "Alternate_Incline_Dumbbell_Curl"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Reverse_Crunch-Leg_Pull-In-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": "Flat floor position reduces difficulty by removing decline angle",
+  "created_by": "system",
+  "created_at": 1761509905,
+  "from_exercise_template_id": "Decline_Reverse_Crunch",
+  "to_exercise_template_id": "Leg_Pull-In"
+}

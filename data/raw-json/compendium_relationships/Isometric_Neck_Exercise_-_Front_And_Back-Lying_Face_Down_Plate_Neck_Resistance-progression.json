@@ -1,0 +1,10 @@
+{
+  "id": "Isometric_Neck_Exercise_-_Front_And_Back-Lying_Face_Down_Plate_Neck_Resistance-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": "Progression from bodyweight isometric neck training to weighted dynamic neck extension with plate resistance, adding external load and increased difficulty.",
+  "created_by": "system",
+  "created_at": 1761509530,
+  "from_exercise_template_id": "Isometric_Neck_Exercise_-_Front_And_Back",
+  "to_exercise_template_id": "Lying_Face_Down_Plate_Neck_Resistance"
+}

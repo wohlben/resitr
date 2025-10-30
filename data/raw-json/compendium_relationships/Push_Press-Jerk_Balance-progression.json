@@ -1,0 +1,10 @@
+{
+  "id": "Push_Press-Jerk_Balance-progression",
+  "relationship_type": "progression",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761510000,
+  "from_exercise_template_id": "Push_Press",
+  "to_exercise_template_id": "Jerk_Balance"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Rocking_Standing_Calf_Raise-Smith_Machine_Calf_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Rocking_Standing_Calf_Raise",
+  "to_exercise_template_id": "Smith_Machine_Calf_Raise"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Rocking_Standing_Calf_Raise-Standing_Dumbbell_Calf_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Rocking_Standing_Calf_Raise",
+  "to_exercise_template_id": "Standing_Dumbbell_Calf_Raise"
+}

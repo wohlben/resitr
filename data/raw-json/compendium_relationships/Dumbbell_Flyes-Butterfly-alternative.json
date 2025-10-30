@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Flyes-Butterfly-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761478260,
+  "from_exercise_template_id": "Dumbbell_Flyes",
+  "to_exercise_template_id": "Butterfly"
+}

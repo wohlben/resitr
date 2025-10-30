@@ -1,0 +1,10 @@
+{
+  "id": "Snatch_Balance-Heaving_Snatch_Balance-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761496481,
+  "from_exercise_template_id": "Snatch_Balance",
+  "to_exercise_template_id": "Heaving_Snatch_Balance"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Seated Barbell Twist",
+  "slug": "seated-barbell-twist",
+  "type": "STRENGTH",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "barbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Seated barbell twist holding bar behind neck, rotating torso side to side for obliques.",
+  "instructions": [
+    "Start out by sitting at the end of a flat bench with a barbell placed on top of your thighs. Your feet should be shoulder width apart from each other.",
+    "Grip the bar with your palms facing down and make sure your hands are wider than shoulder width apart from each other. Begin to lift the barbell up over your head until your arms are fully extended.",
+    "Now lower the barbell behind your head until it is resting along the base of your neck. This is the starting position.",
+    "While keeping your feet and head stationary, move your waist from side to side so that your oblique muscles feel the contraction. Only move from side to side as far as your waist will allow you to go. Stretching or moving too far can cause an injury to occur. Tip: Use a slow and controlled motion.",
+    "Remember to breathe out while twisting your body to the side and in when moving back to the starting position.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Seated_Barbell_Twist/0.jpg",
+    "/img/exercises/Seated_Barbell_Twist/1.jpg"
+  ],
+  "alternative_names": [
+    "Seated BB Twist",
+    "Seated Bar Twist",
+    "Seated Barbell Twist",
+    "Standing Barbell Twist"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Seated_Barbell_Twist"
+}

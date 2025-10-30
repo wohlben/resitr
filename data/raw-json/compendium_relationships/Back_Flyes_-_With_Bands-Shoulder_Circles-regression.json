@@ -1,0 +1,10 @@
+{
+  "id": "Back_Flyes_-_With_Bands-Shoulder_Circles-regression",
+  "relationship_type": "regression",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Back_Flyes_-_With_Bands",
+  "to_exercise_template_id": "Shoulder_Circles"
+}

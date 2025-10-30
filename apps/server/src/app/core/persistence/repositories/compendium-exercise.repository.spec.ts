@@ -22,7 +22,7 @@ describe('CompendiumExerciseRepository', () => {
   describe('create', () => {
     it('should create a new exercise with all fields', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Bench Press',
         slug: 'bench-press',
         type: ExerciseType.STRENGTH,
@@ -45,7 +45,7 @@ describe('CompendiumExerciseRepository', () => {
       const result = await repository.create(exerciseData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(exerciseData.id);
+      expect(result.templateId).toBe(exerciseData.templateId);
       expect(result.name).toBe(exerciseData.name);
       expect(result.slug).toBe(exerciseData.slug);
       expect(result.type).toBe(exerciseData.type);
@@ -69,7 +69,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should create exercise with minimal required fields', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-2',
+        templateId: 'ex-2',
         name: 'Push Up',
         slug: 'push-up',
         type: ExerciseType.STRENGTH,
@@ -86,7 +86,7 @@ describe('CompendiumExerciseRepository', () => {
       const result = await repository.create(exerciseData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(exerciseData.id);
+      expect(result.templateId).toBe(exerciseData.templateId);
       expect(result.name).toBe(exerciseData.name);
       expect(result.description).toBeNull();
       expect(result.authorName).toBeNull();
@@ -96,7 +96,7 @@ describe('CompendiumExerciseRepository', () => {
     it('should create exercise with parent exercise reference', async () => {
       // Create parent exercise first
       const parentExercise: CompendiumExercise = {
-        id: 'parent-ex-1',
+        templateId: 'parent-ex-1',
         name: 'Standard Squat',
         slug: 'standard-squat',
         type: ExerciseType.STRENGTH,
@@ -114,7 +114,7 @@ describe('CompendiumExerciseRepository', () => {
 
       // Create variant exercise
       const variantExercise: CompendiumExercise = {
-        id: 'variant-ex-1',
+        templateId: 'variant-ex-1',
         name: 'Front Squat',
         slug: 'front-squat',
         type: ExerciseType.STRENGTH,
@@ -137,7 +137,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should fail when creating exercise with duplicate id', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-3',
+        templateId: 'ex-3',
         name: 'Deadlift',
         slug: 'deadlift',
         type: ExerciseType.STRENGTH,
@@ -164,7 +164,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should fail when creating exercise with duplicate slug', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-4',
+        templateId: 'ex-4',
         name: 'Pull Up',
         slug: 'pull-up',
         type: ExerciseType.STRENGTH,
@@ -182,7 +182,7 @@ describe('CompendiumExerciseRepository', () => {
 
       const duplicateData: CompendiumExercise = {
         ...exerciseData,
-        id: 'ex-5',
+        templateId: 'ex-5',
         name: 'Different Name',
         // Same slug
       };
@@ -199,7 +199,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should return all exercises', async () => {
       const exercise1: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Squat',
         slug: 'squat',
         type: ExerciseType.STRENGTH,
@@ -214,7 +214,7 @@ describe('CompendiumExerciseRepository', () => {
       };
 
       const exercise2: CompendiumExercise = {
-        id: 'ex-2',
+        templateId: 'ex-2',
         name: 'Running',
         slug: 'running',
         type: ExerciseType.CARDIO,
@@ -242,7 +242,7 @@ describe('CompendiumExerciseRepository', () => {
   describe('findById', () => {
     it('should find exercise by id', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Plank',
         slug: 'plank',
         type: ExerciseType.STRENGTH,
@@ -261,7 +261,7 @@ describe('CompendiumExerciseRepository', () => {
       const result = await repository.findById('ex-1');
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('ex-1');
+      expect(result.templateId).toBe('ex-1');
       expect(result.name).toBe('Plank');
       expect(result.slug).toBe('plank');
     });
@@ -275,7 +275,7 @@ describe('CompendiumExerciseRepository', () => {
   describe('findBySlug', () => {
     it('should find exercise by slug', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Bicep Curl',
         slug: 'bicep-curl',
         type: ExerciseType.STRENGTH,
@@ -295,7 +295,7 @@ describe('CompendiumExerciseRepository', () => {
 
       expect(result).toBeDefined();
       expect(result.slug).toBe('bicep-curl');
-      expect(result.id).toBe('ex-1');
+      expect(result.templateId).toBe('ex-1');
     });
 
     it('should return undefined when exercise not found by slug', async () => {
@@ -308,7 +308,7 @@ describe('CompendiumExerciseRepository', () => {
     it('should find all child exercises by parent id', async () => {
       // Create parent exercise
       const parentExercise: CompendiumExercise = {
-        id: 'parent-1',
+        templateId: 'parent-1',
         name: 'Standard Push Up',
         slug: 'standard-push-up',
         type: ExerciseType.STRENGTH,
@@ -326,7 +326,7 @@ describe('CompendiumExerciseRepository', () => {
 
       // Create child exercises
       const variant1: CompendiumExercise = {
-        id: 'variant-1',
+        templateId: 'variant-1',
         name: 'Diamond Push Up',
         slug: 'diamond-push-up',
         type: ExerciseType.STRENGTH,
@@ -342,7 +342,7 @@ describe('CompendiumExerciseRepository', () => {
       };
 
       const variant2: CompendiumExercise = {
-        id: 'variant-2',
+        templateId: 'variant-2',
         name: 'Wide Push Up',
         slug: 'wide-push-up',
         type: ExerciseType.STRENGTH,
@@ -375,7 +375,7 @@ describe('CompendiumExerciseRepository', () => {
   describe('update', () => {
     it('should update exercise fields', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Rowing',
         slug: 'rowing',
         type: ExerciseType.CARDIO,
@@ -400,7 +400,7 @@ describe('CompendiumExerciseRepository', () => {
       const result = await repository.update('ex-1', updateData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('ex-1');
+      expect(result.templateId).toBe('ex-1');
       expect(result.name).toBe('Rowing'); // Unchanged
       expect(result.description).toBe('A great full-body cardio exercise'); // Updated
       expect(result.technicalDifficulty).toBe(TechnicalDifficulty.INTERMEDIATE); // Updated
@@ -411,7 +411,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should increment version on each update', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Test Exercise',
         slug: 'test-exercise',
         type: ExerciseType.STRENGTH,
@@ -447,7 +447,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should be able to clear optional fields', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Test',
         slug: 'test',
         type: ExerciseType.STRENGTH,
@@ -479,7 +479,7 @@ describe('CompendiumExerciseRepository', () => {
   describe('delete', () => {
     it('should delete exercise by id', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'To Be Deleted',
         slug: 'to-be-deleted',
         type: ExerciseType.STRENGTH,
@@ -498,7 +498,7 @@ describe('CompendiumExerciseRepository', () => {
       const result = await repository.delete('ex-1');
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('ex-1');
+      expect(result.templateId).toBe('ex-1');
 
       // Verify it's actually deleted
       const found = await repository.findById('ex-1');
@@ -512,7 +512,7 @@ describe('CompendiumExerciseRepository', () => {
 
     it('should delete and allow recreation with same slug', async () => {
       const exerciseData: CompendiumExercise = {
-        id: 'ex-1',
+        templateId: 'ex-1',
         name: 'Reusable',
         slug: 'reusable-slug',
         type: ExerciseType.STRENGTH,
@@ -531,7 +531,7 @@ describe('CompendiumExerciseRepository', () => {
 
       // Should be able to create new exercise with same slug
       const newExerciseData: CompendiumExercise = {
-        id: 'ex-2',
+        templateId: 'ex-2',
         name: 'New Exercise',
         slug: 'reusable-slug',
         type: ExerciseType.STRENGTH,
@@ -547,13 +547,13 @@ describe('CompendiumExerciseRepository', () => {
 
       const result = await repository.create(newExerciseData);
       expect(result).toBeDefined();
-      expect(result.id).toBe('ex-2');
+      expect(result.templateId).toBe('ex-2');
     });
 
     it('should fail to delete parent when children exist (foreign key constraint)', async () => {
       // Create parent
       const parentExercise: CompendiumExercise = {
-        id: 'parent-1',
+        templateId: 'parent-1',
         name: 'Parent',
         slug: 'parent',
         type: ExerciseType.STRENGTH,
@@ -571,7 +571,7 @@ describe('CompendiumExerciseRepository', () => {
 
       // Create child
       const childExercise: CompendiumExercise = {
-        id: 'child-1',
+        templateId: 'child-1',
         name: 'Child',
         slug: 'child',
         type: ExerciseType.STRENGTH,

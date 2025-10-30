@@ -1,0 +1,52 @@
+{
+  "name": "Single-Arm Push-Up",
+  "slug": "single-arm-push-up",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS",
+    "ABS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Push-up performed on one arm while other arm is behind back or out to side, advanced unilateral press.",
+  "instructions": [
+    "Begin laying prone on the ground. Move yourself into a position supporting your weight on your toes and one arm. Your working arm should be placed directly under the shoulder, fully extended. Your legs should be extended, and for this movement you may need a wider base, placing your feet further apart than in a normal push-up.",
+    "Maintain good posture, and place your free hand behind your back. This will be your starting position.",
+    "Lower yourself by allowing the elbow to flex until you touch the ground.",
+    "Descend slowly, and reverse direction be extending the arm to return to the starting position."
+  ],
+  "images": [
+    "/img/exercises/Single-Arm_Push-Up/0.jpg",
+    "/img/exercises/Single-Arm_Push-Up/1.jpg"
+  ],
+  "alternative_names": [
+    "Press Up",
+    "Push Up",
+    "Pushup",
+    "Pushups",
+    "Single Arm Push Up"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Single-Arm_Push-Up"
+}

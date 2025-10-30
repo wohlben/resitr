@@ -1,0 +1,51 @@
+{
+  "name": "Incline Push-Up Depth Jump",
+  "slug": "incline-push-up-depth-jump",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Plyometric incline push-up with depth jump element, explosive power training.",
+  "instructions": [
+    "For this drill you will need a box about 12 inches high, and two thick mats or aerobics steps.",
+    "Place the steps just outside of your shoulders, and place your feet on top of the box so that you are in an incline pushup position, your hands just inside the steps. This will be your starting position.",
+    "Begin by bending at the elbows to lower your body, quickly reversing position to push your body off of the ground. As you leave the ground, move your hands onto the steps, bending your elbows to absorb the impact.",
+    "Repeat the motion to return to the starting position."
+  ],
+  "images": [
+    "/img/exercises/Incline_Push-Up_Depth_Jump/0.jpg",
+    "/img/exercises/Incline_Push-Up_Depth_Jump/1.jpg"
+  ],
+  "alternative_names": [
+    "Incline Push Up Depth Jump",
+    "Press Up",
+    "Push Up",
+    "Pushup",
+    "Pushups"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Incline_Push-Up_Depth_Jump"
+}

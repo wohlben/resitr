@@ -1,0 +1,10 @@
+{
+  "id": "Alternating_Renegade_Row-One-Arm_Kettlebell_Row-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Alternating_Renegade_Row",
+  "to_exercise_template_id": "One-Arm_Kettlebell_Row"
+}

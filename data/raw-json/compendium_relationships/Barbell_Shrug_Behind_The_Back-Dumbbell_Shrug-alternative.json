@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Shrug_Behind_The_Back-Dumbbell_Shrug-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Barbell_Shrug_Behind_The_Back",
+  "to_exercise_template_id": "Dumbbell_Shrug"
+}

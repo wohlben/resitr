@@ -1,0 +1,10 @@
+{
+  "id": "Tuck_Crunch-Cocoons-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730009600,
+  "from_exercise_template_id": "Tuck_Crunch",
+  "to_exercise_template_id": "Cocoons"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "slam-ball",
+  "display_name": "Slam Ball",
+  "description": "A heavy, durable ball designed to be slammed on the ground for power training.",
+  "category": "functional",
+  "image_url": null,
+  "template_id": "slam-ball"
+}

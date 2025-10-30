@@ -1,0 +1,10 @@
+{
+  "id": "Sit-Up-3_4_Sit-Up-regression",
+  "relationship_type": "regression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Sit-Up",
+  "to_exercise_template_id": "3_4_Sit-Up"
+}

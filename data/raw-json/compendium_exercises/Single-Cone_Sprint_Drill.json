@@ -1,0 +1,46 @@
+{
+  "name": "Single-Cone Sprint Drill",
+  "slug": "single-cone-sprint-drill",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "Sprint drill around single cone working on change of direction speed and acceleration.",
+  "instructions": [
+    "This drill teaches quick foot action. You need a single cone. Begin standing next to the cone with one arm back and one arm forward.",
+    "Chop the feet as quickly as possible, blocking with the arms. Circle the cone, keep your knees up, with violent foot action.",
+    "Rest after three trips around the cone."
+  ],
+  "images": [
+    "/img/exercises/Single-Cone_Sprint_Drill/0.jpg",
+    "/img/exercises/Single-Cone_Sprint_Drill/1.jpg"
+  ],
+  "alternative_names": [
+    "Single Cone Sprint Drill"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Single-Cone_Sprint_Drill"
+}

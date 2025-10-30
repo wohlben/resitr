@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Lying_Pronation-Wrist_Roller-progression",
+  "relationship_type": "progression",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Dumbbell_Lying_Pronation",
+  "to_exercise_template_id": "Wrist_Roller"
+}

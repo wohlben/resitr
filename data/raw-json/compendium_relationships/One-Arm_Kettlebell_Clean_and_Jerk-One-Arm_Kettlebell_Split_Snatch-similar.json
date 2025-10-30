@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Clean_and_Jerk-One-Arm_Kettlebell_Split_Snatch-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Clean_and_Jerk",
+  "to_exercise_template_id": "One-Arm_Kettlebell_Split_Snatch"
+}

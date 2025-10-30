@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Lying_Triceps_Extension-Chain_Handle_Extension-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Cable_Lying_Triceps_Extension",
+  "to_exercise_template_id": "Chain_Handle_Extension"
+}

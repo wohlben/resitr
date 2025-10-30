@@ -1,0 +1,10 @@
+{
+  "id": "Neck_Press-Barbell_Incline_Bench_Press_-_Medium_Grip-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729969200,
+  "from_exercise_template_id": "Neck_Press",
+  "to_exercise_template_id": "Barbell_Incline_Bench_Press_-_Medium_Grip"
+}

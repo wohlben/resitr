@@ -1,0 +1,10 @@
+{
+  "id": "Rhomboids-SMR-Brachialis-SMR-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.78,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Rhomboids-SMR",
+  "to_exercise_template_id": "Brachialis-SMR"
+}

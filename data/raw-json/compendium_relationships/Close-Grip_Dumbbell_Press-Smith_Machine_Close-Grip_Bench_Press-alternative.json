@@ -1,0 +1,10 @@
+{
+  "id": "Close-Grip_Dumbbell_Press-Smith_Machine_Close-Grip_Bench_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761482004,
+  "from_exercise_template_id": "Close-Grip_Dumbbell_Press",
+  "to_exercise_template_id": "Smith_Machine_Close-Grip_Bench_Press"
+}

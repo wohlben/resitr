@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Push-Up_Close-Grip-Incline_Push-Up_Wide-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761499120,
+  "from_exercise_template_id": "Incline_Push-Up_Close-Grip",
+  "to_exercise_template_id": "Incline_Push-Up_Wide"
+}

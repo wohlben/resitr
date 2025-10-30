@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Crunch-Bottoms_Up-similar",
+  "relationship_type": "similar",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Reverse_Crunch",
+  "to_exercise_template_id": "Bottoms_Up"
+}

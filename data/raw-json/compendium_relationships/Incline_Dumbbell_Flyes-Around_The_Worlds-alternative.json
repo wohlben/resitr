@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Dumbbell_Flyes-Around_The_Worlds-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Incline_Dumbbell_Flyes",
+  "to_exercise_template_id": "Around_The_Worlds"
+}

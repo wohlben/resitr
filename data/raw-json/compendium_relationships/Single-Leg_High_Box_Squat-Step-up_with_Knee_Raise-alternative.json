@@ -1,0 +1,10 @@
+{
+  "id": "Single-Leg_High_Box_Squat-Step-up_with_Knee_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Single-Leg_High_Box_Squat",
+  "to_exercise_template_id": "Step-up_with_Knee_Raise"
+}

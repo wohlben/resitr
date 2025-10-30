@@ -1,0 +1,37 @@
+{
+  "name": "Side Bridge",
+  "slug": "side-bridge",
+  "type": "STRENGTH",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Side plank holding body in straight line supported on one forearm and side of foot, targeting obliques.",
+  "instructions": [],
+  "images": [
+    "/img/exercises/Side_Bridge/0.jpg",
+    "/img/exercises/Side_Bridge/1.jpg"
+  ],
+  "alternative_names": [
+    "Side-Bridge"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Side_Bridge"
+}

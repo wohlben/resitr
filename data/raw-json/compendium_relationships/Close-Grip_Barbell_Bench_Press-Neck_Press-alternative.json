@@ -1,0 +1,10 @@
+{
+  "id": "Close-Grip_Barbell_Bench_Press-Neck_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729969200,
+  "from_exercise_template_id": "Close-Grip_Barbell_Bench_Press",
+  "to_exercise_template_id": "Neck_Press"
+}

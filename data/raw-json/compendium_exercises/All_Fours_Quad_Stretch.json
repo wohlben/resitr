@@ -1,0 +1,40 @@
+{
+  "name": "All Fours Quad Stretch",
+  "slug": "all-fours-quad-stretch",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "HIP_FLEXORS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Quadriceps and hip flexor stretch performed on all fours by pulling foot toward glutes while extending hips",
+  "instructions": [
+    "Start off on your hands and knees, then lift your leg off the floor and hold the foot with your hand.",
+    "Use your hand to hold the foot or ankle, keeping the knee fully flexed, stretching the quadriceps and hip flexors.",
+    "Focus on extending your hips, thrusting them towards the floor. Hold for 10-20 seconds and then switch sides."
+  ],
+  "images": [
+    "/img/exercises/All_Fours_Quad_Stretch/0.jpg",
+    "/img/exercises/All_Fours_Quad_Stretch/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "All_Fours_Quad_Stretch"
+}

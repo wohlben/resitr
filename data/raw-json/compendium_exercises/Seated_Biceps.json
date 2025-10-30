@@ -1,0 +1,43 @@
+{
+  "name": "Seated Biceps",
+  "slug": "seated-biceps",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "BICEPS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "partner"
+  ],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Partner-assisted PNF stretch for biceps using isometric contraction followed by assisted stretching.",
+  "instructions": [
+    "Sit on the floor with your knees bent and your partner standing behind you. Extend your arms straight behind you with your palms facing each other. Your partner will hold your wrists for you. This will be the starting position.",
+    "Attempt to flex your elbows, while your partner prevents any actual movement.",
+    "After 10-20 seconds, relax your arms while your partner gently pulls your wrists up to stretch your biceps. Be sure to let your partner know when the stretch is appropriate to prevent injury or overstretching."
+  ],
+  "images": [
+    "/img/exercises/Seated_Biceps/0.jpg",
+    "/img/exercises/Seated_Biceps/1.jpg"
+  ],
+  "alternative_names": [
+    "Seated-Biceps",
+    "Standing Biceps"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Seated_Biceps"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Scaption-Front_Two-Dumbbell_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "Dumbbell_Scaption",
+  "to_exercise_template_id": "Front_Two-Dumbbell_Raise"
+}

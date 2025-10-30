@@ -1,0 +1,45 @@
+{
+  "name": "Natural Glute Ham Raise",
+  "slug": "natural-glute-ham-raise",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-ghd-machine",
+    "resistance-band"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Advanced bodyweight hamstring curl kneeling on pad, lowering body forward and pulling back with hamstrings.",
+  "instructions": [
+    "Using the leg pad of a lat pulldown machine or a preacher bench, position yourself so that your ankles are under the pads, knees on the seat, and you are facing away from the machine. You should be upright and maintaining good posture.",
+    "This will be your starting position. Lower yourself under control until your knees are almost completely straight.",
+    "Remaining in control, raise yourself back up to the starting position.",
+    "If you are unable to complete a rep, use a band, a partner, or push off of a box to aid in completing a repetition."
+  ],
+  "images": [
+    "/img/exercises/Natural_Glute_Ham_Raise/0.jpg",
+    "/img/exercises/Natural_Glute_Ham_Raise/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Natural_Glute_Ham_Raise"
+}

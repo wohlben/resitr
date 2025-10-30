@@ -1,0 +1,40 @@
+{
+  "name": "Kneeling Arm Drill",
+  "slug": "kneeling-arm-drill",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Kneeling sprint arm drill practicing running arm motion from kneeling position, training sprint mechanics.",
+  "instructions": [
+    "This drill helps increase arm efficiency during the run. Begin kneeling, left foot in front, right knee down. Apply pressure through the front heel to keep your glutes and hamstrings activated.",
+    "Begin by blocking the arms in long, pendulum like swings. Close the arm angle, blocking with the arms as you would when jogging, progressing to a run and finally a sprint.",
+    "As soon as your hands pass the hip, accelerate them forward during the sprinting motion to move them as quickly as possible.",
+    "Switch knees and repeat."
+  ],
+  "images": [
+    "/img/exercises/Kneeling_Arm_Drill/0.jpg",
+    "/img/exercises/Kneeling_Arm_Drill/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kneeling_Arm_Drill"
+}

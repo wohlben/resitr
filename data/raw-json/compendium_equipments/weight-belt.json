@@ -1,0 +1,8 @@
+{
+  "name": "weight-belt",
+  "display_name": "Weight Belt",
+  "description": "A belt worn around the waist to add resistance to bodyweight exercises.",
+  "category": "other",
+  "image_url": null,
+  "template_id": "weight-belt"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Jump-Front_Box_Jump-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Bench_Jump",
+  "to_exercise_template_id": "Front_Box_Jump"
+}

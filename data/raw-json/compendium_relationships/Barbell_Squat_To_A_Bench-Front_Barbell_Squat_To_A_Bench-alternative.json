@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Squat_To_A_Bench-Front_Barbell_Squat_To_A_Bench-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Barbell_Squat_To_A_Bench",
+  "to_exercise_template_id": "Front_Barbell_Squat_To_A_Bench"
+}

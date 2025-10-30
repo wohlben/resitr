@@ -1,0 +1,10 @@
+{
+  "id": "Elbow_to_Knee-Air_Bike-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730073600,
+  "from_exercise_template_id": "Elbow_to_Knee",
+  "to_exercise_template_id": "Air_Bike"
+}

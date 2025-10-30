@@ -1,0 +1,45 @@
+{
+  "name": "Forward Drag with Press",
+  "slug": "forward-drag-with-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "FRONT_DELTS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-sled"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Sled drag moving forward while pressing handles, combining lower body drag with upper body press.",
+  "instructions": [
+    "Attach a dual handled chain or rope attachment to the sled. You should be facing away from the sled, holding a handle in each hand.",
+    "Begin the movement by moving forward for one step. Leaning forward, extend through the legs and hips to move, pausing with each step to extend through the elbows, pressing your hands forward. Step forward until you return to the start position prepared to press."
+  ],
+  "images": [
+    "/img/exercises/Forward_Drag_with_Press/0.jpg",
+    "/img/exercises/Forward_Drag_with_Press/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Forward_Drag_with_Press"
+}

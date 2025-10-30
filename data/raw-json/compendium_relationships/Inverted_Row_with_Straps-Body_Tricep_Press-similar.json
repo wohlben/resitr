@@ -1,0 +1,10 @@
+{
+  "id": "Inverted_Row_with_Straps-Body_Tricep_Press-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Inverted_Row_with_Straps",
+  "to_exercise_template_id": "Body_Tricep_Press"
+}

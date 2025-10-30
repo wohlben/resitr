@@ -1,0 +1,10 @@
+{
+  "id": "Glute_Kickback-One-Legged_Cable_Kickback-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729954800,
+  "from_exercise_template_id": "Glute_Kickback",
+  "to_exercise_template_id": "One-Legged_Cable_Kickback"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Power_Clean-Power_Clean_from_Blocks-regression",
+  "relationship_type": "regression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761511266,
+  "from_exercise_template_id": "Power_Clean",
+  "to_exercise_template_id": "Power_Clean_from_Blocks"
+}

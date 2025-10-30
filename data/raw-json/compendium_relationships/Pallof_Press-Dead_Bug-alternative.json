@@ -1,0 +1,10 @@
+{
+  "id": "Pallof_Press-Dead_Bug-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729940400,
+  "from_exercise_template_id": "Pallof_Press",
+  "to_exercise_template_id": "Dead_Bug"
+}

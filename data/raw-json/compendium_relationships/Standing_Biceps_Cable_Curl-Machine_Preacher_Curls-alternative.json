@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Biceps_Cable_Curl-Machine_Preacher_Curls-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Standing_Biceps_Cable_Curl",
+  "to_exercise_template_id": "Machine_Preacher_Curls"
+}

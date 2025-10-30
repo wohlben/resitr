@@ -1,0 +1,10 @@
+{
+  "id": "Landmine_180s-Torso_Rotation-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Landmine_180s",
+  "to_exercise_template_id": "Torso_Rotation"
+}

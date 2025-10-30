@@ -1,0 +1,10 @@
+{
+  "id": "Close-Grip_EZ-Bar_Press-Reverse_Triceps_Bench_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730001600,
+  "from_exercise_template_id": "Close-Grip_EZ-Bar_Press",
+  "to_exercise_template_id": "Reverse_Triceps_Bench_Press"
+}

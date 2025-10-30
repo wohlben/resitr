@@ -1,0 +1,10 @@
+{
+  "id": "Pelvic_Tilt_Into_Bridge-Barbell_Glute_Bridge-progression",
+  "relationship_type": "progression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "Pelvic_Tilt_Into_Bridge",
+  "to_exercise_template_id": "Barbell_Glute_Bridge"
+}

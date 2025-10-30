@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_High-Pulley_Cable_Side_Bends-Oblique_Crunches-easier_alternative",
+  "relationship_type": "easier_alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "One-Arm_High-Pulley_Cable_Side_Bends",
+  "to_exercise_template_id": "Oblique_Crunches"
+}

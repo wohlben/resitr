@@ -1,0 +1,10 @@
+{
+  "id": "Anterior_Tibialis-SMR-Ankle_Circles-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Anterior_Tibialis-SMR",
+  "to_exercise_template_id": "Ankle_Circles"
+}

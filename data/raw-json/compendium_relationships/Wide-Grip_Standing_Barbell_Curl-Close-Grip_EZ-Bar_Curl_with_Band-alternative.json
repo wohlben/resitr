@@ -1,0 +1,10 @@
+{
+  "id": "Wide-Grip_Standing_Barbell_Curl-Close-Grip_EZ-Bar_Curl_with_Band-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.82,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Wide-Grip_Standing_Barbell_Curl",
+  "to_exercise_template_id": "Close-Grip_EZ-Bar_Curl_with_Band"
+}

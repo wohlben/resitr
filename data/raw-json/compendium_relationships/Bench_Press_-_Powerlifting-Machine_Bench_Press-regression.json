@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Press_-_Powerlifting-Machine_Bench_Press-regression",
+  "relationship_type": "regression",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Bench_Press_-_Powerlifting",
+  "to_exercise_template_id": "Machine_Bench_Press"
+}

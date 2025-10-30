@@ -1,0 +1,50 @@
+{
+  "name": "Press Sit-Up",
+  "slug": "press-sit-up",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [
+    "CHEST",
+    "FRONT_DELTS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "barbell",
+    "bench"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Sit-up variation pressing weight overhead while crunching up, combining core and pressing movement.",
+  "instructions": [
+    "To begin, lie down on a bench with a barbell resting on your chest. Position your legs so they are secure on the extension of the abdominal bench. This is the starting position.",
+    "While inhaling, tighten your abdominals and glutes. Simultaneously curl your torso as you do when performing a sit-up and press the barbell to an overhead position while exhaling. Tip: Use your arms to push the barbell out as you perform this exercise while still focusing on the abdominal muscles.",
+    "Lower your upper body back down to the starting position while bringing the barbell back down to your torso. Remember to breathe in while lowering the body.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Press_Sit-Up/0.jpg",
+    "/img/exercises/Press_Sit-Up/1.jpg"
+  ],
+  "alternative_names": [
+    "Press Sit Up",
+    "Barbell Press Sit-Up",
+    "Overhead Press Sit-Up"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Press_Sit-Up"
+}

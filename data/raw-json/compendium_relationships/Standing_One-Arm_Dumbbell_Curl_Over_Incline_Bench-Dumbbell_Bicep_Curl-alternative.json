@@ -1,0 +1,10 @@
+{
+  "id": "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench-Dumbbell_Bicep_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.55,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761523200,
+  "from_exercise_template_id": "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench",
+  "to_exercise_template_id": "Dumbbell_Bicep_Curl"
+}

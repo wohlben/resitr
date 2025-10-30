@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Bench_Press-Decline_Dumbbell_Bench_Press-similar",
+  "relationship_type": "similar",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761483992,
+  "from_exercise_template_id": "Dumbbell_Bench_Press",
+  "to_exercise_template_id": "Decline_Dumbbell_Bench_Press"
+}

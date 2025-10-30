@@ -1,0 +1,45 @@
+{
+  "name": "Glute Ham Raise",
+  "slug": "glute-ham-raise",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-ghd-machine",
+    "weight-plate"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Advanced hamstring curl on GHD machine lowering body forward and pulling back up with hamstrings, bodyweight leg curl.",
+  "instructions": [
+    "Begin by adjusting the equipment to fit your body. Place your feet against the footplate in between the rollers as you lie facedown. Your knees should be just behind the pad.",
+    "Start from the bottom of the movement. Keep your back arched as you begin the movement by flexing the knees. Drive your toes into the foot plate as you do so. Keep your upper body straight, and continue until your body is upright.",
+    "Return to the starting position, keeping your descent under control."
+  ],
+  "images": [
+    "/img/exercises/Glute_Ham_Raise/0.jpg",
+    "/img/exercises/Glute_Ham_Raise/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Glute_Ham_Raise"
+}

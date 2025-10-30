@@ -1,0 +1,10 @@
+{
+  "id": "Calf_Stretch_Hands_Against_Wall-Standing_Gastrocnemius_Calf_Stretch-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761480085,
+  "from_exercise_template_id": "Calf_Stretch_Hands_Against_Wall",
+  "to_exercise_template_id": "Standing_Gastrocnemius_Calf_Stretch"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Box_Squat-Box_Squat_with_Chains-progression",
+  "relationship_type": "progression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Box_Squat",
+  "to_exercise_template_id": "Box_Squat_with_Chains"
+}

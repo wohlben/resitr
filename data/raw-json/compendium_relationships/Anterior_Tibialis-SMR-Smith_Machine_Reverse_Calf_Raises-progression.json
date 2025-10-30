@@ -1,0 +1,10 @@
+{
+  "id": "Anterior_Tibialis-SMR-Smith_Machine_Reverse_Calf_Raises-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Anterior_Tibialis-SMR",
+  "to_exercise_template_id": "Smith_Machine_Reverse_Calf_Raises"
+}

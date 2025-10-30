@@ -1,0 +1,10 @@
+{
+  "id": "Battling_Ropes-Rope_Jumping-similar",
+  "relationship_type": "similar",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Battling_Ropes",
+  "to_exercise_template_id": "Rope_Jumping"
+}

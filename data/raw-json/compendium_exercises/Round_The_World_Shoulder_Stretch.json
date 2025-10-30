@@ -1,0 +1,39 @@
+{
+  "name": "Round The World Shoulder Stretch",
+  "slug": "round-the-world-shoulder-stretch",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS",
+    "SIDE_DELTS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Shoulder mobility stretch making circular motion with arms to stretch all deltoid heads.",
+  "instructions": [
+    "Stand up straight with your legs together, holding a bodybar or broomstick.",
+    "Hold the pole behind your hips with a wider than shoulder width grip. Your palms should be down and your thumbs facing out.",
+    "Slowly lift your arms up behind your head. Don't force it if it gets hard to lift further."
+  ],
+  "images": [
+    "/img/exercises/Round_The_World_Shoulder_Stretch/0.jpg",
+    "/img/exercises/Round_The_World_Shoulder_Stretch/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Round_The_World_Shoulder_Stretch"
+}

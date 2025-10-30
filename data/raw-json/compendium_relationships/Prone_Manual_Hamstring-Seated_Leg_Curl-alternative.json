@@ -1,0 +1,10 @@
+{
+  "id": "Prone_Manual_Hamstring-Seated_Leg_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761511480,
+  "from_exercise_template_id": "Prone_Manual_Hamstring",
+  "to_exercise_template_id": "Seated_Leg_Curl"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Kettlebell Arnold Press",
+  "slug": "kettlebell-arnold-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "SIDE_DELTS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Kettlebell overhead press with rotation (Arnold press variation), rotating from neutral to overhead position.",
+  "instructions": [
+    "Clean a kettlebell to your shoulder. Clean the kettlebell to your shoulder by extending through the legs and hips as you raise the kettlebell towards your shoulder. The palm should be facing inward.",
+    "Looking straight ahead, press the kettlebell out and overhead, rotating your wrist so that your palm faces forward at the top of the motion.",
+    "Return the kettlebell to the starting position, with the palm facing in."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Arnold_Press/0.jpg",
+    "/img/exercises/Kettlebell_Arnold_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "Arnold Dumbbell Press",
+    "Arnold Shoulder Press",
+    "KB Arnold Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Arnold_Press"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Alternate_Leg_Diagonal_Bound-Bodyweight_Walking_Lunge-regression",
+  "relationship_type": "regression",
+  "strength": 0.63,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761461533,
+  "from_exercise_template_id": "Alternate_Leg_Diagonal_Bound",
+  "to_exercise_template_id": "Bodyweight_Walking_Lunge"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Rope_Straight-Arm_Pulldown-Full_Range-Of-Motion_Lat_Pulldown-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729931400,
+  "from_exercise_template_id": "Rope_Straight-Arm_Pulldown",
+  "to_exercise_template_id": "Full_Range-Of-Motion_Lat_Pulldown"
+}

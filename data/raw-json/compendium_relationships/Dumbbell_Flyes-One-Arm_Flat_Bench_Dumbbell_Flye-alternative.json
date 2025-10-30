@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Flyes-One-Arm_Flat_Bench_Dumbbell_Flye-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729973000,
+  "from_exercise_template_id": "Dumbbell_Flyes",
+  "to_exercise_template_id": "One-Arm_Flat_Bench_Dumbbell_Flye"
+}

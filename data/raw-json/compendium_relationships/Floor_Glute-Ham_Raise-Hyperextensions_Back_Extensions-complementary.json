@@ -1,0 +1,10 @@
+{
+  "id": "Floor_Glute-Ham_Raise-Hyperextensions_Back_Extensions-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761498416,
+  "from_exercise_template_id": "Floor_Glute-Ham_Raise",
+  "to_exercise_template_id": "Hyperextensions_Back_Extensions"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Rope_Rear-Delt_Rows-Kneeling_High_Pulley_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": "Both are cable rope rows targeting rear delts and rhomboids; kneeling high pulley version uses downward pulling angle for varied stimulus",
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Cable_Rope_Rear-Delt_Rows",
+  "to_exercise_template_id": "Kneeling_High_Pulley_Row"
+}

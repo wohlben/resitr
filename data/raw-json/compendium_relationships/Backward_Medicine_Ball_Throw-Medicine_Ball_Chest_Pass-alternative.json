@@ -1,0 +1,10 @@
+{
+  "id": "Backward_Medicine_Ball_Throw-Medicine_Ball_Chest_Pass-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Backward_Medicine_Ball_Throw",
+  "to_exercise_template_id": "Medicine_Ball_Chest_Pass"
+}

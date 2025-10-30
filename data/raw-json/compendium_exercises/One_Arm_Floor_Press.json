@@ -1,0 +1,50 @@
+{
+  "name": "One Arm Floor Press",
+  "slug": "one-arm-floor-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "dumbbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Single-arm floor press with dumbbell or kettlebell, pressing from floor to lockout with one arm.",
+  "instructions": [
+    "Lie down on a flat surface with your back pressing against the floor or an exercise mat. Make sure your knees are bent.",
+    "Have a partner hand you the dumbbell in one hand. When starting, your arm should be just about fully extended, similar to the starting position of a dumbbell bench press. Your grip will be neutral (palms facing your torso).",
+    "Make sure the hand you are not using to lift the weight is placed by your side.",
+    "Begin the exercise by lowering the dumbbell until your elbow touches the ground. Make sure to breathe in as this is the eccentric (lowering part of the exercise).",
+    "Then start lifting the dumbbell back up to the original starting position. Remember to breathe out during the concentric (lifting part of the exercise).",
+    "Repeat until you have performed your recommended repetitions.",
+    "Switch arms and repeat the movement."
+  ],
+  "images": [
+    "/img/exercises/One_Arm_Floor_Press/0.jpg",
+    "/img/exercises/One_Arm_Floor_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "Single Arm Floor Press",
+    "Unilateral Floor Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "One_Arm_Floor_Press"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Bent_Over_One-Arm_Long_Bar_Row-Bent_Over_Two-Dumbbell_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761466991,
+  "from_exercise_template_id": "Bent_Over_One-Arm_Long_Bar_Row",
+  "to_exercise_template_id": "Bent_Over_Two-Dumbbell_Row"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Press_Sit-Up-Weighted_Crunches-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": "Weighted Crunches simplifies Press Sit-Up by removing overhead press and using shorter range crunch motion, regressing from advanced compound to beginner weighted ab isolation",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Press_Sit-Up",
+  "to_exercise_template_id": "Weighted_Crunches"
+}

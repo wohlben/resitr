@@ -1,0 +1,42 @@
+{
+  "name": "Hug A Ball",
+  "slug": "hug-a-ball",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "LOWER_BACK",
+    "GLUTES"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "medicine-ball",
+    "stability-ball"
+  ],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Stretch hugging exercise ball or medicine ball to chest, rounding spine to stretch lower back.",
+  "instructions": [
+    "Seat yourself on the floor.",
+    "Straddle an exercise ball between both legs and lower your hips down toward the floor.",
+    "Hug your arms around the ball to support your body. Adjust your legs so that your feet are flat on the floor and your knees line up over your ankles. Keep a good grip on the ball so it doesn't roll away from you and send you back onto your buttocks."
+  ],
+  "images": [
+    "/img/exercises/Hug_A_Ball/0.jpg",
+    "/img/exercises/Hug_A_Ball/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Hug_A_Ball"
+}

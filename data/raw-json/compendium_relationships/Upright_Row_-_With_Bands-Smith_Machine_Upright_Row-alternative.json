@@ -1,0 +1,10 @@
+{
+  "id": "Upright_Row_-_With_Bands-Smith_Machine_Upright_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Upright_Row_-_With_Bands",
+  "to_exercise_template_id": "Smith_Machine_Upright_Row"
+}

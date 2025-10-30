@@ -1,0 +1,48 @@
+{
+  "name": "Bear Crawl Sled Drags",
+  "slug": "bear-crawl-sled-drags",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH",
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS",
+    "ABS",
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "CHEST",
+    "TRICEPS",
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "weight-belt"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Quadruped crawl dragging sled for full-body strength and core stability under resistance",
+  "instructions": [
+    "Wearing either a harness or a loose weight belt, attach the chain to the back so that you will be facing away from the sled. Bend down so that your hands are on the ground. Your back should be flat and knees bent. This is your starting position.",
+    "Begin by driving with legs, alternating left and right. Use your hands to maintain balance and to help pull. Try to keep your back flat as you move over a given distance."
+  ],
+  "images": [
+    "/img/exercises/Bear_Crawl_Sled_Drags/0.jpg",
+    "/img/exercises/Bear_Crawl_Sled_Drags/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Bear_Crawl_Sled_Drags"
+}

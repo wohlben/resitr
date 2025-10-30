@@ -1,0 +1,10 @@
+{
+  "id": "Hip_Circles_prone-Flutter_Kicks-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730080800,
+  "from_exercise_template_id": "Hip_Circles_prone",
+  "to_exercise_template_id": "Flutter_Kicks"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Double Kettlebell Push Press",
+  "slug": "double-kettlebell-push-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "QUADS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "2x kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Explosive overhead press with two kettlebells using leg drive to assist the press.",
+  "instructions": [
+    "Clean two kettlebells to your shoulders.",
+    "Squat down a few inches and reverse the motion rapidly. Use the momentum from the legs to drive the kettlebells overhead.",
+    "Once the kettlebells are locked out, lower the kettlebells to your shoulders and repeat."
+  ],
+  "images": [
+    "/img/exercises/Double_Kettlebell_Push_Press/0.jpg",
+    "/img/exercises/Double_Kettlebell_Push_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "Double KB Push Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Double_Kettlebell_Push_Press"
+}

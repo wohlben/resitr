@@ -1,0 +1,10 @@
+{
+  "id": "Goblet_Squat-Barbell_Squat_To_A_Bench-progression",
+  "relationship_type": "progression",
+  "strength": 0.88,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Goblet_Squat",
+  "to_exercise_template_id": "Barbell_Squat_To_A_Bench"
+}

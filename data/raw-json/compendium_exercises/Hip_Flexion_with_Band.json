@@ -1,0 +1,44 @@
+{
+  "name": "Hip Flexion with Band",
+  "slug": "hip-flexion-with-band",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HIP_FLEXORS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "resistance-band"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Hip flexion exercise with band bringing knee toward chest against resistance.",
+  "instructions": [
+    "Secure one end of the band to the lower portion of a post and attach the other to one ankle.",
+    "Face away from the attachment point of the band.",
+    "Keeping your head and your chest up, raise your knee up to 90 degrees and pause.",
+    "Return the leg to the starting position."
+  ],
+  "images": [
+    "/img/exercises/Hip_Flexion_with_Band/0.jpg",
+    "/img/exercises/Hip_Flexion_with_Band/1.jpg"
+  ],
+  "alternative_names": [
+    "Hip Flexion with Resistance Band"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Hip_Flexion_with_Band"
+}

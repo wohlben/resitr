@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Dumbbell_Triceps_Extension-Tate_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735689600,
+  "from_exercise_template_id": "Decline_Dumbbell_Triceps_Extension",
+  "to_exercise_template_id": "Tate_Press"
+}

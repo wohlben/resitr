@@ -1,0 +1,10 @@
+{
+  "id": "Triceps_Pushdown-Machine_Triceps_Extension-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761509910,
+  "from_exercise_template_id": "Triceps_Pushdown",
+  "to_exercise_template_id": "Machine_Triceps_Extension"
+}

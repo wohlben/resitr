@@ -1,0 +1,10 @@
+{
+  "id": "Machine_Preacher_Curls-Preacher_Hammer_Dumbbell_Curl-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Machine_Preacher_Curls",
+  "to_exercise_template_id": "Preacher_Hammer_Dumbbell_Curl"
+}

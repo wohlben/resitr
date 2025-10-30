@@ -1,0 +1,57 @@
+{
+  "name": "One-Arm Kettlebell Split Snatch",
+  "slug": "one-arm-kettlebell-split-snatch",
+  "type": "STRENGTH",
+  "force": [
+    "PULL",
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "QUADS",
+    "GLUTES",
+    "HAMSTRINGS",
+    "CALVES",
+    "LOWER_BACK",
+    "TRAPS",
+    "TRICEPS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Single-arm kettlebell snatch dropping into split stance to receive weight overhead.",
+  "instructions": [
+    "Hold a kettlebell in one hand by the handle.",
+    "Squat towards the floor, and then reverse the motion, extending the hips, knees, and finally the ankles, to raise the kettlebell overhead.",
+    "After fully extending the body, descend into a lunge position to receive the weights overhead, one leg forward and one leg back. Ensure you drive through with your hips and lock the ketttlebells overhead in one uninterrupted motion.",
+    "Return to a standing position, holding the weight overhead, and bring the feet together. Lower the weight to return to the starting position."
+  ],
+  "images": [
+    "/img/exercises/One-Arm_Kettlebell_Split_Snatch/0.jpg",
+    "/img/exercises/One-Arm_Kettlebell_Split_Snatch/1.jpg"
+  ],
+  "alternative_names": [
+    "Barbell Snatch",
+    "One Arm Kettlebell Split Snatch",
+    "One-Arm KB Split Snatch",
+    "Power Snatch",
+    "Single Arm Kettlebell Split Snatch",
+    "Unilateral Kettlebell Split Snatch"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "One-Arm_Kettlebell_Split_Snatch"
+}

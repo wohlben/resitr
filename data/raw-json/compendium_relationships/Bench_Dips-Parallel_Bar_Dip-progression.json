@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Dips-Parallel_Bar_Dip-progression",
+  "relationship_type": "progression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Bench_Dips",
+  "to_exercise_template_id": "Parallel_Bar_Dip"
+}

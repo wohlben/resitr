@@ -1,0 +1,10 @@
+{
+  "id": "Weighted_Squat-Bodyweight_Squat-progression",
+  "relationship_type": "progression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761551546,
+  "from_exercise_template_id": "Weighted_Squat",
+  "to_exercise_template_id": "Bodyweight_Squat"
+}

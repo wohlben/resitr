@@ -1,0 +1,43 @@
+{
+  "name": "Stomach Vacuum",
+  "slug": "stomach-vacuum",
+  "type": "STRENGTH",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Isometric core exercise drawing belly button inward and holding, targeting transverse abdominis.",
+  "instructions": [
+    "To begin, stand straight with your feet shoulder width apart from each other. Place your hands on your hips. This is the starting position.",
+    "Now slowly inhale as much air as possible and then start to exhale as much as possible while bringing your stomach in as much as possible and hold this position. Try to visualize your navel touching your backbone.",
+    "One isometric contraction is around 20 seconds. During the 20 second hold, try to breathe normally. Then inhale and bring your stomach back to the starting position.",
+    "Once you have practiced this exercise, try to perform this exercise for longer than 20 seconds. Tip: You can work your way up to 40-60 seconds.",
+    "Repeat for the recommended amount of sets."
+  ],
+  "images": [
+    "/img/exercises/Stomach_Vacuum/0.jpg",
+    "/img/exercises/Stomach_Vacuum/1.jpg"
+  ],
+  "alternative_names": [
+    "Stomach-Vacuum"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Stomach_Vacuum"
+}

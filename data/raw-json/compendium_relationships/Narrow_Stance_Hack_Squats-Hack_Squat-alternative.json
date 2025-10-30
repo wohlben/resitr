@@ -1,0 +1,10 @@
+{
+  "id": "Narrow_Stance_Hack_Squats-Hack_Squat-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729976400,
+  "from_exercise_template_id": "Narrow_Stance_Hack_Squats",
+  "to_exercise_template_id": "Hack_Squat"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Barbell Walking Lunge",
+  "slug": "barbell-walking-lunge",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "ABS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "barbell"
+  ],
+  "body_weight_scaling": 0.4,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Dynamic walking lunge with barbell developing leg strength and coordination through movement",
+  "instructions": [
+    "Begin standing with your feet shoulder width apart and a barbell across your upper back.",
+    "Step forward with one leg, flexing the knees to drop your hips. Descend until your rear knee nearly touches the ground. Your posture should remain upright, and your front knee should stay above the front foot.",
+    "Drive through the heel of your lead foot and extend both knees to raise yourself back up.",
+    "Step forward with your rear foot, repeating the lunge on the opposite leg."
+  ],
+  "images": [
+    "/img/exercises/Barbell_Walking_Lunge/0.jpg",
+    "/img/exercises/Barbell_Walking_Lunge/1.jpg"
+  ],
+  "alternative_names": [
+    "BB Walking Lunge",
+    "Bar Walking Lunge",
+    "Barbell Walking Lunge",
+    "Forward Lunge",
+    "Walking Lunge"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Barbell_Walking_Lunge"
+}

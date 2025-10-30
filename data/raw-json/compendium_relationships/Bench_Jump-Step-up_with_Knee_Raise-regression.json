@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Jump-Step-up_with_Knee_Raise-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Bench_Jump",
+  "to_exercise_template_id": "Step-up_with_Knee_Raise"
+}

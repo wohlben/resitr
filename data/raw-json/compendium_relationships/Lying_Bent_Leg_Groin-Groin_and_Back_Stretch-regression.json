@@ -1,0 +1,10 @@
+{
+  "id": "Lying_Bent_Leg_Groin-Groin_and_Back_Stretch-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": "Both use butterfly position (knees bent, soles of feet together) for adductor stretching. Groin and Back Stretch is seated and solo, making it a simpler regression from the lying partner-assisted PNF version.",
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Lying_Bent_Leg_Groin",
+  "to_exercise_template_id": "Groin_and_Back_Stretch"
+}

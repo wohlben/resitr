@@ -1,0 +1,50 @@
+{
+  "name": "Landmine 180's",
+  "slug": "landmine-180-s",
+  "type": "STRENGTH",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK",
+    "FRONT_DELTS",
+    "SIDE_DELTS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "landmine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Rotational landmine exercise swinging the bar from side to side through 180 degrees of trunk rotation with extended arms.",
+  "instructions": [
+    "Position a bar into a landmine or securely anchor it in a corner. Load the bar to an appropriate weight.",
+    "Raise the bar from the floor, taking it to shoulder height with both hands with your arms extended in front of you. Adopt a wide stance. This will be your starting position.",
+    "Perform the movement by rotating the trunk and hips as you swing the weight all the way down to one side. Keep your arms extended throughout the exercise.",
+    "Reverse the motion to swing the weight all the way to the opposite side.",
+    "Continue alternating the movement until the set is complete."
+  ],
+  "images": [
+    "/img/exercises/Landmine_180s/0.jpg",
+    "/img/exercises/Landmine_180s/1.jpg"
+  ],
+  "alternative_names": [
+    "Landmine-180's"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Landmine_180s"
+}

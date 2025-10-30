@@ -1,0 +1,10 @@
+{
+  "id": "Lateral_Bound-Squat_with_Plate_Movers-related",
+  "relationship_type": "related",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Lateral_Bound",
+  "to_exercise_template_id": "Squat_with_Plate_Movers"
+}

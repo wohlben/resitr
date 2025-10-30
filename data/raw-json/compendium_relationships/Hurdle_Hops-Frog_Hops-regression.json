@@ -1,0 +1,10 @@
+{
+  "id": "Hurdle_Hops-Frog_Hops-regression",
+  "relationship_type": "regression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "Hurdle_Hops",
+  "to_exercise_template_id": "Frog_Hops"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Chest_Push_from_3_point_stance-Medicine_Ball_Chest_Pass-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729933200,
+  "from_exercise_template_id": "Chest_Push_from_3_point_stance",
+  "to_exercise_template_id": "Medicine_Ball_Chest_Pass"
+}

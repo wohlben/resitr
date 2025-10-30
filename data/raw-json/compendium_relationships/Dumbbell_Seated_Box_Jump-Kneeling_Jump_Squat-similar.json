@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Seated_Box_Jump-Kneeling_Jump_Squat-similar",
+  "relationship_type": "similar",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Dumbbell_Seated_Box_Jump",
+  "to_exercise_template_id": "Kneeling_Jump_Squat"
+}

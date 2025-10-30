@@ -1,0 +1,10 @@
+{
+  "id": "Butt_Lift_Bridge-Barbell_Hip_Thrust-progression",
+  "relationship_type": "progression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761464685,
+  "from_exercise_template_id": "Butt_Lift_Bridge",
+  "to_exercise_template_id": "Barbell_Hip_Thrust"
+}

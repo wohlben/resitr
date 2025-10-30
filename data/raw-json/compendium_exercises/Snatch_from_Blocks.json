@@ -1,0 +1,50 @@
+{
+  "name": "Snatch from Blocks",
+  "slug": "snatch-from-blocks",
+  "type": "STRENGTH",
+  "force": [
+    "PULL",
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "TRAPS",
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [
+    "QUADS",
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "technical_difficulty": "advanced",
+  "equipments": [
+    "barbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Snatch starting from elevated blocks, reducing range to focus on extension and overhead catch.",
+  "instructions": [
+    "Begin with a loaded barbell on boxes or stands of the desired height. A wide grip should be taken on the bar. The feet should be directly below the hips, with the feet turned out as needed. Lower the hips, with the chest up and the head looking forward. The shoulders should be just in front of the bar, with the elbows pointed out. This will be the starting position.",
+    "Begin the first pull by driving through the front of the heels, raising the bar from the boxes.",
+    "Transition into the second pull by extending through the hips knees and ankles, driving the bar up as quickly as possible. The bar should be close to the body. At peak extension, shrug the shoulders and allow the elbows to flex to the side.",
+    "As you move your feet into the receiving position, forcefully pull yourself below the bar as you elevate the bar overhead. The feet should move to just outside the hips, turned out as necessary. Receive the bar with your body as low as possible and the arms fully extended overhead.",
+    "Keeping the bar aligned over the front of the heels, your head and chest up, drive through heels of the feet to move to a standing position. Carefully return the weight to the boxes."
+  ],
+  "images": [
+    "/img/exercises/Snatch_from_Blocks/0.jpg",
+    "/img/exercises/Snatch_from_Blocks/1.jpg"
+  ],
+  "alternative_names": [
+    "Block Snatch"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Snatch_from_Blocks"
+}

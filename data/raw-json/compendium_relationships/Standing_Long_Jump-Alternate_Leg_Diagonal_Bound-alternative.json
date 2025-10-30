@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Long_Jump-Alternate_Leg_Diagonal_Bound-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.68,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761461533,
+  "from_exercise_template_id": "Standing_Long_Jump",
+  "to_exercise_template_id": "Alternate_Leg_Diagonal_Bound"
+}

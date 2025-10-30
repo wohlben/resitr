@@ -1,0 +1,42 @@
+{
+  "name": "Kettlebell Figure 8",
+  "slug": "kettlebell-figure-8",
+  "type": "CARDIO",
+  "force": [
+    "ROTATION"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0.3,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Dynamic kettlebell exercise passing bell in figure-8 pattern through and around legs, engaging core rotation.",
+  "instructions": [
+    "Place one kettlebell between your legs and take a wider than shoulder width stance. Bend over by pushing your butt out and keeping your back flat.",
+    "Pick up a kettlebell and pass it to your other hand between your legs. The receiving hand should reach from behind the legs. Go back and forth for several repetitions."
+  ],
+  "images": [
+    "/img/exercises/Kettlebell_Figure_8/0.jpg",
+    "/img/exercises/Kettlebell_Figure_8/1.jpg"
+  ],
+  "alternative_names": [
+    "KB Figure 8"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Kettlebell_Figure_8"
+}

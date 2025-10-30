@@ -1,0 +1,10 @@
+{
+  "id": "Mixed_Grip_Chin-Weighted_Pull_Ups-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Mixed_Grip_Chin",
+  "to_exercise_template_id": "Weighted_Pull_Ups"
+}

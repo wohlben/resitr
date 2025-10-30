@@ -1,0 +1,10 @@
+{
+  "id": "Alternating_Floor_Press-Dumbbell_Floor_Press-similar",
+  "relationship_type": "similar",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Alternating_Floor_Press",
+  "to_exercise_template_id": "Dumbbell_Floor_Press"
+}

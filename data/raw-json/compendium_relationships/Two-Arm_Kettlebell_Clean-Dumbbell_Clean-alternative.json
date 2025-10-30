@@ -1,0 +1,10 @@
+{
+  "id": "Two-Arm_Kettlebell_Clean-Dumbbell_Clean-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Two-Arm_Kettlebell_Clean",
+  "to_exercise_template_id": "Dumbbell_Clean"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Good_Morning-Band_Good_Morning-progression",
+  "relationship_type": "progression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Good_Morning",
+  "to_exercise_template_id": "Band_Good_Morning"
+}

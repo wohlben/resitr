@@ -1,0 +1,49 @@
+{
+  "name": "Bottoms-Up Clean From The Hang Position",
+  "slug": "bottoms-up-clean-from-the-hang-position",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "LOWER_BACK",
+    "FRONT_DELTS",
+    "TRAPS",
+    "FOREARMS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Kettlebell clean from hang position with inverted grip (bottoms-up), emphasizing grip strength and shoulder stability",
+  "instructions": [
+    "Initiate the exercise by standing upright with a kettlebell in one hand.",
+    "Swing the kettlebell back forcefully and then reverse the motion forcefully. Crush the kettlebell handle as hard as possible and raise the kettlebell to your shoulder."
+  ],
+  "images": [
+    "/img/exercises/Bottoms-Up_Clean_From_The_Hang_Position/0.jpg",
+    "/img/exercises/Bottoms-Up_Clean_From_The_Hang_Position/1.jpg"
+  ],
+  "alternative_names": [
+    "Barbell Clean",
+    "Bottoms Up Clean From The Hang Position",
+    "Power Clean"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Bottoms-Up_Clean_From_The_Hang_Position"
+}

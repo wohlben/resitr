@@ -1,0 +1,10 @@
+{
+  "id": "Lying_Close-Grip_Bar_Curl_On_High_Pulley-Lying_Cable_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761498077,
+  "from_exercise_template_id": "Lying_Close-Grip_Bar_Curl_On_High_Pulley",
+  "to_exercise_template_id": "Lying_Cable_Curl"
+}

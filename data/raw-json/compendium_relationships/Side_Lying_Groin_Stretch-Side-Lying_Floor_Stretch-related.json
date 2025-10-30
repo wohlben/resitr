@@ -1,0 +1,10 @@
+{
+  "id": "Side_Lying_Groin_Stretch-Side-Lying_Floor_Stretch-related",
+  "relationship_type": "related",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Side_Lying_Groin_Stretch",
+  "to_exercise_template_id": "Side-Lying_Floor_Stretch"
+}

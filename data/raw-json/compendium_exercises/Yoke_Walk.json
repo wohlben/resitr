@@ -1,0 +1,45 @@
+{
+  "name": "Yoke Walk",
+  "slug": "yoke-walk",
+  "type": "STRENGTH",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "TRAPS",
+    "FOREARMS"
+  ],
+  "secondary_muscles": [
+    "ABS",
+    "QUADS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Strongman exercise carrying heavy yoke on shoulders while walking, full-body stability and strength.",
+  "instructions": [
+    "The yoke is usually done with a yoke apparatus, but is sometimes seen with refrigerators or other heavy objects.",
+    "Begin by racking the apparatus across the back of the shoulders. With your head looking forward and back arched, lift the yoke by driving through the heels.",
+    "Begin walking as quickly as possible using short, quick steps. You may hold the side posts of the yoke to help steady it and hold it in position. Continue for the given distance as fast as possible, usually 75-100 feet."
+  ],
+  "images": [
+    "/img/exercises/Yoke_Walk/0.jpg",
+    "/img/exercises/Yoke_Walk/1.jpg"
+  ],
+  "alternative_names": [
+    "Yoke-Walk"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Yoke_Walk"
+}

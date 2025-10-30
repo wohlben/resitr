@@ -1,0 +1,10 @@
+{
+  "id": "Romanian_Deadlift_from_Deficit-Stiff-Legged_Barbell_Deadlift-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Romanian_Deadlift_from_Deficit",
+  "to_exercise_template_id": "Stiff-Legged_Barbell_Deadlift"
+}

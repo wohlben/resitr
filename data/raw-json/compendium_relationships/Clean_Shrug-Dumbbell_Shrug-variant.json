@@ -1,0 +1,10 @@
+{
+  "id": "Clean_Shrug-Dumbbell_Shrug-variant",
+  "relationship_type": "variant",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761481995,
+  "from_exercise_template_id": "Clean_Shrug",
+  "to_exercise_template_id": "Dumbbell_Shrug"
+}

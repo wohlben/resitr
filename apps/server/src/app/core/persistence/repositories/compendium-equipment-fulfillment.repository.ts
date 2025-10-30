@@ -16,54 +16,54 @@ export class CompendiumEquipmentFulfillmentRepository {
     return this.db.select().from(compendiumEquipmentFulfillment);
   }
 
-  async findByEquipmentId(equipmentId: string) {
+  async findByEquipmentId(equipmentTemplateId: string) {
     return this.db
       .select()
       .from(compendiumEquipmentFulfillment)
-      .where(eq(compendiumEquipmentFulfillment.equipmentId, equipmentId));
+      .where(eq(compendiumEquipmentFulfillment.equipmentTemplateId, equipmentTemplateId));
   }
 
-  async findByFulfillsEquipmentId(fulfillsEquipmentId: string) {
+  async findByFulfillsEquipmentTemplateId(fulfillsEquipmentTemplateId: string) {
     return this.db
       .select()
       .from(compendiumEquipmentFulfillment)
-      .where(eq(compendiumEquipmentFulfillment.fulfillsEquipmentId, fulfillsEquipmentId));
+      .where(eq(compendiumEquipmentFulfillment.fulfillsEquipmentTemplateId, fulfillsEquipmentTemplateId));
   }
 
-  async findByCompositeKey(equipmentId: string, fulfillsEquipmentId: string) {
+  async findByCompositeKey(equipmentTemplateId: string, fulfillsEquipmentTemplateId: string) {
     const [result] = await this.db
       .select()
       .from(compendiumEquipmentFulfillment)
       .where(
         and(
-          eq(compendiumEquipmentFulfillment.equipmentId, equipmentId),
-          eq(compendiumEquipmentFulfillment.fulfillsEquipmentId, fulfillsEquipmentId)
+          eq(compendiumEquipmentFulfillment.equipmentTemplateId, equipmentTemplateId),
+          eq(compendiumEquipmentFulfillment.fulfillsEquipmentTemplateId, fulfillsEquipmentTemplateId)
         )
       );
     return result;
   }
 
-  async update(equipmentId: string, fulfillsEquipmentId: string, data: Partial<CompendiumEquipmentFulfillment>) {
+  async update(equipmentTemplateId: string, fulfillsEquipmentTemplateId: string, data: Partial<CompendiumEquipmentFulfillment>) {
     const [result] = await this.db
       .update(compendiumEquipmentFulfillment)
       .set(data)
       .where(
         and(
-          eq(compendiumEquipmentFulfillment.equipmentId, equipmentId),
-          eq(compendiumEquipmentFulfillment.fulfillsEquipmentId, fulfillsEquipmentId)
+          eq(compendiumEquipmentFulfillment.equipmentTemplateId, equipmentTemplateId),
+          eq(compendiumEquipmentFulfillment.fulfillsEquipmentTemplateId, fulfillsEquipmentTemplateId)
         )
       )
       .returning();
     return result;
   }
 
-  async delete(equipmentId: string, fulfillsEquipmentId: string) {
+  async delete(equipmentTemplateId: string, fulfillsEquipmentTemplateId: string) {
     const [result] = await this.db
       .delete(compendiumEquipmentFulfillment)
       .where(
         and(
-          eq(compendiumEquipmentFulfillment.equipmentId, equipmentId),
-          eq(compendiumEquipmentFulfillment.fulfillsEquipmentId, fulfillsEquipmentId)
+          eq(compendiumEquipmentFulfillment.equipmentTemplateId, equipmentTemplateId),
+          eq(compendiumEquipmentFulfillment.fulfillsEquipmentTemplateId, fulfillsEquipmentTemplateId)
         )
       )
       .returning();

@@ -1,0 +1,10 @@
+{
+  "id": "Bicycling_Stationary-Step_Mill-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761476051,
+  "from_exercise_template_id": "Bicycling_Stationary",
+  "to_exercise_template_id": "Step_Mill"
+}

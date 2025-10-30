@@ -1,0 +1,10 @@
+{
+  "id": "Lying_High_Bench_Barbell_Curl-EZ-Bar_Curl-regresses_to",
+  "relationship_type": "regresses_to",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Lying_High_Bench_Barbell_Curl",
+  "to_exercise_template_id": "EZ-Bar_Curl"
+}

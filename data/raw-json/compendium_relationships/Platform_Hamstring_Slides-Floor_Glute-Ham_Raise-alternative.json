@@ -1,0 +1,10 @@
+{
+  "id": "Platform_Hamstring_Slides-Floor_Glute-Ham_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Platform_Hamstring_Slides",
+  "to_exercise_template_id": "Floor_Glute-Ham_Raise"
+}

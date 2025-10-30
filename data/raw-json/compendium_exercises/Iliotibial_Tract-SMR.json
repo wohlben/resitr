@@ -1,0 +1,43 @@
+{
+  "name": "Iliotibial Tract-SMR",
+  "slug": "iliotibial-tract-smr",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "GLUTES"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "resistance-band",
+    "foam-roller"
+  ],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Self-myofascial release using foam roller on IT band (outside of thigh), releasing lateral leg tension.",
+  "instructions": [
+    "Lay on your side, with the bottom leg placed onto a foam roller between the hip and the knee. The other leg can be crossed in front of you.",
+    "Place as much of your weight as is tolerable onto your bottom leg; there is no need to keep your bottom leg in contact with the ground. Be sure to relax the muscles of the leg you are stretching.",
+    "Roll your leg over the foam from you hip to your knee, pausing for 10-30 seconds at points of tension. Repeat with the opposite leg."
+  ],
+  "images": [
+    "/img/exercises/Iliotibial_Tract-SMR/0.jpg",
+    "/img/exercises/Iliotibial_Tract-SMR/1.jpg"
+  ],
+  "alternative_names": [
+    "Iliotibial Tract SMR"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Iliotibial_Tract-SMR"
+}

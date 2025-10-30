@@ -1,0 +1,10 @@
+{
+  "id": "Torso_Rotation-Pallof_Press_With_Rotation-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Torso_Rotation",
+  "to_exercise_template_id": "Pallof_Press_With_Rotation"
+}

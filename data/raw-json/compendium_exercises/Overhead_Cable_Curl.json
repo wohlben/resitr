@@ -1,0 +1,46 @@
+{
+  "name": "Overhead Cable Curl",
+  "slug": "overhead-cable-curl",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "BICEPS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-cable-machine"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Cable curl performed with arms overhead using high pulley, targeting biceps from different angle.",
+  "instructions": [
+    "To begin, set a weight that is comfortable on each side of the pulley machine. Note: Make sure that the amount of weight selected is the same on each side.",
+    "Now adjust the height of the pulleys on each side and make sure that they are positioned at a height higher than that of your shoulders.",
+    "Stand in the middle of both sides and use an underhand grip (palms facing towards the ceiling) to grab each handle. Your arms should be fully extended and parallel to the floor with your feet positioned shoulder width apart from each other. Your body should be evenly aligned the handles. This is the starting position.",
+    "While exhaling, slowly squeeze the biceps on each side until your forearms and biceps touch.",
+    "While inhaling, move your forearms back to the starting position. Note: Your entire body is stationary during this exercise except for the forearms.",
+    "Repeat for the recommended amount of repetitions prescribed in your program."
+  ],
+  "images": [
+    "/img/exercises/Overhead_Cable_Curl/0.jpg",
+    "/img/exercises/Overhead_Cable_Curl/1.jpg"
+  ],
+  "alternative_names": [
+    "Overhead Cable Machine Curl",
+    "Overhead Curl"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Overhead_Cable_Curl"
+}

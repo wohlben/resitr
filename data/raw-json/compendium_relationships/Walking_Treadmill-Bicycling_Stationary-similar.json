@@ -1,0 +1,10 @@
+{
+  "id": "Walking_Treadmill-Bicycling_Stationary-similar",
+  "relationship_type": "similar",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761476051,
+  "from_exercise_template_id": "Walking_Treadmill",
+  "to_exercise_template_id": "Bicycling_Stationary"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Press_with_Chains-Bench_Press_-_Powerlifting-regression",
+  "relationship_type": "regression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Bench_Press_with_Chains",
+  "to_exercise_template_id": "Bench_Press_-_Powerlifting"
+}

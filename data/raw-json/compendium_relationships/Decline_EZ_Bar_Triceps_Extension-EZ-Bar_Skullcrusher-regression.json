@@ -1,0 +1,10 @@
+{
+  "id": "Decline_EZ_Bar_Triceps_Extension-EZ-Bar_Skullcrusher-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "dev-user",
+  "created_at": 1729932000,
+  "from_exercise_template_id": "Decline_EZ_Bar_Triceps_Extension",
+  "to_exercise_template_id": "EZ-Bar_Skullcrusher"
+}

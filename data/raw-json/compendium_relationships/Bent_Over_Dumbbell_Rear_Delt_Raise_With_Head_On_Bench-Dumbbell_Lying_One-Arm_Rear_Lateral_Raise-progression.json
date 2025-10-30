@@ -1,0 +1,10 @@
+{
+  "id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench-Dumbbell_Lying_One-Arm_Rear_Lateral_Raise-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench",
+  "to_exercise_template_id": "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise"
+}

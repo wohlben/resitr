@@ -1,0 +1,46 @@
+{
+  "name": "Leg-Over Floor Press",
+  "slug": "leg-over-floor-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS",
+    "ABS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Floor press variation with one leg raised over the other, creating additional core engagement while pressing.",
+  "instructions": [
+    "Lie on the floor with one kettlebell in place on your chest, holding it by the handle. Extend leg on working side over leg on non-working side.Your free arm can be extended out to your side for support.",
+    "Press the kettlebll into a locked out position.",
+    "Lower the weight until the elbow touches the ground, keeping the kettlebell above the elbow. Repeat for the desired number of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Leg-Over_Floor_Press/0.jpg",
+    "/img/exercises/Leg-Over_Floor_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "Leg Over Floor Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Leg-Over_Floor_Press"
+}

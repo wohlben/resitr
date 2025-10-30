@@ -1,0 +1,10 @@
+{
+  "id": "Cable_Reverse_Crunch-Hanging_Leg_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761479425,
+  "from_exercise_template_id": "Cable_Reverse_Crunch",
+  "to_exercise_template_id": "Hanging_Leg_Raise"
+}

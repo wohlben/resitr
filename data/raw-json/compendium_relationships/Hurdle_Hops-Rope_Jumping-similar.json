@@ -1,0 +1,10 @@
+{
+  "id": "Hurdle_Hops-Rope_Jumping-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Hurdle_Hops",
+  "to_exercise_template_id": "Rope_Jumping"
+}

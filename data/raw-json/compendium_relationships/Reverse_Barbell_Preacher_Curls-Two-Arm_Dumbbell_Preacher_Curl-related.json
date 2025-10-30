@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Barbell_Preacher_Curls-Two-Arm_Dumbbell_Preacher_Curl-related",
+  "relationship_type": "related",
+  "strength": 0.75,
+  "description": "Dumbbell version with supinated grip on preacher bench",
+  "created_by": "system",
+  "created_at": 1761543970,
+  "from_exercise_template_id": "Reverse_Barbell_Preacher_Curls",
+  "to_exercise_template_id": "Two-Arm_Dumbbell_Preacher_Curl"
+}

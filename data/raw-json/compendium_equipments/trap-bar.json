@@ -1,0 +1,8 @@
+{
+  "name": "trap-bar",
+  "display_name": "Trap Bar",
+  "description": "A hexagonal-shaped barbell that allows you to stand inside it, often used for deadlifts.",
+  "category": "free_weights",
+  "image_url": null,
+  "template_id": "trap-bar"
+}

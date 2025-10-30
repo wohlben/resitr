@@ -1,0 +1,8 @@
+{
+  "name": "2x dumbbell",
+  "display_name": "Dumbbells (Pair)",
+  "description": "A pair of dumbbells - short bars with fixed or adjustable weights on each end, used for unilateral or bilateral exercises.",
+  "category": "free_weights",
+  "image_url": null,
+  "template_id": "2x-dumbbell"
+}

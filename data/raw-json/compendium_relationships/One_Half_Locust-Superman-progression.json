@@ -1,0 +1,10 @@
+{
+  "id": "One_Half_Locust-Superman-progression",
+  "relationship_type": "progression",
+  "strength": null,
+  "description": "Both exercises are performed lying face down with extension, but Superman progresses from One Half Locust by lifting both arms and legs simultaneously and focusing on strengthening the lower back rather than stretching",
+  "created_by": "system",
+  "created_at": 1761024000,
+  "from_exercise_template_id": "One_Half_Locust",
+  "to_exercise_template_id": "Superman"
+}

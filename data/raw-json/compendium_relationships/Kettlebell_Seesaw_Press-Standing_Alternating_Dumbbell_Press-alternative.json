@@ -1,0 +1,10 @@
+{
+  "id": "Kettlebell_Seesaw_Press-Standing_Alternating_Dumbbell_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761500440,
+  "from_exercise_template_id": "Kettlebell_Seesaw_Press",
+  "to_exercise_template_id": "Standing_Alternating_Dumbbell_Press"
+}

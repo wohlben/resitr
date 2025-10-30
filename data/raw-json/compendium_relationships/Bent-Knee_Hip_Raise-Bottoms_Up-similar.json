@@ -1,0 +1,10 @@
+{
+  "id": "Bent-Knee_Hip_Raise-Bottoms_Up-similar",
+  "relationship_type": "similar",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Bent-Knee_Hip_Raise",
+  "to_exercise_template_id": "Bottoms_Up"
+}

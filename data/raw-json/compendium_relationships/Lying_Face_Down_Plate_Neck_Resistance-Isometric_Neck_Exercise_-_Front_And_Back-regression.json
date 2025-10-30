@@ -1,0 +1,10 @@
+{
+  "id": "Lying_Face_Down_Plate_Neck_Resistance-Isometric_Neck_Exercise_-_Front_And_Back-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": "Regression from weighted dynamic neck extension to bodyweight isometric neck training, removing external load for easier difficulty.",
+  "created_by": "system",
+  "created_at": 1761509530,
+  "from_exercise_template_id": "Lying_Face_Down_Plate_Neck_Resistance",
+  "to_exercise_template_id": "Isometric_Neck_Exercise_-_Front_And_Back"
+}

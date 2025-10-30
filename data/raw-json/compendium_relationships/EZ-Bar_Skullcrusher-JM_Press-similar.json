@@ -1,0 +1,10 @@
+{
+  "id": "EZ-Bar_Skullcrusher-JM_Press-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761499467,
+  "from_exercise_template_id": "EZ-Bar_Skullcrusher",
+  "to_exercise_template_id": "JM_Press"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Box_Squat_with_Bands-Barbell_Squat_To_A_Bench-regression",
+  "relationship_type": "regression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Box_Squat_with_Bands",
+  "to_exercise_template_id": "Barbell_Squat_To_A_Bench"
+}

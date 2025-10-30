@@ -1,0 +1,10 @@
+{
+  "id": "Single_Dumbbell_Raise-Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head-variation",
+  "relationship_type": "variation",
+  "strength": 0.7,
+  "description": "Extended range of motion variation that continues the front raise movement overhead in a semicircular motion, increasing front deltoid engagement and adding overhead stability challenge.",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Single_Dumbbell_Raise",
+  "to_exercise_template_id": "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head"
+}

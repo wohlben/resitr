@@ -1,0 +1,10 @@
+{
+  "id": "Preacher_Curl-Machine_Preacher_Curls-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Preacher_Curl",
+  "to_exercise_template_id": "Machine_Preacher_Curls"
+}

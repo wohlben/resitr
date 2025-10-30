@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Long_Jump-Hurdle_Hops-similar",
+  "relationship_type": "similar",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "Standing_Long_Jump",
+  "to_exercise_template_id": "Hurdle_Hops"
+}

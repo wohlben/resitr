@@ -1,0 +1,10 @@
+{
+  "id": "Bent_Over_Low-Pulley_Side_Lateral-Side_Lateral_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Bent_Over_Low-Pulley_Side_Lateral",
+  "to_exercise_template_id": "Side_Lateral_Raise"
+}

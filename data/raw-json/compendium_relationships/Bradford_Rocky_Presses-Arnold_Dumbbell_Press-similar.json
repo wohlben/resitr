@@ -1,0 +1,10 @@
+{
+  "id": "Bradford_Rocky_Presses-Arnold_Dumbbell_Press-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761463686,
+  "from_exercise_template_id": "Bradford_Rocky_Presses",
+  "to_exercise_template_id": "Arnold_Dumbbell_Press"
+}

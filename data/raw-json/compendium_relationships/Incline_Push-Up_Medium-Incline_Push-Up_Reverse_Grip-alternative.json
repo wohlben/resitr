@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Push-Up_Medium-Incline_Push-Up_Reverse_Grip-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": "Both incline push-up variations; medium grip provides balanced chest and triceps work, reverse grip emphasizes triceps with supinated hands",
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Incline_Push-Up_Medium",
+  "to_exercise_template_id": "Incline_Push-Up_Reverse_Grip"
+}

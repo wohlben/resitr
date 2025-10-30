@@ -1,0 +1,10 @@
+{
+  "id": "Single-Leg_Stride_Jump-Stride_Jump_Crossover-similar",
+  "relationship_type": "similar",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Single-Leg_Stride_Jump",
+  "to_exercise_template_id": "Stride_Jump_Crossover"
+}

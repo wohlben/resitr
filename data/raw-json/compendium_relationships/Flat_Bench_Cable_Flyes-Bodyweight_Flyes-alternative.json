@@ -1,0 +1,10 @@
+{
+  "id": "Flat_Bench_Cable_Flyes-Bodyweight_Flyes-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761476339,
+  "from_exercise_template_id": "Flat_Bench_Cable_Flyes",
+  "to_exercise_template_id": "Bodyweight_Flyes"
+}

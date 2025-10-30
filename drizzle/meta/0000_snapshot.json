@@ -1,14 +1,14 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "842048b7-1cf1-4276-9a11-ab43c340cedf",
+  "id": "f878716b-b10c-4ac3-858d-ebbfc5753d6a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "compendium_equipment": {
-      "name": "compendium_equipment",
+    "compendium_equipments": {
+      "name": "compendium_equipments",
       "columns": {
-        "id": {
-          "name": "id",
+        "template_id": {
+          "name": "template_id",
           "type": "text",
           "primaryKey": true,
           "notNull": true,
@@ -51,8 +51,8 @@
         }
       },
       "indexes": {
-        "compendium_equipment_name_unique": {
-          "name": "compendium_equipment_name_unique",
+        "compendium_equipments_name_unique": {
+          "name": "compendium_equipments_name_unique",
           "columns": [
             "name"
           ],
@@ -64,18 +64,18 @@
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
-    "compendium_equipment_fulfillments": {
-      "name": "compendium_equipment_fulfillments",
+    "compendium_equipment_fulfillment": {
+      "name": "compendium_equipment_fulfillment",
       "columns": {
-        "equipment_id": {
-          "name": "equipment_id",
+        "equipment_template_id": {
+          "name": "equipment_template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
-        "fulfills_equipment_id": {
-          "name": "fulfills_equipment_id",
+        "fulfills_equipment_template_id": {
+          "name": "fulfills_equipment_template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -97,52 +97,60 @@
           "default": "(unixepoch())"
         }
       },
-      "indexes": {},
+      "indexes": {
+        "fulfills_equipment_idx": {
+          "name": "fulfills_equipment_idx",
+          "columns": [
+            "fulfills_equipment_template_id"
+          ],
+          "isUnique": false
+        }
+      },
       "foreignKeys": {
-        "compendium_equipment_fulfillments_equipment_id_compendium_equipment_id_fk": {
-          "name": "compendium_equipment_fulfillments_equipment_id_compendium_equipment_id_fk",
-          "tableFrom": "compendium_equipment_fulfillments",
-          "tableTo": "compendium_equipment",
+        "compendium_equipment_fulfillment_equipment_template_id_compendium_equipments_template_id_fk": {
+          "name": "compendium_equipment_fulfillment_equipment_template_id_compendium_equipments_template_id_fk",
+          "tableFrom": "compendium_equipment_fulfillment",
+          "tableTo": "compendium_equipments",
           "columnsFrom": [
-            "equipment_id"
+            "equipment_template_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "compendium_equipment_fulfillments_fulfills_equipment_id_compendium_equipment_id_fk": {
-          "name": "compendium_equipment_fulfillments_fulfills_equipment_id_compendium_equipment_id_fk",
-          "tableFrom": "compendium_equipment_fulfillments",
-          "tableTo": "compendium_equipment",
+        "compendium_equipment_fulfillment_fulfills_equipment_template_id_compendium_equipments_template_id_fk": {
+          "name": "compendium_equipment_fulfillment_fulfills_equipment_template_id_compendium_equipments_template_id_fk",
+          "tableFrom": "compendium_equipment_fulfillment",
+          "tableTo": "compendium_equipments",
           "columnsFrom": [
-            "fulfills_equipment_id"
+            "fulfills_equipment_template_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {
-        "compendium_equipment_fulfillments_equipment_id_fulfills_equipment_id_pk": {
+        "compendium_equipment_fulfillment_equipment_template_id_fulfills_equipment_template_id_pk": {
           "columns": [
-            "equipment_id",
-            "fulfills_equipment_id"
+            "equipment_template_id",
+            "fulfills_equipment_template_id"
           ],
-          "name": "compendium_equipment_fulfillments_equipment_id_fulfills_equipment_id_pk"
+          "name": "compendium_equipment_fulfillment_equipment_template_id_fulfills_equipment_template_id_pk"
         }
       },
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
-    "compendium_exercise_group_member": {
-      "name": "compendium_exercise_group_member",
+    "compendium_exercise_group_members": {
+      "name": "compendium_exercise_group_members",
       "columns": {
-        "exercise_id": {
-          "name": "exercise_id",
+        "exercise_template_id": {
+          "name": "exercise_template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -171,24 +179,32 @@
           "default": "(unixepoch())"
         }
       },
-      "indexes": {},
+      "indexes": {
+        "group_id_idx": {
+          "name": "group_id_idx",
+          "columns": [
+            "group_id"
+          ],
+          "isUnique": false
+        }
+      },
       "foreignKeys": {
-        "compendium_exercise_group_member_exercise_id_compendium_exercises_id_fk": {
-          "name": "compendium_exercise_group_member_exercise_id_compendium_exercises_id_fk",
-          "tableFrom": "compendium_exercise_group_member",
+        "compendium_exercise_group_members_exercise_template_id_compendium_exercises_template_id_fk": {
+          "name": "compendium_exercise_group_members_exercise_template_id_compendium_exercises_template_id_fk",
+          "tableFrom": "compendium_exercise_group_members",
           "tableTo": "compendium_exercises",
           "columnsFrom": [
-            "exercise_id"
+            "exercise_template_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "compendium_exercise_group_member_group_id_compendium_exercise_groups_id_fk": {
-          "name": "compendium_exercise_group_member_group_id_compendium_exercise_groups_id_fk",
-          "tableFrom": "compendium_exercise_group_member",
+        "compendium_exercise_group_members_group_id_compendium_exercise_groups_id_fk": {
+          "name": "compendium_exercise_group_members_group_id_compendium_exercise_groups_id_fk",
+          "tableFrom": "compendium_exercise_group_members",
           "tableTo": "compendium_exercise_groups",
           "columnsFrom": [
             "group_id"
@@ -201,12 +217,12 @@
         }
       },
       "compositePrimaryKeys": {
-        "compendium_exercise_group_member_exercise_id_group_id_pk": {
+        "compendium_exercise_group_members_exercise_template_id_group_id_pk": {
           "columns": [
-            "exercise_id",
+            "exercise_template_id",
             "group_id"
           ],
-          "name": "compendium_exercise_group_member_exercise_id_group_id_pk"
+          "name": "compendium_exercise_group_members_exercise_template_id_group_id_pk"
         }
       },
       "uniqueConstraints": {},
@@ -273,25 +289,18 @@
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
-    "compendium_relationships": {
-      "name": "compendium_relationships",
+    "compendium_exercise_relationships": {
+      "name": "compendium_exercise_relationships",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "text",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "from_exercise_id": {
-          "name": "from_exercise_id",
+        "from_exercise_template_id": {
+          "name": "from_exercise_template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
-        "to_exercise_id": {
-          "name": "to_exercise_id",
+        "to_exercise_template_id": {
+          "name": "to_exercise_template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -335,60 +344,60 @@
         }
       },
       "indexes": {
-        "unique_relationship_idx": {
-          "name": "unique_relationship_idx",
+        "to_exercise_idx": {
+          "name": "to_exercise_idx",
           "columns": [
-            "from_exercise_id",
-            "to_exercise_id",
-            "relationship_type"
+            "to_exercise_template_id"
           ],
-          "isUnique": true
+          "isUnique": false
         }
       },
       "foreignKeys": {
-        "compendium_relationships_from_exercise_id_compendium_exercises_id_fk": {
-          "name": "compendium_relationships_from_exercise_id_compendium_exercises_id_fk",
-          "tableFrom": "compendium_relationships",
+        "compendium_exercise_relationships_from_exercise_template_id_compendium_exercises_template_id_fk": {
+          "name": "compendium_exercise_relationships_from_exercise_template_id_compendium_exercises_template_id_fk",
+          "tableFrom": "compendium_exercise_relationships",
           "tableTo": "compendium_exercises",
           "columnsFrom": [
-            "from_exercise_id"
+            "from_exercise_template_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "compendium_relationships_to_exercise_id_compendium_exercises_id_fk": {
-          "name": "compendium_relationships_to_exercise_id_compendium_exercises_id_fk",
-          "tableFrom": "compendium_relationships",
+        "compendium_exercise_relationships_to_exercise_template_id_compendium_exercises_template_id_fk": {
+          "name": "compendium_exercise_relationships_to_exercise_template_id_compendium_exercises_template_id_fk",
+          "tableFrom": "compendium_exercise_relationships",
           "tableTo": "compendium_exercises",
           "columnsFrom": [
-            "to_exercise_id"
+            "to_exercise_template_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "compendium_exercise_relationships_from_exercise_template_id_to_exercise_template_id_relationship_type_pk": {
+          "columns": [
+            "from_exercise_template_id",
+            "to_exercise_template_id",
+            "relationship_type"
+          ],
+          "name": "compendium_exercise_relationships_from_exercise_template_id_to_exercise_template_id_relationship_type_pk"
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
-    "compendium_exercise_video": {
-      "name": "compendium_exercise_video",
+    "compendium_exercise_videos": {
+      "name": "compendium_exercise_videos",
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "integer",
-          "primaryKey": true,
-          "notNull": true,
-          "autoincrement": true
-        },
-        "compendium_exercise_id": {
-          "name": "compendium_exercise_id",
+        "exercise_template_id": {
+          "name": "exercise_template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -438,40 +447,39 @@
           "default": "(unixepoch())"
         }
       },
-      "indexes": {
-        "unique_video_per_exercise_idx": {
-          "name": "unique_video_per_exercise_idx",
-          "columns": [
-            "compendium_exercise_id",
-            "url"
-          ],
-          "isUnique": true
-        }
-      },
+      "indexes": {},
       "foreignKeys": {
-        "compendium_exercise_video_compendium_exercise_id_compendium_exercises_id_fk": {
-          "name": "compendium_exercise_video_compendium_exercise_id_compendium_exercises_id_fk",
-          "tableFrom": "compendium_exercise_video",
+        "compendium_exercise_videos_exercise_template_id_compendium_exercises_template_id_fk": {
+          "name": "compendium_exercise_videos_exercise_template_id_compendium_exercises_template_id_fk",
+          "tableFrom": "compendium_exercise_videos",
           "tableTo": "compendium_exercises",
           "columnsFrom": [
-            "compendium_exercise_id"
+            "exercise_template_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
-      "compositePrimaryKeys": {},
+      "compositePrimaryKeys": {
+        "compendium_exercise_videos_exercise_template_id_url_pk": {
+          "columns": [
+            "exercise_template_id",
+            "url"
+          ],
+          "name": "compendium_exercise_videos_exercise_template_id_url_pk"
+        }
+      },
       "uniqueConstraints": {},
       "checkConstraints": {}
     },
     "compendium_exercises": {
       "name": "compendium_exercises",
       "columns": {
-        "id": {
-          "name": "id",
+        "template_id": {
+          "name": "template_id",
           "type": "text",
           "primaryKey": true,
           "notNull": true,
@@ -639,15 +647,15 @@
         }
       },
       "foreignKeys": {
-        "compendium_exercises_parent_exercise_id_compendium_exercises_id_fk": {
-          "name": "compendium_exercises_parent_exercise_id_compendium_exercises_id_fk",
+        "compendium_exercises_parent_exercise_id_compendium_exercises_template_id_fk": {
+          "name": "compendium_exercises_parent_exercise_id_compendium_exercises_template_id_fk",
           "tableFrom": "compendium_exercises",
           "tableTo": "compendium_exercises",
           "columnsFrom": [
             "parent_exercise_id"
           ],
           "columnsTo": [
-            "id"
+            "template_id"
           ],
           "onDelete": "no action",
           "onUpdate": "no action"
@@ -682,8 +690,8 @@
           "autoincrement": false,
           "default": "(unixepoch())"
         },
-        "id": {
-          "name": "id",
+        "template_id": {
+          "name": "template_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,

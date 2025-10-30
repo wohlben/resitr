@@ -1,0 +1,10 @@
+{
+  "id": "Freehand_Jump_Squat-Bench_Jump-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Freehand_Jump_Squat",
+  "to_exercise_template_id": "Bench_Jump"
+}

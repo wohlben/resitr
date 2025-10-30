@@ -1,0 +1,10 @@
+{
+  "id": "Pushups-Suspended_Push-Up-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Pushups",
+  "to_exercise_template_id": "Suspended_Push-Up"
+}

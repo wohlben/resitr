@@ -1,0 +1,57 @@
+{
+  "name": "Barbell Deadlift",
+  "slug": "barbell-deadlift",
+  "type": "STRENGTH",
+  "force": [
+    "PULL",
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "LOWER_BACK"
+  ],
+  "secondary_muscles": [
+    "LATS",
+    "TRAPS",
+    "FOREARMS",
+    "QUADS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "barbell"
+  ],
+  "body_weight_scaling": 0.2,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Fundamental compound lift engaging entire posterior chain to build total-body strength and mass",
+  "instructions": [
+    "Stand in front of a loaded barbell.",
+    "While keeping the back as straight as possible, bend your knees, bend forward and grasp the bar using a medium (shoulder width) overhand grip. This will be the starting position of the exercise. Tip: If it is difficult to hold on to the bar with this grip, alternate your grip or use wrist straps.",
+    "While holding the bar, start the lift by pushing with your legs while simultaneously getting your torso to the upright position as you breathe out. In the upright position, stick your chest out and contract the back by bringing the shoulder blades back. Think of how the soldiers in the military look when they are in standing in attention.",
+    "Go back to the starting position by bending at the knees while simultaneously leaning the torso forward at the waist while keeping the back straight. When the weights on the bar touch the floor you are back at the starting position and ready to perform another repetition.",
+    "Perform the amount of repetitions prescribed in the program."
+  ],
+  "images": [
+    "/img/exercises/Barbell_Deadlift/0.jpg",
+    "/img/exercises/Barbell_Deadlift/1.jpg"
+  ],
+  "alternative_names": [
+    "BB Deadlift",
+    "Bar Deadlift",
+    "Barbell-Deadlift",
+    "Barbell Deadlift",
+    "Conventional Deadlift",
+    "Deadlift"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Barbell_Deadlift"
+}

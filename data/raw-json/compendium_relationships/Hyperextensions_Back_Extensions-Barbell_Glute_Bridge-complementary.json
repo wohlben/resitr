@@ -1,0 +1,10 @@
+{
+  "id": "Hyperextensions_Back_Extensions-Barbell_Glute_Bridge-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761498416,
+  "from_exercise_template_id": "Hyperextensions_Back_Extensions",
+  "to_exercise_template_id": "Barbell_Glute_Bridge"
+}

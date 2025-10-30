@@ -1,0 +1,10 @@
+{
+  "id": "Resistance_Band_Squat-Barbell_Squat-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Resistance_Band_Squat",
+  "to_exercise_template_id": "Barbell_Squat"
+}

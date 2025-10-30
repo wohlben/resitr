@@ -1,0 +1,10 @@
+{
+  "id": "Double_Kettlebell_Windmill-Advanced_Kettlebell_Windmill-regression",
+  "relationship_type": "regression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760887364,
+  "from_exercise_template_id": "Double_Kettlebell_Windmill",
+  "to_exercise_template_id": "Advanced_Kettlebell_Windmill"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Close-Grip_EZ-Bar_Curl_with_Band-Hammer_Curls-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Close-Grip_EZ-Bar_Curl_with_Band",
+  "to_exercise_template_id": "Hammer_Curls"
+}

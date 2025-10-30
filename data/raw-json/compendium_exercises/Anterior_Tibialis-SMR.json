@@ -1,0 +1,41 @@
+{
+  "name": "Anterior Tibialis-SMR",
+  "slug": "anterior-tibialis-smr",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "CALVES"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "foam-roller"
+  ],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Self-myofascial release for anterior tibialis using foam roller to reduce shin tightness and prevent splints",
+  "instructions": [
+    "Begin seated on the ground with your legs bent and your feet on the floor.",
+    "Using a Muscle Roller or a rolling pin, apply pressure to the muscles on the outside of your shins. Work from just below the knee to above the ankle, pausing at points of tension for 10-30 seconds. Repeat on the other leg."
+  ],
+  "images": [
+    "/img/exercises/Anterior_Tibialis-SMR/0.jpg",
+    "/img/exercises/Anterior_Tibialis-SMR/1.jpg"
+  ],
+  "alternative_names": [
+    "Anterior Tibialis SMR"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Anterior_Tibialis-SMR"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Prowler Sprint",
+  "slug": "prowler-sprint",
+  "type": "CARDIO",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "gym-sled"
+  ],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "Sprint pushing prowler sled, explosive running with resistance for leg power and conditioning.",
+  "instructions": [
+    "Place your sled on an appropriate surface, loaded to a suitable weight. The sled should provide enough resistance to require effort, but not so heavy that you are significantly slowed down.",
+    "You may use the upright or the low handles for this exercise. Place your hands on the handles with your arms extended, leaning into the implement.",
+    "With good posture, drive through the ground with alternating, short steps. Move as fast as you can for a short distance."
+  ],
+  "images": [
+    "/img/exercises/Prowler_Sprint/0.jpg",
+    "/img/exercises/Prowler_Sprint/1.jpg"
+  ],
+  "alternative_names": [
+    "Prowler-Sprint"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Prowler_Sprint"
+}

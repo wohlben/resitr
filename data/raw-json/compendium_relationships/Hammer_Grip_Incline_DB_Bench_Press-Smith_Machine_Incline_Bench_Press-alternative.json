@@ -1,0 +1,10 @@
+{
+  "id": "Hammer_Grip_Incline_DB_Bench_Press-Smith_Machine_Incline_Bench_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761496103,
+  "from_exercise_template_id": "Hammer_Grip_Incline_DB_Bench_Press",
+  "to_exercise_template_id": "Smith_Machine_Incline_Bench_Press"
+}

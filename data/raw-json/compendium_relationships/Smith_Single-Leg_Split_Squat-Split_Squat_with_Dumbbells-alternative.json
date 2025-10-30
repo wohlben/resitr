@@ -1,0 +1,10 @@
+{
+  "id": "Smith_Single-Leg_Split_Squat-Split_Squat_with_Dumbbells-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": "Both are split squat variations with rear foot elevated, differing in equipment (Smith machine vs dumbbells)",
+  "created_by": "system",
+  "created_at": 1761547477,
+  "from_exercise_template_id": "Smith_Single-Leg_Split_Squat",
+  "to_exercise_template_id": "Split_Squat_with_Dumbbells"
+}

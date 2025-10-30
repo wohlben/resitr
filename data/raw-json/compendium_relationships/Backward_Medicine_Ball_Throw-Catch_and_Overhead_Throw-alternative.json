@@ -1,0 +1,10 @@
+{
+  "id": "Backward_Medicine_Ball_Throw-Catch_and_Overhead_Throw-alternative",
+  "relationship_type": "alternative",
+  "strength": null,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Backward_Medicine_Ball_Throw",
+  "to_exercise_template_id": "Catch_and_Overhead_Throw"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Upper_Back-Leg_Grab-Latissimus_Dorsi-SMR-complementary",
+  "relationship_type": "complementary",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Upper_Back-Leg_Grab",
+  "to_exercise_template_id": "Latissimus_Dorsi-SMR"
+}

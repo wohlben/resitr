@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Barbell_Preacher_Curls-Standing_Dumbbell_Reverse_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": "Dumbbell version performed standing for unilateral work and different stabilization demands",
+  "created_by": "system",
+  "created_at": 1761543970,
+  "from_exercise_template_id": "Reverse_Barbell_Preacher_Curls",
+  "to_exercise_template_id": "Standing_Dumbbell_Reverse_Curl"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Pushups-Bodyweight_Flyes-progression",
+  "relationship_type": "progression",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761476339,
+  "from_exercise_template_id": "Pushups",
+  "to_exercise_template_id": "Bodyweight_Flyes"
+}

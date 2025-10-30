@@ -1,0 +1,10 @@
+{
+  "id": "Crucifix-Side_Lateral_Raise-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Crucifix",
+  "to_exercise_template_id": "Side_Lateral_Raise"
+}

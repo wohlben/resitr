@@ -1,0 +1,10 @@
+{
+  "id": "Palms-Down_Wrist_Curl_Over_A_Bench-Cable_Wrist_Curl-antagonist",
+  "relationship_type": "antagonist",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761479701,
+  "from_exercise_template_id": "Palms-Down_Wrist_Curl_Over_A_Bench",
+  "to_exercise_template_id": "Cable_Wrist_Curl"
+}

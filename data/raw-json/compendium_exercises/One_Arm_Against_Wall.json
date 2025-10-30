@@ -1,0 +1,41 @@
+{
+  "name": "One Arm Against Wall",
+  "slug": "one-arm-against-wall",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "CHEST",
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Chest and shoulder stretch performed with one arm against wall, rotating body away to stretch pec and front delt.",
+  "instructions": [
+    "From a standing position, place a bent arm against a wall or doorway.",
+    "Slowly lean toward your arm until you feel a stretch in your lats."
+  ],
+  "images": [
+    "/img/exercises/One_Arm_Against_Wall/0.jpg",
+    "/img/exercises/One_Arm_Against_Wall/1.jpg"
+  ],
+  "alternative_names": [
+    "Single Arm Against Wall",
+    "Unilateral Against Wall"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "One_Arm_Against_Wall"
+}

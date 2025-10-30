@@ -1,0 +1,40 @@
+{
+  "name": "Iron Cross",
+  "slug": "iron-cross",
+  "type": "STRENGTH",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS",
+    "SIDE_DELTS"
+  ],
+  "secondary_muscles": [
+    "CHEST"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED",
+    "REP_BASED"
+  ],
+  "description": "Gymnastics hold with arms extended straight out to sides forming cross, extreme shoulder and chest isometric.",
+  "instructions": [],
+  "images": [
+    "/img/exercises/Iron_Cross/0.jpg",
+    "/img/exercises/Iron_Cross/1.jpg"
+  ],
+  "alternative_names": [
+    "Iron-Cross"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Iron_Cross"
+}

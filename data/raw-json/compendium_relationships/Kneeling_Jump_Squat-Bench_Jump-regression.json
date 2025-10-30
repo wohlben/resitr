@@ -1,0 +1,10 @@
+{
+  "id": "Kneeling_Jump_Squat-Bench_Jump-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Kneeling_Jump_Squat",
+  "to_exercise_template_id": "Bench_Jump"
+}

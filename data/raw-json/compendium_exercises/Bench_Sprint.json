@@ -1,0 +1,46 @@
+{
+  "name": "Bench Sprint",
+  "slug": "bench-sprint",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "CALVES"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "Explosive bench step-over sprint building leg power and speed through plyometric training",
+  "instructions": [
+    "Stand on the ground with one foot resting on a bench or box with your heel close to the edge.",
+    "Push off with your foot on top of the bench, extending through the hip and knee.",
+    "Land with the opposite foot on top of the box, returning your other foot back to the start position.",
+    "Continue alternating from one foot to another to complete the set."
+  ],
+  "images": [
+    "/img/exercises/Bench_Sprint/0.jpg",
+    "/img/exercises/Bench_Sprint/1.jpg"
+  ],
+  "alternative_names": [
+    "Bench-Sprint"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Bench_Sprint"
+}

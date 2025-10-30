@@ -1,0 +1,45 @@
+{
+  "name": "Reverse Plate Curls",
+  "slug": "reverse-plate-curls",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "BICEPS"
+  ],
+  "secondary_muscles": [
+    "FOREARMS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "weight-plate"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Plate curl with reverse grip, curling plate held by edges with overhand grip.",
+  "instructions": [
+    "Start by standing straight with a weighted plate held by both hands and arms fully extended. Use a pronated grip (palms facing down) and make sure your fingers grab the rough side of the plate while your thumb grabs the smooth side. Note: For the best results, grab the weighted plate at an 11:00 and 1:00 o'clock position.",
+    "Your feet should be shoulder width apart from each other and the weighted plate should be near the groin area. This is the starting position.",
+    "Slowly lift the plate up while keeping the elbows in and the upper arms stationary until your biceps and forearms touch while exhaling. The plate should be evenly aligned with your torso at this point.",
+    "Feel the contraction for a second and begin to lower the weight back down to the starting position while inhaling",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Reverse_Plate_Curls/0.jpg",
+    "/img/exercises/Reverse_Plate_Curls/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Reverse_Plate_Curls"
+}

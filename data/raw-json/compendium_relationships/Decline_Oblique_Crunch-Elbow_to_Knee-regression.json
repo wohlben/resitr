@@ -1,0 +1,10 @@
+{
+  "id": "Decline_Oblique_Crunch-Elbow_to_Knee-regression",
+  "relationship_type": "regression",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730073600,
+  "from_exercise_template_id": "Decline_Oblique_Crunch",
+  "to_exercise_template_id": "Elbow_to_Knee"
+}

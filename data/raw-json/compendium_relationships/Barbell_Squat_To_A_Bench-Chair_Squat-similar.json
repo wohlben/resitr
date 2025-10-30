@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Squat_To_A_Bench-Chair_Squat-similar",
+  "relationship_type": "similar",
+  "strength": 0.95,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761481210,
+  "from_exercise_template_id": "Barbell_Squat_To_A_Bench",
+  "to_exercise_template_id": "Chair_Squat"
+}

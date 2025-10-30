@@ -1,0 +1,10 @@
+{
+  "id": "Side_Leg_Raises-Monster_Walk-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": "Both work hip abductors but Monster Walk adds resistance and dynamic movement",
+  "created_by": "system",
+  "created_at": 1730053200,
+  "from_exercise_template_id": "Side_Leg_Raises",
+  "to_exercise_template_id": "Monster_Walk"
+}

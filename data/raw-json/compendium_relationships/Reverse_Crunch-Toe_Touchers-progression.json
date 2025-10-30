@@ -1,0 +1,10 @@
+{
+  "id": "Reverse_Crunch-Toe_Touchers-progression",
+  "relationship_type": "progression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730016000,
+  "from_exercise_template_id": "Reverse_Crunch",
+  "to_exercise_template_id": "Toe_Touchers"
+}

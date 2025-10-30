@@ -1,0 +1,10 @@
+{
+  "id": "Dumbbell_Bicep_Curl-EZ-Bar_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Dumbbell_Bicep_Curl",
+  "to_exercise_template_id": "EZ-Bar_Curl"
+}

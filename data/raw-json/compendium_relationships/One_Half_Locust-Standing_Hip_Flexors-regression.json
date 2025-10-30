@@ -1,0 +1,10 @@
+{
+  "id": "One_Half_Locust-Standing_Hip_Flexors-regression",
+  "relationship_type": "regression",
+  "strength": null,
+  "description": "Both exercises target hip flexor flexibility, with Standing Hip Flexors being a simpler, more accessible standing variation that regresses from the more challenging prone position with foot holding required in One Half Locust",
+  "created_by": "system",
+  "created_at": 1761024000,
+  "from_exercise_template_id": "One_Half_Locust",
+  "to_exercise_template_id": "Standing_Hip_Flexors"
+}

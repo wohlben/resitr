@@ -1,0 +1,10 @@
+{
+  "id": "Seated_Glute-Ankle_On_The_Knee-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": "Both use figure-4 position to stretch piriformis and glutes; lying version is simpler and beginner-friendly",
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Seated_Glute",
+  "to_exercise_template_id": "Ankle_On_The_Knee"
+}

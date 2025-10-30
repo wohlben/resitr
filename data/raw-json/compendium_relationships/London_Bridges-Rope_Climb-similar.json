@@ -1,0 +1,10 @@
+{
+  "id": "London_Bridges-Rope_Climb-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "London_Bridges",
+  "to_exercise_template_id": "Rope_Climb"
+}

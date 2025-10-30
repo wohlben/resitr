@@ -1,0 +1,50 @@
+{
+  "name": "Alternating Kettlebell Row",
+  "slug": "alternating-kettlebell-row",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "LATS",
+    "RHOMBOIDS",
+    "TRAPS"
+  ],
+  "secondary_muscles": [
+    "BICEPS",
+    "ABS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "2x kettlebell"
+  ],
+  "body_weight_scaling": 0.1,
+  "suggested_measurement_paradigms": [
+    "DISTANCE_BASED",
+    "TIME_BASED",
+    "AMRAP"
+  ],
+  "description": "Single-arm alternating row with kettlebell to build back strength and core stability through unilateral training",
+  "instructions": [
+    "Place two kettlebells in front of your feet. Bend your knees slightly and push your butt out as much as possible. As you bend over to get into the starting position grab both kettlebells by the handles.",
+    "Pull one kettlebell off of the floor while holding on to the other kettlebell. Retract the shoulder blade of the working side, as you flex the elbow, drawing the kettlebell towards your stomach or rib cage.",
+    "Lower the kettlebell in the working arm and repeat with your other arm."
+  ],
+  "images": [
+    "/img/exercises/Alternating_Kettlebell_Row/0.jpg",
+    "/img/exercises/Alternating_Kettlebell_Row/1.jpg"
+  ],
+  "alternative_names": [
+    "Alternate Kettlebell Row",
+    "Alternating KB Row"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Alternating_Kettlebell_Row"
+}

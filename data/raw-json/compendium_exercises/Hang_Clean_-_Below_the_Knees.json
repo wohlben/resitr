@@ -1,0 +1,54 @@
+{
+  "name": "Hang Clean - Below the Knees",
+  "slug": "hang-clean-below-the-knees",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "TRAPS",
+    "QUADS"
+  ],
+  "secondary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS",
+    "FRONT_DELTS",
+    "LOWER_BACK"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "barbell"
+  ],
+  "body_weight_scaling": 0.8,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Hang clean starting from below knee position, focusing on second pull and catch phase.",
+  "instructions": [
+    "Begin with a shoulder width, double overhand or hook grip, with the bar hanging just below the knees. Your back should be straight and inclined slightly forward.",
+    "Begin by aggressively extending through the hips, knees and ankles, driving the weight upward. As you do so, shrug your shoulders towards your ears. As full extension is achieved, transition into the third pull by aggressively shrugging and flexing the arms with the elbows up and out.",
+    "At peak extension, aggressively pull yourself down, rotating your elbows under the bar as you do so. Receive the bar in a front squat position, the depth of which is dependent upon the height of the bar at the end of the third pull. The bar should be racked onto the protracted shoulders, lightly touching the throat with the hands relaxed. Continue to descend to the bottom squat position, which will help in the recovery.",
+    "Immediately recover by driving through the heels, keeping the torso upright and elbows up. Continue until you have risen to a standing position."
+  ],
+  "images": [
+    "/img/exercises/Hang_Clean_-_Below_the_Knees/0.jpg",
+    "/img/exercises/Hang_Clean_-_Below_the_Knees/1.jpg"
+  ],
+  "alternative_names": [
+    "Barbell Clean",
+    "Hang Clean   Below the Knees",
+    "Power Clean"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Hang_Clean_-_Below_the_Knees"
+}

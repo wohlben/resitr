@@ -1,0 +1,10 @@
+{
+  "id": "Low_Cable_Crossover-Cross_Over_-_With_Bands-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730025600,
+  "from_exercise_template_id": "Low_Cable_Crossover",
+  "to_exercise_template_id": "Cross_Over_-_With_Bands"
+}

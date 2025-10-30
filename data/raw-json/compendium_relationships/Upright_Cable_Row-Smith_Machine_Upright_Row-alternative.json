@@ -1,0 +1,10 @@
+{
+  "id": "Upright_Cable_Row-Smith_Machine_Upright_Row-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Upright_Cable_Row",
+  "to_exercise_template_id": "Smith_Machine_Upright_Row"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Kipping_Muscle_Up-Chin-Up-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761508980,
+  "from_exercise_template_id": "Kipping_Muscle_Up",
+  "to_exercise_template_id": "Chin-Up"
+}

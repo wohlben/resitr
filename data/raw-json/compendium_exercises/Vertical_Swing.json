@@ -1,0 +1,48 @@
+{
+  "name": "Vertical Swing",
+  "slug": "vertical-swing",
+  "type": "STRENGTH",
+  "force": [
+    "HINGE"
+  ],
+  "primary_muscles": [
+    "GLUTES",
+    "HAMSTRINGS"
+  ],
+  "secondary_muscles": [
+    "LOWER_BACK",
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "dumbbell",
+    "kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Explosive swing movement in vertical plane bringing weight overhead with both hands, using hip hinge and jump mechanics.",
+  "instructions": [
+    "Allow the dumbbell to hang at arms length between your legs, holding it with both hands. Keep your back straight and your head up.",
+    "Swing the dumbbell between your legs, flexing at the hips and bending the knees slightly.",
+    "Powerfully reverse the motion by extending at the hips, knees, and ankles to propel yourself upward, swinging the dumbell over your head.",
+    "As you land, absorb the impact through your legs and draw the dumbbell to your torso before the next repetition."
+  ],
+  "images": [
+    "/img/exercises/Vertical_Swing/0.jpg",
+    "/img/exercises/Vertical_Swing/1.jpg"
+  ],
+  "alternative_names": [
+    "Vertical-Swing"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Vertical_Swing"
+}

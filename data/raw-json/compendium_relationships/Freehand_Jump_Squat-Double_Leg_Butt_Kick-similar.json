@@ -1,0 +1,10 @@
+{
+  "id": "Freehand_Jump_Squat-Double_Leg_Butt_Kick-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Freehand_Jump_Squat",
+  "to_exercise_template_id": "Double_Leg_Butt_Kick"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Bench_Sprint-Side_Hop-Sprint-similar",
+  "relationship_type": "similar",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Bench_Sprint",
+  "to_exercise_template_id": "Side_Hop-Sprint"
+}

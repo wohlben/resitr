@@ -1,0 +1,10 @@
+{
+  "id": "Conans_Wheel-Yoke_Walk-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729900800,
+  "from_exercise_template_id": "Conans_Wheel",
+  "to_exercise_template_id": "Yoke_Walk"
+}

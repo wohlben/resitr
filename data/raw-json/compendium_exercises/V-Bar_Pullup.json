@@ -1,0 +1,49 @@
+{
+  "name": "V-Bar Pullup",
+  "slug": "v-bar-pullup",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "LATS"
+  ],
+  "secondary_muscles": [
+    "BICEPS",
+    "FOREARMS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "pull-up-bar"
+  ],
+  "body_weight_scaling": 1,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Pull-up using V-bar attachment for neutral grip variation.",
+  "instructions": [
+    "Start by placing the middle of the V-bar in the middle of the pull-up bar (assuming that the pull-up station you are using does not have neutral grip handles). The V-Bar handles will be facing down so that you can hang from the pull-up bar through the use of the handles.",
+    "Once you securely place the V-bar, take a hold of the bar from each side and hang from it. Stick your chest out and lean yourself back slightly in order to better engage the lats. This will be your starting position.",
+    "Using your lats, pull your torso up while leaning your head back slightly so that you do not hit yourself with the chin-up bar. Continue until your chest nearly touches the V-bar. Exhale as you execute this motion.",
+    "After a second hold on the contracted position, slowly lower your body back to the starting position as you breathe in.",
+    "Repeat for the prescribed number of repetitions."
+  ],
+  "images": [
+    "/img/exercises/V-Bar_Pullup/0.jpg",
+    "/img/exercises/V-Bar_Pullup/1.jpg"
+  ],
+  "alternative_names": [
+    "V Bar Pullup",
+    "V-Barbell Pullup"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "V-Bar_Pullup"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Toe_Touches-Seated_Hamstring_and_Calf_Stretch-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730016000,
+  "from_exercise_template_id": "Standing_Toe_Touches",
+  "to_exercise_template_id": "Seated_Hamstring_and_Calf_Stretch"
+}

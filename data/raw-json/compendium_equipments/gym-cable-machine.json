@@ -1,0 +1,8 @@
+{
+  "name": "gym-cable-machine",
+  "display_name": "Cable Machine",
+  "description": "A versatile machine with adjustable pulleys and cables for resistance training.",
+  "category": "machines",
+  "image_url": null,
+  "template_id": "gym-cable-machine"
+}

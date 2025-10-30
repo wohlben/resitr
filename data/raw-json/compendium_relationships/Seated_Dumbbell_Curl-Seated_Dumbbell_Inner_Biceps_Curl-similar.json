@@ -1,0 +1,10 @@
+{
+  "id": "Seated_Dumbbell_Curl-Seated_Dumbbell_Inner_Biceps_Curl-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730275200,
+  "from_exercise_template_id": "Seated_Dumbbell_Curl",
+  "to_exercise_template_id": "Seated_Dumbbell_Inner_Biceps_Curl"
+}

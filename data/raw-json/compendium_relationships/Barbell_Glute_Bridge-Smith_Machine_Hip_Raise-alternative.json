@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Glute_Bridge-Smith_Machine_Hip_Raise-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730000000,
+  "from_exercise_template_id": "Barbell_Glute_Bridge",
+  "to_exercise_template_id": "Smith_Machine_Hip_Raise"
+}

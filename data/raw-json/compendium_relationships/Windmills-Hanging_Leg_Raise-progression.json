@@ -1,0 +1,10 @@
+{
+  "id": "Windmills-Hanging_Leg_Raise-progression",
+  "relationship_type": "progression",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Windmills",
+  "to_exercise_template_id": "Hanging_Leg_Raise"
+}

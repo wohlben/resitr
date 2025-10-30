@@ -1,0 +1,10 @@
+{
+  "id": "Side_Jackknife-Russian_Twist-related",
+  "relationship_type": "related",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Side_Jackknife",
+  "to_exercise_template_id": "Russian_Twist"
+}

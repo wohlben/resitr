@@ -1,0 +1,42 @@
+{
+  "name": "Front Leg Raises",
+  "slug": "front-leg-raises",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "HIP_FLEXORS"
+  ],
+  "secondary_muscles": [
+    "ABS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.7,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP",
+    "EMOM",
+    "ROUNDS_FOR_TIME"
+  ],
+  "description": "Standing leg swing moving leg forward and backward while holding support, targeting hip flexors and improving hip mobility.",
+  "instructions": [
+    "Stand next to a chair or other support, holding on with one hand.",
+    "Swing your leg forward, keeping the leg straight. Continue with a downward swing, bringing the leg as far back as your flexibility allows. Repeat 5-10 times, and then switch legs."
+  ],
+  "images": [
+    "/img/exercises/Front_Leg_Raises/0.jpg",
+    "/img/exercises/Front_Leg_Raises/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Front_Leg_Raises"
+}

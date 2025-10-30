@@ -1,0 +1,10 @@
+{
+  "id": "Bodyweight_Squat-Resistance_Band_Squat-progression",
+  "relationship_type": "progression",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Bodyweight_Squat",
+  "to_exercise_template_id": "Resistance_Band_Squat"
+}

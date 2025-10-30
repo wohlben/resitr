@@ -1,0 +1,10 @@
+{
+  "id": "Lying_One-Arm_Lateral_Raise-Side_Lateral_Raise-regression",
+  "relationship_type": "regression",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Lying_One-Arm_Lateral_Raise",
+  "to_exercise_template_id": "Side_Lateral_Raise"
+}

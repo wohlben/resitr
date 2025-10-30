@@ -1,0 +1,10 @@
+{
+  "id": "Box_Squat-Sit_Squats-regression",
+  "relationship_type": "regression",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730073600,
+  "from_exercise_template_id": "Box_Squat",
+  "to_exercise_template_id": "Sit_Squats"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Split_Squat_with_Dumbbells-Barbell_Walking_Lunge-similar",
+  "relationship_type": "similar",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Split_Squat_with_Dumbbells",
+  "to_exercise_template_id": "Barbell_Walking_Lunge"
+}

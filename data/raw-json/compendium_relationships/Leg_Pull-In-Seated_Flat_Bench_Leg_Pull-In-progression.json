@@ -1,0 +1,10 @@
+{
+  "id": "Leg_Pull-In-Seated_Flat_Bench_Leg_Pull-In-progression",
+  "relationship_type": "progression",
+  "strength": 0.8,
+  "description": "Seated version adds torso movement for increased core engagement",
+  "created_by": "system",
+  "created_at": 1761509905,
+  "from_exercise_template_id": "Leg_Pull-In",
+  "to_exercise_template_id": "Seated_Flat_Bench_Leg_Pull-In"
+}

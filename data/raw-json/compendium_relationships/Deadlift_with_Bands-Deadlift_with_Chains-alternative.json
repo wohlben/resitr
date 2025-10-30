@@ -1,0 +1,10 @@
+{
+  "id": "Deadlift_with_Bands-Deadlift_with_Chains-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760883050,
+  "from_exercise_template_id": "Deadlift_with_Bands",
+  "to_exercise_template_id": "Deadlift_with_Chains"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Air_Bike-Alternate_Heel_Touchers-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Air_Bike",
+  "to_exercise_template_id": "Alternate_Heel_Touchers"
+}

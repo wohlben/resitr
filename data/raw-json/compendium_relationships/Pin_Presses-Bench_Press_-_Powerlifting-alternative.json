@@ -1,0 +1,10 @@
+{
+  "id": "Pin_Presses-Bench_Press_-_Powerlifting-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Pin_Presses",
+  "to_exercise_template_id": "Bench_Press_-_Powerlifting"
+}

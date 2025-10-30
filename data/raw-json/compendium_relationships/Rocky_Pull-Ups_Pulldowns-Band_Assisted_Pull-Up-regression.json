@@ -1,0 +1,10 @@
+{
+  "id": "Rocky_Pull-Ups_Pulldowns-Band_Assisted_Pull-Up-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Rocky_Pull-Ups_Pulldowns",
+  "to_exercise_template_id": "Band_Assisted_Pull-Up"
+}

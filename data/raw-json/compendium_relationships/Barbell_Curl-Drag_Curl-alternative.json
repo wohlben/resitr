@@ -1,0 +1,10 @@
+{
+  "id": "Barbell_Curl-Drag_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "from_exercise_template_id": "Barbell_Curl",
+  "to_exercise_template_id": "Drag_Curl"
+}

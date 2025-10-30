@@ -1,0 +1,10 @@
+{
+  "id": "Forward_Drag_with_Press-Backward_Drag-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761464001,
+  "from_exercise_template_id": "Forward_Drag_with_Press",
+  "to_exercise_template_id": "Backward_Drag"
+}

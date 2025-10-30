@@ -1,0 +1,10 @@
+{
+  "id": "Glute_Ham_Raise-Flutter_Kicks-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1730080800,
+  "from_exercise_template_id": "Glute_Ham_Raise",
+  "to_exercise_template_id": "Flutter_Kicks"
+}

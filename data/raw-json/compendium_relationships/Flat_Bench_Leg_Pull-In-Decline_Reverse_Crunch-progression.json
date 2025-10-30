@@ -1,0 +1,10 @@
+{
+  "id": "Flat_Bench_Leg_Pull-In-Decline_Reverse_Crunch-progression",
+  "relationship_type": "progression",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729929600,
+  "from_exercise_template_id": "Flat_Bench_Leg_Pull-In",
+  "to_exercise_template_id": "Decline_Reverse_Crunch"
+}

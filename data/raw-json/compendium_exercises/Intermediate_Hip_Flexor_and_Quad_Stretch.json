@@ -1,0 +1,40 @@
+{
+  "name": "Intermediate Hip Flexor and Quad Stretch",
+  "slug": "intermediate-hip-flexor-and-quad-stretch",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "HIP_FLEXORS",
+    "QUADS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "resistance-band"
+  ],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Kneeling lunge stretch pulling back foot to stretch hip flexors and quads simultaneously.",
+  "instructions": [
+    "Lie face down on the floor, with a rope, belt, or band looped around one foot.",
+    "Flex the knee and extend the hip of the leg to be stretched, using both hands to pull on the belt. Your knee and your hip should come off of the floor, creating tension in the hip flexors and quadriceps. Hold the stretch for 10-20 seconds, and repeat on the other leg."
+  ],
+  "images": [
+    "/img/exercises/Intermediate_Hip_Flexor_and_Quad_Stretch/0.jpg",
+    "/img/exercises/Intermediate_Hip_Flexor_and_Quad_Stretch/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Intermediate_Hip_Flexor_and_Quad_Stretch"
+}

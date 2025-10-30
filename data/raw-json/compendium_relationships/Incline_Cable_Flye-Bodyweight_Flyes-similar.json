@@ -1,0 +1,10 @@
+{
+  "id": "Incline_Cable_Flye-Bodyweight_Flyes-similar",
+  "relationship_type": "similar",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761476339,
+  "from_exercise_template_id": "Incline_Cable_Flye",
+  "to_exercise_template_id": "Bodyweight_Flyes"
+}

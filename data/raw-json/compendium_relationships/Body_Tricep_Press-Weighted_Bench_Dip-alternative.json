@@ -1,0 +1,10 @@
+{
+  "id": "Body_Tricep_Press-Weighted_Bench_Dip-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Body_Tricep_Press",
+  "to_exercise_template_id": "Weighted_Bench_Dip"
+}

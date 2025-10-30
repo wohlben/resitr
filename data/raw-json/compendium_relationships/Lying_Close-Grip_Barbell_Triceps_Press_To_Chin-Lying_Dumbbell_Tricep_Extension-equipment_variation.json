@@ -1,0 +1,10 @@
+{
+  "id": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin-Lying_Dumbbell_Tricep_Extension-equipment_variation",
+  "relationship_type": "equipment_variation",
+  "strength": 0.75,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin",
+  "to_exercise_template_id": "Lying_Dumbbell_Tricep_Extension"
+}

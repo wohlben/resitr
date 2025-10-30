@@ -1,0 +1,10 @@
+{
+  "id": "Lying_Dumbbell_Tricep_Extension-Chain_Handle_Extension-similar",
+  "relationship_type": "similar",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Lying_Dumbbell_Tricep_Extension",
+  "to_exercise_template_id": "Chain_Handle_Extension"
+}

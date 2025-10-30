@@ -1,0 +1,10 @@
+{
+  "id": "Overhead_Slam-One-Arm_Medicine_Ball_Slam-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.85,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761510517,
+  "from_exercise_template_id": "Overhead_Slam",
+  "to_exercise_template_id": "One-Arm_Medicine_Ball_Slam"
+}

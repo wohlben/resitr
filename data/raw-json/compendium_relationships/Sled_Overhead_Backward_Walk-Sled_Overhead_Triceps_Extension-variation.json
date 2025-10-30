@@ -1,0 +1,10 @@
+{
+  "id": "Sled_Overhead_Backward_Walk-Sled_Overhead_Triceps_Extension-variation",
+  "relationship_type": "variation",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Sled_Overhead_Backward_Walk",
+  "to_exercise_template_id": "Sled_Overhead_Triceps_Extension"
+}

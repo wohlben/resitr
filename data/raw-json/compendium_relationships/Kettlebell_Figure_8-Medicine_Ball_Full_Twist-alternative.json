@@ -1,0 +1,10 @@
+{
+  "id": "Kettlebell_Figure_8-Medicine_Ball_Full_Twist-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.65,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761499772,
+  "from_exercise_template_id": "Kettlebell_Figure_8",
+  "to_exercise_template_id": "Medicine_Ball_Full_Twist"
+}

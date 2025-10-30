@@ -1,0 +1,46 @@
+{
+  "name": "Ab Crunch Machine",
+  "slug": "ab-crunch-machine",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "ABS"
+  ],
+  "secondary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-tricep-extension-machine"
+  ],
+  "body_weight_scaling": 0.9,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Machine-based abdominal crunch with weight stack, isolating abs with fixed path and adjustable resistance.",
+  "instructions": [
+    "Select a light resistance and sit down on the ab machine placing your feet under the pads provided and grabbing the top handles. Your arms should be bent at a 90 degree angle as you rest the triceps on the pads provided. This will be your starting position.",
+    "At the same time, begin to lift the legs up as you crunch your upper torso. Breathe out as you perform this movement. Tip: Be sure to use a slow and controlled motion. Concentrate on using your abs to move the weight while relaxing your legs and feet.",
+    "After a second pause, slowly return to the starting position as you breathe in.",
+    "Repeat the movement for the prescribed amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Ab_Crunch_Machine/0.jpg",
+    "/img/exercises/Ab_Crunch_Machine/1.jpg"
+  ],
+  "alternative_names": [
+    "Ab Crunch",
+    "Abdominal Crunch"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Ab_Crunch_Machine"
+}

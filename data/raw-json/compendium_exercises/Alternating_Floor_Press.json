@@ -1,0 +1,47 @@
+{
+  "name": "Alternating Floor Press",
+  "slug": "alternating-floor-press",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "CHEST"
+  ],
+  "secondary_muscles": [
+    "TRICEPS",
+    "FRONT_DELTS",
+    "ABS"
+  ],
+  "technical_difficulty": "beginner",
+  "equipments": [
+    "2x kettlebell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Alternating kettlebell floor press with limited range of motion to reduce shoulder strain while building chest strength",
+  "instructions": [
+    "Lie on the floor with two kettlebells next to your shoulders.",
+    "Position one in place on your chest and then the other, gripping the kettlebells on the handle with the palms facing forward.",
+    "Extend both arms, so that the kettlebells are being held above your chest. Lower one kettlebell, bringing it to your chest and turn the wrist in the direction of the locked out kettlebell.",
+    "Raise the kettlebell and repeat on the opposite side."
+  ],
+  "images": [
+    "/img/exercises/Alternating_Floor_Press/0.jpg",
+    "/img/exercises/Alternating_Floor_Press/1.jpg"
+  ],
+  "alternative_names": [
+    "Alternate Floor Press"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Alternating_Floor_Press"
+}

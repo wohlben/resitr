@@ -1,0 +1,10 @@
+{
+  "id": "Power_Jerk-Jerk_Balance-similar",
+  "relationship_type": "similar",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761510000,
+  "from_exercise_template_id": "Power_Jerk",
+  "to_exercise_template_id": "Jerk_Balance"
+}

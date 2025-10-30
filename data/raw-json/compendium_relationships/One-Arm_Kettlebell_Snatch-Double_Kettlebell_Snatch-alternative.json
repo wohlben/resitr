@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Snatch-Double_Kettlebell_Snatch-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.9,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Snatch",
+  "to_exercise_template_id": "Double_Kettlebell_Snatch"
+}

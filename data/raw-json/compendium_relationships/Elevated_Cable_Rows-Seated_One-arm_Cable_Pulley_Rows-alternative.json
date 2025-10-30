@@ -1,0 +1,10 @@
+{
+  "id": "Elevated_Cable_Rows-Seated_One-arm_Cable_Pulley_Rows-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": "Seated One-arm Cable Pulley Rows is a unilateral alternative to Elevated Cable Rows",
+  "created_by": "system",
+  "created_at": 1761412213,
+  "from_exercise_template_id": "Elevated_Cable_Rows",
+  "to_exercise_template_id": "Seated_One-arm_Cable_Pulley_Rows"
+}

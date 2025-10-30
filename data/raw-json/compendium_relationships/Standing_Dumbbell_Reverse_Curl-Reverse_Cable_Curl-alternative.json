@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Dumbbell_Reverse_Curl-Reverse_Cable_Curl-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1761543931,
+  "from_exercise_template_id": "Standing_Dumbbell_Reverse_Curl",
+  "to_exercise_template_id": "Reverse_Cable_Curl"
+}

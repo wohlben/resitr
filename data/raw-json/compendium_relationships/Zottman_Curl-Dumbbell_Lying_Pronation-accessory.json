@@ -1,0 +1,10 @@
+{
+  "id": "Zottman_Curl-Dumbbell_Lying_Pronation-accessory",
+  "relationship_type": "accessory",
+  "strength": 0.6,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Zottman_Curl",
+  "to_exercise_template_id": "Dumbbell_Lying_Pronation"
+}

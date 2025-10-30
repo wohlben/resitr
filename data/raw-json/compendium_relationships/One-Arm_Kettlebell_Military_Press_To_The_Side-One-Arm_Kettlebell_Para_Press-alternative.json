@@ -1,0 +1,10 @@
+{
+  "id": "One-Arm_Kettlebell_Military_Press_To_The_Side-One-Arm_Kettlebell_Para_Press-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1729969200,
+  "from_exercise_template_id": "One-Arm_Kettlebell_Military_Press_To_The_Side",
+  "to_exercise_template_id": "One-Arm_Kettlebell_Para_Press"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Standing Dumbbell Straight-Arm Front Delt Raise Above Head",
+  "slug": "standing-dumbbell-straight-arm-front-delt-raise-above-head",
+  "type": "STRENGTH",
+  "force": [
+    "PULL"
+  ],
+  "primary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "2x dumbbell"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED",
+    "AMRAP"
+  ],
+  "description": "Standing dumbbell front raise lifting weight straight overhead above head, full range front delt exercise.",
+  "instructions": [
+    "Hold the dumbbells in front of your thighs, palms facing your thighs.",
+    "Keep your arms straight with a slight bend at the elbows but keep them locked. This will be your starting position.",
+    "Raise the dumbbells in a semicircular motion to arm's length overhead as you exhale.",
+    "Slowly return to the starting position using the same path as you inhale.",
+    "Repeat for the recommended amount of repetitions."
+  ],
+  "images": [
+    "/img/exercises/Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head/0.jpg",
+    "/img/exercises/Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head/1.jpg"
+  ],
+  "alternative_names": [
+    "Seated Dumbbell Straight-Arm Front Delt Raise Above Head",
+    "Standing DB Straight-Arm Front Delt Raise Above Head",
+    "Standing Dumbbell Straight Arm Front Delt Raise Above Head",
+    "Standing Dumbell Straight-Arm Front Delt Raise Above Head"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head"
+}

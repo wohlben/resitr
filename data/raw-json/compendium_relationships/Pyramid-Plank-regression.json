@@ -1,0 +1,10 @@
+{
+  "id": "Pyramid-Plank-regression",
+  "relationship_type": "regression",
+  "strength": 0.8,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Pyramid",
+  "to_exercise_template_id": "Plank"
+}

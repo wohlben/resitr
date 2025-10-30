@@ -1,0 +1,40 @@
+{
+  "name": "Side Lying Groin Stretch",
+  "slug": "side-lying-groin-stretch",
+  "type": "STRETCHING",
+  "force": [
+    "STATIC"
+  ],
+  "primary_muscles": [
+    "ADDUCTORS"
+  ],
+  "secondary_muscles": [],
+  "technical_difficulty": "beginner",
+  "equipments": [],
+  "body_weight_scaling": 0.5,
+  "suggested_measurement_paradigms": [
+    "TIME_BASED"
+  ],
+  "description": "Side-lying stretch for inner thigh adductor muscles and groin.",
+  "instructions": [
+    "Start off by lying on your right side and bend your right knee in front of you to stabilize the torso.",
+    "Rest your head on your right hand or shoulder. Lift your left leg upward and hold it by the back of the knee (easier) or the foot (harder).",
+    "Pull your left knee in toward your left shoulder and simultaneously press your foot or knee down to the floor. To intensify this stretch, straighten your left leg. Switch sides."
+  ],
+  "images": [
+    "/img/exercises/Side_Lying_Groin_Stretch/0.jpg",
+    "/img/exercises/Side_Lying_Groin_Stretch/1.jpg"
+  ],
+  "alternative_names": [
+    "Side Prone Groin Stretch"
+  ],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Side_Lying_Groin_Stretch"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "gym-calf-raise-machine",
+  "display_name": "Calf Raise Machine",
+  "description": "A machine specifically designed for calf raises with shoulder padding.",
+  "category": "machines",
+  "image_url": null,
+  "template_id": "gym-calf-raise-machine"
+}

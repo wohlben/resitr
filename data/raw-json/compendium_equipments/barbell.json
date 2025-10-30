@@ -1,0 +1,8 @@
+{
+  "name": "barbell",
+  "display_name": "Barbell",
+  "description": "A long metal bar used for weightlifting, typically loaded with weight plates on each end.",
+  "category": "free_weights",
+  "image_url": null,
+  "template_id": "barbell"
+}

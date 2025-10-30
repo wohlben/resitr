@@ -1,0 +1,10 @@
+{
+  "id": "Suspended_Fallout-Suspended_Push-Up-similar",
+  "relationship_type": "similar",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Suspended_Fallout",
+  "to_exercise_template_id": "Suspended_Push-Up"
+}

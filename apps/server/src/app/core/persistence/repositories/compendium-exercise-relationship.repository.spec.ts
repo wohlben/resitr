@@ -24,7 +24,7 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     // Create test exercises
     testExercise1 = await exerciseRepository.create({
-      id: 'exercise-1',
+      templateId: 'exercise-1',
       name: 'Push Up',
       slug: 'push-up',
       type: ExerciseType.STRENGTH,
@@ -39,7 +39,7 @@ describe('CompendiumExerciseRelationshipRepository', () => {
     });
 
     testExercise2 = await exerciseRepository.create({
-      id: 'exercise-2',
+      templateId: 'exercise-2',
       name: 'Diamond Push Up',
       slug: 'diamond-push-up',
       type: ExerciseType.STRENGTH,
@@ -54,7 +54,7 @@ describe('CompendiumExerciseRelationshipRepository', () => {
     });
 
     testExercise3 = await exerciseRepository.create({
-      id: 'exercise-3',
+      templateId: 'exercise-3',
       name: 'Pull Up',
       slug: 'pull-up',
       type: ExerciseType.STRENGTH,
@@ -76,9 +76,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('create', () => {
     it('should create a new relationship with all fields', async () => {
       const relationshipData: CompendiumExerciseRelationship = {
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         strength: 0.8,
         description: 'Diamond push up is harder than standard',
@@ -88,9 +87,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
       const result = await repository.create(relationshipData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(relationshipData.id);
-      expect(result.fromExerciseId).toBe(testExercise1.id);
-      expect(result.toExerciseId).toBe(testExercise2.id);
+      expect(result.fromExerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.toExerciseTemplateId).toBe(testExercise2.templateId);
       expect(result.relationshipType).toBe(ExerciseRelationshipType.PROGRESSION);
       expect(result.strength).toBe(0.8);
       expect(result.description).toBe('Diamond push up is harder than standard');
@@ -100,9 +98,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     it('should create relationship with minimal required fields', async () => {
       const relationshipData: CompendiumExerciseRelationship = {
-        id: 'rel-2',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.ANTAGONIST,
         createdBy: 'user-1',
       };
@@ -110,24 +107,23 @@ describe('CompendiumExerciseRelationshipRepository', () => {
       const result = await repository.create(relationshipData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe(relationshipData.id);
+      expect(result.fromExerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.toExerciseTemplateId).toBe(testExercise3.templateId);
       expect(result.strength).toBeNull();
       expect(result.description).toBeNull();
     });
 
     it('should create different relationship types', async () => {
       const progression: CompendiumExerciseRelationship = {
-        id: 'rel-prog',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       };
 
       const similar: CompendiumExerciseRelationship = {
-        id: 'rel-sim',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       };
@@ -141,9 +137,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     it('should fail when creating duplicate relationship (same from, to, and type)', async () => {
       const relationshipData: CompendiumExerciseRelationship = {
-        id: 'rel-3',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.ALTERNATIVE,
         createdBy: 'user-1',
       };
@@ -151,9 +146,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
       await repository.create(relationshipData);
 
       const duplicateData: CompendiumExerciseRelationship = {
-        id: 'rel-4',
-        fromExerciseId: testExercise1.id, // Same
-        toExerciseId: testExercise2.id, // Same
+        fromExerciseTemplateId: testExercise1.templateId, // Same
+        toExerciseTemplateId: testExercise2.templateId, // Same
         relationshipType: ExerciseRelationshipType.ALTERNATIVE, // Same
         createdBy: 'user-2',
       };
@@ -163,9 +157,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     it('should fail when creating relationship with non-existent from exercise', async () => {
       const relationshipData: CompendiumExerciseRelationship = {
-        id: 'rel-5',
-        fromExerciseId: 'non-existent',
-        toExerciseId: testExercise1.id,
+        fromExerciseTemplateId: 'non-existent',
+        toExerciseTemplateId: testExercise1.templateId,
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       };
@@ -175,9 +168,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     it('should fail when creating relationship with non-existent to exercise', async () => {
       const relationshipData: CompendiumExerciseRelationship = {
-        id: 'rel-6',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: 'non-existent',
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: 'non-existent',
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       };
@@ -194,25 +186,22 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     it('should return all relationships', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.ANTAGONIST,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-3',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.SUPERSET_WITH,
         createdBy: 'user-1',
       });
@@ -223,26 +212,27 @@ describe('CompendiumExerciseRelationshipRepository', () => {
     });
   });
 
-  describe('findById', () => {
-    it('should find relationship by id', async () => {
+  describe('findByCompositeKey', () => {
+    it('should find relationship by composite key', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         description: 'Test relationship',
         createdBy: 'user-1',
       });
 
-      const result = await repository.findById('rel-1');
+      const result = await repository.findByCompositeKey(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('rel-1');
+      expect(result.fromExerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.toExerciseTemplateId).toBe(testExercise2.templateId);
+      expect(result.relationshipType).toBe(ExerciseRelationshipType.PROGRESSION);
       expect(result.description).toBe('Test relationship');
     });
 
     it('should return undefined when relationship not found', async () => {
-      const result = await repository.findById('non-existent-id');
+      const result = await repository.findByCompositeKey(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION);
       expect(result).toBeUndefined();
     });
   });
@@ -250,37 +240,34 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('findByFromExerciseId', () => {
     it('should find all relationships originating from an exercise', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.ANTAGONIST,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-3',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise1.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise1.templateId,
         relationshipType: ExerciseRelationshipType.REGRESSION,
         createdBy: 'user-1',
       });
 
-      const result = await repository.findByFromExerciseId(testExercise1.id);
+      const result = await repository.findByFromExerciseId(testExercise1.templateId);
 
       expect(result).toHaveLength(2);
-      expect(result.every((r) => r.fromExerciseId === testExercise1.id)).toBe(true);
+      expect(result.every((r) => r.fromExerciseTemplateId === testExercise1.templateId)).toBe(true);
     });
 
     it('should return empty array when exercise has no outgoing relationships', async () => {
-      const result = await repository.findByFromExerciseId(testExercise1.id);
+      const result = await repository.findByFromExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
     });
   });
@@ -288,37 +275,34 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('findByToExerciseId', () => {
     it('should find all relationships pointing to an exercise', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-3',
-        fromExerciseId: testExercise3.id,
-        toExerciseId: testExercise1.id,
+        fromExerciseTemplateId: testExercise3.templateId,
+        toExerciseTemplateId: testExercise1.templateId,
         relationshipType: ExerciseRelationshipType.REGRESSION,
         createdBy: 'user-1',
       });
 
-      const result = await repository.findByToExerciseId(testExercise3.id);
+      const result = await repository.findByToExerciseId(testExercise3.templateId);
 
       expect(result).toHaveLength(2);
-      expect(result.every((r) => r.toExerciseId === testExercise3.id)).toBe(true);
+      expect(result.every((r) => r.toExerciseTemplateId === testExercise3.templateId)).toBe(true);
     });
 
     it('should return empty array when exercise has no incoming relationships', async () => {
-      const result = await repository.findByToExerciseId(testExercise1.id);
+      const result = await repository.findByToExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
     });
   });
@@ -326,39 +310,36 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('findByExerciseId', () => {
     it('should find all relationships involving an exercise (from or to)', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise1.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise1.templateId,
         relationshipType: ExerciseRelationshipType.REGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-3',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.ANTAGONIST,
         createdBy: 'user-1',
       });
 
-      const result = await repository.findByExerciseId(testExercise1.id);
+      const result = await repository.findByExerciseId(testExercise1.templateId);
 
       expect(result).toHaveLength(2);
-      expect(result.every((r) => r.fromExerciseId === testExercise1.id || r.toExerciseId === testExercise1.id)).toBe(
+      expect(result.every((r) => r.fromExerciseTemplateId === testExercise1.templateId || r.toExerciseTemplateId === testExercise1.templateId)).toBe(
         true
       );
     });
 
     it('should return empty array when exercise has no relationships', async () => {
-      const result = await repository.findByExerciseId(testExercise1.id);
+      const result = await repository.findByExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
     });
   });
@@ -366,41 +347,38 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('findByRelationshipType', () => {
     it('should find relationships by from exercise and type', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-3',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       });
 
-      const result = await repository.findByRelationshipType(testExercise1.id, ExerciseRelationshipType.PROGRESSION);
+      const result = await repository.findByRelationshipType(testExercise1.templateId, ExerciseRelationshipType.PROGRESSION);
 
       expect(result).toHaveLength(2);
       expect(
         result.every(
-          (r) => r.fromExerciseId === testExercise1.id && r.relationshipType === ExerciseRelationshipType.PROGRESSION
+          (r) => r.fromExerciseTemplateId === testExercise1.templateId && r.relationshipType === ExerciseRelationshipType.PROGRESSION
         )
       ).toBe(true);
     });
 
     it('should return empty array when no matching relationships exist', async () => {
-      const result = await repository.findByRelationshipType(testExercise1.id, ExerciseRelationshipType.FORK);
+      const result = await repository.findByRelationshipType(testExercise1.templateId, ExerciseRelationshipType.FORK);
       expect(result).toEqual([]);
     });
   });
@@ -408,9 +386,8 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('update', () => {
     it('should update relationship fields', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         strength: 0.5,
         createdBy: 'user-1',
@@ -421,34 +398,18 @@ describe('CompendiumExerciseRelationshipRepository', () => {
         description: 'Strong progression',
       };
 
-      const result = await repository.update('rel-1', updateData);
+      const result = await repository.update(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION, updateData);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('rel-1');
+      expect(result.fromExerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.toExerciseTemplateId).toBe(testExercise2.templateId);
       expect(result.strength).toBe(0.9);
       expect(result.description).toBe('Strong progression');
       expect(result.relationshipType).toBe(ExerciseRelationshipType.PROGRESSION); // Unchanged
     });
 
-    it('should update relationship type', async () => {
-      await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
-        relationshipType: ExerciseRelationshipType.SIMILAR,
-        createdBy: 'user-1',
-      });
-
-      const result = await repository.update('rel-1', {
-        relationshipType: ExerciseRelationshipType.ALTERNATIVE,
-      });
-
-      expect(result).toBeDefined();
-      expect(result.relationshipType).toBe(ExerciseRelationshipType.ALTERNATIVE);
-    });
-
     it('should return undefined when updating non-existent relationship', async () => {
-      const result = await repository.update('non-existent-id', {
+      const result = await repository.update(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION, {
         strength: 0.8,
       });
 
@@ -457,16 +418,15 @@ describe('CompendiumExerciseRelationshipRepository', () => {
 
     it('should be able to clear optional fields', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         strength: 0.7,
         description: 'Some description',
         createdBy: 'user-1',
       });
 
-      const result = await repository.update('rel-1', {
+      const result = await repository.update(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION, {
         strength: null,
         description: null,
       });
@@ -478,51 +438,49 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   });
 
   describe('delete', () => {
-    it('should delete relationship by id', async () => {
+    it('should delete relationship by composite key', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
-      const result = await repository.delete('rel-1');
+      const result = await repository.delete(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION);
 
       expect(result).toBeDefined();
-      expect(result.id).toBe('rel-1');
+      expect(result.fromExerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.toExerciseTemplateId).toBe(testExercise2.templateId);
 
       // Verify it's actually deleted
-      const found = await repository.findById('rel-1');
+      const found = await repository.findByCompositeKey(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION);
       expect(found).toBeUndefined();
     });
 
     it('should return undefined when deleting non-existent relationship', async () => {
-      const result = await repository.delete('non-existent-id');
+      const result = await repository.delete(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION);
       expect(result).toBeUndefined();
     });
 
     it('should only delete specific relationship, not others', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.ANTAGONIST,
         createdBy: 'user-1',
       });
 
-      await repository.delete('rel-1');
+      await repository.delete(testExercise1.templateId, testExercise2.templateId, ExerciseRelationshipType.PROGRESSION);
 
       // Verify the other relationship still exists
-      const found = await repository.findById('rel-2');
+      const found = await repository.findByCompositeKey(testExercise1.templateId, testExercise3.templateId, ExerciseRelationshipType.ANTAGONIST);
       expect(found).toBeDefined();
     });
   });
@@ -530,88 +488,81 @@ describe('CompendiumExerciseRelationshipRepository', () => {
   describe('cascading deletes', () => {
     it('should delete relationships when from exercise is deleted', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.ANTAGONIST,
         createdBy: 'user-1',
       });
 
       // Delete the from exercise
-      await exerciseRepository.delete(testExercise1.id);
+      await exerciseRepository.delete(testExercise1.templateId);
 
       // Verify all relationships with that exercise are deleted
-      const result = await repository.findByFromExerciseId(testExercise1.id);
+      const result = await repository.findByFromExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
     });
 
     it('should delete relationships when to exercise is deleted', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       });
 
       // Delete the to exercise
-      await exerciseRepository.delete(testExercise3.id);
+      await exerciseRepository.delete(testExercise3.templateId);
 
       // Verify all relationships with that exercise are deleted
-      const result = await repository.findByToExerciseId(testExercise3.id);
+      const result = await repository.findByToExerciseId(testExercise3.templateId);
       expect(result).toEqual([]);
     });
 
     it('should delete all relationships when exercise involved in both directions is deleted', async () => {
       await repository.create({
-        id: 'rel-1',
-        fromExerciseId: testExercise1.id,
-        toExerciseId: testExercise2.id,
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
         relationshipType: ExerciseRelationshipType.PROGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-2',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise1.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise1.templateId,
         relationshipType: ExerciseRelationshipType.REGRESSION,
         createdBy: 'user-1',
       });
 
       await repository.create({
-        id: 'rel-3',
-        fromExerciseId: testExercise2.id,
-        toExerciseId: testExercise3.id,
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
         relationshipType: ExerciseRelationshipType.SIMILAR,
         createdBy: 'user-1',
       });
 
       // Delete exercise 1
-      await exerciseRepository.delete(testExercise1.id);
+      await exerciseRepository.delete(testExercise1.templateId);
 
       // Verify relationships involving exercise 1 are deleted
-      const result = await repository.findByExerciseId(testExercise1.id);
+      const result = await repository.findByExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
 
       // Verify relationship not involving exercise 1 still exists
-      const remaining = await repository.findById('rel-3');
+      const remaining = await repository.findByCompositeKey(testExercise2.templateId, testExercise3.templateId, ExerciseRelationshipType.SIMILAR);
       expect(remaining).toBeDefined();
     });
   });

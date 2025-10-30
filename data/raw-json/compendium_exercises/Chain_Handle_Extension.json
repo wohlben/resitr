@@ -1,0 +1,44 @@
+{
+  "name": "Chain Handle Extension",
+  "slug": "chain-handle-extension",
+  "type": "STRENGTH",
+  "force": [
+    "PUSH"
+  ],
+  "primary_muscles": [
+    "TRICEPS"
+  ],
+  "secondary_muscles": [
+    "FRONT_DELTS"
+  ],
+  "technical_difficulty": "intermediate",
+  "equipments": [
+    "gym-cable-machine",
+    "bench",
+    "chains"
+  ],
+  "body_weight_scaling": 0,
+  "suggested_measurement_paradigms": [
+    "REP_BASED"
+  ],
+  "description": "Lying tricep extension using cable handles with chains for progressive resistance",
+  "instructions": [
+    "You will need two cable handle attachments and a flat bench, as well as chains, for this exercise. Clip the middle of the chains to the handles, and position yourself on the flat bench. Your elbows should be pointing straight up.",
+    "Begin by extending through the elbow, keeping your upper arm still, with your wrists pronated.",
+    "Pause at the lockout, and reverse the motion to return to the starting position."
+  ],
+  "images": [
+    "/img/exercises/Chain_Handle_Extension/0.jpg",
+    "/img/exercises/Chain_Handle_Extension/1.jpg"
+  ],
+  "alternative_names": [],
+  "author_name": null,
+  "author_url": null,
+  "created_by": "system",
+  "created_at": 1760873666,
+  "updated_at": null,
+  "version": 0,
+  "parent_exercise_id": null,
+  "fork_count": 0,
+  "template_id": "Chain_Handle_Extension"
+}

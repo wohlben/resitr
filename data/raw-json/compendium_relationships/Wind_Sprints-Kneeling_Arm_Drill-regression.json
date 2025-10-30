@@ -1,0 +1,10 @@
+{
+  "id": "Wind_Sprints-Kneeling_Arm_Drill-regression",
+  "relationship_type": "regression",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Wind_Sprints",
+  "to_exercise_template_id": "Kneeling_Arm_Drill"
+}

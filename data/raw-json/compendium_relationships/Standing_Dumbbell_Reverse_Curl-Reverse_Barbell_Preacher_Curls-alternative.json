@@ -1,0 +1,10 @@
+{
+  "id": "Standing_Dumbbell_Reverse_Curl-Reverse_Barbell_Preacher_Curls-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.75,
+  "description": "Barbell version on preacher bench for bilateral movement and better isolation",
+  "created_by": "system",
+  "created_at": 1761543970,
+  "from_exercise_template_id": "Standing_Dumbbell_Reverse_Curl",
+  "to_exercise_template_id": "Reverse_Barbell_Preacher_Curls"
+}

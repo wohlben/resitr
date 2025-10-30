@@ -1,0 +1,10 @@
+{
+  "id": "Battling_Ropes-Vertical_Swing-alternative",
+  "relationship_type": "alternative",
+  "strength": 0.7,
+  "description": null,
+  "created_by": "system",
+  "created_at": 1735243200,
+  "from_exercise_template_id": "Battling_Ropes",
+  "to_exercise_template_id": "Vertical_Swing"
+}
