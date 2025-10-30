@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Crunch-Dead_Bug-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761483562,
-  "from_exercise_template_id": "Reverse_Crunch",
-  "to_exercise_template_id": "Dead_Bug"
+  "createdBy": "system",
+  "createdAt": 1761483562,
+  "fromExerciseTemplateId": "Reverse_Crunch",
+  "toExerciseTemplateId": "Dead_Bug"
 }

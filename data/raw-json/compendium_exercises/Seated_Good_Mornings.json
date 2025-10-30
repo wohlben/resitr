@@ -5,19 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Good morning exercise performed seated on bench, hinging forward with barbell on back.",
@@ -31,16 +28,18 @@
     "/img/exercises/Seated_Good_Mornings/0.jpg",
     "/img/exercises/Seated_Good_Mornings/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Standing Good Mornings"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Good_Mornings"
+  "parentExerciseId": null,
+  "templateId": "Seated_Good_Mornings",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

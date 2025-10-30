@@ -1,10 +1,10 @@
 {
   "id": "Drop_Push-Plyo_Push-up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Drop_Push",
-  "to_exercise_template_id": "Plyo_Push-up"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Drop_Push",
+  "toExerciseTemplateId": "Plyo_Push-up"
 }

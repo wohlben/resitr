@@ -1,10 +1,10 @@
 {
   "id": "Crunches-Crunch_-_Legs_On_Exercise_Ball-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730027200,
-  "from_exercise_template_id": "Crunches",
-  "to_exercise_template_id": "Crunch_-_Legs_On_Exercise_Ball"
+  "createdBy": "system",
+  "createdAt": 1730027200,
+  "fromExerciseTemplateId": "Crunches",
+  "toExerciseTemplateId": "Crunch_-_Legs_On_Exercise_Ball"
 }

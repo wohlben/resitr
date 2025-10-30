@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "General hamstring stretch reaching toward toes from seated or standing position.",
@@ -27,16 +24,18 @@
     "/img/exercises/Hamstring_Stretch/0.jpg",
     "/img/exercises/Hamstring_Stretch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Hamstring-Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hamstring_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Hamstring_Stretch",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

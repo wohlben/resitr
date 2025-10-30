@@ -1,10 +1,10 @@
 {
   "id": "Backward_Medicine_Ball_Throw-Front_Box_Jump-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Backward_Medicine_Ball_Throw",
-  "to_exercise_template_id": "Front_Box_Jump"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Backward_Medicine_Ball_Throw",
+  "toExerciseTemplateId": "Front_Box_Jump"
 }

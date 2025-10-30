@@ -1,10 +1,10 @@
 {
   "id": "Bench_Jump-Depth_Jump_Leap-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Bench_Jump",
-  "to_exercise_template_id": "Depth_Jump_Leap"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Bench_Jump",
+  "toExerciseTemplateId": "Depth_Jump_Leap"
 }

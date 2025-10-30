@@ -1,10 +1,10 @@
 {
   "id": "Cable_Wrist_Curl-Seated_Palm-Up_Barbell_Wrist_Curl-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479701,
-  "from_exercise_template_id": "Cable_Wrist_Curl",
-  "to_exercise_template_id": "Seated_Palm-Up_Barbell_Wrist_Curl"
+  "createdBy": "system",
+  "createdAt": 1761479701,
+  "fromExerciseTemplateId": "Cable_Wrist_Curl",
+  "toExerciseTemplateId": "Seated_Palm-Up_Barbell_Wrist_Curl"
 }

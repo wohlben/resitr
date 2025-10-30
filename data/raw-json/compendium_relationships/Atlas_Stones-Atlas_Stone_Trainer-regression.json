@@ -1,10 +1,10 @@
 {
   "id": "Atlas_Stones-Atlas_Stone_Trainer-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761463810,
-  "from_exercise_template_id": "Atlas_Stones",
-  "to_exercise_template_id": "Atlas_Stone_Trainer"
+  "createdBy": "system",
+  "createdAt": 1761463810,
+  "fromExerciseTemplateId": "Atlas_Stones",
+  "toExerciseTemplateId": "Atlas_Stone_Trainer"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Cable_Chest_Press-Barbell_Bench_Press_-_Medium_Grip-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761478645,
-  "from_exercise_template_id": "Cable_Chest_Press",
-  "to_exercise_template_id": "Barbell_Bench_Press_-_Medium_Grip"
+  "createdBy": "system",
+  "createdAt": 1761478645,
+  "fromExerciseTemplateId": "Cable_Chest_Press",
+  "toExerciseTemplateId": "Barbell_Bench_Press_-_Medium_Grip"
 }

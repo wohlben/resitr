@@ -1,10 +1,10 @@
 {
   "id": "Face_Pull-Middle_Back_Shrug-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Face_Pull",
-  "to_exercise_template_id": "Middle_Back_Shrug"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Face_Pull",
+  "toExerciseTemplateId": "Middle_Back_Shrug"
 }

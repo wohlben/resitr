@@ -5,15 +5,14 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LOWER_BACK",
     "GLUTES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Stretch pulling one knee to chest while lying or standing, targeting lower back and glutes.",
@@ -27,14 +26,14 @@
     "/img/exercises/One_Knee_To_Chest/0.jpg",
     "/img/exercises/One_Knee_To_Chest/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One_Knee_To_Chest"
+  "parentExerciseId": null,
+  "templateId": "One_Knee_To_Chest",
+  "equipmentIds": []
 }

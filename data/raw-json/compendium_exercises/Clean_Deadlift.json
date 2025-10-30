@@ -6,21 +6,18 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES",
     "LOWER_BACK"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRAPS",
     "QUADS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Clean-grip deadlift preparing for Olympic lifts emphasizing posterior chain with higher hip position",
@@ -33,18 +30,20 @@
     "/img/exercises/Clean_Deadlift/0.jpg",
     "/img/exercises/Clean_Deadlift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Clean",
     "Clean-Deadlift",
     "Power Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Clean_Deadlift"
+  "parentExerciseId": null,
+  "templateId": "Clean_Deadlift",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

@@ -47,4 +47,17 @@ export class CompendiumExerciseVideoRepository {
       .returning();
     return result;
   }
+
+  async upsert(data: CompendiumExerciseVideo) {
+    const { exerciseTemplateId, url, ...updateData } = data;
+    const [result] = await this.db
+      .insert(compendiumExerciseVideo)
+      .values(data)
+      .onConflictDoUpdate({
+        target: [compendiumExerciseVideo.exerciseTemplateId, compendiumExerciseVideo.url],
+        set: updateData,
+      })
+      .returning();
+    return result;
+  }
 }

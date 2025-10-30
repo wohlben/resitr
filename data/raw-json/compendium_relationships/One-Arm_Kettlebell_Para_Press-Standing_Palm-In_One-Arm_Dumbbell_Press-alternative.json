@@ -1,10 +1,10 @@
 {
   "id": "One-Arm_Kettlebell_Para_Press-Standing_Palm-In_One-Arm_Dumbbell_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "One-Arm_Kettlebell_Para_Press",
-  "to_exercise_template_id": "Standing_Palm-In_One-Arm_Dumbbell_Press"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "One-Arm_Kettlebell_Para_Press",
+  "toExerciseTemplateId": "Standing_Palm-In_One-Arm_Dumbbell_Press"
 }

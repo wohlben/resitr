@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-calf-raise-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Shoulder shrug using calf machine for heavy trapezius loading with stable platform",
@@ -30,19 +27,21 @@
     "/img/exercises/Calf-Machine_Shoulder_Shrug/0.jpg",
     "/img/exercises/Calf-Machine_Shoulder_Shrug/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Calf Machine Shoulder Shrug",
     "Calf-Shoulder Shrug",
     "Shoulder Shrug",
     "Trap Shrug"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Calf-Machine_Shoulder_Shrug"
+  "parentExerciseId": null,
+  "templateId": "Calf-Machine_Shoulder_Shrug",
+  "equipmentIds": [
+    "gym-calf-raise-machine"
+  ]
 }

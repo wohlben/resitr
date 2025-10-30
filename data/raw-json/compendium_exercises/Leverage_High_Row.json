@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "REAR_DELTS",
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "machine"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "DISTANCE_BASED",
     "TIME_BASED",
     "AMRAP"
@@ -34,14 +31,16 @@
     "/img/exercises/Leverage_High_Row/0.jpg",
     "/img/exercises/Leverage_High_Row/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Leverage_High_Row"
+  "parentExerciseId": null,
+  "templateId": "Leverage_High_Row",
+  "equipmentIds": [
+    "machine"
+  ]
 }

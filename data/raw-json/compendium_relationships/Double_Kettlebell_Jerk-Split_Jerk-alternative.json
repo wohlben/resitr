@@ -1,10 +1,10 @@
 {
   "id": "Double_Kettlebell_Jerk-Split_Jerk-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Double_Kettlebell_Jerk",
-  "to_exercise_template_id": "Split_Jerk"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Double_Kettlebell_Jerk",
+  "toExerciseTemplateId": "Split_Jerk"
 }

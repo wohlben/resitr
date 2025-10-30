@@ -1,10 +1,10 @@
 {
   "id": "Seated_Triceps_Press-Standing_Overhead_Barbell_Triceps_Extension-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761545398,
-  "from_exercise_template_id": "Seated_Triceps_Press",
-  "to_exercise_template_id": "Standing_Overhead_Barbell_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1761545398,
+  "fromExerciseTemplateId": "Seated_Triceps_Press",
+  "toExerciseTemplateId": "Standing_Overhead_Barbell_Triceps_Extension"
 }

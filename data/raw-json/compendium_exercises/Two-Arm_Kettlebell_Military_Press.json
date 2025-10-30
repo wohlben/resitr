@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "SIDE_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Military press with two kettlebells, strict overhead press from shoulders.",
@@ -29,19 +26,21 @@
     "/img/exercises/Two-Arm_Kettlebell_Military_Press/0.jpg",
     "/img/exercises/Two-Arm_Kettlebell_Military_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bilateral Kettlebell Military Press",
     "Both Arms Kettlebell Military Press",
     "Two Arm Kettlebell Military Press",
     "Two-Arm KB Military Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Two-Arm_Kettlebell_Military_Press"
+  "parentExerciseId": null,
+  "templateId": "Two-Arm_Kettlebell_Military_Press",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

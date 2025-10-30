@@ -5,16 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -28,14 +27,14 @@
     "/img/exercises/Bicycling/0.jpg",
     "/img/exercises/Bicycling/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bicycling"
+  "parentExerciseId": null,
+  "templateId": "Bicycling",
+  "equipmentIds": []
 }

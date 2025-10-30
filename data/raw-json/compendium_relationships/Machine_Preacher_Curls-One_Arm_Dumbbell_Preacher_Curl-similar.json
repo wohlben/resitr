@@ -1,10 +1,10 @@
 {
   "id": "Machine_Preacher_Curls-One_Arm_Dumbbell_Preacher_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Machine_Preacher_Curls",
-  "to_exercise_template_id": "One_Arm_Dumbbell_Preacher_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Machine_Preacher_Curls",
+  "toExerciseTemplateId": "One_Arm_Dumbbell_Preacher_Curl"
 }

@@ -6,22 +6,21 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "LOWER_BACK",
     "QUADS",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LATS",
     "TRAPS",
     "ABS",
     "FOREARMS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -38,14 +37,14 @@
     "/img/exercises/Atlas_Stone_Trainer/0.jpg",
     "/img/exercises/Atlas_Stone_Trainer/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Atlas_Stone_Trainer"
+  "parentExerciseId": null,
+  "templateId": "Atlas_Stone_Trainer",
+  "equipmentIds": []
 }

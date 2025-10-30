@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Band_Power_Squat-Box_Squat_with_Bands-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Reverse_Band_Power_Squat",
-  "to_exercise_template_id": "Box_Squat_with_Bands"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Reverse_Band_Power_Squat",
+  "toExerciseTemplateId": "Box_Squat_with_Bands"
 }

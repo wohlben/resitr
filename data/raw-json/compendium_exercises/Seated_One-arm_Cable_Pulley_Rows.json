@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Single-arm seated cable row, pulling handle to torso for unilateral back development.",
@@ -33,19 +30,21 @@
     "/img/exercises/Seated_One-arm_Cable_Pulley_Rows/0.jpg",
     "/img/exercises/Seated_One-arm_Cable_Pulley_Rows/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated One arm Cable Pulley Rows",
     "Seated One-arm Cable Machine Pulley Rows",
     "Seated One-arm Pulley Rows",
     "Standing One-arm Cable Pulley Rows"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_One-arm_Cable_Pulley_Rows"
+  "parentExerciseId": null,
+  "templateId": "Seated_One-arm_Cable_Pulley_Rows",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

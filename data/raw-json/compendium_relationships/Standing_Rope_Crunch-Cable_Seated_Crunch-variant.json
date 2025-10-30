@@ -1,10 +1,10 @@
 {
   "id": "Standing_Rope_Crunch-Cable_Seated_Crunch-variant",
-  "relationship_type": "variant",
+  "relationshipType": "variant",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Standing_Rope_Crunch",
-  "to_exercise_template_id": "Cable_Seated_Crunch"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Standing_Rope_Crunch",
+  "toExerciseTemplateId": "Cable_Seated_Crunch"
 }

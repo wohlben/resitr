@@ -6,21 +6,18 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS",
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Snatch starting from elevated blocks, reducing range to focus on extension and overhead catch.",
@@ -35,16 +32,18 @@
     "/img/exercises/Snatch_from_Blocks/0.jpg",
     "/img/exercises/Snatch_from_Blocks/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Block Snatch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Snatch_from_Blocks"
+  "parentExerciseId": null,
+  "templateId": "Snatch_from_Blocks",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Decline_Dumbbell_Flyes-Lying_Crossover-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Decline_Dumbbell_Flyes",
-  "to_exercise_template_id": "Lying_Crossover"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Decline_Dumbbell_Flyes",
+  "toExerciseTemplateId": "Lying_Crossover"
 }

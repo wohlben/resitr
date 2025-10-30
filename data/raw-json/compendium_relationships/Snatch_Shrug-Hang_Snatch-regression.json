@@ -1,10 +1,10 @@
 {
   "id": "Snatch_Shrug-Hang_Snatch-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761481995,
-  "from_exercise_template_id": "Snatch_Shrug",
-  "to_exercise_template_id": "Hang_Snatch"
+  "createdBy": "system",
+  "createdAt": 1761481995,
+  "fromExerciseTemplateId": "Snatch_Shrug",
+  "toExerciseTemplateId": "Hang_Snatch"
 }

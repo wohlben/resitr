@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable rowing variation performed from elevated seated position, increasing range of motion and emphasizing lat stretch.",
@@ -35,17 +32,19 @@
     "/img/exercises/Elevated_Cable_Rows/0.jpg",
     "/img/exercises/Elevated_Cable_Rows/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Elevated Cable Machine Rows",
     "Elevated Rows"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Elevated_Cable_Rows"
+  "parentExerciseId": null,
+  "templateId": "Elevated_Cable_Rows",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

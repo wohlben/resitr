@@ -5,21 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-cable-machine",
-    "bench",
-    "chains"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable press using chains for variable resistance and progressive overload",
@@ -32,16 +27,20 @@
     "/img/exercises/Chain_Press/0.jpg",
     "/img/exercises/Chain_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Chain-Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chain_Press"
+  "parentExerciseId": null,
+  "templateId": "Chain_Press",
+  "equipmentIds": [
+    "gym-cable-machine",
+    "bench",
+    "chains"
+  ]
 }

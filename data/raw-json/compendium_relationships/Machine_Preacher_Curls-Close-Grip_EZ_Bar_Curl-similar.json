@@ -1,10 +1,10 @@
 {
   "id": "Machine_Preacher_Curls-Close-Grip_EZ_Bar_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Machine_Preacher_Curls",
-  "to_exercise_template_id": "Close-Grip_EZ_Bar_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Machine_Preacher_Curls",
+  "toExerciseTemplateId": "Close-Grip_EZ_Bar_Curl"
 }

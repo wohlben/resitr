@@ -1,10 +1,10 @@
 {
   "id": "Medicine_Ball_Scoop_Throw-One-Arm_Medicine_Ball_Slam-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761510517,
-  "from_exercise_template_id": "Medicine_Ball_Scoop_Throw",
-  "to_exercise_template_id": "One-Arm_Medicine_Ball_Slam"
+  "createdBy": "system",
+  "createdAt": 1761510517,
+  "fromExerciseTemplateId": "Medicine_Ball_Scoop_Throw",
+  "toExerciseTemplateId": "One-Arm_Medicine_Ball_Slam"
 }

@@ -5,10 +5,10 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "CALVES",
     "CHEST",
@@ -16,12 +16,9 @@
     "QUADS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "landmine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -37,14 +34,16 @@
     "/img/exercises/Landmine_Linear_Jammer/0.jpg",
     "/img/exercises/Landmine_Linear_Jammer/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Landmine_Linear_Jammer"
+  "parentExerciseId": null,
+  "templateId": "Landmine_Linear_Jammer",
+  "equipmentIds": [
+    "landmine"
+  ]
 }

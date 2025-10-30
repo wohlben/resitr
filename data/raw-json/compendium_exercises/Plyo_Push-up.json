@@ -5,17 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -34,16 +33,16 @@
     "/img/exercises/Plyo_Push-up/0.jpg",
     "/img/exercises/Plyo_Push-up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Plyo Push up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Plyo_Push-up"
+  "parentExerciseId": null,
+  "templateId": "Plyo_Push-up",
+  "equipmentIds": []
 }

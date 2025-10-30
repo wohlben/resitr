@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Close-grip lat pulldown targeting lats with narrow hand spacing on the bar, emphasizing inner back development",
@@ -33,20 +30,22 @@
     "/img/exercises/Close-Grip_Front_Lat_Pulldown/0.jpg",
     "/img/exercises/Close-Grip_Front_Lat_Pulldown/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Close Grip Front Lat Pulldown",
     "Lat Pull Down",
     "Lat Pull-Down",
     "Narrow Grip Front Lat Pulldown",
     "Pulldown"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Close-Grip_Front_Lat_Pulldown"
+  "parentExerciseId": null,
+  "templateId": "Close-Grip_Front_Lat_Pulldown",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Frankenstein_Squat-Goblet_Squat-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730009000,
-  "from_exercise_template_id": "Frankenstein_Squat",
-  "to_exercise_template_id": "Goblet_Squat"
+  "createdBy": "system",
+  "createdAt": 1730009000,
+  "fromExerciseTemplateId": "Frankenstein_Squat",
+  "toExerciseTemplateId": "Goblet_Squat"
 }

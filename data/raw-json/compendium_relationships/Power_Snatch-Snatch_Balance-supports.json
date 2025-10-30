@@ -1,10 +1,10 @@
 {
   "id": "Power_Snatch-Snatch_Balance-supports",
-  "relationship_type": "supports",
+  "relationshipType": "supports",
   "strength": 0.9,
   "description": "The Snatch Balance drill develops the speed and mechanics of dropping under the bar, which directly supports the catch phase of the Power Snatch.",
-  "created_by": "system",
-  "created_at": 1761518400,
-  "from_exercise_template_id": "Power_Snatch",
-  "to_exercise_template_id": "Snatch_Balance"
+  "createdBy": "system",
+  "createdAt": 1761518400,
+  "fromExerciseTemplateId": "Power_Snatch",
+  "toExerciseTemplateId": "Snatch_Balance"
 }

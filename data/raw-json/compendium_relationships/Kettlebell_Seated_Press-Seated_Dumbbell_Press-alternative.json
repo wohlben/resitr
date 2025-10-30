@@ -1,10 +1,10 @@
 {
   "id": "Kettlebell_Seated_Press-Seated_Dumbbell_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Kettlebell_Seated_Press",
-  "to_exercise_template_id": "Seated_Dumbbell_Press"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Kettlebell_Seated_Press",
+  "toExerciseTemplateId": "Seated_Dumbbell_Press"
 }

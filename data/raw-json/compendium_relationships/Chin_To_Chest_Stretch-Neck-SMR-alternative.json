@@ -1,10 +1,10 @@
 {
   "id": "Chin_To_Chest_Stretch-Neck-SMR-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Chin_To_Chest_Stretch",
-  "to_exercise_template_id": "Neck-SMR"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Chin_To_Chest_Stretch",
+  "toExerciseTemplateId": "Neck-SMR"
 }

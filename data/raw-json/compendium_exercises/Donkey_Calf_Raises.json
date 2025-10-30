@@ -5,14 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CALVES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -30,17 +29,17 @@
     "/img/exercises/Donkey_Calf_Raises/0.jpg",
     "/img/exercises/Donkey_Calf_Raises/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Heel Raise",
     "Standing Calf Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Donkey_Calf_Raises"
+  "parentExerciseId": null,
+  "templateId": "Donkey_Calf_Raises",
+  "equipmentIds": []
 }

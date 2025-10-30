@@ -1,10 +1,10 @@
 {
   "id": "Rack_Pull_with_Bands-Deadlift_with_Bands-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761511019,
-  "from_exercise_template_id": "Rack_Pull_with_Bands",
-  "to_exercise_template_id": "Deadlift_with_Bands"
+  "createdBy": "system",
+  "createdAt": 1761511019,
+  "fromExerciseTemplateId": "Rack_Pull_with_Bands",
+  "toExerciseTemplateId": "Deadlift_with_Bands"
 }

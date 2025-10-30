@@ -1,10 +1,10 @@
 {
   "id": "JM_Press-Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499467,
-  "from_exercise_template_id": "JM_Press",
-  "to_exercise_template_id": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
+  "createdBy": "system",
+  "createdAt": 1761499467,
+  "fromExerciseTemplateId": "JM_Press",
+  "toExerciseTemplateId": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
 }

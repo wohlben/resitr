@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS",
     "TRAPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable exercise pulling rope towards face with external rotation, targeting rear delts and upper back",
@@ -28,18 +25,20 @@
     "/img/exercises/Face_Pull/0.jpg",
     "/img/exercises/Face_Pull/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Cable Face Pull",
     "Face Pulls",
     "Face-Pull"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Face_Pull"
+  "parentExerciseId": null,
+  "templateId": "Face_Pull",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

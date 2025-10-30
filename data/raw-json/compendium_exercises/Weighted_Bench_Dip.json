@@ -5,18 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CHEST"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bench dip with added weight on lap, pressing body up to target triceps.",
@@ -31,14 +28,16 @@
     "/img/exercises/Weighted_Bench_Dip/0.jpg",
     "/img/exercises/Weighted_Bench_Dip/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Weighted_Bench_Dip"
+  "parentExerciseId": null,
+  "templateId": "Weighted_Bench_Dip",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

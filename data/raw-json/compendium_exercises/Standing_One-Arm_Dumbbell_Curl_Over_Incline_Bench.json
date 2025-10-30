@@ -5,17 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,7 +28,7 @@
     "/img/exercises/Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench/0.jpg",
     "/img/exercises/Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "DB Curl",
     "Dumbbell Bicep Curl",
     "Seated One-Arm Dumbbell Curl Over Incline Bench",
@@ -42,13 +38,16 @@
     "Standing Single Arm Dumbbell Curl Over Incline Bench",
     "Standing Unilateral Dumbbell Curl Over Incline Bench"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench"
+  "parentExerciseId": null,
+  "templateId": "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench",
+  "equipmentIds": [
+    "dumbbell",
+    "incline-bench"
+  ]
 }

@@ -6,23 +6,20 @@
     "PULL",
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "RHOMBOIDS",
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "OBLIQUES",
     "BICEPS",
     "CHEST",
     "TRAPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -36,16 +33,18 @@
     "/img/exercises/Alternating_Renegade_Row/0.jpg",
     "/img/exercises/Alternating_Renegade_Row/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Alternate Renegade Row"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Alternating_Renegade_Row"
+  "parentExerciseId": null,
+  "templateId": "Alternating_Renegade_Row",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

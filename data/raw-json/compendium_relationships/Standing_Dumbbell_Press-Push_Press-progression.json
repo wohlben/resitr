@@ -1,10 +1,10 @@
 {
   "id": "Standing_Dumbbell_Press-Push_Press-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Standing_Dumbbell_Press",
-  "to_exercise_template_id": "Push_Press"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Standing_Dumbbell_Press",
+  "toExerciseTemplateId": "Push_Press"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Two-Arm_Kettlebell_Military_Press-Kettlebell_Seated_Press-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Two-Arm_Kettlebell_Military_Press",
-  "to_exercise_template_id": "Kettlebell_Seated_Press"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Two-Arm_Kettlebell_Military_Press",
+  "toExerciseTemplateId": "Kettlebell_Seated_Press"
 }

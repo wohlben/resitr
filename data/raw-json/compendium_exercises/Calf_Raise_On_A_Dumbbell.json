@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CALVES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -30,19 +27,21 @@
     "/img/exercises/Calf_Raise_On_A_Dumbbell/0.jpg",
     "/img/exercises/Calf_Raise_On_A_Dumbbell/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Calf Raise On A DB",
     "Calf Raise On A Dumbell",
     "Heel Raise",
     "Standing Calf Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Calf_Raise_On_A_Dumbbell"
+  "parentExerciseId": null,
+  "templateId": "Calf_Raise_On_A_Dumbbell",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

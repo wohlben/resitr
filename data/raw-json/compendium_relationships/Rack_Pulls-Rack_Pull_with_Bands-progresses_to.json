@@ -1,10 +1,10 @@
 {
   "id": "Rack_Pulls-Rack_Pull_with_Bands-progresses_to",
-  "relationship_type": "progresses_to",
+  "relationshipType": "progresses_to",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761511019,
-  "from_exercise_template_id": "Rack_Pulls",
-  "to_exercise_template_id": "Rack_Pull_with_Bands"
+  "createdBy": "system",
+  "createdAt": 1761511019,
+  "fromExerciseTemplateId": "Rack_Pulls",
+  "toExerciseTemplateId": "Rack_Pull_with_Bands"
 }

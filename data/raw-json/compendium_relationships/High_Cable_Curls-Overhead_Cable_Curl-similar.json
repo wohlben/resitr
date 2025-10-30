@@ -1,10 +1,10 @@
 {
   "id": "High_Cable_Curls-Overhead_Cable_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498077,
-  "from_exercise_template_id": "High_Cable_Curls",
-  "to_exercise_template_id": "Overhead_Cable_Curl"
+  "createdBy": "system",
+  "createdAt": 1761498077,
+  "fromExerciseTemplateId": "High_Cable_Curls",
+  "toExerciseTemplateId": "Overhead_Cable_Curl"
 }

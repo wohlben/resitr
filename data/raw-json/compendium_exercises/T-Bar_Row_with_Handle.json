@@ -5,21 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-t-bar-row-machine",
-    "landmine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "DISTANCE_BASED",
     "TIME_BASED",
     "AMRAP"
@@ -36,17 +32,20 @@
     "/img/exercises/T-Bar_Row_with_Handle/0.jpg",
     "/img/exercises/T-Bar_Row_with_Handle/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "T Bar Row with Handle",
     "T-Barbell Row with Handle"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "T-Bar_Row_with_Handle"
+  "parentExerciseId": null,
+  "templateId": "T-Bar_Row_with_Handle",
+  "equipmentIds": [
+    "gym-t-bar-row-machine",
+    "landmine"
+  ]
 }

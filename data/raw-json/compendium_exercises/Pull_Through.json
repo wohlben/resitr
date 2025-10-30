@@ -5,19 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable pull-through exercise hinging at hips and pulling cable through legs, targeting glutes and hamstrings.",
@@ -29,16 +26,18 @@
     "/img/exercises/Pull_Through/0.jpg",
     "/img/exercises/Pull_Through/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Pull-Through"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Pull_Through"
+  "parentExerciseId": null,
+  "templateId": "Pull_Through",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

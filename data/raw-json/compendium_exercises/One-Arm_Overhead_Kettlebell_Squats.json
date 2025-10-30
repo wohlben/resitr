@@ -5,21 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "FRONT_DELTS",
     "ABS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -33,19 +30,21 @@
     "/img/exercises/One-Arm_Overhead_Kettlebell_Squats/0.jpg",
     "/img/exercises/One-Arm_Overhead_Kettlebell_Squats/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Arm Overhead Kettlebell Squats",
     "One-Arm Overhead KB Squats",
     "Single Arm Overhead Kettlebell Squats",
     "Unilateral Overhead Kettlebell Squats"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One-Arm_Overhead_Kettlebell_Squats"
+  "parentExerciseId": null,
+  "templateId": "One-Arm_Overhead_Kettlebell_Squats",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

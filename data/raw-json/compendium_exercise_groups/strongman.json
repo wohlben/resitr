@@ -2,7 +2,7 @@
   "id": "strongman",
   "name": "Strongman",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761414962,
-  "updated_at": 1761414962
+  "createdBy": "dev-user",
+  "createdAt": 1761414962,
+  "updatedAt": 1761414962
 }

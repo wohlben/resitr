@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FOREARMS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Strength training exercise targeting primary muscle groups",
@@ -30,18 +27,20 @@
     "/img/exercises/Dumbbell_Lying_Pronation/0.jpg",
     "/img/exercises/Dumbbell_Lying_Pronation/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "DB Lying Pronation",
     "Dumbbell Prone Pronation",
     "Dumbell Lying Pronation"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Dumbbell_Lying_Pronation"
+  "parentExerciseId": null,
+  "templateId": "Dumbbell_Lying_Pronation",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

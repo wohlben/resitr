@@ -1,10 +1,10 @@
 {
   "id": "Cable_Chest_Press-Incline_Cable_Chest_Press-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761478645,
-  "from_exercise_template_id": "Cable_Chest_Press",
-  "to_exercise_template_id": "Incline_Cable_Chest_Press"
+  "createdBy": "system",
+  "createdAt": 1761478645,
+  "fromExerciseTemplateId": "Cable_Chest_Press",
+  "toExerciseTemplateId": "Incline_Cable_Chest_Press"
 }

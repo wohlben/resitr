@@ -1,6 +1,6 @@
 {
-  "group_id": "leg-curl",
-  "added_by": "dev-user",
-  "added_at": 1761413093,
-  "exercise_template_id": "Standing_Leg_Curl"
+  "groupId": "leg-curl",
+  "addedBy": "dev-user",
+  "addedAt": 1761413093,
+  "exerciseTemplateId": "Standing_Leg_Curl"
 }

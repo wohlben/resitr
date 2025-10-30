@@ -1,10 +1,10 @@
 {
   "id": "Wide-Grip_Barbell_Bench_Press-Bench_Press_-_Powerlifting-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Wide-Grip_Barbell_Bench_Press",
-  "to_exercise_template_id": "Bench_Press_-_Powerlifting"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Wide-Grip_Barbell_Bench_Press",
+  "toExerciseTemplateId": "Bench_Press_-_Powerlifting"
 }

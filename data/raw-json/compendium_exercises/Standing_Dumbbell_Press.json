@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "SIDE_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing overhead dumbbell shoulder press, pressing dumbbells from shoulders overhead.",
@@ -30,18 +27,20 @@
     "/img/exercises/Standing_Dumbbell_Press/0.jpg",
     "/img/exercises/Standing_Dumbbell_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Dumbbell Press",
     "Standing DB Press",
     "Standing Dumbell Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Dumbbell_Press"
+  "parentExerciseId": null,
+  "templateId": "Standing_Dumbbell_Press",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

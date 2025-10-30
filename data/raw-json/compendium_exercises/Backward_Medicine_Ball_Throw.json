@@ -5,22 +5,19 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "ABS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "HAMSTRINGS",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "medicine-ball"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -35,16 +32,18 @@
     "/img/exercises/Backward_Medicine_Ball_Throw/0.jpg",
     "/img/exercises/Backward_Medicine_Ball_Throw/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Backward Med Ball Throw"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Backward_Medicine_Ball_Throw"
+  "parentExerciseId": null,
+  "templateId": "Backward_Medicine_Ball_Throw",
+  "equipmentIds": [
+    "medicine-ball"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Shoulder_Stretch-Round_The_World_Shoulder_Stretch-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Shoulder_Stretch",
-  "to_exercise_template_id": "Round_The_World_Shoulder_Stretch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Shoulder_Stretch",
+  "toExerciseTemplateId": "Round_The_World_Shoulder_Stretch"
 }

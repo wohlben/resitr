@@ -1,10 +1,10 @@
 {
   "id": "Kettlebell_Seesaw_Press-Two-Arm_Kettlebell_Military_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761500440,
-  "from_exercise_template_id": "Kettlebell_Seesaw_Press",
-  "to_exercise_template_id": "Two-Arm_Kettlebell_Military_Press"
+  "createdBy": "system",
+  "createdAt": 1761500440,
+  "fromExerciseTemplateId": "Kettlebell_Seesaw_Press",
+  "toExerciseTemplateId": "Two-Arm_Kettlebell_Military_Press"
 }

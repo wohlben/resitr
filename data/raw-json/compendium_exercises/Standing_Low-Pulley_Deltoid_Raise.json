@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "SIDE_DELTS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing lateral raise using low pulley cable, targeting middle deltoid from side.",
@@ -30,17 +27,19 @@
     "/img/exercises/Standing_Low-Pulley_Deltoid_Raise/0.jpg",
     "/img/exercises/Standing_Low-Pulley_Deltoid_Raise/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Low-Pulley Deltoid Raise",
     "Standing Low Pulley Deltoid Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Low-Pulley_Deltoid_Raise"
+  "parentExerciseId": null,
+  "templateId": "Standing_Low-Pulley_Deltoid_Raise",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

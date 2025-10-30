@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Front shoulder raise using cable machine, lifting cable handle forward to shoulder height.",
@@ -29,17 +26,19 @@
     "/img/exercises/Front_Cable_Raise/0.jpg",
     "/img/exercises/Front_Cable_Raise/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Front Cable Machine Raise",
     "Front Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Front_Cable_Raise"
+  "parentExerciseId": null,
+  "templateId": "Front_Cable_Raise",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

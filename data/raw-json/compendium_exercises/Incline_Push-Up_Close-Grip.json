@@ -5,16 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CHEST"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Close-grip incline push-up with hands close together, emphasizing triceps from elevated position.",
@@ -29,7 +28,7 @@
     "/img/exercises/Incline_Push-Up_Close-Grip/0.jpg",
     "/img/exercises/Incline_Push-Up_Close-Grip/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Incline Push Up Close Grip",
     "Incline Push-Up Close Grip",
     "Incline Push-Up Narrow Grip",
@@ -38,13 +37,13 @@
     "Pushup",
     "Pushups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Incline_Push-Up_Close-Grip"
+  "parentExerciseId": null,
+  "templateId": "Incline_Push-Up_Close-Grip",
+  "equipmentIds": []
 }

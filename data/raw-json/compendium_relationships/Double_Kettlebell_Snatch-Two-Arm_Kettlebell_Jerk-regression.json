@@ -1,10 +1,10 @@
 {
   "id": "Double_Kettlebell_Snatch-Two-Arm_Kettlebell_Jerk-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Double_Kettlebell_Snatch",
-  "to_exercise_template_id": "Two-Arm_Kettlebell_Jerk"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Double_Kettlebell_Snatch",
+  "toExerciseTemplateId": "Two-Arm_Kettlebell_Jerk"
 }

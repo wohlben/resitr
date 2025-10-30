@@ -1,10 +1,10 @@
 {
   "id": "Bench_Jump-Front_Cone_Hops_or_hurdle_hops-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761495424,
-  "from_exercise_template_id": "Bench_Jump",
-  "to_exercise_template_id": "Front_Cone_Hops_or_hurdle_hops"
+  "createdBy": "system",
+  "createdAt": 1761495424,
+  "fromExerciseTemplateId": "Bench_Jump",
+  "toExerciseTemplateId": "Front_Cone_Hops_or_hurdle_hops"
 }

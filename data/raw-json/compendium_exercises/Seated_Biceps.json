@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "partner"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Partner-assisted PNF stretch for biceps using isometric contraction followed by assisted stretching.",
@@ -27,17 +24,19 @@
     "/img/exercises/Seated_Biceps/0.jpg",
     "/img/exercises/Seated_Biceps/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated-Biceps",
     "Standing Biceps"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Biceps"
+  "parentExerciseId": null,
+  "templateId": "Seated_Biceps",
+  "equipmentIds": [
+    "partner"
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "box",
-  "display_name": "Box",
+  "displayName": "Box",
   "description": "A sturdy platform or box used for step-ups, jumps, and plyometric exercises.",
   "category": "accessories",
-  "image_url": null,
-  "template_id": "box"
+  "imageUrl": null,
+  "templateId": "box"
 }

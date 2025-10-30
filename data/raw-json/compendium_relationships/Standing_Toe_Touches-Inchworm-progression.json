@@ -1,10 +1,10 @@
 {
   "id": "Standing_Toe_Touches-Inchworm-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Standing_Toe_Touches",
-  "to_exercise_template_id": "Inchworm"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Standing_Toe_Touches",
+  "toExerciseTemplateId": "Inchworm"
 }

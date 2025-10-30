@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ADDUCTORS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "partner"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Adductor and groin stretch opening legs wide to stretch inner thigh muscles.",
@@ -28,14 +25,16 @@
     "/img/exercises/Adductor_Groin/0.jpg",
     "/img/exercises/Adductor_Groin/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Adductor_Groin"
+  "parentExerciseId": null,
+  "templateId": "Adductor_Groin",
+  "equipmentIds": [
+    "partner"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Low_Pulley_Row_To_Neck-Kneeling_High_Pulley_Row-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": "Both pull cable towards neck/upper chest area targeting rear delts and rhomboids; kneeling high pulley uses downward pulling angle for different stimulus",
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Low_Pulley_Row_To_Neck",
-  "to_exercise_template_id": "Kneeling_High_Pulley_Row"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Low_Pulley_Row_To_Neck",
+  "toExerciseTemplateId": "Kneeling_High_Pulley_Row"
 }

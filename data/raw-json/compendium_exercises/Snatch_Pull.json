@@ -5,21 +5,18 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "LOWER_BACK",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Olympic lift pull phase of snatch, explosively extending hips to pull bar high without catching overhead.",
@@ -33,18 +30,20 @@
     "/img/exercises/Snatch_Pull/0.jpg",
     "/img/exercises/Snatch_Pull/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Snatch",
     "Power Snatch",
     "Snatch-Pull"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Snatch_Pull"
+  "parentExerciseId": null,
+  "templateId": "Snatch_Pull",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

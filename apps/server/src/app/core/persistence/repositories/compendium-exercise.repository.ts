@@ -49,4 +49,21 @@ export class CompendiumExerciseRepository {
     const result = await this.db.delete(compendiumExercises).where(eq(compendiumExercises.templateId, templateId)).returning();
     return result[0];
   }
+
+  async upsert(data: CompendiumExercise) {
+    const { templateId, ...updateData } = data;
+    const result = await this.db
+      .insert(compendiumExercises)
+      .values(data)
+      .onConflictDoUpdate({
+        target: compendiumExercises.templateId,
+        set: {
+          ...updateData,
+          updatedAt: sql`(unixepoch())`,
+          version: sql`${compendiumExercises.version} + 1`,
+        },
+      })
+      .returning();
+    return result[0];
+  }
 }

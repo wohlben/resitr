@@ -1,10 +1,10 @@
 {
   "id": "Side_Lying_Groin_Stretch-Adductor_Groin-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Side_Lying_Groin_Stretch",
-  "to_exercise_template_id": "Adductor_Groin"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Side_Lying_Groin_Stretch",
+  "toExerciseTemplateId": "Adductor_Groin"
 }

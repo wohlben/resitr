@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "SIDE_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Seated overhead barbell press (military press), pressing barbell from shoulders overhead while seated.",
@@ -33,18 +29,21 @@
     "/img/exercises/Seated_Barbell_Military_Press/0.jpg",
     "/img/exercises/Seated_Barbell_Military_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated BB Military Press",
     "Seated Bar Military Press",
     "Seated Barbell Shoulder Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Barbell_Military_Press"
+  "parentExerciseId": null,
+  "templateId": "Seated_Barbell_Military_Press",
+  "equipmentIds": [
+    "barbell",
+    "bench"
+  ]
 }

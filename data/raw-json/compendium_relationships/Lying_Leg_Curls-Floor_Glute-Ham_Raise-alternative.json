@@ -1,10 +1,10 @@
 {
   "id": "Lying_Leg_Curls-Floor_Glute-Ham_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Lying_Leg_Curls",
-  "to_exercise_template_id": "Floor_Glute-Ham_Raise"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Lying_Leg_Curls",
+  "toExerciseTemplateId": "Floor_Glute-Ham_Raise"
 }

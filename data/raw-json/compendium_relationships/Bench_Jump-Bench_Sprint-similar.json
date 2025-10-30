@@ -1,10 +1,10 @@
 {
   "id": "Bench_Jump-Bench_Sprint-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Bench_Jump",
-  "to_exercise_template_id": "Bench_Sprint"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Bench_Jump",
+  "toExerciseTemplateId": "Bench_Sprint"
 }

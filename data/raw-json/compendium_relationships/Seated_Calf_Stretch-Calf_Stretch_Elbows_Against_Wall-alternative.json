@@ -1,10 +1,10 @@
 {
   "id": "Seated_Calf_Stretch-Calf_Stretch_Elbows_Against_Wall-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761480085,
-  "from_exercise_template_id": "Seated_Calf_Stretch",
-  "to_exercise_template_id": "Calf_Stretch_Elbows_Against_Wall"
+  "createdBy": "system",
+  "createdAt": 1761480085,
+  "fromExerciseTemplateId": "Seated_Calf_Stretch",
+  "toExerciseTemplateId": "Calf_Stretch_Elbows_Against_Wall"
 }

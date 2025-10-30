@@ -5,17 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.9,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.9,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -31,18 +30,18 @@
     "/img/exercises/Gorilla_Chin_Crunch/0.jpg",
     "/img/exercises/Gorilla_Chin_Crunch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ab Crunch",
     "Abdominal Crunch",
     "Gorilla-Chin/Crunch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Gorilla_Chin_Crunch"
+  "parentExerciseId": null,
+  "templateId": "Gorilla_Chin_Crunch",
+  "equipmentIds": []
 }

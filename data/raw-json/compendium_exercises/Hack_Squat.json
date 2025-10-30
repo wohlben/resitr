@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-hack-squat-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Machine-based squat with back on pad at angle, targeting quads with reduced back stress.",
@@ -34,16 +31,18 @@
     "/img/exercises/Hack_Squat/0.jpg",
     "/img/exercises/Hack_Squat/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Hack-Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hack_Squat"
+  "parentExerciseId": null,
+  "templateId": "Hack_Squat",
+  "equipmentIds": [
+    "gym-hack-squat-machine"
+  ]
 }

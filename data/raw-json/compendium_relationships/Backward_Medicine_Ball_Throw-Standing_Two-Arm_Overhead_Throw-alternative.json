@@ -1,10 +1,10 @@
 {
   "id": "Backward_Medicine_Ball_Throw-Standing_Two-Arm_Overhead_Throw-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Backward_Medicine_Ball_Throw",
-  "to_exercise_template_id": "Standing_Two-Arm_Overhead_Throw"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Backward_Medicine_Ball_Throw",
+  "toExerciseTemplateId": "Standing_Two-Arm_Overhead_Throw"
 }

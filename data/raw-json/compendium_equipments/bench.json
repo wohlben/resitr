@@ -1,8 +1,8 @@
 {
   "name": "bench",
-  "display_name": "Bench",
+  "displayName": "Bench",
   "description": "A flat, incline, or decline platform for supporting the body during exercises.",
   "category": "benches",
-  "image_url": null,
-  "template_id": "bench"
+  "imageUrl": null,
+  "templateId": "bench"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Side-Lying_Floor_Stretch-Standing_Lateral_Stretch-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Side-Lying_Floor_Stretch",
-  "to_exercise_template_id": "Standing_Lateral_Stretch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Side-Lying_Floor_Stretch",
+  "toExerciseTemplateId": "Standing_Lateral_Stretch"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Double_Kettlebell_Push_Press-Kettlebell_Thruster-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Double_Kettlebell_Push_Press",
-  "to_exercise_template_id": "Kettlebell_Thruster"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Double_Kettlebell_Push_Press",
+  "toExerciseTemplateId": "Kettlebell_Thruster"
 }

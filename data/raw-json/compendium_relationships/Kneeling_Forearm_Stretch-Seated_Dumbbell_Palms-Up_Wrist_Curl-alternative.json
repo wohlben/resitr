@@ -1,10 +1,10 @@
 {
   "id": "Kneeling_Forearm_Stretch-Seated_Dumbbell_Palms-Up_Wrist_Curl-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Kneeling_Forearm_Stretch",
-  "to_exercise_template_id": "Seated_Dumbbell_Palms-Up_Wrist_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Kneeling_Forearm_Stretch",
+  "toExerciseTemplateId": "Seated_Dumbbell_Palms-Up_Wrist_Curl"
 }

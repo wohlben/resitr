@@ -5,14 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "NECK"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Cervical flexion stretch lowering chin to chest to release neck tension and improve mobility",
@@ -24,14 +23,14 @@
     "/img/exercises/Chin_To_Chest_Stretch/0.jpg",
     "/img/exercises/Chin_To_Chest_Stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chin_To_Chest_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Chin_To_Chest_Stretch",
+  "equipmentIds": []
 }

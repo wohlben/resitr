@@ -5,18 +5,17 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "RHOMBOIDS",
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Rotational stretch for middle back, twisting at waist to stretch mid-back muscles and thoracic spine.",
@@ -28,14 +27,14 @@
     "/img/exercises/Middle_Back_Stretch/0.jpg",
     "/img/exercises/Middle_Back_Stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Middle_Back_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Middle_Back_Stretch",
+  "equipmentIds": []
 }

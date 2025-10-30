@@ -5,19 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Good morning exercise with stiff legs and barbell on back, hinging at hips to target posterior chain.",
@@ -33,18 +30,20 @@
     "/img/exercises/Stiff_Leg_Barbell_Good_Morning/0.jpg",
     "/img/exercises/Stiff_Leg_Barbell_Good_Morning/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Stiff Leg BB Good Morning",
     "Stiff Leg Bar Good Morning",
     "Stiff Leg Barbell Good Morning"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Stiff_Leg_Barbell_Good_Morning"
+  "parentExerciseId": null,
+  "templateId": "Stiff_Leg_Barbell_Good_Morning",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

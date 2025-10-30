@@ -1,10 +1,10 @@
 {
   "id": "Banded_Barbell_Squat-Reverse_Band_Box_Squat-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761511059,
-  "from_exercise_template_id": "Banded_Barbell_Squat",
-  "to_exercise_template_id": "Reverse_Band_Box_Squat"
+  "createdBy": "system",
+  "createdAt": 1761511059,
+  "fromExerciseTemplateId": "Banded_Barbell_Squat",
+  "toExerciseTemplateId": "Reverse_Band_Box_Squat"
 }

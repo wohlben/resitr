@@ -1,10 +1,10 @@
 {
   "id": "Push-Up_Wide-Suspended_Push-Up-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Push-Up_Wide",
-  "to_exercise_template_id": "Suspended_Push-Up"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Push-Up_Wide",
+  "toExerciseTemplateId": "Suspended_Push-Up"
 }

@@ -1,6 +1,6 @@
 {
-  "group_id": "decline-bench-triceps",
-  "added_by": "dev-user",
-  "added_at": 1729932000,
-  "exercise_template_id": "Decline_EZ_Bar_Triceps_Extension"
+  "groupId": "decline-bench-triceps",
+  "addedBy": "dev-user",
+  "addedAt": 1729932000,
+  "exerciseTemplateId": "Decline_EZ_Bar_Triceps_Extension"
 }

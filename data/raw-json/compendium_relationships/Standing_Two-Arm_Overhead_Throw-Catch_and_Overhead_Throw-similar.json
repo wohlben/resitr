@@ -1,10 +1,10 @@
 {
   "id": "Standing_Two-Arm_Overhead_Throw-Catch_and_Overhead_Throw-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": null,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Standing_Two-Arm_Overhead_Throw",
-  "to_exercise_template_id": "Catch_and_Overhead_Throw"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Standing_Two-Arm_Overhead_Throw",
+  "toExerciseTemplateId": "Catch_and_Overhead_Throw"
 }

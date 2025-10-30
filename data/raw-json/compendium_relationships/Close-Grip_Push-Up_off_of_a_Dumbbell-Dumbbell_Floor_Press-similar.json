@@ -1,10 +1,10 @@
 {
   "id": "Close-Grip_Push-Up_off_of_a_Dumbbell-Dumbbell_Floor_Press-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729940400,
-  "from_exercise_template_id": "Close-Grip_Push-Up_off_of_a_Dumbbell",
-  "to_exercise_template_id": "Dumbbell_Floor_Press"
+  "createdBy": "system",
+  "createdAt": 1729940400,
+  "fromExerciseTemplateId": "Close-Grip_Push-Up_off_of_a_Dumbbell",
+  "toExerciseTemplateId": "Dumbbell_Floor_Press"
 }

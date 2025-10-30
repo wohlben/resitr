@@ -1,10 +1,10 @@
 {
   "id": "Sled_Overhead_Backward_Walk-Backward_Drag-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Sled_Overhead_Backward_Walk",
-  "to_exercise_template_id": "Backward_Drag"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Sled_Overhead_Backward_Walk",
+  "toExerciseTemplateId": "Backward_Drag"
 }

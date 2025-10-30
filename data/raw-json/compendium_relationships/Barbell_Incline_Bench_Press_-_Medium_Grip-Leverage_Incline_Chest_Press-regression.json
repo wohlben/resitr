@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Incline_Bench_Press_-_Medium_Grip-Leverage_Incline_Chest_Press-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730051040,
-  "from_exercise_template_id": "Barbell_Incline_Bench_Press_-_Medium_Grip",
-  "to_exercise_template_id": "Leverage_Incline_Chest_Press"
+  "createdBy": "system",
+  "createdAt": 1730051040,
+  "fromExerciseTemplateId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+  "toExerciseTemplateId": "Leverage_Incline_Chest_Press"
 }

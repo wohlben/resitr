@@ -5,14 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.7,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.7,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -28,14 +27,14 @@
     "/img/exercises/Side_Leg_Raises/0.jpg",
     "/img/exercises/Side_Leg_Raises/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Side_Leg_Raises"
+  "parentExerciseId": null,
+  "templateId": "Side_Leg_Raises",
+  "equipmentIds": []
 }

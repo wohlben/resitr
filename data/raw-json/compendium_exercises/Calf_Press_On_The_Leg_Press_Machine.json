@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CALVES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-leg-press-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Leg press machine calf raise targeting calves through ankle extension under leg press load",
@@ -29,17 +26,19 @@
     "/img/exercises/Calf_Press_On_The_Leg_Press_Machine/0.jpg",
     "/img/exercises/Calf_Press_On_The_Leg_Press_Machine/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Machine Leg Press",
     "Seated Leg Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Calf_Press_On_The_Leg_Press_Machine"
+  "parentExerciseId": null,
+  "templateId": "Calf_Press_On_The_Leg_Press_Machine",
+  "equipmentIds": [
+    "gym-leg-press-machine"
+  ]
 }

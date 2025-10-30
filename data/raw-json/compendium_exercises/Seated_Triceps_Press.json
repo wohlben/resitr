@@ -5,17 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Seated overhead triceps press, extending elbows to press weight overhead.",
@@ -29,16 +25,19 @@
     "/img/exercises/Seated_Triceps_Press/0.jpg",
     "/img/exercises/Seated_Triceps_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Standing Triceps Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Triceps_Press"
+  "parentExerciseId": null,
+  "templateId": "Seated_Triceps_Press",
+  "equipmentIds": [
+    "dumbbell",
+    "bench"
+  ]
 }

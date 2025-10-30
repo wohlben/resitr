@@ -1,10 +1,10 @@
 {
   "id": "Leverage_Decline_Chest_Press-Decline_Dumbbell_Bench_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761483992,
-  "from_exercise_template_id": "Leverage_Decline_Chest_Press",
-  "to_exercise_template_id": "Decline_Dumbbell_Bench_Press"
+  "createdBy": "system",
+  "createdAt": 1761483992,
+  "fromExerciseTemplateId": "Leverage_Decline_Chest_Press",
+  "toExerciseTemplateId": "Decline_Dumbbell_Bench_Press"
 }

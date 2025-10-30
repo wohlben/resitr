@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Kettlebell_Press-Kettlebell_Seesaw_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.88,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761500440,
-  "from_exercise_template_id": "Alternating_Kettlebell_Press",
-  "to_exercise_template_id": "Kettlebell_Seesaw_Press"
+  "createdBy": "system",
+  "createdAt": 1761500440,
+  "fromExerciseTemplateId": "Alternating_Kettlebell_Press",
+  "toExerciseTemplateId": "Kettlebell_Seesaw_Press"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Scissors_Jump-Lunge_Sprint-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Scissors_Jump",
-  "to_exercise_template_id": "Lunge_Sprint"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Scissors_Jump",
+  "toExerciseTemplateId": "Lunge_Sprint"
 }

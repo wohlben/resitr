@@ -1,10 +1,10 @@
 {
   "id": "Hyperextensions_Back_Extensions-Barbell_Hip_Thrust-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498416,
-  "from_exercise_template_id": "Hyperextensions_Back_Extensions",
-  "to_exercise_template_id": "Barbell_Hip_Thrust"
+  "createdBy": "system",
+  "createdAt": 1761498416,
+  "fromExerciseTemplateId": "Hyperextensions_Back_Extensions",
+  "toExerciseTemplateId": "Barbell_Hip_Thrust"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Heaving_Snatch_Balance-Snatch_Balance-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761496481,
-  "from_exercise_template_id": "Heaving_Snatch_Balance",
-  "to_exercise_template_id": "Snatch_Balance"
+  "createdBy": "system",
+  "createdAt": 1761496481,
+  "fromExerciseTemplateId": "Heaving_Snatch_Balance",
+  "toExerciseTemplateId": "Snatch_Balance"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Smith_Machine_Pistol_Squat-Single-Leg_High_Box_Squat-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Smith_Machine_Pistol_Squat",
-  "to_exercise_template_id": "Single-Leg_High_Box_Squat"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Smith_Machine_Pistol_Squat",
+  "toExerciseTemplateId": "Single-Leg_High_Box_Squat"
 }

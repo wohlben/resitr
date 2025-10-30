@@ -2,7 +2,7 @@
   "id": "good-morning",
   "name": "Good Morning",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761415908,
-  "updated_at": 1761415908
+  "createdBy": "dev-user",
+  "createdAt": 1761415908,
+  "updatedAt": 1761415908
 }

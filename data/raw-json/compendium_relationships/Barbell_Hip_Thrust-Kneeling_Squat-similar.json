@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Hip_Thrust-Kneeling_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Barbell_Hip_Thrust",
-  "to_exercise_template_id": "Kneeling_Squat"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Barbell_Hip_Thrust",
+  "toExerciseTemplateId": "Kneeling_Squat"
 }

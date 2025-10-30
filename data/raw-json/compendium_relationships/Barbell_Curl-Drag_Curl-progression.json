@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Curl-Drag_Curl-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Barbell_Curl",
-  "to_exercise_template_id": "Drag_Curl"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Barbell_Curl",
+  "toExerciseTemplateId": "Drag_Curl"
 }

@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CHEST",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Narrow-grip barbell bench press emphasizing triceps through reduced hand spacing",
@@ -33,7 +29,7 @@
     "/img/exercises/Close-Grip_Barbell_Bench_Press/0.jpg",
     "/img/exercises/Close-Grip_Barbell_Bench_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Bench Press",
     "Bench Press",
     "Close Grip Barbell Bench Press",
@@ -44,13 +40,16 @@
     "Flat Bench Press",
     "Narrow Grip Barbell Bench Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Close-Grip_Barbell_Bench_Press"
+  "parentExerciseId": null,
+  "templateId": "Close-Grip_Barbell_Bench_Press",
+  "equipmentIds": [
+    "barbell",
+    "bench"
+  ]
 }

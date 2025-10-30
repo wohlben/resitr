@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Partial range bench press with barbell resting on pins in power rack, pressing from set height for overload training.",
@@ -34,16 +30,19 @@
     "/img/exercises/Pin_Presses/0.jpg",
     "/img/exercises/Pin_Presses/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Pin-Presses"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Pin_Presses"
+  "parentExerciseId": null,
+  "templateId": "Pin_Presses",
+  "equipmentIds": [
+    "barbell",
+    "bench"
+  ]
 }

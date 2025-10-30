@@ -1,10 +1,10 @@
 {
   "id": "Cat_Stretch-Hip_Circles_prone-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": null,
   "description": "Both exercises utilize the same quadruped position (on hands and knees) as their foundation, making them complementary mobility exercises that can be performed in sequence",
-  "created_by": "system",
-  "created_at": 1761024000,
-  "from_exercise_template_id": "Cat_Stretch",
-  "to_exercise_template_id": "Hip_Circles_prone"
+  "createdBy": "system",
+  "createdAt": 1761024000,
+  "fromExerciseTemplateId": "Cat_Stretch",
+  "toExerciseTemplateId": "Hip_Circles_prone"
 }

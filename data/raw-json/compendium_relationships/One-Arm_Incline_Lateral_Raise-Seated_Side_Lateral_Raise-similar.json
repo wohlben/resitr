@@ -1,10 +1,10 @@
 {
   "id": "One-Arm_Incline_Lateral_Raise-Seated_Side_Lateral_Raise-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "One-Arm_Incline_Lateral_Raise",
-  "to_exercise_template_id": "Seated_Side_Lateral_Raise"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "One-Arm_Incline_Lateral_Raise",
+  "toExerciseTemplateId": "Seated_Side_Lateral_Raise"
 }

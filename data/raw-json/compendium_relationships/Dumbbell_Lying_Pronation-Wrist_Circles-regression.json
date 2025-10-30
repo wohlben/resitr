@@ -1,10 +1,10 @@
 {
   "id": "Dumbbell_Lying_Pronation-Wrist_Circles-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.55,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Dumbbell_Lying_Pronation",
-  "to_exercise_template_id": "Wrist_Circles"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Dumbbell_Lying_Pronation",
+  "toExerciseTemplateId": "Wrist_Circles"
 }

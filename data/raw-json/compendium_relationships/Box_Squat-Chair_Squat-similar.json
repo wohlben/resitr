@@ -1,10 +1,10 @@
 {
   "id": "Box_Squat-Chair_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761481210,
-  "from_exercise_template_id": "Box_Squat",
-  "to_exercise_template_id": "Chair_Squat"
+  "createdBy": "system",
+  "createdAt": 1761481210,
+  "fromExerciseTemplateId": "Box_Squat",
+  "toExerciseTemplateId": "Chair_Squat"
 }

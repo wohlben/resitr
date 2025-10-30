@@ -1,10 +1,10 @@
 {
   "id": "Leg_Pull-In-Reverse_Crunch-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": "Both involve pulling knees to chest, but reverse crunch starts with elevated legs",
-  "created_by": "system",
-  "created_at": 1761509905,
-  "from_exercise_template_id": "Leg_Pull-In",
-  "to_exercise_template_id": "Reverse_Crunch"
+  "createdBy": "system",
+  "createdAt": 1761509905,
+  "fromExerciseTemplateId": "Leg_Pull-In",
+  "toExerciseTemplateId": "Reverse_Crunch"
 }

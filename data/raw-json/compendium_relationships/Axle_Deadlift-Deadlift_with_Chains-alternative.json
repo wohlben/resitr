@@ -1,10 +1,10 @@
 {
   "id": "Axle_Deadlift-Deadlift_with_Chains-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Axle_Deadlift",
-  "to_exercise_template_id": "Deadlift_with_Chains"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Axle_Deadlift",
+  "toExerciseTemplateId": "Deadlift_with_Chains"
 }

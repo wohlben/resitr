@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Ab_Rollout-Ab_Roller-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Barbell_Ab_Rollout",
-  "to_exercise_template_id": "Ab_Roller"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Barbell_Ab_Rollout",
+  "toExerciseTemplateId": "Ab_Roller"
 }

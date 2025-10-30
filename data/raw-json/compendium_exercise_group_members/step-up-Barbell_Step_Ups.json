@@ -1,6 +1,6 @@
 {
-  "group_id": "step-up",
-  "added_by": "dev-user",
-  "added_at": 1761415887,
-  "exercise_template_id": "Barbell_Step_Ups"
+  "groupId": "step-up",
+  "addedBy": "dev-user",
+  "addedAt": 1761415887,
+  "exerciseTemplateId": "Barbell_Step_Ups"
 }

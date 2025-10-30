@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-chest-press-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Machine-based chest press using leverage system, similar to barbell bench press movement.",
@@ -31,14 +28,16 @@
     "/img/exercises/Leverage_Chest_Press/0.jpg",
     "/img/exercises/Leverage_Chest_Press/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Leverage_Chest_Press"
+  "parentExerciseId": null,
+  "templateId": "Leverage_Chest_Press",
+  "equipmentIds": [
+    "gym-chest-press-machine"
+  ]
 }

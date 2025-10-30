@@ -1,10 +1,10 @@
 {
   "id": "Dumbbell_Floor_Press-Floor_Press_with_Chains-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761472847,
-  "from_exercise_template_id": "Dumbbell_Floor_Press",
-  "to_exercise_template_id": "Floor_Press_with_Chains"
+  "createdBy": "system",
+  "createdAt": 1761472847,
+  "fromExerciseTemplateId": "Dumbbell_Floor_Press",
+  "toExerciseTemplateId": "Floor_Press_with_Chains"
 }

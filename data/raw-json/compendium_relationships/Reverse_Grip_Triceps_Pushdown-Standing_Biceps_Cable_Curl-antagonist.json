@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Grip_Triceps_Pushdown-Standing_Biceps_Cable_Curl-antagonist",
-  "relationship_type": "antagonist",
+  "relationshipType": "antagonist",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Reverse_Grip_Triceps_Pushdown",
-  "to_exercise_template_id": "Standing_Biceps_Cable_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Reverse_Grip_Triceps_Pushdown",
+  "toExerciseTemplateId": "Standing_Biceps_Cable_Curl"
 }

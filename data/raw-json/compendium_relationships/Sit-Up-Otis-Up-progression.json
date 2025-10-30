@@ -1,10 +1,10 @@
 {
   "id": "Sit-Up-Otis-Up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": "Progress from basic sit-up by adding weight and overhead press component",
-  "created_by": "system",
-  "created_at": 1729980000,
-  "from_exercise_template_id": "Sit-Up",
-  "to_exercise_template_id": "Otis-Up"
+  "createdBy": "system",
+  "createdAt": 1729980000,
+  "fromExerciseTemplateId": "Sit-Up",
+  "toExerciseTemplateId": "Otis-Up"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Bent-Arm_Dumbbell_Pullover-Cable_Incline_Pushdown-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Bent-Arm_Dumbbell_Pullover",
-  "to_exercise_template_id": "Cable_Incline_Pushdown"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Bent-Arm_Dumbbell_Pullover",
+  "toExerciseTemplateId": "Cable_Incline_Pushdown"
 }

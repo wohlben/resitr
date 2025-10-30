@@ -1,6 +1,6 @@
 {
-  "group_id": "romanian-deadlift",
-  "added_by": "dev-user",
-  "added_at": 1761414813,
-  "exercise_template_id": "Romanian_Deadlift_from_Deficit"
+  "groupId": "romanian-deadlift",
+  "addedBy": "dev-user",
+  "addedAt": 1761414813,
+  "exerciseTemplateId": "Romanian_Deadlift_from_Deficit"
 }

@@ -5,19 +5,18 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "RHOMBOIDS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "SIDE_DELTS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Cross-body stretch pulling arm across to stretch back and shoulder muscles.",
@@ -29,14 +28,14 @@
     "/img/exercises/Side_Wrist_Pull/0.jpg",
     "/img/exercises/Side_Wrist_Pull/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Side_Wrist_Pull"
+  "parentExerciseId": null,
+  "templateId": "Side_Wrist_Pull",
+  "equipmentIds": []
 }

@@ -5,20 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-ghd-machine",
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Advanced bodyweight hamstring curl kneeling on pad, lowering body forward and pulling back with hamstrings.",
@@ -32,14 +28,17 @@
     "/img/exercises/Natural_Glute_Ham_Raise/0.jpg",
     "/img/exercises/Natural_Glute_Ham_Raise/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Natural_Glute_Ham_Raise"
+  "parentExerciseId": null,
+  "templateId": "Natural_Glute_Ham_Raise",
+  "equipmentIds": [
+    "gym-ghd-machine",
+    "resistance-band"
+  ]
 }

@@ -5,19 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Hip hinge exercise with slight knee bend lowering barbell down legs, targeting hamstrings and glutes.",
@@ -32,19 +29,21 @@
     "/img/exercises/Romanian_Deadlift/0.jpg",
     "/img/exercises/Romanian_Deadlift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB RDL",
     "Barbell RDL",
     "RDL",
     "Romanian-Deadlift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Romanian_Deadlift"
+  "parentExerciseId": null,
+  "templateId": "Romanian_Deadlift",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

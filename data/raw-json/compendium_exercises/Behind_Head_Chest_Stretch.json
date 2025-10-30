@@ -5,19 +5,16 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "BICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "partner"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Overhead arms-behind-head position stretching chest and anterior shoulders for flexibility",
@@ -31,14 +28,16 @@
     "/img/exercises/Behind_Head_Chest_Stretch/0.jpg",
     "/img/exercises/Behind_Head_Chest_Stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Behind_Head_Chest_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Behind_Head_Chest_Stretch",
+  "equipmentIds": [
+    "partner"
+  ]
 }

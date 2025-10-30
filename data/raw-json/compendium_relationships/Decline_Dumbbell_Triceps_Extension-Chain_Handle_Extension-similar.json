@@ -1,10 +1,10 @@
 {
   "id": "Decline_Dumbbell_Triceps_Extension-Chain_Handle_Extension-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Decline_Dumbbell_Triceps_Extension",
-  "to_exercise_template_id": "Chain_Handle_Extension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Decline_Dumbbell_Triceps_Extension",
+  "toExerciseTemplateId": "Chain_Handle_Extension"
 }

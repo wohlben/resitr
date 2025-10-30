@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Push press variation with barbell behind neck, pressing from back rack position with leg drive.",
@@ -30,16 +27,18 @@
     "/img/exercises/Push_Press_-_Behind_the_Neck/0.jpg",
     "/img/exercises/Push_Press_-_Behind_the_Neck/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Push Press   Behind the Neck"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Push_Press_-_Behind_the_Neck"
+  "parentExerciseId": null,
+  "templateId": "Push_Press_-_Behind_the_Neck",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

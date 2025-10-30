@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "dip-bars"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,16 +29,18 @@
     "/img/exercises/Ring_Dips/0.jpg",
     "/img/exercises/Ring_Dips/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ring-Dips"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Ring_Dips"
+  "parentExerciseId": null,
+  "templateId": "Ring_Dips",
+  "equipmentIds": [
+    "dip-bars"
+  ]
 }

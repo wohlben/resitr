@@ -1,10 +1,10 @@
 {
   "id": "Band_Good_Morning-Rack_Pull_with_Bands-progresses_to",
-  "relationship_type": "progresses_to",
+  "relationshipType": "progresses_to",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Band_Good_Morning",
-  "to_exercise_template_id": "Rack_Pull_with_Bands"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Band_Good_Morning",
+  "toExerciseTemplateId": "Rack_Pull_with_Bands"
 }

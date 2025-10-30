@@ -1,10 +1,10 @@
 {
   "id": "Standing_Palm-In_One-Arm_Dumbbell_Press-Dumbbell_One-Arm_Shoulder_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Standing_Palm-In_One-Arm_Dumbbell_Press",
-  "to_exercise_template_id": "Dumbbell_One-Arm_Shoulder_Press"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Standing_Palm-In_One-Arm_Dumbbell_Press",
+  "toExerciseTemplateId": "Dumbbell_One-Arm_Shoulder_Press"
 }

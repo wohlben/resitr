@@ -1,10 +1,10 @@
 {
   "id": "Decline_Reverse_Crunch-Cable_Reverse_Crunch-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479425,
-  "from_exercise_template_id": "Decline_Reverse_Crunch",
-  "to_exercise_template_id": "Cable_Reverse_Crunch"
+  "createdBy": "system",
+  "createdAt": 1761479425,
+  "fromExerciseTemplateId": "Decline_Reverse_Crunch",
+  "toExerciseTemplateId": "Cable_Reverse_Crunch"
 }

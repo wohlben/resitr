@@ -5,18 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable fly on flat bench, bringing handles together in wide arc to stretch and contract chest muscles.",
@@ -33,17 +30,19 @@
     "/img/exercises/Flat_Bench_Cable_Flyes/0.jpg",
     "/img/exercises/Flat_Bench_Cable_Flyes/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Flat Bench Cable Machine Flyes",
     "Flat Bench Flyes"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Flat_Bench_Cable_Flyes"
+  "parentExerciseId": null,
+  "templateId": "Flat_Bench_Cable_Flyes",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

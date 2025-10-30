@@ -1,10 +1,10 @@
 {
   "id": "Pullups-Kipping_Muscle_Up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761508980,
-  "from_exercise_template_id": "Pullups",
-  "to_exercise_template_id": "Kipping_Muscle_Up"
+  "createdBy": "system",
+  "createdAt": 1761508980,
+  "fromExerciseTemplateId": "Pullups",
+  "toExerciseTemplateId": "Kipping_Muscle_Up"
 }

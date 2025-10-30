@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HIP_FLEXORS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -29,16 +26,18 @@
     "/img/exercises/Hip_Flexion_with_Band/0.jpg",
     "/img/exercises/Hip_Flexion_with_Band/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Hip Flexion with Resistance Band"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hip_Flexion_with_Band"
+  "parentExerciseId": null,
+  "templateId": "Hip_Flexion_with_Band",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

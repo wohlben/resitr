@@ -1,10 +1,10 @@
 {
   "id": "Single-Arm_Push-Up-Plyo_Push-up-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Single-Arm_Push-Up",
-  "to_exercise_template_id": "Plyo_Push-up"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Single-Arm_Push-Up",
+  "toExerciseTemplateId": "Plyo_Push-up"
 }

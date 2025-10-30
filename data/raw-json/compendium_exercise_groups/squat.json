@@ -2,7 +2,7 @@
   "id": "squat",
   "name": "Squat",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761410420,
-  "updated_at": 1761410420
+  "createdBy": "dev-user",
+  "createdAt": 1761410420,
+  "updatedAt": 1761410420
 }

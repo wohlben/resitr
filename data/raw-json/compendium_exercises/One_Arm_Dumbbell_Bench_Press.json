@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Single-arm dumbbell bench press, pressing one dumbbell while other arm stabilizes or rests, engaging core for stability.",
@@ -35,7 +31,7 @@
     "/img/exercises/One_Arm_Dumbbell_Bench_Press/0.jpg",
     "/img/exercises/One_Arm_Dumbbell_Bench_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "DB Bench",
     "DB Bench Press",
     "Dumbell Bench Press",
@@ -44,13 +40,16 @@
     "Single Arm Dumbbell Bench Press",
     "Unilateral Dumbbell Bench Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One_Arm_Dumbbell_Bench_Press"
+  "parentExerciseId": null,
+  "templateId": "One_Arm_Dumbbell_Bench_Press",
+  "equipmentIds": [
+    "dumbbell",
+    "bench"
+  ]
 }

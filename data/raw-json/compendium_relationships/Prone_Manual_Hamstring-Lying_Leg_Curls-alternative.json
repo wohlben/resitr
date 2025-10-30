@@ -1,10 +1,10 @@
 {
   "id": "Prone_Manual_Hamstring-Lying_Leg_Curls-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761511480,
-  "from_exercise_template_id": "Prone_Manual_Hamstring",
-  "to_exercise_template_id": "Lying_Leg_Curls"
+  "createdBy": "system",
+  "createdAt": 1761511480,
+  "fromExerciseTemplateId": "Prone_Manual_Hamstring",
+  "toExerciseTemplateId": "Lying_Leg_Curls"
 }

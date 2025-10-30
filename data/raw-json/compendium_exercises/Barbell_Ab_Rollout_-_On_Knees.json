@@ -6,20 +6,17 @@
     "PULL",
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK",
     "LATS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -34,19 +31,21 @@
     "/img/exercises/Barbell_Ab_Rollout_-_On_Knees/0.jpg",
     "/img/exercises/Barbell_Ab_Rollout_-_On_Knees/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Ab Rollout - On Knees",
     "Bar Ab Rollout - On Knees",
     "Barbell Ab Rollout   On Knees",
     "Barbell Ab Rollout - On Knees"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Ab_Rollout_-_On_Knees"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Ab_Rollout_-_On_Knees",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

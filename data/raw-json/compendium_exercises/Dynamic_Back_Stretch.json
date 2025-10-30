@@ -5,15 +5,14 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "LATS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Dynamic shoulder and upper back warmup using forward arm swings to increase range of motion and flexibility",
@@ -25,14 +24,14 @@
     "/img/exercises/Dynamic_Back_Stretch/0.jpg",
     "/img/exercises/Dynamic_Back_Stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Dynamic_Back_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Dynamic_Back_Stretch",
+  "equipmentIds": []
 }

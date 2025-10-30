@@ -1,8 +1,8 @@
 {
   "name": "gym-leg-press-machine",
-  "display_name": "Leg Press Machine",
+  "displayName": "Leg Press Machine",
   "description": "A machine for pressing weight away with your legs while seated or reclined.",
   "category": "machines",
-  "image_url": null,
-  "template_id": "gym-leg-press-machine"
+  "imageUrl": null,
+  "templateId": "gym-leg-press-machine"
 }

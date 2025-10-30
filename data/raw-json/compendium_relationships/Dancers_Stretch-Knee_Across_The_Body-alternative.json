@@ -1,10 +1,10 @@
 {
   "id": "Dancers_Stretch-Knee_Across_The_Body-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Dancers_Stretch",
-  "to_exercise_template_id": "Knee_Across_The_Body"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Dancers_Stretch",
+  "toExerciseTemplateId": "Knee_Across_The_Body"
 }

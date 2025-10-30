@@ -2,7 +2,7 @@
   "id": "glute-bridge",
   "name": "Glute Bridge",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761412908,
-  "updated_at": 1761412908
+  "createdBy": "dev-user",
+  "createdAt": 1761412908,
+  "updatedAt": 1761412908
 }

@@ -5,18 +5,15 @@
   "force": [
     "ROTATION"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Kettlebell exercise swinging bell side to side in arc like pirate ship motion, engaging obliques.",
@@ -30,16 +27,18 @@
     "/img/exercises/Kettlebell_Pirate_Ships/0.jpg",
     "/img/exercises/Kettlebell_Pirate_Ships/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "KB Pirate Ships"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Kettlebell_Pirate_Ships"
+  "parentExerciseId": null,
+  "templateId": "Kettlebell_Pirate_Ships",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

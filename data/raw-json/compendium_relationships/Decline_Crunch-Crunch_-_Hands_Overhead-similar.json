@@ -1,10 +1,10 @@
 {
   "id": "Decline_Crunch-Crunch_-_Hands_Overhead-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Decline_Crunch",
-  "to_exercise_template_id": "Crunch_-_Hands_Overhead"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Decline_Crunch",
+  "toExerciseTemplateId": "Crunch_-_Hands_Overhead"
 }

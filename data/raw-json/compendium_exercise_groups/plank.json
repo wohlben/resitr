@@ -2,7 +2,7 @@
   "id": "plank",
   "name": "Plank",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761413479,
-  "updated_at": 1761413479
+  "createdBy": "dev-user",
+  "createdAt": 1761413479,
+  "updatedAt": 1761413479
 }

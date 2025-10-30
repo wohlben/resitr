@@ -1,10 +1,10 @@
 {
   "id": "Balance_Board-Standing_Calf_Raises-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761464222,
-  "from_exercise_template_id": "Balance_Board",
-  "to_exercise_template_id": "Standing_Calf_Raises"
+  "createdBy": "system",
+  "createdAt": 1761464222,
+  "fromExerciseTemplateId": "Balance_Board",
+  "toExerciseTemplateId": "Standing_Calf_Raises"
 }

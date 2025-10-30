@@ -5,17 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "DISTANCE_BASED",
     "TIME_BASED",
     "AMRAP"
@@ -30,16 +29,16 @@
     "/img/exercises/Rowing_Stationary/0.jpg",
     "/img/exercises/Rowing_Stationary/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Rowing,-Stationary"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Rowing_Stationary"
+  "parentExerciseId": null,
+  "templateId": "Rowing_Stationary",
+  "equipmentIds": []
 }

@@ -5,21 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "GLUTES",
     "QUADS",
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Turkish get-up with kettlebell finishing with squat stance, complex movement from lying to standing with weight overhead.",
@@ -32,17 +29,19 @@
     "/img/exercises/Kettlebell_Turkish_Get-Up_Squat_style/0.jpg",
     "/img/exercises/Kettlebell_Turkish_Get-Up_Squat_style/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "KB Turkish Get-Up (Squat style)",
     "Kettlebell Turkish Get Up (Squat style)"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Kettlebell_Turkish_Get-Up_Squat_style"
+  "parentExerciseId": null,
+  "templateId": "Kettlebell_Turkish_Get-Up_Squat_style",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

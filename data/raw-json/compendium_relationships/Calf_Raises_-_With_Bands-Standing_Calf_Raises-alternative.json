@@ -1,10 +1,10 @@
 {
   "id": "Calf_Raises_-_With_Bands-Standing_Calf_Raises-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761412753,
-  "from_exercise_template_id": "Calf_Raises_-_With_Bands",
-  "to_exercise_template_id": "Standing_Calf_Raises"
+  "createdBy": "system",
+  "createdAt": 1761412753,
+  "fromExerciseTemplateId": "Calf_Raises_-_With_Bands",
+  "toExerciseTemplateId": "Standing_Calf_Raises"
 }

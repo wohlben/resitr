@@ -1,10 +1,10 @@
 {
   "id": "Single-Leg_High_Box_Squat-Single_Leg_Push-off-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single-Leg_High_Box_Squat",
-  "to_exercise_template_id": "Single_Leg_Push-off"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single-Leg_High_Box_Squat",
+  "toExerciseTemplateId": "Single_Leg_Push-off"
 }

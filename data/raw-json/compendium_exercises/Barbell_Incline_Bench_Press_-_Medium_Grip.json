@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Incline barbell press emphasizing upper chest clavicular fibers with medium grip width",
@@ -33,19 +29,22 @@
     "/img/exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/0.jpg",
     "/img/exercises/Barbell_Incline_Bench_Press_-_Medium_Grip/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Incline Bench Press - Medium Grip",
     "Bar Incline Bench Press - Medium Grip",
     "Barbell Incline Bench Press   Medium Grip",
     "Barbell Incline Bench Press - Medium Grip"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Incline_Bench_Press_-_Medium_Grip"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+  "equipmentIds": [
+    "barbell",
+    "incline-bench"
+  ]
 }

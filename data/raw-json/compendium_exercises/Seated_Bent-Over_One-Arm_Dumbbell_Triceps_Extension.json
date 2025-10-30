@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,20 +29,22 @@
     "/img/exercises/Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension/0.jpg",
     "/img/exercises/Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Bent Over One Arm Dumbbell Triceps Extension",
     "Seated Bent-Over One-Arm DB Triceps Extension",
     "Seated Bent-Over One-Arm Dumbell Triceps Extension",
     "Seated Bent-Over Single Arm Dumbbell Triceps Extension",
     "Seated Bent-Over Unilateral Dumbbell Triceps Extension"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension"
+  "parentExerciseId": null,
+  "templateId": "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

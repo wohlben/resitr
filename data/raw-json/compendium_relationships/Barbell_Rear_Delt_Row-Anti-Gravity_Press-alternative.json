@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Rear_Delt_Row-Anti-Gravity_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761463553,
-  "from_exercise_template_id": "Barbell_Rear_Delt_Row",
-  "to_exercise_template_id": "Anti-Gravity_Press"
+  "createdBy": "system",
+  "createdAt": 1761463553,
+  "fromExerciseTemplateId": "Barbell_Rear_Delt_Row",
+  "toExerciseTemplateId": "Anti-Gravity_Press"
 }

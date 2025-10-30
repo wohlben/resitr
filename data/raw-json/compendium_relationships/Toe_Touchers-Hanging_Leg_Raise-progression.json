@@ -1,10 +1,10 @@
 {
   "id": "Toe_Touchers-Hanging_Leg_Raise-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Toe_Touchers",
-  "to_exercise_template_id": "Hanging_Leg_Raise"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Toe_Touchers",
+  "toExerciseTemplateId": "Hanging_Leg_Raise"
 }

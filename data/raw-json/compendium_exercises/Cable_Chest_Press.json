@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable press targeting chest with constant tension throughout horizontal pushing movement",
@@ -31,17 +28,19 @@
     "/img/exercises/Cable_Chest_Press/0.jpg",
     "/img/exercises/Cable_Chest_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Cable Machine Chest Press",
     "Chest Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Chest_Press"
+  "parentExerciseId": null,
+  "templateId": "Cable_Chest_Press",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

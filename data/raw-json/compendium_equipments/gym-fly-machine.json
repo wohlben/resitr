@@ -1,8 +1,8 @@
 {
   "name": "gym-fly-machine",
-  "display_name": "Fly Machine",
+  "displayName": "Fly Machine",
   "description": "A machine for performing chest fly movements with controlled resistance.",
   "category": "machines",
-  "image_url": null,
-  "template_id": "gym-fly-machine"
+  "imageUrl": null,
+  "templateId": "gym-fly-machine"
 }

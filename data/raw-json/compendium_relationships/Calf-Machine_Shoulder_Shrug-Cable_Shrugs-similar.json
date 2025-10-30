@@ -1,10 +1,10 @@
 {
   "id": "Calf-Machine_Shoulder_Shrug-Cable_Shrugs-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Calf-Machine_Shoulder_Shrug",
-  "to_exercise_template_id": "Cable_Shrugs"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Calf-Machine_Shoulder_Shrug",
+  "toExerciseTemplateId": "Cable_Shrugs"
 }

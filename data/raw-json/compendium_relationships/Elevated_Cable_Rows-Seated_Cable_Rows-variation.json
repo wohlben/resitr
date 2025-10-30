@@ -1,10 +1,10 @@
 {
   "id": "Elevated_Cable_Rows-Seated_Cable_Rows-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.95,
   "description": "Elevated Cable Rows is a variation of Seated Cable Rows with an elevated seat position for increased range of motion",
-  "created_by": "system",
-  "created_at": 1761412213,
-  "from_exercise_template_id": "Elevated_Cable_Rows",
-  "to_exercise_template_id": "Seated_Cable_Rows"
+  "createdBy": "system",
+  "createdAt": 1761412213,
+  "fromExerciseTemplateId": "Elevated_Cable_Rows",
+  "toExerciseTemplateId": "Seated_Cable_Rows"
 }

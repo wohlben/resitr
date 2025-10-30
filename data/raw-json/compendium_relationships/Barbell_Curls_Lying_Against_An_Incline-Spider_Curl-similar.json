@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Curls_Lying_Against_An_Incline-Spider_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Barbell_Curls_Lying_Against_An_Incline",
-  "to_exercise_template_id": "Spider_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Barbell_Curls_Lying_Against_An_Incline",
+  "toExerciseTemplateId": "Spider_Curl"
 }

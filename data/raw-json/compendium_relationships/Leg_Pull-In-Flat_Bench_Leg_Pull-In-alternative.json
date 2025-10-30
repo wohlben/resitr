@@ -1,10 +1,10 @@
 {
   "id": "Leg_Pull-In-Flat_Bench_Leg_Pull-In-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": "Flat bench version provides elevated surface for better range of motion",
-  "created_by": "system",
-  "created_at": 1761509905,
-  "from_exercise_template_id": "Leg_Pull-In",
-  "to_exercise_template_id": "Flat_Bench_Leg_Pull-In"
+  "createdBy": "system",
+  "createdAt": 1761509905,
+  "fromExerciseTemplateId": "Leg_Pull-In",
+  "toExerciseTemplateId": "Flat_Bench_Leg_Pull-In"
 }

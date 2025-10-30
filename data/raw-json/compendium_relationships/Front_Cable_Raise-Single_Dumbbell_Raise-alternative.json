@@ -1,10 +1,10 @@
 {
   "id": "Front_Cable_Raise-Single_Dumbbell_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": "Both are front raise exercises targeting anterior deltoids, differing primarily in equipment (cable vs dumbbell) and resistance curve (constant cable tension vs constant gravity).",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Front_Cable_Raise",
-  "to_exercise_template_id": "Single_Dumbbell_Raise"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Front_Cable_Raise",
+  "toExerciseTemplateId": "Single_Dumbbell_Raise"
 }

@@ -1,8 +1,8 @@
 {
   "name": "sit-up-bench",
-  "display_name": "Sit-Up Bench",
+  "displayName": "Sit-Up Bench",
   "description": "An angled bench with foot supports specifically designed for sit-ups, crunches, and abdominal exercises.",
   "category": "benches",
-  "image_url": null,
-  "template_id": "sit-up-bench"
+  "imageUrl": null,
+  "templateId": "sit-up-bench"
 }

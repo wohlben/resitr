@@ -1,10 +1,10 @@
 {
   "id": "Rope_Straight-Arm_Pulldown-Cable_Incline_Pushdown-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Rope_Straight-Arm_Pulldown",
-  "to_exercise_template_id": "Cable_Incline_Pushdown"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Rope_Straight-Arm_Pulldown",
+  "toExerciseTemplateId": "Cable_Incline_Pushdown"
 }

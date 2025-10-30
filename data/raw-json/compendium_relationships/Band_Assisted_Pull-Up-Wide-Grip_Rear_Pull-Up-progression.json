@@ -1,10 +1,10 @@
 {
   "id": "Band_Assisted_Pull-Up-Wide-Grip_Rear_Pull-Up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Band_Assisted_Pull-Up",
-  "to_exercise_template_id": "Wide-Grip_Rear_Pull-Up"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Band_Assisted_Pull-Up",
+  "toExerciseTemplateId": "Wide-Grip_Rear_Pull-Up"
 }

@@ -5,19 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Deadlift variation with weight to one side, targeting obliques and side core muscles through lateral loading.",
@@ -33,18 +30,20 @@
     "/img/exercises/One-Arm_Side_Deadlift/0.jpg",
     "/img/exercises/One-Arm_Side_Deadlift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Arm Side Deadlift",
     "Single Arm Side Deadlift",
     "Unilateral Side Deadlift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One-Arm_Side_Deadlift"
+  "parentExerciseId": null,
+  "templateId": "One-Arm_Side_Deadlift",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

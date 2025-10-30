@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "ez-bar"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,19 +29,21 @@
     "/img/exercises/Close-Grip_EZ_Bar_Curl/0.jpg",
     "/img/exercises/Close-Grip_EZ_Bar_Curl/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Close Grip EZ Bar Curl",
     "Close-Grip E-Z Curl Bar Curl",
     "Close-Grip EZ Barbell Curl",
     "Narrow Grip EZ Bar Curl"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Close-Grip_EZ_Bar_Curl"
+  "parentExerciseId": null,
+  "templateId": "Close-Grip_EZ_Bar_Curl",
+  "equipmentIds": [
+    "ez-bar"
+  ]
 }

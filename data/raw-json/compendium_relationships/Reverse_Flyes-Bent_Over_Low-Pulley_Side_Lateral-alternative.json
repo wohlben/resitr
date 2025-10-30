@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Flyes-Bent_Over_Low-Pulley_Side_Lateral-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Reverse_Flyes",
-  "to_exercise_template_id": "Bent_Over_Low-Pulley_Side_Lateral"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Reverse_Flyes",
+  "toExerciseTemplateId": "Bent_Over_Low-Pulley_Side_Lateral"
 }

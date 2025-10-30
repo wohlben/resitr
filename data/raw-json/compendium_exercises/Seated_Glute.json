@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "partner"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Seated glute stretch crossing one leg over other and pulling knee toward chest.",
@@ -27,17 +24,19 @@
     "/img/exercises/Seated_Glute/0.jpg",
     "/img/exercises/Seated_Glute/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated-Glute",
     "Partner-Assisted Seated Glute Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Glute"
+  "parentExerciseId": null,
+  "templateId": "Seated_Glute",
+  "equipmentIds": [
+    "partner"
+  ]
 }

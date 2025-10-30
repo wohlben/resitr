@@ -1,10 +1,10 @@
 {
   "id": "Chain_Handle_Extension-Cable_Incline_Triceps_Extension-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Chain_Handle_Extension",
-  "to_exercise_template_id": "Cable_Incline_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Chain_Handle_Extension",
+  "toExerciseTemplateId": "Cable_Incline_Triceps_Extension"
 }

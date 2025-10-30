@@ -1,6 +1,6 @@
 {
-  "group_id": "deadlift",
-  "added_by": "dev-user",
-  "added_at": 1761414813,
-  "exercise_template_id": "Rickshaw_Deadlift"
+  "groupId": "deadlift",
+  "addedBy": "dev-user",
+  "addedAt": 1761414813,
+  "exerciseTemplateId": "Rickshaw_Deadlift"
 }

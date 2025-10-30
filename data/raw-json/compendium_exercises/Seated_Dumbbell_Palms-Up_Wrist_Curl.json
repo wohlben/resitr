@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FOREARMS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,19 +29,21 @@
     "/img/exercises/Seated_Dumbbell_Palms-Up_Wrist_Curl/0.jpg",
     "/img/exercises/Seated_Dumbbell_Palms-Up_Wrist_Curl/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated DB Palms-Up Wrist Curl",
     "Seated Dumbbell Palms Up Wrist Curl",
     "Seated Dumbell Palms-Up Wrist Curl",
     "Standing Dumbbell Palms-Up Wrist Curl"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Dumbbell_Palms-Up_Wrist_Curl"
+  "parentExerciseId": null,
+  "templateId": "Seated_Dumbbell_Palms-Up_Wrist_Curl",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

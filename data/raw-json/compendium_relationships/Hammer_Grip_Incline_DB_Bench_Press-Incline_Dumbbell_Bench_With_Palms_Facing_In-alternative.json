@@ -1,10 +1,10 @@
 {
   "id": "Hammer_Grip_Incline_DB_Bench_Press-Incline_Dumbbell_Bench_With_Palms_Facing_In-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761496103,
-  "from_exercise_template_id": "Hammer_Grip_Incline_DB_Bench_Press",
-  "to_exercise_template_id": "Incline_Dumbbell_Bench_With_Palms_Facing_In"
+  "createdBy": "system",
+  "createdAt": 1761496103,
+  "fromExerciseTemplateId": "Hammer_Grip_Incline_DB_Bench_Press",
+  "toExerciseTemplateId": "Incline_Dumbbell_Bench_With_Palms_Facing_In"
 }

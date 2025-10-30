@@ -6,21 +6,20 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "LOWER_BACK"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LATS",
     "TRAPS",
     "FOREARMS",
     "QUADS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -37,16 +36,16 @@
     "/img/exercises/Axle_Deadlift/0.jpg",
     "/img/exercises/Axle_Deadlift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Axle-Deadlift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Axle_Deadlift"
+  "parentExerciseId": null,
+  "templateId": "Axle_Deadlift",
+  "equipmentIds": []
 }

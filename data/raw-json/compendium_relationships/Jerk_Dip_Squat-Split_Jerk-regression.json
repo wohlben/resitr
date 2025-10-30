@@ -1,10 +1,10 @@
 {
   "id": "Jerk_Dip_Squat-Split_Jerk-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499778,
-  "from_exercise_template_id": "Jerk_Dip_Squat",
-  "to_exercise_template_id": "Split_Jerk"
+  "createdBy": "system",
+  "createdAt": 1761499778,
+  "fromExerciseTemplateId": "Jerk_Dip_Squat",
+  "toExerciseTemplateId": "Split_Jerk"
 }

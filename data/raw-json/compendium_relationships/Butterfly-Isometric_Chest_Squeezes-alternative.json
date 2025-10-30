@@ -1,10 +1,10 @@
 {
   "id": "Butterfly-Isometric_Chest_Squeezes-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": "Both involve squeezing/bringing hands together to contract chest; Isometric version is bodyweight",
-  "created_by": "system",
-  "created_at": 1729954800,
-  "from_exercise_template_id": "Butterfly",
-  "to_exercise_template_id": "Isometric_Chest_Squeezes"
+  "createdBy": "system",
+  "createdAt": 1729954800,
+  "fromExerciseTemplateId": "Butterfly",
+  "toExerciseTemplateId": "Isometric_Chest_Squeezes"
 }

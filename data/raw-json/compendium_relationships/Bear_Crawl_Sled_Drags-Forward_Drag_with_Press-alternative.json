@@ -1,10 +1,10 @@
 {
   "id": "Bear_Crawl_Sled_Drags-Forward_Drag_with_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761464001,
-  "from_exercise_template_id": "Bear_Crawl_Sled_Drags",
-  "to_exercise_template_id": "Forward_Drag_with_Press"
+  "createdBy": "system",
+  "createdAt": 1761464001,
+  "fromExerciseTemplateId": "Bear_Crawl_Sled_Drags",
+  "toExerciseTemplateId": "Forward_Drag_with_Press"
 }

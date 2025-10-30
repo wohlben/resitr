@@ -2,7 +2,7 @@
   "id": "ez-bar-triceps",
   "name": "EZ Bar Triceps",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1729932000,
-  "updated_at": 1729932000
+  "createdBy": "dev-user",
+  "createdAt": 1729932000,
+  "updatedAt": 1729932000
 }

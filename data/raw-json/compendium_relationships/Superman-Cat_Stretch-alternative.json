@@ -1,10 +1,10 @@
 {
   "id": "Superman-Cat_Stretch-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": null,
   "description": "These exercises represent opposite movements for the spine and lower back - Superman involves spinal extension (arching) while Cat Stretch involves spinal flexion (rounding), providing complementary mobility and strengthening benefits",
-  "created_by": "system",
-  "created_at": 1761024000,
-  "from_exercise_template_id": "Superman",
-  "to_exercise_template_id": "Cat_Stretch"
+  "createdBy": "system",
+  "createdAt": 1761024000,
+  "fromExerciseTemplateId": "Superman",
+  "toExerciseTemplateId": "Cat_Stretch"
 }

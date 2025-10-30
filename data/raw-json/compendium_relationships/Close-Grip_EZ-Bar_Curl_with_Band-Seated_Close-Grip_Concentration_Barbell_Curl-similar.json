@@ -1,10 +1,10 @@
 {
   "id": "Close-Grip_EZ-Bar_Curl_with_Band-Seated_Close-Grip_Concentration_Barbell_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Close-Grip_EZ-Bar_Curl_with_Band",
-  "to_exercise_template_id": "Seated_Close-Grip_Concentration_Barbell_Curl"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Close-Grip_EZ-Bar_Curl_with_Band",
+  "toExerciseTemplateId": "Seated_Close-Grip_Concentration_Barbell_Curl"
 }

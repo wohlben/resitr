@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell",
-    "box"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Box squat variation with barbell teaching proper depth and hip hinge mechanics",
@@ -36,7 +32,7 @@
     "/img/exercises/Barbell_Squat_To_A_Bench/0.jpg",
     "/img/exercises/Barbell_Squat_To_A_Bench/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Squat",
     "BB Squat To A Bench",
     "Back Squat",
@@ -44,13 +40,16 @@
     "Barbell Squat To A Bench",
     "Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Squat_To_A_Bench"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Squat_To_A_Bench",
+  "equipmentIds": [
+    "barbell",
+    "box"
+  ]
 }

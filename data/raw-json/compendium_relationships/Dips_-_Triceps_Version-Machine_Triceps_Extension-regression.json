@@ -1,10 +1,10 @@
 {
   "id": "Dips_-_Triceps_Version-Machine_Triceps_Extension-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761509910,
-  "from_exercise_template_id": "Dips_-_Triceps_Version",
-  "to_exercise_template_id": "Machine_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1761509910,
+  "fromExerciseTemplateId": "Dips_-_Triceps_Version",
+  "toExerciseTemplateId": "Machine_Triceps_Extension"
 }

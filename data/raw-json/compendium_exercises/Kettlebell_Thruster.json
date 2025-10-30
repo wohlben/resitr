@@ -5,21 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Kettlebell thruster combining front squat and overhead press in one continuous movement.",
@@ -33,17 +30,19 @@
     "/img/exercises/Kettlebell_Thruster/0.jpg",
     "/img/exercises/Kettlebell_Thruster/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "KB Thruster",
     "Kettlebell-Thruster"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Kettlebell_Thruster"
+  "parentExerciseId": null,
+  "templateId": "Kettlebell_Thruster",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

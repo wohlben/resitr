@@ -1,10 +1,10 @@
 {
   "id": "Single_Leg_Push-off-Depth_Jump_Leap-regresses_to",
-  "relationship_type": "regresses_to",
+  "relationshipType": "regresses_to",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single_Leg_Push-off",
-  "to_exercise_template_id": "Depth_Jump_Leap"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single_Leg_Push-off",
+  "toExerciseTemplateId": "Depth_Jump_Leap"
 }

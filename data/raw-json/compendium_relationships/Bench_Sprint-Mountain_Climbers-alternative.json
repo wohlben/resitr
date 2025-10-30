@@ -1,10 +1,10 @@
 {
   "id": "Bench_Sprint-Mountain_Climbers-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Bench_Sprint",
-  "to_exercise_template_id": "Mountain_Climbers"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Bench_Sprint",
+  "toExerciseTemplateId": "Mountain_Climbers"
 }

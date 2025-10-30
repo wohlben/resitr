@@ -1,10 +1,10 @@
 {
   "id": "Lateral_Bound-Alternate_Leg_Diagonal_Bound-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.88,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761461533,
-  "from_exercise_template_id": "Lateral_Bound",
-  "to_exercise_template_id": "Alternate_Leg_Diagonal_Bound"
+  "createdBy": "system",
+  "createdAt": 1761461533,
+  "fromExerciseTemplateId": "Lateral_Bound",
+  "toExerciseTemplateId": "Alternate_Leg_Diagonal_Bound"
 }

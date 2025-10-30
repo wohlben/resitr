@@ -1,10 +1,10 @@
 {
   "id": "Seated_Cable_Shoulder_Press-Leverage_Shoulder_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Seated_Cable_Shoulder_Press",
-  "to_exercise_template_id": "Leverage_Shoulder_Press"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Seated_Cable_Shoulder_Press",
+  "toExerciseTemplateId": "Leverage_Shoulder_Press"
 }

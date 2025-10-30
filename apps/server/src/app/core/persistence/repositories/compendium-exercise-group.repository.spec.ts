@@ -241,6 +241,90 @@ describe('CompendiumExerciseGroupRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new exercise group when it does not exist', async () => {
+      const groupData: CompendiumExerciseGroup = {
+        id: 'upsert-group-1',
+        name: 'upsert-test-group',
+        description: 'Test upsert functionality',
+        createdBy: 'user-1',
+      };
+
+      const result = await repository.upsert(groupData);
+
+      expect(result).toBeDefined();
+      expect(result.id).toBe('upsert-group-1');
+      expect(result.name).toBe('upsert-test-group');
+      expect(result.description).toBe('Test upsert functionality');
+      expect(result.updatedAt).toBeNull();
+
+      // Verify it was inserted
+      const found = await repository.findById('upsert-group-1');
+      expect(found).toBeDefined();
+    });
+
+    it('should update existing exercise group and set updatedAt', async () => {
+      const groupData: CompendiumExerciseGroup = {
+        id: 'upsert-group-2',
+        name: 'original-name',
+        description: 'Original description',
+        createdBy: 'user-1',
+      };
+
+      const created = await repository.create(groupData);
+      expect(created.updatedAt).toBeNull();
+
+      const updatedData: CompendiumExerciseGroup = {
+        id: 'upsert-group-2',
+        name: 'updated-name',
+        description: 'Updated description',
+        createdBy: 'user-2',
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.id).toBe('upsert-group-2');
+      expect(result.name).toBe('updated-name');
+      expect(result.description).toBe('Updated description');
+      expect(result.updatedAt).toBeDefined();
+
+      // Verify only one record exists
+      const allGroups = await repository.findAll();
+      expect(allGroups).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts in sequence', async () => {
+      const groupData: CompendiumExerciseGroup = {
+        id: 'upsert-group-3',
+        name: 'multi-upsert',
+        createdBy: 'user-1',
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(groupData);
+      expect(result1.description).toBeNull();
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...groupData,
+        description: 'First update',
+      });
+      expect(result2.description).toBe('First update');
+
+      // Third upsert - another update
+      const result3 = await repository.upsert({
+        ...groupData,
+        description: 'Second update',
+      });
+      expect(result3.description).toBe('Second update');
+
+      // Verify still only one record
+      const allGroups = await repository.findAll();
+      expect(allGroups).toHaveLength(1);
+    });
+  });
+
   describe('delete', () => {
     it('should delete exercise group by id', async () => {
       const groupData: CompendiumExerciseGroup = {

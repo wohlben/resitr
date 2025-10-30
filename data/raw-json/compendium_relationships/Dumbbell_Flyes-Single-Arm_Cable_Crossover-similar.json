@@ -1,10 +1,10 @@
 {
   "id": "Dumbbell_Flyes-Single-Arm_Cable_Crossover-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761512062,
-  "from_exercise_template_id": "Dumbbell_Flyes",
-  "to_exercise_template_id": "Single-Arm_Cable_Crossover"
+  "createdBy": "system",
+  "createdAt": 1761512062,
+  "fromExerciseTemplateId": "Dumbbell_Flyes",
+  "toExerciseTemplateId": "Single-Arm_Cable_Crossover"
 }

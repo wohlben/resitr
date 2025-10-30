@@ -1,10 +1,10 @@
 {
   "id": "Decline_Push-Up-Bodyweight_Flyes-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.55,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761476339,
-  "from_exercise_template_id": "Decline_Push-Up",
-  "to_exercise_template_id": "Bodyweight_Flyes"
+  "createdBy": "system",
+  "createdAt": 1761476339,
+  "fromExerciseTemplateId": "Decline_Push-Up",
+  "toExerciseTemplateId": "Bodyweight_Flyes"
 }

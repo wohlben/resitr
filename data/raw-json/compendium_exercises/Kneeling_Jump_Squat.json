@@ -5,20 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CALVES",
     "HAMSTRINGS",
     "QUADS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -35,14 +32,16 @@
     "/img/exercises/Kneeling_Jump_Squat/0.jpg",
     "/img/exercises/Kneeling_Jump_Squat/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Kneeling_Jump_Squat"
+  "parentExerciseId": null,
+  "templateId": "Kneeling_Jump_Squat",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

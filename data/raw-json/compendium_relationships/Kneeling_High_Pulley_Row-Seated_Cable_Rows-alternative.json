@@ -1,10 +1,10 @@
 {
   "id": "Kneeling_High_Pulley_Row-Seated_Cable_Rows-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": "Both are fundamental cable rowing movements targeting lats and back; kneeling high pulley emphasizes downward angle and upper back while seated row uses horizontal pull",
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Kneeling_High_Pulley_Row",
-  "to_exercise_template_id": "Seated_Cable_Rows"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Kneeling_High_Pulley_Row",
+  "toExerciseTemplateId": "Seated_Cable_Rows"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Monster_Walk-Carioca_Quick_Step-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": "Carioca Quick Step is a more dynamic lateral movement that builds on Monster Walk strength",
-  "created_by": "system",
-  "created_at": 1730053200,
-  "from_exercise_template_id": "Monster_Walk",
-  "to_exercise_template_id": "Carioca_Quick_Step"
+  "createdBy": "system",
+  "createdAt": 1730053200,
+  "fromExerciseTemplateId": "Monster_Walk",
+  "toExerciseTemplateId": "Carioca_Quick_Step"
 }

@@ -5,21 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell",
-    "resistance-band",
-    "power-rack"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -34,16 +29,20 @@
     "/img/exercises/Reverse_Band_Power_Squat/0.jpg",
     "/img/exercises/Reverse_Band_Power_Squat/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Reverse Resistance Band Power Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Reverse_Band_Power_Squat"
+  "parentExerciseId": null,
+  "templateId": "Reverse_Band_Power_Squat",
+  "equipmentIds": [
+    "barbell",
+    "resistance-band",
+    "power-rack"
+  ]
 }

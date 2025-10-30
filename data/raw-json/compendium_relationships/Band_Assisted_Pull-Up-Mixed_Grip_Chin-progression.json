@@ -1,10 +1,10 @@
 {
   "id": "Band_Assisted_Pull-Up-Mixed_Grip_Chin-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Band_Assisted_Pull-Up",
-  "to_exercise_template_id": "Mixed_Grip_Chin"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Band_Assisted_Pull-Up",
+  "toExerciseTemplateId": "Mixed_Grip_Chin"
 }

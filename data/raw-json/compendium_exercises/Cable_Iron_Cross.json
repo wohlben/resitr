@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS",
     "TRAPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing cable rear delt fly with arms extended in T position, pulling from high pulleys to target posterior shoulders",
@@ -32,17 +29,19 @@
     "/img/exercises/Cable_Iron_Cross/0.jpg",
     "/img/exercises/Cable_Iron_Cross/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Cable Machine Iron Cross",
     "Iron Cross"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Iron_Cross"
+  "parentExerciseId": null,
+  "templateId": "Cable_Iron_Cross",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

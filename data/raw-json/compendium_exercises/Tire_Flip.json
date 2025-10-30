@@ -5,19 +5,18 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK",
     "QUADS",
     "TRAPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -33,16 +32,16 @@
     "/img/exercises/Tire_Flip/0.jpg",
     "/img/exercises/Tire_Flip/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Tire-Flip"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Tire_Flip"
+  "parentExerciseId": null,
+  "templateId": "Tire_Flip",
+  "equipmentIds": []
 }

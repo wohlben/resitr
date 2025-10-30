@@ -1,10 +1,10 @@
 {
   "id": "Preacher_Curl-Seated_Dumbbell_Curl-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Preacher_Curl",
-  "to_exercise_template_id": "Seated_Dumbbell_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Preacher_Curl",
+  "toExerciseTemplateId": "Seated_Dumbbell_Curl"
 }

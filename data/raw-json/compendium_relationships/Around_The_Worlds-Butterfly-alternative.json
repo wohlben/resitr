@@ -1,10 +1,10 @@
 {
   "id": "Around_The_Worlds-Butterfly-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761478260,
-  "from_exercise_template_id": "Around_The_Worlds",
-  "to_exercise_template_id": "Butterfly"
+  "createdBy": "system",
+  "createdAt": 1761478260,
+  "fromExerciseTemplateId": "Around_The_Worlds",
+  "toExerciseTemplateId": "Butterfly"
 }

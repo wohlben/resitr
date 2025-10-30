@@ -5,20 +5,17 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK",
     "TRAPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Deadlift component of snatch, pulling with wide grip and full hip extension preparing for overhead catch.",
@@ -31,18 +28,20 @@
     "/img/exercises/Snatch_Deadlift/0.jpg",
     "/img/exercises/Snatch_Deadlift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Snatch",
     "Power Snatch",
     "Snatch-Deadlift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Snatch_Deadlift"
+  "parentExerciseId": null,
+  "templateId": "Snatch_Deadlift",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

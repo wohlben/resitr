@@ -1,10 +1,10 @@
 {
   "id": "Weighted_Ball_Side_Bend-One-Arm_High-Pulley_Cable_Side_Bends-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Weighted_Ball_Side_Bend",
-  "to_exercise_template_id": "One-Arm_High-Pulley_Cable_Side_Bends"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Weighted_Ball_Side_Bend",
+  "toExerciseTemplateId": "One-Arm_High-Pulley_Cable_Side_Bends"
 }

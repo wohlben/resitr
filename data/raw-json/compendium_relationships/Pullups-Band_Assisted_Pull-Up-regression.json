@@ -1,10 +1,10 @@
 {
   "id": "Pullups-Band_Assisted_Pull-Up-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Pullups",
-  "to_exercise_template_id": "Band_Assisted_Pull-Up"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Pullups",
+  "toExerciseTemplateId": "Band_Assisted_Pull-Up"
 }

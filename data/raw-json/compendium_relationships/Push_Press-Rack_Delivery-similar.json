@@ -1,10 +1,10 @@
 {
   "id": "Push_Press-Rack_Delivery-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Push_Press",
-  "to_exercise_template_id": "Rack_Delivery"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Push_Press",
+  "toExerciseTemplateId": "Rack_Delivery"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Incline_Push-Up_Wide-Push-Up_Wide-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499120,
-  "from_exercise_template_id": "Incline_Push-Up_Wide",
-  "to_exercise_template_id": "Push-Up_Wide"
+  "createdBy": "system",
+  "createdAt": 1761499120,
+  "fromExerciseTemplateId": "Incline_Push-Up_Wide",
+  "toExerciseTemplateId": "Push-Up_Wide"
 }

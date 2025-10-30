@@ -5,18 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "medicine-ball"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -31,18 +28,20 @@
     "/img/exercises/Supine_Two-Arm_Overhead_Throw/0.jpg",
     "/img/exercises/Supine_Two-Arm_Overhead_Throw/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Supine Bilateral Overhead Throw",
     "Supine Both Arms Overhead Throw",
     "Supine Two Arm Overhead Throw"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Supine_Two-Arm_Overhead_Throw"
+  "parentExerciseId": null,
+  "templateId": "Supine_Two-Arm_Overhead_Throw",
+  "equipmentIds": [
+    "medicine-ball"
+  ]
 }

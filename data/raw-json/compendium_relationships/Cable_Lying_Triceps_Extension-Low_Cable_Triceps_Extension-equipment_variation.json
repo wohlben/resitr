@@ -1,10 +1,10 @@
 {
   "id": "Cable_Lying_Triceps_Extension-Low_Cable_Triceps_Extension-equipment_variation",
-  "relationship_type": "equipment_variation",
+  "relationshipType": "equipment_variation",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729893600,
-  "from_exercise_template_id": "Cable_Lying_Triceps_Extension",
-  "to_exercise_template_id": "Low_Cable_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1729893600,
+  "fromExerciseTemplateId": "Cable_Lying_Triceps_Extension",
+  "toExerciseTemplateId": "Low_Cable_Triceps_Extension"
 }

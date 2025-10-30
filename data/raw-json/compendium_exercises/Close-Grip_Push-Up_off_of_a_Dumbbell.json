@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Close-grip push-up performed with hands on dumbbells to increase range of motion and grip challenge, emphasizing chest and triceps.",
@@ -31,7 +28,7 @@
     "/img/exercises/Close-Grip_Push-Up_off_of_a_Dumbbell/0.jpg",
     "/img/exercises/Close-Grip_Push-Up_off_of_a_Dumbbell/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Close Grip Push Up off of a Dumbbell",
     "Close Grip Push-Up off of a Dumbbell",
     "Close-Grip Push-Up off of a DB",
@@ -42,13 +39,15 @@
     "Pushup",
     "Pushups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Close-Grip_Push-Up_off_of_a_Dumbbell"
+  "parentExerciseId": null,
+  "templateId": "Close-Grip_Push-Up_off_of_a_Dumbbell",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

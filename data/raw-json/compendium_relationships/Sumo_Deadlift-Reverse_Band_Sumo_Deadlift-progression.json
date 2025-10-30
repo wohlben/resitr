@@ -1,10 +1,10 @@
 {
   "id": "Sumo_Deadlift-Reverse_Band_Sumo_Deadlift-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Sumo_Deadlift",
-  "to_exercise_template_id": "Reverse_Band_Sumo_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Sumo_Deadlift",
+  "toExerciseTemplateId": "Reverse_Band_Sumo_Deadlift"
 }

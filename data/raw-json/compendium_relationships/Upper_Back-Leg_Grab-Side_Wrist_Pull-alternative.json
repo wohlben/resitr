@@ -1,10 +1,10 @@
 {
   "id": "Upper_Back-Leg_Grab-Side_Wrist_Pull-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Upper_Back-Leg_Grab",
-  "to_exercise_template_id": "Side_Wrist_Pull"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Upper_Back-Leg_Grab",
+  "toExerciseTemplateId": "Side_Wrist_Pull"
 }

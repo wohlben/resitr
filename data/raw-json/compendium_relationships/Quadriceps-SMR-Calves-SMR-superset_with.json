@@ -1,10 +1,10 @@
 {
   "id": "Quadriceps-SMR-Calves-SMR-superset_with",
-  "relationship_type": "superset_with",
+  "relationshipType": "superset_with",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Quadriceps-SMR",
-  "to_exercise_template_id": "Calves-SMR"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Quadriceps-SMR",
+  "toExerciseTemplateId": "Calves-SMR"
 }

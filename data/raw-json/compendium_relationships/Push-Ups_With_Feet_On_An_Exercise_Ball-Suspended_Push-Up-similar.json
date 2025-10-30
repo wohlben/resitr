@@ -1,10 +1,10 @@
 {
   "id": "Push-Ups_With_Feet_On_An_Exercise_Ball-Suspended_Push-Up-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Push-Ups_With_Feet_On_An_Exercise_Ball",
-  "to_exercise_template_id": "Suspended_Push-Up"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Push-Ups_With_Feet_On_An_Exercise_Ball",
+  "toExerciseTemplateId": "Suspended_Push-Up"
 }

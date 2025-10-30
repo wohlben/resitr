@@ -5,16 +5,15 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CALVES"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Hamstring stretch with leg at 90-degree hip angle, extending knee to stretch posterior thigh.",
@@ -28,16 +27,16 @@
     "/img/exercises/90_90_Hamstring/0.jpg",
     "/img/exercises/90_90_Hamstring/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "90/90-Hamstring"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "90_90_Hamstring"
+  "parentExerciseId": null,
+  "templateId": "90_90_Hamstring",
+  "equipmentIds": []
 }

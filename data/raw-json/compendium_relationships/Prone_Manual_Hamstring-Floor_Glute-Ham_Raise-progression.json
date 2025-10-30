@@ -1,10 +1,10 @@
 {
   "id": "Prone_Manual_Hamstring-Floor_Glute-Ham_Raise-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761511480,
-  "from_exercise_template_id": "Prone_Manual_Hamstring",
-  "to_exercise_template_id": "Floor_Glute-Ham_Raise"
+  "createdBy": "system",
+  "createdAt": 1761511480,
+  "fromExerciseTemplateId": "Prone_Manual_Hamstring",
+  "toExerciseTemplateId": "Floor_Glute-Ham_Raise"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Battling_Ropes-Overhead_Slam-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Battling_Ropes",
-  "to_exercise_template_id": "Overhead_Slam"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Battling_Ropes",
+  "toExerciseTemplateId": "Overhead_Slam"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Body-Up-Dips_-_Triceps_Version-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Body-Up",
-  "to_exercise_template_id": "Dips_-_Triceps_Version"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Body-Up",
+  "toExerciseTemplateId": "Dips_-_Triceps_Version"
 }

@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable triceps pushdown using V-bar attachment, angled grip for triceps isolation.",
@@ -29,17 +26,19 @@
     "/img/exercises/Triceps_Pushdown_-_V-Bar_Attachment/0.jpg",
     "/img/exercises/Triceps_Pushdown_-_V-Bar_Attachment/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Triceps Pushdown   V Bar Attachment",
     "Triceps Pushdown - V-Barbell Attachment"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Triceps_Pushdown_-_V-Bar_Attachment"
+  "parentExerciseId": null,
+  "templateId": "Triceps_Pushdown_-_V-Bar_Attachment",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

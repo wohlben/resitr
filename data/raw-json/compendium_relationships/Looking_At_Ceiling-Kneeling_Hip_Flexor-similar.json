@@ -1,10 +1,10 @@
 {
   "id": "Looking_At_Ceiling-Kneeling_Hip_Flexor-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Looking_At_Ceiling",
-  "to_exercise_template_id": "Kneeling_Hip_Flexor"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Looking_At_Ceiling",
+  "toExerciseTemplateId": "Kneeling_Hip_Flexor"
 }

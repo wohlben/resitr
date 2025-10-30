@@ -1,10 +1,10 @@
 {
   "id": "Chest_Push_multiple_response-Plyo_Push-up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729933200,
-  "from_exercise_template_id": "Chest_Push_multiple_response",
-  "to_exercise_template_id": "Plyo_Push-up"
+  "createdBy": "system",
+  "createdAt": 1729933200,
+  "fromExerciseTemplateId": "Chest_Push_multiple_response",
+  "toExerciseTemplateId": "Plyo_Push-up"
 }

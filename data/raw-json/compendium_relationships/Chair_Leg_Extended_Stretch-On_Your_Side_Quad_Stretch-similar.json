@@ -1,10 +1,10 @@
 {
   "id": "Chair_Leg_Extended_Stretch-On_Your_Side_Quad_Stretch-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Chair_Leg_Extended_Stretch",
-  "to_exercise_template_id": "On_Your_Side_Quad_Stretch"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Chair_Leg_Extended_Stretch",
+  "toExerciseTemplateId": "On_Your_Side_Quad_Stretch"
 }

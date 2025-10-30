@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Single-leg barbell squat (Bulgarian split squat or pistol squat), challenging balance and unilateral leg strength.",
@@ -34,7 +31,7 @@
     "/img/exercises/One_Leg_Barbell_Squat/0.jpg",
     "/img/exercises/One_Leg_Barbell_Squat/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Squat",
     "Back Squat",
     "One Leg BB Squat",
@@ -43,13 +40,15 @@
     "Single Leg Barbell Squat",
     "Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One_Leg_Barbell_Squat"
+  "parentExerciseId": null,
+  "templateId": "One_Leg_Barbell_Squat",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

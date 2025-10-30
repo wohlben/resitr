@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Incline_Shoulder_Raise-Smith_Incline_Shoulder_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Barbell_Incline_Shoulder_Raise",
-  "to_exercise_template_id": "Smith_Incline_Shoulder_Raise"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Barbell_Incline_Shoulder_Raise",
+  "toExerciseTemplateId": "Smith_Incline_Shoulder_Raise"
 }

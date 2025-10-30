@@ -1,10 +1,10 @@
 {
   "id": "Plate_Pinch-One_Handed_Hang-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Plate_Pinch",
-  "to_exercise_template_id": "One_Handed_Hang"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Plate_Pinch",
+  "toExerciseTemplateId": "One_Handed_Hang"
 }

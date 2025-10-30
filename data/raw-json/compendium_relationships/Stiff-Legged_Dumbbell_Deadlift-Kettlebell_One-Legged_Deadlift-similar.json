@@ -1,10 +1,10 @@
 {
   "id": "Stiff-Legged_Dumbbell_Deadlift-Kettlebell_One-Legged_Deadlift-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Stiff-Legged_Dumbbell_Deadlift",
-  "to_exercise_template_id": "Kettlebell_One-Legged_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Stiff-Legged_Dumbbell_Deadlift",
+  "toExerciseTemplateId": "Kettlebell_One-Legged_Deadlift"
 }

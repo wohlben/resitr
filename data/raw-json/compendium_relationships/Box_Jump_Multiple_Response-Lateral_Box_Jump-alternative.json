@@ -1,10 +1,10 @@
 {
   "id": "Box_Jump_Multiple_Response-Lateral_Box_Jump-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761477930,
-  "from_exercise_template_id": "Box_Jump_Multiple_Response",
-  "to_exercise_template_id": "Lateral_Box_Jump"
+  "createdBy": "system",
+  "createdAt": 1761477930,
+  "fromExerciseTemplateId": "Box_Jump_Multiple_Response",
+  "toExerciseTemplateId": "Lateral_Box_Jump"
 }

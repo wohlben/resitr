@@ -5,21 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bent-arm pullover with barbell targeting lats and chest through overhead arc movement",
@@ -34,19 +30,22 @@
     "/img/exercises/Bent-Arm_Barbell_Pullover/0.jpg",
     "/img/exercises/Bent-Arm_Barbell_Pullover/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bent Arm Barbell Pullover",
     "Bent-Arm BB Pullover",
     "Bent-Arm Bar Pullover",
     "Bent-Arm Barbell Pullover"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bent-Arm_Barbell_Pullover"
+  "parentExerciseId": null,
+  "templateId": "Bent-Arm_Barbell_Pullover",
+  "equipmentIds": [
+    "barbell",
+    "bench"
+  ]
 }

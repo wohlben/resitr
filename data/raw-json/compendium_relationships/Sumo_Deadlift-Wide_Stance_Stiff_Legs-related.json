@@ -1,10 +1,10 @@
 {
   "id": "Sumo_Deadlift-Wide_Stance_Stiff_Legs-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Sumo_Deadlift",
-  "to_exercise_template_id": "Wide_Stance_Stiff_Legs"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Sumo_Deadlift",
+  "toExerciseTemplateId": "Wide_Stance_Stiff_Legs"
 }

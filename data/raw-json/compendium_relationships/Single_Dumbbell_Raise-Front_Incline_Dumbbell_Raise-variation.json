@@ -1,10 +1,10 @@
 {
   "id": "Single_Dumbbell_Raise-Front_Incline_Dumbbell_Raise-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.7,
   "description": "Seated incline variation that provides back support and reduces momentum, isolating front deltoids while using two dumbbells instead of one.",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single_Dumbbell_Raise",
-  "to_exercise_template_id": "Front_Incline_Dumbbell_Raise"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single_Dumbbell_Raise",
+  "toExerciseTemplateId": "Front_Incline_Dumbbell_Raise"
 }

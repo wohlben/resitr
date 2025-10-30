@@ -5,19 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-fly-machine",
-    "gym-pec-deck-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Machine rear delt fly (reverse pec deck), isolating posterior shoulders with fixed path.",
@@ -31,16 +27,19 @@
     "/img/exercises/Reverse_Machine_Flyes/0.jpg",
     "/img/exercises/Reverse_Machine_Flyes/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Reverse Flyes"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Reverse_Machine_Flyes"
+  "parentExerciseId": null,
+  "templateId": "Reverse_Machine_Flyes",
+  "equipmentIds": [
+    "gym-fly-machine",
+    "gym-pec-deck-machine"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Deadlift-One-Arm_Side_Deadlift-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Barbell_Deadlift",
-  "to_exercise_template_id": "One-Arm_Side_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Barbell_Deadlift",
+  "toExerciseTemplateId": "One-Arm_Side_Deadlift"
 }

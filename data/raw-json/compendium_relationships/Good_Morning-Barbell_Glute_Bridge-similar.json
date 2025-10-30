@@ -1,10 +1,10 @@
 {
   "id": "Good_Morning-Barbell_Glute_Bridge-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Good_Morning",
-  "to_exercise_template_id": "Barbell_Glute_Bridge"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Good_Morning",
+  "toExerciseTemplateId": "Barbell_Glute_Bridge"
 }

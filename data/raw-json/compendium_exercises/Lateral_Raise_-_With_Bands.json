@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "SIDE_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,20 +29,22 @@
     "/img/exercises/Lateral_Raise_-_With_Bands/0.jpg",
     "/img/exercises/Lateral_Raise_-_With_Bands/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Dumbbell Lateral Raise",
     "Lateral Raise   With Bands",
     "Lateral Raise - With Resistance Bands",
     "Side Lateral Raise",
     "Side Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Lateral_Raise_-_With_Bands"
+  "parentExerciseId": null,
+  "templateId": "Lateral_Raise_-_With_Bands",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

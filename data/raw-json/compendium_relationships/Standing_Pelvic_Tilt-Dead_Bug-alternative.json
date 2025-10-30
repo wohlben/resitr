@@ -1,10 +1,10 @@
 {
   "id": "Standing_Pelvic_Tilt-Dead_Bug-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Standing_Pelvic_Tilt",
-  "to_exercise_template_id": "Dead_Bug"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Standing_Pelvic_Tilt",
+  "toExerciseTemplateId": "Dead_Bug"
 }

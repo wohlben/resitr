@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "BICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS",
     "TRAPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "pull-up-bar"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -34,18 +31,20 @@
     "/img/exercises/Chin-Up/0.jpg",
     "/img/exercises/Chin-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Chin Up",
     "Chinup",
     "Chinups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chin-Up"
+  "parentExerciseId": null,
+  "templateId": "Chin-Up",
+  "equipmentIds": [
+    "pull-up-bar"
+  ]
 }

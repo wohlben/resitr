@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "OBLIQUES",
     "ABS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Overhead kettlebell press with rotation engaging shoulders and core stabilizers",
@@ -30,16 +27,18 @@
     "/img/exercises/Bent_Press/0.jpg",
     "/img/exercises/Bent_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bent-Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bent_Press"
+  "parentExerciseId": null,
+  "templateId": "Bent_Press",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

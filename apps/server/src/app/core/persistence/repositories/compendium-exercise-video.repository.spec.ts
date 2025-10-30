@@ -351,6 +351,101 @@ describe('CompendiumExerciseVideoRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new video when it does not exist', async () => {
+      const videoData = {
+        exerciseTemplateId: testExercise1.templateId,
+        url: 'https://youtube.com/new-video',
+        title: 'New Video',
+        description: 'New video description',
+        video_source: VideoSource.YOUTUBE,
+        createdBy: 'user-1',
+      };
+
+      const result = await repository.upsert(videoData);
+
+      expect(result).toBeDefined();
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.url).toBe('https://youtube.com/new-video');
+      expect(result.title).toBe('New Video');
+
+      // Verify it was inserted
+      const found = await repository.findByCompositeKey(testExercise1.templateId, 'https://youtube.com/new-video');
+      expect(found).toBeDefined();
+    });
+
+    it('should update existing video when composite key exists', async () => {
+      const videoData = {
+        exerciseTemplateId: testExercise2.templateId,
+        url: 'https://youtube.com/test-video',
+        title: 'Original Title',
+        createdBy: 'user-1',
+      };
+
+      await repository.create(videoData);
+
+      const updatedData = {
+        exerciseTemplateId: testExercise2.templateId,
+        url: 'https://youtube.com/test-video',
+        title: 'Updated Title',
+        description: 'Updated description',
+        video_source: VideoSource.OTHER,
+        createdBy: 'user-2',
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.title).toBe('Updated Title');
+      expect(result.description).toBe('Updated description');
+      expect(result.video_source).toBe(VideoSource.OTHER);
+      expect(result.createdBy).toBe('user-2');
+
+      // Verify only one record exists
+      const videos = await repository.findByExerciseId(testExercise2.templateId);
+      expect(videos).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts with same composite key', async () => {
+      const videoData = {
+        exerciseTemplateId: testExercise1.templateId,
+        url: 'https://youtube.com/multi-upsert',
+        title: 'Multi Upsert',
+        createdBy: 'user-1',
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(videoData);
+      expect(result1.title).toBe('Multi Upsert');
+      expect(result1.description).toBeNull();
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...videoData,
+        title: 'Updated Title 1',
+        description: 'First description',
+      });
+      expect(result2.title).toBe('Updated Title 1');
+      expect(result2.description).toBe('First description');
+
+      // Third upsert - another update
+      const result3 = await repository.upsert({
+        ...videoData,
+        title: 'Updated Title 2',
+        description: 'Second description',
+        video_source: VideoSource.YOUTUBE,
+      });
+      expect(result3.title).toBe('Updated Title 2');
+      expect(result3.description).toBe('Second description');
+
+      // Verify correct video exists (there will be 2 videos for this exercise now)
+      const videos = await repository.findByExerciseId(testExercise1.templateId);
+      const multiUpsertVideo = videos.find((v) => v.url === 'https://youtube.com/multi-upsert');
+      expect(multiUpsertVideo).toBeDefined();
+      expect(multiUpsertVideo.title).toBe('Updated Title 2');
+    });
+  });
+
   describe('delete', () => {
     it('should delete video by composite key', async () => {
       const created = await repository.create({

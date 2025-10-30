@@ -1,10 +1,10 @@
 {
   "id": "Standing_Hip_Flexors-Front_Leg_Raises-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Standing_Hip_Flexors",
-  "to_exercise_template_id": "Front_Leg_Raises"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Standing_Hip_Flexors",
+  "toExerciseTemplateId": "Front_Leg_Raises"
 }

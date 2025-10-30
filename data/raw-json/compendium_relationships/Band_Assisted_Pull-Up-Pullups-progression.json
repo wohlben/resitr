@@ -1,10 +1,10 @@
 {
   "id": "Band_Assisted_Pull-Up-Pullups-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Band_Assisted_Pull-Up",
-  "to_exercise_template_id": "Pullups"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Band_Assisted_Pull-Up",
+  "toExerciseTemplateId": "Pullups"
 }

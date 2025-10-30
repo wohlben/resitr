@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FOREARMS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,19 +29,21 @@
     "/img/exercises/Palms-Up_Barbell_Wrist_Curl_Over_A_Bench/0.jpg",
     "/img/exercises/Palms-Up_Barbell_Wrist_Curl_Over_A_Bench/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Palms Up Barbell Wrist Curl Over A Bench",
     "Palms-Up BB Wrist Curl Over A Bench",
     "Palms-Up Bar Wrist Curl Over A Bench",
     "Palms-Up Barbell Wrist Curl Over A Bench"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench"
+  "parentExerciseId": null,
+  "templateId": "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Chain_Press-Dumbbell_Bench_Press_with_Neutral_Grip-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Chain_Press",
-  "to_exercise_template_id": "Dumbbell_Bench_Press_with_Neutral_Grip"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Chain_Press",
+  "toExerciseTemplateId": "Dumbbell_Bench_Press_with_Neutral_Grip"
 }

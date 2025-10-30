@@ -1,6 +1,6 @@
 {
-  "created_by": "system",
-  "created_at": 1729872000,
-  "equipment_template_id": "2x-kettlebell",
-  "fulfills_equipment_template_id": "kettlebell"
+  "createdBy": "system",
+  "createdAt": 1729872000,
+  "equipmentTemplateId": "2x-kettlebell",
+  "fulfillsEquipmentTemplateId": "kettlebell"
 }

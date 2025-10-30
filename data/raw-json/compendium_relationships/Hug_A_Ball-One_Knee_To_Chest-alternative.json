@@ -1,10 +1,10 @@
 {
   "id": "Hug_A_Ball-One_Knee_To_Chest-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498134,
-  "from_exercise_template_id": "Hug_A_Ball",
-  "to_exercise_template_id": "One_Knee_To_Chest"
+  "createdBy": "system",
+  "createdAt": 1761498134,
+  "fromExerciseTemplateId": "Hug_A_Ball",
+  "toExerciseTemplateId": "One_Knee_To_Chest"
 }

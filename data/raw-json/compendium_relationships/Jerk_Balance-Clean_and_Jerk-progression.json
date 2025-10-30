@@ -1,10 +1,10 @@
 {
   "id": "Jerk_Balance-Clean_and_Jerk-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761510000,
-  "from_exercise_template_id": "Jerk_Balance",
-  "to_exercise_template_id": "Clean_and_Jerk"
+  "createdBy": "system",
+  "createdAt": 1761510000,
+  "fromExerciseTemplateId": "Jerk_Balance",
+  "toExerciseTemplateId": "Clean_and_Jerk"
 }

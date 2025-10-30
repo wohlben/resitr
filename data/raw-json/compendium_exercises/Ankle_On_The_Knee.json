@@ -5,16 +5,15 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HIP_FLEXORS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Figure-4 hip and glute stretch targeting piriformis and external rotators for improved hip mobility",
@@ -27,17 +26,17 @@
     "/img/exercises/Ankle_On_The_Knee/0.jpg",
     "/img/exercises/Ankle_On_The_Knee/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ankle On The Knee",
     "Piriformis Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Ankle_On_The_Knee"
+  "parentExerciseId": null,
+  "templateId": "Ankle_On_The_Knee",
+  "equipmentIds": []
 }

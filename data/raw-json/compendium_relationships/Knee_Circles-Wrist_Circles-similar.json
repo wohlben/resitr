@@ -1,10 +1,10 @@
 {
   "id": "Knee_Circles-Wrist_Circles-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Knee_Circles",
-  "to_exercise_template_id": "Wrist_Circles"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Knee_Circles",
+  "toExerciseTemplateId": "Wrist_Circles"
 }

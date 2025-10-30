@@ -1,10 +1,10 @@
 {
   "id": "Prowler_Sprint-Backward_Drag-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761464001,
-  "from_exercise_template_id": "Prowler_Sprint",
-  "to_exercise_template_id": "Backward_Drag"
+  "createdBy": "system",
+  "createdAt": 1761464001,
+  "fromExerciseTemplateId": "Prowler_Sprint",
+  "toExerciseTemplateId": "Backward_Drag"
 }

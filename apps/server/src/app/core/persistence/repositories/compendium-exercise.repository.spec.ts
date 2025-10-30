@@ -476,6 +476,134 @@ describe('CompendiumExerciseRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new exercise when it does not exist', async () => {
+      const exerciseData: CompendiumExercise = {
+        templateId: 'ex-upsert-1',
+        name: 'Upsert Test Exercise',
+        slug: 'upsert-test-exercise',
+        type: ExerciseType.STRENGTH,
+        force: [ForceType.PUSH],
+        primaryMuscles: [Muscle.CHEST],
+        secondaryMuscles: [Muscle.TRICEPS],
+        technicalDifficulty: TechnicalDifficulty.BEGINNER,
+        equipmentIds: ['barbell'],
+        bodyWeightScaling: 0,
+        instructions: ['Step 1', 'Step 2'],
+        createdBy: 'user-1',
+      };
+
+      const result = await repository.upsert(exerciseData);
+
+      expect(result).toBeDefined();
+      expect(result.templateId).toBe('ex-upsert-1');
+      expect(result.name).toBe('Upsert Test Exercise');
+      expect(result.version).toBe(1);
+      expect(result.updatedAt).toBeNull();
+
+      // Verify it was inserted
+      const found = await repository.findById('ex-upsert-1');
+      expect(found).toBeDefined();
+      expect(found.name).toBe('Upsert Test Exercise');
+    });
+
+    it('should update existing exercise and increment version', async () => {
+      const exerciseData: CompendiumExercise = {
+        templateId: 'ex-upsert-2',
+        name: 'Original Name',
+        slug: 'original-slug',
+        type: ExerciseType.STRENGTH,
+        force: [ForceType.PUSH],
+        primaryMuscles: [Muscle.CHEST],
+        secondaryMuscles: [],
+        technicalDifficulty: TechnicalDifficulty.BEGINNER,
+        equipmentIds: [],
+        bodyWeightScaling: 0,
+        instructions: ['Original instruction'],
+        createdBy: 'user-1',
+      };
+
+      const created = await repository.create(exerciseData);
+      expect(created.version).toBe(1);
+      expect(created.updatedAt).toBeNull();
+
+      const updatedData: CompendiumExercise = {
+        templateId: 'ex-upsert-2',
+        name: 'Updated Name',
+        slug: 'original-slug',
+        type: ExerciseType.STRENGTH,
+        force: [ForceType.PULL],
+        primaryMuscles: [Muscle.LATS],
+        secondaryMuscles: [Muscle.BICEPS],
+        technicalDifficulty: TechnicalDifficulty.INTERMEDIATE,
+        equipmentIds: ['dumbbell'],
+        bodyWeightScaling: 0.5,
+        instructions: ['Updated instruction'],
+        createdBy: 'user-2',
+        description: 'Updated description',
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.templateId).toBe('ex-upsert-2');
+      expect(result.name).toBe('Updated Name');
+      expect(result.description).toBe('Updated description');
+      expect(result.version).toBe(2); // Version incremented
+      expect(result.updatedAt).toBeDefined(); // Updated timestamp set
+
+      // Verify only one record exists
+      const allExercises = await repository.findAll();
+      expect(allExercises).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts and increment version each time', async () => {
+      const exerciseData: CompendiumExercise = {
+        templateId: 'ex-upsert-3',
+        name: 'Multi Upsert',
+        slug: 'multi-upsert',
+        type: ExerciseType.STRENGTH,
+        force: [ForceType.PUSH],
+        primaryMuscles: [Muscle.CHEST],
+        secondaryMuscles: [],
+        technicalDifficulty: TechnicalDifficulty.BEGINNER,
+        equipmentIds: [],
+        bodyWeightScaling: 0,
+        instructions: ['Test'],
+        createdBy: 'user-1',
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(exerciseData);
+      expect(result1.version).toBe(1);
+      expect(result1.updatedAt).toBeNull();
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...exerciseData,
+        description: 'First update',
+      });
+      expect(result2.version).toBe(2);
+      expect(result2.updatedAt).toBeDefined();
+      expect(result2.description).toBe('First update');
+
+      // Third upsert - another update
+      const result3 = await repository.upsert({
+        ...exerciseData,
+        description: 'Second update',
+        technicalDifficulty: TechnicalDifficulty.ADVANCED,
+      });
+      expect(result3.version).toBe(3);
+      expect(result3.updatedAt).toBeDefined();
+      expect(result3.description).toBe('Second update');
+      expect(result3.technicalDifficulty).toBe(TechnicalDifficulty.ADVANCED);
+
+      // Verify still only one record
+      const allExercises = await repository.findAll();
+      expect(allExercises).toHaveLength(1);
+    });
+  });
+
   describe('delete', () => {
     it('should delete exercise by id', async () => {
       const exerciseData: CompendiumExercise = {

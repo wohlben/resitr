@@ -1,10 +1,10 @@
 {
   "id": "Single-Arm_Push-Up-Handstand_Push-Ups-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single-Arm_Push-Up",
-  "to_exercise_template_id": "Handstand_Push-Ups"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single-Arm_Push-Up",
+  "toExerciseTemplateId": "Handstand_Push-Ups"
 }

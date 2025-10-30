@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "2x dumbbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Lying dumbbell fly with crossover at top, targeting chest with extended range through crossing motion.",
@@ -33,17 +29,20 @@
     "/img/exercises/Lying_Crossover/0.jpg",
     "/img/exercises/Lying_Crossover/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Lying-Crossover",
     "Prone Crossover"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Lying_Crossover"
+  "parentExerciseId": null,
+  "templateId": "Lying_Crossover",
+  "equipmentIds": [
+    "2x dumbbell",
+    "bench"
+  ]
 }

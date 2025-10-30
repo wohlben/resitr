@@ -1,10 +1,10 @@
 {
   "id": "Kettlebell_Figure_8-Russian_Twist-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499772,
-  "from_exercise_template_id": "Kettlebell_Figure_8",
-  "to_exercise_template_id": "Russian_Twist"
+  "createdBy": "system",
+  "createdAt": 1761499772,
+  "fromExerciseTemplateId": "Kettlebell_Figure_8",
+  "toExerciseTemplateId": "Russian_Twist"
 }

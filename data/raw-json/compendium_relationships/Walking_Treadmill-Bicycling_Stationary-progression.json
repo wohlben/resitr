@@ -1,10 +1,10 @@
 {
   "id": "Walking_Treadmill-Bicycling_Stationary-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.55,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761476051,
-  "from_exercise_template_id": "Walking_Treadmill",
-  "to_exercise_template_id": "Bicycling_Stationary"
+  "createdBy": "system",
+  "createdAt": 1761476051,
+  "fromExerciseTemplateId": "Walking_Treadmill",
+  "toExerciseTemplateId": "Bicycling_Stationary"
 }

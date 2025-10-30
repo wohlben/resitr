@@ -1,10 +1,10 @@
 {
   "id": "Isometric_Wipers-Plank-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.55,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Isometric_Wipers",
-  "to_exercise_template_id": "Plank"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Isometric_Wipers",
+  "toExerciseTemplateId": "Plank"
 }

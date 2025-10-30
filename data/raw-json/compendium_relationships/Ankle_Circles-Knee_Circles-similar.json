@@ -1,10 +1,10 @@
 {
   "id": "Ankle_Circles-Knee_Circles-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Ankle_Circles",
-  "to_exercise_template_id": "Knee_Circles"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Ankle_Circles",
+  "toExerciseTemplateId": "Knee_Circles"
 }

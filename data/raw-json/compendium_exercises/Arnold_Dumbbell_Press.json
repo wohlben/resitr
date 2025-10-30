@@ -5,22 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "SIDE_DELTS",
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "TRAPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Rotational shoulder press targeting all three deltoid heads through unique rotating movement pattern",
@@ -35,17 +31,20 @@
     "/img/exercises/Arnold_Dumbbell_Press/0.jpg",
     "/img/exercises/Arnold_Dumbbell_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Arnold DB Press",
     "Arnold Dumbell Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Arnold_Dumbbell_Press"
+  "parentExerciseId": null,
+  "templateId": "Arnold_Dumbbell_Press",
+  "equipmentIds": [
+    "2x dumbbell",
+    "bench"
+  ]
 }

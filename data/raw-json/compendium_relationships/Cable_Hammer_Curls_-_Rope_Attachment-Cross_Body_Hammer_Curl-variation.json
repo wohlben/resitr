@@ -1,10 +1,10 @@
 {
   "id": "Cable_Hammer_Curls_-_Rope_Attachment-Cross_Body_Hammer_Curl-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Cable_Hammer_Curls_-_Rope_Attachment",
-  "to_exercise_template_id": "Cross_Body_Hammer_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Cable_Hammer_Curls_-_Rope_Attachment",
+  "toExerciseTemplateId": "Cross_Body_Hammer_Curl"
 }

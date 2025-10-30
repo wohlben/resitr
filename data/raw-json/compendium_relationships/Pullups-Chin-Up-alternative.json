@@ -1,10 +1,10 @@
 {
   "id": "Pullups-Chin-Up-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Pullups",
-  "to_exercise_template_id": "Chin-Up"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Pullups",
+  "toExerciseTemplateId": "Chin-Up"
 }

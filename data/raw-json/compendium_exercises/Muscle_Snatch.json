@@ -6,21 +6,18 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS",
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Olympic lift variation snatching barbell overhead using muscle power without dropping into squat.",
@@ -33,18 +30,20 @@
     "/img/exercises/Muscle_Snatch/0.jpg",
     "/img/exercises/Muscle_Snatch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Snatch",
     "Muscle-Snatch",
     "Power Snatch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Muscle_Snatch"
+  "parentExerciseId": null,
+  "templateId": "Muscle_Snatch",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

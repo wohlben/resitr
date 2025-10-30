@@ -5,17 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "chains"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -32,14 +28,17 @@
     "/img/exercises/Floor_Press_with_Chains/0.jpg",
     "/img/exercises/Floor_Press_with_Chains/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Floor_Press_with_Chains"
+  "parentExerciseId": null,
+  "templateId": "Floor_Press_with_Chains",
+  "equipmentIds": [
+    "barbell",
+    "chains"
+  ]
 }

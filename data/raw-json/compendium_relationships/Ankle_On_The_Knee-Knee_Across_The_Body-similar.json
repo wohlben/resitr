@@ -1,10 +1,10 @@
 {
   "id": "Ankle_On_The_Knee-Knee_Across_The_Body-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": "Both are supine stretches targeting glutes and outer hip; Knee Across uses spinal rotation component",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Ankle_On_The_Knee",
-  "to_exercise_template_id": "Knee_Across_The_Body"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Ankle_On_The_Knee",
+  "toExerciseTemplateId": "Knee_Across_The_Body"
 }

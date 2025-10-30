@@ -1,10 +1,10 @@
 {
   "id": "Seated_Glute-Seated_Front_Deltoid-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Seated_Glute",
-  "to_exercise_template_id": "Seated_Front_Deltoid"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Seated_Glute",
+  "toExerciseTemplateId": "Seated_Front_Deltoid"
 }

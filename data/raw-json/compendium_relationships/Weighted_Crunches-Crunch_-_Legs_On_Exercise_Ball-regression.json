@@ -1,10 +1,10 @@
 {
   "id": "Weighted_Crunches-Crunch_-_Legs_On_Exercise_Ball-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730027200,
-  "from_exercise_template_id": "Weighted_Crunches",
-  "to_exercise_template_id": "Crunch_-_Legs_On_Exercise_Ball"
+  "createdBy": "system",
+  "createdAt": 1730027200,
+  "fromExerciseTemplateId": "Weighted_Crunches",
+  "toExerciseTemplateId": "Crunch_-_Legs_On_Exercise_Ball"
 }

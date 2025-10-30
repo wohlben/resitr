@@ -5,17 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -30,16 +29,16 @@
     "/img/exercises/Isometric_Wipers/0.jpg",
     "/img/exercises/Isometric_Wipers/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Isometric-Wipers"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Isometric_Wipers"
+  "parentExerciseId": null,
+  "templateId": "Isometric_Wipers",
+  "equipmentIds": []
 }

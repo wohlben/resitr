@@ -1,10 +1,10 @@
 {
   "id": "Chest_And_Front_Of_Shoulder_Stretch-Seated_Front_Deltoid-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Chest_And_Front_Of_Shoulder_Stretch",
-  "to_exercise_template_id": "Seated_Front_Deltoid"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Chest_And_Front_Of_Shoulder_Stretch",
+  "toExerciseTemplateId": "Seated_Front_Deltoid"
 }

@@ -69,4 +69,17 @@ export class CompendiumEquipmentFulfillmentRepository {
       .returning();
     return result;
   }
+
+  async upsert(data: CompendiumEquipmentFulfillment) {
+    const { equipmentTemplateId, fulfillsEquipmentTemplateId, ...updateData } = data;
+    const [result] = await this.db
+      .insert(compendiumEquipmentFulfillment)
+      .values(data)
+      .onConflictDoUpdate({
+        target: [compendiumEquipmentFulfillment.equipmentTemplateId, compendiumEquipmentFulfillment.fulfillsEquipmentTemplateId],
+        set: updateData,
+      })
+      .returning();
+    return result;
+  }
 }

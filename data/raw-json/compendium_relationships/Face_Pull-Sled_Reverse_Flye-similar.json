@@ -1,10 +1,10 @@
 {
   "id": "Face_Pull-Sled_Reverse_Flye-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Face_Pull",
-  "to_exercise_template_id": "Sled_Reverse_Flye"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Face_Pull",
+  "toExerciseTemplateId": "Sled_Reverse_Flye"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Step_Ups-Split_Squat_with_Dumbbells-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Barbell_Step_Ups",
-  "to_exercise_template_id": "Split_Squat_with_Dumbbells"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Barbell_Step_Ups",
+  "toExerciseTemplateId": "Split_Squat_with_Dumbbells"
 }

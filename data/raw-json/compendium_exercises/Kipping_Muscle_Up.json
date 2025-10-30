@@ -6,10 +6,10 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "BICEPS",
     "FOREARMS",
@@ -18,12 +18,9 @@
     "TRAPS",
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "dip-bars"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -41,14 +38,16 @@
     "/img/exercises/Kipping_Muscle_Up/0.jpg",
     "/img/exercises/Kipping_Muscle_Up/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Kipping_Muscle_Up"
+  "parentExerciseId": null,
+  "templateId": "Kipping_Muscle_Up",
+  "equipmentIds": [
+    "dip-bars"
+  ]
 }

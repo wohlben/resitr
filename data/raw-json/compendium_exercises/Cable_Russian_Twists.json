@@ -5,17 +5,13 @@
   "force": [
     "ROTATION"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine",
-    "stability-ball"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable twist with rotation targeting obliques through transverse plane movement for core strength",
@@ -32,17 +28,20 @@
     "/img/exercises/Cable_Russian_Twists/0.jpg",
     "/img/exercises/Cable_Russian_Twists/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Cable Machine Russian Twists",
     "Stability Ball Cable Russian Twists"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Russian_Twists"
+  "parentExerciseId": null,
+  "templateId": "Cable_Russian_Twists",
+  "equipmentIds": [
+    "gym-cable-machine",
+    "stability-ball"
+  ]
 }

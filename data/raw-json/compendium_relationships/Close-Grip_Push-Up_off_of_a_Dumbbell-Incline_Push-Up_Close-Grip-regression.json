@@ -1,10 +1,10 @@
 {
   "id": "Close-Grip_Push-Up_off_of_a_Dumbbell-Incline_Push-Up_Close-Grip-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729940400,
-  "from_exercise_template_id": "Close-Grip_Push-Up_off_of_a_Dumbbell",
-  "to_exercise_template_id": "Incline_Push-Up_Close-Grip"
+  "createdBy": "system",
+  "createdAt": 1729940400,
+  "fromExerciseTemplateId": "Close-Grip_Push-Up_off_of_a_Dumbbell",
+  "toExerciseTemplateId": "Incline_Push-Up_Close-Grip"
 }

@@ -1,8 +1,8 @@
 {
   "name": "gym-bicep-curl-machine",
-  "display_name": "Bicep Curl Machine",
+  "displayName": "Bicep Curl Machine",
   "description": "A machine designed to isolate bicep muscles during curl movements.",
   "category": "machines",
-  "image_url": null,
-  "template_id": "gym-bicep-curl-machine"
+  "imageUrl": null,
+  "templateId": "gym-bicep-curl-machine"
 }

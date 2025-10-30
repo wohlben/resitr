@@ -6,19 +6,18 @@
     "PUSH",
     "ROTATION"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST",
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "TRICEPS",
     "OBLIQUES"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -35,20 +34,20 @@
     "/img/exercises/Clock_Push-Up/0.jpg",
     "/img/exercises/Clock_Push-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Clock Push Up",
     "Press Up",
     "Push Up",
     "Pushup",
     "Pushups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Clock_Push-Up"
+  "parentExerciseId": null,
+  "templateId": "Clock_Push-Up",
+  "equipmentIds": []
 }

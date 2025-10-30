@@ -1,10 +1,10 @@
 {
   "id": "Zottman_Preacher_Curl-Reverse_Barbell_Preacher_Curls-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Zottman_Preacher_Curl",
-  "to_exercise_template_id": "Reverse_Barbell_Preacher_Curls"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Zottman_Preacher_Curl",
+  "toExerciseTemplateId": "Reverse_Barbell_Preacher_Curls"
 }

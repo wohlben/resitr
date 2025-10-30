@@ -1,10 +1,10 @@
 {
   "id": "Goblet_Squat-Landmine_Linear_Jammer-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Goblet_Squat",
-  "to_exercise_template_id": "Landmine_Linear_Jammer"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Goblet_Squat",
+  "toExerciseTemplateId": "Landmine_Linear_Jammer"
 }

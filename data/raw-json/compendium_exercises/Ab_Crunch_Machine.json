@@ -5,18 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-tricep-extension-machine"
-  ],
-  "body_weight_scaling": 0.9,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.9,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Machine-based abdominal crunch with weight stack, isolating abs with fixed path and adjustable resistance.",
@@ -30,17 +27,19 @@
     "/img/exercises/Ab_Crunch_Machine/0.jpg",
     "/img/exercises/Ab_Crunch_Machine/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ab Crunch",
     "Abdominal Crunch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Ab_Crunch_Machine"
+  "parentExerciseId": null,
+  "templateId": "Ab_Crunch_Machine",
+  "equipmentIds": [
+    "gym-tricep-extension-machine"
+  ]
 }

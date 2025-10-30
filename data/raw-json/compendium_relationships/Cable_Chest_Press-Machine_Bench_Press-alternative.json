@@ -1,10 +1,10 @@
 {
   "id": "Cable_Chest_Press-Machine_Bench_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761478645,
-  "from_exercise_template_id": "Cable_Chest_Press",
-  "to_exercise_template_id": "Machine_Bench_Press"
+  "createdBy": "system",
+  "createdAt": 1761478645,
+  "fromExerciseTemplateId": "Cable_Chest_Press",
+  "toExerciseTemplateId": "Machine_Bench_Press"
 }

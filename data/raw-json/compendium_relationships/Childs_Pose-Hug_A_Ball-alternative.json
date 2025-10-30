@@ -1,10 +1,10 @@
 {
   "id": "Childs_Pose-Hug_A_Ball-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498134,
-  "from_exercise_template_id": "Childs_Pose",
-  "to_exercise_template_id": "Hug_A_Ball"
+  "createdBy": "system",
+  "createdAt": 1761498134,
+  "fromExerciseTemplateId": "Childs_Pose",
+  "toExerciseTemplateId": "Hug_A_Ball"
 }

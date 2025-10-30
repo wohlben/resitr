@@ -1,10 +1,10 @@
 {
   "id": "External_Rotation_with_Band-Cable_Internal_Rotation-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761478645,
-  "from_exercise_template_id": "External_Rotation_with_Band",
-  "to_exercise_template_id": "Cable_Internal_Rotation"
+  "createdBy": "system",
+  "createdAt": 1761478645,
+  "fromExerciseTemplateId": "External_Rotation_with_Band",
+  "toExerciseTemplateId": "Cable_Internal_Rotation"
 }

@@ -1,8 +1,8 @@
 {
   "name": "gym-battle-ropes",
-  "display_name": "Battle Ropes",
+  "displayName": "Battle Ropes",
   "description": "Heavy ropes used for high-intensity cardio and endurance training.",
   "category": "functional",
-  "image_url": null,
-  "template_id": "gym-battle-ropes"
+  "imageUrl": null,
+  "templateId": "gym-battle-ropes"
 }

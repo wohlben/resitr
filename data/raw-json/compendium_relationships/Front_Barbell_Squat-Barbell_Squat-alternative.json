@@ -1,10 +1,10 @@
 {
   "id": "Front_Barbell_Squat-Barbell_Squat-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Front_Barbell_Squat",
-  "to_exercise_template_id": "Barbell_Squat"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Front_Barbell_Squat",
+  "toExerciseTemplateId": "Barbell_Squat"
 }

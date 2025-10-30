@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "REAR_DELTS",
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "pull-up-bar"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -34,20 +31,22 @@
     "/img/exercises/Wide-Grip_Rear_Pull-Up/0.jpg",
     "/img/exercises/Wide-Grip_Rear_Pull-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Pull Up",
     "Pullup",
     "Pullups",
     "Wide Grip Rear Pull Up",
     "Wide Grip Rear Pull-Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Wide-Grip_Rear_Pull-Up"
+  "parentExerciseId": null,
+  "templateId": "Wide-Grip_Rear_Pull-Up",
+  "equipmentIds": [
+    "pull-up-bar"
+  ]
 }

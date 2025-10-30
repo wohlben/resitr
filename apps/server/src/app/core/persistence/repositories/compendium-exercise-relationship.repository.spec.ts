@@ -437,6 +437,111 @@ describe('CompendiumExerciseRelationshipRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new relationship when it does not exist', async () => {
+      const relationshipData = {
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise2.templateId,
+        relationshipType: ExerciseRelationshipType.PROGRESSION,
+        strength: 0.8,
+        description: 'Test progression',
+        createdBy: 'user-1',
+      };
+
+      const result = await repository.upsert(relationshipData);
+
+      expect(result).toBeDefined();
+      expect(result.fromExerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.toExerciseTemplateId).toBe(testExercise2.templateId);
+      expect(result.relationshipType).toBe(ExerciseRelationshipType.PROGRESSION);
+      expect(result.strength).toBe(0.8);
+
+      // Verify it was inserted
+      const found = await repository.findByCompositeKey(
+        testExercise1.templateId,
+        testExercise2.templateId,
+        ExerciseRelationshipType.PROGRESSION
+      );
+      expect(found).toBeDefined();
+    });
+
+    it('should update existing relationship when composite key exists', async () => {
+      const relationshipData = {
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
+        relationshipType: ExerciseRelationshipType.SIMILAR,
+        strength: 0.5,
+        createdBy: 'user-1',
+      };
+
+      await repository.create(relationshipData);
+
+      const updatedData = {
+        fromExerciseTemplateId: testExercise2.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
+        relationshipType: ExerciseRelationshipType.SIMILAR,
+        strength: 0.9,
+        description: 'Updated description',
+        createdBy: 'user-2',
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.strength).toBe(0.9);
+      expect(result.description).toBe('Updated description');
+      expect(result.createdBy).toBe('user-2');
+
+      // Verify only one record exists
+      const relationships = await repository.findByFromExerciseId(testExercise2.templateId);
+      const similarRelationships = relationships.filter(
+        (r) => r.toExerciseTemplateId === testExercise3.templateId && r.relationshipType === ExerciseRelationshipType.SIMILAR
+      );
+      expect(similarRelationships).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts with same composite key', async () => {
+      const relationshipData = {
+        fromExerciseTemplateId: testExercise1.templateId,
+        toExerciseTemplateId: testExercise3.templateId,
+        relationshipType: ExerciseRelationshipType.REGRESSION,
+        strength: 0.3,
+        createdBy: 'user-1',
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(relationshipData);
+      expect(result1.strength).toBe(0.3);
+      expect(result1.description).toBeNull();
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...relationshipData,
+        strength: 0.6,
+        description: 'First update',
+      });
+      expect(result2.strength).toBe(0.6);
+      expect(result2.description).toBe('First update');
+
+      // Third upsert - another update
+      const result3 = await repository.upsert({
+        ...relationshipData,
+        strength: 0.9,
+        description: 'Second update',
+      });
+      expect(result3.strength).toBe(0.9);
+      expect(result3.description).toBe('Second update');
+
+      // Verify still only one record
+      const found = await repository.findByCompositeKey(
+        testExercise1.templateId,
+        testExercise3.templateId,
+        ExerciseRelationshipType.REGRESSION
+      );
+      expect(found).toBeDefined();
+    });
+  });
+
   describe('delete', () => {
     it('should delete relationship by composite key', async () => {
       await repository.create({

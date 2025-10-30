@@ -5,18 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "CALVES"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.3,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.3,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -29,16 +28,16 @@
     "/img/exercises/Elliptical_Trainer/0.jpg",
     "/img/exercises/Elliptical_Trainer/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Elliptical-Trainer"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Elliptical_Trainer"
+  "parentExerciseId": null,
+  "templateId": "Elliptical_Trainer",
+  "equipmentIds": []
 }

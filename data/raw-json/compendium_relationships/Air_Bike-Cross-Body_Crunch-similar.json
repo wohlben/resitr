@@ -1,10 +1,10 @@
 {
   "id": "Air_Bike-Cross-Body_Crunch-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Air_Bike",
-  "to_exercise_template_id": "Cross-Body_Crunch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Air_Bike",
+  "toExerciseTemplateId": "Cross-Body_Crunch"
 }

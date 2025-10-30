@@ -5,17 +5,16 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CALVES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "QUADS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -29,16 +28,16 @@
     "/img/exercises/Balance_Board/0.jpg",
     "/img/exercises/Balance_Board/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Balance-Board"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Balance_Board"
+  "parentExerciseId": null,
+  "templateId": "Balance_Board",
+  "equipmentIds": []
 }

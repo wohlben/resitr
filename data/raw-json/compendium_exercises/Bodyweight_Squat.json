@@ -5,17 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Foundational bodyweight squat movement for lower body strength and mobility without equipment",
@@ -28,16 +27,16 @@
     "/img/exercises/Bodyweight_Squat/0.jpg",
     "/img/exercises/Bodyweight_Squat/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bodyweight-Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bodyweight_Squat"
+  "parentExerciseId": null,
+  "templateId": "Bodyweight_Squat",
+  "equipmentIds": []
 }

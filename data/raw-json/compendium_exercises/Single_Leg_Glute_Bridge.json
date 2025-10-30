@@ -5,16 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -31,16 +30,16 @@
     "/img/exercises/Single_Leg_Glute_Bridge/0.jpg",
     "/img/exercises/Single_Leg_Glute_Bridge/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Leg Glute Bridge"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Single_Leg_Glute_Bridge"
+  "parentExerciseId": null,
+  "templateId": "Single_Leg_Glute_Bridge",
+  "equipmentIds": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "Chain_Handle_Extension-EZ-Bar_Skullcrusher-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Chain_Handle_Extension",
-  "to_exercise_template_id": "EZ-Bar_Skullcrusher"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Chain_Handle_Extension",
+  "toExerciseTemplateId": "EZ-Bar_Skullcrusher"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Quick_Leap-Alternate_Leg_Diagonal_Bound-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.72,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761461533,
-  "from_exercise_template_id": "Quick_Leap",
-  "to_exercise_template_id": "Alternate_Leg_Diagonal_Bound"
+  "createdBy": "system",
+  "createdAt": 1761461533,
+  "fromExerciseTemplateId": "Quick_Leap",
+  "toExerciseTemplateId": "Alternate_Leg_Diagonal_Bound"
 }

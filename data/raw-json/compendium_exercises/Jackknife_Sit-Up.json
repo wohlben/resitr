@@ -5,16 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HIP_FLEXORS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.7,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.7,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -29,17 +28,17 @@
     "/img/exercises/Jackknife_Sit-Up/0.jpg",
     "/img/exercises/Jackknife_Sit-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Jackknife Sit Up",
     "V-Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Jackknife_Sit-Up"
+  "parentExerciseId": null,
+  "templateId": "Jackknife_Sit-Up",
+  "equipmentIds": []
 }

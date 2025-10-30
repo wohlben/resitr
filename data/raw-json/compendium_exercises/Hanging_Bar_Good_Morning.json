@@ -5,21 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "suspension-trainer",
-    "chains"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -34,16 +29,20 @@
     "/img/exercises/Hanging_Bar_Good_Morning/0.jpg",
     "/img/exercises/Hanging_Bar_Good_Morning/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Hanging Barbell Good Morning"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hanging_Bar_Good_Morning"
+  "parentExerciseId": null,
+  "templateId": "Hanging_Bar_Good_Morning",
+  "equipmentIds": [
+    "barbell",
+    "suspension-trainer",
+    "chains"
+  ]
 }

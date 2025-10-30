@@ -1,10 +1,10 @@
 {
   "id": "Wide_Stance_Stiff_Legs-Romanian_Deadlift-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Wide_Stance_Stiff_Legs",
-  "to_exercise_template_id": "Romanian_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Wide_Stance_Stiff_Legs",
+  "toExerciseTemplateId": "Romanian_Deadlift"
 }

@@ -2,7 +2,7 @@
   "id": "reverse-fly",
   "name": "Reverse Fly",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761414066,
-  "updated_at": 1761414066
+  "createdBy": "dev-user",
+  "createdAt": 1761414066,
+  "updatedAt": 1761414066
 }

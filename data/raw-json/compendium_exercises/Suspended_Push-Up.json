@@ -5,20 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS",
     "ABS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "suspension-trainer"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -33,20 +30,22 @@
     "/img/exercises/Suspended_Push-Up/0.jpg",
     "/img/exercises/Suspended_Push-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Press Up",
     "Push Up",
     "Pushup",
     "Pushups",
     "Suspended Push Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Suspended_Push-Up"
+  "parentExerciseId": null,
+  "templateId": "Suspended_Push-Up",
+  "equipmentIds": [
+    "suspension-trainer"
+  ]
 }

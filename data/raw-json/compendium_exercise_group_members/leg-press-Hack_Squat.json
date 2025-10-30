@@ -1,6 +1,6 @@
 {
-  "group_id": "leg-press",
-  "added_by": "dev-user",
-  "added_at": 1761415581,
-  "exercise_template_id": "Hack_Squat"
+  "groupId": "leg-press",
+  "addedBy": "dev-user",
+  "addedAt": 1761415581,
+  "exerciseTemplateId": "Hack_Squat"
 }

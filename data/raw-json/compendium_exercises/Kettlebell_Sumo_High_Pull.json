@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "QUADS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Kettlebell high pull from wide sumo stance, pulling bell to chin height from ground.",
@@ -29,16 +26,18 @@
     "/img/exercises/Kettlebell_Sumo_High_Pull/0.jpg",
     "/img/exercises/Kettlebell_Sumo_High_Pull/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "KB Sumo High Pull"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Kettlebell_Sumo_High_Pull"
+  "parentExerciseId": null,
+  "templateId": "Kettlebell_Sumo_High_Pull",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

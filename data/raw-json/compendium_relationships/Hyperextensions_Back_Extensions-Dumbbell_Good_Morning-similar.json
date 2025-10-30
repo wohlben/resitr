@@ -1,10 +1,10 @@
 {
   "id": "Hyperextensions_Back_Extensions-Dumbbell_Good_Morning-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498416,
-  "from_exercise_template_id": "Hyperextensions_Back_Extensions",
-  "to_exercise_template_id": "Dumbbell_Good_Morning"
+  "createdBy": "system",
+  "createdAt": 1761498416,
+  "fromExerciseTemplateId": "Hyperextensions_Back_Extensions",
+  "toExerciseTemplateId": "Dumbbell_Good_Morning"
 }

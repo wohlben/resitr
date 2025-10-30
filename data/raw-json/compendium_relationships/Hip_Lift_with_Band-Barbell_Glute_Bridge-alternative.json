@@ -1,10 +1,10 @@
 {
   "id": "Hip_Lift_with_Band-Barbell_Glute_Bridge-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Hip_Lift_with_Band",
-  "to_exercise_template_id": "Barbell_Glute_Bridge"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Hip_Lift_with_Band",
+  "toExerciseTemplateId": "Barbell_Glute_Bridge"
 }

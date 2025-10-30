@@ -5,21 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST",
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "ABS",
     "OBLIQUES"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "medicine-ball"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Athletic drill practicing catching and throwing a medicine ball from a 2 or 3 point stance, developing explosive power, hand-eye coordination, and agility.",
@@ -34,14 +31,16 @@
     "/img/exercises/Return_Push_from_Stance/0.jpg",
     "/img/exercises/Return_Push_from_Stance/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Return_Push_from_Stance"
+  "parentExerciseId": null,
+  "templateId": "Return_Push_from_Stance",
+  "equipmentIds": [
+    "medicine-ball"
+  ]
 }

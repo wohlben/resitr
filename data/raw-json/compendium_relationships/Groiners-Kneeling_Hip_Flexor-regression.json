@@ -1,10 +1,10 @@
 {
   "id": "Groiners-Kneeling_Hip_Flexor-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761496059,
-  "from_exercise_template_id": "Groiners",
-  "to_exercise_template_id": "Kneeling_Hip_Flexor"
+  "createdBy": "system",
+  "createdAt": 1761496059,
+  "fromExerciseTemplateId": "Groiners",
+  "toExerciseTemplateId": "Kneeling_Hip_Flexor"
 }

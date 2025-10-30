@@ -1,10 +1,10 @@
 {
   "id": "Landmine_Linear_Jammer-Goblet_Squat-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Landmine_Linear_Jammer",
-  "to_exercise_template_id": "Goblet_Squat"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Landmine_Linear_Jammer",
+  "toExerciseTemplateId": "Goblet_Squat"
 }

@@ -5,17 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -30,16 +29,16 @@
     "/img/exercises/Floor_Glute-Ham_Raise/0.jpg",
     "/img/exercises/Floor_Glute-Ham_Raise/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Floor Glute Ham Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Floor_Glute-Ham_Raise"
+  "parentExerciseId": null,
+  "templateId": "Floor_Glute-Ham_Raise",
+  "equipmentIds": []
 }

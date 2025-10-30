@@ -5,21 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CHEST",
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell",
-    "weight-plate"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -34,16 +30,19 @@
     "/img/exercises/Otis-Up/0.jpg",
     "/img/exercises/Otis-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Otis Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Otis-Up"
+  "parentExerciseId": null,
+  "templateId": "Otis-Up",
+  "equipmentIds": [
+    "dumbbell",
+    "weight-plate"
+  ]
 }

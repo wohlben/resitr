@@ -1,10 +1,10 @@
 {
   "id": "Goblet_Squat-Weighted_Squat-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761551546,
-  "from_exercise_template_id": "Goblet_Squat",
-  "to_exercise_template_id": "Weighted_Squat"
+  "createdBy": "system",
+  "createdAt": 1761551546,
+  "fromExerciseTemplateId": "Goblet_Squat",
+  "toExerciseTemplateId": "Weighted_Squat"
 }

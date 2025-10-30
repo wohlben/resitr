@@ -1,10 +1,10 @@
 {
   "id": "Single-Leg_Stride_Jump-Alternate_Leg_Diagonal_Bound-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.78,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761461533,
-  "from_exercise_template_id": "Single-Leg_Stride_Jump",
-  "to_exercise_template_id": "Alternate_Leg_Diagonal_Bound"
+  "createdBy": "system",
+  "createdAt": 1761461533,
+  "fromExerciseTemplateId": "Single-Leg_Stride_Jump",
+  "toExerciseTemplateId": "Alternate_Leg_Diagonal_Bound"
 }

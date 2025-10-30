@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS",
     "TRAPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable rear delt fly isolating posterior shoulders through horizontal abduction movement",
@@ -32,17 +29,19 @@
     "/img/exercises/Cable_Judo_Flip/0.jpg",
     "/img/exercises/Cable_Judo_Flip/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Cable Machine Judo Flip",
     "Judo Flip"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Judo_Flip"
+  "parentExerciseId": null,
+  "templateId": "Cable_Judo_Flip",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

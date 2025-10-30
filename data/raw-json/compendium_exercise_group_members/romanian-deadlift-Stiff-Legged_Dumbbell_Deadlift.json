@@ -1,6 +1,6 @@
 {
-  "group_id": "romanian-deadlift",
-  "added_by": "dev-user",
-  "added_at": 1761414813,
-  "exercise_template_id": "Stiff-Legged_Dumbbell_Deadlift"
+  "groupId": "romanian-deadlift",
+  "addedBy": "dev-user",
+  "addedAt": 1761414813,
+  "exerciseTemplateId": "Stiff-Legged_Dumbbell_Deadlift"
 }

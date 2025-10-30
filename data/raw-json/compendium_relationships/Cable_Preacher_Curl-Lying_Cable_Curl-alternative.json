@@ -1,10 +1,10 @@
 {
   "id": "Cable_Preacher_Curl-Lying_Cable_Curl-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498077,
-  "from_exercise_template_id": "Cable_Preacher_Curl",
-  "to_exercise_template_id": "Lying_Cable_Curl"
+  "createdBy": "system",
+  "createdAt": 1761498077,
+  "fromExerciseTemplateId": "Cable_Preacher_Curl",
+  "toExerciseTemplateId": "Lying_Cable_Curl"
 }

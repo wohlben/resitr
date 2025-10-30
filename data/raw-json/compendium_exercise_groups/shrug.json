@@ -2,7 +2,7 @@
   "id": "shrug",
   "name": "Shrug",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761414121,
-  "updated_at": 1761414121
+  "createdBy": "dev-user",
+  "createdAt": 1761414121,
+  "updatedAt": 1761414121
 }

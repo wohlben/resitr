@@ -5,19 +5,16 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "ABS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "stability-ball"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Stability ball chest stretch opening pecs and shoulders while engaging core for balance",
@@ -30,16 +27,18 @@
     "/img/exercises/Chest_Stretch_on_Stability_Ball/0.jpg",
     "/img/exercises/Chest_Stretch_on_Stability_Ball/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Chest Stretch on Exercise Ball"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chest_Stretch_on_Stability_Ball"
+  "parentExerciseId": null,
+  "templateId": "Chest_Stretch_on_Stability_Ball",
+  "equipmentIds": [
+    "stability-ball"
+  ]
 }

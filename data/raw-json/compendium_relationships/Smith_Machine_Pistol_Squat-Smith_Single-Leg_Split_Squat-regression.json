@@ -1,10 +1,10 @@
 {
   "id": "Smith_Machine_Pistol_Squat-Smith_Single-Leg_Split_Squat-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": "Regress from pistol squat (advanced, unsupported single-leg) to split squat (beginner, with rear foot support) on Smith machine",
-  "created_by": "system",
-  "created_at": 1761547477,
-  "from_exercise_template_id": "Smith_Machine_Pistol_Squat",
-  "to_exercise_template_id": "Smith_Single-Leg_Split_Squat"
+  "createdBy": "system",
+  "createdAt": 1761547477,
+  "fromExerciseTemplateId": "Smith_Machine_Pistol_Squat",
+  "toExerciseTemplateId": "Smith_Single-Leg_Split_Squat"
 }

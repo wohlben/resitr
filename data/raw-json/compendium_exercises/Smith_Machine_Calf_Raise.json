@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CALVES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-smith-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing calf raise on Smith machine, pressing up on toes with bar on back.",
@@ -29,19 +26,21 @@
     "/img/exercises/Smith_Machine_Calf_Raise/0.jpg",
     "/img/exercises/Smith_Machine_Calf_Raise/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Heel Raise",
     "Smith Calf Raise",
     "Smith Machine Machine Calf Raise",
     "Standing Calf Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Smith_Machine_Calf_Raise"
+  "parentExerciseId": null,
+  "templateId": "Smith_Machine_Calf_Raise",
+  "equipmentIds": [
+    "gym-smith-machine"
+  ]
 }

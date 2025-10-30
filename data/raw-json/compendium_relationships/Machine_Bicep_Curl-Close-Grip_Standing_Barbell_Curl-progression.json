@@ -1,10 +1,10 @@
 {
   "id": "Machine_Bicep_Curl-Close-Grip_Standing_Barbell_Curl-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729931400,
-  "from_exercise_template_id": "Machine_Bicep_Curl",
-  "to_exercise_template_id": "Close-Grip_Standing_Barbell_Curl"
+  "createdBy": "system",
+  "createdAt": 1729931400,
+  "fromExerciseTemplateId": "Machine_Bicep_Curl",
+  "toExerciseTemplateId": "Close-Grip_Standing_Barbell_Curl"
 }

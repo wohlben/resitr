@@ -5,19 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Hip hinge exercise with dumbbells held at shoulders, bending forward at hips to target posterior chain.",
@@ -31,18 +28,20 @@
     "/img/exercises/Dumbbell_Good_Morning/0.jpg",
     "/img/exercises/Dumbbell_Good_Morning/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "DB Good Morning",
     "Dumbell Good Morning",
     "Dumbbell Good-Morning"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1729872000,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1729872000,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Dumbbell_Good_Morning"
+  "parentExerciseId": null,
+  "templateId": "Dumbbell_Good_Morning",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

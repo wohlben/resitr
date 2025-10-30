@@ -1,10 +1,10 @@
 {
   "id": "Frankenstein_Squat-Front_Squat_Clean_Grip-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730009000,
-  "from_exercise_template_id": "Frankenstein_Squat",
-  "to_exercise_template_id": "Front_Squat_Clean_Grip"
+  "createdBy": "system",
+  "createdAt": 1730009000,
+  "fromExerciseTemplateId": "Frankenstein_Squat",
+  "toExerciseTemplateId": "Front_Squat_Clean_Grip"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Ab_Roller-Suspended_Fallout-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": "Both are ab rollout exercises with similar movement patterns; Ab Roller uses ab wheel while Suspended Fallout uses suspension trainer",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Ab_Roller",
-  "to_exercise_template_id": "Suspended_Fallout"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Ab_Roller",
+  "toExerciseTemplateId": "Suspended_Fallout"
 }

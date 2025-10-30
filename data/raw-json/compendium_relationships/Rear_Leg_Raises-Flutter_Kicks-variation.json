@@ -1,10 +1,10 @@
 {
   "id": "Rear_Leg_Raises-Flutter_Kicks-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Rear_Leg_Raises",
-  "to_exercise_template_id": "Flutter_Kicks"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Rear_Leg_Raises",
+  "toExerciseTemplateId": "Flutter_Kicks"
 }

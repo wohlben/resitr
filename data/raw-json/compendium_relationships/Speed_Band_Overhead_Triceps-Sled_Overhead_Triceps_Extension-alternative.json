@@ -1,10 +1,10 @@
 {
   "id": "Speed_Band_Overhead_Triceps-Sled_Overhead_Triceps_Extension-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Speed_Band_Overhead_Triceps",
-  "to_exercise_template_id": "Sled_Overhead_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Speed_Band_Overhead_Triceps",
+  "toExerciseTemplateId": "Sled_Overhead_Triceps_Extension"
 }

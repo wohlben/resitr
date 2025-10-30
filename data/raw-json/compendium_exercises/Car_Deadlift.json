@@ -6,19 +6,18 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LOWER_BACK",
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRAPS",
     "FOREARMS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Strongman event deadlifting car or heavy apparatus with neutral grip handles",
@@ -32,16 +31,16 @@
     "/img/exercises/Car_Deadlift/0.jpg",
     "/img/exercises/Car_Deadlift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Car-Deadlift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Car_Deadlift"
+  "parentExerciseId": null,
+  "templateId": "Car_Deadlift",
+  "equipmentIds": []
 }

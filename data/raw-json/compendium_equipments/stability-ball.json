@@ -1,8 +1,8 @@
 {
   "name": "stability-ball",
-  "display_name": "Stability Ball",
+  "displayName": "Stability Ball",
   "description": "A large inflatable ball used for core stability and balance training.",
   "category": "functional",
-  "image_url": null,
-  "template_id": "stability-ball"
+  "imageUrl": null,
+  "templateId": "stability-ball"
 }

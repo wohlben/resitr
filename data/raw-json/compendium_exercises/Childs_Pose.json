@@ -5,17 +5,16 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LOWER_BACK"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "LATS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Yoga pose extending arms forward while sitting on heels to stretch back and shoulders",
@@ -28,16 +27,16 @@
     "/img/exercises/Childs_Pose/0.jpg",
     "/img/exercises/Childs_Pose/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Child's-Pose"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Childs_Pose"
+  "parentExerciseId": null,
+  "templateId": "Childs_Pose",
+  "equipmentIds": []
 }

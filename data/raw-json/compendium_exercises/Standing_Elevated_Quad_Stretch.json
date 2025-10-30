@@ -5,14 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Standing quad stretch with rear foot elevated on bench or box, increased stretch on hip flexors and quads.",
@@ -25,16 +24,16 @@
     "/img/exercises/Standing_Elevated_Quad_Stretch/0.jpg",
     "/img/exercises/Standing_Elevated_Quad_Stretch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Elevated Quad Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Elevated_Quad_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Standing_Elevated_Quad_Stretch",
+  "equipmentIds": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "Calves-SMR-Peroneals_Stretch-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": "Both target calf muscle flexibility and mobility - one through myofascial release, the other through static stretching with inversion",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Calves-SMR",
-  "to_exercise_template_id": "Peroneals_Stretch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Calves-SMR",
+  "toExerciseTemplateId": "Peroneals_Stretch"
 }

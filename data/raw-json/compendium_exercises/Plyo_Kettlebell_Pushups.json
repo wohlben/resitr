@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Explosive plyometric push-up with hands on kettlebells, jumping between reps for power development.",
@@ -30,16 +27,18 @@
     "/img/exercises/Plyo_Kettlebell_Pushups/0.jpg",
     "/img/exercises/Plyo_Kettlebell_Pushups/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Plyo KB Pushups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Plyo_Kettlebell_Pushups"
+  "parentExerciseId": null,
+  "templateId": "Plyo_Kettlebell_Pushups",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

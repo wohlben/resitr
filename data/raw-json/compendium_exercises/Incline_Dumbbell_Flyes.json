@@ -5,19 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "2x dumbbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -33,17 +29,20 @@
     "/img/exercises/Incline_Dumbbell_Flyes/0.jpg",
     "/img/exercises/Incline_Dumbbell_Flyes/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Incline DB Flyes",
     "Incline Dumbell Flyes"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Incline_Dumbbell_Flyes"
+  "parentExerciseId": null,
+  "templateId": "Incline_Dumbbell_Flyes",
+  "equipmentIds": [
+    "2x dumbbell",
+    "incline-bench"
+  ]
 }

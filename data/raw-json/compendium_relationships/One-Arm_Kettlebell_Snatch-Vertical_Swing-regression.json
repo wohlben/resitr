@@ -1,10 +1,10 @@
 {
   "id": "One-Arm_Kettlebell_Snatch-Vertical_Swing-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "One-Arm_Kettlebell_Snatch",
-  "to_exercise_template_id": "Vertical_Swing"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "One-Arm_Kettlebell_Snatch",
+  "toExerciseTemplateId": "Vertical_Swing"
 }

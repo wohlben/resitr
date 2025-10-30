@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -31,17 +28,19 @@
     "/img/exercises/Standing_Dumbbell_Reverse_Curl/0.jpg",
     "/img/exercises/Standing_Dumbbell_Reverse_Curl/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Standing DB Reverse Curl",
     "Standing Dumbbell Reverse Curl"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Dumbbell_Reverse_Curl"
+  "parentExerciseId": null,
+  "templateId": "Standing_Dumbbell_Reverse_Curl",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

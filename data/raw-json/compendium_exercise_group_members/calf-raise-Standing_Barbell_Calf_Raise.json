@@ -1,6 +1,6 @@
 {
-  "group_id": "calf-raise",
-  "added_by": "dev-user",
-  "added_at": 1761412753,
-  "exercise_template_id": "Standing_Barbell_Calf_Raise"
+  "groupId": "calf-raise",
+  "addedBy": "dev-user",
+  "addedAt": 1761412753,
+  "exerciseTemplateId": "Standing_Barbell_Calf_Raise"
 }

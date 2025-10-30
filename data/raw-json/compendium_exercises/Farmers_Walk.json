@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FOREARMS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Loaded carry exercise walking with heavy weights in each hand, building grip strength, core stability, and full-body tension.",
@@ -27,16 +24,18 @@
     "/img/exercises/Farmers_Walk/0.jpg",
     "/img/exercises/Farmers_Walk/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Farmer's-Walk"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Farmers_Walk"
+  "parentExerciseId": null,
+  "templateId": "Farmers_Walk",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

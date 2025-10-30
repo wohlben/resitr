@@ -1,10 +1,10 @@
 {
   "id": "3_4_Sit-Up-Frog_Sit-Ups-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761494891,
-  "from_exercise_template_id": "3_4_Sit-Up",
-  "to_exercise_template_id": "Frog_Sit-Ups"
+  "createdBy": "system",
+  "createdAt": 1761494891,
+  "fromExerciseTemplateId": "3_4_Sit-Up",
+  "toExerciseTemplateId": "Frog_Sit-Ups"
 }

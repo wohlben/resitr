@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Deltoid_Raise-Side_Laterals_to_Front_Raise-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761461723,
-  "from_exercise_template_id": "Alternating_Deltoid_Raise",
-  "to_exercise_template_id": "Side_Laterals_to_Front_Raise"
+  "createdBy": "system",
+  "createdAt": 1761461723,
+  "fromExerciseTemplateId": "Alternating_Deltoid_Raise",
+  "toExerciseTemplateId": "Side_Laterals_to_Front_Raise"
 }

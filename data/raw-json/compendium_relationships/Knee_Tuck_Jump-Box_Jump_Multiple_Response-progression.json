@@ -1,10 +1,10 @@
 {
   "id": "Knee_Tuck_Jump-Box_Jump_Multiple_Response-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761477930,
-  "from_exercise_template_id": "Knee_Tuck_Jump",
-  "to_exercise_template_id": "Box_Jump_Multiple_Response"
+  "createdBy": "system",
+  "createdAt": 1761477930,
+  "fromExerciseTemplateId": "Knee_Tuck_Jump",
+  "toExerciseTemplateId": "Box_Jump_Multiple_Response"
 }

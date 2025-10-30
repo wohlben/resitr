@@ -1,10 +1,10 @@
 {
   "id": "Monster_Walk-Thigh_Abductor-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": "Both exercises target hip abduction but with different equipment (band vs machine)",
-  "created_by": "system",
-  "created_at": 1730053200,
-  "from_exercise_template_id": "Monster_Walk",
-  "to_exercise_template_id": "Thigh_Abductor"
+  "createdBy": "system",
+  "createdAt": 1730053200,
+  "fromExerciseTemplateId": "Monster_Walk",
+  "toExerciseTemplateId": "Thigh_Abductor"
 }

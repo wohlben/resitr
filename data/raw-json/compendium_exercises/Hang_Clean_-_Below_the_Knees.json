@@ -5,22 +5,19 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS",
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "FRONT_DELTS",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -37,18 +34,20 @@
     "/img/exercises/Hang_Clean_-_Below_the_Knees/0.jpg",
     "/img/exercises/Hang_Clean_-_Below_the_Knees/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Clean",
     "Hang Clean   Below the Knees",
     "Power Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hang_Clean_-_Below_the_Knees"
+  "parentExerciseId": null,
+  "templateId": "Hang_Clean_-_Below_the_Knees",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

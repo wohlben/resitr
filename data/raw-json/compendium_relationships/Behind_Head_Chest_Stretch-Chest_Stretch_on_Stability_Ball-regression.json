@@ -1,10 +1,10 @@
 {
   "id": "Behind_Head_Chest_Stretch-Chest_Stretch_on_Stability_Ball-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Behind_Head_Chest_Stretch",
-  "to_exercise_template_id": "Chest_Stretch_on_Stability_Ball"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Behind_Head_Chest_Stretch",
+  "toExerciseTemplateId": "Chest_Stretch_on_Stability_Ball"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Mountain_Climbers-Dead_Bug-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761483562,
-  "from_exercise_template_id": "Mountain_Climbers",
-  "to_exercise_template_id": "Dead_Bug"
+  "createdBy": "system",
+  "createdAt": 1761483562,
+  "fromExerciseTemplateId": "Mountain_Climbers",
+  "toExerciseTemplateId": "Dead_Bug"
 }

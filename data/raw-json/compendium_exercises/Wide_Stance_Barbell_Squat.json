@@ -5,20 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "ADDUCTORS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Barbell squat with feet wider than shoulders, emphasizing inner thighs and glutes.",
@@ -34,7 +31,7 @@
     "/img/exercises/Wide_Stance_Barbell_Squat/0.jpg",
     "/img/exercises/Wide_Stance_Barbell_Squat/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Squat",
     "Back Squat",
     "Squat",
@@ -42,13 +39,15 @@
     "Wide Stance Bar Squat",
     "Wide Stance Barbell Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Wide_Stance_Barbell_Squat"
+  "parentExerciseId": null,
+  "templateId": "Wide_Stance_Barbell_Squat",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Decline_EZ_Bar_Triceps_Extension-EZ-Bar_Skullcrusher-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1729932000,
-  "from_exercise_template_id": "Decline_EZ_Bar_Triceps_Extension",
-  "to_exercise_template_id": "EZ-Bar_Skullcrusher"
+  "createdBy": "dev-user",
+  "createdAt": 1729932000,
+  "fromExerciseTemplateId": "Decline_EZ_Bar_Triceps_Extension",
+  "toExerciseTemplateId": "EZ-Bar_Skullcrusher"
 }

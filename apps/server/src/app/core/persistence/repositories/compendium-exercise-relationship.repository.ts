@@ -100,4 +100,21 @@ export class CompendiumExerciseRelationshipRepository {
       .returning();
     return result;
   }
+
+  async upsert(data: CompendiumExerciseRelationship) {
+    const { fromExerciseTemplateId, toExerciseTemplateId, relationshipType, ...updateData } = data;
+    const [result] = await this.db
+      .insert(compendiumExerciseRelationship)
+      .values(data)
+      .onConflictDoUpdate({
+        target: [
+          compendiumExerciseRelationship.fromExerciseTemplateId,
+          compendiumExerciseRelationship.toExerciseTemplateId,
+          compendiumExerciseRelationship.relationshipType,
+        ],
+        set: updateData,
+      })
+      .returning();
+    return result;
+  }
 }

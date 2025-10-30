@@ -1,10 +1,10 @@
 {
   "id": "Stomach_Vacuum-Dead_Bug-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Stomach_Vacuum",
-  "to_exercise_template_id": "Dead_Bug"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Stomach_Vacuum",
+  "toExerciseTemplateId": "Dead_Bug"
 }

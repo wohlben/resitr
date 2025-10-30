@@ -1,10 +1,10 @@
 {
   "id": "Bicycling_Stationary-Recumbent_Bike-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.5,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761476051,
-  "from_exercise_template_id": "Bicycling_Stationary",
-  "to_exercise_template_id": "Recumbent_Bike"
+  "createdBy": "system",
+  "createdAt": 1761476051,
+  "fromExerciseTemplateId": "Bicycling_Stationary",
+  "toExerciseTemplateId": "Recumbent_Bike"
 }

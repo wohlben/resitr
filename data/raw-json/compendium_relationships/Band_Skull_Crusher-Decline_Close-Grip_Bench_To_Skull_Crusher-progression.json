@@ -1,10 +1,10 @@
 {
   "id": "Band_Skull_Crusher-Decline_Close-Grip_Bench_To_Skull_Crusher-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Band_Skull_Crusher",
-  "to_exercise_template_id": "Decline_Close-Grip_Bench_To_Skull_Crusher"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Band_Skull_Crusher",
+  "toExerciseTemplateId": "Decline_Close-Grip_Bench_To_Skull_Crusher"
 }

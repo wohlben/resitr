@@ -1,10 +1,10 @@
 {
   "id": "Monster_Walk-Glute_Kickback-superset_with",
-  "relationship_type": "superset_with",
+  "relationshipType": "superset_with",
   "strength": 0.8,
   "description": "Excellent superset pairing - Monster Walk warms up glutes with abduction, Kickback follows with extension",
-  "created_by": "system",
-  "created_at": 1730053200,
-  "from_exercise_template_id": "Monster_Walk",
-  "to_exercise_template_id": "Glute_Kickback"
+  "createdBy": "system",
+  "createdAt": 1730053200,
+  "fromExerciseTemplateId": "Monster_Walk",
+  "toExerciseTemplateId": "Glute_Kickback"
 }

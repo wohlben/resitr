@@ -1,10 +1,10 @@
 {
   "id": "Carioca_Quick_Step-Side_Standing_Long_Jump-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Carioca_Quick_Step",
-  "to_exercise_template_id": "Side_Standing_Long_Jump"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Carioca_Quick_Step",
+  "toExerciseTemplateId": "Side_Standing_Long_Jump"
 }

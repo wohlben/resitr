@@ -1,10 +1,10 @@
 {
   "id": "Kettlebell_Turkish_Get-Up_Squat_style-One-Arm_Overhead_Kettlebell_Squats-supports",
-  "relationship_type": "supports",
+  "relationshipType": "supports",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Kettlebell_Turkish_Get-Up_Squat_style",
-  "to_exercise_template_id": "One-Arm_Overhead_Kettlebell_Squats"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Kettlebell_Turkish_Get-Up_Squat_style",
+  "toExerciseTemplateId": "One-Arm_Overhead_Kettlebell_Squats"
 }

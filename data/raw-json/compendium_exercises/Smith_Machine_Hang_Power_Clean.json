@@ -5,21 +5,18 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS",
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-smith-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Hang power clean on Smith machine from hang position, Olympic lift variation with fixed path.",
@@ -35,19 +32,21 @@
     "/img/exercises/Smith_Machine_Hang_Power_Clean/0.jpg",
     "/img/exercises/Smith_Machine_Hang_Power_Clean/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Clean",
     "Power Clean",
     "Smith Hang Power Clean",
     "Smith Machine Machine Hang Power Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Smith_Machine_Hang_Power_Clean"
+  "parentExerciseId": null,
+  "templateId": "Smith_Machine_Hang_Power_Clean",
+  "equipmentIds": [
+    "gym-smith-machine"
+  ]
 }

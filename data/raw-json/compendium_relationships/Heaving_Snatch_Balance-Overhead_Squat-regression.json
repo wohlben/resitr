@@ -1,10 +1,10 @@
 {
   "id": "Heaving_Snatch_Balance-Overhead_Squat-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761496435,
-  "from_exercise_template_id": "Heaving_Snatch_Balance",
-  "to_exercise_template_id": "Overhead_Squat"
+  "createdBy": "system",
+  "createdAt": 1761496435,
+  "fromExerciseTemplateId": "Heaving_Snatch_Balance",
+  "toExerciseTemplateId": "Overhead_Squat"
 }

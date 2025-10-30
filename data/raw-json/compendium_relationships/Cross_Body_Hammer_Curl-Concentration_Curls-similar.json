@@ -1,10 +1,10 @@
 {
   "id": "Cross_Body_Hammer_Curl-Concentration_Curls-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.6,
   "description": "Both single-arm focused exercises with different grip angles and movement patterns",
-  "created_by": "system",
-  "created_at": 1729933200,
-  "from_exercise_template_id": "Cross_Body_Hammer_Curl",
-  "to_exercise_template_id": "Concentration_Curls"
+  "createdBy": "system",
+  "createdAt": 1729933200,
+  "fromExerciseTemplateId": "Cross_Body_Hammer_Curl",
+  "toExerciseTemplateId": "Concentration_Curls"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Squat-Lying_Machine_Squat-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": "Lying Machine Squat provides significant back support and a guided movement path, making it much easier than free weight Barbell Squat which requires full-body stabilization and core strength. Both target quads, glutes, and hamstrings, but the machine version is ideal for beginners or those recovering from injury.",
-  "created_by": "system",
-  "created_at": 1730014000,
-  "from_exercise_template_id": "Barbell_Squat",
-  "to_exercise_template_id": "Lying_Machine_Squat"
+  "createdBy": "system",
+  "createdAt": 1730014000,
+  "fromExerciseTemplateId": "Barbell_Squat",
+  "toExerciseTemplateId": "Lying_Machine_Squat"
 }

@@ -1,8 +1,8 @@
 {
   "name": "gym-sled",
-  "display_name": "Sled",
+  "displayName": "Sled",
   "description": "A weighted sled pushed or pulled across the floor for conditioning and strength.",
   "category": "functional",
-  "image_url": null,
-  "template_id": "gym-sled"
+  "imageUrl": null,
+  "templateId": "gym-sled"
 }

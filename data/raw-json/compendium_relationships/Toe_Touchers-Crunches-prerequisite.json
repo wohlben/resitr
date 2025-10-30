@@ -1,10 +1,10 @@
 {
   "id": "Toe_Touchers-Crunches-prerequisite",
-  "relationship_type": "prerequisite",
+  "relationshipType": "prerequisite",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Toe_Touchers",
-  "to_exercise_template_id": "Crunches"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Toe_Touchers",
+  "toExerciseTemplateId": "Crunches"
 }

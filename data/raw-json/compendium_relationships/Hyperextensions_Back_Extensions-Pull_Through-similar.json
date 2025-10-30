@@ -1,10 +1,10 @@
 {
   "id": "Hyperextensions_Back_Extensions-Pull_Through-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498416,
-  "from_exercise_template_id": "Hyperextensions_Back_Extensions",
-  "to_exercise_template_id": "Pull_Through"
+  "createdBy": "system",
+  "createdAt": 1761498416,
+  "fromExerciseTemplateId": "Hyperextensions_Back_Extensions",
+  "toExerciseTemplateId": "Pull_Through"
 }

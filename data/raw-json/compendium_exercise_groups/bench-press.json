@@ -2,7 +2,7 @@
   "id": "bench-press",
   "name": "Bench Press",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761408720,
-  "updated_at": 1761408720
+  "createdBy": "dev-user",
+  "createdAt": 1761408720,
+  "updatedAt": 1761408720
 }

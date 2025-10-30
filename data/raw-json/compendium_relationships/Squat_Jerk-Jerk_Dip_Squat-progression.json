@@ -1,10 +1,10 @@
 {
   "id": "Squat_Jerk-Jerk_Dip_Squat-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499778,
-  "from_exercise_template_id": "Squat_Jerk",
-  "to_exercise_template_id": "Jerk_Dip_Squat"
+  "createdBy": "system",
+  "createdAt": 1761499778,
+  "fromExerciseTemplateId": "Squat_Jerk",
+  "toExerciseTemplateId": "Jerk_Dip_Squat"
 }

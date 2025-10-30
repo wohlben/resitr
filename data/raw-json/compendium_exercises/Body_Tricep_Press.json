@@ -5,22 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CHEST",
     "FRONT_DELTS",
     "SIDE_DELTS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell",
-    "rack"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bodyweight tricep press performed by leaning on a racked bar and extending elbows to push away",
@@ -35,14 +31,17 @@
     "/img/exercises/Body_Tricep_Press/0.jpg",
     "/img/exercises/Body_Tricep_Press/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Body_Tricep_Press"
+  "parentExerciseId": null,
+  "templateId": "Body_Tricep_Press",
+  "equipmentIds": [
+    "barbell",
+    "rack"
+  ]
 }

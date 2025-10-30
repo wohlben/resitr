@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "SIDE_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "REAR_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bent-over cable lateral raise targeting side deltoids from unique angle",
@@ -31,16 +28,18 @@
     "/img/exercises/Bent_Over_Low-Pulley_Side_Lateral/0.jpg",
     "/img/exercises/Bent_Over_Low-Pulley_Side_Lateral/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bent Over Low Pulley Side Lateral"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bent_Over_Low-Pulley_Side_Lateral"
+  "parentExerciseId": null,
+  "templateId": "Bent_Over_Low-Pulley_Side_Lateral",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -29,17 +26,19 @@
     "Repeat for the recommended amount of repetitions, then switch legs."
   ],
   "images": [],
-  "alternative_names": [
+  "alternativeNames": [
     "Resistance Band Leg Extension",
     "Banded Leg Extension"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "dev-user",
-  "created_at": 1761415419,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "dev-user",
+  "createdAt": 1761415419,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Band_Leg_Extension"
+  "parentExerciseId": null,
+  "templateId": "Band_Leg_Extension",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "gym-tricep-extension-machine",
-  "display_name": "Tricep Extension Machine",
+  "displayName": "Tricep Extension Machine",
   "description": "A machine designed to isolate tricep muscles through extension movements.",
   "category": "machines",
-  "image_url": null,
-  "template_id": "gym-tricep-extension-machine"
+  "imageUrl": null,
+  "templateId": "gym-tricep-extension-machine"
 }

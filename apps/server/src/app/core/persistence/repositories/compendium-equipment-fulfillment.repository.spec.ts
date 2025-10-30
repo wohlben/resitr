@@ -233,6 +233,78 @@ describe('CompendiumEquipmentFulfillmentRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new fulfillment when it does not exist', async () => {
+      const fulfillmentData = {
+        equipmentTemplateId: equipment1.templateId,
+        fulfillsEquipmentTemplateId: equipment2.templateId,
+        createdBy: 'user-1',
+      };
+
+      const result = await repository.upsert(fulfillmentData);
+
+      expect(result).toBeDefined();
+      expect(result.equipmentTemplateId).toBe(equipment1.templateId);
+      expect(result.fulfillsEquipmentTemplateId).toBe(equipment2.templateId);
+      expect(result.createdBy).toBe('user-1');
+
+      // Verify it was inserted
+      const found = await repository.findByCompositeKey(equipment1.templateId, equipment2.templateId);
+      expect(found).toBeDefined();
+    });
+
+    it('should update existing fulfillment when composite key exists', async () => {
+      const fulfillmentData = {
+        equipmentTemplateId: equipment2.templateId,
+        fulfillsEquipmentTemplateId: equipment1.templateId,
+        createdBy: 'user-1',
+      };
+
+      await repository.create(fulfillmentData);
+
+      const updatedData = {
+        equipmentTemplateId: equipment2.templateId,
+        fulfillsEquipmentTemplateId: equipment1.templateId,
+        createdBy: 'user-2',
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.equipmentTemplateId).toBe(equipment2.templateId);
+      expect(result.fulfillsEquipmentTemplateId).toBe(equipment1.templateId);
+      expect(result.createdBy).toBe('user-2');
+
+      // Verify only one record exists
+      const fulfillments = await repository.findByEquipmentId(equipment2.templateId);
+      expect(fulfillments).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts with same composite key', async () => {
+      const fulfillmentData = {
+        equipmentTemplateId: equipment1.templateId,
+        fulfillsEquipmentTemplateId: equipment2.templateId,
+        createdBy: 'user-1',
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(fulfillmentData);
+      expect(result1.createdBy).toBe('user-1');
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...fulfillmentData,
+        createdBy: 'user-2',
+      });
+      expect(result2.createdBy).toBe('user-2');
+
+      // Verify still only one record
+      const fulfillments = await repository.findByCompositeKey(equipment1.templateId, equipment2.templateId);
+      expect(fulfillments).toBeDefined();
+      expect(fulfillments.createdBy).toBe('user-2');
+    });
+  });
+
   describe('delete', () => {
     it('should delete fulfillment by composite key', async () => {
       await repository.create({

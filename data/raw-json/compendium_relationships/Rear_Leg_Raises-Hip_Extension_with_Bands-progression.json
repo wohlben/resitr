@@ -1,10 +1,10 @@
 {
   "id": "Rear_Leg_Raises-Hip_Extension_with_Bands-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Rear_Leg_Raises",
-  "to_exercise_template_id": "Hip_Extension_with_Bands"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Rear_Leg_Raises",
+  "toExerciseTemplateId": "Hip_Extension_with_Bands"
 }

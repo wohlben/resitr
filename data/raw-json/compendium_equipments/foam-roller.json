@@ -1,8 +1,8 @@
 {
   "name": "foam-roller",
-  "display_name": "Foam Roller",
+  "displayName": "Foam Roller",
   "description": "A cylindrical foam tool used for self-myofascial release and mobility.",
   "category": "accessories",
-  "image_url": null,
-  "template_id": "foam-roller"
+  "imageUrl": null,
+  "templateId": "foam-roller"
 }

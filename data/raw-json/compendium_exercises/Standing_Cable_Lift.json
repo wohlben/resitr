@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing cable exercise lifting from low to high position, engaging core and shoulders.",
@@ -34,17 +31,19 @@
     "/img/exercises/Standing_Cable_Lift/0.jpg",
     "/img/exercises/Standing_Cable_Lift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Standing Cable Machine Lift",
     "Standing Lift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Cable_Lift"
+  "parentExerciseId": null,
+  "templateId": "Standing_Cable_Lift",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

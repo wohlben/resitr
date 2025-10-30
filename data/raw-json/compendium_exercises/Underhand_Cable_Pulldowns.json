@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Lat pulldown with underhand (supinated) grip, emphasizing lower lats and biceps.",
@@ -32,19 +29,21 @@
     "/img/exercises/Underhand_Cable_Pulldowns/0.jpg",
     "/img/exercises/Underhand_Cable_Pulldowns/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Reverse Grip Cable Pulldowns",
     "Supinated Cable Pulldowns",
     "Underhand Cable Machine Pulldowns",
     "Underhand Pulldowns"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Underhand_Cable_Pulldowns"
+  "parentExerciseId": null,
+  "templateId": "Underhand_Cable_Pulldowns",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

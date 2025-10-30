@@ -1,10 +1,10 @@
 {
   "id": "Decline_EZ_Bar_Triceps_Extension-Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1729932000,
-  "from_exercise_template_id": "Decline_EZ_Bar_Triceps_Extension",
-  "to_exercise_template_id": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
+  "createdBy": "dev-user",
+  "createdAt": 1729932000,
+  "fromExerciseTemplateId": "Decline_EZ_Bar_Triceps_Extension",
+  "toExerciseTemplateId": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head"
 }

@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing single-arm overhead triceps extension using low pulley cable.",
@@ -29,19 +26,21 @@
     "/img/exercises/Standing_Low-Pulley_One-Arm_Triceps_Extension/0.jpg",
     "/img/exercises/Standing_Low-Pulley_One-Arm_Triceps_Extension/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Low-Pulley One-Arm Triceps Extension",
     "Standing Low Pulley One Arm Triceps Extension",
     "Standing Low-Pulley Single Arm Triceps Extension",
     "Standing Low-Pulley Unilateral Triceps Extension"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Low-Pulley_One-Arm_Triceps_Extension"
+  "parentExerciseId": null,
+  "templateId": "Standing_Low-Pulley_One-Arm_Triceps_Extension",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

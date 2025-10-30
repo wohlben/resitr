@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-leg-press-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Machine-based compound leg exercise pressing weight away with feet, targeting all major leg muscles.",
@@ -32,18 +29,20 @@
     "/img/exercises/Leg_Press/0.jpg",
     "/img/exercises/Leg_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Leg-Press",
     "Machine Leg Press",
     "Seated Leg Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Leg_Press"
+  "parentExerciseId": null,
+  "templateId": "Leg_Press",
+  "equipmentIds": [
+    "gym-leg-press-machine"
+  ]
 }

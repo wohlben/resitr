@@ -1,10 +1,10 @@
 {
   "id": "Superman-Hyperextensions_With_No_Hyperextension_Bench-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Superman",
-  "to_exercise_template_id": "Hyperextensions_With_No_Hyperextension_Bench"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Superman",
+  "toExerciseTemplateId": "Hyperextensions_With_No_Hyperextension_Bench"
 }

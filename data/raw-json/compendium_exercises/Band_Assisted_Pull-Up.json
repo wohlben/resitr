@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS",
     "TRAPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -33,20 +30,22 @@
     "/img/exercises/Band_Assisted_Pull-Up/0.jpg",
     "/img/exercises/Band_Assisted_Pull-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Band Assisted Pull Up",
     "Pull Up",
     "Pullup",
     "Pullups",
     "Resistance Band Assisted Pull-Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Band_Assisted_Pull-Up"
+  "parentExerciseId": null,
+  "templateId": "Band_Assisted_Pull-Up",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

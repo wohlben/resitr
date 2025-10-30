@@ -1,10 +1,10 @@
 {
   "id": "Lying_Prone_Quadriceps-Looking_At_Ceiling-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Lying_Prone_Quadriceps",
-  "to_exercise_template_id": "Looking_At_Ceiling"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Lying_Prone_Quadriceps",
+  "toExerciseTemplateId": "Looking_At_Ceiling"
 }

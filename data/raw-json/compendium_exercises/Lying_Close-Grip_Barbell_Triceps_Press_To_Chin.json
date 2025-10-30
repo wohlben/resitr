@@ -5,18 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "ez-bar",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Lying close-grip barbell press to chin, targeting triceps with partial range pressing movement.",
@@ -31,7 +26,7 @@
     "/img/exercises/Lying_Close-Grip_Barbell_Triceps_Press_To_Chin/0.jpg",
     "/img/exercises/Lying_Close-Grip_Barbell_Triceps_Press_To_Chin/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Lying Close Grip Barbell Triceps Press To Chin",
     "Lying Close-Grip BB Triceps Press To Chin",
     "Lying Close-Grip Bar Triceps Press To Chin",
@@ -39,13 +34,17 @@
     "Lying Narrow Grip Barbell Triceps Press To Chin",
     "Prone Close-Grip Barbell Triceps Press To Chin"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin"
+  "parentExerciseId": null,
+  "templateId": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin",
+  "equipmentIds": [
+    "barbell",
+    "ez-bar",
+    "bench"
+  ]
 }

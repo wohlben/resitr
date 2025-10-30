@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Incline dumbbell bench press with neutral hammer grip, targeting upper chest with wrist-friendly grip.",
@@ -35,16 +31,19 @@
     "/img/exercises/Hammer_Grip_Incline_DB_Bench_Press/0.jpg",
     "/img/exercises/Hammer_Grip_Incline_DB_Bench_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Hammer Grip Incline Dumbbell Bench Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hammer_Grip_Incline_DB_Bench_Press"
+  "parentExerciseId": null,
+  "templateId": "Hammer_Grip_Incline_DB_Bench_Press",
+  "equipmentIds": [
+    "dumbbell",
+    "incline-bench"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Floor_Press-Floor_Press_with_Chains-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761472847,
-  "from_exercise_template_id": "Floor_Press",
-  "to_exercise_template_id": "Floor_Press_with_Chains"
+  "createdBy": "system",
+  "createdAt": 1761472847,
+  "fromExerciseTemplateId": "Floor_Press",
+  "toExerciseTemplateId": "Floor_Press_with_Chains"
 }

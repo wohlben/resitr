@@ -1,10 +1,10 @@
 {
   "id": "Goblet_Squat-Leg_Press-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Goblet_Squat",
-  "to_exercise_template_id": "Leg_Press"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Goblet_Squat",
+  "toExerciseTemplateId": "Leg_Press"
 }

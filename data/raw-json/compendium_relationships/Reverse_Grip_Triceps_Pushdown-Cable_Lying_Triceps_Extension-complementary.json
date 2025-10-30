@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Grip_Triceps_Pushdown-Cable_Lying_Triceps_Extension-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Reverse_Grip_Triceps_Pushdown",
-  "to_exercise_template_id": "Cable_Lying_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Reverse_Grip_Triceps_Pushdown",
+  "toExerciseTemplateId": "Cable_Lying_Triceps_Extension"
 }

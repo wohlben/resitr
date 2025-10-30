@@ -5,15 +5,14 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "ABS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Side-lying stretch reaching overhead to stretch lats and obliques.",
@@ -25,17 +24,17 @@
     "/img/exercises/Side-Lying_Floor_Stretch/0.jpg",
     "/img/exercises/Side-Lying_Floor_Stretch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Side Lying Floor Stretch",
     "Side-Prone Floor Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Side-Lying_Floor_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Side-Lying_Floor_Stretch",
+  "equipmentIds": []
 }

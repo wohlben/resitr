@@ -1,10 +1,10 @@
 {
   "id": "Smith_Machine_Upright_Row-Upright_Barbell_Row-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Smith_Machine_Upright_Row",
-  "to_exercise_template_id": "Upright_Barbell_Row"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Smith_Machine_Upright_Row",
+  "toExerciseTemplateId": "Upright_Barbell_Row"
 }

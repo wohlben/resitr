@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Band_Sumo_Deadlift-Sumo_Deadlift_with_Chains-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Reverse_Band_Sumo_Deadlift",
-  "to_exercise_template_id": "Sumo_Deadlift_with_Chains"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Reverse_Band_Sumo_Deadlift",
+  "toExerciseTemplateId": "Sumo_Deadlift_with_Chains"
 }

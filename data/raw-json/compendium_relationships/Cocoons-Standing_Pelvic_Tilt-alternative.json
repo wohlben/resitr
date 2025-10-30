@@ -1,10 +1,10 @@
 {
   "id": "Cocoons-Standing_Pelvic_Tilt-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Cocoons",
-  "to_exercise_template_id": "Standing_Pelvic_Tilt"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Cocoons",
+  "toExerciseTemplateId": "Standing_Pelvic_Tilt"
 }

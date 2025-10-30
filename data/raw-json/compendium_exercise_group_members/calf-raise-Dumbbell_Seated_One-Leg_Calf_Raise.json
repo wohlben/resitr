@@ -1,6 +1,6 @@
 {
-  "group_id": "calf-raise",
-  "added_by": "dev-user",
-  "added_at": 1761412753,
-  "exercise_template_id": "Dumbbell_Seated_One-Leg_Calf_Raise"
+  "groupId": "calf-raise",
+  "addedBy": "dev-user",
+  "addedAt": 1761412753,
+  "exerciseTemplateId": "Dumbbell_Seated_One-Leg_Calf_Raise"
 }

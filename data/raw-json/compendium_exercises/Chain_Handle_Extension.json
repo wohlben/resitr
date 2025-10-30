@@ -5,20 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "gym-cable-machine",
-    "bench",
-    "chains"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Lying tricep extension using cable handles with chains for progressive resistance",
@@ -31,14 +26,18 @@
     "/img/exercises/Chain_Handle_Extension/0.jpg",
     "/img/exercises/Chain_Handle_Extension/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chain_Handle_Extension"
+  "parentExerciseId": null,
+  "templateId": "Chain_Handle_Extension",
+  "equipmentIds": [
+    "gym-cable-machine",
+    "bench",
+    "chains"
+  ]
 }

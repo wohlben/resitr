@@ -1,10 +1,10 @@
 {
   "id": "Hug_A_Ball-Lower_Back-SMR-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498134,
-  "from_exercise_template_id": "Hug_A_Ball",
-  "to_exercise_template_id": "Lower_Back-SMR"
+  "createdBy": "system",
+  "createdAt": 1761498134,
+  "fromExerciseTemplateId": "Hug_A_Ball",
+  "toExerciseTemplateId": "Lower_Back-SMR"
 }

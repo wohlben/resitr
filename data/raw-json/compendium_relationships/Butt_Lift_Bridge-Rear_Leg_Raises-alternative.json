@@ -1,10 +1,10 @@
 {
   "id": "Butt_Lift_Bridge-Rear_Leg_Raises-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Butt_Lift_Bridge",
-  "to_exercise_template_id": "Rear_Leg_Raises"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Butt_Lift_Bridge",
+  "toExerciseTemplateId": "Rear_Leg_Raises"
 }

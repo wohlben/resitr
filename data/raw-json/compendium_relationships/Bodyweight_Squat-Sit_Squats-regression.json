@@ -1,10 +1,10 @@
 {
   "id": "Bodyweight_Squat-Sit_Squats-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Bodyweight_Squat",
-  "to_exercise_template_id": "Sit_Squats"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Bodyweight_Squat",
+  "toExerciseTemplateId": "Sit_Squats"
 }

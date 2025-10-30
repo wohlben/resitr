@@ -1,10 +1,10 @@
 {
   "id": "London_Bridges-Inverted_Row_with_Straps-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "London_Bridges",
-  "to_exercise_template_id": "Inverted_Row_with_Straps"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "London_Bridges",
+  "toExerciseTemplateId": "Inverted_Row_with_Straps"
 }

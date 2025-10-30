@@ -5,19 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,7 +28,7 @@
     "/img/exercises/Barbell_Curls_Lying_Against_An_Incline/0.jpg",
     "/img/exercises/Barbell_Curls_Lying_Against_An_Incline/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Curl",
     "BB Curls Lying Against An Incline",
     "Bar Curls Lying Against An Incline",
@@ -40,13 +36,16 @@
     "Barbell Curls Lying Against An Incline",
     "Incline Barbell Curl"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Curls_Lying_Against_An_Incline"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Curls_Lying_Against_An_Incline",
+  "equipmentIds": [
+    "barbell",
+    "incline-bench"
+  ]
 }

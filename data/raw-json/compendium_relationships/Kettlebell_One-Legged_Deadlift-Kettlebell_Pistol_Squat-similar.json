@@ -1,10 +1,10 @@
 {
   "id": "Kettlebell_One-Legged_Deadlift-Kettlebell_Pistol_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Kettlebell_One-Legged_Deadlift",
-  "to_exercise_template_id": "Kettlebell_Pistol_Squat"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Kettlebell_One-Legged_Deadlift",
+  "toExerciseTemplateId": "Kettlebell_Pistol_Squat"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Overhead_Squat-Heaving_Snatch_Balance-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761496435,
-  "from_exercise_template_id": "Overhead_Squat",
-  "to_exercise_template_id": "Heaving_Snatch_Balance"
+  "createdBy": "system",
+  "createdAt": 1761496435,
+  "fromExerciseTemplateId": "Overhead_Squat",
+  "toExerciseTemplateId": "Heaving_Snatch_Balance"
 }

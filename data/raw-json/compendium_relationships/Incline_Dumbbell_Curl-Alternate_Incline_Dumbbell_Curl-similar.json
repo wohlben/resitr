@@ -1,10 +1,10 @@
 {
   "id": "Incline_Dumbbell_Curl-Alternate_Incline_Dumbbell_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Incline_Dumbbell_Curl",
-  "to_exercise_template_id": "Alternate_Incline_Dumbbell_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Incline_Dumbbell_Curl",
+  "toExerciseTemplateId": "Alternate_Incline_Dumbbell_Curl"
 }

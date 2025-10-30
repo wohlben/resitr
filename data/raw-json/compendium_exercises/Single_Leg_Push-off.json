@@ -5,20 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "CALVES"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "BOX"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -32,17 +29,19 @@
     "/img/exercises/Single_Leg_Push-off/0.jpg",
     "/img/exercises/Single_Leg_Push-off/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Leg Push-off",
     "Single Leg Push off"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Single_Leg_Push-off"
+  "parentExerciseId": null,
+  "templateId": "Single_Leg_Push-off",
+  "equipmentIds": [
+    "BOX"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Arm_Circles-Crucifix-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Arm_Circles",
-  "to_exercise_template_id": "Crucifix"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Arm_Circles",
+  "toExerciseTemplateId": "Crucifix"
 }

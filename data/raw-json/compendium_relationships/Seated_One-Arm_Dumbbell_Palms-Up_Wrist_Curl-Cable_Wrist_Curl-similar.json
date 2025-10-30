@@ -1,10 +1,10 @@
 {
   "id": "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl-Cable_Wrist_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479701,
-  "from_exercise_template_id": "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl",
-  "to_exercise_template_id": "Cable_Wrist_Curl"
+  "createdBy": "system",
+  "createdAt": 1761479701,
+  "fromExerciseTemplateId": "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl",
+  "toExerciseTemplateId": "Cable_Wrist_Curl"
 }

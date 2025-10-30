@@ -1,10 +1,10 @@
 {
   "id": "Rocky_Pull-Ups_Pulldowns-Wide-Grip_Rear_Pull-Up-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Rocky_Pull-Ups_Pulldowns",
-  "to_exercise_template_id": "Wide-Grip_Rear_Pull-Up"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Rocky_Pull-Ups_Pulldowns",
+  "toExerciseTemplateId": "Wide-Grip_Rear_Pull-Up"
 }

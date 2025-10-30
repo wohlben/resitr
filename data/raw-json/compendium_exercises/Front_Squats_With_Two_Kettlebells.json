@@ -5,20 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "ABS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -32,18 +29,20 @@
     "/img/exercises/Front_Squats_With_Two_Kettlebells/0.jpg",
     "/img/exercises/Front_Squats_With_Two_Kettlebells/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Front Squats With Two KBs",
     "Double Kettlebell Front Squat",
     "Two Kettlebell Front Squat"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Front_Squats_With_Two_Kettlebells"
+  "parentExerciseId": null,
+  "templateId": "Front_Squats_With_Two_Kettlebells",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

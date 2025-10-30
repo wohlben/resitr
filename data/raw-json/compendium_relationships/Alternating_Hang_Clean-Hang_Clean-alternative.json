@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Hang_Clean-Hang_Clean-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Alternating_Hang_Clean",
-  "to_exercise_template_id": "Hang_Clean"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Alternating_Hang_Clean",
+  "toExerciseTemplateId": "Hang_Clean"
 }

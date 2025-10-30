@@ -1,10 +1,10 @@
 {
   "id": "Floor_Glute-Ham_Raise-Kneeling_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Floor_Glute-Ham_Raise",
-  "to_exercise_template_id": "Kneeling_Squat"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Floor_Glute-Ham_Raise",
+  "toExerciseTemplateId": "Kneeling_Squat"
 }

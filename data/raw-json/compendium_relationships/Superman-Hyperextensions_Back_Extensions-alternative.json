@@ -1,10 +1,10 @@
 {
   "id": "Superman-Hyperextensions_Back_Extensions-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498416,
-  "from_exercise_template_id": "Superman",
-  "to_exercise_template_id": "Hyperextensions_Back_Extensions"
+  "createdBy": "system",
+  "createdAt": 1761498416,
+  "fromExerciseTemplateId": "Superman",
+  "toExerciseTemplateId": "Hyperextensions_Back_Extensions"
 }

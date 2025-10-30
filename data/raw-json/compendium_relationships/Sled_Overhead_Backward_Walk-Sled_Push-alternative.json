@@ -1,10 +1,10 @@
 {
   "id": "Sled_Overhead_Backward_Walk-Sled_Push-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Sled_Overhead_Backward_Walk",
-  "to_exercise_template_id": "Sled_Push"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Sled_Overhead_Backward_Walk",
+  "toExerciseTemplateId": "Sled_Push"
 }

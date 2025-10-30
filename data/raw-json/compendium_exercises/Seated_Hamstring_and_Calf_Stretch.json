@@ -5,17 +5,14 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "CALVES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Combined stretch seated targeting both hamstrings and calf muscles simultaneously.",
@@ -27,14 +24,16 @@
     "/img/exercises/Seated_Hamstring_and_Calf_Stretch/0.jpg",
     "/img/exercises/Seated_Hamstring_and_Calf_Stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Hamstring_and_Calf_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Seated_Hamstring_and_Calf_Stretch",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

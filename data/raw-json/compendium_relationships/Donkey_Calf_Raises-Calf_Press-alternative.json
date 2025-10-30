@@ -1,10 +1,10 @@
 {
   "id": "Donkey_Calf_Raises-Calf_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479684,
-  "from_exercise_template_id": "Donkey_Calf_Raises",
-  "to_exercise_template_id": "Calf_Press"
+  "createdBy": "system",
+  "createdAt": 1761479684,
+  "fromExerciseTemplateId": "Donkey_Calf_Raises",
+  "toExerciseTemplateId": "Calf_Press"
 }

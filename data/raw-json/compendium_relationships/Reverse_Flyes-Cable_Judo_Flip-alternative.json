@@ -1,10 +1,10 @@
 {
   "id": "Reverse_Flyes-Cable_Judo_Flip-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Reverse_Flyes",
-  "to_exercise_template_id": "Cable_Judo_Flip"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Reverse_Flyes",
+  "toExerciseTemplateId": "Cable_Judo_Flip"
 }

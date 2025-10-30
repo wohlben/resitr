@@ -5,18 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine",
-    "resistance-band",
-    "foam-roller"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable shoulder internal rotation targeting rotator cuff muscles, particularly subscapularis, for shoulder stability.",
@@ -32,17 +27,21 @@
     "/img/exercises/Cable_Internal_Rotation/0.jpg",
     "/img/exercises/Cable_Internal_Rotation/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Cable Machine Internal Rotation",
     "Internal Rotation"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Internal_Rotation"
+  "parentExerciseId": null,
+  "templateId": "Cable_Internal_Rotation",
+  "equipmentIds": [
+    "gym-cable-machine",
+    "resistance-band",
+    "foam-roller"
+  ]
 }

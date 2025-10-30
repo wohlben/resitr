@@ -1,8 +1,8 @@
 {
   "name": "gym-squat-machine",
-  "display_name": "Squat Machine",
+  "displayName": "Squat Machine",
   "description": "A machine that guides the squatting movement with a fixed path.",
   "category": "machines",
-  "image_url": null,
-  "template_id": "gym-squat-machine"
+  "imageUrl": null,
+  "templateId": "gym-squat-machine"
 }

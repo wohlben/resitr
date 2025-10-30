@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -31,7 +28,7 @@
     "/img/exercises/Snatch_Shrug/0.jpg",
     "/img/exercises/Snatch_Shrug/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Shrug",
     "Barbell Snatch",
     "Power Snatch",
@@ -39,13 +36,15 @@
     "Snatch-Shrug",
     "Trap Shrug"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Snatch_Shrug"
+  "parentExerciseId": null,
+  "templateId": "Snatch_Shrug",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

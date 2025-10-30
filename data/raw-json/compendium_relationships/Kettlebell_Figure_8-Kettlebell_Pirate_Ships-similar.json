@@ -1,10 +1,10 @@
 {
   "id": "Kettlebell_Figure_8-Kettlebell_Pirate_Ships-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499772,
-  "from_exercise_template_id": "Kettlebell_Figure_8",
-  "to_exercise_template_id": "Kettlebell_Pirate_Ships"
+  "createdBy": "system",
+  "createdAt": 1761499772,
+  "fromExerciseTemplateId": "Kettlebell_Figure_8",
+  "toExerciseTemplateId": "Kettlebell_Pirate_Ships"
 }

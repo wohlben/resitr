@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Double kettlebell jerk pressing two kettlebells overhead using leg drive.",
@@ -28,19 +25,21 @@
     "/img/exercises/Two-Arm_Kettlebell_Jerk/0.jpg",
     "/img/exercises/Two-Arm_Kettlebell_Jerk/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bilateral Kettlebell Jerk",
     "Both Arms Kettlebell Jerk",
     "Two Arm Kettlebell Jerk",
     "Two-Arm KB Jerk"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Two-Arm_Kettlebell_Jerk"
+  "parentExerciseId": null,
+  "templateId": "Two-Arm_Kettlebell_Jerk",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

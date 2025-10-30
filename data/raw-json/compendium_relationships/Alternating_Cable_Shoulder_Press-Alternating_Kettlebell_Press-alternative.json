@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Cable_Shoulder_Press-Alternating_Kettlebell_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.87,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761461533,
-  "from_exercise_template_id": "Alternating_Cable_Shoulder_Press",
-  "to_exercise_template_id": "Alternating_Kettlebell_Press"
+  "createdBy": "system",
+  "createdAt": 1761461533,
+  "fromExerciseTemplateId": "Alternating_Cable_Shoulder_Press",
+  "toExerciseTemplateId": "Alternating_Kettlebell_Press"
 }

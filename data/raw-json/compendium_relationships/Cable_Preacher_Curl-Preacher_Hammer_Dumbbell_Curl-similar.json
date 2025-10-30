@@ -1,10 +1,10 @@
 {
   "id": "Cable_Preacher_Curl-Preacher_Hammer_Dumbbell_Curl-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479458,
-  "from_exercise_template_id": "Cable_Preacher_Curl",
-  "to_exercise_template_id": "Preacher_Hammer_Dumbbell_Curl"
+  "createdBy": "system",
+  "createdAt": 1761479458,
+  "fromExerciseTemplateId": "Cable_Preacher_Curl",
+  "toExerciseTemplateId": "Preacher_Hammer_Dumbbell_Curl"
 }

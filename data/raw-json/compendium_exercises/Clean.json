@@ -6,22 +6,19 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES",
     "LOWER_BACK"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRAPS",
     "FOREARMS",
     "QUADS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Olympic clean lifting bar from floor to front rack building explosive full-body power",
@@ -37,19 +34,21 @@
     "/img/exercises/Clean/0.jpg",
     "/img/exercises/Clean/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Clean",
     "Clean & Jerk",
     "Clean and Press",
     "Power Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Clean"
+  "parentExerciseId": null,
+  "templateId": "Clean",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

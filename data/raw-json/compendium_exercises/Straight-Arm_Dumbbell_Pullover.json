@@ -5,20 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST",
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Dumbbell pullover with straight arms lying on bench, targeting chest and lats through arcing motion.",
@@ -34,18 +30,21 @@
     "/img/exercises/Straight-Arm_Dumbbell_Pullover/0.jpg",
     "/img/exercises/Straight-Arm_Dumbbell_Pullover/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Straight Arm Dumbbell Pullover",
     "Straight-Arm DB Pullover",
     "Straight-Arm Dumbell Pullover"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Straight-Arm_Dumbbell_Pullover"
+  "parentExerciseId": null,
+  "templateId": "Straight-Arm_Dumbbell_Pullover",
+  "equipmentIds": [
+    "2x dumbbell",
+    "bench"
+  ]
 }

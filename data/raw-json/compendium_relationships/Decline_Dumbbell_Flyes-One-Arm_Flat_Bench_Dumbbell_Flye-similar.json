@@ -1,10 +1,10 @@
 {
   "id": "Decline_Dumbbell_Flyes-One-Arm_Flat_Bench_Dumbbell_Flye-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729973000,
-  "from_exercise_template_id": "Decline_Dumbbell_Flyes",
-  "to_exercise_template_id": "One-Arm_Flat_Bench_Dumbbell_Flye"
+  "createdBy": "system",
+  "createdAt": 1729973000,
+  "fromExerciseTemplateId": "Decline_Dumbbell_Flyes",
+  "toExerciseTemplateId": "One-Arm_Flat_Bench_Dumbbell_Flye"
 }

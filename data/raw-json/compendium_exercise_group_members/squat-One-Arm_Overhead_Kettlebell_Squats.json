@@ -1,6 +1,6 @@
 {
-  "group_id": "squat",
-  "added_by": "dev-user",
-  "added_at": 1761410456,
-  "exercise_template_id": "One-Arm_Overhead_Kettlebell_Squats"
+  "groupId": "squat",
+  "addedBy": "dev-user",
+  "addedAt": 1761410456,
+  "exerciseTemplateId": "One-Arm_Overhead_Kettlebell_Squats"
 }

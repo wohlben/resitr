@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -31,19 +28,21 @@
     "/img/exercises/One_Arm_Pronated_Dumbbell_Triceps_Extension/0.jpg",
     "/img/exercises/One_Arm_Pronated_Dumbbell_Triceps_Extension/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Arm Pronated DB Triceps Extension",
     "One Arm Pronated Dumbell Triceps Extension",
     "Single Arm Pronated Dumbbell Triceps Extension",
     "Unilateral Pronated Dumbbell Triceps Extension"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One_Arm_Pronated_Dumbbell_Triceps_Extension"
+  "parentExerciseId": null,
+  "templateId": "One_Arm_Pronated_Dumbbell_Triceps_Extension",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

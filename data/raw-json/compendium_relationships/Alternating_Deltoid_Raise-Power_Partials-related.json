@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Deltoid_Raise-Power_Partials-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Alternating_Deltoid_Raise",
-  "to_exercise_template_id": "Power_Partials"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Alternating_Deltoid_Raise",
+  "toExerciseTemplateId": "Power_Partials"
 }

@@ -5,16 +5,13 @@
   "force": [
     "ROTATION"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Standing rotational cable chop movement, pulling from high to low across body for obliques.",
@@ -32,17 +29,19 @@
     "/img/exercises/Standing_Cable_Wood_Chop/0.jpg",
     "/img/exercises/Standing_Cable_Wood_Chop/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Standing Cable Machine Wood Chop",
     "Standing Wood Chop"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Standing_Cable_Wood_Chop"
+  "parentExerciseId": null,
+  "templateId": "Standing_Cable_Wood_Chop",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

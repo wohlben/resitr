@@ -1,10 +1,10 @@
 {
   "id": "Depth_Jump_Leap-Box_Jump_Multiple_Response-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761477930,
-  "from_exercise_template_id": "Depth_Jump_Leap",
-  "to_exercise_template_id": "Box_Jump_Multiple_Response"
+  "createdBy": "system",
+  "createdAt": 1761477930,
+  "fromExerciseTemplateId": "Depth_Jump_Leap",
+  "toExerciseTemplateId": "Box_Jump_Multiple_Response"
 }

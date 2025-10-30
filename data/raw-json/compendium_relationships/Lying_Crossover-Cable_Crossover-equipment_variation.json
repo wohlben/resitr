@@ -1,10 +1,10 @@
 {
   "id": "Lying_Crossover-Cable_Crossover-equipment_variation",
-  "relationship_type": "equipment_variation",
+  "relationshipType": "equipment_variation",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Lying_Crossover",
-  "to_exercise_template_id": "Cable_Crossover"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Lying_Crossover",
+  "toExerciseTemplateId": "Cable_Crossover"
 }

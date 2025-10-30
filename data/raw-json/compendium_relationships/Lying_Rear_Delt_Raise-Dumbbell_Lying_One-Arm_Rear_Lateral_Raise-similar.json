@@ -1,10 +1,10 @@
 {
   "id": "Lying_Rear_Delt_Raise-Dumbbell_Lying_One-Arm_Rear_Lateral_Raise-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Lying_Rear_Delt_Raise",
-  "to_exercise_template_id": "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Lying_Rear_Delt_Raise",
+  "toExerciseTemplateId": "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise"
 }

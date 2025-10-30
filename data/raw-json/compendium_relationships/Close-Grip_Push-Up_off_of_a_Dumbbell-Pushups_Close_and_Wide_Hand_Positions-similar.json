@@ -1,10 +1,10 @@
 {
   "id": "Close-Grip_Push-Up_off_of_a_Dumbbell-Pushups_Close_and_Wide_Hand_Positions-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729940400,
-  "from_exercise_template_id": "Close-Grip_Push-Up_off_of_a_Dumbbell",
-  "to_exercise_template_id": "Pushups_Close_and_Wide_Hand_Positions"
+  "createdBy": "system",
+  "createdAt": 1729940400,
+  "fromExerciseTemplateId": "Close-Grip_Push-Up_off_of_a_Dumbbell",
+  "toExerciseTemplateId": "Pushups_Close_and_Wide_Hand_Positions"
 }

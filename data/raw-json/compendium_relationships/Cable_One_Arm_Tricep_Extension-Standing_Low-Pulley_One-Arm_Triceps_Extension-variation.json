@@ -1,10 +1,10 @@
 {
   "id": "Cable_One_Arm_Tricep_Extension-Standing_Low-Pulley_One-Arm_Triceps_Extension-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Cable_One_Arm_Tricep_Extension",
-  "to_exercise_template_id": "Standing_Low-Pulley_One-Arm_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Cable_One_Arm_Tricep_Extension",
+  "toExerciseTemplateId": "Standing_Low-Pulley_One-Arm_Triceps_Extension"
 }

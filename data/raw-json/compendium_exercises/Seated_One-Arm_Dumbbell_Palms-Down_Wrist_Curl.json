@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FOREARMS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -31,7 +28,7 @@
     "/img/exercises/Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl/0.jpg",
     "/img/exercises/Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated One Arm Dumbbell Palms Down Wrist Curl",
     "Seated One-Arm DB Palms-Down Wrist Curl",
     "Seated One-Arm Dumbell Palms-Down Wrist Curl",
@@ -39,13 +36,15 @@
     "Seated Unilateral Dumbbell Palms-Down Wrist Curl",
     "Standing One-Arm Dumbbell Palms-Down Wrist Curl"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl"
+  "parentExerciseId": null,
+  "templateId": "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

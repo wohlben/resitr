@@ -1,8 +1,8 @@
 {
   "name": "roman-chair",
-  "display_name": "Roman Chair",
+  "displayName": "Roman Chair",
   "description": "A specialized bench with padded supports for performing hyperextensions, back extensions, and core exercises.",
   "category": "benches",
-  "image_url": null,
-  "template_id": "roman-chair"
+  "imageUrl": null,
+  "templateId": "roman-chair"
 }

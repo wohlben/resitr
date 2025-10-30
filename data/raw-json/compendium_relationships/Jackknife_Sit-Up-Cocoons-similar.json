@@ -1,10 +1,10 @@
 {
   "id": "Jackknife_Sit-Up-Cocoons-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730009600,
-  "from_exercise_template_id": "Jackknife_Sit-Up",
-  "to_exercise_template_id": "Cocoons"
+  "createdBy": "system",
+  "createdAt": 1730009600,
+  "fromExerciseTemplateId": "Jackknife_Sit-Up",
+  "toExerciseTemplateId": "Cocoons"
 }

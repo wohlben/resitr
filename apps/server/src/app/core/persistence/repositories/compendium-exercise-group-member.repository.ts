@@ -58,4 +58,17 @@ export class CompendiumExerciseGroupMemberRepository {
       .returning();
     return result;
   }
+
+  async upsert(data: CompendiumExerciseGroupMember) {
+    const { exerciseTemplateId, groupId, ...updateData } = data;
+    const [result] = await this.db
+      .insert(compendiumExerciseGroupMember)
+      .values(data)
+      .onConflictDoUpdate({
+        target: [compendiumExerciseGroupMember.exerciseTemplateId, compendiumExerciseGroupMember.groupId],
+        set: updateData,
+      })
+      .returning();
+    return result;
+  }
 }

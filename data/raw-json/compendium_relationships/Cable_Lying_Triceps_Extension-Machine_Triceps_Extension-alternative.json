@@ -1,10 +1,10 @@
 {
   "id": "Cable_Lying_Triceps_Extension-Machine_Triceps_Extension-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761509910,
-  "from_exercise_template_id": "Cable_Lying_Triceps_Extension",
-  "to_exercise_template_id": "Machine_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1761509910,
+  "fromExerciseTemplateId": "Cable_Lying_Triceps_Extension",
+  "toExerciseTemplateId": "Machine_Triceps_Extension"
 }

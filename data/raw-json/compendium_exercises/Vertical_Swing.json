@@ -5,21 +5,17 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "dumbbell",
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Explosive swing movement in vertical plane bringing weight overhead with both hands, using hip hinge and jump mechanics.",
@@ -33,16 +29,19 @@
     "/img/exercises/Vertical_Swing/0.jpg",
     "/img/exercises/Vertical_Swing/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Vertical-Swing"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Vertical_Swing"
+  "parentExerciseId": null,
+  "templateId": "Vertical_Swing",
+  "equipmentIds": [
+    "dumbbell",
+    "kettlebell"
+  ]
 }

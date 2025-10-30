@@ -1,10 +1,10 @@
 {
   "id": "Heavy_Bag_Thrust-Plyo_Push-up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729933200,
-  "from_exercise_template_id": "Heavy_Bag_Thrust",
-  "to_exercise_template_id": "Plyo_Push-up"
+  "createdBy": "system",
+  "createdAt": 1729933200,
+  "fromExerciseTemplateId": "Heavy_Bag_Thrust",
+  "toExerciseTemplateId": "Plyo_Push-up"
 }

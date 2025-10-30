@@ -1,10 +1,10 @@
 {
   "id": "Sandbag_Load-Atlas_Stones-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761463810,
-  "from_exercise_template_id": "Sandbag_Load",
-  "to_exercise_template_id": "Atlas_Stones"
+  "createdBy": "system",
+  "createdAt": 1761463810,
+  "fromExerciseTemplateId": "Sandbag_Load",
+  "toExerciseTemplateId": "Atlas_Stones"
 }

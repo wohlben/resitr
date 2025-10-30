@@ -1,10 +1,10 @@
 {
   "id": "Chin-Up-One_Handed_Hang-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Chin-Up",
-  "to_exercise_template_id": "One_Handed_Hang"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Chin-Up",
+  "toExerciseTemplateId": "One_Handed_Hang"
 }

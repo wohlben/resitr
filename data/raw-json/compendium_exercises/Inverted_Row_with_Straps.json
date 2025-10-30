@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "suspension-trainer"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "DISTANCE_BASED",
     "TIME_BASED",
     "AMRAP"
@@ -34,14 +31,16 @@
     "/img/exercises/Inverted_Row_with_Straps/0.jpg",
     "/img/exercises/Inverted_Row_with_Straps/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Inverted_Row_with_Straps"
+  "parentExerciseId": null,
+  "templateId": "Inverted_Row_with_Straps",
+  "equipmentIds": [
+    "suspension-trainer"
+  ]
 }

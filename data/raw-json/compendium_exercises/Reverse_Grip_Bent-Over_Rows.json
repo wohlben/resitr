@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "RHOMBOIDS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bent-over barbell row with underhand (supinated) grip, emphasizing lower lats and biceps more.",
@@ -33,16 +30,18 @@
     "/img/exercises/Reverse_Grip_Bent-Over_Rows/0.jpg",
     "/img/exercises/Reverse_Grip_Bent-Over_Rows/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Reverse Grip Bent Over Rows"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Reverse_Grip_Bent-Over_Rows"
+  "parentExerciseId": null,
+  "templateId": "Reverse_Grip_Bent-Over_Rows",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

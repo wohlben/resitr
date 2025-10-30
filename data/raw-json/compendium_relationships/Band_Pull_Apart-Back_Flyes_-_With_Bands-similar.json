@@ -1,10 +1,10 @@
 {
   "id": "Band_Pull_Apart-Back_Flyes_-_With_Bands-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Band_Pull_Apart",
-  "to_exercise_template_id": "Back_Flyes_-_With_Bands"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Band_Pull_Apart",
+  "toExerciseTemplateId": "Back_Flyes_-_With_Bands"
 }

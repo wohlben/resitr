@@ -5,17 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine",
-    "suspension-trainer"
-  ],
-  "body_weight_scaling": 0.9,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.9,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Lying cable reverse crunch with ankle attachment bringing knees to chest, targeting lower abs with cable resistance.",
@@ -31,19 +27,22 @@
     "/img/exercises/Cable_Reverse_Crunch/0.jpg",
     "/img/exercises/Cable_Reverse_Crunch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ab Crunch",
     "Abdominal Crunch",
     "Cable Machine Reverse Crunch",
     "Reverse Crunch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Reverse_Crunch"
+  "parentExerciseId": null,
+  "templateId": "Cable_Reverse_Crunch",
+  "equipmentIds": [
+    "gym-cable-machine",
+    "suspension-trainer"
+  ]
 }

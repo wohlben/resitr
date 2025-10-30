@@ -5,19 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -35,14 +31,17 @@
     "/img/exercises/Reverse_Flyes_With_External_Rotation/0.jpg",
     "/img/exercises/Reverse_Flyes_With_External_Rotation/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Reverse_Flyes_With_External_Rotation"
+  "parentExerciseId": null,
+  "templateId": "Reverse_Flyes_With_External_Rotation",
+  "equipmentIds": [
+    "2x dumbbell",
+    "incline-bench"
+  ]
 }

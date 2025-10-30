@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "SIDE_DELTS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Single-arm upright row with dumbbell, pulling to chin height to target traps and shoulders unilaterally.",
@@ -31,20 +28,22 @@
     "/img/exercises/Dumbbell_One-Arm_Upright_Row/0.jpg",
     "/img/exercises/Dumbbell_One-Arm_Upright_Row/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "DB One-Arm Upright Row",
     "Dumbbell One Arm Upright Row",
     "Dumbbell Single Arm Upright Row",
     "Dumbbell Unilateral Upright Row",
     "Dumbell One-Arm Upright Row"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Dumbbell_One-Arm_Upright_Row"
+  "parentExerciseId": null,
+  "templateId": "Dumbbell_One-Arm_Upright_Row",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

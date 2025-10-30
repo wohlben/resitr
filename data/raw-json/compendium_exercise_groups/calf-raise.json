@@ -2,7 +2,7 @@
   "id": "calf-raise",
   "name": "Calf Raise",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761412753,
-  "updated_at": 1761412753
+  "createdBy": "dev-user",
+  "createdAt": 1761412753,
+  "updatedAt": 1761412753
 }

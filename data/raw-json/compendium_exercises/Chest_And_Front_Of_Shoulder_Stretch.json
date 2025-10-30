@@ -5,16 +5,15 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Standing chest and shoulder stretch using bodybar or broomstick to open anterior chest and deltoids",
@@ -27,14 +26,14 @@
     "/img/exercises/Chest_And_Front_Of_Shoulder_Stretch/0.jpg",
     "/img/exercises/Chest_And_Front_Of_Shoulder_Stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chest_And_Front_Of_Shoulder_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Chest_And_Front_Of_Shoulder_Stretch",
+  "equipmentIds": []
 }

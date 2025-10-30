@@ -1,10 +1,10 @@
 {
   "id": "Front_Box_Jump-Dumbbell_Seated_Box_Jump-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Front_Box_Jump",
-  "to_exercise_template_id": "Dumbbell_Seated_Box_Jump"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Front_Box_Jump",
+  "toExerciseTemplateId": "Dumbbell_Seated_Box_Jump"
 }

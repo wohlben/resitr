@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "partner"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Glute stretch performed lying down, pulling knee toward chest to stretch hip and glute muscles.",
@@ -28,17 +25,19 @@
     "/img/exercises/Lying_Glute/0.jpg",
     "/img/exercises/Lying_Glute/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Lying-Glute",
     "Prone Glute"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Lying_Glute"
+  "parentExerciseId": null,
+  "templateId": "Lying_Glute",
+  "equipmentIds": [
+    "partner"
+  ]
 }

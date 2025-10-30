@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Hip_Thrust-Physioball_Hip_Bridge-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761464685,
-  "from_exercise_template_id": "Barbell_Hip_Thrust",
-  "to_exercise_template_id": "Physioball_Hip_Bridge"
+  "createdBy": "system",
+  "createdAt": 1761464685,
+  "fromExerciseTemplateId": "Barbell_Hip_Thrust",
+  "toExerciseTemplateId": "Physioball_Hip_Bridge"
 }

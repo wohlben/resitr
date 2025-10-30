@@ -1,10 +1,10 @@
 {
   "id": "Face_Pull-Smith_Machine_Upright_Row-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Face_Pull",
-  "to_exercise_template_id": "Smith_Machine_Upright_Row"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Face_Pull",
+  "toExerciseTemplateId": "Smith_Machine_Upright_Row"
 }

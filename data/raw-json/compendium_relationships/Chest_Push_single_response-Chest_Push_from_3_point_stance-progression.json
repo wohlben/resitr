@@ -1,10 +1,10 @@
 {
   "id": "Chest_Push_single_response-Chest_Push_from_3_point_stance-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729933200,
-  "from_exercise_template_id": "Chest_Push_single_response",
-  "to_exercise_template_id": "Chest_Push_from_3_point_stance"
+  "createdBy": "system",
+  "createdAt": 1729933200,
+  "fromExerciseTemplateId": "Chest_Push_single_response",
+  "toExerciseTemplateId": "Chest_Push_from_3_point_stance"
 }

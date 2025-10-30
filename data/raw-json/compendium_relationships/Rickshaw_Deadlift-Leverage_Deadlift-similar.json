@@ -1,10 +1,10 @@
 {
   "id": "Rickshaw_Deadlift-Leverage_Deadlift-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Rickshaw_Deadlift",
-  "to_exercise_template_id": "Leverage_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Rickshaw_Deadlift",
+  "toExerciseTemplateId": "Leverage_Deadlift"
 }

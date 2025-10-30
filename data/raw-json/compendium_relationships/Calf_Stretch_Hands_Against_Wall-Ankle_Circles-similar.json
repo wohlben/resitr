@@ -1,10 +1,10 @@
 {
   "id": "Calf_Stretch_Hands_Against_Wall-Ankle_Circles-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761480085,
-  "from_exercise_template_id": "Calf_Stretch_Hands_Against_Wall",
-  "to_exercise_template_id": "Ankle_Circles"
+  "createdBy": "system",
+  "createdAt": 1761480085,
+  "fromExerciseTemplateId": "Calf_Stretch_Hands_Against_Wall",
+  "toExerciseTemplateId": "Ankle_Circles"
 }

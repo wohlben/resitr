@@ -1,10 +1,10 @@
 {
   "id": "Inchworm-Standing_Toe_Touches-prerequisite",
-  "relationship_type": "prerequisite",
+  "relationshipType": "prerequisite",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Inchworm",
-  "to_exercise_template_id": "Standing_Toe_Touches"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Inchworm",
+  "toExerciseTemplateId": "Standing_Toe_Touches"
 }

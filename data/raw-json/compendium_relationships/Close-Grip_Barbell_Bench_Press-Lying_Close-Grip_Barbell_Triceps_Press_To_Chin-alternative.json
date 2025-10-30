@@ -1,10 +1,10 @@
 {
   "id": "Close-Grip_Barbell_Bench_Press-Lying_Close-Grip_Barbell_Triceps_Press_To_Chin-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Close-Grip_Barbell_Bench_Press",
-  "to_exercise_template_id": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Close-Grip_Barbell_Bench_Press",
+  "toExerciseTemplateId": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin"
 }

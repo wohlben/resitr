@@ -1,8 +1,8 @@
 {
   "name": "incline-bench",
-  "display_name": "Incline Bench",
+  "displayName": "Incline Bench",
   "description": "A bench set at an upward angle (typically 30-45 degrees) for exercises targeting the upper chest and shoulders.",
   "category": "benches",
-  "image_url": null,
-  "template_id": "incline-bench"
+  "imageUrl": null,
+  "templateId": "incline-bench"
 }

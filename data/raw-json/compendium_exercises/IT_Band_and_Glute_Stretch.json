@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Supine stretch targeting IT band (iliotibial band) and glutes with leg extended across body using band resistance.",
@@ -26,16 +23,18 @@
     "/img/exercises/IT_Band_and_Glute_Stretch/0.jpg",
     "/img/exercises/IT_Band_and_Glute_Stretch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "IT Resistance Band and Glute Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "IT_Band_and_Glute_Stretch"
+  "parentExerciseId": null,
+  "templateId": "IT_Band_and_Glute_Stretch",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

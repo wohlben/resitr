@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Behind-the-back barbell shrug targeting trapezius with altered angle and grip position",
@@ -31,7 +28,7 @@
     "/img/exercises/Barbell_Shrug_Behind_The_Back/0.jpg",
     "/img/exercises/Barbell_Shrug_Behind_The_Back/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Shrug Behind The Back",
     "Bar Shrug Behind The Back",
     "Barbell Shrug",
@@ -39,13 +36,15 @@
     "Shoulder Shrug",
     "Trap Shrug"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Shrug_Behind_The_Back"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Shrug_Behind_The_Back",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

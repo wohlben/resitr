@@ -2,7 +2,7 @@
   "id": "bicep-curl",
   "name": "Bicep Curl",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761409177,
-  "updated_at": 1761409177
+  "createdBy": "dev-user",
+  "createdAt": 1761409177,
+  "updatedAt": 1761409177
 }

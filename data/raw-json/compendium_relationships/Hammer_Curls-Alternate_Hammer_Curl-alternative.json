@@ -1,10 +1,10 @@
 {
   "id": "Hammer_Curls-Alternate_Hammer_Curl-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.95,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Hammer_Curls",
-  "to_exercise_template_id": "Alternate_Hammer_Curl"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Hammer_Curls",
+  "toExerciseTemplateId": "Alternate_Hammer_Curl"
 }

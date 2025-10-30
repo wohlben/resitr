@@ -1,10 +1,10 @@
 {
   "id": "Hyperextensions_With_No_Hyperextension_Bench-Reverse_Hyperextension-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Hyperextensions_With_No_Hyperextension_Bench",
-  "to_exercise_template_id": "Reverse_Hyperextension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Hyperextensions_With_No_Hyperextension_Bench",
+  "toExerciseTemplateId": "Reverse_Hyperextension"
 }

@@ -1,6 +1,6 @@
 {
-  "group_id": "triceps-dips",
-  "added_by": "dev-user",
-  "added_at": 1761412427,
-  "exercise_template_id": "Dip_Machine"
+  "groupId": "triceps-dips",
+  "addedBy": "dev-user",
+  "addedAt": 1761412427,
+  "exerciseTemplateId": "Dip_Machine"
 }

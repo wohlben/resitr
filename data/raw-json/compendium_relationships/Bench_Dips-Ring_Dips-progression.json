@@ -1,10 +1,10 @@
 {
   "id": "Bench_Dips-Ring_Dips-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Bench_Dips",
-  "to_exercise_template_id": "Ring_Dips"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Bench_Dips",
+  "toExerciseTemplateId": "Ring_Dips"
 }

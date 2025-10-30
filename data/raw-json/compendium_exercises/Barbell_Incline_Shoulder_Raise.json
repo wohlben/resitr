@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "CHEST",
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell",
-    "incline-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -33,18 +29,21 @@
     "/img/exercises/Barbell_Incline_Shoulder_Raise/0.jpg",
     "/img/exercises/Barbell_Incline_Shoulder_Raise/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Incline Shoulder Raise",
     "Bar Incline Shoulder Raise",
     "Barbell Incline Shoulder Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Incline_Shoulder_Raise"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Incline_Shoulder_Raise",
+  "equipmentIds": [
+    "barbell",
+    "incline-bench"
+  ]
 }

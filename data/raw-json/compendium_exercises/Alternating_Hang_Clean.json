@@ -6,24 +6,21 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES",
     "TRAPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "CALVES",
     "LOWER_BACK",
     "FOREARMS",
     "BICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Olympic-style explosive movement alternating kettlebell cleans to develop full-body power and coordination",
@@ -36,16 +33,18 @@
     "/img/exercises/Alternating_Hang_Clean/0.jpg",
     "/img/exercises/Alternating_Hang_Clean/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Alternate Hang Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Alternating_Hang_Clean"
+  "parentExerciseId": null,
+  "templateId": "Alternating_Hang_Clean",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

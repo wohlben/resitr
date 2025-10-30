@@ -6,10 +6,10 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "GLUTES",
     "HAMSTRINGS",
@@ -18,12 +18,9 @@
     "TRAPS",
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Single-arm kettlebell snatch dropping into split stance to receive weight overhead.",
@@ -37,7 +34,7 @@
     "/img/exercises/One-Arm_Kettlebell_Split_Snatch/0.jpg",
     "/img/exercises/One-Arm_Kettlebell_Split_Snatch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Snatch",
     "One Arm Kettlebell Split Snatch",
     "One-Arm KB Split Snatch",
@@ -45,13 +42,15 @@
     "Single Arm Kettlebell Split Snatch",
     "Unilateral Kettlebell Split Snatch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One-Arm_Kettlebell_Split_Snatch"
+  "parentExerciseId": null,
+  "templateId": "One-Arm_Kettlebell_Split_Snatch",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

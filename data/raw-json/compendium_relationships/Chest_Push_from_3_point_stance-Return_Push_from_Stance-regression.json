@@ -1,10 +1,10 @@
 {
   "id": "Chest_Push_from_3_point_stance-Return_Push_from_Stance-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.85,
   "description": "Return push from stance is a simpler partner-based catching drill from athletic stance, building coordination before progressing to the explosive stepping motion of chest push from 3-point stance",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Chest_Push_from_3_point_stance",
-  "to_exercise_template_id": "Return_Push_from_Stance"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Chest_Push_from_3_point_stance",
+  "toExerciseTemplateId": "Return_Push_from_Stance"
 }

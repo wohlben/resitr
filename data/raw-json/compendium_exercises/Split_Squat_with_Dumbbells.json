@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0.4,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.4,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -32,17 +29,19 @@
     "/img/exercises/Split_Squat_with_Dumbbells/0.jpg",
     "/img/exercises/Split_Squat_with_Dumbbells/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Split Squat with DBs",
     "Split Squat with Dumbells"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Split_Squat_with_Dumbbells"
+  "parentExerciseId": null,
+  "templateId": "Split_Squat_with_Dumbbells",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

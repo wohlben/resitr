@@ -1,10 +1,10 @@
 {
   "id": "Rocky_Pull-Ups_Pulldowns-Weighted_Pull_Ups-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Rocky_Pull-Ups_Pulldowns",
-  "to_exercise_template_id": "Weighted_Pull_Ups"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Rocky_Pull-Ups_Pulldowns",
+  "toExerciseTemplateId": "Weighted_Pull_Ups"
 }

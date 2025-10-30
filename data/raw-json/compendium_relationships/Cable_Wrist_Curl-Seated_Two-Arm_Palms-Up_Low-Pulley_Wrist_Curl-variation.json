@@ -1,10 +1,10 @@
 {
   "id": "Cable_Wrist_Curl-Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479701,
-  "from_exercise_template_id": "Cable_Wrist_Curl",
-  "to_exercise_template_id": "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl"
+  "createdBy": "system",
+  "createdAt": 1761479701,
+  "fromExerciseTemplateId": "Cable_Wrist_Curl",
+  "toExerciseTemplateId": "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl"
 }

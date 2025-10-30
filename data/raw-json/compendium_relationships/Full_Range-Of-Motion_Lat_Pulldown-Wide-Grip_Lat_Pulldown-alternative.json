@@ -1,10 +1,10 @@
 {
   "id": "Full_Range-Of-Motion_Lat_Pulldown-Wide-Grip_Lat_Pulldown-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729931400,
-  "from_exercise_template_id": "Full_Range-Of-Motion_Lat_Pulldown",
-  "to_exercise_template_id": "Wide-Grip_Lat_Pulldown"
+  "createdBy": "system",
+  "createdAt": 1729931400,
+  "fromExerciseTemplateId": "Full_Range-Of-Motion_Lat_Pulldown",
+  "toExerciseTemplateId": "Wide-Grip_Lat_Pulldown"
 }

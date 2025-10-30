@@ -1,10 +1,10 @@
 {
   "id": "EZ-Bar_Curl-Close-Grip_EZ-Bar_Curl_with_Band-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "EZ-Bar_Curl",
-  "to_exercise_template_id": "Close-Grip_EZ-Bar_Curl_with_Band"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "EZ-Bar_Curl",
+  "toExerciseTemplateId": "Close-Grip_EZ-Bar_Curl_with_Band"
 }

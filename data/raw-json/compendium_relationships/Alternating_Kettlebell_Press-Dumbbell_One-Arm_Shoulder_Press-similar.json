@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Kettlebell_Press-Dumbbell_One-Arm_Shoulder_Press-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.78,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761461533,
-  "from_exercise_template_id": "Alternating_Kettlebell_Press",
-  "to_exercise_template_id": "Dumbbell_One-Arm_Shoulder_Press"
+  "createdBy": "system",
+  "createdAt": 1761461533,
+  "fromExerciseTemplateId": "Alternating_Kettlebell_Press",
+  "toExerciseTemplateId": "Dumbbell_One-Arm_Shoulder_Press"
 }

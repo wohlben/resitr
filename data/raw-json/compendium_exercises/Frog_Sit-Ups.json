@@ -5,16 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HIP_FLEXORS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.7,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.7,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,18 +31,18 @@
     "/img/exercises/Frog_Sit-Ups/0.jpg",
     "/img/exercises/Frog_Sit-Ups/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Frog Sit Ups",
     "Frog Crunch",
     "Diamond Sit-Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Frog_Sit-Ups"
+  "parentExerciseId": null,
+  "templateId": "Frog_Sit-Ups",
+  "equipmentIds": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "Single_Leg_Push-off-Front_Box_Jump-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single_Leg_Push-off",
-  "to_exercise_template_id": "Front_Box_Jump"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single_Leg_Push-off",
+  "toExerciseTemplateId": "Front_Box_Jump"
 }

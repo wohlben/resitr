@@ -5,20 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "BICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FOREARMS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "ez-bar",
-    "gym-preacher-bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -34,18 +29,22 @@
     "/img/exercises/Reverse_Barbell_Preacher_Curls/0.jpg",
     "/img/exercises/Reverse_Barbell_Preacher_Curls/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Reverse BB Preacher Curls",
     "Reverse Bar Preacher Curls",
     "Reverse Barbell Preacher Curls"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Reverse_Barbell_Preacher_Curls"
+  "parentExerciseId": null,
+  "templateId": "Reverse_Barbell_Preacher_Curls",
+  "equipmentIds": [
+    "barbell",
+    "ez-bar",
+    "gym-preacher-bench"
+  ]
 }

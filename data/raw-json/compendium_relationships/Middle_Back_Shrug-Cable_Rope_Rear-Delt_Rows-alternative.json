@@ -1,10 +1,10 @@
 {
   "id": "Middle_Back_Shrug-Cable_Rope_Rear-Delt_Rows-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Middle_Back_Shrug",
-  "to_exercise_template_id": "Cable_Rope_Rear-Delt_Rows"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Middle_Back_Shrug",
+  "toExerciseTemplateId": "Cable_Rope_Rear-Delt_Rows"
 }

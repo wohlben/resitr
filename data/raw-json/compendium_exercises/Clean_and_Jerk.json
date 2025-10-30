@@ -6,23 +6,20 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "QUADS",
     "GLUTES",
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HAMSTRINGS",
     "TRICEPS",
     "TRAPS",
     "LOWER_BACK"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Complete Olympic lift combining clean and overhead jerk for maximum power expression",
@@ -40,19 +37,21 @@
     "/img/exercises/Clean_and_Jerk/0.jpg",
     "/img/exercises/Clean_and_Jerk/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Clean",
     "Clean & Jerk",
     "Clean and Press",
     "Power Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Clean_and_Jerk"
+  "parentExerciseId": null,
+  "templateId": "Clean_and_Jerk",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

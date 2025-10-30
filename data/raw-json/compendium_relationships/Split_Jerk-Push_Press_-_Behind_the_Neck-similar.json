@@ -1,10 +1,10 @@
 {
   "id": "Split_Jerk-Push_Press_-_Behind_the_Neck-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Split_Jerk",
-  "to_exercise_template_id": "Push_Press_-_Behind_the_Neck"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Split_Jerk",
+  "toExerciseTemplateId": "Push_Press_-_Behind_the_Neck"
 }

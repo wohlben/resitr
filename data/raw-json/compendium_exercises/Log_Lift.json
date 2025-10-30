@@ -5,10 +5,10 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "CHEST",
     "GLUTES",
@@ -19,10 +19,9 @@
     "TRAPS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -38,16 +37,16 @@
     "/img/exercises/Log_Lift/0.jpg",
     "/img/exercises/Log_Lift/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Log-Lift"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Log_Lift"
+  "parentExerciseId": null,
+  "templateId": "Log_Lift",
+  "equipmentIds": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "Frog_Sit-Ups-Janda_Sit-Up-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761494891,
-  "from_exercise_template_id": "Frog_Sit-Ups",
-  "to_exercise_template_id": "Janda_Sit-Up"
+  "createdBy": "system",
+  "createdAt": 1761494891,
+  "fromExerciseTemplateId": "Frog_Sit-Ups",
+  "toExerciseTemplateId": "Janda_Sit-Up"
 }

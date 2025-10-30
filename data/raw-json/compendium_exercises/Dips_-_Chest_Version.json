@@ -5,16 +5,13 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "dip-bars"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -29,16 +26,18 @@
     "/img/exercises/Dips_-_Chest_Version/0.jpg",
     "/img/exercises/Dips_-_Chest_Version/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Dips   Chest Version"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Dips_-_Chest_Version"
+  "parentExerciseId": null,
+  "templateId": "Dips_-_Chest_Version",
+  "equipmentIds": [
+    "dip-bars"
+  ]
 }

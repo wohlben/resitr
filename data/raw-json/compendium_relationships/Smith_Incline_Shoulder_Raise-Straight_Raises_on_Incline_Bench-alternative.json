@@ -1,10 +1,10 @@
 {
   "id": "Smith_Incline_Shoulder_Raise-Straight_Raises_on_Incline_Bench-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Smith_Incline_Shoulder_Raise",
-  "to_exercise_template_id": "Straight_Raises_on_Incline_Bench"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Smith_Incline_Shoulder_Raise",
+  "toExerciseTemplateId": "Straight_Raises_on_Incline_Bench"
 }

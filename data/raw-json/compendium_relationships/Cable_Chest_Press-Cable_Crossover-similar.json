@@ -1,10 +1,10 @@
 {
   "id": "Cable_Chest_Press-Cable_Crossover-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761478645,
-  "from_exercise_template_id": "Cable_Chest_Press",
-  "to_exercise_template_id": "Cable_Crossover"
+  "createdBy": "system",
+  "createdAt": 1761478645,
+  "fromExerciseTemplateId": "Cable_Chest_Press",
+  "toExerciseTemplateId": "Cable_Crossover"
 }

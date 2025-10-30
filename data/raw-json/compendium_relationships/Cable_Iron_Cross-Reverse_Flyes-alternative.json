@@ -1,10 +1,10 @@
 {
   "id": "Cable_Iron_Cross-Reverse_Flyes-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761479173,
-  "from_exercise_template_id": "Cable_Iron_Cross",
-  "to_exercise_template_id": "Reverse_Flyes"
+  "createdBy": "system",
+  "createdAt": 1761479173,
+  "fromExerciseTemplateId": "Cable_Iron_Cross",
+  "toExerciseTemplateId": "Reverse_Flyes"
 }

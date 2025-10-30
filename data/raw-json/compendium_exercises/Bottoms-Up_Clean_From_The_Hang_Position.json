@@ -5,22 +5,19 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "LOWER_BACK",
     "FRONT_DELTS",
     "TRAPS",
     "FOREARMS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Kettlebell clean from hang position with inverted grip (bottoms-up), emphasizing grip strength and shoulder stability",
@@ -32,18 +29,20 @@
     "/img/exercises/Bottoms-Up_Clean_From_The_Hang_Position/0.jpg",
     "/img/exercises/Bottoms-Up_Clean_From_The_Hang_Position/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Barbell Clean",
     "Bottoms Up Clean From The Hang Position",
     "Power Clean"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bottoms-Up_Clean_From_The_Hang_Position"
+  "parentExerciseId": null,
+  "templateId": "Bottoms-Up_Clean_From_The_Hang_Position",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

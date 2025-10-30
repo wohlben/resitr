@@ -1,10 +1,10 @@
 {
   "id": "Hug_Knees_To_Chest-Cat_Stretch-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": null,
   "description": "Both exercises create spinal flexion to decompress and stretch the lower back and glutes, using different positions but achieving similar therapeutic effects",
-  "created_by": "system",
-  "created_at": 1761024000,
-  "from_exercise_template_id": "Hug_Knees_To_Chest",
-  "to_exercise_template_id": "Cat_Stretch"
+  "createdBy": "system",
+  "createdAt": 1761024000,
+  "fromExerciseTemplateId": "Hug_Knees_To_Chest",
+  "toExerciseTemplateId": "Cat_Stretch"
 }

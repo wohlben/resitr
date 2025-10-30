@@ -5,21 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS",
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Dumbbell pullover with bent arms targeting lats and chest through overhead pulling arc",
@@ -35,18 +31,21 @@
     "/img/exercises/Bent-Arm_Dumbbell_Pullover/0.jpg",
     "/img/exercises/Bent-Arm_Dumbbell_Pullover/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bent Arm Dumbbell Pullover",
     "Bent-Arm DB Pullover",
     "Bent-Arm Dumbell Pullover"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bent-Arm_Dumbbell_Pullover"
+  "parentExerciseId": null,
+  "templateId": "Bent-Arm_Dumbbell_Pullover",
+  "equipmentIds": [
+    "2x dumbbell",
+    "bench"
+  ]
 }

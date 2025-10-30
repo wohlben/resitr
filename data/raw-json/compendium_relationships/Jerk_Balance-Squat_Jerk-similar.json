@@ -1,10 +1,10 @@
 {
   "id": "Jerk_Balance-Squat_Jerk-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761510000,
-  "from_exercise_template_id": "Jerk_Balance",
-  "to_exercise_template_id": "Squat_Jerk"
+  "createdBy": "system",
+  "createdAt": 1761510000,
+  "fromExerciseTemplateId": "Jerk_Balance",
+  "toExerciseTemplateId": "Squat_Jerk"
 }

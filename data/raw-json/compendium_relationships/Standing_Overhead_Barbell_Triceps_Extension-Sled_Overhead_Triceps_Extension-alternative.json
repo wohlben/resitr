@@ -1,10 +1,10 @@
 {
   "id": "Standing_Overhead_Barbell_Triceps_Extension-Sled_Overhead_Triceps_Extension-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Standing_Overhead_Barbell_Triceps_Extension",
-  "to_exercise_template_id": "Sled_Overhead_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Standing_Overhead_Barbell_Triceps_Extension",
+  "toExerciseTemplateId": "Sled_Overhead_Triceps_Extension"
 }

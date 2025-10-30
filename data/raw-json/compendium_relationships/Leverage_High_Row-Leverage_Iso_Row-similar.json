@@ -1,10 +1,10 @@
 {
   "id": "Leverage_High_Row-Leverage_Iso_Row-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729900800,
-  "from_exercise_template_id": "Leverage_High_Row",
-  "to_exercise_template_id": "Leverage_Iso_Row"
+  "createdBy": "system",
+  "createdAt": 1729900800,
+  "fromExerciseTemplateId": "Leverage_High_Row",
+  "toExerciseTemplateId": "Leverage_Iso_Row"
 }

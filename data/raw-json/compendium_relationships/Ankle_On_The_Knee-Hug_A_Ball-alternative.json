@@ -1,10 +1,10 @@
 {
   "id": "Ankle_On_The_Knee-Hug_A_Ball-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761498134,
-  "from_exercise_template_id": "Ankle_On_The_Knee",
-  "to_exercise_template_id": "Hug_A_Ball"
+  "createdBy": "system",
+  "createdAt": 1761498134,
+  "fromExerciseTemplateId": "Ankle_On_The_Knee",
+  "toExerciseTemplateId": "Hug_A_Ball"
 }

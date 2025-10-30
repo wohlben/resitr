@@ -1,10 +1,10 @@
 {
   "id": "Decline_EZ_Bar_Triceps_Extension-Lying_Dumbbell_Tricep_Extension-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.75,
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1729932000,
-  "from_exercise_template_id": "Decline_EZ_Bar_Triceps_Extension",
-  "to_exercise_template_id": "Lying_Dumbbell_Tricep_Extension"
+  "createdBy": "dev-user",
+  "createdAt": 1729932000,
+  "fromExerciseTemplateId": "Decline_EZ_Bar_Triceps_Extension",
+  "toExerciseTemplateId": "Lying_Dumbbell_Tricep_Extension"
 }

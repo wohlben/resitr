@@ -1,10 +1,10 @@
 {
   "id": "Dumbbell_Raise-Cable_Seated_Lateral_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Dumbbell_Raise",
-  "to_exercise_template_id": "Cable_Seated_Lateral_Raise"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Dumbbell_Raise",
+  "toExerciseTemplateId": "Cable_Seated_Lateral_Raise"
 }

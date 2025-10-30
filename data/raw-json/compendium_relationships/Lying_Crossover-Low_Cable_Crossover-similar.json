@@ -1,10 +1,10 @@
 {
   "id": "Lying_Crossover-Low_Cable_Crossover-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Lying_Crossover",
-  "to_exercise_template_id": "Low_Cable_Crossover"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Lying_Crossover",
+  "toExerciseTemplateId": "Low_Cable_Crossover"
 }

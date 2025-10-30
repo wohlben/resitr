@@ -5,19 +5,15 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band",
-    "suspension-trainer"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Hamstring stretch performed lying down with one leg raised up, often using a strap or band to assist.",
@@ -30,16 +26,19 @@
     "/img/exercises/Leg-Up_Hamstring_Stretch/0.jpg",
     "/img/exercises/Leg-Up_Hamstring_Stretch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Leg Up Hamstring Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Leg-Up_Hamstring_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Leg-Up_Hamstring_Stretch",
+  "equipmentIds": [
+    "resistance-band",
+    "suspension-trainer"
+  ]
 }

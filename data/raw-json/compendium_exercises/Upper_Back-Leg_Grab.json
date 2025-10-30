@@ -5,15 +5,14 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "RHOMBOIDS",
     "LATS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Upper back stretch hugging both legs and pulling to stretch mid-back and lats.",
@@ -25,16 +24,16 @@
     "/img/exercises/Upper_Back-Leg_Grab/0.jpg",
     "/img/exercises/Upper_Back-Leg_Grab/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Upper Back Leg Grab"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Upper_Back-Leg_Grab"
+  "parentExerciseId": null,
+  "templateId": "Upper_Back-Leg_Grab",
+  "equipmentIds": []
 }

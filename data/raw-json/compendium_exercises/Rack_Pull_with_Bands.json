@@ -5,22 +5,17 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LOWER_BACK",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HAMSTRINGS",
     "TRAPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "power-rack",
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Partial deadlift from rack with resistance bands, combining band tension with barbell for accommodating resistance.",
@@ -33,16 +28,20 @@
     "/img/exercises/Rack_Pull_with_Bands/0.jpg",
     "/img/exercises/Rack_Pull_with_Bands/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Rack Pull with Resistance Bands"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Rack_Pull_with_Bands"
+  "parentExerciseId": null,
+  "templateId": "Rack_Pull_with_Bands",
+  "equipmentIds": [
+    "barbell",
+    "power-rack",
+    "resistance-band"
+  ]
 }

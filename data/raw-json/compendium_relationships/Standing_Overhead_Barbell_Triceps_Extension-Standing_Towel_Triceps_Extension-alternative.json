@@ -1,10 +1,10 @@
 {
   "id": "Standing_Overhead_Barbell_Triceps_Extension-Standing_Towel_Triceps_Extension-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730012400,
-  "from_exercise_template_id": "Standing_Overhead_Barbell_Triceps_Extension",
-  "to_exercise_template_id": "Standing_Towel_Triceps_Extension"
+  "createdBy": "system",
+  "createdAt": 1730012400,
+  "fromExerciseTemplateId": "Standing_Overhead_Barbell_Triceps_Extension",
+  "toExerciseTemplateId": "Standing_Towel_Triceps_Extension"
 }

@@ -5,17 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Wide-grip incline push-up emphasizing outer chest with hands wide apart.",
@@ -30,20 +29,20 @@
     "/img/exercises/Incline_Push-Up_Wide/0.jpg",
     "/img/exercises/Incline_Push-Up_Wide/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Incline Push Up Wide",
     "Press Up",
     "Push Up",
     "Pushup",
     "Pushups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Incline_Push-Up_Wide"
+  "parentExerciseId": null,
+  "templateId": "Incline_Push-Up_Wide",
+  "equipmentIds": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "Lying_Bent_Leg_Groin-Side_Lying_Groin_Stretch-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": "Side Lying Groin Stretch is a simpler solo adductor stretch in side-lying position, making it an easier regression from the partner-assisted PNF technique.",
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Lying_Bent_Leg_Groin",
-  "to_exercise_template_id": "Side_Lying_Groin_Stretch"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Lying_Bent_Leg_Groin",
+  "toExerciseTemplateId": "Side_Lying_Groin_Stretch"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Deltoid_Raise-Front_Two-Dumbbell_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Alternating_Deltoid_Raise",
-  "to_exercise_template_id": "Front_Two-Dumbbell_Raise"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Alternating_Deltoid_Raise",
+  "toExerciseTemplateId": "Front_Two-Dumbbell_Raise"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Power_Snatch-Snatch_Deadlift-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Power_Snatch",
-  "to_exercise_template_id": "Snatch_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Power_Snatch",
+  "toExerciseTemplateId": "Snatch_Deadlift"
 }

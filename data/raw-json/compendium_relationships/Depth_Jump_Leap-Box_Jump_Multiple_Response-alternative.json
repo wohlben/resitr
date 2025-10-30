@@ -1,10 +1,10 @@
 {
   "id": "Depth_Jump_Leap-Box_Jump_Multiple_Response-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761477930,
-  "from_exercise_template_id": "Depth_Jump_Leap",
-  "to_exercise_template_id": "Box_Jump_Multiple_Response"
+  "createdBy": "system",
+  "createdAt": 1761477930,
+  "fromExerciseTemplateId": "Depth_Jump_Leap",
+  "toExerciseTemplateId": "Box_Jump_Multiple_Response"
 }

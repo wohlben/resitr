@@ -5,21 +5,18 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "SIDE_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "TRAPS",
     "ABS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Alternating overhead kettlebell press for unilateral shoulder strength and enhanced core stability",
@@ -32,17 +29,19 @@
     "/img/exercises/Alternating_Kettlebell_Press/0.jpg",
     "/img/exercises/Alternating_Kettlebell_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Alternate Kettlebell Press",
     "Alternating KB Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Alternating_Kettlebell_Press"
+  "parentExerciseId": null,
+  "templateId": "Alternating_Kettlebell_Press",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

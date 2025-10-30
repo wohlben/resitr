@@ -1,10 +1,10 @@
 {
   "id": "Lying_Dumbbell_Tricep_Extension-Tate_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735689600,
-  "from_exercise_template_id": "Lying_Dumbbell_Tricep_Extension",
-  "to_exercise_template_id": "Tate_Press"
+  "createdBy": "system",
+  "createdAt": 1735689600,
+  "fromExerciseTemplateId": "Lying_Dumbbell_Tricep_Extension",
+  "toExerciseTemplateId": "Tate_Press"
 }

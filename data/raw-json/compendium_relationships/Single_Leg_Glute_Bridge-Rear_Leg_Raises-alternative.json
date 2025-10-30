@@ -1,10 +1,10 @@
 {
   "id": "Single_Leg_Glute_Bridge-Rear_Leg_Raises-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single_Leg_Glute_Bridge",
-  "to_exercise_template_id": "Rear_Leg_Raises"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single_Leg_Glute_Bridge",
+  "toExerciseTemplateId": "Rear_Leg_Raises"
 }

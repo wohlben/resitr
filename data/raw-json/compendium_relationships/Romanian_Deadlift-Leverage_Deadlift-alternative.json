@@ -1,10 +1,10 @@
 {
   "id": "Romanian_Deadlift-Leverage_Deadlift-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Romanian_Deadlift",
-  "to_exercise_template_id": "Leverage_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Romanian_Deadlift",
+  "toExerciseTemplateId": "Leverage_Deadlift"
 }

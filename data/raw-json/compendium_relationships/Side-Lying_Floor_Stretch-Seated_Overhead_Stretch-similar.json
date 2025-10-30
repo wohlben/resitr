@@ -1,10 +1,10 @@
 {
   "id": "Side-Lying_Floor_Stretch-Seated_Overhead_Stretch-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Side-Lying_Floor_Stretch",
-  "to_exercise_template_id": "Seated_Overhead_Stretch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Side-Lying_Floor_Stretch",
+  "toExerciseTemplateId": "Seated_Overhead_Stretch"
 }

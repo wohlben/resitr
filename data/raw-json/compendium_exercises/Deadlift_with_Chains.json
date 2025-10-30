@@ -6,24 +6,20 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "LOWER_BACK"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LATS",
     "TRAPS",
     "FOREARMS",
     "QUADS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell",
-    "chains"
-  ],
-  "body_weight_scaling": 0.2,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.2,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -40,14 +36,17 @@
     "/img/exercises/Deadlift_with_Chains/0.jpg",
     "/img/exercises/Deadlift_with_Chains/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Deadlift_with_Chains"
+  "parentExerciseId": null,
+  "templateId": "Deadlift_with_Chains",
+  "equipmentIds": [
+    "barbell",
+    "chains"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Bench_Jump-Hurdle_Hops-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Bench_Jump",
-  "to_exercise_template_id": "Hurdle_Hops"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Bench_Jump",
+  "toExerciseTemplateId": "Hurdle_Hops"
 }

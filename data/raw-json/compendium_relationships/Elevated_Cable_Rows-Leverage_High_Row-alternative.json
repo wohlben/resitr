@@ -1,10 +1,10 @@
 {
   "id": "Elevated_Cable_Rows-Leverage_High_Row-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": "Leverage High Row is a machine-based alternative to Elevated Cable Rows targeting similar back muscles",
-  "created_by": "system",
-  "created_at": 1761412213,
-  "from_exercise_template_id": "Elevated_Cable_Rows",
-  "to_exercise_template_id": "Leverage_High_Row"
+  "createdBy": "system",
+  "createdAt": 1761412213,
+  "fromExerciseTemplateId": "Elevated_Cable_Rows",
+  "toExerciseTemplateId": "Leverage_High_Row"
 }

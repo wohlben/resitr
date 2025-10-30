@@ -5,16 +5,15 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -32,20 +31,20 @@
     "/img/exercises/Handstand_Push-Ups/0.jpg",
     "/img/exercises/Handstand_Push-Ups/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Handstand Push Ups",
     "Press Up",
     "Push Up",
     "Pushup",
     "Pushups"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Handstand_Push-Ups"
+  "parentExerciseId": null,
+  "templateId": "Handstand_Push-Ups",
+  "equipmentIds": []
 }

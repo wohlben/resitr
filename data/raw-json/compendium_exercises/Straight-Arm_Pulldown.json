@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable or machine lat pulldown keeping arms straight, isolating lats without bicep involvement.",
@@ -29,16 +26,18 @@
     "/img/exercises/Straight-Arm_Pulldown/0.jpg",
     "/img/exercises/Straight-Arm_Pulldown/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Straight Arm Pulldown"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Straight-Arm_Pulldown"
+  "parentExerciseId": null,
+  "templateId": "Straight-Arm_Pulldown",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

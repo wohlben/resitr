@@ -1,10 +1,10 @@
 {
   "id": "Kneeling_Cable_Triceps_Extension-Reverse_Grip_Triceps_Pushdown-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Kneeling_Cable_Triceps_Extension",
-  "to_exercise_template_id": "Reverse_Grip_Triceps_Pushdown"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Kneeling_Cable_Triceps_Extension",
+  "toExerciseTemplateId": "Reverse_Grip_Triceps_Pushdown"
 }

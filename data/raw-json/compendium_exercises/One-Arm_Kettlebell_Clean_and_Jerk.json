@@ -6,22 +6,19 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HAMSTRINGS",
     "GLUTES",
     "LOWER_BACK",
     "TRAPS",
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Single-arm kettlebell clean followed by overhead jerk, combining pull and press in one fluid motion.",
@@ -37,19 +34,21 @@
     "/img/exercises/One-Arm_Kettlebell_Clean_and_Jerk/0.jpg",
     "/img/exercises/One-Arm_Kettlebell_Clean_and_Jerk/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Arm Kettlebell Clean and Jerk",
     "One-Arm KB Clean and Jerk",
     "Single Arm Kettlebell Clean and Jerk",
     "Unilateral Kettlebell Clean and Jerk"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One-Arm_Kettlebell_Clean_and_Jerk"
+  "parentExerciseId": null,
+  "templateId": "One-Arm_Kettlebell_Clean_and_Jerk",
+  "equipmentIds": [
+    "kettlebell"
+  ]
 }

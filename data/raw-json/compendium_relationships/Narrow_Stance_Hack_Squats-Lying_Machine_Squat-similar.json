@@ -1,10 +1,10 @@
 {
   "id": "Narrow_Stance_Hack_Squats-Lying_Machine_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729976400,
-  "from_exercise_template_id": "Narrow_Stance_Hack_Squats",
-  "to_exercise_template_id": "Lying_Machine_Squat"
+  "createdBy": "system",
+  "createdAt": 1729976400,
+  "fromExerciseTemplateId": "Narrow_Stance_Hack_Squats",
+  "toExerciseTemplateId": "Lying_Machine_Squat"
 }

@@ -1,6 +1,6 @@
 {
-  "group_id": "strongman",
-  "added_by": "dev-user",
-  "added_at": 1761414962,
-  "exercise_template_id": "Sled_Push"
+  "groupId": "strongman",
+  "addedBy": "dev-user",
+  "addedAt": 1761414962,
+  "exerciseTemplateId": "Sled_Push"
 }

@@ -5,14 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CALVES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Standing calf stretch with deeper lean using forearms against wall for increased intensity.",
@@ -25,14 +24,14 @@
     "/img/exercises/Calf_Stretch_Elbows_Against_Wall/0.jpg",
     "/img/exercises/Calf_Stretch_Elbows_Against_Wall/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Calf_Stretch_Elbows_Against_Wall"
+  "parentExerciseId": null,
+  "templateId": "Calf_Stretch_Elbows_Against_Wall",
+  "equipmentIds": []
 }

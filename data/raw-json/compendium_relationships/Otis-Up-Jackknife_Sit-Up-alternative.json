@@ -1,10 +1,10 @@
 {
   "id": "Otis-Up-Jackknife_Sit-Up-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.6,
   "description": "Both are sit-up variations; Jackknife brings legs up while Otis-Up adds overhead press",
-  "created_by": "system",
-  "created_at": 1729980000,
-  "from_exercise_template_id": "Otis-Up",
-  "to_exercise_template_id": "Jackknife_Sit-Up"
+  "createdBy": "system",
+  "createdAt": 1729980000,
+  "fromExerciseTemplateId": "Otis-Up",
+  "toExerciseTemplateId": "Jackknife_Sit-Up"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Brachialis-SMR-Standing_Biceps_Stretch-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Brachialis-SMR",
-  "to_exercise_template_id": "Standing_Biceps_Stretch"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Brachialis-SMR",
+  "toExerciseTemplateId": "Standing_Biceps_Stretch"
 }

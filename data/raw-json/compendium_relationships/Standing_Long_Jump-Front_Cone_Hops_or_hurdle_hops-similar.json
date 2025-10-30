@@ -1,10 +1,10 @@
 {
   "id": "Standing_Long_Jump-Front_Cone_Hops_or_hurdle_hops-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761495424,
-  "from_exercise_template_id": "Standing_Long_Jump",
-  "to_exercise_template_id": "Front_Cone_Hops_or_hurdle_hops"
+  "createdBy": "system",
+  "createdAt": 1761495424,
+  "fromExerciseTemplateId": "Standing_Long_Jump",
+  "toExerciseTemplateId": "Front_Cone_Hops_or_hurdle_hops"
 }

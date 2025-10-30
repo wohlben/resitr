@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Hip_Thrust-Barbell_Glute_Bridge-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761464685,
-  "from_exercise_template_id": "Barbell_Hip_Thrust",
-  "to_exercise_template_id": "Barbell_Glute_Bridge"
+  "createdBy": "system",
+  "createdAt": 1761464685,
+  "fromExerciseTemplateId": "Barbell_Hip_Thrust",
+  "toExerciseTemplateId": "Barbell_Glute_Bridge"
 }

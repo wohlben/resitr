@@ -1,10 +1,10 @@
 {
   "id": "Clock_Push-Up-Barbell_Bench_Press_-_Medium_Grip-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": null,
   "description": "Bench press is a progression from push-ups",
-  "created_by": "seed",
-  "created_at": 1760887433,
-  "from_exercise_template_id": "Clock_Push-Up",
-  "to_exercise_template_id": "Barbell_Bench_Press_-_Medium_Grip"
+  "createdBy": "seed",
+  "createdAt": 1760887433,
+  "fromExerciseTemplateId": "Clock_Push-Up",
+  "toExerciseTemplateId": "Barbell_Bench_Press_-_Medium_Grip"
 }

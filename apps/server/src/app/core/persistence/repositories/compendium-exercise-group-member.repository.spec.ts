@@ -300,6 +300,77 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new group member when it does not exist', async () => {
+      const memberData = {
+        exerciseTemplateId: testExercise1.templateId,
+        groupId: testGroup1.id,
+        addedBy: 'user-1',
+      };
+
+      const result = await repository.upsert(memberData);
+
+      expect(result).toBeDefined();
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.groupId).toBe(testGroup1.id);
+      expect(result.addedBy).toBe('user-1');
+
+      // Verify it was inserted
+      const found = await repository.findByCompositeKey(testExercise1.templateId, testGroup1.id);
+      expect(found).toBeDefined();
+    });
+
+    it('should update existing group member when composite key exists', async () => {
+      const memberData = {
+        exerciseTemplateId: testExercise1.templateId,
+        groupId: testGroup2.id,
+        addedBy: 'user-1',
+      };
+
+      await repository.create(memberData);
+
+      const updatedData = {
+        exerciseTemplateId: testExercise1.templateId,
+        groupId: testGroup2.id,
+        addedBy: 'user-2', // Changed addedBy
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
+      expect(result.groupId).toBe(testGroup2.id);
+      expect(result.addedBy).toBe('user-2');
+
+      // Verify only one record exists for this composite key
+      const members = await repository.findByGroupId(testGroup2.id);
+      expect(members).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts with same composite key', async () => {
+      const memberData = {
+        exerciseTemplateId: testExercise2.templateId,
+        groupId: testGroup1.id,
+        addedBy: 'user-1',
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(memberData);
+      expect(result1.addedBy).toBe('user-1');
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...memberData,
+        addedBy: 'user-2',
+      });
+      expect(result2.addedBy).toBe('user-2');
+
+      // Verify still only one record
+      const members = await repository.findByExerciseId(testExercise2.templateId);
+      expect(members).toHaveLength(1);
+    });
+  });
+
   describe('delete', () => {
     it('should delete a group member by composite key', async () => {
       await repository.create({

@@ -1,10 +1,10 @@
 {
   "id": "Isometric_Neck_Exercise_-_Sides-Side_Neck_Stretch-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Isometric_Neck_Exercise_-_Sides",
-  "to_exercise_template_id": "Side_Neck_Stretch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Isometric_Neck_Exercise_-_Sides",
+  "toExerciseTemplateId": "Side_Neck_Stretch"
 }

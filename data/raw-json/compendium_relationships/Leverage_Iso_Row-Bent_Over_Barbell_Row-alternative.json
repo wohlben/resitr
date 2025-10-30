@@ -1,10 +1,10 @@
 {
   "id": "Leverage_Iso_Row-Bent_Over_Barbell_Row-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729900800,
-  "from_exercise_template_id": "Leverage_Iso_Row",
-  "to_exercise_template_id": "Bent_Over_Barbell_Row"
+  "createdBy": "system",
+  "createdAt": 1729900800,
+  "fromExerciseTemplateId": "Leverage_Iso_Row",
+  "toExerciseTemplateId": "Bent_Over_Barbell_Row"
 }

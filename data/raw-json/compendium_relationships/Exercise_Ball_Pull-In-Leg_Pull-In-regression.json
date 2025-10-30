@@ -1,10 +1,10 @@
 {
   "id": "Exercise_Ball_Pull-In-Leg_Pull-In-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.8,
   "description": "Floor version removes equipment and plank position for simpler pull-in movement",
-  "created_by": "system",
-  "created_at": 1761509905,
-  "from_exercise_template_id": "Exercise_Ball_Pull-In",
-  "to_exercise_template_id": "Leg_Pull-In"
+  "createdBy": "system",
+  "createdAt": 1761509905,
+  "fromExerciseTemplateId": "Exercise_Ball_Pull-In",
+  "toExerciseTemplateId": "Leg_Pull-In"
 }

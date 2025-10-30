@@ -1,10 +1,10 @@
 {
   "id": "Lateral_Box_Jump-Hurdle_Hops-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "Lateral_Box_Jump",
-  "to_exercise_template_id": "Hurdle_Hops"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "Lateral_Box_Jump",
+  "toExerciseTemplateId": "Hurdle_Hops"
 }

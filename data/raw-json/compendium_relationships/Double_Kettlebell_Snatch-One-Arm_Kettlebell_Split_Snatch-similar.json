@@ -1,10 +1,10 @@
 {
   "id": "Double_Kettlebell_Snatch-One-Arm_Kettlebell_Split_Snatch-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Double_Kettlebell_Snatch",
-  "to_exercise_template_id": "One-Arm_Kettlebell_Split_Snatch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Double_Kettlebell_Snatch",
+  "toExerciseTemplateId": "One-Arm_Kettlebell_Split_Snatch"
 }

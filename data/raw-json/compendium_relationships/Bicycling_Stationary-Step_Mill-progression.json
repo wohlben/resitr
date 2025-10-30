@@ -1,10 +1,10 @@
 {
   "id": "Bicycling_Stationary-Step_Mill-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761476051,
-  "from_exercise_template_id": "Bicycling_Stationary",
-  "to_exercise_template_id": "Step_Mill"
+  "createdBy": "system",
+  "createdAt": 1761476051,
+  "fromExerciseTemplateId": "Bicycling_Stationary",
+  "toExerciseTemplateId": "Step_Mill"
 }

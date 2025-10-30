@@ -5,17 +5,14 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRAPS",
     "RHOMBOIDS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "pull-up-bar"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -29,19 +26,21 @@
     "/img/exercises/Scapular_Pull-Up/0.jpg",
     "/img/exercises/Scapular_Pull-Up/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Pull Up",
     "Pullup",
     "Pullups",
     "Scapular Pull Up"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Scapular_Pull-Up"
+  "parentExerciseId": null,
+  "templateId": "Scapular_Pull-Up",
+  "equipmentIds": [
+    "pull-up-bar"
+  ]
 }

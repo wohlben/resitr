@@ -1,10 +1,10 @@
 {
   "id": "Pallof_Press-Plank-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729940400,
-  "from_exercise_template_id": "Pallof_Press",
-  "to_exercise_template_id": "Plank"
+  "createdBy": "system",
+  "createdAt": 1729940400,
+  "fromExerciseTemplateId": "Pallof_Press",
+  "toExerciseTemplateId": "Plank"
 }

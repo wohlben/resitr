@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Lunge-Barbell_Side_Split_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Barbell_Lunge",
-  "to_exercise_template_id": "Barbell_Side_Split_Squat"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Barbell_Lunge",
+  "toExerciseTemplateId": "Barbell_Side_Split_Squat"
 }

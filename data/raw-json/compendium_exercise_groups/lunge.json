@@ -2,7 +2,7 @@
   "id": "lunge",
   "name": "Lunge",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761410993,
-  "updated_at": 1761410993
+  "createdBy": "dev-user",
+  "createdAt": 1761410993,
+  "updatedAt": 1761410993
 }

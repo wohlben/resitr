@@ -1,8 +1,8 @@
 {
   "name": "partner",
-  "display_name": "Partner",
+  "displayName": "Partner",
   "description": "A training partner who assists with the exercise by providing resistance, support, or spotting.",
   "category": "other",
-  "image_url": null,
-  "template_id": "partner"
+  "imageUrl": null,
+  "templateId": "partner"
 }

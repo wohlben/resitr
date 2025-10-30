@@ -1,10 +1,10 @@
 {
   "id": "Pushups-Decline_Push-Up-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Pushups",
-  "to_exercise_template_id": "Decline_Push-Up"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Pushups",
+  "toExerciseTemplateId": "Decline_Push-Up"
 }

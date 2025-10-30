@@ -5,21 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "barbell",
-    "bench",
-    "chains"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bench press with chain loading providing variable resistance through movement range",
@@ -33,14 +28,18 @@
     "/img/exercises/Bench_Press_with_Chains/0.jpg",
     "/img/exercises/Bench_Press_with_Chains/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bench_Press_with_Chains"
+  "parentExerciseId": null,
+  "templateId": "Bench_Press_with_Chains",
+  "equipmentIds": [
+    "barbell",
+    "bench",
+    "chains"
+  ]
 }

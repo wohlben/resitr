@@ -1,10 +1,10 @@
 {
   "id": "Standing_Hip_Flexors-Hip_Flexion_with_Band-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Standing_Hip_Flexors",
-  "to_exercise_template_id": "Hip_Flexion_with_Band"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Standing_Hip_Flexors",
+  "toExerciseTemplateId": "Hip_Flexion_with_Band"
 }

@@ -5,20 +5,16 @@
   "force": [
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LOWER_BACK"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-hyperextension-bench",
-    "weight-plate"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -35,14 +31,17 @@
     "/img/exercises/Hyperextensions_Back_Extensions/0.jpg",
     "/img/exercises/Hyperextensions_Back_Extensions/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Hyperextensions_Back_Extensions"
+  "parentExerciseId": null,
+  "templateId": "Hyperextensions_Back_Extensions",
+  "equipmentIds": [
+    "gym-hyperextension-bench",
+    "weight-plate"
+  ]
 }

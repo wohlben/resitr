@@ -1,10 +1,10 @@
 {
   "id": "Kipping_Muscle_Up-Pullups-regression",
-  "relationship_type": "regression",
+  "relationshipType": "regression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761508980,
-  "from_exercise_template_id": "Kipping_Muscle_Up",
-  "to_exercise_template_id": "Pullups"
+  "createdBy": "system",
+  "createdAt": 1761508980,
+  "fromExerciseTemplateId": "Kipping_Muscle_Up",
+  "toExerciseTemplateId": "Pullups"
 }

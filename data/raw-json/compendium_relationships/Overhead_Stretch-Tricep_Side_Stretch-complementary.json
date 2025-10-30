@@ -1,10 +1,10 @@
 {
   "id": "Overhead_Stretch-Tricep_Side_Stretch-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.7,
   "description": "Tricep Side Stretch focuses specifically on triceps with cross-body position",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Overhead_Stretch",
-  "to_exercise_template_id": "Tricep_Side_Stretch"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Overhead_Stretch",
+  "toExerciseTemplateId": "Tricep_Side_Stretch"
 }

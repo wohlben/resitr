@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -30,7 +27,7 @@
     "/img/exercises/Dumbbell_Lying_Rear_Lateral_Raise/0.jpg",
     "/img/exercises/Dumbbell_Lying_Rear_Lateral_Raise/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "DB Lying Rear Lateral Raise",
     "Dumbbell Lateral Raise",
     "Dumbbell Prone Rear Lateral Raise",
@@ -38,13 +35,15 @@
     "Side Lateral Raise",
     "Side Raise"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Dumbbell_Lying_Rear_Lateral_Raise"
+  "parentExerciseId": null,
+  "templateId": "Dumbbell_Lying_Rear_Lateral_Raise",
+  "equipmentIds": [
+    "2x dumbbell"
+  ]
 }

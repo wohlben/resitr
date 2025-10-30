@@ -1,10 +1,10 @@
 {
   "id": "Incline_Push-Up_Close-Grip-Close-Grip_Dumbbell_Press-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761482004,
-  "from_exercise_template_id": "Incline_Push-Up_Close-Grip",
-  "to_exercise_template_id": "Close-Grip_Dumbbell_Press"
+  "createdBy": "system",
+  "createdAt": 1761482004,
+  "fromExerciseTemplateId": "Incline_Push-Up_Close-Grip",
+  "toExerciseTemplateId": "Close-Grip_Dumbbell_Press"
 }

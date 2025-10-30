@@ -6,19 +6,16 @@
     "PULL",
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LATS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "medicine-ball"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -33,19 +30,21 @@
     "/img/exercises/One-Arm_Medicine_Ball_Slam/0.jpg",
     "/img/exercises/One-Arm_Medicine_Ball_Slam/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Arm Medicine Ball Slam",
     "One-Arm Med Ball Slam",
     "Single Arm Medicine Ball Slam",
     "Unilateral Medicine Ball Slam"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One-Arm_Medicine_Ball_Slam"
+  "parentExerciseId": null,
+  "templateId": "One-Arm_Medicine_Ball_Slam",
+  "equipmentIds": [
+    "medicine-ball"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Seated_Calf_Raise-Rocking_Standing_Calf_Raise-variation",
-  "relationship_type": "variation",
+  "relationshipType": "variation",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Seated_Calf_Raise",
-  "to_exercise_template_id": "Rocking_Standing_Calf_Raise"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Seated_Calf_Raise",
+  "toExerciseTemplateId": "Rocking_Standing_Calf_Raise"
 }

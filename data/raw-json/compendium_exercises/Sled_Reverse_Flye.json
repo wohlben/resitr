@@ -5,19 +5,16 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "REAR_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "RHOMBOIDS",
     "QUADS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-sled"
-  ],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -34,14 +31,16 @@
     "/img/exercises/Sled_Reverse_Flye/0.jpg",
     "/img/exercises/Sled_Reverse_Flye/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Sled_Reverse_Flye"
+  "parentExerciseId": null,
+  "templateId": "Sled_Reverse_Flye",
+  "equipmentIds": [
+    "gym-sled"
+  ]
 }

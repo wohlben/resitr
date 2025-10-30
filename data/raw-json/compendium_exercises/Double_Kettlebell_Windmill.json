@@ -5,20 +5,17 @@
   "force": [
     "ROTATION"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "GLUTES",
     "HAMSTRINGS",
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Double kettlebell windmill with one overhead and one retrieved from ground, advanced core and shoulder stability exercise.",
@@ -32,16 +29,18 @@
     "/img/exercises/Double_Kettlebell_Windmill/0.jpg",
     "/img/exercises/Double_Kettlebell_Windmill/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Double KB Windmill"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Double_Kettlebell_Windmill"
+  "parentExerciseId": null,
+  "templateId": "Double_Kettlebell_Windmill",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

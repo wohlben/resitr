@@ -1,10 +1,10 @@
 {
   "id": "Single_Leg_Butt_Kick-Double_Leg_Butt_Kick-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Single_Leg_Butt_Kick",
-  "to_exercise_template_id": "Double_Leg_Butt_Kick"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Single_Leg_Butt_Kick",
+  "toExerciseTemplateId": "Double_Leg_Butt_Kick"
 }

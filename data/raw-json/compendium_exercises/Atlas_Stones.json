@@ -6,22 +6,21 @@
     "PULL",
     "HINGE"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "LOWER_BACK",
     "QUADS",
     "HAMSTRINGS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LATS",
     "TRAPS",
     "ABS",
     "FOREARMS"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [],
-  "body_weight_scaling": 0.8,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0.8,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP",
     "EMOM",
@@ -38,16 +37,16 @@
     "/img/exercises/Atlas_Stones/0.jpg",
     "/img/exercises/Atlas_Stones/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Atlas-Stones"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Atlas_Stones"
+  "parentExerciseId": null,
+  "templateId": "Atlas_Stones",
+  "equipmentIds": []
 }

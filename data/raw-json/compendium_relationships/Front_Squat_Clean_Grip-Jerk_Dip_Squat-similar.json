@@ -1,10 +1,10 @@
 {
   "id": "Front_Squat_Clean_Grip-Jerk_Dip_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761499778,
-  "from_exercise_template_id": "Front_Squat_Clean_Grip",
-  "to_exercise_template_id": "Jerk_Dip_Squat"
+  "createdBy": "system",
+  "createdAt": 1761499778,
+  "fromExerciseTemplateId": "Front_Squat_Clean_Grip",
+  "toExerciseTemplateId": "Jerk_Dip_Squat"
 }

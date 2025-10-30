@@ -1,10 +1,10 @@
 {
   "id": "Front_Plate_Raise-Single_Dumbbell_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": "Both exercises involve holding a single weight object with both hands at the sides (plate edges vs dumbbell head) and raising it forward to shoulder height, targeting front deltoids with nearly identical movement patterns.",
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Front_Plate_Raise",
-  "to_exercise_template_id": "Single_Dumbbell_Raise"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Front_Plate_Raise",
+  "toExerciseTemplateId": "Single_Dumbbell_Raise"
 }

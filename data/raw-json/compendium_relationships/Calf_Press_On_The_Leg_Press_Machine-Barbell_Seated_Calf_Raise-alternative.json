@@ -1,10 +1,10 @@
 {
   "id": "Calf_Press_On_The_Leg_Press_Machine-Barbell_Seated_Calf_Raise-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Calf_Press_On_The_Leg_Press_Machine",
-  "to_exercise_template_id": "Barbell_Seated_Calf_Raise"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Calf_Press_On_The_Leg_Press_Machine",
+  "toExerciseTemplateId": "Barbell_Seated_Calf_Raise"
 }

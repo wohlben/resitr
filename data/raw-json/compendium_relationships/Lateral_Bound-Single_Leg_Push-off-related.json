@@ -1,10 +1,10 @@
 {
   "id": "Lateral_Bound-Single_Leg_Push-off-related",
-  "relationship_type": "related",
+  "relationshipType": "related",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Lateral_Bound",
-  "to_exercise_template_id": "Single_Leg_Push-off"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Lateral_Bound",
+  "toExerciseTemplateId": "Single_Leg_Push-off"
 }

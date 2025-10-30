@@ -1,10 +1,10 @@
 {
   "id": "Face_Pull-Kneeling_High_Pulley_Row-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": "Both use high pulley cable pulling towards upper body; kneeling high pulley row emphasizes lats more while maintaining rear delt work",
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Face_Pull",
-  "to_exercise_template_id": "Kneeling_High_Pulley_Row"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Face_Pull",
+  "toExerciseTemplateId": "Kneeling_High_Pulley_Row"
 }

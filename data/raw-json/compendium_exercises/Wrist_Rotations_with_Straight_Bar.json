@@ -5,16 +5,13 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FOREARMS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED",
     "REP_BASED"
   ],
@@ -28,16 +25,18 @@
     "/img/exercises/Wrist_Rotations_with_Straight_Bar/0.jpg",
     "/img/exercises/Wrist_Rotations_with_Straight_Bar/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Wrist Rotations with Straight Barbell"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Wrist_Rotations_with_Straight_Bar"
+  "parentExerciseId": null,
+  "templateId": "Wrist_Rotations_with_Straight_Bar",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

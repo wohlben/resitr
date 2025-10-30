@@ -5,19 +5,16 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "mat"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Seated overhead stretch reaching arms overhead to stretch shoulders and lats.",
@@ -31,16 +28,18 @@
     "/img/exercises/Seated_Overhead_Stretch/0.jpg",
     "/img/exercises/Seated_Overhead_Stretch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Lateral Stretch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Overhead_Stretch"
+  "parentExerciseId": null,
+  "templateId": "Seated_Overhead_Stretch",
+  "equipmentIds": [
+    "mat"
+  ]
 }

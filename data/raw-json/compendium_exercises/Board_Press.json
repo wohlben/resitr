@@ -5,20 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "TRICEPS",
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell",
-    "bench"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Bench press variation using boards on chest to limit range of motion, emphasizing lockout strength and triceps development",
@@ -32,16 +28,19 @@
     "/img/exercises/Board_Press/0.jpg",
     "/img/exercises/Board_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Board-Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Board_Press"
+  "parentExerciseId": null,
+  "templateId": "Board_Press",
+  "equipmentIds": [
+    "barbell",
+    "bench"
+  ]
 }

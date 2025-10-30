@@ -5,20 +5,17 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "LATS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "BICEPS",
     "FOREARMS",
     "REAR_DELTS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "pull-up-bar"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -35,19 +32,21 @@
     "/img/exercises/Rocky_Pull-Ups_Pulldowns/0.jpg",
     "/img/exercises/Rocky_Pull-Ups_Pulldowns/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Pull Up",
     "Pullup",
     "Pullups",
     "Rocky Pull Ups/Pulldowns"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Rocky_Pull-Ups_Pulldowns"
+  "parentExerciseId": null,
+  "templateId": "Rocky_Pull-Ups_Pulldowns",
+  "equipmentIds": [
+    "pull-up-bar"
+  ]
 }

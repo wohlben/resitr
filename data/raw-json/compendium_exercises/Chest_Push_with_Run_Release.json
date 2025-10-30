@@ -5,22 +5,19 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRICEPS",
     "FRONT_DELTS",
     "QUADS",
     "GLUTES",
     "HAMSTRINGS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "medicine-ball"
-  ],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "DISTANCE_BASED",
     "TIME_BASED",
     "REP_BASED"
@@ -35,14 +32,16 @@
     "/img/exercises/Chest_Push_with_Run_Release/0.jpg",
     "/img/exercises/Chest_Push_with_Run_Release/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Chest_Push_with_Run_Release"
+  "parentExerciseId": null,
+  "templateId": "Chest_Push_with_Run_Release",
+  "equipmentIds": [
+    "medicine-ball"
+  ]
 }

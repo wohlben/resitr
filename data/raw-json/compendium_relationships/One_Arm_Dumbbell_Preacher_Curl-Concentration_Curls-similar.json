@@ -1,10 +1,10 @@
 {
   "id": "One_Arm_Dumbbell_Preacher_Curl-Concentration_Curls-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": "Both single-arm isolation exercises for biceps with different support methods",
-  "created_by": "system",
-  "created_at": 1729933200,
-  "from_exercise_template_id": "One_Arm_Dumbbell_Preacher_Curl",
-  "to_exercise_template_id": "Concentration_Curls"
+  "createdBy": "system",
+  "createdAt": 1729933200,
+  "fromExerciseTemplateId": "One_Arm_Dumbbell_Preacher_Curl",
+  "toExerciseTemplateId": "Concentration_Curls"
 }

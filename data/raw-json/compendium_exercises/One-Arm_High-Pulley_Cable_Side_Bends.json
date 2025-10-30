@@ -5,16 +5,13 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.1,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Cable side bends using high pulley with one arm, pulling cable down sideways to target obliques.",
@@ -32,20 +29,22 @@
     "/img/exercises/One-Arm_High-Pulley_Cable_Side_Bends/0.jpg",
     "/img/exercises/One-Arm_High-Pulley_Cable_Side_Bends/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "One Arm High Pulley Cable Side Bends",
     "One-Arm High-Pulley Cable Machine Side Bends",
     "One-Arm High-Pulley Side Bends",
     "Single Arm High-Pulley Cable Side Bends",
     "Unilateral High-Pulley Cable Side Bends"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "One-Arm_High-Pulley_Cable_Side_Bends"
+  "parentExerciseId": null,
+  "templateId": "One-Arm_High-Pulley_Cable_Side_Bends",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

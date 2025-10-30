@@ -5,20 +5,17 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "HAMSTRINGS",
     "LOWER_BACK",
     "ABS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Elevated hip thrust maximizing glute activation through full hip extension under heavy barbell loading",
@@ -31,18 +28,20 @@
     "/img/exercises/Barbell_Hip_Thrust/0.jpg",
     "/img/exercises/Barbell_Hip_Thrust/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "BB Hip Thrust",
     "Bar Hip Thrust",
     "Barbell Hip Thrust"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Barbell_Hip_Thrust"
+  "parentExerciseId": null,
+  "templateId": "Barbell_Hip_Thrust",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

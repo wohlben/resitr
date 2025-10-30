@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Full_Squat-Overhead_Squat-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.65,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Barbell_Full_Squat",
-  "to_exercise_template_id": "Overhead_Squat"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Barbell_Full_Squat",
+  "toExerciseTemplateId": "Overhead_Squat"
 }

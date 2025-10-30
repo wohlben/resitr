@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "SIDE_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Seated overhead press using cable machine, providing constant tension throughout movement.",
@@ -31,18 +28,20 @@
     "/img/exercises/Seated_Cable_Shoulder_Press/0.jpg",
     "/img/exercises/Seated_Cable_Shoulder_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Seated Cable Machine Shoulder Press",
     "Seated Shoulder Press",
     "Standing Cable Shoulder Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Seated_Cable_Shoulder_Press"
+  "parentExerciseId": null,
+  "templateId": "Seated_Cable_Shoulder_Press",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

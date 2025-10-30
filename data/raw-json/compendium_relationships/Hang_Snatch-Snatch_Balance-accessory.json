@@ -1,10 +1,10 @@
 {
   "id": "Hang_Snatch-Snatch_Balance-accessory",
-  "relationship_type": "accessory",
+  "relationshipType": "accessory",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761481995,
-  "from_exercise_template_id": "Hang_Snatch",
-  "to_exercise_template_id": "Snatch_Balance"
+  "createdBy": "system",
+  "createdAt": 1761481995,
+  "fromExerciseTemplateId": "Hang_Snatch",
+  "toExerciseTemplateId": "Snatch_Balance"
 }

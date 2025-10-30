@@ -6,20 +6,17 @@
     "PUSH",
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "ABS",
     "OBLIQUES"
   ],
-  "technical_difficulty": "advanced",
-  "equipments": [
-    "dumbbell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "advanced",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Overhead kettlebell circus movement combining strength and stability through complex pattern",
@@ -33,16 +30,18 @@
     "/img/exercises/Circus_Bell/0.jpg",
     "/img/exercises/Circus_Bell/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Circus-Bell"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Circus_Bell"
+  "parentExerciseId": null,
+  "templateId": "Circus_Bell",
+  "equipmentIds": [
+    "dumbbell"
+  ]
 }

@@ -1,10 +1,10 @@
 {
   "id": "Double_Leg_Butt_Kick-Box_Jump_Multiple_Response-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Double_Leg_Butt_Kick",
-  "to_exercise_template_id": "Box_Jump_Multiple_Response"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Double_Leg_Butt_Kick",
+  "toExerciseTemplateId": "Box_Jump_Multiple_Response"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Clean_and_Jerk-Jerk_Balance-accessory",
-  "relationship_type": "accessory",
+  "relationshipType": "accessory",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761510000,
-  "from_exercise_template_id": "Clean_and_Jerk",
-  "to_exercise_template_id": "Jerk_Balance"
+  "createdBy": "system",
+  "createdAt": 1761510000,
+  "fromExerciseTemplateId": "Clean_and_Jerk",
+  "toExerciseTemplateId": "Jerk_Balance"
 }

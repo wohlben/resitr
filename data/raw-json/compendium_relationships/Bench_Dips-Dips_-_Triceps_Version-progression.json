@@ -1,10 +1,10 @@
 {
   "id": "Bench_Dips-Dips_-_Triceps_Version-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.9,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Bench_Dips",
-  "to_exercise_template_id": "Dips_-_Triceps_Version"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Bench_Dips",
+  "toExerciseTemplateId": "Dips_-_Triceps_Version"
 }

@@ -5,15 +5,14 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "GLUTES",
     "OBLIQUES"
   ],
-  "secondary_muscles": [],
-  "technical_difficulty": "intermediate",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "secondaryMuscles": [],
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Dynamic torso rotation and hip mobility stretch performed lying face down, bringing alternating legs across the body.",
@@ -26,14 +25,14 @@
     "/img/exercises/Iron_Crosses_stretch/0.jpg",
     "/img/exercises/Iron_Crosses_stretch/1.jpg"
   ],
-  "alternative_names": [],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "alternativeNames": [],
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Iron_Crosses_stretch"
+  "parentExerciseId": null,
+  "templateId": "Iron_Crosses_stretch",
+  "equipmentIds": []
 }

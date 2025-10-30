@@ -1,10 +1,10 @@
 {
   "id": "Band_Assisted_Pull-Up-Close-Grip_Front_Lat_Pulldown-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729931400,
-  "from_exercise_template_id": "Band_Assisted_Pull-Up",
-  "to_exercise_template_id": "Close-Grip_Front_Lat_Pulldown"
+  "createdBy": "system",
+  "createdAt": 1729931400,
+  "fromExerciseTemplateId": "Band_Assisted_Pull-Up",
+  "toExerciseTemplateId": "Close-Grip_Front_Lat_Pulldown"
 }

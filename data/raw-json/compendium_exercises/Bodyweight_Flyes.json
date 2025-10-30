@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "CHEST"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "FRONT_DELTS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "barbell"
-  ],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Wide-grip push-up with rolling bars for chest emphasis, mimicking fly movement pattern.",
@@ -32,16 +29,18 @@
     "/img/exercises/Bodyweight_Flyes/0.jpg",
     "/img/exercises/Bodyweight_Flyes/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Bodyweight-Flyes"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Bodyweight_Flyes"
+  "parentExerciseId": null,
+  "templateId": "Bodyweight_Flyes",
+  "equipmentIds": [
+    "barbell"
+  ]
 }

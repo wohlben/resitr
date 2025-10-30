@@ -1,10 +1,10 @@
 {
   "id": "One-Arm_Flat_Bench_Dumbbell_Flye-Flat_Bench_Cable_Flyes-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729973000,
-  "from_exercise_template_id": "One-Arm_Flat_Bench_Dumbbell_Flye",
-  "to_exercise_template_id": "Flat_Bench_Cable_Flyes"
+  "createdBy": "system",
+  "createdAt": 1729973000,
+  "fromExerciseTemplateId": "One-Arm_Flat_Bench_Dumbbell_Flye",
+  "toExerciseTemplateId": "Flat_Bench_Cable_Flyes"
 }

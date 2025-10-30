@@ -5,18 +5,15 @@
   "force": [
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "OBLIQUES"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "gym-cable-machine"
-  ],
-  "body_weight_scaling": 0.9,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.9,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Kneeling cable crunch with rope attachment targeting rectus abdominis through spinal flexion",
@@ -32,20 +29,22 @@
     "/img/exercises/Cable_Crunch/0.jpg",
     "/img/exercises/Cable_Crunch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ab Crunch",
     "Abdominal Crunch",
     "Cable Machine Crunch",
     "Cable-Crunch",
     "Crunch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cable_Crunch"
+  "parentExerciseId": null,
+  "templateId": "Cable_Crunch",
+  "equipmentIds": [
+    "gym-cable-machine"
+  ]
 }

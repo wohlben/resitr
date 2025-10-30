@@ -1,10 +1,10 @@
 {
   "id": "Double_Leg_Butt_Kick-Rope_Jumping-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Double_Leg_Butt_Kick",
-  "to_exercise_template_id": "Rope_Jumping"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Double_Leg_Butt_Kick",
+  "toExerciseTemplateId": "Rope_Jumping"
 }

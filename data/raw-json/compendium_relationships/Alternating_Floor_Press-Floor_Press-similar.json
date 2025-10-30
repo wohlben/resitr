@@ -1,10 +1,10 @@
 {
   "id": "Alternating_Floor_Press-Floor_Press-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Alternating_Floor_Press",
-  "to_exercise_template_id": "Floor_Press"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Alternating_Floor_Press",
+  "toExerciseTemplateId": "Floor_Press"
 }

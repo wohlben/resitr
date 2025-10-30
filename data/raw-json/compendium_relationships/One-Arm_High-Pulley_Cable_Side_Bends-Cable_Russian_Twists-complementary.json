@@ -1,10 +1,10 @@
 {
   "id": "One-Arm_High-Pulley_Cable_Side_Bends-Cable_Russian_Twists-complementary",
-  "relationship_type": "complementary",
+  "relationshipType": "complementary",
   "strength": 0.6,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730000000,
-  "from_exercise_template_id": "One-Arm_High-Pulley_Cable_Side_Bends",
-  "to_exercise_template_id": "Cable_Russian_Twists"
+  "createdBy": "system",
+  "createdAt": 1730000000,
+  "fromExerciseTemplateId": "One-Arm_High-Pulley_Cable_Side_Bends",
+  "toExerciseTemplateId": "Cable_Russian_Twists"
 }

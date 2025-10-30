@@ -1,10 +1,10 @@
 {
   "id": "Lying_Machine_Squat-Smith_Machine_Squat-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": "Both are machine-guided squat variations targeting quads, glutes, and hamstrings with reduced stabilization demands. The guided path provides similar safety and control, though body position differs (lying vs standing).",
-  "created_by": "system",
-  "created_at": 1730014000,
-  "from_exercise_template_id": "Lying_Machine_Squat",
-  "to_exercise_template_id": "Smith_Machine_Squat"
+  "createdBy": "system",
+  "createdAt": 1730014000,
+  "fromExerciseTemplateId": "Lying_Machine_Squat",
+  "toExerciseTemplateId": "Smith_Machine_Squat"
 }

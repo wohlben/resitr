@@ -1,10 +1,10 @@
 {
   "id": "Russian_Twist-Torso_Rotation-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Russian_Twist",
-  "to_exercise_template_id": "Torso_Rotation"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Russian_Twist",
+  "toExerciseTemplateId": "Torso_Rotation"
 }

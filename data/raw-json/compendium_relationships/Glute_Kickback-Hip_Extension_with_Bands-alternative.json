@@ -1,10 +1,10 @@
 {
   "id": "Glute_Kickback-Hip_Extension_with_Bands-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729954800,
-  "from_exercise_template_id": "Glute_Kickback",
-  "to_exercise_template_id": "Hip_Extension_with_Bands"
+  "createdBy": "system",
+  "createdAt": 1729954800,
+  "fromExerciseTemplateId": "Glute_Kickback",
+  "toExerciseTemplateId": "Hip_Extension_with_Bands"
 }

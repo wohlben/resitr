@@ -1,10 +1,10 @@
 {
   "id": "Bench_Press_with_Chains-Floor_Press_with_Chains-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1761472847,
-  "from_exercise_template_id": "Bench_Press_with_Chains",
-  "to_exercise_template_id": "Floor_Press_with_Chains"
+  "createdBy": "system",
+  "createdAt": 1761472847,
+  "fromExerciseTemplateId": "Bench_Press_with_Chains",
+  "toExerciseTemplateId": "Floor_Press_with_Chains"
 }

@@ -47,4 +47,20 @@ export class CompendiumExerciseGroupRepository {
       .returning();
     return result;
   }
+
+  async upsert(data: CompendiumExerciseGroup) {
+    const { id, ...updateData } = data;
+    const [result] = await this.db
+      .insert(compendiumExerciseGroup)
+      .values(data)
+      .onConflictDoUpdate({
+        target: compendiumExerciseGroup.id,
+        set: {
+          ...updateData,
+          updatedAt: sql`(unixepoch())`,
+        },
+      })
+      .returning();
+    return result;
+  }
 }

@@ -5,19 +5,16 @@
   "force": [
     "PUSH"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "QUADS",
     "TRICEPS"
   ],
-  "technical_difficulty": "intermediate",
-  "equipments": [
-    "2x kettlebell"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "intermediate",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED"
   ],
   "description": "Explosive overhead press with two kettlebells using leg drive to assist the press.",
@@ -30,16 +27,18 @@
     "/img/exercises/Double_Kettlebell_Push_Press/0.jpg",
     "/img/exercises/Double_Kettlebell_Push_Press/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Double KB Push Press"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Double_Kettlebell_Push_Press"
+  "parentExerciseId": null,
+  "templateId": "Double_Kettlebell_Push_Press",
+  "equipmentIds": [
+    "2x kettlebell"
+  ]
 }

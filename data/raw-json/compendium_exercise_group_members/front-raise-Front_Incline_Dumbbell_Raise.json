@@ -1,6 +1,6 @@
 {
-  "group_id": "front-raise",
-  "added_by": "dev-user",
-  "added_at": 1761416584,
-  "exercise_template_id": "Front_Incline_Dumbbell_Raise"
+  "groupId": "front-raise",
+  "addedBy": "dev-user",
+  "addedAt": 1761416584,
+  "exerciseTemplateId": "Front_Incline_Dumbbell_Raise"
 }

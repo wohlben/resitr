@@ -1,10 +1,10 @@
 {
   "id": "Crunches-Ab_Crunch_Machine-progression",
-  "relationship_type": "progression",
+  "relationshipType": "progression",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Crunches",
-  "to_exercise_template_id": "Ab_Crunch_Machine"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Crunches",
+  "toExerciseTemplateId": "Ab_Crunch_Machine"
 }

@@ -1,10 +1,10 @@
 {
   "id": "Snatch_Deadlift-Barbell_Deadlift-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730016000,
-  "from_exercise_template_id": "Snatch_Deadlift",
-  "to_exercise_template_id": "Barbell_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1730016000,
+  "fromExerciseTemplateId": "Snatch_Deadlift",
+  "toExerciseTemplateId": "Barbell_Deadlift"
 }

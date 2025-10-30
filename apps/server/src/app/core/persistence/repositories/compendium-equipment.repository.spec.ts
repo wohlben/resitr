@@ -308,6 +308,99 @@ describe('CompendiumEquipmentRepository', () => {
     });
   });
 
+  describe('upsert', () => {
+    it('should insert new equipment when it does not exist', async () => {
+      const equipmentData: CompendiumEquipment = {
+        templateId: 'eq-1',
+        name: 'barbell',
+        displayName: 'Barbell',
+        category: EquipmentCategory.free_weights,
+        description: 'A standard barbell',
+      };
+
+      const result = await repository.upsert(equipmentData);
+
+      expect(result).toBeDefined();
+      expect(result.templateId).toBe('eq-1');
+      expect(result.name).toBe('barbell');
+      expect(result.displayName).toBe('Barbell');
+      expect(result.description).toBe('A standard barbell');
+
+      // Verify it was inserted
+      const found = await repository.findById('eq-1');
+      expect(found).toBeDefined();
+      expect(found.name).toBe('barbell');
+    });
+
+    it('should update existing equipment when it already exists', async () => {
+      const equipmentData: CompendiumEquipment = {
+        templateId: 'eq-1',
+        name: 'dumbbell',
+        displayName: 'Dumbbell',
+        category: EquipmentCategory.free_weights,
+        description: 'A standard dumbbell',
+      };
+
+      await repository.create(equipmentData);
+
+      const updatedData: CompendiumEquipment = {
+        templateId: 'eq-1',
+        name: 'dumbbell',
+        displayName: 'Heavy Dumbbell',
+        category: EquipmentCategory.free_weights,
+        description: 'A heavy-duty dumbbell',
+        imageUrl: 'https://example.com/heavy-dumbbell.jpg',
+      };
+
+      const result = await repository.upsert(updatedData);
+
+      expect(result).toBeDefined();
+      expect(result.templateId).toBe('eq-1');
+      expect(result.displayName).toBe('Heavy Dumbbell');
+      expect(result.description).toBe('A heavy-duty dumbbell');
+      expect(result.imageUrl).toBe('https://example.com/heavy-dumbbell.jpg');
+
+      // Verify only one record exists
+      const allEquipment = await repository.findAll();
+      expect(allEquipment).toHaveLength(1);
+    });
+
+    it('should handle multiple upserts in sequence', async () => {
+      const equipmentData: CompendiumEquipment = {
+        templateId: 'eq-1',
+        name: 'kettlebell',
+        displayName: 'Kettlebell',
+        category: EquipmentCategory.free_weights,
+      };
+
+      // First upsert - insert
+      const result1 = await repository.upsert(equipmentData);
+      expect(result1.displayName).toBe('Kettlebell');
+      expect(result1.description).toBeNull();
+
+      // Second upsert - update
+      const result2 = await repository.upsert({
+        ...equipmentData,
+        description: 'A cast iron weight',
+      });
+      expect(result2.displayName).toBe('Kettlebell');
+      expect(result2.description).toBe('A cast iron weight');
+
+      // Third upsert - another update
+      const result3 = await repository.upsert({
+        ...equipmentData,
+        displayName: 'Competition Kettlebell',
+        description: 'A competition-grade kettlebell',
+      });
+      expect(result3.displayName).toBe('Competition Kettlebell');
+      expect(result3.description).toBe('A competition-grade kettlebell');
+
+      // Verify still only one record
+      const allEquipment = await repository.findAll();
+      expect(allEquipment).toHaveLength(1);
+    });
+  });
+
   describe('substitutesFor relationship', () => {
     it('should include substitutesFor IDs when equipment has fulfillments', async () => {
       const barbell = await repository.create({

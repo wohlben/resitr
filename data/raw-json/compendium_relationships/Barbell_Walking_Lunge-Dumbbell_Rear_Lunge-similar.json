@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Walking_Lunge-Dumbbell_Rear_Lunge-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Barbell_Walking_Lunge",
-  "to_exercise_template_id": "Dumbbell_Rear_Lunge"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Barbell_Walking_Lunge",
+  "toExerciseTemplateId": "Dumbbell_Rear_Lunge"
 }

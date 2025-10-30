@@ -1,10 +1,10 @@
 {
   "id": "Sled_Reverse_Flye-Reverse_Flyes-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Sled_Reverse_Flye",
-  "to_exercise_template_id": "Reverse_Flyes"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Sled_Reverse_Flye",
+  "toExerciseTemplateId": "Reverse_Flyes"
 }

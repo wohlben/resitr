@@ -1,10 +1,10 @@
 {
   "id": "Bent-Knee_Hip_Raise-Knee_Hip_Raise_On_Parallel_Bars-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.88,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Bent-Knee_Hip_Raise",
-  "to_exercise_template_id": "Knee_Hip_Raise_On_Parallel_Bars"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Bent-Knee_Hip_Raise",
+  "toExerciseTemplateId": "Knee_Hip_Raise_On_Parallel_Bars"
 }

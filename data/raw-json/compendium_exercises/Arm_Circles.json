@@ -5,17 +5,16 @@
   "force": [
     "STATIC"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "FRONT_DELTS",
     "SIDE_DELTS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "TRAPS"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 0.5,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0.5,
+  "suggestedMeasurementParadigms": [
     "TIME_BASED"
   ],
   "description": "Dynamic shoulder mobility warmup using circular arm motions to increase blood flow and flexibility",
@@ -28,16 +27,16 @@
     "/img/exercises/Arm_Circles/0.jpg",
     "/img/exercises/Arm_Circles/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Arm-Circles"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Arm_Circles"
+  "parentExerciseId": null,
+  "templateId": "Arm_Circles",
+  "equipmentIds": []
 }

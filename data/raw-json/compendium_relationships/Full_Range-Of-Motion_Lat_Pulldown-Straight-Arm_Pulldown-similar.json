@@ -1,10 +1,10 @@
 {
   "id": "Full_Range-Of-Motion_Lat_Pulldown-Straight-Arm_Pulldown-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.7,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729931400,
-  "from_exercise_template_id": "Full_Range-Of-Motion_Lat_Pulldown",
-  "to_exercise_template_id": "Straight-Arm_Pulldown"
+  "createdBy": "system",
+  "createdAt": 1729931400,
+  "fromExerciseTemplateId": "Full_Range-Of-Motion_Lat_Pulldown",
+  "toExerciseTemplateId": "Straight-Arm_Pulldown"
 }

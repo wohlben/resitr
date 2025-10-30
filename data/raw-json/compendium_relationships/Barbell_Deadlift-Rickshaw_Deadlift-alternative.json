@@ -1,10 +1,10 @@
 {
   "id": "Barbell_Deadlift-Rickshaw_Deadlift-alternative",
-  "relationship_type": "alternative",
+  "relationshipType": "alternative",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1760883050,
-  "from_exercise_template_id": "Barbell_Deadlift",
-  "to_exercise_template_id": "Rickshaw_Deadlift"
+  "createdBy": "system",
+  "createdAt": 1760883050,
+  "fromExerciseTemplateId": "Barbell_Deadlift",
+  "toExerciseTemplateId": "Rickshaw_Deadlift"
 }

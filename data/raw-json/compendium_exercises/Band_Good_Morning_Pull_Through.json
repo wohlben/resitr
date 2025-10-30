@@ -6,19 +6,16 @@
     "HINGE",
     "PULL"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "HAMSTRINGS",
     "GLUTES"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "LOWER_BACK"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [
-    "resistance-band"
-  ],
-  "body_weight_scaling": 0,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 0,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -32,16 +29,18 @@
     "/img/exercises/Band_Good_Morning_Pull_Through/0.jpg",
     "/img/exercises/Band_Good_Morning_Pull_Through/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Resistance Band Good Morning (Pull Through)"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Band_Good_Morning_Pull_Through"
+  "parentExerciseId": null,
+  "templateId": "Band_Good_Morning_Pull_Through",
+  "equipmentIds": [
+    "resistance-band"
+  ]
 }

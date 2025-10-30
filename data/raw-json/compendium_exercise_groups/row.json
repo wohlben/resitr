@@ -2,7 +2,7 @@
   "id": "row",
   "name": "Row",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761412213,
-  "updated_at": 1761412213
+  "createdBy": "dev-user",
+  "createdAt": 1761412213,
+  "updatedAt": 1761412213
 }

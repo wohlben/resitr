@@ -1,10 +1,10 @@
 {
   "id": "Posterior_Tibialis_Stretch-Anterior_Tibialis-SMR-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.8,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Posterior_Tibialis_Stretch",
-  "to_exercise_template_id": "Anterior_Tibialis-SMR"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Posterior_Tibialis_Stretch",
+  "toExerciseTemplateId": "Anterior_Tibialis-SMR"
 }

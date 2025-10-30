@@ -1,10 +1,10 @@
 {
   "id": "Isometric_Wipers-Push_Up_to_Side_Plank-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": null,
-  "created_by": "system",
-  "created_at": 1735243200,
-  "from_exercise_template_id": "Isometric_Wipers",
-  "to_exercise_template_id": "Push_Up_to_Side_Plank"
+  "createdBy": "system",
+  "createdAt": 1735243200,
+  "fromExerciseTemplateId": "Isometric_Wipers",
+  "toExerciseTemplateId": "Push_Up_to_Side_Plank"
 }

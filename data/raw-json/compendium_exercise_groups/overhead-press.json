@@ -2,7 +2,7 @@
   "id": "overhead-press",
   "name": "Overhead Press",
   "description": null,
-  "created_by": "dev-user",
-  "created_at": 1761404643,
-  "updated_at": 1761405541
+  "createdBy": "dev-user",
+  "createdAt": 1761404643,
+  "updatedAt": 1761405541
 }

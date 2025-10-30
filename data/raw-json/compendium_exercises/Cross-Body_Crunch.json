@@ -6,16 +6,15 @@
     "PULL",
     "ROTATION"
   ],
-  "primary_muscles": [
+  "primaryMuscles": [
     "ABS"
   ],
-  "secondary_muscles": [
+  "secondaryMuscles": [
     "OBLIQUES"
   ],
-  "technical_difficulty": "beginner",
-  "equipments": [],
-  "body_weight_scaling": 1,
-  "suggested_measurement_paradigms": [
+  "technicalDifficulty": "beginner",
+  "bodyWeightScaling": 1,
+  "suggestedMeasurementParadigms": [
     "REP_BASED",
     "AMRAP"
   ],
@@ -31,18 +30,18 @@
     "/img/exercises/Cross-Body_Crunch/0.jpg",
     "/img/exercises/Cross-Body_Crunch/1.jpg"
   ],
-  "alternative_names": [
+  "alternativeNames": [
     "Ab Crunch",
     "Abdominal Crunch",
     "Cross Body Crunch"
   ],
-  "author_name": null,
-  "author_url": null,
-  "created_by": "system",
-  "created_at": 1760873666,
-  "updated_at": null,
+  "authorName": null,
+  "authorUrl": null,
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "updatedAt": null,
   "version": 0,
-  "parent_exercise_id": null,
-  "fork_count": 0,
-  "template_id": "Cross-Body_Crunch"
+  "parentExerciseId": null,
+  "templateId": "Cross-Body_Crunch",
+  "equipmentIds": []
 }

@@ -1,10 +1,10 @@
 {
   "id": "Kneeling_High_Pulley_Row-Face_Pull-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.75,
   "description": "Both use high pulley cable pulling towards upper body with focus on rear delts and rhomboids; face pull emphasizes external rotation",
-  "created_by": "system",
-  "created_at": 1760873666,
-  "from_exercise_template_id": "Kneeling_High_Pulley_Row",
-  "to_exercise_template_id": "Face_Pull"
+  "createdBy": "system",
+  "createdAt": 1760873666,
+  "fromExerciseTemplateId": "Kneeling_High_Pulley_Row",
+  "toExerciseTemplateId": "Face_Pull"
 }

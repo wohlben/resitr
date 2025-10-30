@@ -1,10 +1,10 @@
 {
   "id": "Brachialis-SMR-Triceps_Stretch-superset_with",
-  "relationship_type": "superset_with",
+  "relationshipType": "superset_with",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1729929600,
-  "from_exercise_template_id": "Brachialis-SMR",
-  "to_exercise_template_id": "Triceps_Stretch"
+  "createdBy": "system",
+  "createdAt": 1729929600,
+  "fromExerciseTemplateId": "Brachialis-SMR",
+  "toExerciseTemplateId": "Triceps_Stretch"
 }

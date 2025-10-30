@@ -1,10 +1,10 @@
 {
   "id": "Peroneals-SMR-Calves-SMR-similar",
-  "relationship_type": "similar",
+  "relationshipType": "similar",
   "strength": 0.85,
   "description": null,
-  "created_by": "system",
-  "created_at": 1730073600,
-  "from_exercise_template_id": "Peroneals-SMR",
-  "to_exercise_template_id": "Calves-SMR"
+  "createdBy": "system",
+  "createdAt": 1730073600,
+  "fromExerciseTemplateId": "Peroneals-SMR",
+  "toExerciseTemplateId": "Calves-SMR"
 }
