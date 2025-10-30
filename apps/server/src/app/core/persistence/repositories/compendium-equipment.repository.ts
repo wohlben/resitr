@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { eq } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
-import { compendiumEquipment, type CompendiumEquipment } from '../schemas';
+import { compendiumEquipment, compendiumEquipmentFulfillment, type CompendiumEquipment } from '../schemas';
 
 @Injectable()
 export class CompendiumEquipmentRepository {
@@ -87,5 +87,23 @@ export class CompendiumEquipmentRepository {
       })
       .returning();
     return this.findById(result.templateId);
+  }
+
+  async setSubstitutesFor(equipmentTemplateId: string, fulfillsTemplateIds: string[], createdBy: string) {
+    // Delete existing relationships
+    await this.db
+      .delete(compendiumEquipmentFulfillment)
+      .where(eq(compendiumEquipmentFulfillment.equipmentTemplateId, equipmentTemplateId));
+
+    // Insert new relationships
+    if (fulfillsTemplateIds.length > 0) {
+      await this.db.insert(compendiumEquipmentFulfillment).values(
+        fulfillsTemplateIds.map((fulfillsId) => ({
+          equipmentTemplateId,
+          fulfillsEquipmentTemplateId: fulfillsId,
+          createdBy,
+        }))
+      );
+    }
   }
 }

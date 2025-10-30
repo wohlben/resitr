@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { CompendiumEquipmentService } from './compendium/equipment/compendium-equipment.service';
 import { CompendiumEquipmentRepository } from './persistence/repositories/compendium-equipment.repository';
-import { CompendiumEquipmentFulfillmentRepository } from './persistence/repositories/compendium-equipment-fulfillment.repository';
 import { CompendiumExerciseRepository } from './persistence/repositories/compendium-exercise.repository';
 import { CompendiumExerciseGroupRepository } from './persistence/repositories/compendium-exercise-group.repository';
 import { CompendiumExerciseGroupMemberRepository } from './persistence/repositories/compendium-exercise-group-member.repository';
@@ -14,7 +13,6 @@ import { provideDatabase } from './persistence/database';
     provideDatabase(),
     CompendiumEquipmentService,
     CompendiumEquipmentRepository,
-    CompendiumEquipmentFulfillmentRepository,
     CompendiumExerciseRepository,
     CompendiumExerciseGroupRepository,
     CompendiumExerciseGroupMemberRepository,

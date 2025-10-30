@@ -8,7 +8,6 @@ import { CompendiumExerciseRepository } from '../app/core/persistence/repositori
 import { CompendiumEquipmentRepository } from '../app/core/persistence/repositories/compendium-equipment.repository';
 import { CompendiumExerciseGroupRepository } from '../app/core/persistence/repositories/compendium-exercise-group.repository';
 import { CompendiumExerciseGroupMemberRepository } from '../app/core/persistence/repositories/compendium-exercise-group-member.repository';
-import { CompendiumEquipmentFulfillmentRepository } from '../app/core/persistence/repositories/compendium-equipment-fulfillment.repository';
 import { CompendiumExerciseRelationshipRepository } from '../app/core/persistence/repositories/compendium-exercise-relationship.repository';
 import { CompendiumExerciseVideoRepository } from '../app/core/persistence/repositories/compendium-exercise-video.repository';
 
@@ -108,7 +107,6 @@ async function importData() {
   const equipmentRepo = new CompendiumEquipmentRepository(db as any);
   const exerciseGroupRepo = new CompendiumExerciseGroupRepository(db as any);
   const exerciseGroupMemberRepo = new CompendiumExerciseGroupMemberRepository(db as any);
-  const equipmentFulfillmentRepo = new CompendiumEquipmentFulfillmentRepository(db as any);
   const exerciseRelationshipRepo = new CompendiumExerciseRelationshipRepository(db as any);
   const exerciseVideoRepo = new CompendiumExerciseVideoRepository(db as any);
 
@@ -133,12 +131,25 @@ async function importData() {
   console.log('Importing equipment fulfillment...');
   const fulfillmentDir = path.join(rawDataPath, 'compendium_equipment_fulfillment');
   const fulfillmentData = await readJsonFiles(fulfillmentDir);
+
+  // Group fulfillments by equipment template ID
+  const fulfillmentsByEquipment = new Map<string, string[]>();
   for (const fulfillment of fulfillmentData) {
+    const equipmentId = fulfillment.equipment_template_id;
+    const fulfillsId = fulfillment.fulfills_equipment_template_id;
+    if (!fulfillmentsByEquipment.has(equipmentId)) {
+      fulfillmentsByEquipment.set(equipmentId, []);
+    }
+    fulfillmentsByEquipment.get(equipmentId)!.push(fulfillsId);
+  }
+
+  // Set substitutesFor relationships for each equipment
+  for (const [equipmentId, fulfillsIds] of fulfillmentsByEquipment.entries()) {
     try {
-      await equipmentFulfillmentRepo.upsert(fulfillment);
+      await equipmentRepo.setSubstitutesFor(equipmentId, fulfillsIds, 'import-script');
       stats.equipmentFulfillment.success++;
     } catch (error) {
-      console.error(`Failed to import equipment fulfillment:`, error);
+      console.error(`Failed to import equipment fulfillment for ${equipmentId}:`, error);
       stats.equipmentFulfillment.failed++;
     }
   }
