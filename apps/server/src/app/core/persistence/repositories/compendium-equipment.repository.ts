@@ -9,7 +9,7 @@ export class CompendiumEquipmentRepository {
 
   async create(data: CompendiumEquipment) {
     const [result] = await this.db.insert(compendiumEquipment).values(data).returning();
-    return result;
+    return this.findById(result.templateId);
   }
 
   async findAll() {
@@ -44,25 +44,36 @@ export class CompendiumEquipmentRepository {
   }
 
   async findByName(name: string) {
-    const [result] = await this.db.select().from(compendiumEquipment).where(eq(compendiumEquipment.name, name));
-    return result;
+    const result = await this.db.query.compendiumEquipment.findFirst({
+      where: eq(compendiumEquipment.name, name),
+      with: {
+        substitutesFor: true,
+      },
+    });
+
+    if (!result) {
+      return undefined;
+    }
+
+    return {
+      ...result,
+      substitutesFor: result.substitutesFor.map((f) => f.fulfillsEquipmentTemplateId),
+    };
   }
 
   async update(templateId: string, data: Partial<CompendiumEquipment>) {
-    const [result] = await this.db
+    await this.db
       .update(compendiumEquipment)
       .set(data)
-      .where(eq(compendiumEquipment.templateId, templateId))
-      .returning();
-    return result;
+      .where(eq(compendiumEquipment.templateId, templateId));
+
+    return this.findById(templateId);
   }
 
   async delete(templateId: string) {
-    const [result] = await this.db
+    await this.db
       .delete(compendiumEquipment)
-      .where(eq(compendiumEquipment.templateId, templateId))
-      .returning();
-    return result;
+      .where(eq(compendiumEquipment.templateId, templateId));
   }
 
   async upsert(data: CompendiumEquipment) {
@@ -75,6 +86,6 @@ export class CompendiumEquipmentRepository {
         set: updateData,
       })
       .returning();
-    return result;
+    return this.findById(result.templateId);
   }
 }
