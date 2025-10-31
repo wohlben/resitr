@@ -25,7 +25,6 @@ describe('CompendiumExerciseVideoRepository', () => {
     testExercise1 = await exerciseRepository.create({
       templateId: 'exercise-1',
       name: 'Bench Press',
-      slug: 'bench-press',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PUSH],
       primaryMuscles: [Muscle.CHEST],
@@ -34,13 +33,14 @@ describe('CompendiumExerciseVideoRepository', () => {
       equipmentIds: ['barbell', 'bench'],
       bodyWeightScaling: 0,
       instructions: ['Lie on bench', 'Press'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
 
     testExercise2 = await exerciseRepository.create({
       templateId: 'exercise-2',
       name: 'Squat',
-      slug: 'squat',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PUSH],
       primaryMuscles: [Muscle.QUADS],
@@ -49,7 +49,9 @@ describe('CompendiumExerciseVideoRepository', () => {
       equipmentIds: ['barbell'],
       bodyWeightScaling: 0,
       instructions: ['Squat down'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
   });
 
@@ -442,7 +444,7 @@ describe('CompendiumExerciseVideoRepository', () => {
       const videos = await repository.findByExerciseId(testExercise1.templateId);
       const multiUpsertVideo = videos.find((v) => v.url === 'https://youtube.com/multi-upsert');
       expect(multiUpsertVideo).toBeDefined();
-      expect(multiUpsertVideo.title).toBe('Updated Title 2');
+      expect(multiUpsertVideo?.title).toBe('Updated Title 2');
     });
   });
 

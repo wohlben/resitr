@@ -36,7 +36,6 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
     testExercise1 = await exerciseRepository.create({
       templateId: 'exercise-1',
       name: 'Bench Press',
-      slug: 'bench-press',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PUSH],
       primaryMuscles: [Muscle.CHEST],
@@ -45,13 +44,14 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
       equipmentIds: ['barbell', 'bench'],
       bodyWeightScaling: 0,
       instructions: ['Lie on bench', 'Lower bar to chest', 'Press up'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
 
     testExercise2 = await exerciseRepository.create({
       templateId: 'exercise-2',
       name: 'Squat',
-      slug: 'squat',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PUSH],
       primaryMuscles: [Muscle.QUADS],
@@ -60,7 +60,9 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
       equipmentIds: ['barbell'],
       bodyWeightScaling: 0,
       instructions: ['Stand with bar', 'Lower down', 'Stand up'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
 
     // Create test groups

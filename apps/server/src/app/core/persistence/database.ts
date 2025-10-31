@@ -2,8 +2,10 @@ import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/libsql';
 import type { LibSQLDatabase } from 'drizzle-orm/libsql';
 import { migrate } from 'drizzle-orm/libsql/migrator';
+import { sql } from 'drizzle-orm';
 import { workspaceRoot } from '@nx/devkit';
 import * as path from 'path';
+import * as fs from 'fs';
 import * as schema from './schemas';
 
 export const DATABASE = Symbol('DATABASE');
@@ -24,26 +26,28 @@ export const provideDatabase = () => {
   };
 };
 
-/**
- * Creates a test database provider with an in-memory SQLite database.
- * This is useful for unit tests where you need a fresh database for each test.
- *
- * The in-memory database uses libsql with the ':memory:' URL, which creates
- * a temporary database that exists only for the duration of the connection.
- * Migrations are automatically applied when the database is initialized.
- *
- * @returns A provider object for NestJS dependency injection
- *
- * @example
- * ```typescript
- * const module: TestingModule = await Test.createTestingModule({
- *   providers: [
- *     provideTestDatabase(),
- *     CompendiumEquipmentRepository,
- *   ],
- * }).compile();
- * ```
- */
+async function applyTriggers(db: Database) {
+  const triggersDir = path.join(
+    workspaceRoot,
+    'apps/server/src/app/core/persistence/triggers'
+  );
+
+  if (!fs.existsSync(triggersDir)) {
+    return;
+  }
+
+  const triggerFiles = fs
+    .readdirSync(triggersDir)
+    .filter((file) => file.endsWith('.sql'))
+    .sort();
+
+  for (const file of triggerFiles) {
+    const filePath = path.join(triggersDir, file);
+    const triggerSql = fs.readFileSync(filePath, 'utf-8');
+    await db.run(sql.raw(triggerSql));
+  }
+}
+
 export const provideTestDatabase = () => {
   return {
     provide: DATABASE,
@@ -53,10 +57,9 @@ export const provideTestDatabase = () => {
         schema,
       });
 
-      // Apply migrations to create tables
       const migrationsPath = path.join(workspaceRoot, 'drizzle');
       await migrate(db, { migrationsFolder: migrationsPath });
-
+      await applyTriggers(db);
       return db;
     },
   };

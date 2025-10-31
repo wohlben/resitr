@@ -59,5 +59,5 @@ export const compendiumEquipmentFulfillmentRelations = relations(
   })
 );
 
-export type CompendiumEquipment = typeof compendiumEquipment.$inferInsert;
-export type CompendiumEquipmentFulfillment = typeof compendiumEquipmentFulfillment.$inferInsert;
+export type NewCompendiumEquipment = typeof compendiumEquipment.$inferInsert;
+export type NewCompendiumEquipmentFulfillment = typeof compendiumEquipmentFulfillment.$inferInsert;

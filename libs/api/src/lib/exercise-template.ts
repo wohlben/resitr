@@ -21,7 +21,8 @@ export type ExerciseTemplate = {
   images: string[];
   authorName?: string;
   authorUrl?: string;
-  version: string;
+  createdBy: string;
+  version: number;
   updatedAt: string;
   createdAt: string;
 };

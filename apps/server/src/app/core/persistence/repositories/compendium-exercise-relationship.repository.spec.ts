@@ -26,7 +26,6 @@ describe('CompendiumExerciseRelationshipRepository', () => {
     testExercise1 = await exerciseRepository.create({
       templateId: 'exercise-1',
       name: 'Push Up',
-      slug: 'push-up',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PUSH],
       primaryMuscles: [Muscle.CHEST],
@@ -35,13 +34,14 @@ describe('CompendiumExerciseRelationshipRepository', () => {
       equipmentIds: [],
       bodyWeightScaling: 1,
       instructions: ['Do push up'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
 
     testExercise2 = await exerciseRepository.create({
       templateId: 'exercise-2',
       name: 'Diamond Push Up',
-      slug: 'diamond-push-up',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PUSH],
       primaryMuscles: [Muscle.TRICEPS],
@@ -50,13 +50,14 @@ describe('CompendiumExerciseRelationshipRepository', () => {
       equipmentIds: [],
       bodyWeightScaling: 1,
       instructions: ['Do diamond push up'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
 
     testExercise3 = await exerciseRepository.create({
       templateId: 'exercise-3',
       name: 'Pull Up',
-      slug: 'pull-up',
       type: ExerciseType.STRENGTH,
       force: [ForceType.PULL],
       primaryMuscles: [Muscle.LATS],
@@ -65,7 +66,9 @@ describe('CompendiumExerciseRelationshipRepository', () => {
       equipmentIds: ['pull-up-bar'],
       bodyWeightScaling: 1,
       instructions: ['Pull up'],
+      images: [],
       createdBy: 'user-1',
+      version: 1,
     });
   });
 

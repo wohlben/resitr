@@ -16,6 +16,7 @@ export const userEquipmentStore = signalStore(
   withMethods((store, database = inject(Database)) => ({
     readEquipment: async (id: string) => {
       const equipment = await database.equipment.get(id);
+      if (!equipment) throw Error(`equipment ${id} not found`)
       patchState(store, () => ({ equipment }));
     },
     updateEquipment: async (equipment: Partial<Equipment>) => {

@@ -4,7 +4,7 @@ export type EquipmentTemplate = {
   name: string;
   displayName: string;
   templateId: string;
-  image?: string;
+  imageUrl?: string;
   description?: string;
   category?: EquipmentCategory;
   substitutesFor: string[];

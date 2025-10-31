@@ -12,22 +12,13 @@ export class CompendiumExerciseRepository {
     return result[0];
   }
 
-  async findAll() {
+  async findAll(): Promise<CompendiumExercise[]> {
     return this.db.select().from(compendiumExercises);
   }
 
-  async findById(templateId: string) {
+  async findById(templateId: string): Promise<CompendiumExercise | undefined> {
     const [result] = await this.db.select().from(compendiumExercises).where(eq(compendiumExercises.templateId, templateId));
     return result;
-  }
-
-  async findBySlug(slug: string) {
-    const [result] = await this.db.select().from(compendiumExercises).where(eq(compendiumExercises.slug, slug));
-    return result;
-  }
-
-  async findByParentId(parentExerciseId: string) {
-    return this.db.select().from(compendiumExercises).where(eq(compendiumExercises.parentExerciseId, parentExerciseId));
   }
 
   async update(templateId: string, data: Partial<CompendiumExercise>) {

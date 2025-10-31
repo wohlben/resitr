@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@resitr/api": ["libs/api/src/index.ts"]
-    }
+    },
+    "strict": true,
+    "exactOptionalPropertyTypes": true
   },
   "exclude": ["node_modules", "tmp"]
 }
