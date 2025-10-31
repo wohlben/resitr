@@ -6,5 +6,7 @@ export * from './lib/muscle';
 export * from './lib/technical-difficulty';
 export * from './lib/equipment-template';
 export * from './lib/equipment-category';
-export * from './lib/exercise-relationship-type'
-export * from './lib/video-source'
+export * from './lib/exercise-relationship-type';
+export * from './lib/video-source';
+export * from './lib/exercise-group-template';
+export * from './lib/exercise-group-member-template';
