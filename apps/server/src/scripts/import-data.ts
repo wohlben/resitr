@@ -135,8 +135,8 @@ async function importData() {
   // Group fulfillments by equipment template ID
   const fulfillmentsByEquipment = new Map<string, string[]>();
   for (const fulfillment of fulfillmentData) {
-    const equipmentId = fulfillment.equipment_template_id;
-    const fulfillsId = fulfillment.fulfills_equipment_template_id;
+    const equipmentId = fulfillment.equipmentTemplateId;
+    const fulfillsId = fulfillment.fulfillsEquipmentTemplateId;
     if (!fulfillmentsByEquipment.has(equipmentId)) {
       fulfillmentsByEquipment.set(equipmentId, []);
     }
