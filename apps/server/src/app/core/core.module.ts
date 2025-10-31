@@ -8,6 +8,7 @@ import { CompendiumExerciseRelationshipRepository } from './persistence/reposito
 import { CompendiumExerciseVideoRepository } from './persistence/repositories/compendium-exercise-video.repository';
 import { provideDatabase } from './persistence/database';
 import { CompendiumExerciseService } from './compendium/exercise/compendium-exercise.service';
+import { CompendiumExerciseRelationshipService } from './compendium/exercise-relationship/compendium-exercise-relationship.service';
 
 @Module({
   providers: [
@@ -20,7 +21,8 @@ import { CompendiumExerciseService } from './compendium/exercise/compendium-exer
     CompendiumExerciseRelationshipRepository,
     CompendiumExerciseVideoRepository,
     CompendiumExerciseService,
+    CompendiumExerciseRelationshipService,
   ],
-  exports: [CompendiumEquipmentService],
+  exports: [CompendiumEquipmentService, CompendiumExerciseService, CompendiumExerciseRelationshipService],
 })
 export class CoreModule {}
