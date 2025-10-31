@@ -11,6 +11,7 @@ import { CompendiumExerciseService } from './compendium/exercise/compendium-exer
 import { CompendiumExerciseRelationshipService } from './compendium/exercise-relationship/compendium-exercise-relationship.service';
 import { CompendiumExerciseGroupService } from './compendium/exercise-group/compendium-exercise-group.service';
 import { CompendiumExerciseGroupMemberService } from './compendium/exercise-group-member/compendium-exercise-group-member.service';
+import { CompendiumExerciseVideoService } from './compendium/exercise-video/compendium-exercise-video.service';
 
 @Module({
   providers: [
@@ -26,6 +27,7 @@ import { CompendiumExerciseGroupMemberService } from './compendium/exercise-grou
     CompendiumExerciseRelationshipService,
     CompendiumExerciseGroupService,
     CompendiumExerciseGroupMemberService,
+    CompendiumExerciseVideoService,
   ],
   exports: [
     CompendiumEquipmentService,
@@ -33,6 +35,7 @@ import { CompendiumExerciseGroupMemberService } from './compendium/exercise-grou
     CompendiumExerciseRelationshipService,
     CompendiumExerciseGroupService,
     CompendiumExerciseGroupMemberService,
+    CompendiumExerciseVideoService,
   ],
 })
 export class CoreModule {}
