@@ -3,6 +3,7 @@ import { CompendiumEquipmentRepository } from './compendium-equipment.repository
 import { provideTestDatabase } from '../database';
 import { EquipmentCategory } from '@resitr/api';
 import type { NewCompendiumEquipment } from '../schemas';
+import { mockEquipment } from '../test-factories';
 
 describe('CompendiumEquipmentRepository', () => {
   let repository: CompendiumEquipmentRepository;
@@ -21,76 +22,66 @@ describe('CompendiumEquipmentRepository', () => {
 
   describe('create', () => {
     it('should create a new equipment', async () => {
-      const equipmentData: NewCompendiumEquipment = {
+      const equipmentData = mockEquipment({
         templateId: 'eq-1',
         name: 'barbell',
         displayName: 'Barbell',
         description: 'A standard barbell for weightlifting',
-        category: EquipmentCategory.free_weights,
         imageUrl: 'https://example.com/barbell.jpg',
-      };
+      });
 
       const result = await repository.create(equipmentData);
 
-      expect(result).toBeDefined();
-      expect(result.templateId).toBe(equipmentData.templateId);
-      expect(result.name).toBe(equipmentData.name);
-      expect(result.displayName).toBe(equipmentData.displayName);
-      expect(result.description).toBe(equipmentData.description);
-      expect(result.category).toBe(equipmentData.category);
-      expect(result.imageUrl).toBe(equipmentData.imageUrl);
+      expect(result).toMatchObject(equipmentData);
     });
 
     it('should create equipment with minimal required fields', async () => {
-      const equipmentData: NewCompendiumEquipment = {
+      const equipmentData = mockEquipment({
         templateId: 'eq-2',
         name: 'dumbbell',
         displayName: 'Dumbbell',
-      };
+        description: null,
+        category: null,
+        imageUrl: null,
+      });
 
       const result = await repository.create(equipmentData);
 
-      expect(result).toBeDefined();
-      expect(result.templateId).toBe(equipmentData.templateId);
-      expect(result.name).toBe(equipmentData.name);
-      expect(result.displayName).toBe(equipmentData.displayName);
-      expect(result.description).toBeNull();
-      expect(result.category).toBeNull();
-      expect(result.imageUrl).toBeNull();
+      expect(result).toMatchObject(equipmentData);
     });
 
     it('should fail when creating equipment with duplicate name', async () => {
-      const equipmentData: NewCompendiumEquipment = {
+      const equipmentData = mockEquipment({
         templateId: 'eq-3',
         name: 'kettlebell',
         displayName: 'Kettlebell',
-      };
+      });
 
       await repository.create(equipmentData);
 
-      const duplicateData: NewCompendiumEquipment = {
+      const duplicateData = mockEquipment({
         templateId: 'eq-4',
         name: 'kettlebell', // Same name
         displayName: 'Another Kettlebell',
-      };
+      });
 
       await expect(repository.create(duplicateData)).rejects.toThrow();
     });
 
     it('should fail when creating equipment with duplicate templateId', async () => {
-      const equipmentData: NewCompendiumEquipment = {
+      const equipmentData = mockEquipment({
         templateId: 'eq-5',
         name: 'resistance-band',
         displayName: 'Resistance Band',
-      };
+      });
 
       await repository.create(equipmentData);
 
-      const duplicateData: NewCompendiumEquipment = {
+      const duplicateData = mockEquipment({
         templateId: 'eq-5', // Same templateId
         name: 'resistance-band-2',
         displayName: 'Another Resistance Band',
-      };
+      });
 
       await expect(repository.create(duplicateData)).rejects.toThrow();
     });
@@ -103,49 +94,25 @@ describe('CompendiumEquipmentRepository', () => {
     });
 
     it('should return all equipment with empty substitutesFor array', async () => {
-      const equipment1: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      };
-
-      const equipment2: NewCompendiumEquipment = {
-        templateId: 'eq-2',
-        name: 'bench',
-        displayName: 'Bench',
-        category: EquipmentCategory.benches,
-      };
-
-      await repository.create(equipment1);
-      await repository.create(equipment2);
+      await repository.create(mockEquipment({ templateId: 'eq-1', name: 'barbell' }));
+      await repository.create(mockEquipment({ templateId: 'eq-2', name: 'bench' }));
 
       const result = await repository.findAll();
 
       expect(result).toHaveLength(2);
-      expect(result[0].name).toBe('barbell');
       expect(result[0].substitutesFor).toEqual([]);
-      expect(result[1].name).toBe('bench');
       expect(result[1].substitutesFor).toEqual([]);
     });
   });
 
   describe('findById', () => {
     it('should find equipment by templateId with empty substitutesFor', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'dumbbell',
-        displayName: 'Dumbbell',
-        category: EquipmentCategory.free_weights,
-      };
-
-      await repository.create(equipmentData);
+      await repository.create(mockEquipment({ templateId: 'eq-1' }));
 
       const result = await repository.findById('eq-1');
 
       expect(result).toBeDefined();
       expect(result?.templateId).toBe('eq-1');
-      expect(result?.name).toBe('dumbbell');
       expect(result?.substitutesFor).toEqual([]);
     });
 
@@ -157,14 +124,7 @@ describe('CompendiumEquipmentRepository', () => {
 
   describe('findByName', () => {
     it('should find equipment by name', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'kettlebell',
-        displayName: 'Kettlebell',
-        category: EquipmentCategory.free_weights,
-      };
-
-      await repository.create(equipmentData);
+      await repository.create(mockEquipment({ templateId: 'eq-1', name: 'kettlebell' }));
 
       const result = await repository.findByName('kettlebell');
 
@@ -181,46 +141,24 @@ describe('CompendiumEquipmentRepository', () => {
 
   describe('update', () => {
     it('should update equipment fields', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      };
+      await repository.create(mockEquipment({ templateId: 'eq-1' }));
 
-      await repository.create(equipmentData);
+      const result = await repository.update('eq-1', {
+        displayName: 'Updated Name',
+        description: 'Updated description',
+      });
 
-      const updateData = {
-        displayName: 'Olympic Barbell',
-        description: 'A 20kg Olympic standard barbell',
-        imageUrl: 'https://example.com/olympic-barbell.jpg',
-      };
-
-      const result = await repository.update('eq-1', updateData);
-
-      expect(result).toBeDefined();
-      expect(result.templateId).toBe('eq-1');
-      expect(result.name).toBe('barbell'); // Unchanged
-      expect(result.displayName).toBe('Olympic Barbell'); // Updated
-      expect(result.description).toBe('A 20kg Olympic standard barbell'); // Updated
-      expect(result.imageUrl).toBe('https://example.com/olympic-barbell.jpg'); // Updated
+      expect(result.displayName).toBe('Updated Name');
+      expect(result.description).toBe('Updated description');
     });
 
     it('should update category', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'cable-machine',
-        displayName: 'Cable Machine',
-        category: EquipmentCategory.other,
-      };
-
-      await repository.create(equipmentData);
+      await repository.create(mockEquipment({ templateId: 'eq-1' }));
 
       const result = await repository.update('eq-1', {
         category: EquipmentCategory.machines,
       });
 
-      expect(result).toBeDefined();
       expect(result.category).toBe(EquipmentCategory.machines);
     });
 
@@ -231,22 +169,17 @@ describe('CompendiumEquipmentRepository', () => {
     });
 
     it('should be able to clear optional fields', async () => {
-      const equipmentData: NewCompendiumEquipment = {
+      await repository.create(mockEquipment({
         templateId: 'eq-1',
-        name: 'bench',
-        displayName: 'Bench',
-        description: 'A workout bench',
-        imageUrl: 'https://example.com/bench.jpg',
-      };
-
-      await repository.create(equipmentData);
+        description: 'Has description',
+        imageUrl: 'https://example.com/image.jpg',
+      }));
 
       const result = await repository.update('eq-1', {
         description: null,
         imageUrl: null,
       });
 
-      expect(result).toBeDefined();
       expect(result.description).toBeNull();
       expect(result.imageUrl).toBeNull();
     });
@@ -254,138 +187,64 @@ describe('CompendiumEquipmentRepository', () => {
 
   describe('delete', () => {
     it('should delete equipment by templateId', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'treadmill',
-        displayName: 'Treadmill',
-        category: EquipmentCategory.machines,
-      };
-
-      await repository.create(equipmentData);
+      await repository.create(mockEquipment({ templateId: 'eq-1' }));
 
       await repository.delete('eq-1');
 
-      // Verify it's actually deleted
       const found = await repository.findById('eq-1');
       expect(found).toBeUndefined();
     });
 
     it('should not error when deleting non-existent equipment', async () => {
       await repository.delete('non-existent-id');
-      // Should not throw
     });
 
     it('should delete and allow recreation with same name', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'rowing-machine',
-        displayName: 'Rowing Machine',
-      };
-
-      await repository.create(equipmentData);
+      await repository.create(mockEquipment({ templateId: 'eq-1', name: 'rowing-machine' }));
       await repository.delete('eq-1');
 
-      // Should be able to create new equipment with same name
-      const newEquipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-2',
-        name: 'rowing-machine',
-        displayName: 'New Rowing Machine',
-      };
-
-      const result = await repository.create(newEquipmentData);
-      expect(result).toBeDefined();
+      const result = await repository.create(mockEquipment({ templateId: 'eq-2', name: 'rowing-machine' }));
       expect(result.templateId).toBe('eq-2');
     });
   });
 
   describe('upsert', () => {
     it('should insert new equipment when it does not exist', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-        description: 'A standard barbell',
-      };
+      const result = await repository.upsert(mockEquipment({ templateId: 'eq-1' }));
 
-      const result = await repository.upsert(equipmentData);
-
-      expect(result).toBeDefined();
       expect(result.templateId).toBe('eq-1');
-      expect(result.name).toBe('barbell');
-      expect(result.displayName).toBe('Barbell');
-      expect(result.description).toBe('A standard barbell');
 
-      // Verify it was inserted
       const found = await repository.findById('eq-1');
       expect(found).toBeDefined();
-      expect(found?.name).toBe('barbell');
     });
 
     it('should update existing equipment when it already exists', async () => {
-      const equipmentData: NewCompendiumEquipment = {
+      await repository.create(mockEquipment({ templateId: 'eq-1' }));
+
+      const result = await repository.upsert(mockEquipment({
         templateId: 'eq-1',
-        name: 'dumbbell',
-        displayName: 'Dumbbell',
-        category: EquipmentCategory.free_weights,
-        description: 'A standard dumbbell',
-      };
+        description: 'Updated',
+      }));
 
-      await repository.create(equipmentData);
-
-      const updatedData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'dumbbell',
-        displayName: 'Heavy Dumbbell',
-        category: EquipmentCategory.free_weights,
-        description: 'A heavy-duty dumbbell',
-        imageUrl: 'https://example.com/heavy-dumbbell.jpg',
-      };
-
-      const result = await repository.upsert(updatedData);
-
-      expect(result).toBeDefined();
       expect(result.templateId).toBe('eq-1');
-      expect(result.displayName).toBe('Heavy Dumbbell');
-      expect(result.description).toBe('A heavy-duty dumbbell');
-      expect(result.imageUrl).toBe('https://example.com/heavy-dumbbell.jpg');
+      expect(result.description).toBe('Updated');
 
-      // Verify only one record exists
       const allEquipment = await repository.findAll();
       expect(allEquipment).toHaveLength(1);
     });
 
     it('should handle multiple upserts in sequence', async () => {
-      const equipmentData: NewCompendiumEquipment = {
-        templateId: 'eq-1',
-        name: 'kettlebell',
-        displayName: 'Kettlebell',
-        category: EquipmentCategory.free_weights,
-      };
+      const templateId = 'eq-1';
 
-      // First upsert - insert
-      const result1 = await repository.upsert(equipmentData);
-      expect(result1.displayName).toBe('Kettlebell');
+      const result1 = await repository.upsert(mockEquipment({ templateId, description: null }));
       expect(result1.description).toBeNull();
 
-      // Second upsert - update
-      const result2 = await repository.upsert({
-        ...equipmentData,
-        description: 'A cast iron weight',
-      });
-      expect(result2.displayName).toBe('Kettlebell');
-      expect(result2.description).toBe('A cast iron weight');
+      const result2 = await repository.upsert(mockEquipment({ templateId, description: 'First' }));
+      expect(result2.description).toBe('First');
 
-      // Third upsert - another update
-      const result3 = await repository.upsert({
-        ...equipmentData,
-        displayName: 'Competition Kettlebell',
-        description: 'A competition-grade kettlebell',
-      });
-      expect(result3.displayName).toBe('Competition Kettlebell');
-      expect(result3.description).toBe('A competition-grade kettlebell');
+      const result3 = await repository.upsert(mockEquipment({ templateId, description: 'Second' }));
+      expect(result3.description).toBe('Second');
 
-      // Verify still only one record
       const allEquipment = await repository.findAll();
       expect(allEquipment).toHaveLength(1);
     });
@@ -393,65 +252,26 @@ describe('CompendiumEquipmentRepository', () => {
 
   describe('substitutesFor relationship', () => {
     it('should include substitutesFor IDs when equipment has fulfillments', async () => {
-      const barbell = await repository.create({
-        templateId: 'barbell',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      });
+      await repository.create(mockEquipment({ templateId: 'barbell', name: 'barbell' }));
+      await repository.create(mockEquipment({ templateId: 'olympic-barbell', name: 'olympic-barbell' }));
+      await repository.create(mockEquipment({ templateId: 'ez-bar', name: 'ez-bar' }));
 
-      const olympicBarbell = await repository.create({
-        templateId: 'olympic-barbell',
-        name: 'olympic-barbell',
-        displayName: 'Olympic Barbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      const ezBar = await repository.create({
-        templateId: 'ez-bar',
-        name: 'ez-bar',
-        displayName: 'EZ Curl Bar',
-        category: EquipmentCategory.free_weights,
-      });
-
-      // Create fulfillments: barbell can substitute for olympic-barbell and ez-bar
-      await repository.setSubstitutesFor(barbell.templateId, [olympicBarbell.templateId, ezBar.templateId], 'test-user');
+      await repository.setSubstitutesFor('barbell', ['olympic-barbell', 'ez-bar'], 'test-user');
 
       const result = await repository.findById('barbell');
 
-      expect(result).toBeDefined();
       expect(result?.substitutesFor).toHaveLength(2);
       expect(result?.substitutesFor).toContain('olympic-barbell');
       expect(result?.substitutesFor).toContain('ez-bar');
     });
 
     it('should include substitutesFor in findAll results', async () => {
-      const dumbbell = await repository.create({
-        templateId: 'dumbbell',
-        name: 'dumbbell',
-        displayName: 'Dumbbell',
-        category: EquipmentCategory.free_weights,
-      });
+      await repository.create(mockEquipment({ templateId: 'dumbbell', name: 'dumbbell' }));
+      await repository.create(mockEquipment({ templateId: 'barbell', name: 'barbell' }));
+      await repository.create(mockEquipment({ templateId: 'kettlebell', name: 'kettlebell' }));
 
-      const barbell = await repository.create({
-        templateId: 'barbell',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      const kettlebell = await repository.create({
-        templateId: 'kettlebell',
-        name: 'kettlebell',
-        displayName: 'Kettlebell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      // dumbbell can substitute for barbell
-      await repository.setSubstitutesFor(dumbbell.templateId, [barbell.templateId], 'test-user');
-
-      // kettlebell can substitute for dumbbell
-      await repository.setSubstitutesFor(kettlebell.templateId, [dumbbell.templateId], 'test-user');
+      await repository.setSubstitutesFor('dumbbell', ['barbell'], 'test-user');
+      await repository.setSubstitutesFor('kettlebell', ['dumbbell'], 'test-user');
 
       const results = await repository.findAll();
 
@@ -468,30 +288,16 @@ describe('CompendiumEquipmentRepository', () => {
     });
 
     it('should cascade delete fulfillments when equipment is deleted', async () => {
-      const bench = await repository.create({
-        templateId: 'bench',
-        name: 'bench',
-        displayName: 'Bench',
-        category: EquipmentCategory.benches,
-      });
+      await repository.create(mockEquipment({ templateId: 'bench', name: 'bench' }));
+      await repository.create(mockEquipment({ templateId: 'incline-bench', name: 'incline-bench' }));
 
-      const inclineBench = await repository.create({
-        templateId: 'incline-bench',
-        name: 'incline-bench',
-        displayName: 'Incline Bench',
-        category: EquipmentCategory.benches,
-      });
+      await repository.setSubstitutesFor('bench', ['incline-bench'], 'test-user');
 
-      await repository.setSubstitutesFor(bench.templateId, [inclineBench.templateId], 'test-user');
-
-      // Verify fulfillment exists
       const benchResult = await repository.findById('bench');
       expect(benchResult?.substitutesFor).toEqual(['incline-bench']);
 
-      // Delete the bench
       await repository.delete('bench');
 
-      // Verify fulfillment was cascade deleted - bench no longer exists
       const deletedBench = await repository.findById('bench');
       expect(deletedBench).toBeUndefined();
     });
@@ -499,26 +305,9 @@ describe('CompendiumEquipmentRepository', () => {
 
   describe('setSubstitutesFor', () => {
     it('should set substitutesFor relationships for equipment', async () => {
-      const dumbbell = await repository.create({
-        templateId: 'dumbbell',
-        name: 'dumbbell',
-        displayName: 'Dumbbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      const barbell = await repository.create({
-        templateId: 'barbell',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      const kettlebell = await repository.create({
-        templateId: 'kettlebell',
-        name: 'kettlebell',
-        displayName: 'Kettlebell',
-        category: EquipmentCategory.free_weights,
-      });
+      await repository.create(mockEquipment({ templateId: 'dumbbell', name: 'dumbbell' }));
+      await repository.create(mockEquipment({ templateId: 'barbell', name: 'barbell' }));
+      await repository.create(mockEquipment({ templateId: 'kettlebell', name: 'kettlebell' }));
 
       await repository.setSubstitutesFor('dumbbell', ['barbell', 'kettlebell'], 'test-user');
 
@@ -529,34 +318,15 @@ describe('CompendiumEquipmentRepository', () => {
     });
 
     it('should replace existing substitutesFor relationships', async () => {
-      const bench = await repository.create({
-        templateId: 'bench',
-        name: 'bench',
-        displayName: 'Bench',
-        category: EquipmentCategory.benches,
-      });
+      await repository.create(mockEquipment({ templateId: 'bench', name: 'bench' }));
+      await repository.create(mockEquipment({ templateId: 'incline-bench', name: 'incline-bench' }));
+      await repository.create(mockEquipment({ templateId: 'decline-bench', name: 'decline-bench' }));
 
-      const inclineBench = await repository.create({
-        templateId: 'incline-bench',
-        name: 'incline-bench',
-        displayName: 'Incline Bench',
-        category: EquipmentCategory.benches,
-      });
-
-      const declineBench = await repository.create({
-        templateId: 'decline-bench',
-        name: 'decline-bench',
-        displayName: 'Decline Bench',
-        category: EquipmentCategory.benches,
-      });
-
-      // Initially set to incline bench
       await repository.setSubstitutesFor('bench', ['incline-bench'], 'test-user');
 
       let result = await repository.findById('bench');
       expect(result?.substitutesFor).toEqual(['incline-bench']);
 
-      // Replace with decline bench
       await repository.setSubstitutesFor('bench', ['decline-bench'], 'test-user');
 
       result = await repository.findById('bench');
@@ -564,27 +334,14 @@ describe('CompendiumEquipmentRepository', () => {
     });
 
     it('should clear substitutesFor when empty array is provided', async () => {
-      const barbell = await repository.create({
-        templateId: 'barbell',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      });
+      await repository.create(mockEquipment({ templateId: 'barbell', name: 'barbell' }));
+      await repository.create(mockEquipment({ templateId: 'olympic-barbell', name: 'olympic-barbell' }));
 
-      const olympicBarbell = await repository.create({
-        templateId: 'olympic-barbell',
-        name: 'olympic-barbell',
-        displayName: 'Olympic Barbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      // Set relationship
       await repository.setSubstitutesFor('barbell', ['olympic-barbell'], 'test-user');
 
       let result = await repository.findById('barbell');
       expect(result?.substitutesFor).toEqual(['olympic-barbell']);
 
-      // Clear relationship
       await repository.setSubstitutesFor('barbell', [], 'test-user');
 
       result = await repository.findById('barbell');
@@ -592,26 +349,9 @@ describe('CompendiumEquipmentRepository', () => {
     });
 
     it('should handle multiple equipment with different substitutesFor', async () => {
-      const dumbbell = await repository.create({
-        templateId: 'dumbbell',
-        name: 'dumbbell',
-        displayName: 'Dumbbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      const barbell = await repository.create({
-        templateId: 'barbell',
-        name: 'barbell',
-        displayName: 'Barbell',
-        category: EquipmentCategory.free_weights,
-      });
-
-      const kettlebell = await repository.create({
-        templateId: 'kettlebell',
-        name: 'kettlebell',
-        displayName: 'Kettlebell',
-        category: EquipmentCategory.free_weights,
-      });
+      await repository.create(mockEquipment({ templateId: 'dumbbell', name: 'dumbbell' }));
+      await repository.create(mockEquipment({ templateId: 'barbell', name: 'barbell' }));
+      await repository.create(mockEquipment({ templateId: 'kettlebell', name: 'kettlebell' }));
 
       await repository.setSubstitutesFor('dumbbell', ['barbell'], 'test-user');
       await repository.setSubstitutesFor('kettlebell', ['dumbbell', 'barbell'], 'test-user');

@@ -34,194 +34,173 @@ describe('CompendiumEquipmentService', () => {
 
       const result = await service.create(equipmentData, '');
 
-      expect(result).toBeDefined();
-      expect(result?.templateId).toBe('eq-1');
-      expect(result?.name).toBe('barbell');
-      expect(result?.category).toBe(EquipmentCategory.free_weights);
-      expect(result?.substitutesFor).toEqual([]);
+      expect(result).toMatchObject({
+        templateId: 'eq-1',
+        name: 'barbell',
+        category: EquipmentCategory.free_weights,
+        substitutesFor: [],
+      });
     });
 
     it('should create equipment with substitutesFor relationships', async () => {
-      // Create the equipment that will be substituted
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const kettlebell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'kettlebell',
         name: 'kettlebell',
         displayName: 'Kettlebell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
+      }, '');
 
-      await service.create(barbell, '');
-      await service.create(kettlebell, '');
-
-      // Create dumbbell that substitutes for both barbell and kettlebell
-      const dumbbell: EquipmentTemplate = {
+      const result = await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell', 'kettlebell'],
-      };
+      }, '');
 
-      const result = await service.create(dumbbell, '');
-
-      expect(result).toBeDefined();
-      expect(result?.templateId).toBe('dumbbell');
-      expect(result?.category).toBe(EquipmentCategory.free_weights);
-      expect(result?.substitutesFor).toHaveLength(2);
-      expect(result?.substitutesFor).toContain('barbell');
-      expect(result?.substitutesFor).toContain('kettlebell');
+      expect(result).toMatchObject({
+        templateId: 'dumbbell',
+        category: EquipmentCategory.free_weights,
+        substitutesFor: ['barbell', 'kettlebell'],
+      });
     });
 
     it('should create equipment with empty substitutesFor array', async () => {
-      const equipmentData: EquipmentTemplate = {
+      const result = await service.create({
         templateId: 'bench',
         name: 'bench',
         displayName: 'Bench',
         category: EquipmentCategory.benches,
         substitutesFor: [],
-      };
+      }, '');
 
-      const result = await service.create(equipmentData, '');
-
-      expect(result).toBeDefined();
-      expect(result?.category).toBe(EquipmentCategory.benches);
-      expect(result?.substitutesFor).toEqual([]);
+      expect(result).toMatchObject({
+        category: EquipmentCategory.benches,
+        substitutesFor: [],
+      });
     });
   });
 
   describe('update', () => {
     it('should update equipment fields without changing substitutesFor', async () => {
-      const equipmentData: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
+      }, '');
 
-      await service.create(equipmentData, '');
-
-      const updateData: Partial<EquipmentTemplate> = {
+      const result = await service.update('barbell', {
+        templateId: 'barbell',
+        name: 'barbell',
         displayName: 'Olympic Barbell',
         description: 'A 20kg Olympic barbell',
-      };
+        category: EquipmentCategory.free_weights,
+        substitutesFor: [],
+      }, '');
 
-      const result = await service.update('barbell', {...equipmentData, ...updateData}, '');
-
-      expect(result).toBeDefined();
-      expect(result?.displayName).toBe('Olympic Barbell');
-      expect(result?.description).toBe('A 20kg Olympic barbell');
-      expect(result?.category).toBe(EquipmentCategory.free_weights);
-      expect(result?.substitutesFor).toEqual([]);
+      expect(result).toMatchObject({
+        displayName: 'Olympic Barbell',
+        description: 'A 20kg Olympic barbell',
+        category: EquipmentCategory.free_weights,
+        substitutesFor: [],
+      });
     });
 
     it('should update substitutesFor relationships', async () => {
-      // Create equipment
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const kettlebell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'kettlebell',
         name: 'kettlebell',
         displayName: 'Kettlebell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
+      }, '');
 
-      await service.create(barbell, '');
-      await service.create(kettlebell, '');
-      await service.create(dumbbell, '');
-
-      // Update dumbbell to substitute for barbell
       const result = await service.update('dumbbell', {
-        ...dumbbell,
+        templateId: 'dumbbell',
+        name: 'dumbbell',
+        displayName: 'Dumbbell',
+        category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
       }, '');
 
-      expect(result).toBeDefined();
       expect(result?.substitutesFor).toEqual(['barbell']);
     });
 
     it('should update both fields and substitutesFor together', async () => {
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      await service.create(barbell, '');
-      await service.create(dumbbell, '');
+      }, '');
 
       const result = await service.update('dumbbell', {
-        ...dumbbell,
+        templateId: 'dumbbell',
+        name: 'dumbbell',
         displayName: 'Heavy Dumbbell',
         description: 'A heavy-duty dumbbell',
+        category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
       }, '');
 
-      expect(result).toBeDefined();
-      expect(result?.displayName).toBe('Heavy Dumbbell');
-      expect(result?.description).toBe('A heavy-duty dumbbell');
-      expect(result?.substitutesFor).toEqual(['barbell']);
+      expect(result).toMatchObject({
+        displayName: 'Heavy Dumbbell',
+        description: 'A heavy-duty dumbbell',
+        substitutesFor: ['barbell'],
+      });
     });
 
     it('should clear substitutesFor when empty array is provided', async () => {
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
-      };
+      }, '');
 
-      await service.create(barbell, '');
-      await service.create(dumbbell, '');
-
-      // Verify it has substitutesFor
       let result = await service.findById('dumbbell');
       expect(result?.substitutesFor).toEqual(['barbell']);
 
-      // Clear substitutesFor
       const dumbbellData = await service.findById('dumbbell');
       result = await service.update('dumbbell', {
         templateId: dumbbellData!.templateId,
@@ -235,39 +214,31 @@ describe('CompendiumEquipmentService', () => {
     });
 
     it('should replace existing substitutesFor relationships', async () => {
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const kettlebell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'kettlebell',
         name: 'kettlebell',
         displayName: 'Kettlebell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
-      };
+      }, '');
 
-      await service.create(barbell, '');
-      await service.create(kettlebell, '');
-      await service.create(dumbbell, '');
-
-      // Verify initial state
       let result = await service.findById('dumbbell');
       expect(result?.substitutesFor).toEqual(['barbell']);
 
-      // Replace with kettlebell
       const currentDumbbell = await service.findById('dumbbell');
       result = await service.update('dumbbell', {
         templateId: currentDumbbell!.templateId,
@@ -283,94 +254,88 @@ describe('CompendiumEquipmentService', () => {
 
   describe('findById', () => {
     it('should return equipment with substitutesFor', async () => {
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
-      };
-
-      await service.create(barbell, '');
-      await service.create(dumbbell, '');
+      }, '');
 
       const result = await service.findById('dumbbell');
 
-      expect(result).toBeDefined();
-      expect(result?.category).toBe(EquipmentCategory.free_weights);
-      expect(result?.substitutesFor).toEqual(['barbell']);
+      expect(result).toMatchObject({
+        category: EquipmentCategory.free_weights,
+        substitutesFor: ['barbell'],
+      });
     });
   });
 
   describe('findAll', () => {
     it('should return all equipment with their substitutesFor relationships', async () => {
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
-      };
-
-      await service.create(barbell, '');
-      await service.create(dumbbell, '');
+      }, '');
 
       const result = await service.findAll();
 
       expect(result).toHaveLength(2);
 
       const barbellResult = result.find((e) => e.templateId === 'barbell');
-      expect(barbellResult?.category).toBe(EquipmentCategory.free_weights);
-      expect(barbellResult?.substitutesFor).toEqual([]);
+      expect(barbellResult).toMatchObject({
+        category: EquipmentCategory.free_weights,
+        substitutesFor: [],
+      });
 
       const dumbbellResult = result.find((e) => e.templateId === 'dumbbell');
-      expect(dumbbellResult?.category).toBe(EquipmentCategory.free_weights);
-      expect(dumbbellResult?.substitutesFor).toEqual(['barbell']);
+      expect(dumbbellResult).toMatchObject({
+        category: EquipmentCategory.free_weights,
+        substitutesFor: ['barbell'],
+      });
     });
   });
 
   describe('findByName', () => {
     it('should return equipment with substitutesFor', async () => {
-      const barbell: EquipmentTemplate = {
+      await service.create({
         templateId: 'barbell',
         name: 'barbell',
         displayName: 'Barbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: [],
-      };
-
-      const dumbbell: EquipmentTemplate = {
+      }, '');
+      await service.create({
         templateId: 'dumbbell',
         name: 'dumbbell',
         displayName: 'Dumbbell',
         category: EquipmentCategory.free_weights,
         substitutesFor: ['barbell'],
-      };
-
-      await service.create(barbell, '');
-      await service.create(dumbbell, '');
+      }, '');
 
       const result = await service.findByName('dumbbell');
 
-      expect(result).toBeDefined();
-      expect(result?.category).toBe(EquipmentCategory.free_weights);
-      expect(result?.substitutesFor).toEqual(['barbell']);
+      expect(result).toMatchObject({
+        category: EquipmentCategory.free_weights,
+        substitutesFor: ['barbell'],
+      });
     });
   });
 });

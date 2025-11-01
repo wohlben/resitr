@@ -3,20 +3,17 @@ import { CompendiumExerciseGroupMemberRepository } from './compendium-exercise-g
 import { CompendiumExerciseRepository } from './compendium-exercise.repository';
 import { CompendiumExerciseGroupRepository } from './compendium-exercise-group.repository';
 import { provideTestDatabase } from '../database';
-import type { CompendiumExerciseGroupMember } from '../schemas';
-import type { CompendiumExercise } from '../schemas';
-import type { CompendiumExerciseGroup } from '../schemas';
-import { ExerciseType, ForceType, Muscle, TechnicalDifficulty } from '@resitr/api';
+import { mockExercise, mockExerciseGroup, mockExerciseGroupMember } from '../test-factories';
 
 describe('CompendiumExerciseGroupMemberRepository', () => {
   let repository: CompendiumExerciseGroupMemberRepository;
   let exerciseRepository: CompendiumExerciseRepository;
   let groupRepository: CompendiumExerciseGroupRepository;
 
-  let testExercise1: CompendiumExercise;
-  let testExercise2: CompendiumExercise;
-  let testGroup1: CompendiumExerciseGroup;
-  let testGroup2: CompendiumExerciseGroup;
+  let testExercise1: ReturnType<typeof mockExercise>;
+  let testExercise2: ReturnType<typeof mockExercise>;
+  let testGroup1: ReturnType<typeof mockExerciseGroup>;
+  let testGroup2: ReturnType<typeof mockExerciseGroup>;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -33,52 +30,12 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
     groupRepository = module.get<CompendiumExerciseGroupRepository>(CompendiumExerciseGroupRepository);
 
     // Create test exercises
-    testExercise1 = await exerciseRepository.create({
-      templateId: 'exercise-1',
-      name: 'Bench Press',
-      type: ExerciseType.STRENGTH,
-      force: [ForceType.PUSH],
-      primaryMuscles: [Muscle.CHEST],
-      secondaryMuscles: [Muscle.TRICEPS, Muscle.FRONT_DELTS],
-      technicalDifficulty: TechnicalDifficulty.INTERMEDIATE,
-      equipmentIds: ['barbell', 'bench'],
-      bodyWeightScaling: 0,
-      instructions: ['Lie on bench', 'Lower bar to chest', 'Press up'],
-      images: [],
-      createdBy: 'user-1',
-      version: 1,
-    });
-
-    testExercise2 = await exerciseRepository.create({
-      templateId: 'exercise-2',
-      name: 'Squat',
-      type: ExerciseType.STRENGTH,
-      force: [ForceType.PUSH],
-      primaryMuscles: [Muscle.QUADS],
-      secondaryMuscles: [Muscle.GLUTES, Muscle.HAMSTRINGS],
-      technicalDifficulty: TechnicalDifficulty.ADVANCED,
-      equipmentIds: ['barbell'],
-      bodyWeightScaling: 0,
-      instructions: ['Stand with bar', 'Lower down', 'Stand up'],
-      images: [],
-      createdBy: 'user-1',
-      version: 1,
-    });
+    testExercise1 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-1' }));
+    testExercise2 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-2' }));
 
     // Create test groups
-    testGroup1 = await groupRepository.create({
-      id: 'group-1',
-      name: 'upper-body',
-      description: 'Upper body exercises',
-      createdBy: 'user-1',
-    });
-
-    testGroup2 = await groupRepository.create({
-      id: 'group-2',
-      name: 'lower-body',
-      description: 'Lower body exercises',
-      createdBy: 'user-1',
-    });
+    testGroup1 = await groupRepository.create(mockExerciseGroup({ id: 'group-1', name: 'upper-body' }));
+    testGroup2 = await groupRepository.create(mockExerciseGroup({ id: 'group-2', name: 'lower-body' }));
   });
 
   it('should be defined', () => {
@@ -87,101 +44,69 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('create', () => {
     it('should create a new group member', async () => {
-      const memberData: CompendiumExerciseGroupMember = {
+      const memberData = mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
+      });
 
       const result = await repository.create(memberData);
 
-      expect(result).toBeDefined();
-      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
-      expect(result.groupId).toBe(testGroup1.id);
-      expect(result.addedBy).toBe('user-1');
+      expect(result).toMatchObject(memberData);
       expect(result.addedAt).toBeDefined();
     });
 
     it('should create multiple members for same exercise in different groups', async () => {
-      const member1: CompendiumExerciseGroupMember = {
+      const result1 = await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
-
-      const member2: CompendiumExerciseGroupMember = {
+      }));
+      const result2 = await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-1',
-      };
+      }));
 
-      const result1 = await repository.create(member1);
-      const result2 = await repository.create(member2);
-
-      expect(result1).toBeDefined();
-      expect(result2).toBeDefined();
       expect(result1.groupId).toBe(testGroup1.id);
       expect(result2.groupId).toBe(testGroup2.id);
     });
 
     it('should create multiple exercises in same group', async () => {
-      const member1: CompendiumExerciseGroupMember = {
+      const result1 = await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
-
-      const member2: CompendiumExerciseGroupMember = {
+      }));
+      const result2 = await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise2.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
+      }));
 
-      const result1 = await repository.create(member1);
-      const result2 = await repository.create(member2);
-
-      expect(result1).toBeDefined();
-      expect(result2).toBeDefined();
       expect(result1.exerciseTemplateId).toBe(testExercise1.templateId);
       expect(result2.exerciseTemplateId).toBe(testExercise2.templateId);
     });
 
     it('should fail when creating duplicate group member (same exerciseTemplateId and groupId)', async () => {
-      const memberData: CompendiumExerciseGroupMember = {
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
+      }));
 
-      await repository.create(memberData);
-
-      const duplicateData: CompendiumExerciseGroupMember = {
-        exerciseTemplateId: testExercise1.templateId, // Same composite key
-        groupId: testGroup1.id, // Same composite key
-        addedBy: 'user-2',
-      };
-
-      await expect(repository.create(duplicateData)).rejects.toThrow();
+      await expect(repository.create(mockExerciseGroupMember({
+        exerciseTemplateId: testExercise1.templateId,
+        groupId: testGroup1.id,
+      }))).rejects.toThrow();
     });
 
     it('should fail when creating member with non-existent exercise', async () => {
-      const memberData: CompendiumExerciseGroupMember = {
+      await expect(repository.create(mockExerciseGroupMember({
         exerciseTemplateId: 'non-existent-exercise',
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
-
-      await expect(repository.create(memberData)).rejects.toThrow();
+      }))).rejects.toThrow();
     });
 
     it('should fail when creating member with non-existent group', async () => {
-      const memberData: CompendiumExerciseGroupMember = {
+      await expect(repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: 'non-existent-group',
-        addedBy: 'user-1',
-      };
-
-      await expect(repository.create(memberData)).rejects.toThrow();
+      }))).rejects.toThrow();
     });
   });
 
@@ -192,23 +117,18 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
     });
 
     it('should return all group members', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise2.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-1',
-      });
+      }));
 
       const result = await repository.findAll();
 
@@ -218,23 +138,18 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('findByExerciseId', () => {
     it('should find all groups for a specific exercise', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise2.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
+      }));
 
       const result = await repository.findByExerciseId(testExercise1.templateId);
 
@@ -250,23 +165,18 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('findByGroupId', () => {
     it('should find all exercises in a specific group', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise2.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-1',
-      });
+      }));
 
       const result = await repository.findByGroupId(testGroup1.id);
 
@@ -282,18 +192,16 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('findByCompositeKey', () => {
     it('should find a specific group member by composite key', async () => {
-      await repository.create({
+      const memberData = mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
       });
+
+      await repository.create(memberData);
 
       const result = await repository.findByCompositeKey(testExercise1.templateId, testGroup1.id);
 
-      expect(result).toBeDefined();
-      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
-      expect(result.groupId).toBe(testGroup1.id);
-      expect(result.addedBy).toBe('user-1');
+      expect(result).toMatchObject(memberData);
     });
 
     it('should return undefined when group member not found', async () => {
@@ -304,70 +212,59 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('upsert', () => {
     it('should insert new group member when it does not exist', async () => {
-      const memberData = {
+      const memberData = mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      };
+      });
 
       const result = await repository.upsert(memberData);
 
-      expect(result).toBeDefined();
-      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
-      expect(result.groupId).toBe(testGroup1.id);
-      expect(result.addedBy).toBe('user-1');
+      expect(result).toMatchObject(memberData);
 
-      // Verify it was inserted
       const found = await repository.findByCompositeKey(testExercise1.templateId, testGroup1.id);
       expect(found).toBeDefined();
     });
 
     it('should update existing group member when composite key exists', async () => {
-      const memberData = {
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
         addedBy: 'user-1',
-      };
+      }));
 
-      await repository.create(memberData);
-
-      const updatedData = {
+      const result = await repository.upsert(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-2', // Changed addedBy
-      };
+        addedBy: 'user-2',
+      }));
 
-      const result = await repository.upsert(updatedData);
+      expect(result).toMatchObject({
+        exerciseTemplateId: testExercise1.templateId,
+        groupId: testGroup2.id,
+        addedBy: 'user-2',
+      });
 
-      expect(result).toBeDefined();
-      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
-      expect(result.groupId).toBe(testGroup2.id);
-      expect(result.addedBy).toBe('user-2');
-
-      // Verify only one record exists for this composite key
       const members = await repository.findByGroupId(testGroup2.id);
       expect(members).toHaveLength(1);
     });
 
     it('should handle multiple upserts with same composite key', async () => {
-      const memberData = {
+      const memberData = mockExerciseGroupMember({
         exerciseTemplateId: testExercise2.templateId,
         groupId: testGroup1.id,
         addedBy: 'user-1',
-      };
+      });
 
-      // First upsert - insert
       const result1 = await repository.upsert(memberData);
       expect(result1.addedBy).toBe('user-1');
 
-      // Second upsert - update
-      const result2 = await repository.upsert({
-        ...memberData,
+      const result2 = await repository.upsert(mockExerciseGroupMember({
+        exerciseTemplateId: testExercise2.templateId,
+        groupId: testGroup1.id,
         addedBy: 'user-2',
-      });
+      }));
       expect(result2.addedBy).toBe('user-2');
 
-      // Verify still only one record
       const members = await repository.findByExerciseId(testExercise2.templateId);
       expect(members).toHaveLength(1);
     });
@@ -375,19 +272,18 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('delete', () => {
     it('should delete a group member by composite key', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
+      }));
 
       const result = await repository.delete(testExercise1.templateId, testGroup1.id);
 
-      expect(result).toBeDefined();
-      expect(result.exerciseTemplateId).toBe(testExercise1.templateId);
-      expect(result.groupId).toBe(testGroup1.id);
+      expect(result).toMatchObject({
+        exerciseTemplateId: testExercise1.templateId,
+        groupId: testGroup1.id,
+      });
 
-      // Verify it's actually deleted
       const found = await repository.findByCompositeKey(testExercise1.templateId, testGroup1.id);
       expect(found).toBeUndefined();
     });
@@ -398,21 +294,17 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
     });
 
     it('should only delete specific group member, not others', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-1',
-      });
+      }));
 
       await repository.delete(testExercise1.templateId, testGroup1.id);
 
-      // Verify the other member still exists
       const found = await repository.findByCompositeKey(testExercise1.templateId, testGroup2.id);
       expect(found).toBeDefined();
     });
@@ -420,43 +312,33 @@ describe('CompendiumExerciseGroupMemberRepository', () => {
 
   describe('cascading deletes', () => {
     it('should delete group members when exercise is deleted', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup2.id,
-        addedBy: 'user-1',
-      });
+      }));
 
-      // Delete the exercise
       await exerciseRepository.delete(testExercise1.templateId);
 
-      // Verify all group members for that exercise are deleted
       const result = await repository.findByExerciseId(testExercise1.templateId);
       expect(result).toEqual([]);
     });
 
     it('should delete group members when group is deleted', async () => {
-      await repository.create({
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise1.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
-
-      await repository.create({
+      }));
+      await repository.create(mockExerciseGroupMember({
         exerciseTemplateId: testExercise2.templateId,
         groupId: testGroup1.id,
-        addedBy: 'user-1',
-      });
+      }));
 
-      // Delete the group
       await groupRepository.delete(testGroup1.id);
 
-      // Verify all group members for that group are deleted
       const result = await repository.findByGroupId(testGroup1.id);
       expect(result).toEqual([]);
     });

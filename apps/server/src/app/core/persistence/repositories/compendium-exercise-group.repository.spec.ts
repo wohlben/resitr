@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CompendiumExerciseGroupRepository } from './compendium-exercise-group.repository';
 import { provideTestDatabase } from '../database';
-import type { CompendiumExerciseGroup } from '../schemas';
+import { mockExerciseGroup } from '../test-factories';
 
 describe('CompendiumExerciseGroupRepository', () => {
   let repository: CompendiumExerciseGroupRepository;
@@ -20,74 +20,41 @@ describe('CompendiumExerciseGroupRepository', () => {
 
   describe('create', () => {
     it('should create a new exercise group', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const groupData = mockExerciseGroup({
         id: 'group-1',
         name: 'upper-body-push',
         description: 'Upper body pushing exercises',
-        createdBy: 'user-1',
-      };
+      });
 
       const result = await repository.create(groupData);
 
-      expect(result).toBeDefined();
-      expect(result.id).toBe(groupData.id);
-      expect(result.name).toBe(groupData.name);
-      expect(result.description).toBe(groupData.description);
-      expect(result.createdBy).toBe(groupData.createdBy);
+      expect(result).toMatchObject(groupData);
       expect(result.createdAt).toBeDefined();
       expect(result.updatedAt).toBeNull();
     });
 
     it('should create exercise group with minimal required fields', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const groupData = mockExerciseGroup({
         id: 'group-2',
         name: 'leg-exercises',
-        createdBy: 'user-1',
-      };
+        description: null,
+      });
 
       const result = await repository.create(groupData);
 
-      expect(result).toBeDefined();
-      expect(result.id).toBe(groupData.id);
-      expect(result.name).toBe(groupData.name);
-      expect(result.description).toBeNull();
-      expect(result.createdBy).toBe(groupData.createdBy);
+      expect(result).toMatchObject(groupData);
     });
 
     it('should fail when creating exercise group with duplicate id', async () => {
-      const groupData: CompendiumExerciseGroup = {
-        id: 'group-3',
-        name: 'core-exercises',
-        createdBy: 'user-1',
-      };
+      await repository.create(mockExerciseGroup({ id: 'group-3' }));
 
-      await repository.create(groupData);
-
-      const duplicateData: CompendiumExerciseGroup = {
-        id: 'group-3', // Same id
-        name: 'different-name',
-        createdBy: 'user-1',
-      };
-
-      await expect(repository.create(duplicateData)).rejects.toThrow();
+      await expect(repository.create(mockExerciseGroup({ id: 'group-3' }))).rejects.toThrow();
     });
 
     it('should fail when creating exercise group with duplicate name', async () => {
-      const groupData: CompendiumExerciseGroup = {
-        id: 'group-4',
-        name: 'cardio-exercises',
-        createdBy: 'user-1',
-      };
+      await repository.create(mockExerciseGroup({ id: 'group-4', name: 'cardio-exercises' }));
 
-      await repository.create(groupData);
-
-      const duplicateData: CompendiumExerciseGroup = {
-        id: 'group-5',
-        name: 'cardio-exercises', // Same name
-        createdBy: 'user-1',
-      };
-
-      await expect(repository.create(duplicateData)).rejects.toThrow();
+      await expect(repository.create(mockExerciseGroup({ id: 'group-5', name: 'cardio-exercises' }))).rejects.toThrow();
     });
   });
 
@@ -98,22 +65,8 @@ describe('CompendiumExerciseGroupRepository', () => {
     });
 
     it('should return all exercise groups', async () => {
-      const group1: CompendiumExerciseGroup = {
-        id: 'group-1',
-        name: 'push-exercises',
-        description: 'Pushing movements',
-        createdBy: 'user-1',
-      };
-
-      const group2: CompendiumExerciseGroup = {
-        id: 'group-2',
-        name: 'pull-exercises',
-        description: 'Pulling movements',
-        createdBy: 'user-1',
-      };
-
-      await repository.create(group1);
-      await repository.create(group2);
+      await repository.create(mockExerciseGroup({ id: 'group-1', name: 'push-exercises' }));
+      await repository.create(mockExerciseGroup({ id: 'group-2', name: 'pull-exercises' }));
 
       const result = await repository.findAll();
 
@@ -125,21 +78,17 @@ describe('CompendiumExerciseGroupRepository', () => {
 
   describe('findById', () => {
     it('should find exercise group by id', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const groupData = mockExerciseGroup({
         id: 'group-1',
         name: 'leg-day',
         description: 'Leg exercises collection',
-        createdBy: 'user-1',
-      };
+      });
 
       await repository.create(groupData);
 
       const result = await repository.findById('group-1');
 
-      expect(result).toBeDefined();
-      expect(result.id).toBe('group-1');
-      expect(result.name).toBe('leg-day');
-      expect(result.description).toBe('Leg exercises collection');
+      expect(result).toMatchObject(groupData);
     });
 
     it('should return undefined when exercise group not found', async () => {
@@ -150,20 +99,17 @@ describe('CompendiumExerciseGroupRepository', () => {
 
   describe('findByName', () => {
     it('should find exercise group by name', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const groupData = mockExerciseGroup({
         id: 'group-1',
         name: 'compound-movements',
         description: 'Big compound exercises',
-        createdBy: 'user-1',
-      };
+      });
 
       await repository.create(groupData);
 
       const result = await repository.findByName('compound-movements');
 
-      expect(result).toBeDefined();
-      expect(result.name).toBe('compound-movements');
-      expect(result.id).toBe('group-1');
+      expect(result).toMatchObject(groupData);
     });
 
     it('should return undefined when exercise group not found by name', async () => {
@@ -174,44 +120,34 @@ describe('CompendiumExerciseGroupRepository', () => {
 
   describe('update', () => {
     it('should update exercise group fields', async () => {
-      const groupData: CompendiumExerciseGroup = {
-        id: 'group-1',
-        name: 'stretching',
-        createdBy: 'user-1',
-      };
+      await repository.create(mockExerciseGroup({ id: 'group-1', name: 'stretching' }));
 
-      await repository.create(groupData);
-
-      const updateData = {
+      const result = await repository.update('group-1', {
         description: 'Flexibility and mobility exercises',
-      };
+      });
 
-      const result = await repository.update('group-1', updateData);
-
-      expect(result).toBeDefined();
-      expect(result.id).toBe('group-1');
-      expect(result.name).toBe('stretching'); // Unchanged
-      expect(result.description).toBe('Flexibility and mobility exercises'); // Updated
+      expect(result).toMatchObject({
+        name: 'stretching',
+        description: 'Flexibility and mobility exercises',
+      });
       expect(result.updatedAt).toBeDefined();
     });
 
     it('should update name field', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      await repository.create(mockExerciseGroup({
         id: 'group-1',
         name: 'old-name',
         description: 'Original description',
-        createdBy: 'user-1',
-      };
-
-      await repository.create(groupData);
+      }));
 
       const result = await repository.update('group-1', {
         name: 'new-name',
       });
 
-      expect(result).toBeDefined();
-      expect(result.name).toBe('new-name');
-      expect(result.description).toBe('Original description'); // Unchanged
+      expect(result).toMatchObject({
+        name: 'new-name',
+        description: 'Original description',
+      });
     });
 
     it('should return undefined when updating non-existent exercise group', async () => {
@@ -223,103 +159,84 @@ describe('CompendiumExerciseGroupRepository', () => {
     });
 
     it('should be able to clear optional fields', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      await repository.create(mockExerciseGroup({
         id: 'group-1',
-        name: 'test-group',
         description: 'Some description',
-        createdBy: 'user-1',
-      };
-
-      await repository.create(groupData);
+      }));
 
       const result = await repository.update('group-1', {
         description: null,
       });
 
-      expect(result).toBeDefined();
       expect(result.description).toBeNull();
     });
   });
 
   describe('upsert', () => {
     it('should insert new exercise group when it does not exist', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const groupData = mockExerciseGroup({
         id: 'upsert-group-1',
         name: 'upsert-test-group',
         description: 'Test upsert functionality',
-        createdBy: 'user-1',
-      };
+      });
 
       const result = await repository.upsert(groupData);
 
-      expect(result).toBeDefined();
-      expect(result.id).toBe('upsert-group-1');
-      expect(result.name).toBe('upsert-test-group');
-      expect(result.description).toBe('Test upsert functionality');
+      expect(result).toMatchObject(groupData);
       expect(result.updatedAt).toBeNull();
 
-      // Verify it was inserted
       const found = await repository.findById('upsert-group-1');
       expect(found).toBeDefined();
     });
 
     it('should update existing exercise group and set updatedAt', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const created = await repository.create(mockExerciseGroup({
         id: 'upsert-group-2',
         name: 'original-name',
         description: 'Original description',
-        createdBy: 'user-1',
-      };
-
-      const created = await repository.create(groupData);
+      }));
       expect(created.updatedAt).toBeNull();
 
-      const updatedData: CompendiumExerciseGroup = {
+      const result = await repository.upsert(mockExerciseGroup({
         id: 'upsert-group-2',
         name: 'updated-name',
         description: 'Updated description',
-        createdBy: 'user-2',
-      };
+      }));
 
-      const result = await repository.upsert(updatedData);
-
-      expect(result).toBeDefined();
-      expect(result.id).toBe('upsert-group-2');
-      expect(result.name).toBe('updated-name');
-      expect(result.description).toBe('Updated description');
+      expect(result).toMatchObject({
+        name: 'updated-name',
+        description: 'Updated description',
+      });
       expect(result.updatedAt).toBeDefined();
 
-      // Verify only one record exists
       const allGroups = await repository.findAll();
       expect(allGroups).toHaveLength(1);
     });
 
     it('should handle multiple upserts in sequence', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      const groupData = mockExerciseGroup({
         id: 'upsert-group-3',
         name: 'multi-upsert',
-        createdBy: 'user-1',
-      };
+        description: null,
+      });
 
-      // First upsert - insert
       const result1 = await repository.upsert(groupData);
       expect(result1.description).toBeNull();
 
-      // Second upsert - update
-      const result2 = await repository.upsert({
-        ...groupData,
+      const result2 = await repository.upsert(mockExerciseGroup({
+        id: 'upsert-group-3',
+        name: 'multi-upsert',
         description: 'First update',
-      });
+      }));
       expect(result2.description).toBe('First update');
 
-      // Third upsert - another update
-      const result3 = await repository.upsert({
-        ...groupData,
+      const result3 = await repository.upsert(mockExerciseGroup({
+        id: 'upsert-group-3',
+        name: 'multi-upsert',
         description: 'Second update',
-      });
+      }));
       expect(result3.description).toBe('Second update');
 
-      // Verify still only one record
       const allGroups = await repository.findAll();
       expect(allGroups).toHaveLength(1);
     });
@@ -327,21 +244,16 @@ describe('CompendiumExerciseGroupRepository', () => {
 
   describe('delete', () => {
     it('should delete exercise group by id', async () => {
-      const groupData: CompendiumExerciseGroup = {
+      await repository.create(mockExerciseGroup({
         id: 'group-1',
         name: 'to-be-deleted',
         description: 'This will be deleted',
-        createdBy: 'user-1',
-      };
-
-      await repository.create(groupData);
+      }));
 
       const result = await repository.delete('group-1');
 
-      expect(result).toBeDefined();
-      expect(result.id).toBe('group-1');
+      expect(result).toMatchObject({ id: 'group-1' });
 
-      // Verify it's actually deleted
       const found = await repository.findById('group-1');
       expect(found).toBeUndefined();
     });
@@ -352,24 +264,10 @@ describe('CompendiumExerciseGroupRepository', () => {
     });
 
     it('should delete and allow recreation with same name', async () => {
-      const groupData: CompendiumExerciseGroup = {
-        id: 'group-1',
-        name: 'reusable-name',
-        createdBy: 'user-1',
-      };
-
-      await repository.create(groupData);
+      await repository.create(mockExerciseGroup({ id: 'group-1', name: 'reusable-name' }));
       await repository.delete('group-1');
 
-      // Should be able to create new group with same name
-      const newGroupData: CompendiumExerciseGroup = {
-        id: 'group-2',
-        name: 'reusable-name',
-        createdBy: 'user-2',
-      };
-
-      const result = await repository.create(newGroupData);
-      expect(result).toBeDefined();
+      const result = await repository.create(mockExerciseGroup({ id: 'group-2', name: 'reusable-name' }));
       expect(result.id).toBe('group-2');
     });
   });
