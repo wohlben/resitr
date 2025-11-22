@@ -4,7 +4,7 @@ import { UserWorkoutLogSectionRepository } from '../../persistence/repositories/
 import { UserWorkoutLogSectionItemRepository } from '../../persistence/repositories/user-workout-log-section-item.repository';
 import { UserWorkoutLogSetRepository } from '../../persistence/repositories/user-workout-log-set.repository';
 import { UserWorkoutLog, UserWorkoutLogSet } from '../../persistence/schemas';
-import { CreateWorkoutLogDto, UpsertWorkoutLogDto } from '../../../routes/user/workout-log/dto/workout-log.dto';
+import { UpsertWorkoutLogDto } from '../../../routes/user/workout-log/dto/workout-log.dto';
 
 @Injectable()
 export class UserWorkoutLogService {
@@ -14,63 +14,6 @@ export class UserWorkoutLogService {
         private readonly logItemRepository: UserWorkoutLogSectionItemRepository,
         private readonly logSetRepository: UserWorkoutLogSetRepository,
     ) { }
-
-    async createLog(dto: CreateWorkoutLogDto, userId: string) {
-        // Create the workout log
-        const log = await this.logRepository.create({
-            originalWorkoutId: dto.originalWorkoutId,
-            name: dto.name,
-            startedAt: dto.startedAt,
-            completedAt: dto.completedAt,
-            duration: dto.duration,
-            createdBy: userId,
-        });
-
-        // Create sections, items, and sets from the provided payload
-        for (const sectionDto of dto.sections) {
-            const section = await this.logSectionRepository.create({
-                workoutLogId: log.id,
-                name: sectionDto.name,
-                orderIndex: sectionDto.orderIndex,
-                type: sectionDto.type,
-                completedAt: sectionDto.completedAt,
-                createdBy: userId,
-            });
-
-            for (const itemDto of sectionDto.items) {
-                const item = await this.logItemRepository.create({
-                    sectionId: section.id,
-                    exerciseId: itemDto.exerciseId,
-                    name: itemDto.name,
-                    orderIndex: itemDto.orderIndex,
-                    restBetweenSets: itemDto.restBetweenSets,
-                    breakAfter: itemDto.breakAfter,
-                    completedAt: itemDto.completedAt,
-                    createdBy: userId,
-                });
-
-                for (const setDto of itemDto.sets) {
-                    await this.logSetRepository.create({
-                        itemId: item.id,
-                        orderIndex: setDto.orderIndex,
-                        targetReps: setDto.targetReps,
-                        achievedReps: setDto.achievedReps,
-                        targetWeight: setDto.targetWeight,
-                        achievedWeight: setDto.achievedWeight,
-                        targetTime: setDto.targetTime,
-                        achievedTime: setDto.achievedTime,
-                        targetDistance: setDto.targetDistance,
-                        achievedDistance: setDto.achievedDistance,
-                        completedAt: setDto.completedAt,
-                        skipped: setDto.skipped,
-                        createdBy: userId,
-                    });
-                }
-            }
-        }
-
-        return log;
-    }
 
     async upsertLog(dto: UpsertWorkoutLogDto, userId: string) {
         // If ID exists, we're updating, otherwise creating
@@ -179,14 +122,6 @@ export class UserWorkoutLogService {
         }));
 
         return { ...log, sections: sectionsWithItems.sort((a, b) => a.orderIndex - b.orderIndex) };
-    }
-
-    async updateLog(id: string, data: Partial<UserWorkoutLog>) {
-        return this.logRepository.update(id, data);
-    }
-
-    async updateSet(setId: string, data: Partial<UserWorkoutLogSet>) {
-        return this.logSetRepository.update(setId, data);
     }
 
     async completeSet(setId: string, data: Partial<UserWorkoutLogSet>) {

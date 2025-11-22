@@ -4,7 +4,7 @@ import { UserWorkoutLogRepository } from '../../persistence/repositories/user-wo
 import { UserWorkoutLogSectionRepository } from '../../persistence/repositories/user-workout-log-section.repository';
 import { UserWorkoutLogSectionItemRepository } from '../../persistence/repositories/user-workout-log-section-item.repository';
 import { UserWorkoutLogSetRepository } from '../../persistence/repositories/user-workout-log-set.repository';
-import { CreateWorkoutLogDto } from '../../../routes/user/workout-log/dto/workout-log.dto';
+import { UpsertWorkoutLogDto } from '../../../routes/user/workout-log/dto/workout-log.dto';
 import { WorkoutSectionType } from '../../persistence/schemas/compendium-workout-section.schema';
 
 describe('UserWorkoutLogService', () => {
@@ -33,60 +33,6 @@ describe('UserWorkoutLogService', () => {
 
     it('should be defined', () => {
         expect(service).toBeDefined();
-    });
-
-    it('should create a log with full payload', async () => {
-        const userId = 'u1';
-        const dto: CreateWorkoutLogDto = {
-            originalWorkoutId: 'w1',
-            name: 'Test Workout',
-            startedAt: new Date(),
-            sections: [
-                {
-                    name: 'Warmup',
-                    orderIndex: 0,
-                    type: WorkoutSectionType.WARMUP,
-                    items: [
-                        {
-                            exerciseId: 'ex1',
-                            name: 'Pushups',
-                            orderIndex: 0,
-                            restBetweenSets: 30,
-                            breakAfter: 60,
-                            sets: [
-                                { orderIndex: 0, targetReps: 10 },
-                                { orderIndex: 1, targetReps: 10 },
-                                { orderIndex: 2, targetReps: 10 },
-                            ]
-                        }
-                    ]
-                }
-            ]
-        };
-
-        mockLogRepo.create.mockResolvedValue({ id: 'l1', name: 'Test Workout' });
-        mockLogSectionRepo.create.mockResolvedValue({ id: 'ls1' });
-        mockLogItemRepo.create.mockResolvedValue({ id: 'li1' });
-        mockLogSetRepo.create.mockResolvedValue({ id: 'set1' });
-
-        await service.createLog(dto, userId);
-
-        expect(mockLogRepo.create).toHaveBeenCalledWith(expect.objectContaining({
-            originalWorkoutId: 'w1',
-            name: 'Test Workout',
-            createdBy: userId
-        }));
-        expect(mockLogSectionRepo.create).toHaveBeenCalledWith(expect.objectContaining({
-            name: 'Warmup',
-            type: 'warmup'
-        }));
-        expect(mockLogItemRepo.create).toHaveBeenCalledWith(expect.objectContaining({
-            exerciseId: 'ex1',
-            name: 'Pushups',
-            breakAfter: 60
-        }));
-        expect(mockLogSetRepo.create).toHaveBeenCalledTimes(3);
-        expect(mockLogSetRepo.create).toHaveBeenCalledWith(expect.objectContaining({ targetReps: 10 }));
     });
 
     it('should upsert a log when ID is provided and log exists', async () => {
@@ -255,28 +201,6 @@ describe('UserWorkoutLogService', () => {
                 })
             ])
         }));
-    });
-
-    it('should update a log', async () => {
-        const logId = 'l1';
-        const data = { name: 'Updated Name', duration: 3600 };
-        mockLogRepo.update.mockResolvedValue({ id: logId, ...data });
-
-        const result = await service.updateLog(logId, data);
-
-        expect(mockLogRepo.update).toHaveBeenCalledWith(logId, data);
-        expect(result).toEqual(expect.objectContaining(data));
-    });
-
-    it('should update a set', async () => {
-        const setId = 'set1';
-        const data = { achievedReps: 12, achievedWeight: 20 };
-        mockLogSetRepo.update.mockResolvedValue({ id: setId, ...data });
-
-        const result = await service.updateSet(setId, data);
-
-        expect(mockLogSetRepo.update).toHaveBeenCalledWith(setId, data);
-        expect(result).toEqual(expect.objectContaining(data));
     });
 
     it('should complete a set and cascade completion', async () => {

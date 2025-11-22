@@ -8,7 +8,6 @@ describe('UserWorkoutLogController', () => {
     let service: UserWorkoutLogService;
 
     const mockService = {
-        createLog: jest.fn(),
         upsertLog: jest.fn(),
         getLog: jest.fn(),
         updateLog: jest.fn(),
@@ -34,41 +33,6 @@ describe('UserWorkoutLogController', () => {
 
     afterEach(() => {
         jest.clearAllMocks();
-    });
-
-    describe('createLog', () => {
-        it('should call service.createLog', async () => {
-            const dto = {
-                name: 'Test Workout',
-                startedAt: new Date(),
-                sections: [
-                    {
-                        name: 'Warmup',
-                        orderIndex: 0,
-                        type: WorkoutSectionType.WARMUP,
-                        items: [
-                            {
-                                exerciseId: 'ex1',
-                                name: 'Pushups',
-                                orderIndex: 0,
-                                restBetweenSets: 30,
-                                breakAfter: 60,
-                                sets: [
-                                    { orderIndex: 0, targetReps: 10 }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            };
-            const userId = 'user-123';
-            mockService.createLog.mockResolvedValue({ id: 'l1', name: 'Test Workout' });
-
-            const result = await controller.createLog(dto, userId);
-
-            expect(service.createLog).toHaveBeenCalledWith(dto, userId);
-            expect(result).toEqual({ id: 'l1', name: 'Test Workout' });
-        });
     });
 
     describe('upsertLog', () => {
@@ -118,32 +82,6 @@ describe('UserWorkoutLogController', () => {
 
             expect(service.getLog).toHaveBeenCalledWith(id);
             expect(result).toEqual({ id, name: 'Log 1' });
-        });
-    });
-
-    describe('updateLog', () => {
-        it('should call service.updateLog', async () => {
-            const id = 'l1';
-            const dto = { name: 'Updated' };
-            mockService.updateLog.mockResolvedValue({ id, ...dto });
-
-            const result = await controller.updateLog(id, dto);
-
-            expect(service.updateLog).toHaveBeenCalledWith(id, dto);
-            expect(result).toEqual({ id, ...dto });
-        });
-    });
-
-    describe('updateSet', () => {
-        it('should call service.updateSet', async () => {
-            const setId = 's1';
-            const dto = { achievedReps: 10 };
-            mockService.updateSet.mockResolvedValue({ id: setId, ...dto });
-
-            const result = await controller.updateSet(setId, dto);
-
-            expect(service.updateSet).toHaveBeenCalledWith(setId, dto);
-            expect(result).toEqual({ id: setId, ...dto });
         });
     });
 

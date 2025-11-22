@@ -24,3 +24,4 @@ export * from './lib/dto/exercise-group.dto';
 export * from './lib/dto/exercise-group-member.dto';
 export * from './lib/dto/exercise-relationship.dto';
 export * from './lib/dto/workout.dto';
+export * from './lib/dto/workout-log.dto';
