@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { CompendiumWorkoutRepository } from '../../persistence/repositories/compendium-workout.repository';
 import { CompendiumWorkoutSectionRepository } from '../../persistence/repositories/compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/compendium-workout-section-item.repository';
-import { CompendiumWorkoutScheduleRepository } from '../../persistence/repositories/compendium-workout-schedule.repository';
 import { CreateWorkoutDto } from '../../../routes/compendium/workout/dto/workout.dto';
 import type { CompendiumWorkout } from '../../persistence/schemas/compendium-workout.schema';
 
@@ -11,8 +10,7 @@ export class CompendiumWorkoutService {
   constructor(
     private readonly workoutRepository: CompendiumWorkoutRepository,
     private readonly sectionRepository: CompendiumWorkoutSectionRepository,
-    private readonly sectionItemRepository: CompendiumWorkoutSectionItemRepository,
-    private readonly scheduleRepository: CompendiumWorkoutScheduleRepository
+    private readonly sectionItemRepository: CompendiumWorkoutSectionItemRepository
   ) {}
 
   async create(data: CreateWorkoutDto, userId: string) {
@@ -52,17 +50,6 @@ export class CompendiumWorkoutService {
       }
     }
 
-    // Create schedule
-    if (data.schedule) {
-      for (const dayOfWeek of data.schedule) {
-        await this.scheduleRepository.create({
-          workoutTemplateId: workout.templateId,
-          dayOfWeek,
-          createdBy: userId,
-        });
-      }
-    }
-
     return workout;
   }
 
@@ -85,13 +72,9 @@ export class CompendiumWorkoutService {
       })
     );
 
-    // Get schedule
-    const schedule = await this.scheduleRepository.findByWorkoutTemplateId(templateId);
-
     return {
       ...workout,
       sections: sectionsWithItems,
-      schedule: schedule.map((s) => s.dayOfWeek),
     };
   }
 
@@ -107,7 +90,7 @@ export class CompendiumWorkoutService {
   }
 
   async delete(templateId: string) {
-    // Cascade delete will handle sections, items, and schedule
+    // Cascade delete will handle sections and items
     return this.workoutRepository.delete(templateId);
   }
 }

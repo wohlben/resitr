@@ -50,6 +50,13 @@
       "when": 1763835829987,
       "tag": "0006_steady_veda",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1763840977184,
+      "tag": "0007_eminent_chameleon",
+      "breakpoints": true
     }
   ]
 }

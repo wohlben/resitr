@@ -55,11 +55,6 @@ export class CreateWorkoutDto {
   @ValidateNested({ each: true })
   @Type(() => CreateWorkoutSectionDto)
   sections!: CreateWorkoutSectionDto[];
-
-  @IsArray()
-  @IsInt({ each: true })
-  @Min(0, { each: true })
-  schedule!: number[]; // Array of day numbers (0-6)
 }
 
 export class CreateWorkoutResponseDto extends CreateWorkoutDto {

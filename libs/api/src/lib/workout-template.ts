@@ -32,7 +32,6 @@ export type WorkoutTemplate = {
   name: string;
   description?: string;
   sections: WorkoutSectionTemplate[];
-  schedule: number[]; // Array of day numbers (0-6, where 0 is Sunday)
   version: number;
   createdBy: string;
   createdAt: string;

@@ -20,7 +20,7 @@ import type { CompendiumExerciseVideo } from './schemas/compendium-exercise-vide
 import type { CompendiumWorkout } from './schemas/compendium-workout.schema';
 import type { CompendiumWorkoutSection } from './schemas/compendium-workout-section.schema';
 import type { CompendiumWorkoutSectionItem } from './schemas/compendium-workout-section-item.schema';
-import type { CompendiumWorkoutSchedule } from './schemas/compendium-workout-schedule.schema';
+import type { UserWorkoutSchedule } from './schemas/user-workout-schedule.schema';
 import {
   ExerciseType,
   ForceType,
@@ -251,16 +251,20 @@ export function mockWorkoutSectionItem(
 }
 
 /**
- * Creates a mock CompendiumWorkoutSchedule with sensible defaults.
+ * Creates a mock UserWorkoutSchedule with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockWorkoutSchedule(
-  overrides: Partial<CompendiumWorkoutSchedule> = {}
-): CompendiumWorkoutSchedule {
+export function mockUserWorkoutSchedule(
+  overrides: Partial<UserWorkoutSchedule> = {}
+): UserWorkoutSchedule {
   return {
+    id: 'test-schedule-1',
+    userId: 'test-user',
     workoutTemplateId: 'test-workout-1',
     dayOfWeek: 1, // Monday
-    createdBy: 'test-user',
+    order: 0,
+    createdAt: new Date(),
+    updatedAt: null,
     ...overrides,
-  } satisfies CompendiumWorkoutSchedule;
+  } satisfies UserWorkoutSchedule;
 }
