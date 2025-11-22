@@ -7,6 +7,7 @@ import { ExerciseGroupController } from './exercise-group/exercise-group.control
 import { ExerciseGroupMemberController } from './exercise-group-member/exercise-group-member.controller';
 import { ExerciseSchemeController } from './exercise-scheme/exercise-scheme.controller';
 import { ExerciseVideoController } from './exercise-video/exercise-video.controller';
+import { WorkoutController } from './workout/workout.controller';
 
 @Module({
   imports: [CoreModule],
@@ -18,6 +19,7 @@ import { ExerciseVideoController } from './exercise-video/exercise-video.control
     ExerciseGroupMemberController,
     ExerciseSchemeController,
     ExerciseVideoController,
+    WorkoutController,
   ],
 })
 export class CompendiumModule {}

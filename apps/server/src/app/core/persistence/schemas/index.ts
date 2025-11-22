@@ -7,3 +7,7 @@ export * from './compendium-exercise-group-member.schema';
 export * from './compendium-exercise-relationship.schema';
 export * from './compendium-exercise-scheme.schema';
 export * from './compendium-exercise-video.schema';
+export * from './compendium-workout.schema';
+export * from './compendium-workout-section.schema';
+export * from './compendium-workout-section-item.schema';
+export * from './compendium-workout-schedule.schema';

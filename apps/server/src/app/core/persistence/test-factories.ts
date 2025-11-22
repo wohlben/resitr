@@ -17,6 +17,10 @@ import type { CompendiumExerciseGroupMember } from './schemas/compendium-exercis
 import type { CompendiumExerciseRelationship } from './schemas/compendium-exercise-relationship.schema';
 import type { CompendiumExerciseScheme } from './schemas/compendium-exercise-scheme.schema';
 import type { CompendiumExerciseVideo } from './schemas/compendium-exercise-video.schema';
+import type { CompendiumWorkout } from './schemas/compendium-workout.schema';
+import type { CompendiumWorkoutSection } from './schemas/compendium-workout-section.schema';
+import type { CompendiumWorkoutSectionItem } from './schemas/compendium-workout-section-item.schema';
+import type { CompendiumWorkoutSchedule } from './schemas/compendium-workout-schedule.schema';
 import {
   ExerciseType,
   ForceType,
@@ -28,6 +32,7 @@ import {
   ExerciseRelationshipType,
   VideoSource,
 } from '@resitr/api';
+import { WorkoutSectionType } from './schemas/compendium-workout-section.schema';
 
 /**
  * Creates a mock CompendiumExercise with sensible defaults.
@@ -191,4 +196,71 @@ export function mockEquipments(count: number, baseOverrides: Partial<NewCompendi
       displayName: `Test Equipment ${i + 1}`,
     })
   ) satisfies NewCompendiumEquipment[];
+}
+
+/**
+ * Creates a mock CompendiumWorkout with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockWorkout(
+  overrides: Partial<CompendiumWorkout> = {}
+): CompendiumWorkout {
+  return {
+    templateId: 'test-workout-1',
+    name: 'Test Workout',
+    description: 'A test workout for unit tests',
+    createdBy: 'test-user',
+    version: 1,
+    ...overrides,
+  } satisfies CompendiumWorkout;
+}
+
+/**
+ * Creates a mock CompendiumWorkoutSection with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockWorkoutSection(
+  overrides: Partial<CompendiumWorkoutSection> = {}
+): CompendiumWorkoutSection {
+  return {
+    workoutTemplateId: 'test-workout-1',
+    type: WorkoutSectionType.STRENGTH,
+    name: 'Test Section',
+    orderIndex: 0,
+    createdBy: 'test-user',
+    ...overrides,
+  } satisfies CompendiumWorkoutSection;
+}
+
+/**
+ * Creates a mock CompendiumWorkoutSectionItem with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockWorkoutSectionItem(
+  overrides: Partial<CompendiumWorkoutSectionItem> = {}
+): CompendiumWorkoutSectionItem {
+  return {
+    sectionId: 'test-section-1',
+    exerciseSchemeId: 'test-scheme-1',
+    orderIndex: 0,
+    breakBetweenSets: 60,
+    breakAfter: 120,
+    createdBy: 'test-user',
+    ...overrides,
+  } satisfies CompendiumWorkoutSectionItem;
+}
+
+/**
+ * Creates a mock CompendiumWorkoutSchedule with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockWorkoutSchedule(
+  overrides: Partial<CompendiumWorkoutSchedule> = {}
+): CompendiumWorkoutSchedule {
+  return {
+    workoutTemplateId: 'test-workout-1',
+    dayOfWeek: 1, // Monday
+    createdBy: 'test-user',
+    ...overrides,
+  } satisfies CompendiumWorkoutSchedule;
 }
