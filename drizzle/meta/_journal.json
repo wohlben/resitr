@@ -15,6 +15,13 @@
       "when": 1761914792413,
       "tag": "0001_wise_mentallo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1763814208746,
+      "tag": "0002_wooden_warbound",
+      "breakpoints": true
     }
   ]
 }

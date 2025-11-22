@@ -10,3 +10,4 @@ export * from './lib/exercise-relationship-type';
 export * from './lib/video-source';
 export * from './lib/exercise-group-template';
 export * from './lib/exercise-group-member-template';
+export * from './lib/exercise-scheme-template';

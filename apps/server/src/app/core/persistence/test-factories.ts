@@ -15,6 +15,7 @@ import type { NewCompendiumEquipment } from './schemas/compendium-equipment.sche
 import type { CompendiumExerciseGroup } from './schemas/compendium-exercise-group.schema';
 import type { CompendiumExerciseGroupMember } from './schemas/compendium-exercise-group-member.schema';
 import type { CompendiumExerciseRelationship } from './schemas/compendium-exercise-relationship.schema';
+import type { CompendiumExerciseScheme } from './schemas/compendium-exercise-scheme.schema';
 import type { CompendiumExerciseVideo } from './schemas/compendium-exercise-video.schema';
 import {
   ExerciseType,
@@ -22,6 +23,7 @@ import {
   Muscle,
   TechnicalDifficulty,
   MeasurementParadigm,
+  MeasurementType,
   EquipmentCategory,
   ExerciseRelationshipType,
   VideoSource,
@@ -52,7 +54,7 @@ export function mockExercise(overrides: Partial<CompendiumExercise> = {}): Compe
     createdBy: 'test-user',
     version: 1,
     ...overrides,
-  };
+  } satisfies CompendiumExercise ;
 }
 
 /**
@@ -118,6 +120,30 @@ export function mockExerciseRelationship(
     createdBy: 'test-user',
     ...overrides,
   } satisfies CompendiumExerciseRelationship;
+}
+
+/**
+ * Creates a mock CompendiumExerciseScheme with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockExerciseScheme(
+  overrides: Partial<CompendiumExerciseScheme> = {}
+): CompendiumExerciseScheme {
+  return {
+    exerciseId: 'test-exercise-1',
+    name: 'Test Scheme',
+    measurementType: MeasurementType.REP_BASED,
+    sets: 3,
+    reps: 10,
+    restBetweenSets: 60,
+    weight: 100,
+    timePerRep: null,
+    duration: null,
+    distance: null,
+    targetTime: null,
+    createdBy: 'test-user',
+    ...overrides,
+  } satisfies CompendiumExerciseScheme;
 }
 
 /**
