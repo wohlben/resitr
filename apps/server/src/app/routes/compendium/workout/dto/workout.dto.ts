@@ -1,6 +1,6 @@
 import { Transform, Type } from 'class-transformer';
 import { IsArray, IsEnum, IsInt, IsOptional, IsString, Min, ValidateNested } from 'class-validator';
-import { WorkoutSectionType } from '../../../../core/persistence/schemas';
+import { WorkoutSectionType, type CreateWorkoutDto as CreateWorkoutDtoType, type WorkoutResponseDto } from '@resitr/api';
 
 export class CreateWorkoutSectionItemDto {
   @IsString()
@@ -36,7 +36,7 @@ export class CreateWorkoutSectionDto {
   items!: CreateWorkoutSectionItemDto[];
 }
 
-export class CreateWorkoutDto {
+export class CreateWorkoutDto implements CreateWorkoutDtoType {
   @IsString()
   templateId!: string;
 
@@ -62,7 +62,7 @@ export class CreateWorkoutDto {
   schedule!: number[]; // Array of day numbers (0-6)
 }
 
-export class CreateWorkoutResponseDto extends CreateWorkoutDto {
+export class CreateWorkoutResponseDto extends CreateWorkoutDto implements WorkoutResponseDto {
   @IsString()
   createdBy!: string;
 

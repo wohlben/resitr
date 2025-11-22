@@ -1,8 +1,8 @@
 import { Transform } from 'class-transformer';
 import { IsEnum, IsInt, IsNumber, IsOptional, IsString, Min } from 'class-validator';
-import { MeasurementType } from '@resitr/api';
+import { MeasurementType, type CreateExerciseSchemeDto as CreateExerciseSchemeDtoType, type ExerciseSchemeResponseDto } from '@resitr/api';
 
-export class CreateExerciseSchemeDto {
+export class CreateExerciseSchemeDto implements CreateExerciseSchemeDtoType {
   @IsString()
   exerciseId!: string;
 
@@ -53,7 +53,7 @@ export class CreateExerciseSchemeDto {
   targetTime?: number;
 }
 
-export class CreateExerciseSchemeResponseDto extends CreateExerciseSchemeDto {
+export class CreateExerciseSchemeResponseDto extends CreateExerciseSchemeDto implements ExerciseSchemeResponseDto {
   @IsString()
   id!: string;
 

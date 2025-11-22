@@ -1,7 +1,8 @@
 import { Transform } from 'class-transformer';
 import { IsString, IsOptional, IsArray, IsEnum, IsNumber, IsUrl } from 'class-validator';
 import {
-  type ExerciseTemplate,
+  type CreateExerciseDto,
+  type ExerciseResponseDto,
   ExerciseType,
   ForceType,
   MeasurementParadigm,
@@ -9,7 +10,7 @@ import {
   TechnicalDifficulty,
 } from '@resitr/api';
 
-export class CreateExerciseTemplateDto implements Omit<ExerciseTemplate, 'createdAt' | 'updatedAt' | 'createdBy'> {
+export class CreateExerciseTemplateDto implements CreateExerciseDto {
   @IsString()
   templateId!: string;
 
@@ -75,7 +76,7 @@ export class CreateExerciseTemplateDto implements Omit<ExerciseTemplate, 'create
   version!: number;
 }
 
-export class CreateExerciseTemplateResponseDto extends CreateExerciseTemplateDto implements ExerciseTemplate {
+export class CreateExerciseTemplateResponseDto extends CreateExerciseTemplateDto implements ExerciseResponseDto {
   @IsString()
   createdBy!: string;
 

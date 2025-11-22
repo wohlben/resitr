@@ -14,7 +14,7 @@ export class Database extends Dexie {
   settings!: EntityTable<Setting, 'id'>;
   equipment!: EntityTable<Equipment, 'id'>;
   exercises!: EntityTable<Exercise, 'id'>;
-  exerciseSchemes!: EntityTable<ExerciseScheme, 'id'>; // Now supports union types with _measurementType discriminator
+  exerciseSchemes!: EntityTable<ExerciseScheme, 'id'>;
   workouts!: EntityTable<Workout, 'id'>;
   workoutLogs!: EntityTable<WorkoutLog, 'id'>;
 

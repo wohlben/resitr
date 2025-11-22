@@ -1,8 +1,8 @@
 import { Transform } from 'class-transformer';
 import { IsEnum, IsOptional, IsString, IsUrl } from 'class-validator';
-import { VideoSource } from '@resitr/api';
+import { VideoSource, type CreateExerciseVideoDto as CreateExerciseVideoDtoType, type ExerciseVideoResponseDto } from '@resitr/api';
 
-export class CreateExerciseVideoDto {
+export class CreateExerciseVideoDto implements CreateExerciseVideoDtoType {
   @IsString()
   exerciseTemplateId!: string;
 
@@ -22,7 +22,7 @@ export class CreateExerciseVideoDto {
   video_source?: VideoSource;
 }
 
-export class CreateExerciseVideoResponseDto extends CreateExerciseVideoDto {
+export class CreateExerciseVideoResponseDto extends CreateExerciseVideoDto implements ExerciseVideoResponseDto {
   @IsString()
   createdBy!: string;
 

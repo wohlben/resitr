@@ -1,8 +1,8 @@
 import { Transform } from 'class-transformer';
 import { IsString, IsOptional } from 'class-validator';
-import { ExerciseGroupTemplate } from '@resitr/api';
+import { type CreateExerciseGroupDto as CreateExerciseGroupDtoType, type ExerciseGroupResponseDto } from '@resitr/api';
 
-export class CreateExerciseGroupDto implements Omit<ExerciseGroupTemplate, 'createdAt' | 'updatedAt' | 'createdBy'> {
+export class CreateExerciseGroupDto implements CreateExerciseGroupDtoType {
   @IsString()
   id!: string;
 
@@ -14,7 +14,7 @@ export class CreateExerciseGroupDto implements Omit<ExerciseGroupTemplate, 'crea
   description?: string;
 }
 
-export class CreateExerciseGroupResponseDto extends CreateExerciseGroupDto implements ExerciseGroupTemplate {
+export class CreateExerciseGroupResponseDto extends CreateExerciseGroupDto implements ExerciseGroupResponseDto {
   @IsString()
   createdBy!: string;
 

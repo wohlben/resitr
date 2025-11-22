@@ -1,8 +1,8 @@
 import { Transform } from 'class-transformer';
 import { IsString, IsOptional, IsEnum, IsNumber, Min, Max } from 'class-validator';
-import { ExerciseRelationshipType } from '@resitr/api';
+import { ExerciseRelationshipType, type CreateExerciseRelationshipDto as CreateExerciseRelationshipDtoType, type ExerciseRelationshipResponseDto } from '@resitr/api';
 
-export class CreateExerciseRelationshipDto {
+export class CreateExerciseRelationshipDto implements CreateExerciseRelationshipDtoType {
   @IsString()
   fromExerciseTemplateId!: string;
 
@@ -23,7 +23,7 @@ export class CreateExerciseRelationshipDto {
   description?: string;
 }
 
-export class CreateExerciseRelationshipResponseDto extends CreateExerciseRelationshipDto {
+export class CreateExerciseRelationshipResponseDto extends CreateExerciseRelationshipDto implements ExerciseRelationshipResponseDto {
   @IsString()
   createdBy!: string;
 

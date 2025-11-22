@@ -3,10 +3,11 @@ import { Transform } from 'class-transformer';
 import {
   type EquipmentCategory,
   EquipmentCategory as EquipmentCategoryEnum,
-  type EquipmentTemplate,
+  type CreateEquipmentDto,
+  type EquipmentResponseDto,
 } from '@resitr/api';
 
-export class CreateEquipmentTemplateDto implements EquipmentTemplate {
+export class CreateEquipmentTemplateDto implements CreateEquipmentDto {
   @IsString()
   name!: string;
 
@@ -33,7 +34,7 @@ export class CreateEquipmentTemplateDto implements EquipmentTemplate {
   substitutesFor!: string[];
 }
 
-export class CreateEquipmentTemplateResponseDto extends CreateEquipmentTemplateDto implements EquipmentTemplate {
+export class CreateEquipmentTemplateResponseDto extends CreateEquipmentTemplateDto implements EquipmentResponseDto {
   @Transform(({ obj }) => obj.imageUrl ?? undefined)
   imageUrl?: string;
 

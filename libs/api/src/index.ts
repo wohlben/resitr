@@ -7,8 +7,20 @@ export * from './lib/technical-difficulty';
 export * from './lib/equipment-template';
 export * from './lib/equipment-category';
 export * from './lib/exercise-relationship-type';
+export * from './lib/exercise-relationship-template';
 export * from './lib/video-source';
+export * from './lib/exercise-video-template';
 export * from './lib/exercise-group-template';
 export * from './lib/exercise-group-member-template';
 export * from './lib/exercise-scheme-template';
 export * from './lib/workout-template';
+
+// DTOs
+export * from './lib/dto/equipment.dto';
+export * from './lib/dto/exercise.dto';
+export * from './lib/dto/exercise-scheme.dto';
+export * from './lib/dto/exercise-video.dto';
+export * from './lib/dto/exercise-group.dto';
+export * from './lib/dto/exercise-group-member.dto';
+export * from './lib/dto/exercise-relationship.dto';
+export * from './lib/dto/workout.dto';
