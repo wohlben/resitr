@@ -11,3 +11,7 @@ export * from './compendium-workout.schema';
 export * from './compendium-workout-section.schema';
 export * from './compendium-workout-section-item.schema';
 export * from './compendium-workout-schedule.schema';
+export * from './user-workout-log.schema';
+export * from './user-workout-log-section.schema';
+export * from './user-workout-log-section-item.schema';
+export * from './user-workout-log-set.schema';

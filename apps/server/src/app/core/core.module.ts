@@ -11,6 +11,10 @@ import { CompendiumWorkoutRepository } from './persistence/repositories/compendi
 import { CompendiumWorkoutSectionRepository } from './persistence/repositories/compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from './persistence/repositories/compendium-workout-section-item.repository';
 import { CompendiumWorkoutScheduleRepository } from './persistence/repositories/compendium-workout-schedule.repository';
+import { UserWorkoutLogRepository } from './persistence/repositories/user-workout-log.repository';
+import { UserWorkoutLogSectionRepository } from './persistence/repositories/user-workout-log-section.repository';
+import { UserWorkoutLogSectionItemRepository } from './persistence/repositories/user-workout-log-section-item.repository';
+import { UserWorkoutLogSetRepository } from './persistence/repositories/user-workout-log-set.repository';
 import { provideDatabase } from './persistence/database';
 import { CompendiumExerciseService } from './compendium/exercise/compendium-exercise.service';
 import { CompendiumExerciseRelationshipService } from './compendium/exercise-relationship/compendium-exercise-relationship.service';
@@ -19,6 +23,7 @@ import { CompendiumExerciseGroupMemberService } from './compendium/exercise-grou
 import { CompendiumExerciseSchemeService } from './compendium/exercise-scheme/compendium-exercise-scheme.service';
 import { CompendiumExerciseVideoService } from './compendium/exercise-video/compendium-exercise-video.service';
 import { CompendiumWorkoutService } from './compendium/workout/compendium-workout.service';
+import { UserWorkoutLogService } from './user/workout-log/user-workout-log.service';
 
 @Module({
   providers: [
@@ -35,6 +40,10 @@ import { CompendiumWorkoutService } from './compendium/workout/compendium-workou
     CompendiumWorkoutSectionRepository,
     CompendiumWorkoutSectionItemRepository,
     CompendiumWorkoutScheduleRepository,
+    UserWorkoutLogRepository,
+    UserWorkoutLogSectionRepository,
+    UserWorkoutLogSectionItemRepository,
+    UserWorkoutLogSetRepository,
     CompendiumExerciseService,
     CompendiumExerciseRelationshipService,
     CompendiumExerciseGroupService,
@@ -42,6 +51,7 @@ import { CompendiumWorkoutService } from './compendium/workout/compendium-workou
     CompendiumExerciseSchemeService,
     CompendiumExerciseVideoService,
     CompendiumWorkoutService,
+    UserWorkoutLogService,
   ],
   exports: [
     CompendiumEquipmentService,
@@ -52,6 +62,7 @@ import { CompendiumWorkoutService } from './compendium/workout/compendium-workou
     CompendiumExerciseSchemeService,
     CompendiumExerciseVideoService,
     CompendiumWorkoutService,
+    UserWorkoutLogService,
   ],
 })
-export class CoreModule {}
+export class CoreModule { }
