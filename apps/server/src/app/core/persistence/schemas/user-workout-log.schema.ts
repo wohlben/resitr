@@ -11,7 +11,6 @@ export const userWorkoutLogs = sqliteTable('user_workout_logs', {
 
     startedAt: integer('started_at', { mode: 'timestamp' }).notNull(),
     completedAt: integer('completed_at', { mode: 'timestamp' }),
-    duration: integer('duration'), // in seconds
 
     createdBy: text('created_by').notNull(),
     createdAt: integer('created_at', { mode: 'timestamp' })

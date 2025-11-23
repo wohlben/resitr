@@ -132,10 +132,6 @@ export class UpsertWorkoutLogDto {
   @Type(() => Date)
   completedAt?: Date;
 
-  @IsOptional()
-  @IsInt()
-  duration?: number;
-
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => UpsertSectionDto)

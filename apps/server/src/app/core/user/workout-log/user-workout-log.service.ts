@@ -26,7 +26,6 @@ export class UserWorkoutLogService {
                     name: dto.name,
                     startedAt: dto.startedAt,
                     completedAt: dto.completedAt,
-                    duration: dto.duration,
                 });
             } else {
                 // ID provided but not found, create with that ID
@@ -36,7 +35,6 @@ export class UserWorkoutLogService {
                     name: dto.name,
                     startedAt: dto.startedAt,
                     completedAt: dto.completedAt,
-                    duration: dto.duration,
                     createdBy: userId,
                 });
             }
@@ -47,7 +45,6 @@ export class UserWorkoutLogService {
                 name: dto.name,
                 startedAt: dto.startedAt,
                 completedAt: dto.completedAt,
-                duration: dto.duration,
                 createdBy: userId,
             });
         }
