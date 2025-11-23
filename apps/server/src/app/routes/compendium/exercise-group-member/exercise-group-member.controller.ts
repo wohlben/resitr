@@ -4,7 +4,7 @@ import { UserId } from '../../../common/decorators/user-id.decorator';
 import { CreateExerciseGroupMemberDto, CreateExerciseGroupMemberResponseDto } from './dto/exercise-group-member.dto';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('exercise-group-member')
+@Controller('compendium/exercise-group-member')
 export class ExerciseGroupMemberController {
   constructor(private compendiumExerciseGroupMemberService: CompendiumExerciseGroupMemberService) {}
 

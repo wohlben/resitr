@@ -4,7 +4,7 @@ import { UserId } from '../../../common/decorators/user-id.decorator';
 import { CreateEquipmentTemplateDto, CreateEquipmentTemplateResponseDto } from './dto/equipment-template.dto';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('equipment')
+@Controller('compendium/equipment')
 export class EquipmentController {
   constructor(private compendiumEquipmentService: CompendiumEquipmentService) {}
 

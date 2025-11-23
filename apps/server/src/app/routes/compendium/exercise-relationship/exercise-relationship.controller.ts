@@ -8,7 +8,7 @@ import {
 import { plainToInstance } from 'class-transformer';
 import { ExerciseRelationshipType } from '@resitr/api';
 
-@Controller('exercise-relationship')
+@Controller('compendium/exercise-relationship')
 export class ExerciseRelationshipController {
   constructor(private compendiumExerciseRelationshipService: CompendiumExerciseRelationshipService) {}
 

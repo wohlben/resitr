@@ -7,7 +7,7 @@ import {
   CreateExerciseSchemeResponseDto,
 } from './dto/exercise-scheme.dto';
 
-@Controller('exercise-scheme')
+@Controller('compendium/exercise-scheme')
 export class ExerciseSchemeController {
   constructor(private compendiumExerciseSchemeService: CompendiumExerciseSchemeService) {}
 

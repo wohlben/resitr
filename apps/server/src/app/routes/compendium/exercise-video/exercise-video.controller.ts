@@ -7,7 +7,7 @@ import {
   CreateExerciseVideoResponseDto,
 } from './dto/exercise-video.dto';
 
-@Controller('exercise-video')
+@Controller('compendium/exercise-video')
 export class ExerciseVideoController {
   constructor(
     private compendiumExerciseVideoService: CompendiumExerciseVideoService

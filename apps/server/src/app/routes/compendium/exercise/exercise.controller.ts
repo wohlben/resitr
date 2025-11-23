@@ -4,7 +4,7 @@ import { UserId } from '../../../common/decorators/user-id.decorator';
 import { CreateExerciseTemplateDto, CreateExerciseTemplateResponseDto } from './dto/exercise-template.dto';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('exercise')
+@Controller('compendium/exercise')
 export class ExerciseController {
   constructor(private compendiumExerciseService: CompendiumExerciseService) {}
 

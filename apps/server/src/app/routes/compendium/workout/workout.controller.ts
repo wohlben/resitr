@@ -4,7 +4,7 @@ import { CompendiumWorkoutService } from '../../../core/compendium/workout/compe
 import { UserId } from '../../../common/decorators/user-id.decorator';
 import { CreateWorkoutDto, CreateWorkoutResponseDto } from './dto/workout.dto';
 
-@Controller('workout')
+@Controller('compendium/workout')
 export class WorkoutController {
   constructor(private compendiumWorkoutService: CompendiumWorkoutService) {}
 
