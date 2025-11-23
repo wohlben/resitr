@@ -10,7 +10,6 @@ import { PaginationInfoComponent } from './pagination-info.component';
   imports: [PaginationNavigationComponent, PaginationInfoComponent],
   template: `
     <div class="space-y-4 py-4" #paginationContainer>
-      <!-- Pagination Info -->
       <app-pagination-info
         [currentCount]="paginatedItems().length"
         [filteredCount]="items().length"
@@ -20,10 +19,8 @@ import { PaginationInfoComponent } from './pagination-info.component';
         (itemsPerPageChange)="onItemsPerPageChange($event)"
       />
 
-      <!-- Content Projection with context -->
       <ng-content select="[paginationContent]"></ng-content>
 
-      <!-- Pagination Navigation -->
       @if (totalPages() > 1) {
         <app-pagination-navigation
           [currentPage]="currentPage()"
