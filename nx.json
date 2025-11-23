@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/.eslintrc.json",
@@ -12,14 +15,21 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml"
+    ]
   },
   "nxCloudId": "6900f82535c6891901a88b61",
   "targetDefaults": {
     "@angular/build:application": {
       "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "@nx/eslint:lint": {
       "cache": true,
@@ -32,7 +42,10 @@
     },
     "@nx/vite:test": {
       "cache": true,
-      "inputs": ["default", "^production"]
+      "inputs": [
+        "default",
+        "^production"
+      ]
     }
   },
   "plugins": [
@@ -64,7 +77,9 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/server-e2e/**/*"]
+      "exclude": [
+        "apps/server-e2e/**/*"
+      ]
     },
     {
       "plugin": "@nx/vite/plugin",
@@ -87,6 +102,12 @@
       "linter": "eslint",
       "style": "css",
       "unitTestRunner": "vitest"
+    },
+    "@nx/angular:component": {
+      "style": "css",
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "flat": true
     }
   }
 }
