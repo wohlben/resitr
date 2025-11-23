@@ -106,11 +106,11 @@ export const CompendiumQueries = {
 
   // Exercise Relationship
   exerciseRelationship: {
-    byFromExercise: (fromExerciseId: string) => ({
+    fromExercise: (fromExerciseId: string) => ({
       key: `compendium-exercise-relationship-from-${fromExerciseId}`,
       fn: (client: HttpClient) => lastValueFrom(client.get<ExerciseRelationshipResponseDto[]>(`/api/compendium/exercise-relationship/from/${fromExerciseId}`))
     }),
-    byToExercise: (toExerciseId: string) => ({
+    toExercise: (toExerciseId: string) => ({
       key: `compendium-exercise-relationship-to-${toExerciseId}`,
       fn: (client: HttpClient) => lastValueFrom(client.get<ExerciseRelationshipResponseDto[]>(`/api/compendium/exercise-relationship/to/${toExerciseId}`))
     }),

@@ -1,6 +1,10 @@
 import { IsString, IsInt, Min, Max, IsOptional } from 'class-validator';
+import type {
+  CreateUserWorkoutScheduleDto as ICreateUserWorkoutScheduleDto,
+  UpdateUserWorkoutScheduleDto as IUpdateUserWorkoutScheduleDto,
+} from '@resitr/api';
 
-export class CreateUserWorkoutScheduleDto {
+export class CreateUserWorkoutScheduleDto implements ICreateUserWorkoutScheduleDto {
   @IsString()
   workoutTemplateId!: string;
 
@@ -15,7 +19,7 @@ export class CreateUserWorkoutScheduleDto {
   order?: number;
 }
 
-export class UpdateUserWorkoutScheduleDto {
+export class UpdateUserWorkoutScheduleDto implements IUpdateUserWorkoutScheduleDto {
   @IsOptional()
   @IsInt()
   @Min(0)

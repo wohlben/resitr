@@ -1,8 +1,14 @@
 import { Transform } from 'class-transformer';
 import { IsEnum, IsInt, IsNumber, IsOptional, IsString, Min } from 'class-validator';
-import { MeasurementType } from '@resitr/api';
+import {
+  MeasurementType,
+  type CreateUserExerciseSchemeDto as ICreateUserExerciseSchemeDto,
+  type UpdateUserExerciseSchemeDto as IUpdateUserExerciseSchemeDto,
+  type AssignToSectionItemDto as IAssignToSectionItemDto,
+  type UnassignFromSectionItemDto as IUnassignFromSectionItemDto,
+} from '@resitr/api';
 
-export class CreateUserExerciseSchemeDto {
+export class CreateUserExerciseSchemeDto implements ICreateUserExerciseSchemeDto {
   @IsString()
   exerciseId!: string;
 
@@ -53,7 +59,7 @@ export class CreateUserExerciseSchemeDto {
   targetTime?: number;
 }
 
-export class UpdateUserExerciseSchemeDto {
+export class UpdateUserExerciseSchemeDto implements IUpdateUserExerciseSchemeDto {
   @IsOptional()
   @IsString()
   name?: string;
@@ -120,7 +126,7 @@ export class UserExerciseSchemeResponseDto extends CreateUserExerciseSchemeDto {
   updatedAt?: string;
 }
 
-export class AssignToSectionItemDto {
+export class AssignToSectionItemDto implements IAssignToSectionItemDto {
   @IsString()
   sectionItemId!: string;
 
@@ -128,7 +134,7 @@ export class AssignToSectionItemDto {
   workoutTemplateId!: string;
 }
 
-export class UnassignFromSectionItemDto {
+export class UnassignFromSectionItemDto implements IUnassignFromSectionItemDto {
   @IsString()
   sectionItemId!: string;
 
