@@ -1,7 +1,6 @@
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 import { compendiumWorkoutSections } from './compendium-workout-section.schema';
-import { compendiumExerciseScheme } from './compendium-exercise-scheme.schema';
 
 export const compendiumWorkoutSectionItems = sqliteTable('compendium_workout_section_items', {
   id: text('id')
@@ -10,9 +9,6 @@ export const compendiumWorkoutSectionItems = sqliteTable('compendium_workout_sec
   sectionId: text('section_id')
     .notNull()
     .references(() => compendiumWorkoutSections.id, { onDelete: 'cascade' }),
-  exerciseSchemeId: text('exercise_scheme_id')
-    .notNull()
-    .references(() => compendiumExerciseScheme.id, { onDelete: 'cascade' }),
   orderIndex: integer('order_index').notNull(),
   breakBetweenSets: integer('break_between_sets').notNull(),
   breakAfter: integer('break_after').notNull(),

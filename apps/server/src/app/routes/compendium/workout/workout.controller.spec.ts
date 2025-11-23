@@ -97,7 +97,6 @@ describe('WorkoutController', () => {
             createdAt: new Date('2024-01-01'),
           },
         ],
-        schedule: [1, 3, 5],
         createdBy: 'user-1',
         createdAt: new Date('2024-01-01'),
         updatedAt: null,
@@ -111,7 +110,6 @@ describe('WorkoutController', () => {
       expect(service.findById).toHaveBeenCalledTimes(1);
       expect(result).toHaveProperty('templateId', 'workout-1');
       expect(result.sections).toHaveLength(1);
-      expect(result.schedule).toEqual([1, 3, 5]);
     });
 
     it('should return null when workout does not exist', async () => {
@@ -146,7 +144,6 @@ describe('WorkoutController', () => {
             ],
           },
         ],
-        schedule: [1, 3, 5],
       };
 
       const mockCreatedWorkout = {
@@ -175,7 +172,6 @@ describe('WorkoutController', () => {
         name: 'Simple Workout',
         version: 1,
         sections: [],
-        schedule: [],
       };
 
       const mockCreatedWorkout = {
@@ -228,7 +224,6 @@ describe('WorkoutController', () => {
             items: [],
           },
         ],
-        schedule: [0, 1, 2, 3, 4, 5, 6],
       };
 
       const mockCreatedWorkout = {
@@ -258,7 +253,6 @@ describe('WorkoutController', () => {
         description: 'Updated description',
         version: 2,
         sections: [],
-        schedule: [],
       };
 
       const mockUpdatedWorkout = {

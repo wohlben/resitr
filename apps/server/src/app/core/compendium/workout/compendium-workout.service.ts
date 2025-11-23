@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CompendiumWorkoutRepository } from '../../persistence/repositories/compendium-workout.repository';
 import { CompendiumWorkoutSectionRepository } from '../../persistence/repositories/compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/compendium-workout-section-item.repository';
+import { UserExerciseSchemeCompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/user-exercise-scheme-compendium-workout-section-item.repository';
 import { CreateWorkoutDto } from '../../../routes/compendium/workout/dto/workout.dto';
 import type { CompendiumWorkout } from '../../persistence/schemas/compendium-workout.schema';
 
@@ -10,7 +11,8 @@ export class CompendiumWorkoutService {
   constructor(
     private readonly workoutRepository: CompendiumWorkoutRepository,
     private readonly sectionRepository: CompendiumWorkoutSectionRepository,
-    private readonly sectionItemRepository: CompendiumWorkoutSectionItemRepository
+    private readonly sectionItemRepository: CompendiumWorkoutSectionItemRepository,
+    private readonly sectionItemSchemeRepository: UserExerciseSchemeCompendiumWorkoutSectionItemRepository
   ) {}
 
   async create(data: CreateWorkoutDto, userId: string) {
@@ -37,13 +39,19 @@ export class CompendiumWorkoutService {
         // Create section items
         if (sectionData.items) {
           for (const itemData of sectionData.items) {
-            await this.sectionItemRepository.create({
+            const sectionItem = await this.sectionItemRepository.create({
               sectionId: section.id,
-              exerciseSchemeId: itemData.exerciseSchemeId,
               orderIndex: itemData.orderIndex,
               breakBetweenSets: itemData.breakBetweenSets,
               breakAfter: itemData.breakAfter,
               createdBy: userId,
+            });
+
+            // Create the join table entry
+            await this.sectionItemSchemeRepository.create({
+              sectionItemId: sectionItem.id,
+              workoutTemplateId: workout.templateId,
+              userExerciseSchemeId: itemData.exerciseSchemeId,
             });
           }
         }
@@ -64,11 +72,22 @@ export class CompendiumWorkoutService {
     // Get sections
     const sections = await this.sectionRepository.findByWorkoutTemplateId(templateId);
 
-    // Get items for each section
+    // Get items for each section with their exercise schemes
     const sectionsWithItems = await Promise.all(
       sections.map(async (section) => {
         const items = await this.sectionItemRepository.findBySectionId(section.id);
-        return { ...section, items };
+
+        // For each item, get its exercise schemes from the join table
+        const itemsWithSchemes = await Promise.all(
+          items.map(async (item) => {
+            const schemes = await this.sectionItemSchemeRepository.findBySectionItemId(item.id);
+            // For now, assuming one scheme per item (backward compatibility)
+            const exerciseSchemeId = schemes.length > 0 ? schemes[0].userExerciseSchemeId : null;
+            return { ...item, exerciseSchemeId };
+          })
+        );
+
+        return { ...section, items: itemsWithSchemes };
       })
     );
 

@@ -15,6 +15,7 @@ export * from './lib/exercise-group-member-template';
 export * from './lib/exercise-scheme-template';
 export * from './lib/workout-template';
 export * from './lib/user-workout-schedule';
+export * from './lib/user-exercise-scheme';
 
 // DTOs
 export * from './lib/dto/equipment.dto';

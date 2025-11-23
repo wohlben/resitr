@@ -21,6 +21,7 @@ import type { CompendiumWorkout } from './schemas/compendium-workout.schema';
 import type { CompendiumWorkoutSection } from './schemas/compendium-workout-section.schema';
 import type { CompendiumWorkoutSectionItem } from './schemas/compendium-workout-section-item.schema';
 import type { UserWorkoutSchedule } from './schemas/user-workout-schedule.schema';
+import type { NewUserExerciseScheme } from './schemas/user-exercise-scheme.schema';
 import {
   ExerciseType,
   ForceType,
@@ -241,7 +242,6 @@ export function mockWorkoutSectionItem(
 ): CompendiumWorkoutSectionItem {
   return {
     sectionId: 'test-section-1',
-    exerciseSchemeId: 'test-scheme-1',
     orderIndex: 0,
     breakBetweenSets: 60,
     breakAfter: 120,
@@ -253,18 +253,41 @@ export function mockWorkoutSectionItem(
 /**
  * Creates a mock UserWorkoutSchedule with sensible defaults.
  * Override any fields by passing a partial object.
+ * Note: id is omitted to allow database auto-generation
  */
 export function mockUserWorkoutSchedule(
   overrides: Partial<UserWorkoutSchedule> = {}
-): UserWorkoutSchedule {
+): Omit<UserWorkoutSchedule, 'id' | 'createdAt'> & { id?: string; createdAt?: Date } {
   return {
-    id: 'test-schedule-1',
     userId: 'test-user',
     workoutTemplateId: 'test-workout-1',
     dayOfWeek: 1, // Monday
     order: 0,
-    createdAt: new Date(),
     updatedAt: null,
     ...overrides,
-  } satisfies UserWorkoutSchedule;
+  };
+}
+
+/**
+ * Creates a mock UserExerciseScheme with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockUserExerciseScheme(
+  overrides: Partial<NewUserExerciseScheme> = {}
+): NewUserExerciseScheme {
+  return {
+    userId: 'test-user',
+    exerciseId: 'test-exercise-1',
+    name: 'Test User Scheme',
+    measurementType: MeasurementType.REP_BASED,
+    sets: 3,
+    reps: 10,
+    restBetweenSets: 60,
+    weight: 100,
+    timePerRep: null,
+    duration: null,
+    distance: null,
+    targetTime: null,
+    ...overrides,
+  } satisfies NewUserExerciseScheme;
 }

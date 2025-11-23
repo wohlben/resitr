@@ -15,14 +15,15 @@ export const userWorkoutSchedules = sqliteTable(
     createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(unixepoch())`),
     updatedAt: integer('updated_at', { mode: 'timestamp' }),
   },
-  (table) => ({
-    userIdIdx: index('user_workout_schedules_user_id_idx').on(table.userId),
-    userDayIdx: index('user_workout_schedules_user_day_idx').on(table.userId, table.dayOfWeek),
-    uniqueUserWorkout: unique('user_workout_schedules_user_workout_unique').on(
+  (table) => [
+    index('user_workout_schedules_user_id_idx').on(table.userId),
+    index('user_workout_schedules_user_day_idx').on(table.userId, table.dayOfWeek),
+    unique('user_workout_schedules_user_workout_day_unique').on(
       table.userId,
-      table.workoutTemplateId
+      table.workoutTemplateId,
+      table.dayOfWeek
     ),
-  })
+  ]
 );
 
 export type UserWorkoutSchedule = typeof userWorkoutSchedules.$inferSelect;

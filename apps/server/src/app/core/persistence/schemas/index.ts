@@ -15,3 +15,5 @@ export * from './user-workout-schedule.schema';
 export * from './user-workout-log-section.schema';
 export * from './user-workout-log-section-item.schema';
 export * from './user-workout-log-set.schema';
+export * from './user-exercise-scheme.schema';
+export * from './user-exercise-scheme-compendium-workout-section-item.schema';

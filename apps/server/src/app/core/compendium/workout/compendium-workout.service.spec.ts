@@ -3,11 +3,11 @@ import { CompendiumWorkoutService } from './compendium-workout.service';
 import { CompendiumWorkoutRepository } from '../../persistence/repositories/compendium-workout.repository';
 import { CompendiumWorkoutSectionRepository } from '../../persistence/repositories/compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/compendium-workout-section-item.repository';
-import { CompendiumWorkoutScheduleRepository } from '../../persistence/repositories/compendium-workout-schedule.repository';
-import { CompendiumExerciseSchemeRepository } from '../../persistence/repositories/compendium-exercise-scheme.repository';
+import { UserExerciseSchemeCompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/user-exercise-scheme-compendium-workout-section-item.repository';
+import { UserExerciseSchemeRepository } from '../../persistence/repositories/user-exercise-scheme.repository';
 import { CompendiumExerciseRepository } from '../../persistence/repositories/compendium-exercise.repository';
 import { provideTestDatabase } from '../../persistence/database';
-import { mockExercise, mockExerciseScheme } from '../../persistence/test-factories';
+import { mockExercise, mockUserExerciseScheme } from '../../persistence/test-factories';
 import type { CreateWorkoutDto } from '../../../routes/compendium/workout/dto/workout.dto';
 import { WorkoutSectionType } from '../../persistence/schemas/compendium-workout-section.schema';
 
@@ -16,9 +16,8 @@ describe('CompendiumWorkoutService', () => {
   let workoutRepository: CompendiumWorkoutRepository;
   let sectionRepository: CompendiumWorkoutSectionRepository;
   let sectionItemRepository: CompendiumWorkoutSectionItemRepository;
-  let scheduleRepository: CompendiumWorkoutScheduleRepository;
   let exerciseRepository: CompendiumExerciseRepository;
-  let schemeRepository: CompendiumExerciseSchemeRepository;
+  let schemeRepository: UserExerciseSchemeRepository;
   let testScheme1Id: string;
   let testScheme2Id: string;
 
@@ -29,8 +28,8 @@ describe('CompendiumWorkoutService', () => {
         CompendiumWorkoutRepository,
         CompendiumWorkoutSectionRepository,
         CompendiumWorkoutSectionItemRepository,
-        CompendiumWorkoutScheduleRepository,
-        CompendiumExerciseSchemeRepository,
+        UserExerciseSchemeCompendiumWorkoutSectionItemRepository,
+        UserExerciseSchemeRepository,
         CompendiumExerciseRepository,
         CompendiumWorkoutService,
       ],
@@ -40,21 +39,20 @@ describe('CompendiumWorkoutService', () => {
     workoutRepository = module.get<CompendiumWorkoutRepository>(CompendiumWorkoutRepository);
     sectionRepository = module.get<CompendiumWorkoutSectionRepository>(CompendiumWorkoutSectionRepository);
     sectionItemRepository = module.get<CompendiumWorkoutSectionItemRepository>(CompendiumWorkoutSectionItemRepository);
-    scheduleRepository = module.get<CompendiumWorkoutScheduleRepository>(CompendiumWorkoutScheduleRepository);
     exerciseRepository = module.get<CompendiumExerciseRepository>(CompendiumExerciseRepository);
-    schemeRepository = module.get<CompendiumExerciseSchemeRepository>(CompendiumExerciseSchemeRepository);
+    schemeRepository = module.get<UserExerciseSchemeRepository>(UserExerciseSchemeRepository);
 
     // Create prerequisite test data
     const exercise1 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-1' }));
     const exercise2 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-2' }));
-    const scheme1 = await schemeRepository.create(mockExerciseScheme({ exerciseId: exercise1.templateId }));
-    const scheme2 = await schemeRepository.create(mockExerciseScheme({ exerciseId: exercise2.templateId }));
+    const scheme1 = await schemeRepository.create(mockUserExerciseScheme({ userId: 'test-user', exerciseId: exercise1.templateId }));
+    const scheme2 = await schemeRepository.create(mockUserExerciseScheme({ userId: 'test-user', exerciseId: exercise2.templateId }));
     testScheme1Id = scheme1.id;
     testScheme2Id = scheme2.id;
   });
 
   describe('create', () => {
-    it('should create a complete workout with sections, items, and schedule', async () => {
+    it('should create a complete workout with sections and items', async () => {
       const workoutDto: CreateWorkoutDto = {
         templateId: 'workout-1',
         name: 'Full Body Workout',
@@ -94,7 +92,6 @@ describe('CompendiumWorkoutService', () => {
             ],
           },
         ],
-        schedule: [1, 3, 5], // Mon, Wed, Fri
       };
 
       const result = await service.create(workoutDto, 'user-1');
@@ -118,11 +115,6 @@ describe('CompendiumWorkoutService', () => {
       expect(warmupItems).toHaveLength(1);
       const strengthItems = await sectionItemRepository.findBySectionId(sections[1].id);
       expect(strengthItems).toHaveLength(2);
-
-      // Verify schedule was created
-      const schedule = await scheduleRepository.findByWorkoutTemplateId(result.templateId);
-      expect(schedule).toHaveLength(3);
-      expect(schedule.map((s) => s.dayOfWeek).sort()).toEqual([1, 3, 5]);
     });
 
     it('should create a workout with minimal data (no description)', async () => {
@@ -131,7 +123,6 @@ describe('CompendiumWorkoutService', () => {
         name: 'Simple Workout',
         version: 1,
         sections: [],
-        schedule: [],
       };
 
       const result = await service.create(workoutDto, 'user-1');
@@ -144,22 +135,18 @@ describe('CompendiumWorkoutService', () => {
       expect(result.description).toBeNull();
     });
 
-    it('should create a workout with empty sections and schedule', async () => {
+    it('should create a workout with empty sections', async () => {
       const workoutDto: CreateWorkoutDto = {
         templateId: 'workout-3',
         name: 'Empty Workout',
         version: 1,
         sections: [],
-        schedule: [],
       };
 
       const result = await service.create(workoutDto, 'user-1');
 
       const sections = await sectionRepository.findByWorkoutTemplateId(result.templateId);
       expect(sections).toHaveLength(0);
-
-      const schedule = await scheduleRepository.findByWorkoutTemplateId(result.templateId);
-      expect(schedule).toHaveLength(0);
     });
 
     it('should create a workout with all section types', async () => {
@@ -193,7 +180,6 @@ describe('CompendiumWorkoutService', () => {
             items: [],
           },
         ],
-        schedule: [],
       };
 
       await service.create(workoutDto, 'user-1');
@@ -208,21 +194,6 @@ describe('CompendiumWorkoutService', () => {
       ]);
     });
 
-    it('should create a workout scheduled for every day of the week', async () => {
-      const workoutDto: CreateWorkoutDto = {
-        templateId: 'workout-5',
-        name: 'Daily Workout',
-        version: 1,
-        sections: [],
-        schedule: [0, 1, 2, 3, 4, 5, 6], // Sun-Sat
-      };
-
-      const result = await service.create(workoutDto, 'user-1');
-
-      const schedule = await scheduleRepository.findByWorkoutTemplateId(result.templateId);
-      expect(schedule).toHaveLength(7);
-      expect(schedule.map((s) => s.dayOfWeek).sort()).toEqual([0, 1, 2, 3, 4, 5, 6]);
-    });
   });
 
   describe('findAll', () => {
@@ -273,7 +244,6 @@ describe('CompendiumWorkoutService', () => {
             ],
           },
         ],
-        schedule: [1, 3, 5],
       };
 
       await service.create(workoutDto, 'user-1');
@@ -284,7 +254,6 @@ describe('CompendiumWorkoutService', () => {
       expect(result?.name).toBe('Test Workout');
       expect(result?.sections).toHaveLength(1);
       expect(result?.sections[0].items).toHaveLength(1);
-      expect(result?.schedule).toEqual([1, 3, 5]);
     });
 
     it('should return null when workout does not exist', async () => {
@@ -360,7 +329,6 @@ describe('CompendiumWorkoutService', () => {
             ],
           },
         ],
-        schedule: [1, 3, 5],
       };
 
       await service.create(workoutDto, 'user-1');
@@ -375,9 +343,6 @@ describe('CompendiumWorkoutService', () => {
 
       const sections = await sectionRepository.findByWorkoutTemplateId('workout-1');
       expect(sections).toHaveLength(0);
-
-      const schedule = await scheduleRepository.findByWorkoutTemplateId('workout-1');
-      expect(schedule).toHaveLength(0);
     });
   });
 });

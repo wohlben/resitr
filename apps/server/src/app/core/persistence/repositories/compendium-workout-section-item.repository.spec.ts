@@ -2,23 +2,24 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { CompendiumWorkoutSectionItemRepository } from './compendium-workout-section-item.repository';
 import { CompendiumWorkoutSectionRepository } from './compendium-workout-section.repository';
 import { CompendiumWorkoutRepository } from './compendium-workout.repository';
-import { CompendiumExerciseSchemeRepository } from './compendium-exercise-scheme.repository';
+import { UserExerciseSchemeRepository } from './user-exercise-scheme.repository';
+import { UserExerciseSchemeCompendiumWorkoutSectionItemRepository } from './user-exercise-scheme-compendium-workout-section-item.repository';
 import { CompendiumExerciseRepository } from './compendium-exercise.repository';
 import { provideTestDatabase } from '../database';
-import { mockWorkout, mockWorkoutSection, mockWorkoutSectionItem, mockExercise, mockExerciseScheme } from '../test-factories';
+import { mockWorkout, mockWorkoutSection, mockWorkoutSectionItem, mockExercise, mockUserExerciseScheme } from '../test-factories';
 import type { CompendiumWorkoutSection } from '../schemas/compendium-workout-section.schema';
-import type { CompendiumExerciseScheme } from '../schemas/compendium-exercise-scheme.schema';
+import type { NewUserExerciseScheme } from '../schemas/user-exercise-scheme.schema';
 
 describe('CompendiumWorkoutSectionItemRepository', () => {
   let repository: CompendiumWorkoutSectionItemRepository;
   let sectionRepository: CompendiumWorkoutSectionRepository;
   let workoutRepository: CompendiumWorkoutRepository;
-  let schemeRepository: CompendiumExerciseSchemeRepository;
+  let schemeRepository: UserExerciseSchemeRepository;
   let exerciseRepository: CompendiumExerciseRepository;
   let testSection1: CompendiumWorkoutSection;
   let testSection2: CompendiumWorkoutSection;
-  let testScheme1: CompendiumExerciseScheme;
-  let testScheme2: CompendiumExerciseScheme;
+  let testScheme1: NewUserExerciseScheme & { id: string };
+  let testScheme2: NewUserExerciseScheme & { id: string };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -27,15 +28,16 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
         CompendiumWorkoutSectionItemRepository,
         CompendiumWorkoutSectionRepository,
         CompendiumWorkoutRepository,
-        CompendiumExerciseSchemeRepository,
+        UserExerciseSchemeRepository,
         CompendiumExerciseRepository,
+        UserExerciseSchemeCompendiumWorkoutSectionItemRepository,
       ],
     }).compile();
 
     repository = module.get<CompendiumWorkoutSectionItemRepository>(CompendiumWorkoutSectionItemRepository);
     sectionRepository = module.get<CompendiumWorkoutSectionRepository>(CompendiumWorkoutSectionRepository);
     workoutRepository = module.get<CompendiumWorkoutRepository>(CompendiumWorkoutRepository);
-    schemeRepository = module.get<CompendiumExerciseSchemeRepository>(CompendiumExerciseSchemeRepository);
+    schemeRepository = module.get<UserExerciseSchemeRepository>(UserExerciseSchemeRepository);
     exerciseRepository = module.get<CompendiumExerciseRepository>(CompendiumExerciseRepository);
 
     // Create prerequisite test data
@@ -45,15 +47,14 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
 
     const exercise1 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-1' }));
     const exercise2 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-2' }));
-    testScheme1 = await schemeRepository.create(mockExerciseScheme({ exerciseId: exercise1.templateId }));
-    testScheme2 = await schemeRepository.create(mockExerciseScheme({ exerciseId: exercise2.templateId }));
+    testScheme1 = await schemeRepository.create(mockUserExerciseScheme({ userId: 'test-user', exerciseId: exercise1.templateId }));
+    testScheme2 = await schemeRepository.create(mockUserExerciseScheme({ userId: 'test-user', exerciseId: exercise2.templateId }));
   });
 
   describe('create', () => {
     it('should create a section item with all fields', async () => {
       const itemData = mockWorkoutSectionItem({
         sectionId: testSection1.id!,
-        exerciseSchemeId: testScheme1.id!,
         orderIndex: 0,
         breakBetweenSets: 90,
         breakAfter: 180,
@@ -64,7 +65,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
 
       expect(result).toMatchObject({
         sectionId: testSection1.id!,
-        exerciseSchemeId: testScheme1.id!,
         orderIndex: 0,
         breakBetweenSets: 90,
         breakAfter: 180,
@@ -78,14 +78,12 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const item1 = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
           orderIndex: 0,
         })
       );
       const item2 = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme2.id!,
           orderIndex: 1,
         })
       );
@@ -98,7 +96,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
     it('should create items with zero break times', async () => {
       const itemData = mockWorkoutSectionItem({
         sectionId: testSection1.id!,
-        exerciseSchemeId: testScheme1.id!,
         orderIndex: 0,
         breakBetweenSets: 0,
         breakAfter: 0,
@@ -113,20 +110,11 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
     it('should fail when creating item with non-existent section', async () => {
       const itemData = mockWorkoutSectionItem({
         sectionId: 'nonexistent-section',
-        exerciseSchemeId: testScheme1.id!,
       });
 
       await expect(repository.create(itemData)).rejects.toThrow();
     });
 
-    it('should fail when creating item with non-existent exercise scheme', async () => {
-      const itemData = mockWorkoutSectionItem({
-        sectionId: testSection1.id!,
-        exerciseSchemeId: 'nonexistent-scheme',
-      });
-
-      await expect(repository.create(itemData)).rejects.toThrow();
-    });
   });
 
   describe('findAll', () => {
@@ -136,8 +124,8 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
     });
 
     it('should return all items across all sections', async () => {
-      await repository.create(mockWorkoutSectionItem({ sectionId: testSection1.id!, exerciseSchemeId: testScheme1.id! }));
-      await repository.create(mockWorkoutSectionItem({ sectionId: testSection2.id!, exerciseSchemeId: testScheme2.id! }));
+      await repository.create(mockWorkoutSectionItem({ sectionId: testSection1.id! }));
+      await repository.create(mockWorkoutSectionItem({ sectionId: testSection2.id! }));
 
       const results = await repository.findAll();
 
@@ -150,7 +138,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const created = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
           breakAfter: 120,
         })
       );
@@ -175,14 +162,12 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
           orderIndex: 0,
         })
       );
       await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme2.id!,
           orderIndex: 1,
         })
       );
@@ -191,7 +176,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection2.id!,
-          exerciseSchemeId: testScheme1.id!,
           orderIndex: 0,
         })
       );
@@ -213,7 +197,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const created = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
           orderIndex: 0,
         })
       );
@@ -227,7 +210,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const created = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
           breakBetweenSets: 60,
         })
       );
@@ -241,7 +223,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const created = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
           breakAfter: 180,
         })
       );
@@ -251,18 +232,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       expect(result?.breakAfter).toBe(240);
     });
 
-    it('should update exerciseSchemeId', async () => {
-      const created = await repository.create(
-        mockWorkoutSectionItem({
-          sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
-        })
-      );
-
-      const result = await repository.update(created.id!, { exerciseSchemeId: testScheme2.id! });
-
-      expect(result?.exerciseSchemeId).toBe(testScheme2.id!);
-    });
   });
 
   describe('delete', () => {
@@ -270,7 +239,6 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const created = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
         })
       );
 
@@ -293,13 +261,11 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       const item1 = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
         })
       );
       const item2 = await repository.create(
         mockWorkoutSectionItem({
           sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme2.id!,
         })
       );
 
@@ -311,18 +277,5 @@ describe('CompendiumWorkoutSectionItemRepository', () => {
       expect(found2).toBeUndefined();
     });
 
-    it('should delete items when referenced exercise scheme is deleted', async () => {
-      const item = await repository.create(
-        mockWorkoutSectionItem({
-          sectionId: testSection1.id!,
-          exerciseSchemeId: testScheme1.id!,
-        })
-      );
-
-      await schemeRepository.delete(testScheme1.id!);
-
-      const found = await repository.findById(item.id);
-      expect(found).toBeUndefined();
-    });
   });
 });

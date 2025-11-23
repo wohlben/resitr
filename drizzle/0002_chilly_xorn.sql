@@ -1,0 +1,156 @@
+CREATE TABLE `compendium_exercise_schemes` (
+	`id` text PRIMARY KEY NOT NULL,
+	`exercise_id` text NOT NULL,
+	`name` text NOT NULL,
+	`measurement_type` text NOT NULL,
+	`sets` integer NOT NULL,
+	`reps` integer NOT NULL,
+	`rest_between_sets` integer NOT NULL,
+	`weight` real,
+	`time_per_rep` integer,
+	`duration` integer,
+	`distance` real,
+	`target_time` integer,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	FOREIGN KEY (`exercise_id`) REFERENCES `compendium_exercises`(`template_id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE TABLE `compendium_workout_section_items` (
+	`id` text PRIMARY KEY NOT NULL,
+	`section_id` text NOT NULL,
+	`order_index` integer NOT NULL,
+	`break_between_sets` integer NOT NULL,
+	`break_after` integer NOT NULL,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	FOREIGN KEY (`section_id`) REFERENCES `compendium_workout_sections`(`id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE TABLE `compendium_workout_sections` (
+	`id` text PRIMARY KEY NOT NULL,
+	`workout_template_id` text NOT NULL,
+	`type` text NOT NULL,
+	`name` text NOT NULL,
+	`order_index` integer NOT NULL,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	FOREIGN KEY (`workout_template_id`) REFERENCES `compendium_workouts`(`template_id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE TABLE `compendium_workouts` (
+	`template_id` text PRIMARY KEY NOT NULL,
+	`name` text NOT NULL,
+	`description` text,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer,
+	`version` integer NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE `user_workout_logs` (
+	`id` text PRIMARY KEY NOT NULL,
+	`original_workout_id` text,
+	`name` text NOT NULL,
+	`started_at` integer NOT NULL,
+	`completed_at` integer,
+	`duration` integer,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer,
+	FOREIGN KEY (`original_workout_id`) REFERENCES `compendium_workouts`(`template_id`) ON UPDATE no action ON DELETE set null
+);
+--> statement-breakpoint
+CREATE TABLE `user_workout_schedules` (
+	`id` text PRIMARY KEY NOT NULL,
+	`user_id` text NOT NULL,
+	`workout_template_id` text NOT NULL,
+	`day_of_week` integer NOT NULL,
+	`order` integer DEFAULT 0 NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer,
+	FOREIGN KEY (`workout_template_id`) REFERENCES `compendium_workouts`(`template_id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE INDEX `user_workout_schedules_user_id_idx` ON `user_workout_schedules` (`user_id`);--> statement-breakpoint
+CREATE INDEX `user_workout_schedules_user_day_idx` ON `user_workout_schedules` (`user_id`,`day_of_week`);--> statement-breakpoint
+CREATE UNIQUE INDEX `user_workout_schedules_user_workout_day_unique` ON `user_workout_schedules` (`user_id`,`workout_template_id`,`day_of_week`);--> statement-breakpoint
+CREATE TABLE `user_workout_log_sections` (
+	`id` text PRIMARY KEY NOT NULL,
+	`workout_log_id` text NOT NULL,
+	`name` text NOT NULL,
+	`order_index` integer NOT NULL,
+	`type` text NOT NULL,
+	`completed_at` integer,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	FOREIGN KEY (`workout_log_id`) REFERENCES `user_workout_logs`(`id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE TABLE `user_workout_log_section_items` (
+	`id` text PRIMARY KEY NOT NULL,
+	`section_id` text NOT NULL,
+	`exercise_id` text NOT NULL,
+	`name` text NOT NULL,
+	`order_index` integer NOT NULL,
+	`rest_between_sets` integer NOT NULL,
+	`break_after` integer NOT NULL,
+	`completed_at` integer,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	FOREIGN KEY (`section_id`) REFERENCES `user_workout_log_sections`(`id`) ON UPDATE no action ON DELETE cascade,
+	FOREIGN KEY (`exercise_id`) REFERENCES `compendium_exercises`(`template_id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE TABLE `user_workout_log_sets` (
+	`id` text PRIMARY KEY NOT NULL,
+	`item_id` text NOT NULL,
+	`order_index` integer NOT NULL,
+	`target_reps` integer,
+	`achieved_reps` integer,
+	`target_weight` real,
+	`achieved_weight` real,
+	`target_time` integer,
+	`achieved_time` integer,
+	`target_distance` real,
+	`achieved_distance` real,
+	`completed_at` integer,
+	`skipped` integer DEFAULT false,
+	`created_by` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	FOREIGN KEY (`item_id`) REFERENCES `user_workout_log_section_items`(`id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE TABLE `user_exercise_schemes` (
+	`id` text PRIMARY KEY NOT NULL,
+	`user_id` text NOT NULL,
+	`exercise_id` text NOT NULL,
+	`name` text NOT NULL,
+	`measurement_type` text NOT NULL,
+	`sets` integer NOT NULL,
+	`reps` integer NOT NULL,
+	`rest_between_sets` integer NOT NULL,
+	`weight` real,
+	`time_per_rep` integer,
+	`duration` integer,
+	`distance` real,
+	`target_time` integer,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer,
+	FOREIGN KEY (`exercise_id`) REFERENCES `compendium_exercises`(`template_id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE INDEX `user_exercise_schemes_user_id_idx` ON `user_exercise_schemes` (`user_id`);--> statement-breakpoint
+CREATE INDEX `user_exercise_schemes_exercise_id_idx` ON `user_exercise_schemes` (`exercise_id`);--> statement-breakpoint
+CREATE INDEX `user_exercise_schemes_user_exercise_idx` ON `user_exercise_schemes` (`user_id`,`exercise_id`);--> statement-breakpoint
+CREATE TABLE `user_exercise_scheme_compendium_workout_section_items` (
+	`section_item_id` text NOT NULL,
+	`workout_template_id` text NOT NULL,
+	`user_exercise_scheme_id` text NOT NULL,
+	PRIMARY KEY(`section_item_id`, `workout_template_id`, `user_exercise_scheme_id`),
+	FOREIGN KEY (`section_item_id`) REFERENCES `compendium_workout_section_items`(`id`) ON UPDATE no action ON DELETE cascade,
+	FOREIGN KEY (`workout_template_id`) REFERENCES `compendium_workouts`(`template_id`) ON UPDATE no action ON DELETE cascade,
+	FOREIGN KEY (`user_exercise_scheme_id`) REFERENCES `user_exercise_schemes`(`id`) ON UPDATE no action ON DELETE cascade
+);
+--> statement-breakpoint
+CREATE INDEX `user_exercise_scheme_compendium_workout_section_items_workout_template_idx` ON `user_exercise_scheme_compendium_workout_section_items` (`workout_template_id`);
