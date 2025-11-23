@@ -15,8 +15,8 @@ import {
   CreateUserExerciseSchemeDto,
   UpdateUserExerciseSchemeDto,
   UserExerciseSchemeResponseDto,
-  AddToWorkoutSectionDto,
-  RemoveFromWorkoutSectionDto,
+  AssignToSectionItemDto,
+  UnassignFromSectionItemDto,
 } from './dto/user-exercise-scheme.dto';
 
 @Controller('user/exercise-scheme')
@@ -78,13 +78,13 @@ export class UserExerciseSchemeController {
     return { success: true };
   }
 
-  @Post(':id/workout-section')
-  async addToWorkoutSection(
+  @Post(':id/assign-to')
+  async assignToSectionItem(
     @UserId() userId: string,
     @Param('id') schemeId: string,
-    @Body() dto: AddToWorkoutSectionDto
+    @Body() dto: AssignToSectionItemDto
   ) {
-    const result = await this.schemeService.addToWorkoutSection(
+    const result = await this.schemeService.assignToSectionItem(
       userId,
       schemeId,
       dto.sectionItemId,
@@ -93,13 +93,13 @@ export class UserExerciseSchemeController {
     return { success: true, data: result };
   }
 
-  @Delete(':id/workout-section')
-  async removeFromWorkoutSection(
+  @Delete(':id/assign-to')
+  async unassignFromSectionItem(
     @UserId() userId: string,
     @Param('id') schemeId: string,
-    @Body() dto: RemoveFromWorkoutSectionDto
+    @Body() dto: UnassignFromSectionItemDto
   ) {
-    await this.schemeService.removeFromWorkoutSection(
+    await this.schemeService.unassignFromSectionItem(
       userId,
       schemeId,
       dto.sectionItemId,

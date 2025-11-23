@@ -72,15 +72,14 @@ export class UserExerciseSchemeRepository {
     return result;
   }
 
-  // Join table operations
-  async addToWorkoutSection(
+  async assignToSectionItem(
     data: UserExerciseSchemeCompendiumWorkoutSectionItem
   ): Promise<UserExerciseSchemeCompendiumWorkoutSectionItem> {
     const [result] = await this.db.insert(userExerciseSchemeCompendiumWorkoutSectionItems).values(data).returning();
     return result;
   }
 
-  async removeFromWorkoutSection(
+  async unassignFromSectionItem(
     sectionItemId: string,
     workoutTemplateId: string,
     userExerciseSchemeId: string
@@ -96,7 +95,7 @@ export class UserExerciseSchemeRepository {
       );
   }
 
-  async findWorkoutSectionAssignments(
+  async findSectionItemAssignments(
     userExerciseSchemeId: string
   ): Promise<UserExerciseSchemeCompendiumWorkoutSectionItem[]> {
     return this.db

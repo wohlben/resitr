@@ -89,7 +89,7 @@ export class UserExerciseSchemeService {
     });
   }
 
-  async addToWorkoutSection(
+  async assignToSectionItem(
     userId: string,
     schemeId: string,
     sectionItemId: string,
@@ -97,14 +97,14 @@ export class UserExerciseSchemeService {
   ): Promise<UserExerciseSchemeCompendiumWorkoutSectionItem> {
     await this.getSchemeById(userId, schemeId);
 
-    return this.schemeRepository.addToWorkoutSection({
+    return this.schemeRepository.assignToSectionItem({
       sectionItemId,
       workoutTemplateId,
       userExerciseSchemeId: schemeId,
     });
   }
 
-  async removeFromWorkoutSection(
+  async unassignFromSectionItem(
     userId: string,
     schemeId: string,
     sectionItemId: string,
@@ -113,7 +113,7 @@ export class UserExerciseSchemeService {
     // Verify the scheme belongs to the user
     await this.getSchemeById(userId, schemeId);
 
-    await this.schemeRepository.removeFromWorkoutSection(
+    await this.schemeRepository.unassignFromSectionItem(
       sectionItemId,
       workoutTemplateId,
       schemeId

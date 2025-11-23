@@ -15,8 +15,8 @@ describe('UserExerciseSchemeController', () => {
     getSchemeById: jest.fn(),
     updateScheme: jest.fn(),
     deleteScheme: jest.fn(),
-    addToWorkoutSection: jest.fn(),
-    removeFromWorkoutSection: jest.fn(),
+    assignToSectionItem: jest.fn(),
+    unassignFromSectionItem: jest.fn(),
   };
 
   beforeEach(async () => {
@@ -328,8 +328,8 @@ describe('UserExerciseSchemeController', () => {
   });
 
   describe('join table operations', () => {
-    describe('addToWorkoutSection', () => {
-      it('should call service.addToWorkoutSection with correct parameters', async () => {
+    describe('assignToSectionItem', () => {
+      it('should call service.assignToSectionItem with correct parameters', async () => {
         const userId = 'user-123';
         const schemeId = 'scheme-1';
         const dto = {
@@ -343,23 +343,23 @@ describe('UserExerciseSchemeController', () => {
           userExerciseSchemeId: schemeId,
         };
 
-        mockService.addToWorkoutSection.mockResolvedValue(mockJoinData);
+        mockService.assignToSectionItem.mockResolvedValue(mockJoinData);
 
-        const result = await controller.addToWorkoutSection(userId, schemeId, dto);
+        const result = await controller.assignToSectionItem(userId, schemeId, dto);
 
-        expect(service.addToWorkoutSection).toHaveBeenCalledWith(
+        expect(service.assignToSectionItem).toHaveBeenCalledWith(
           userId,
           schemeId,
           dto.sectionItemId,
           dto.workoutTemplateId
         );
-        expect(service.addToWorkoutSection).toHaveBeenCalledTimes(1);
+        expect(service.assignToSectionItem).toHaveBeenCalledTimes(1);
         expect(result).toEqual({ success: true, data: mockJoinData });
       });
     });
 
-    describe('removeFromWorkoutSection', () => {
-      it('should call service.removeFromWorkoutSection with correct parameters', async () => {
+    describe('unassignFromSectionItem', () => {
+      it('should call service.unassignFromSectionItem with correct parameters', async () => {
         const userId = 'user-123';
         const schemeId = 'scheme-1';
         const dto = {
@@ -367,17 +367,17 @@ describe('UserExerciseSchemeController', () => {
           workoutTemplateId: 'workout-1',
         };
 
-        mockService.removeFromWorkoutSection.mockResolvedValue(undefined);
+        mockService.unassignFromSectionItem.mockResolvedValue(undefined);
 
-        const result = await controller.removeFromWorkoutSection(userId, schemeId, dto);
+        const result = await controller.unassignFromSectionItem(userId, schemeId, dto);
 
-        expect(service.removeFromWorkoutSection).toHaveBeenCalledWith(
+        expect(service.unassignFromSectionItem).toHaveBeenCalledWith(
           userId,
           schemeId,
           dto.sectionItemId,
           dto.workoutTemplateId
         );
-        expect(service.removeFromWorkoutSection).toHaveBeenCalledTimes(1);
+        expect(service.unassignFromSectionItem).toHaveBeenCalledTimes(1);
         expect(result).toEqual({ success: true });
       });
     });

@@ -438,9 +438,9 @@ describe('UserExerciseSchemeRepository', () => {
       );
     });
 
-    describe('addToWorkoutSection', () => {
-      it('should add scheme to workout section', async () => {
-        const result = await repository.addToWorkoutSection({
+    describe('assignToSectionItem', () => {
+      it('should assign scheme to section item', async () => {
+        const result = await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
@@ -453,15 +453,15 @@ describe('UserExerciseSchemeRepository', () => {
         });
       });
 
-      it('should fail when adding duplicate', async () => {
-        await repository.addToWorkoutSection({
+      it('should fail when assigning duplicate', async () => {
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
         });
 
         await expect(
-          repository.addToWorkoutSection({
+          repository.assignToSectionItem({
             sectionItemId: sectionItem.id,
             workoutTemplateId: workout.templateId,
             userExerciseSchemeId: scheme.id,
@@ -470,27 +470,27 @@ describe('UserExerciseSchemeRepository', () => {
       });
     });
 
-    describe('removeFromWorkoutSection', () => {
-      it('should remove scheme from workout section', async () => {
-        await repository.addToWorkoutSection({
+    describe('unassignFromSectionItem', () => {
+      it('should unassign scheme from section item', async () => {
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
         });
 
-        await repository.removeFromWorkoutSection(
+        await repository.unassignFromSectionItem(
           sectionItem.id,
           workout.templateId,
           scheme.id
         );
 
-        const assignments = await repository.findWorkoutSectionAssignments(scheme.id);
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
         expect(assignments).toHaveLength(0);
       });
 
-      it('should not throw when removing non-existent assignment', async () => {
+      it('should not throw when unassigning non-existent assignment', async () => {
         await expect(
-          repository.removeFromWorkoutSection(
+          repository.unassignFromSectionItem(
             'non-existent',
             'non-existent',
             'non-existent'
@@ -499,15 +499,15 @@ describe('UserExerciseSchemeRepository', () => {
       });
     });
 
-    describe('findWorkoutSectionAssignments', () => {
-      it('should find all workout section assignments for a scheme', async () => {
-        await repository.addToWorkoutSection({
+    describe('findSectionItemAssignments', () => {
+      it('should find all section item assignments for a scheme', async () => {
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
         });
 
-        const assignments = await repository.findWorkoutSectionAssignments(scheme.id);
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
 
         expect(assignments).toHaveLength(1);
         expect(assignments[0]).toMatchObject({
@@ -518,7 +518,7 @@ describe('UserExerciseSchemeRepository', () => {
       });
 
       it('should return empty array when no assignments exist', async () => {
-        const assignments = await repository.findWorkoutSectionAssignments(scheme.id);
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
         expect(assignments).toEqual([]);
       });
 
@@ -533,26 +533,26 @@ describe('UserExerciseSchemeRepository', () => {
           })
         );
 
-        await repository.addToWorkoutSection({
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
         });
 
-        await repository.addToWorkoutSection({
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem2.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
         });
 
-        const assignments = await repository.findWorkoutSectionAssignments(scheme.id);
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
         expect(assignments).toHaveLength(2);
       });
     });
 
     describe('cascading deletes for join table', () => {
       it('should delete join table entries when scheme is deleted', async () => {
-        await repository.addToWorkoutSection({
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
@@ -560,12 +560,12 @@ describe('UserExerciseSchemeRepository', () => {
 
         await repository.delete(scheme.id);
 
-        const assignments = await repository.findWorkoutSectionAssignments(scheme.id);
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
         expect(assignments).toHaveLength(0);
       });
 
       it('should delete join table entries when section item is deleted', async () => {
-        await repository.addToWorkoutSection({
+        await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
           workoutTemplateId: workout.templateId,
           userExerciseSchemeId: scheme.id,
@@ -573,7 +573,7 @@ describe('UserExerciseSchemeRepository', () => {
 
         await sectionItemRepository.delete(sectionItem.id);
 
-        const assignments = await repository.findWorkoutSectionAssignments(scheme.id);
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
         expect(assignments).toHaveLength(0);
       });
     });

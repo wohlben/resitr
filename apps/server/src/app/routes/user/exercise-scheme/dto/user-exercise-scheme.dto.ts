@@ -120,7 +120,7 @@ export class UserExerciseSchemeResponseDto extends CreateUserExerciseSchemeDto {
   updatedAt?: string;
 }
 
-export class AddToWorkoutSectionDto {
+export class AssignToSectionItemDto {
   @IsString()
   sectionItemId!: string;
 
@@ -128,7 +128,7 @@ export class AddToWorkoutSectionDto {
   workoutTemplateId!: string;
 }
 
-export class RemoveFromWorkoutSectionDto {
+export class UnassignFromSectionItemDto {
   @IsString()
   sectionItemId!: string;
 
