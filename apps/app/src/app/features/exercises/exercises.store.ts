@@ -1,12 +1,6 @@
 import { computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import type {
   ExerciseResponseDto,
   ExerciseType,
@@ -135,5 +129,6 @@ export const ExercisesStore = signalStore(
         selectedDifficulty: '',
       });
     },
-  }))
+  })),
+  withHooks({ onInit: (store) => store.loadExercises() })
 );

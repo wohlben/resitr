@@ -60,10 +60,4 @@ import { EquipmentsFilterComponent } from '../../components/ui/equipments-filter
 })
 export class EquipmentsComponent {
   readonly store = inject(EquipmentsStore);
-
-  constructor() {
-    effect(() => {
-      this.store.loadEquipments();
-    });
-  }
 }

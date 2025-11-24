@@ -1,12 +1,6 @@
 import { computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import type { EquipmentResponseDto } from '@resitr/api';
 import { EquipmentCategory } from '@resitr/api';
 import { CompendiumQueries } from '../../core/compendium/compendium-queries';
@@ -82,5 +76,6 @@ export const EquipmentsStore = signalStore(
         selectedCategory: '',
       });
     },
-  }))
+  })),
+  withHooks({ onInit: (store) => store.loadEquipments() })
 );

@@ -1,16 +1,7 @@
 import { computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
-import type {
-  WorkoutResponseDto,
-  WorkoutSectionType,
-} from '@resitr/api';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
+import type { WorkoutResponseDto, WorkoutSectionType } from '@resitr/api';
 import { CompendiumQueries } from '../../core/compendium/compendium-queries';
 
 export interface WorkoutsState {
@@ -46,9 +37,7 @@ export const WorkoutsStore = signalStore(
         }
 
         if (sectionType) {
-          const hasSectionType = workout.sections.some(
-            (section) => section.type === sectionType
-          );
+          const hasSectionType = workout.sections.some((section) => section.type === sectionType);
           if (!hasSectionType) return false;
         }
 
@@ -57,10 +46,7 @@ export const WorkoutsStore = signalStore(
     });
 
     const hasActiveFilters = computed(() => {
-      return !!(
-        store.searchTerm() ||
-        store.selectedSectionType()
-      );
+      return !!(store.searchTerm() || store.selectedSectionType());
     });
 
     return {
@@ -101,5 +87,8 @@ export const WorkoutsStore = signalStore(
         selectedSectionType: '',
       });
     },
-  }))
+  })),
+  withHooks({ onInit: (store) => store.loadWorkouts() })
 );
+
+export type WorkoutsStore = typeof WorkoutsStore;

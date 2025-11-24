@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkoutSectionType, WorkoutSectionTypeLabels } from '@resitr/api';
-import { WorkoutsStore } from '../../features/workouts/workouts.store';
+import { type WorkoutsStore } from '../../features/workouts/workouts.store';
 import { DropdownComponent } from './inputs/dropdown.component';
 import { EntityFiltersComponent } from './entity-filters.component';
 import { EnumValuesPipe } from '../../shared/pipes/enum-values.pipe';
@@ -33,7 +33,7 @@ import { ValueOptionsPipe } from '../../shared/pipes/value-options.pipe';
 })
 export class WorkoutsFilterComponent {
   // Input
-  store = input.required<InstanceType<typeof WorkoutsStore>>();
+  store = input.required<InstanceType<WorkoutsStore>>();
 
   // Make enum and labels available in template
   readonly WorkoutSectionType = WorkoutSectionType;

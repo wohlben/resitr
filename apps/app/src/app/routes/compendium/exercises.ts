@@ -64,10 +64,4 @@ import { ExercisesFilterComponent } from '../../components/ui/exercises-filter.c
 })
 export class ExercisesComponent {
   readonly store = inject(ExercisesStore);
-
-  constructor() {
-    effect(() => {
-      this.store.loadExercises();
-    });
-  }
 }
