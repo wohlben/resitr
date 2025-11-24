@@ -2,15 +2,14 @@ import { Component, input } from '@angular/core';
 import { CommonModule, NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import type { ExerciseResponseDto } from '@resitr/api';
-import { MuscleLabelPipe } from '../../shared/pipes/muscle-label.pipe';
-import { ExerciseTypePipe } from '../../shared/pipes/exercise-type.pipe';
-import { DifficultyLabelPipe } from '../../shared/pipes/difficulty-label.pipe';
+import { MuscleLabels, ExerciseTypeLabels, TechnicalDifficultyLabels } from '@resitr/api';
+import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import { CardComponent } from './card.component';
 
 @Component({
   selector: 'app-exercise-card',
   standalone: true,
-  imports: [RouterLink, MuscleLabelPipe, ExerciseTypePipe, DifficultyLabelPipe, CardComponent, NgClass],
+  imports: [RouterLink, ValueLabelPipe, CardComponent, NgClass],
   template: `
     <a [routerLink]="['/compendium/exercises', exercise().templateId]">
       <app-card>
@@ -32,18 +31,18 @@ import { CardComponent } from './card.component';
             'bg-purple-100 text-purple-700': exercise().type === 'STRETCHING'
           }"
         >
-          {{ exercise().type | exerciseType }}
+          {{ exercise().type | valueLabel : ExerciseTypeLabels }}
         </span>
 
         <!-- Content: Muscles -->
         <div card-content class="flex flex-wrap gap-1">
           @for (muscle of exercise().primaryMuscles; track muscle) {
           <span class="px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded">
-            {{ muscle | muscleLabel }}
+            {{ muscle | valueLabel : MuscleLabels }}
           </span>
           } @for (muscle of exercise().secondaryMuscles; track muscle) {
           <span class="px-2 py-0.5 text-xs font-medium bg-gray-100 text-gray-600 rounded">
-            {{ muscle | muscleLabel }}
+            {{ muscle | valueLabel : MuscleLabels }}
           </span>
           }
         </div>
@@ -67,7 +66,7 @@ import { CardComponent } from './card.component';
 
         <!-- Footer Right: Difficulty -->
         <span card-footer-right class="text-xs">
-          {{ exercise().technicalDifficulty | difficultyLabel }}
+          {{ exercise().technicalDifficulty | valueLabel : TechnicalDifficultyLabels }}
         </span>
       </app-card>
     </a>
@@ -75,4 +74,9 @@ import { CardComponent } from './card.component';
 })
 export class ExerciseCardComponent {
   exercise = input.required<ExerciseResponseDto>();
+
+  // Make label records available in template
+  readonly MuscleLabels = MuscleLabels;
+  readonly ExerciseTypeLabels = ExerciseTypeLabels;
+  readonly TechnicalDifficultyLabels = TechnicalDifficultyLabels;
 }

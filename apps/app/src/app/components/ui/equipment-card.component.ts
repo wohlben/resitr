@@ -2,13 +2,14 @@ import { Component, input } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import type { EquipmentResponseDto } from '@resitr/api';
-import { EquipmentCategoryLabelPipe } from '../../shared/pipes/equipment-category-label.pipe';
+import { EquipmentCategoryLabels } from '@resitr/api';
+import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import { CardComponent } from './card.component';
 
 @Component({
   selector: 'app-equipment-card',
   standalone: true,
-  imports: [RouterLink, EquipmentCategoryLabelPipe, CardComponent, NgClass],
+  imports: [RouterLink, ValueLabelPipe, CardComponent, NgClass],
   template: `
     <a [routerLink]="['/compendium/equipments', equipment().templateId]">
       <app-card>
@@ -33,7 +34,7 @@ import { CardComponent } from './card.component';
             'bg-gray-100 text-gray-700': equipment().category === 'other' || !equipment().category
           }"
         >
-          {{ equipment().category | equipmentCategoryLabel }}
+          {{ equipment().category | valueLabel : EquipmentCategoryLabels : 'Uncategorized' }}
         </span>
 
         <!-- Content: Description -->
@@ -72,4 +73,7 @@ import { CardComponent } from './card.component';
 })
 export class EquipmentCardComponent {
   equipment = input.required<EquipmentResponseDto>();
+
+  // Make label records available in template
+  readonly EquipmentCategoryLabels = EquipmentCategoryLabels;
 }

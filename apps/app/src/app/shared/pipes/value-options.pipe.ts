@@ -6,10 +6,10 @@ import { DropdownOption } from '../../components/ui/inputs/dropdown.component';
   standalone: true,
 })
 export class ValueOptionsPipe implements PipeTransform {
-  transform(values: (string | number)[]): DropdownOption[] {
+  transform(values: (string | number)[], labels?: Record<string, string>): DropdownOption[] {
     return values.map(value => ({
       value: value.toString(),
-      label: value.toString(),
+      label: labels?.[value.toString()] || value.toString(),
     }));
   }
 }

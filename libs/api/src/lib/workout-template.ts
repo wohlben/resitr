@@ -5,6 +5,13 @@ export enum WorkoutSectionType {
   COOLDOWN = 'cooldown',
 }
 
+export const WorkoutSectionTypeLabels = {
+  warmup: 'Warm Up',
+  stretching: 'Stretching',
+  strength: 'Strength',
+  cooldown: 'Cool Down',
+} as const satisfies Record<WorkoutSectionType, string>;
+
 export type WorkoutSectionItemTemplate = {
   id: string;
   sectionId: string;
