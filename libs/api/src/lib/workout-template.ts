@@ -16,7 +16,6 @@ export type WorkoutSectionItemTemplate = {
   id: string;
   sectionId: string;
   exerciseSchemeId: string;
-  orderIndex: number;
   breakBetweenSets: number;
   breakAfter: number;
   createdBy: string;
@@ -28,7 +27,6 @@ export type WorkoutSectionTemplate = {
   workoutTemplateId: string;
   type: WorkoutSectionType;
   name: string;
-  orderIndex: number;
   items: WorkoutSectionItemTemplate[];
   createdBy: string;
   createdAt: string;

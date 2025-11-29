@@ -62,11 +62,9 @@ describe('CompendiumWorkoutService', () => {
           {
             type: WorkoutSectionType.WARMUP,
             name: 'Warmup',
-            orderIndex: 0,
             items: [
               {
                 exerciseSchemeId: testScheme1Id,
-                orderIndex: 0,
                 breakBetweenSets: 30,
                 breakAfter: 60,
               },
@@ -75,17 +73,14 @@ describe('CompendiumWorkoutService', () => {
           {
             type: WorkoutSectionType.STRENGTH,
             name: 'Strength Training',
-            orderIndex: 1,
             items: [
               {
                 exerciseSchemeId: testScheme1Id,
-                orderIndex: 0,
                 breakBetweenSets: 90,
                 breakAfter: 120,
               },
               {
                 exerciseSchemeId: testScheme2Id,
-                orderIndex: 1,
                 breakBetweenSets: 90,
                 breakAfter: 120,
               },
@@ -158,25 +153,21 @@ describe('CompendiumWorkoutService', () => {
           {
             type: WorkoutSectionType.WARMUP,
             name: 'Warmup',
-            orderIndex: 0,
             items: [],
           },
           {
             type: WorkoutSectionType.STRETCHING,
             name: 'Stretching',
-            orderIndex: 1,
             items: [],
           },
           {
             type: WorkoutSectionType.STRENGTH,
             name: 'Strength',
-            orderIndex: 2,
             items: [],
           },
           {
             type: WorkoutSectionType.COOLDOWN,
             name: 'Cooldown',
-            orderIndex: 3,
             items: [],
           },
         ],
@@ -233,11 +224,9 @@ describe('CompendiumWorkoutService', () => {
           {
             type: WorkoutSectionType.STRENGTH,
             name: 'Main Section',
-            orderIndex: 0,
             items: [
               {
                 exerciseSchemeId: testScheme1Id,
-                orderIndex: 0,
                 breakBetweenSets: 60,
                 breakAfter: 120,
               },
@@ -318,11 +307,9 @@ describe('CompendiumWorkoutService', () => {
           {
             type: WorkoutSectionType.STRENGTH,
             name: 'Main Section',
-            orderIndex: 0,
             items: [
               {
                 exerciseSchemeId: testScheme1Id,
-                orderIndex: 0,
                 breakBetweenSets: 60,
                 breakAfter: 120,
               },

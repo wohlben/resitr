@@ -133,11 +133,9 @@ describe('WorkoutController', () => {
           {
             type: WorkoutSectionType.WARMUP,
             name: 'Warmup',
-            orderIndex: 0,
             items: [
               {
                 exerciseSchemeId: 'scheme-1',
-                orderIndex: 0,
                 breakBetweenSets: 30,
                 breakAfter: 60,
               },
@@ -202,25 +200,21 @@ describe('WorkoutController', () => {
           {
             type: WorkoutSectionType.WARMUP,
             name: 'Warmup',
-            orderIndex: 0,
             items: [],
           },
           {
             type: WorkoutSectionType.STRETCHING,
             name: 'Stretching',
-            orderIndex: 1,
             items: [],
           },
           {
             type: WorkoutSectionType.STRENGTH,
             name: 'Strength',
-            orderIndex: 2,
             items: [],
           },
           {
             type: WorkoutSectionType.COOLDOWN,
             name: 'Cooldown',
-            orderIndex: 3,
             items: [],
           },
         ],

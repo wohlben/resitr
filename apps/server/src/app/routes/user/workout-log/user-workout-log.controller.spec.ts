@@ -45,18 +45,16 @@ describe('UserWorkoutLogController', () => {
                     {
                         id: 's1',
                         name: 'Warmup',
-                        orderIndex: 0,
                         type: WorkoutSectionType.WARMUP,
                         items: [
                             {
                                 id: 'i1',
                                 exerciseId: 'ex1',
                                 name: 'Pushups',
-                                orderIndex: 0,
                                 restBetweenSets: 30,
                                 breakAfter: 60,
                                 sets: [
-                                    { id: 'set1', orderIndex: 0, targetReps: 10, achievedReps: 10 }
+                                    { id: 'set1', targetReps: 10, achievedReps: 10 }
                                 ]
                             }
                         ]

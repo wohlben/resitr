@@ -3,7 +3,6 @@ import { WorkoutSectionType } from '../workout-template';
 // Set DTOs
 export interface SetResponseDto {
   id: string;
-  orderIndex: number;
   targetReps?: number;
   achievedReps?: number;
   targetWeight?: number;
@@ -25,7 +24,6 @@ export interface UpdateSetDto {
 
 export interface UpsertSetDto {
   id?: string;
-  orderIndex: number;
   targetReps?: number;
   achievedReps?: number;
   targetWeight?: number;
@@ -43,7 +41,6 @@ export interface SectionItemResponseDto {
   id: string;
   exerciseId: string;
   name: string;
-  orderIndex: number;
   restBetweenSets: number;
   breakAfter: number;
   completedAt?: Date;
@@ -54,7 +51,6 @@ export interface UpsertSectionItemDto {
   id?: string;
   exerciseId: string;
   name: string;
-  orderIndex: number;
   restBetweenSets: number;
   breakAfter: number;
   completedAt?: Date;
@@ -65,7 +61,6 @@ export interface UpsertSectionItemDto {
 export interface SectionResponseDto {
   id: string;
   name: string;
-  orderIndex: number;
   type: WorkoutSectionType;
   completedAt?: Date;
   items: SectionItemResponseDto[];
@@ -74,7 +69,6 @@ export interface SectionResponseDto {
 export interface UpsertSectionDto {
   id?: string;
   name: string;
-  orderIndex: number;
   type: WorkoutSectionType;
   completedAt?: Date;
   items: UpsertSectionItemDto[];

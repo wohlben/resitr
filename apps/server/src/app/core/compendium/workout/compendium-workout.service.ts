@@ -27,21 +27,21 @@ export class CompendiumWorkoutService {
 
     // Create sections
     if (data.sections) {
-      for (const sectionData of data.sections) {
+      for (const [sectionIndex, sectionData] of data.sections.entries()) {
         const section = await this.sectionRepository.create({
           workoutTemplateId: workout.templateId,
           type: sectionData.type,
           name: sectionData.name,
-          orderIndex: sectionData.orderIndex,
+          orderIndex: sectionIndex,
           createdBy: userId,
         });
 
         // Create section items
         if (sectionData.items) {
-          for (const itemData of sectionData.items) {
+          for (const [itemIndex, itemData] of sectionData.items.entries()) {
             const sectionItem = await this.sectionItemRepository.create({
               sectionId: section.id,
-              orderIndex: itemData.orderIndex,
+              orderIndex: itemIndex,
               breakBetweenSets: itemData.breakBetweenSets,
               breakAfter: itemData.breakAfter,
               createdBy: userId,

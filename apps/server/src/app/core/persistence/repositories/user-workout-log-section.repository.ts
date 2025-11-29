@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { eq } from 'drizzle-orm';
+import { asc, eq } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
 import { userWorkoutLogSections, type UserWorkoutLogSection } from '../schemas';
 
@@ -13,7 +13,7 @@ export class UserWorkoutLogSectionRepository {
     }
 
     async findByWorkoutLogId(workoutLogId: string) {
-        return this.db.select().from(userWorkoutLogSections).where(eq(userWorkoutLogSections.workoutLogId, workoutLogId));
+        return this.db.select().from(userWorkoutLogSections).where(eq(userWorkoutLogSections.workoutLogId, workoutLogId)).orderBy(asc(userWorkoutLogSections.orderIndex));
     }
 
     async update(id: string, data: Partial<UserWorkoutLogSection>) {

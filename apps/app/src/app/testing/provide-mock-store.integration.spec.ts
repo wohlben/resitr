@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
 import { WorkoutsStore } from '../features/workouts/workouts.store';
 import { createMockStore } from './provide-mock-store';
 
@@ -29,8 +30,6 @@ describe('provideMockStore Integration', () => {
     });
 
     it('should be usable in TestBed without providing real store dependencies', () => {
-        // This proves the real store is NOT instantiated, because we are NOT providing HttpClient
-        // which the real store requires.
         TestBed.configureTestingModule({
             providers: [
                 {

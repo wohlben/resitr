@@ -56,35 +56,35 @@ export class UserWorkoutLogService {
         }
 
         // Create/update sections, items, and sets from the provided payload
-        for (const sectionDto of dto.sections) {
+        for (const [sectionIndex, sectionDto] of dto.sections.entries()) {
             const section = await this.logSectionRepository.create({
                 id: sectionDto.id,
                 workoutLogId: log.id,
                 name: sectionDto.name,
-                orderIndex: sectionDto.orderIndex,
+                orderIndex: sectionIndex,
                 type: sectionDto.type,
                 completedAt: sectionDto.completedAt,
                 createdBy: userId,
             });
 
-            for (const itemDto of sectionDto.items) {
+            for (const [itemIndex, itemDto] of sectionDto.items.entries()) {
                 const item = await this.logItemRepository.create({
                     id: itemDto.id,
                     sectionId: section.id,
                     exerciseId: itemDto.exerciseId,
                     name: itemDto.name,
-                    orderIndex: itemDto.orderIndex,
+                    orderIndex: itemIndex,
                     restBetweenSets: itemDto.restBetweenSets,
                     breakAfter: itemDto.breakAfter,
                     completedAt: itemDto.completedAt,
                     createdBy: userId,
                 });
 
-                for (const setDto of itemDto.sets) {
+                for (const [setIndex, setDto] of itemDto.sets.entries()) {
                     await this.logSetRepository.create({
                         id: setDto.id,
                         itemId: item.id,
-                        orderIndex: setDto.orderIndex,
+                        orderIndex: setIndex,
                         targetReps: setDto.targetReps,
                         achievedReps: setDto.achievedReps,
                         targetWeight: setDto.targetWeight,
