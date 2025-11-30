@@ -1,5 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ExercisesStore } from '../../features/exercises/exercises.store';
 import { LoadingComponent } from '../../components/ui/loading.component';
 import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
@@ -230,7 +231,7 @@ import { SpinnerComponent } from '../../components/ui/spinner.component';
     }
   `,
 })
-export class ExerciseDetail implements OnInit {
+export class ExerciseDetail {
   store = inject(ExercisesStore);
   private route = inject(ActivatedRoute);
 
@@ -241,9 +242,15 @@ export class ExerciseDetail implements OnInit {
   readonly MeasurementParadigmLabels = MeasurementParadigmLabels;
   readonly ExerciseRelationshipTypeLabels = ExerciseRelationshipTypeLabels;
 
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id') as string;
-    this.store.loadExercise(id);
+  constructor() {
+    this.route.paramMap
+      .pipe(takeUntilDestroyed())
+      .subscribe((params) => {
+        const id = params.get('id');
+        if (id) {
+          this.store.loadExercise(id);
+        }
+      });
   }
 
   getEquipmentName(equipmentId: string): string {

@@ -56,11 +56,23 @@ export const appRoutes: Route[] = [
           import('./routes/compendium/exercise-groups').then((m) => m.ExerciseGroupsComponent),
       },
       {
+        path: 'compendium/exercise-groups/new',
+        loadComponent: () =>
+          import('./routes/compendium/exercise-group-new').then((m) => m.ExerciseGroupNew),
+        canDeactivate: [unsavedChangesGuard],
+      },
+      {
         path: 'compendium/exercise-groups/:id',
         loadComponent: () =>
           import('./routes/compendium/exercise-group-detail').then(
             (m) => m.ExerciseGroupDetail
           ),
+      },
+      {
+        path: 'compendium/exercise-groups/:id/edit',
+        loadComponent: () =>
+          import('./routes/compendium/exercise-group-edit').then((m) => m.ExerciseGroupEdit),
+        canDeactivate: [unsavedChangesGuard],
       },
       {
         path: 'compendium/workouts',

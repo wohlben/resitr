@@ -128,81 +128,74 @@ export const ExercisesStore = signalStore(
     async loadExercise(id: string): Promise<void> {
       patchState(store, {
         isLoading: true,
+        isLoadingRelations: true,
         error: null,
+        currentExercise: null,
         currentExerciseRelationships: [],
         currentExerciseGroups: [],
         currentExerciseEquipment: [],
       });
 
       try {
-        const exercise = await CompendiumQueries.exercise.detail(id).fn(http);
-        patchState(store, { currentExercise: exercise, isLoading: false });
-
-        // Load relationships, groups, and equipment in background
-        this.loadExerciseRelationsAndGroups(id, exercise.equipmentIds || []);
-      } catch (error) {
-        patchState(store, {
-          error: safeErrorMessage(error),
-          isLoading: false,
-        });
-      }
-    },
-
-    async loadExerciseRelationsAndGroups(id: string, equipmentIds: string[] = []): Promise<void> {
-      patchState(store, { isLoadingRelations: true });
-
-      try {
-        const [relationships, groupMemberships] = await Promise.all([
+        // Load exercise, relationships, and group memberships ALL in parallel
+        const [exercise, relationships, groupMemberships] = await Promise.all([
+          CompendiumQueries.exercise.detail(id).fn(http),
           CompendiumQueries.exerciseRelationship.byExercise(id).fn(http),
           CompendiumQueries.exerciseGroupMember.byExercise(id).fn(http),
         ]);
 
-        // Enrich relationships with exercise details
-        const enrichedRelationships: ExerciseRelationshipWithExercise[] = await Promise.all(
-          relationships.map(async (rel) => {
-            const relatedId = rel.fromExerciseTemplateId === id
-              ? rel.toExerciseTemplateId
-              : rel.fromExerciseTemplateId;
-            try {
-              const relatedExercise = await CompendiumQueries.exercise.detail(relatedId).fn(http);
-              return { ...rel, relatedExercise };
-            } catch {
-              return rel;
-            }
-          })
-        );
+        // Use already-loaded exercises list to enrich relationships (no extra requests)
+        const exercisesList = store.exercises();
+        const enrichedRelationships: ExerciseRelationshipWithExercise[] = relationships.map((rel) => {
+          const relatedId = rel.fromExerciseTemplateId === id
+            ? rel.toExerciseTemplateId
+            : rel.fromExerciseTemplateId;
+          const relatedExercise = exercisesList.find(e => e.templateId === relatedId);
+          return relatedExercise ? { ...rel, relatedExercise } : rel;
+        });
 
-        // Enrich group memberships with group details
-        const enrichedGroups: ExerciseGroupWithDetails[] = await Promise.all(
-          groupMemberships.map(async (membership) => {
-            try {
-              const group = await CompendiumQueries.exerciseGroup.detail(membership.groupId).fn(http);
-              return { ...membership, group };
-            } catch {
-              return membership;
-            }
-          })
-        );
+        // Set exercise and relationships immediately
+        patchState(store, {
+          currentExercise: exercise,
+          currentExerciseRelationships: enrichedRelationships,
+          isLoading: false,
+        });
 
-        // Load equipment details
-        const equipment: EquipmentResponseDto[] = (await Promise.all(
-          equipmentIds.map(async (equipmentId) => {
-            try {
-              return await CompendiumQueries.equipment.detail(equipmentId).fn(http);
-            } catch {
-              return null;
-            }
-          })
-        )).filter((e): e is EquipmentResponseDto => e !== null);
+        // Load groups and equipment details in parallel (these are smaller lists)
+        const equipmentIds = exercise.equipmentIds || [];
+        const [groups, equipment] = await Promise.all([
+          Promise.all(
+            groupMemberships.map(async (membership) => {
+              try {
+                const group = await CompendiumQueries.exerciseGroup.detail(membership.groupId).fn(http);
+                return { ...membership, group };
+              } catch {
+                return membership;
+              }
+            })
+          ),
+          Promise.all(
+            equipmentIds.map(async (equipmentId) => {
+              try {
+                return await CompendiumQueries.equipment.detail(equipmentId).fn(http);
+              } catch {
+                return null;
+              }
+            })
+          ).then(results => results.filter((e): e is EquipmentResponseDto => e !== null)),
+        ]);
 
         patchState(store, {
-          currentExerciseRelationships: enrichedRelationships,
-          currentExerciseGroups: enrichedGroups,
+          currentExerciseGroups: groups,
           currentExerciseEquipment: equipment,
           isLoadingRelations: false,
         });
       } catch (error) {
-        patchState(store, { isLoadingRelations: false });
+        patchState(store, {
+          error: safeErrorMessage(error),
+          isLoading: false,
+          isLoadingRelations: false,
+        });
       }
     },
 

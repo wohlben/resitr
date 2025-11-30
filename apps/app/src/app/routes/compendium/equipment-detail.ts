@@ -1,5 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { EquipmentsStore } from '../../features/equipments/equipments.store';
 import { LoadingComponent } from '../../components/ui/loading.component';
 import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
@@ -79,14 +80,20 @@ import { EquipmentCategoryLabels } from '@resitr/api';
     }
   `,
 })
-export class EquipmentDetail implements OnInit {
+export class EquipmentDetail {
   store = inject(EquipmentsStore);
   private route = inject(ActivatedRoute);
 
   readonly EquipmentCategoryLabels = EquipmentCategoryLabels;
 
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id') as string;
-    this.store.loadEquipment(id);
+  constructor() {
+    this.route.paramMap
+      .pipe(takeUntilDestroyed())
+      .subscribe((params) => {
+        const id = params.get('id');
+        if (id) {
+          this.store.loadEquipment(id);
+        }
+      });
   }
 }
