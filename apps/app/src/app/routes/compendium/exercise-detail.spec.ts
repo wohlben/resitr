@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter, ActivatedRoute } from '@angular/router';
 import { ExerciseDetail } from './exercise-detail';
 
 describe('ExerciseDetail', () => {
@@ -8,6 +11,21 @@ describe('ExerciseDetail', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ExerciseDetail],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideRouter([]),
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: (key: string) => key === 'id' ? 'test-exercise-id' : null
+              }
+            }
+          }
+        }
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ExerciseDetail);

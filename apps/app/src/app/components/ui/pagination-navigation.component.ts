@@ -1,21 +1,19 @@
 import { Component, input, output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ButtonComponent } from './button.component';
 
 @Component({
   selector: 'app-pagination-navigation',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ButtonComponent],
   template: `
     <div class="flex items-center justify-between pt-4 border-t border-gray-200">
-      <button
+      <app-button
+        variant="secondary"
         (click)="previousClicked.emit()"
         [disabled]="currentPage() === 1"
-        [class.opacity-50]="currentPage() === 1"
-        [class.cursor-not-allowed]="currentPage() === 1"
-        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:hover:bg-white"
       >
         Previous
-      </button>
+      </app-button>
 
       <div class="flex items-center gap-2">
         <span class="text-sm text-gray-700">
@@ -23,15 +21,13 @@ import { CommonModule } from '@angular/common';
         </span>
       </div>
 
-      <button
+      <app-button
+        variant="secondary"
         (click)="nextClicked.emit()"
         [disabled]="currentPage() === totalPages()"
-        [class.opacity-50]="currentPage() === totalPages()"
-        [class.cursor-not-allowed]="currentPage() === totalPages()"
-        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:hover:bg-white"
       >
         Next
-      </button>
+      </app-button>
     </div>
   `,
 })

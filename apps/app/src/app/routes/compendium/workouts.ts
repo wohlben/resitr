@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { WorkoutsStore } from '../../features/workouts/workouts.store';
 import { PaginationComponent } from '../../components/ui/pagination.component';
 import { WorkoutCardComponent } from '../../components/ui/workout-card.component';

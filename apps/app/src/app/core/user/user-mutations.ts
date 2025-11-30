@@ -42,7 +42,7 @@ export const UserMutations = {
     delete: (client: HttpClient, id: string) =>
       lastValueFrom(client.delete<void>(`/api/user/exercise-scheme/${id}`)),
     assignToSectionItem: (client: HttpClient, id: string, data: AssignToSectionItemDto) =>
-      lastValueFrom(client.post<any>(`/api/user/exercise-scheme/${id}/assign-to`, data)),
+      lastValueFrom(client.post<void>(`/api/user/exercise-scheme/${id}/assign-to`, data)),
     unassignFromSectionItem: (client: HttpClient, id: string, data: UnassignFromSectionItemDto) =>
       lastValueFrom(client.delete<void>(`/api/user/exercise-scheme/${id}/assign-to`, { body: data })),
   },

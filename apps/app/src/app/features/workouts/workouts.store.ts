@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import type { WorkoutResponseDto, WorkoutSectionType } from '@resitr/api';
 import { CompendiumQueries } from '../../core/compendium/compendium-queries';
+import { safeErrorMessage } from '../../shared/utils/type-guards';
 
 export interface WorkoutsState {
   workouts: WorkoutResponseDto[];
@@ -55,7 +56,6 @@ export const WorkoutsStore = signalStore(
     };
   }),
   withMethods((store, http = inject(HttpClient)) => ({
-    // Load workouts
     async loadWorkouts(): Promise<void> {
       patchState(store, { isLoading: true, error: null });
 
@@ -64,23 +64,20 @@ export const WorkoutsStore = signalStore(
         patchState(store, { workouts, isLoading: false });
       } catch (error) {
         patchState(store, {
-          error: (error as Error).message || 'Failed to load workouts',
+          error: safeErrorMessage(error),
           isLoading: false,
         });
       }
     },
 
-    // Update search term
     setSearchTerm(searchTerm: string): void {
       patchState(store, { searchTerm });
     },
 
-    // Update section type filter
     setSelectedSectionType(selectedSectionType: WorkoutSectionType | ''): void {
       patchState(store, { selectedSectionType });
     },
 
-    // Clear all filters
     clearFilters(): void {
       patchState(store, {
         searchTerm: '',

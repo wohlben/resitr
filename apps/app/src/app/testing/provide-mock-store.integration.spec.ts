@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClient } from '@angular/common/http';
 import { WorkoutsStore } from '../features/workouts/workouts.store';
 import { createMockStore } from './provide-mock-store';
 

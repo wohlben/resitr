@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { unsavedChangesGuard } from './core/guards/unsaved-changes.guard';
 
 export const appRoutes: Route[] = [
   {
@@ -11,9 +12,21 @@ export const appRoutes: Route[] = [
           import('./routes/compendium/equipments').then((m) => m.EquipmentsComponent),
       },
       {
+        path: 'compendium/equipments/new',
+        loadComponent: () =>
+          import('./routes/compendium/equipment-new').then((m) => m.EquipmentNew),
+        canDeactivate: [unsavedChangesGuard],
+      },
+      {
         path: 'compendium/equipments/:id',
         loadComponent: () =>
           import('./routes/compendium/equipment-detail').then((m) => m.EquipmentDetail),
+      },
+      {
+        path: 'compendium/equipments/:id/edit',
+        loadComponent: () =>
+          import('./routes/compendium/equipment-edit').then((m) => m.EquipmentEdit),
+        canDeactivate: [unsavedChangesGuard],
       },
       {
         path: 'compendium/exercises',
@@ -21,9 +34,21 @@ export const appRoutes: Route[] = [
           import('./routes/compendium/exercises').then((m) => m.ExercisesComponent),
       },
       {
+        path: 'compendium/exercises/new',
+        loadComponent: () =>
+          import('./routes/compendium/exercise-new').then((m) => m.ExerciseNew),
+        canDeactivate: [unsavedChangesGuard],
+      },
+      {
         path: 'compendium/exercises/:id',
         loadComponent: () =>
           import('./routes/compendium/exercise-detail').then((m) => m.ExerciseDetail),
+      },
+      {
+        path: 'compendium/exercises/:id/edit',
+        loadComponent: () =>
+          import('./routes/compendium/exercise-edit').then((m) => m.ExerciseEdit),
+        canDeactivate: [unsavedChangesGuard],
       },
       {
         path: 'compendium/exercise-groups',

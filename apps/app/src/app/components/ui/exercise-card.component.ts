@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { CommonModule, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import type { ExerciseResponseDto } from '@resitr/api';
 import { MuscleLabels, ExerciseTypeLabels, TechnicalDifficultyLabels } from '@resitr/api';

@@ -1,16 +1,18 @@
-import { Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, input, effect } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { WorkoutSectionType, WorkoutSectionTypeLabels } from '@resitr/api';
 import { type WorkoutsStore } from '../../features/workouts/workouts.store';
 import { DropdownComponent } from './inputs/dropdown.component';
 import { EntityFiltersComponent } from './entity-filters.component';
 import { EnumValuesPipe } from '../../shared/pipes/enum-values.pipe';
 import { ValueOptionsPipe } from '../../shared/pipes/value-options.pipe';
+import { isValidEnumValue } from '../../shared/utils/type-guards';
 
 @Component({
   selector: 'app-workouts-filter',
   standalone: true,
-  imports: [CommonModule, DropdownComponent, EntityFiltersComponent, EnumValuesPipe, ValueOptionsPipe],
+  imports: [ReactiveFormsModule, DropdownComponent, EntityFiltersComponent, EnumValuesPipe, ValueOptionsPipe],
   template: `
     <app-entity-filters
       placeholder="Search workouts..."
@@ -20,22 +22,41 @@ import { ValueOptionsPipe } from '../../shared/pipes/value-options.pipe';
       (clearFilters)="store().clearFilters()"
     >
       <div advancedFilters class="contents">
-        <!-- Section Type Filter -->
         <app-dropdown
           label="Section Type"
           [options]="(WorkoutSectionType | enumValues) | valueOptions : WorkoutSectionTypeLabels"
-          [value]="store().selectedSectionType()"
-          (valueChange)="store().setSelectedSectionType($any($event))"
+          [formControl]="sectionTypeControl"
         />
       </div>
     </app-entity-filters>
   `,
 })
 export class WorkoutsFilterComponent {
-  // Input
   store = input.required<InstanceType<WorkoutsStore>>();
 
-  // Make enum and labels available in template
   readonly WorkoutSectionType = WorkoutSectionType;
   readonly WorkoutSectionTypeLabels = WorkoutSectionTypeLabels;
+
+  sectionTypeControl = new FormControl('');
+  private isSyncing = false;
+
+  constructor() {
+    effect(() => {
+      const sectionType = this.store().selectedSectionType();
+      if (this.sectionTypeControl.value !== sectionType) {
+        this.isSyncing = true;
+        this.sectionTypeControl.setValue(sectionType, { emitEvent: false });
+        this.isSyncing = false;
+      }
+    });
+
+    this.sectionTypeControl.valueChanges
+      .pipe(takeUntilDestroyed())
+      .subscribe(value => {
+        if (this.isSyncing) return;
+        if (isValidEnumValue(value, WorkoutSectionType)) {
+          this.store().setSelectedSectionType(value);
+        }
+      });
+  }
 }

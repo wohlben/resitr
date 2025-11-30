@@ -1,22 +1,31 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { EquipmentsStore } from '../../features/equipments/equipments.store';
 import { PaginationComponent } from '../../components/ui/pagination.component';
 import { EquipmentCardComponent } from '../../components/ui/equipment-card.component';
 import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
 import { LoadingComponent } from '../../components/ui/loading.component';
 import { EquipmentsFilterComponent } from '../../components/ui/equipments-filter.component';
+import { ButtonComponent } from '../../components/ui/button.component';
 
 @Component({
   selector: 'app-equipments',
   standalone: true,
-  imports: [PaginationComponent, EquipmentCardComponent, ErrorLoadingComponent, LoadingComponent, EquipmentsFilterComponent],
+  imports: [PaginationComponent, EquipmentCardComponent, ErrorLoadingComponent, LoadingComponent, EquipmentsFilterComponent, ButtonComponent],
   providers: [EquipmentsStore],
   template: `
     <div class="space-y-6">
       <div class="flex flex-col gap-4">
-        <div>
-          <h1 class="text-3xl font-bold text-gray-900">Equipment Compendium</h1>
-          <p class="text-gray-600 mt-1">Browse and manage equipment templates</p>
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900">Equipment Compendium</h1>
+            <p class="text-gray-600 mt-1">Browse and manage equipment templates</p>
+          </div>
+          <app-button variant="primary" link="/compendium/equipments/new">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            New Equipment
+          </app-button>
         </div>
 
         <app-equipments-filter [store]="store" />
@@ -33,11 +42,9 @@ import { EquipmentsFilterComponent } from '../../components/ui/equipments-filter
         />
       }
 
-      <!-- Success State -->
       @if (!store.isLoading() && !store.error()) {
         <app-pagination #pagination [items]="store.filteredEquipments()" [itemName]="'equipments'">
           <div paginationContent>
-            <!-- Equipment List -->
             @if (store.filteredEquipments().length === 0) {
               <div class="text-center py-12 bg-gray-50 rounded-lg">
                 <svg class="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
