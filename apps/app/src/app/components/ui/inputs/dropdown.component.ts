@@ -1,4 +1,4 @@
-import { Component, input, forwardRef } from '@angular/core';
+import { Component, input, forwardRef, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { InputLabelComponent } from './input-label.component';
@@ -27,7 +27,6 @@ export interface DropdownOption {
         <app-input-label [text]="label()!" [required]="required()" [class]="labelClass()" />
       }
       <select
-        [value]="value"
         (change)="onSelectChange($event)"
         (blur)="onTouched()"
         [disabled]="disabled"
@@ -40,10 +39,10 @@ export interface DropdownOption {
         [class.border-red-500]="error()"
       >
         @if (placeholder()) {
-          <option value="">{{ placeholder() }}</option>
+          <option value="" [selected]="value() === ''">{{ placeholder() }}</option>
         }
         @for (option of options(); track option.value) {
-          <option [value]="option.value">{{ option.label }}</option>
+          <option [value]="option.value" [selected]="option.value === value()">{{ option.label }}</option>
         }
       </select>
       <app-input-hint [text]="hint()" [id]="'hint-' + (label() || 'field')" />
@@ -60,7 +59,7 @@ export class DropdownComponent implements ControlValueAccessor {
   error = input<string>('');
   hint = input<string>('');
 
-  value = '';
+  value = signal('');
   disabled = false;
 
   getAriaDescribedBy(): string | null {
@@ -78,12 +77,12 @@ export class DropdownComponent implements ControlValueAccessor {
 
   onSelectChange(event: Event): void {
     const select = event.target as HTMLSelectElement;
-    this.value = select.value;
-    this.onChange(this.value);
+    this.value.set(select.value);
+    this.onChange(select.value);
   }
 
   writeValue(value: string): void {
-    this.value = value || '';
+    this.value.set(value || '');
   }
 
   registerOnChange(fn: (value: string) => void): void {

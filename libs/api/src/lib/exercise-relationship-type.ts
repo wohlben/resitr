@@ -19,3 +19,16 @@ export enum ExerciseRelationshipType {
   SUPERSET_WITH = 'superset_with', // Often done together
   ANTAGONIST = 'antagonist', // Opposite muscle group
 }
+
+export const ExerciseRelationshipTypeLabels = {
+  [ExerciseRelationshipType.PREREQUISITE]: 'Prerequisite',
+  [ExerciseRelationshipType.PROGRESSION]: 'Progression',
+  [ExerciseRelationshipType.REGRESSION]: 'Regression',
+  [ExerciseRelationshipType.COMPONENT_OF]: 'Component Of',
+  [ExerciseRelationshipType.SIMILAR]: 'Similar',
+  [ExerciseRelationshipType.ALTERNATIVE]: 'Alternative',
+  [ExerciseRelationshipType.FORK]: 'Fork',
+  [ExerciseRelationshipType.DERIVATIVE]: 'Derivative',
+  [ExerciseRelationshipType.SUPERSET_WITH]: 'Superset With',
+  [ExerciseRelationshipType.ANTAGONIST]: 'Antagonist',
+} as const satisfies Record<ExerciseRelationshipType, string>;

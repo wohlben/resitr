@@ -8,15 +8,31 @@ import type {
   ExerciseType,
   Muscle,
   TechnicalDifficulty,
+  ExerciseRelationshipResponseDto,
+  ExerciseGroupMemberResponseDto,
+  ExerciseGroupResponseDto,
+  EquipmentResponseDto,
 } from '@resitr/api';
 import { CompendiumQueries } from '../../core/compendium/compendium-queries';
 import { CompendiumMutations } from '../../core/compendium/compendium-mutations';
 import { safeErrorMessage } from '../../shared/utils/type-guards';
 
+export interface ExerciseRelationshipWithExercise extends ExerciseRelationshipResponseDto {
+  relatedExercise?: ExerciseResponseDto;
+}
+
+export interface ExerciseGroupWithDetails extends ExerciseGroupMemberResponseDto {
+  group?: ExerciseGroupResponseDto;
+}
+
 export interface ExercisesState {
   exercises: ExerciseResponseDto[];
   currentExercise: ExerciseResponseDto | null;
+  currentExerciseRelationships: ExerciseRelationshipWithExercise[];
+  currentExerciseGroups: ExerciseGroupWithDetails[];
+  currentExerciseEquipment: EquipmentResponseDto[];
   isLoading: boolean;
+  isLoadingRelations: boolean;
   isSaving: boolean;
   isDeleting: boolean;
   error: string | null;
@@ -30,7 +46,11 @@ export interface ExercisesState {
 const initialState: ExercisesState = {
   exercises: [],
   currentExercise: null,
+  currentExerciseRelationships: [],
+  currentExerciseGroups: [],
+  currentExerciseEquipment: [],
   isLoading: false,
+  isLoadingRelations: false,
   isSaving: false,
   isDeleting: false,
   error: null,
@@ -106,16 +126,83 @@ export const ExercisesStore = signalStore(
     },
 
     async loadExercise(id: string): Promise<void> {
-      patchState(store, { isLoading: true, error: null });
+      patchState(store, {
+        isLoading: true,
+        error: null,
+        currentExerciseRelationships: [],
+        currentExerciseGroups: [],
+        currentExerciseEquipment: [],
+      });
 
       try {
         const exercise = await CompendiumQueries.exercise.detail(id).fn(http);
         patchState(store, { currentExercise: exercise, isLoading: false });
+
+        // Load relationships, groups, and equipment in background
+        this.loadExerciseRelationsAndGroups(id, exercise.equipmentIds || []);
       } catch (error) {
         patchState(store, {
           error: safeErrorMessage(error),
           isLoading: false,
         });
+      }
+    },
+
+    async loadExerciseRelationsAndGroups(id: string, equipmentIds: string[] = []): Promise<void> {
+      patchState(store, { isLoadingRelations: true });
+
+      try {
+        const [relationships, groupMemberships] = await Promise.all([
+          CompendiumQueries.exerciseRelationship.byExercise(id).fn(http),
+          CompendiumQueries.exerciseGroupMember.byExercise(id).fn(http),
+        ]);
+
+        // Enrich relationships with exercise details
+        const enrichedRelationships: ExerciseRelationshipWithExercise[] = await Promise.all(
+          relationships.map(async (rel) => {
+            const relatedId = rel.fromExerciseTemplateId === id
+              ? rel.toExerciseTemplateId
+              : rel.fromExerciseTemplateId;
+            try {
+              const relatedExercise = await CompendiumQueries.exercise.detail(relatedId).fn(http);
+              return { ...rel, relatedExercise };
+            } catch {
+              return rel;
+            }
+          })
+        );
+
+        // Enrich group memberships with group details
+        const enrichedGroups: ExerciseGroupWithDetails[] = await Promise.all(
+          groupMemberships.map(async (membership) => {
+            try {
+              const group = await CompendiumQueries.exerciseGroup.detail(membership.groupId).fn(http);
+              return { ...membership, group };
+            } catch {
+              return membership;
+            }
+          })
+        );
+
+        // Load equipment details
+        const equipment: EquipmentResponseDto[] = (await Promise.all(
+          equipmentIds.map(async (equipmentId) => {
+            try {
+              return await CompendiumQueries.equipment.detail(equipmentId).fn(http);
+            } catch {
+              return null;
+            }
+          })
+        )).filter((e): e is EquipmentResponseDto => e !== null);
+
+        patchState(store, {
+          currentExerciseRelationships: enrichedRelationships,
+          currentExerciseGroups: enrichedGroups,
+          currentExerciseEquipment: equipment,
+          isLoadingRelations: false,
+        });
+      } catch (error) {
+        patchState(store, { isLoadingRelations: false });
       }
     },
 
@@ -180,7 +267,13 @@ export const ExercisesStore = signalStore(
     },
 
     clearCurrentExercise(): void {
-      patchState(store, { currentExercise: null, saveError: null });
+      patchState(store, {
+        currentExercise: null,
+        currentExerciseRelationships: [],
+        currentExerciseGroups: [],
+        currentExerciseEquipment: [],
+        saveError: null,
+      });
     },
 
     setSearchTerm(searchTerm: string): void {

@@ -27,25 +27,14 @@ import { DialogComponent } from './dialog.component';
         </p>
 
         @if (confirmationService.changes().length > 0) {
-          <div class="mt-4 max-h-60 overflow-y-auto">
-            <table class="w-full text-sm">
-              <thead class="text-left text-gray-500 border-b">
-                <tr>
-                  <th class="pb-2 font-medium">Field</th>
-                  <th class="pb-2 font-medium">Before</th>
-                  <th class="pb-2 font-medium">After</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-100">
-                @for (change of confirmationService.changes(); track change.field) {
-                  <tr>
-                    <td class="py-2 text-gray-700">{{ change.field }}</td>
-                    <td class="py-2 text-red-600 line-through">{{ change.oldValue || '(empty)' }}</td>
-                    <td class="py-2 text-green-600">{{ change.newValue || '(empty)' }}</td>
-                  </tr>
-                }
-              </tbody>
-            </table>
+          <div class="mt-4 max-h-60 overflow-y-auto space-y-3">
+            @for (change of confirmationService.changes(); track change.field) {
+              <div class="text-sm border-l-2 border-gray-300 pl-3">
+                <div class="font-medium text-gray-700"># {{ change.field }}</div>
+                <div class="text-red-600 font-mono">- {{ change.oldValue || '(empty)' }}</div>
+                <div class="text-green-600 font-mono">+ {{ change.newValue || '(empty)' }}</div>
+              </div>
+            }
           </div>
         }
       </div>

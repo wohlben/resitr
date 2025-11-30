@@ -24,6 +24,7 @@ const FIELD_LABELS: Record<string, string> = {
   equipmentIds: 'Equipment',
   bodyWeightScaling: 'Body Weight Scaling',
   technicalDifficulty: 'Technical Difficulty',
+  suggestedMeasurementParadigms: 'Suggested Measurement Paradigms',
   instructions: 'Instructions',
   authorName: 'Author Name',
   authorUrl: 'Author URL',
@@ -35,14 +36,14 @@ function formatValue(value: unknown): string {
   return String(value);
 }
 
-function computeChanges(oldData: Record<string, unknown>, newData: Record<string, unknown>): FieldChange[] {
+function computeChanges(
+  oldData: Record<string, unknown>,
+  newData: Record<string, unknown>,
+  fields: string[]
+): FieldChange[] {
   const changes: FieldChange[] = [];
-  const allKeys = new Set([...Object.keys(oldData), ...Object.keys(newData)]);
 
-  for (const key of allKeys) {
-    // Skip internal fields
-    if (key === 'templateId') continue;
-
+  for (const key of fields) {
     const oldValue = formatValue(oldData[key]);
     const newValue = formatValue(newData[key]);
 
@@ -59,6 +60,23 @@ function computeChanges(oldData: Record<string, unknown>, newData: Record<string
 }
 
 /**
+ * Checks if there are any changes to form fields between two data objects.
+ */
+export function hasFormChanges(
+  oldData: Record<string, unknown> = {},
+  newData: Record<string, unknown> = {}
+): boolean {
+  for (const key of Object.keys(newData)) {
+    const oldValue = formatValue(oldData[key]);
+    const newValue = formatValue(newData[key]);
+    if (oldValue !== newValue) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
  * Shows the standard "unsaved changes" confirmation dialog with a list of changes.
  * @param confirmation - The confirmation service
  * @param oldData - The original data (empty object for new items)
@@ -69,7 +87,7 @@ export function confirmUnsavedChanges(
   oldData: Record<string, unknown> = {},
   newData: Record<string, unknown> = {}
 ): Promise<boolean> {
-  const changes = computeChanges(oldData, newData);
+  const changes = computeChanges(oldData, newData, Object.keys(newData));
 
   return confirmation.confirm({
     title: 'Unsaved Changes',

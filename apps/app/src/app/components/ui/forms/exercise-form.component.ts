@@ -1,22 +1,19 @@
-import { Component, input, output, effect, inject, computed, untracked } from '@angular/core';
+import { Component, computed, effect, inject, input, output, untracked } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  FormBuilder,
-  ReactiveFormsModule,
-  Validators,
-  FormGroup,
-  FormControl,
-} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import type { ExerciseResponseDto } from '@resitr/api';
 import {
   ExerciseTypeLabels,
   ForceType,
-  ForceTypeLabels,
   ForceTypeDescriptions,
+  ForceTypeLabels,
+  MeasurementParadigm,
+  MeasurementParadigmDescriptions,
+  MeasurementParadigmLabels,
   Muscle,
-  MuscleLabels,
   MuscleDescriptions,
+  MuscleLabels,
   TechnicalDifficultyLabels,
 } from '@resitr/api';
 import { TextInputComponent } from '../inputs/text-input.component';
@@ -24,10 +21,7 @@ import { TextareaInputComponent } from '../inputs/textarea-input.component';
 import { NumberInputComponent } from '../inputs/number-input.component';
 import { DropdownComponent, DropdownOption } from '../inputs/dropdown.component';
 import { MultiTextInputComponent } from '../inputs/multi-text-input.component';
-import {
-  MultiSelectComponent,
-  MultiSelectOption,
-} from '../inputs/multi-select.component';
+import { MultiSelectComponent, MultiSelectOption } from '../inputs/multi-select.component';
 import { FormErrorSummaryComponent } from './form-error-summary.component';
 
 @Component({
@@ -120,6 +114,13 @@ import { FormErrorSummaryComponent } from './form-error-summary.component';
         [error]="getFieldError('technicalDifficulty')"
       />
 
+      <app-multi-select
+        formControlName="suggestedMeasurementParadigms"
+        [label]="'Suggested Measurement Paradigms'"
+        [options]="measurementParadigmOptions()"
+        [hint]="'How this exercise is typically measured (sets/reps, time, distance, etc.)'"
+      />
+
       <app-multi-text-input
         formControlName="instructions"
         [label]="'Instructions'"
@@ -159,7 +160,7 @@ import { FormErrorSummaryComponent } from './form-error-summary.component';
       />
 
       @if (form.invalid && form.touched) {
-        <app-form-error-summary [errors]="getFormErrors()" />
+      <app-form-error-summary [errors]="getFormErrors()" />
       }
     </form>
   `,
@@ -184,6 +185,7 @@ export class ExerciseFormComponent {
     equipmentIds: [[] as string[]],
     bodyWeightScaling: [0, [Validators.required, Validators.min(0), Validators.max(1)]],
     technicalDifficulty: ['', Validators.required],
+    suggestedMeasurementParadigms: [[] as string[]],
     instructions: [[] as string[]],
     description: [''],
     images: [[] as string[]],
@@ -191,9 +193,10 @@ export class ExerciseFormComponent {
     authorUrl: [''],
   });
 
-  exerciseTypeOptions: DropdownOption[] = Object.entries(ExerciseTypeLabels).map(
-    ([value, label]) => ({ value, label })
-  );
+  exerciseTypeOptions: DropdownOption[] = Object.entries(ExerciseTypeLabels).map(([value, label]) => ({
+    value,
+    label,
+  }));
 
   forceTypeOptions = computed<MultiSelectOption[]>(() =>
     Object.entries(ForceTypeLabels).map(([value, label]) => ({
@@ -211,32 +214,45 @@ export class ExerciseFormComponent {
     }))
   );
 
-  technicalDifficultyOptions: DropdownOption[] = Object.entries(
-    TechnicalDifficultyLabels
-  ).map(([value, label]) => ({ value, label }));
+  technicalDifficultyOptions: DropdownOption[] = Object.entries(TechnicalDifficultyLabels).map(([value, label]) => ({
+    value,
+    label,
+  }));
+
+  measurementParadigmOptions = computed<MultiSelectOption[]>(() =>
+    Object.entries(MeasurementParadigmLabels).map(([value, label]) => ({
+      value,
+      label,
+      description: MeasurementParadigmDescriptions[value as MeasurementParadigm],
+    }))
+  );
 
   constructor() {
     effect(() => {
       const initial = this.initialValue();
 
       if (initial) {
-        this.form.patchValue({
-          templateId: initial.templateId,
-          name: initial.name,
-          alternativeNames: initial.alternativeNames || [],
-          type: initial.type,
-          force: initial.force || [],
-          primaryMuscles: initial.primaryMuscles || [],
-          secondaryMuscles: initial.secondaryMuscles || [],
-          equipmentIds: initial.equipmentIds || [],
-          bodyWeightScaling: initial.bodyWeightScaling,
-          technicalDifficulty: initial.technicalDifficulty,
-          instructions: initial.instructions || [],
-          description: initial.description || '',
-          images: initial.images || [],
-          authorName: initial.authorName || '',
-          authorUrl: initial.authorUrl || '',
-        }, { emitEvent: false });
+        this.form.patchValue(
+          {
+            templateId: initial.templateId,
+            name: initial.name,
+            alternativeNames: initial.alternativeNames || [],
+            type: initial.type,
+            force: initial.force || [],
+            primaryMuscles: initial.primaryMuscles || [],
+            secondaryMuscles: initial.secondaryMuscles || [],
+            equipmentIds: initial.equipmentIds || [],
+            bodyWeightScaling: initial.bodyWeightScaling,
+            technicalDifficulty: initial.technicalDifficulty,
+            suggestedMeasurementParadigms: initial.suggestedMeasurementParadigms || [],
+            instructions: initial.instructions || [],
+            description: initial.description || '',
+            images: initial.images || [],
+            authorName: initial.authorName || '',
+            authorUrl: initial.authorUrl || '',
+          },
+          { emitEvent: false }
+        );
 
         untracked(() => {
           this.formChange.emit(this.form.getRawValue() as Partial<ExerciseResponseDto>);
@@ -245,12 +261,10 @@ export class ExerciseFormComponent {
       }
     });
 
-    this.form.valueChanges
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => {
-        this.formChange.emit(this.form.getRawValue() as Partial<ExerciseResponseDto>);
-        this.validChange.emit(this.form.valid);
-      });
+    this.form.valueChanges.pipe(takeUntilDestroyed()).subscribe(() => {
+      this.formChange.emit(this.form.getRawValue() as Partial<ExerciseResponseDto>);
+      this.validChange.emit(this.form.valid);
+    });
 
     this.validChange.emit(this.form.valid);
   }

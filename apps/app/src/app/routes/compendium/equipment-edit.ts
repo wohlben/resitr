@@ -9,7 +9,7 @@ import { ErrorLoadingComponent } from '../../components/ui/error-loading.compone
 import { SpinnerComponent } from '../../components/ui/spinner.component';
 import { ButtonComponent } from '../../components/ui/button.component';
 import type { UpdateEquipmentDto, EquipmentResponseDto } from '@resitr/api';
-import { CanComponentDeactivate, confirmUnsavedChanges } from '../../core/guards';
+import { CanComponentDeactivate, confirmUnsavedChanges, hasFormChanges } from '../../core/guards';
 import { ToastService } from '../../core/services/toast.service';
 import { ConfirmationService } from '../../core/services/confirmation.service';
 
@@ -167,9 +167,7 @@ export class EquipmentEdit implements OnInit, CanComponentDeactivate {
     if (this.hasSubmitted) return true;
 
     const current = this.formData();
-    const hasChanges = JSON.stringify(current) !== JSON.stringify(this.initialData);
-
-    if (!hasChanges) return true;
+    if (!hasFormChanges(this.initialData, current)) return true;
 
     return confirmUnsavedChanges(this.confirmation, this.initialData, current);
   }
