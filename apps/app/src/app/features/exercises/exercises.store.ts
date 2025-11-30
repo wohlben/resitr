@@ -19,6 +19,7 @@ import type {
 import { CompendiumQueries } from '../../core/compendium/compendium-queries';
 import { CompendiumMutations } from '../../core/compendium/compendium-mutations';
 import { safeErrorMessage } from '../../shared/utils/type-guards';
+import { SearchIndex } from '../../shared/utils';
 
 export interface ExerciseRelationshipWithExercise extends ExerciseRelationshipResponseDto {
   relatedExercise?: ExerciseResponseDto;
@@ -68,22 +69,29 @@ export const ExercisesStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
   withComputed((store) => {
+    /** Pre-built search index for O(k) text search */
+    const searchIndex = computed(() => {
+      const exercises = store.exercises();
+      return new SearchIndex(exercises, (e) => [
+        e.name,
+        e.description,
+        e.authorName,
+        ...(e.alternativeNames || []),
+      ]);
+    });
+
     const filteredExercises = computed(() => {
       const exercises = store.exercises();
-      const search = store.searchTerm().toLowerCase().trim();
+      const search = store.searchTerm().trim();
       const type = store.selectedType();
       const muscle = store.selectedMuscle();
       const difficulty = store.selectedDifficulty();
 
-      return exercises.filter((exercise) => {
-        if (search) {
-          const matchesName = exercise.name.toLowerCase().includes(search);
-          const matchesAltNames = exercise.alternativeNames?.some((name) =>
-            name.toLowerCase().includes(search)
-          );
-          if (!matchesName && !matchesAltNames) return false;
-        }
+      // Use search index if there's a search term
+      const results = search ? searchIndex().search(search) : exercises;
 
+      // Apply additional filters
+      return results.filter((exercise) => {
         if (type && exercise.type !== type) return false;
 
         if (muscle) {
@@ -111,6 +119,7 @@ export const ExercisesStore = signalStore(
     return {
       filteredExercises,
       hasActiveFilters,
+      searchIndex,
     };
   }),
   withMethods((store, http = inject(HttpClient)) => ({

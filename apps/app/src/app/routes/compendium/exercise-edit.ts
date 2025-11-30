@@ -11,6 +11,7 @@ import { SpinnerComponent } from '../../components/ui/spinner.component';
 import { ButtonComponent } from '../../components/ui/button.component';
 import { ComboboxComponent, ComboboxOption } from '../../components/ui/inputs/combobox.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
+import { SearchIndex } from '../../shared/utils';
 import type { UpdateExerciseDto, ExerciseResponseDto } from '@resitr/api';
 import { ExerciseRelationshipType, ExerciseRelationshipTypeLabels } from '@resitr/api';
 import { CanComponentDeactivate, confirmUnsavedChanges, hasFormChanges } from '../../core/guards';
@@ -93,6 +94,7 @@ import { ConfirmationService } from '../../core/services/confirmation.service';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               <app-combobox
                 [options]="availableExerciseOptions()"
+                [searchIndex]="exerciseSearchIndex()"
                 placeholder="Search exercise to relate..."
                 emptyMessage="No matching exercises found"
                 [disabled]="store.isSaving()"
@@ -275,8 +277,20 @@ export class ExerciseEdit implements OnInit, CanComponentDeactivate {
         label: e.name,
         sublabel: e.authorName,
         meta: `v${e.version}`,
+        searchTerms: e.alternativeNames,
       }))
       .sort((a, b) => a.label.localeCompare(b.label));
+  });
+
+  // Pre-built search index for O(k) exercise search
+  exerciseSearchIndex = computed(() => {
+    const options = this.availableExerciseOptions();
+    return new SearchIndex(options, (opt) => [
+      opt.label,
+      opt.sublabel,
+      opt.meta,
+      ...(opt.searchTerms || []),
+    ]);
   });
 
   canAddRelationship = computed(() => {

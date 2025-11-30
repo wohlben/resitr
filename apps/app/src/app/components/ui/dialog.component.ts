@@ -1,4 +1,4 @@
-import { Component, input, output, ElementRef, ViewChild, effect, contentChild } from '@angular/core';
+import { Component, input, output, ElementRef, ViewChild, effect } from '@angular/core';
 
 @Component({
   selector: 'app-dialog',

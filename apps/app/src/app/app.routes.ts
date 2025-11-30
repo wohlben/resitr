@@ -80,9 +80,21 @@ export const appRoutes: Route[] = [
           import('./routes/compendium/workouts').then((m) => m.WorkoutsComponent),
       },
       {
+        path: 'compendium/workouts/new',
+        loadComponent: () =>
+          import('./routes/compendium/workout-new').then((m) => m.WorkoutNew),
+        canDeactivate: [unsavedChangesGuard],
+      },
+      {
         path: 'compendium/workouts/:id',
         loadComponent: () =>
           import('./routes/compendium/workout-detail').then((m) => m.WorkoutDetail),
+      },
+      {
+        path: 'compendium/workouts/:id/edit',
+        loadComponent: () =>
+          import('./routes/compendium/workout-edit').then((m) => m.WorkoutEdit),
+        canDeactivate: [unsavedChangesGuard],
       },
       {
         path: 'user/workout-logs',

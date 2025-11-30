@@ -1,0 +1,2 @@
+ALTER TABLE `compendium_workout_section_items` ADD `exercise_id` text NOT NULL REFERENCES compendium_exercises(template_id);--> statement-breakpoint
+ALTER TABLE `user_workout_logs` DROP COLUMN `duration`;

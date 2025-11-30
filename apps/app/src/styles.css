@@ -2,4 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+/* Global form input styles */
+@layer base {
+  input,
+  select,
+  textarea {
+    @apply text-gray-900;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-gray-400;
+  }
+}

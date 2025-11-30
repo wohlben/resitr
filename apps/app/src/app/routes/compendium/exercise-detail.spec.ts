@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { provideRouter, ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 import { ExerciseDetail } from './exercise-detail';
 
 describe('ExerciseDetail', () => {
@@ -18,6 +19,7 @@ describe('ExerciseDetail', () => {
         {
           provide: ActivatedRoute,
           useValue: {
+            paramMap: of({ get: (key: string) => key === 'id' ? 'test-exercise-id' : null }),
             snapshot: {
               paramMap: {
                 get: (key: string) => key === 'id' ? 'test-exercise-id' : null

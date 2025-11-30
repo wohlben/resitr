@@ -5,19 +5,28 @@ import { WorkoutCardComponent } from '../../components/ui/workout-card.component
 import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
 import { LoadingComponent } from '../../components/ui/loading.component';
 import { WorkoutsFilterComponent } from '../../components/ui/workouts-filter.component';
+import { ButtonComponent } from '../../components/ui/button.component';
 
 @Component({
   selector: 'app-workouts',
   standalone: true,
-  imports: [PaginationComponent, WorkoutCardComponent, ErrorLoadingComponent, LoadingComponent, WorkoutsFilterComponent],
+  imports: [PaginationComponent, WorkoutCardComponent, ErrorLoadingComponent, LoadingComponent, WorkoutsFilterComponent, ButtonComponent],
   providers: [WorkoutsStore],
   template: `
     <div class="space-y-6">
       <!-- Header -->
       <div class="flex flex-col gap-4">
-        <div>
-          <h1 class="text-3xl font-bold text-gray-900">Workout Compendium</h1>
-          <p class="text-gray-600 mt-1">Browse and manage workout templates</p>
+        <div class="flex items-start justify-between">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900">Workout Compendium</h1>
+            <p class="text-gray-600 mt-1">Browse and manage workout templates</p>
+          </div>
+          <app-button variant="primary" link="/compendium/workouts/new">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            New Workout
+          </app-button>
         </div>
 
         <!-- Filters -->

@@ -124,7 +124,7 @@ describe('unsaved-changes.guard', () => {
         expect(changes[0].field).toBe('Description');
       });
 
-      it('should skip templateId field', () => {
+      it('should include templateId field with friendly label', () => {
         confirmUnsavedChanges(
           confirmationService,
           { templateId: 'old-id' },
@@ -132,7 +132,11 @@ describe('unsaved-changes.guard', () => {
         );
 
         const changes = confirmationService.changes();
-        expect(changes.find(c => c.field === 'Template ID')).toBeUndefined();
+        expect(changes).toContainEqual({
+          field: 'Template ID',
+          oldValue: 'old-id',
+          newValue: 'new-id',
+        });
       });
 
       it('should use friendly field labels', () => {
@@ -193,6 +197,50 @@ describe('unsaved-changes.guard', () => {
 
         const changes = confirmationService.changes();
         expect(changes.length).toBe(3);
+      });
+
+      it('should flatten nested objects with JSON path-like labels', () => {
+        confirmUnsavedChanges(
+          confirmationService,
+          {},
+          {
+            sections: [
+              { type: 'STRENGTH', name: 'Workout', items: [{ exerciseId: 'ex-1' }] }
+            ]
+          }
+        );
+
+        const changes = confirmationService.changes();
+        const fieldNames = changes.map(c => c.field);
+
+        expect(fieldNames).toContain('Sections 1 → Type');
+        expect(fieldNames).toContain('Sections 1 → Name');
+        expect(fieldNames).toContain('Sections 1 → Items 1 → Exercise');
+      });
+
+      it('should detect changes in nested objects', () => {
+        confirmUnsavedChanges(
+          confirmationService,
+          {
+            sections: [{ type: 'WARMUP', name: 'Old Section' }]
+          },
+          {
+            sections: [{ type: 'STRENGTH', name: 'New Section' }]
+          }
+        );
+
+        const changes = confirmationService.changes();
+
+        expect(changes).toContainEqual({
+          field: 'Sections 1 → Type',
+          oldValue: 'WARMUP',
+          newValue: 'STRENGTH',
+        });
+        expect(changes).toContainEqual({
+          field: 'Sections 1 → Name',
+          oldValue: 'Old Section',
+          newValue: 'New Section',
+        });
       });
     });
   });
