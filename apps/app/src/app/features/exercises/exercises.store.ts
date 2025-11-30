@@ -12,6 +12,9 @@ import type {
   ExerciseGroupMemberResponseDto,
   ExerciseGroupResponseDto,
   EquipmentResponseDto,
+  CreateExerciseRelationshipDto,
+  ExerciseRelationshipType,
+  CreateExerciseGroupMemberDto,
 } from '@resitr/api';
 import { CompendiumQueries } from '../../core/compendium/compendium-queries';
 import { CompendiumMutations } from '../../core/compendium/compendium-mutations';
@@ -254,6 +257,109 @@ export const ExercisesStore = signalStore(
         patchState(store, {
           saveError: safeErrorMessage(error),
           isDeleting: false,
+        });
+        return false;
+      }
+    },
+
+    async addRelationship(
+      fromExerciseId: string,
+      toExerciseId: string,
+      relationshipType: ExerciseRelationshipType,
+      description?: string
+    ): Promise<boolean> {
+      patchState(store, { isSaving: true, saveError: null });
+      try {
+        const data: CreateExerciseRelationshipDto = {
+          fromExerciseTemplateId: fromExerciseId,
+          toExerciseTemplateId: toExerciseId,
+          relationshipType,
+          ...(description && { description }),
+        };
+        const relationship = await CompendiumMutations.exerciseRelationship.create(http, data);
+
+        // Enrich with exercise data from store
+        const relatedExercise = store.exercises().find((e) => e.templateId === toExerciseId);
+        const enrichedRelationship: ExerciseRelationshipWithExercise = relatedExercise
+          ? { ...relationship, relatedExercise }
+          : { ...relationship };
+
+        patchState(store, {
+          currentExerciseRelationships: [...store.currentExerciseRelationships(), enrichedRelationship],
+          isSaving: false,
+        });
+        return true;
+      } catch (error) {
+        patchState(store, {
+          saveError: safeErrorMessage(error),
+          isSaving: false,
+        });
+        return false;
+      }
+    },
+
+    async removeRelationship(
+      fromExerciseId: string,
+      toExerciseId: string,
+      relationshipType: ExerciseRelationshipType
+    ): Promise<boolean> {
+      patchState(store, { isSaving: true, saveError: null });
+      try {
+        await CompendiumMutations.exerciseRelationship.delete(http, fromExerciseId, toExerciseId, relationshipType);
+        patchState(store, {
+          currentExerciseRelationships: store.currentExerciseRelationships().filter(
+            (r) =>
+              !(r.fromExerciseTemplateId === fromExerciseId &&
+                r.toExerciseTemplateId === toExerciseId &&
+                r.relationshipType === relationshipType)
+          ),
+          isSaving: false,
+        });
+        return true;
+      } catch (error) {
+        patchState(store, {
+          saveError: safeErrorMessage(error),
+          isSaving: false,
+        });
+        return false;
+      }
+    },
+
+    async addToGroup(exerciseId: string, groupId: string, group?: ExerciseGroupResponseDto): Promise<boolean> {
+      patchState(store, { isSaving: true, saveError: null });
+      try {
+        const data: CreateExerciseGroupMemberDto = { exerciseTemplateId: exerciseId, groupId };
+        const membership = await CompendiumMutations.exerciseGroupMember.create(http, data);
+        const newMembership: ExerciseGroupWithDetails = group
+          ? { ...membership, group }
+          : { ...membership };
+        patchState(store, {
+          currentExerciseGroups: [...store.currentExerciseGroups(), newMembership],
+          isSaving: false,
+        });
+        return true;
+      } catch (error) {
+        patchState(store, {
+          saveError: safeErrorMessage(error),
+          isSaving: false,
+        });
+        return false;
+      }
+    },
+
+    async removeFromGroup(exerciseId: string, groupId: string): Promise<boolean> {
+      patchState(store, { isSaving: true, saveError: null });
+      try {
+        await CompendiumMutations.exerciseGroupMember.delete(http, exerciseId, groupId);
+        patchState(store, {
+          currentExerciseGroups: store.currentExerciseGroups().filter((g) => g.groupId !== groupId),
+          isSaving: false,
+        });
+        return true;
+      } catch (error) {
+        patchState(store, {
+          saveError: safeErrorMessage(error),
+          isSaving: false,
         });
         return false;
       }
