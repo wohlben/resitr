@@ -1,11 +1,9 @@
-import { Component, input, output, effect, inject, untracked } from '@angular/core';
+import { Component, input, output, effect, inject, untracked, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
   ReactiveFormsModule,
   Validators,
-  FormGroup,
-  FormControl,
 } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import type { EquipmentResponseDto, EquipmentTemplate } from '@resitr/api';
@@ -13,7 +11,7 @@ import { EquipmentCategoryLabels } from '@resitr/api';
 import { TextInputComponent } from '../inputs/text-input.component';
 import { TextareaInputComponent } from '../inputs/textarea-input.component';
 import { DropdownComponent, DropdownOption } from '../inputs/dropdown.component';
-import { MultiTextInputComponent } from '../inputs/multi-text-input.component';
+import { ComboboxComponent, ComboboxOption } from '../inputs/combobox.component';
 import { FormErrorSummaryComponent } from './form-error-summary.component';
 
 @Component({
@@ -25,7 +23,7 @@ import { FormErrorSummaryComponent } from './form-error-summary.component';
     TextInputComponent,
     TextareaInputComponent,
     DropdownComponent,
-    MultiTextInputComponent,
+    ComboboxComponent,
     FormErrorSummaryComponent,
   ],
   template: `
@@ -69,12 +67,44 @@ import { FormErrorSummaryComponent } from './form-error-summary.component';
         [error]="getFieldError('description')"
       />
 
-      <app-multi-text-input
-        formControlName="substitutesFor"
-        [label]="'Substitutes For'"
-        [placeholder]="'Equipment template ID'"
-        [hint]="'List equipment that this can substitute for (using their template IDs)'"
-      />
+      <!-- Substitutes For Section -->
+      <div class="space-y-3">
+        <span class="block text-sm font-medium text-gray-700">Substitutes For</span>
+        <p class="text-xs text-gray-500">Select equipment that this can substitute for</p>
+
+        <app-combobox
+          [options]="availableEquipmentOptions()"
+          placeholder="Search equipment to add..."
+          emptyMessage="No matching equipment found"
+          (optionSelected)="onSubstituteSelected($event)"
+        />
+
+        <!-- Selected Substitutes List -->
+        @if (selectedSubstitutes().length > 0) {
+          <div class="space-y-2 mt-3">
+            @for (substitute of selectedSubstitutes(); track substitute.templateId) {
+              <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                <div class="flex items-center gap-3 text-gray-900">
+                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <span class="text-sm font-medium">{{ substitute.displayName }}</span>
+                </div>
+                <button
+                  type="button"
+                  (click)="removeSubstitute(substitute.templateId)"
+                  class="p-1 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                  title="Remove substitute"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            }
+          </div>
+        }
+      </div>
 
       @if (form.invalid && form.touched) {
         <app-form-error-summary [errors]="getFormErrors()" />
@@ -85,6 +115,7 @@ import { FormErrorSummaryComponent } from './form-error-summary.component';
 export class EquipmentFormComponent {
   initialValue = input<EquipmentResponseDto | null>(null);
   isEditMode = input<boolean>(false);
+  allEquipment = input<EquipmentResponseDto[]>([]);
 
   formChange = output<Partial<EquipmentTemplate>>();
   validChange = output<boolean>();
@@ -108,6 +139,32 @@ export class EquipmentFormComponent {
       label,
     })),
   ];
+
+  // Computed: equipment options not already selected as substitutes (and not the current equipment)
+  availableEquipmentOptions = computed<ComboboxOption[]>(() => {
+    const all = this.allEquipment();
+    const currentSubstituteIds = new Set(this.form.controls.substitutesFor.value);
+    const currentTemplateId = this.form.controls.templateId.value;
+
+    return all
+      .filter((e) => !currentSubstituteIds.has(e.templateId) && e.templateId !== currentTemplateId)
+      .map((e): ComboboxOption => ({
+        value: e.templateId,
+        label: e.displayName,
+        sublabel: e.name !== e.displayName ? e.name : undefined,
+        meta: e.category || undefined,
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+  });
+
+  // Computed: full equipment objects for selected substitutes
+  selectedSubstitutes = computed<EquipmentResponseDto[]>(() => {
+    const all = this.allEquipment();
+    const substituteIds = this.form.controls.substitutesFor.value;
+    return substituteIds
+      .map((id) => all.find((e) => e.templateId === id))
+      .filter((e): e is EquipmentResponseDto => e !== undefined);
+  });
 
   constructor() {
     effect(() => {
@@ -138,6 +195,21 @@ export class EquipmentFormComponent {
         this.formChange.emit(this.form.getRawValue() as Partial<EquipmentTemplate>);
         this.validChange.emit(this.form.valid);
       });
+  }
+
+  onSubstituteSelected(option: ComboboxOption): void {
+    const currentSubstitutes = [...this.form.controls.substitutesFor.value];
+    if (!currentSubstitutes.includes(option.value)) {
+      currentSubstitutes.push(option.value);
+      this.form.controls.substitutesFor.setValue(currentSubstitutes);
+    }
+  }
+
+  removeSubstitute(templateId: string): void {
+    const currentSubstitutes = this.form.controls.substitutesFor.value.filter(
+      (id) => id !== templateId
+    );
+    this.form.controls.substitutesFor.setValue(currentSubstitutes);
   }
 
   getFieldError(fieldName: string): string {

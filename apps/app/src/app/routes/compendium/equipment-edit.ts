@@ -46,6 +46,7 @@ import { ConfirmationService } from '../../core/services/confirmation.service';
           <app-equipment-form
             [initialValue]="equipmentData()!"
             [isEditMode]="true"
+            [allEquipment]="store.equipments()"
             (formChange)="onFormChange($event)"
             (validChange)="onValidChange($event)"
           />

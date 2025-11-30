@@ -26,6 +26,7 @@ import { ConfirmationService } from '../../core/services/confirmation.service';
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <app-equipment-form
           [isEditMode]="false"
+          [allEquipment]="store.equipments()"
           (formChange)="onFormChange($event)"
           (validChange)="onValidChange($event)"
         />
