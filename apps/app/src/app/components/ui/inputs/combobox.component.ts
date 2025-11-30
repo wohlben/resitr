@@ -1,7 +1,7 @@
 import { Component, input, output, signal, computed, ElementRef, HostListener, inject, viewChildren, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputLabelComponent } from './input-label.component';
-import { IconButtonComponent } from '../icon-button.component';
+import { IconButtonComponent } from '../buttons/icon-button.component';
 import { SearchIndex } from '../../../shared/utils';
 
 export interface ComboboxOption {

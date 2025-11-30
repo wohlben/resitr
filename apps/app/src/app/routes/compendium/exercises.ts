@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ExercisesStore } from '../../features/exercises/exercises.store';
-import { PaginationComponent } from '../../components/ui/pagination.component';
-import { ExerciseCardComponent } from '../../components/ui/exercise-card.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { ExercisesFilterComponent } from '../../components/ui/exercises-filter.component';
-import { ButtonComponent } from '../../components/ui/button.component';
+import { PaginationComponent } from '../../components/ui/pagination/pagination.component';
+import { ExerciseCardComponent } from '../../components/ui/cards/exercise-card.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { ExercisesFilterComponent } from '../../components/ui/filters/exercises-filter.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 
 @Component({
   selector: 'app-exercises',

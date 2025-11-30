@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ConfirmationService } from '../../core/services/confirmation.service';
-import { ButtonComponent } from './button.component';
+import { ConfirmationService } from '../../../core/services/confirmation.service';
+import { ButtonComponent } from '../buttons/button.component';
 import { DialogComponent } from './dialog.component';
 
 @Component({

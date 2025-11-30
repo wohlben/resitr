@@ -1,7 +1,7 @@
 import { Component, input, forwardRef, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { ButtonComponent } from '../button.component';
+import { ButtonComponent } from '../buttons/button.component';
 import { InputLabelComponent } from './input-label.component';
 import { InputHintComponent } from './input-hint.component';
 import { InputErrorComponent } from './input-error.component';

@@ -2,12 +2,12 @@ import { Component, input, effect } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Muscle, MuscleLabels, ExerciseType, ExerciseTypeLabels, TechnicalDifficulty, TechnicalDifficultyLabels } from '@resitr/api';
-import { ExercisesStore } from '../../features/exercises/exercises.store';
-import { DropdownComponent } from './inputs/dropdown.component';
+import { ExercisesStore } from '../../../features/exercises/exercises.store';
+import { DropdownComponent } from '../inputs/dropdown.component';
 import { EntityFiltersComponent } from './entity-filters.component';
-import { EnumValuesPipe } from '../../shared/pipes/enum-values.pipe';
-import { ValueOptionsPipe } from '../../shared/pipes/value-options.pipe';
-import { isValidEnumValue } from '../../shared/utils/type-guards';
+import { EnumValuesPipe } from '../../../shared/pipes/enum-values.pipe';
+import { ValueOptionsPipe } from '../../../shared/pipes/value-options.pipe';
+import { isValidEnumValue } from '../../../shared/utils/type-guards';
 
 @Component({
   selector: 'app-exercises-filter',

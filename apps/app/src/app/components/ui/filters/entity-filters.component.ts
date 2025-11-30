@@ -1,5 +1,5 @@
 import { Component, input, output, model } from '@angular/core';
-import { ButtonComponent } from './button.component';
+import { ButtonComponent } from '../buttons/button.component';
 
 @Component({
   selector: 'app-entity-filters',

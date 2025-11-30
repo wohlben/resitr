@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ToastComponent } from './components/ui/toast.component';
-import { ConfirmationDialogComponent } from './components/ui/confirmation-dialog.component';
+import { ToastComponent } from './components/ui/feedback/toast.component';
+import { ConfirmationDialogComponent } from './components/ui/dialogs/confirmation-dialog.component';
 
 @Component({
   imports: [RouterOutlet, ToastComponent, ConfirmationDialogComponent],

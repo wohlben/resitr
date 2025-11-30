@@ -5,10 +5,10 @@ import { ExerciseGroupsStore } from '../../features/exercise-groups/exercise-gro
 import { ExerciseFormComponent } from '../../components/ui/forms/exercise-form.component';
 import { FormErrorSummaryComponent } from '../../components/ui/forms/form-error-summary.component';
 import { ConfirmDeleteDialogComponent } from '../../components/ui/forms/confirm-delete-dialog.component';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { SpinnerComponent } from '../../components/ui/spinner.component';
-import { ButtonComponent } from '../../components/ui/button.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { SpinnerComponent } from '../../components/ui/feedback/spinner.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 import { ComboboxComponent, ComboboxOption } from '../../components/ui/inputs/combobox.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import { SearchIndex } from '../../shared/utils';

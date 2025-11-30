@@ -3,11 +3,11 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ExerciseGroupsStore } from '../../features/exercise-groups/exercise-groups.store';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { DetailPageHeaderComponent } from '../../components/ui/detail-page-header.component';
-import { DetailFieldComponent } from '../../components/ui/detail-field.component';
-import { SpinnerComponent } from '../../components/ui/spinner.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
+import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
+import { SpinnerComponent } from '../../components/ui/feedback/spinner.component';
 
 @Component({
   selector: 'app-exercise-group-detail',

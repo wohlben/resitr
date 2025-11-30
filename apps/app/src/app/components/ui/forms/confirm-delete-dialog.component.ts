@@ -1,7 +1,7 @@
 import { Component, input, output } from '@angular/core';
-import { SpinnerComponent } from '../spinner.component';
-import { ButtonComponent } from '../button.component';
-import { DialogComponent } from '../dialog.component';
+import { SpinnerComponent } from '../feedback/spinner.component';
+import { ButtonComponent } from '../buttons/button.component';
+import { DialogComponent } from '../dialogs/dialog.component';
 
 @Component({
   selector: 'app-confirm-delete-dialog',

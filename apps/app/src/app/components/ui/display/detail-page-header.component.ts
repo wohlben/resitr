@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { ButtonComponent } from './button.component';
+import { ButtonComponent } from '../buttons/button.component';
 
 @Component({
   selector: 'app-detail-page-header',

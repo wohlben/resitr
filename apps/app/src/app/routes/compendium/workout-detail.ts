@@ -3,10 +3,10 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { WorkoutsStore } from '../../features/workouts/workouts.store';
 import { ExercisesStore } from '../../features/exercises/exercises.store';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { DetailPageHeaderComponent } from '../../components/ui/detail-page-header.component';
-import { DetailFieldComponent } from '../../components/ui/detail-field.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
+import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import { WorkoutSectionType, WorkoutSectionTypeLabels } from '@resitr/api';
 

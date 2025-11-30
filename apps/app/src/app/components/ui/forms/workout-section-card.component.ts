@@ -5,8 +5,8 @@ import { CdkDragDrop, CdkDropList, CdkDrag, CdkDragHandle, moveItemInArray } fro
 import type { ExerciseResponseDto } from '@resitr/api';
 import { WorkoutSectionType, WorkoutSectionTypeLabels, Muscle, MuscleLabels } from '@resitr/api';
 import { ComboboxComponent, ComboboxOption } from '../inputs/combobox.component';
-import { IconButtonComponent } from '../icon-button.component';
-import { ButtonGroupComponent, ButtonGroupOption } from '../button-group.component';
+import { IconButtonComponent } from '../buttons/icon-button.component';
+import { ButtonGroupComponent, ButtonGroupOption } from '../buttons/button-group.component';
 import { SearchIndex } from '../../../shared/utils';
 
 interface SectionConfig {

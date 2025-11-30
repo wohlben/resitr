@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ExerciseGroupsStore } from '../../features/exercise-groups/exercise-groups.store';
-import { PaginationComponent } from '../../components/ui/pagination.component';
-import { ExerciseGroupCardComponent } from '../../components/ui/exercise-group-card.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { ExerciseGroupsFilterComponent } from '../../components/ui/exercise-groups-filter.component';
-import { ButtonComponent } from '../../components/ui/button.component';
+import { PaginationComponent } from '../../components/ui/pagination/pagination.component';
+import { ExerciseGroupCardComponent } from '../../components/ui/cards/exercise-group-card.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { ExerciseGroupsFilterComponent } from '../../components/ui/filters/exercise-groups-filter.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 
 @Component({
   selector: 'app-exercise-groups',

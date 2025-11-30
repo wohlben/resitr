@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { EquipmentsStore } from '../../features/equipments/equipments.store';
-import { PaginationComponent } from '../../components/ui/pagination.component';
-import { EquipmentCardComponent } from '../../components/ui/equipment-card.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { EquipmentsFilterComponent } from '../../components/ui/equipments-filter.component';
-import { ButtonComponent } from '../../components/ui/button.component';
+import { PaginationComponent } from '../../components/ui/pagination/pagination.component';
+import { EquipmentCardComponent } from '../../components/ui/cards/equipment-card.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { EquipmentsFilterComponent } from '../../components/ui/filters/equipments-filter.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 
 @Component({
   selector: 'app-equipments',

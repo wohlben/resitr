@@ -1,9 +1,9 @@
 import { Component, input, output, effect } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { DropdownComponent } from './inputs/dropdown.component';
-import { ValueOptionsPipe } from '../../shared/pipes/value-options.pipe';
-import { safeNumberConversion } from '../../shared/utils/type-guards';
+import { DropdownComponent } from '../inputs/dropdown.component';
+import { ValueOptionsPipe } from '../../../shared/pipes/value-options.pipe';
+import { safeNumberConversion } from '../../../shared/utils/type-guards';
 
 @Component({
   selector: 'app-pagination-info',

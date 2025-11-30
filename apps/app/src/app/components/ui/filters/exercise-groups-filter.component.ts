@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { ExerciseGroupsStore } from '../../features/exercise-groups/exercise-groups.store';
+import { ExerciseGroupsStore } from '../../../features/exercise-groups/exercise-groups.store';
 import { EntityFiltersComponent } from './entity-filters.component';
 
 @Component({

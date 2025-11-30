@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import type { WorkoutResponseDto } from '@resitr/api';
 import { WorkoutSectionTypeLabels } from '@resitr/api';
 import { CardComponent } from './card.component';
-import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
+import { ValueLabelPipe } from '../../../shared/pipes/value-label.pipe';
 
 @Component({
   selector: 'app-workout-card',

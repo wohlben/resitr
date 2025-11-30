@@ -3,7 +3,7 @@ import { NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import type { ExerciseResponseDto } from '@resitr/api';
 import { MuscleLabels, ExerciseTypeLabels, TechnicalDifficultyLabels } from '@resitr/api';
-import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
+import { ValueLabelPipe } from '../../../shared/pipes/value-label.pipe';
 import { CardComponent } from './card.component';
 
 @Component({

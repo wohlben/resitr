@@ -1,6 +1,6 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { sanitizeImageUrl } from '../../shared/utils/sanitization';
+import { sanitizeImageUrl } from '../../../shared/utils/sanitization';
 
 @Component({
   selector: 'app-safe-image',

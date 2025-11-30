@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ExercisesStore } from '../../features/exercises/exercises.store';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { DetailPageHeaderComponent } from '../../components/ui/detail-page-header.component';
-import { DetailFieldComponent } from '../../components/ui/detail-field.component';
-import { TagListComponent } from '../../components/ui/tag-list.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
+import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
+import { TagListComponent } from '../../components/ui/display/tag-list.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import {
   ExerciseTypeLabels,
@@ -16,7 +16,7 @@ import {
   MeasurementParadigmLabels,
   ExerciseRelationshipTypeLabels,
 } from '@resitr/api';
-import { SpinnerComponent } from '../../components/ui/spinner.component';
+import { SpinnerComponent } from '../../components/ui/feedback/spinner.component';
 
 @Component({
   selector: 'app-exercise-detail',

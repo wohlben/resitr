@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MainNavigationComponent } from './main-navigation.component';
-import { ToastComponent } from '../components/ui/toast.component';
+import { ToastComponent } from '../components/ui/feedback/toast.component';
 
 @Component({
   selector: 'app-main-layout',

@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { WorkoutsStore } from '../../features/workouts/workouts.store';
-import { PaginationComponent } from '../../components/ui/pagination.component';
-import { WorkoutCardComponent } from '../../components/ui/workout-card.component';
-import { ErrorLoadingComponent } from '../../components/ui/error-loading.component';
-import { LoadingComponent } from '../../components/ui/loading.component';
-import { WorkoutsFilterComponent } from '../../components/ui/workouts-filter.component';
-import { ButtonComponent } from '../../components/ui/button.component';
+import { PaginationComponent } from '../../components/ui/pagination/pagination.component';
+import { WorkoutCardComponent } from '../../components/ui/cards/workout-card.component';
+import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
+import { LoadingComponent } from '../../components/ui/feedback/loading.component';
+import { WorkoutsFilterComponent } from '../../components/ui/filters/workouts-filter.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 
 @Component({
   selector: 'app-workouts',
