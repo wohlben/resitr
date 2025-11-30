@@ -15,7 +15,7 @@ export const WorkoutSectionTypeLabels = {
 export type WorkoutSectionItemTemplate = {
   id: string;
   sectionId: string;
-  exerciseSchemeId: string;
+  exerciseId: string;
   breakBetweenSets: number;
   breakAfter: number;
   createdBy: string;

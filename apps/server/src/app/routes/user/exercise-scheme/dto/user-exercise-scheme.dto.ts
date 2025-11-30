@@ -5,6 +5,7 @@ import {
   MeasurementType,
   type CreateUserExerciseSchemeDto as ICreateUserExerciseSchemeDto,
   type UpdateUserExerciseSchemeDto as IUpdateUserExerciseSchemeDto,
+  type UserExerciseSchemeResponseDto as IUserExerciseSchemeResponseDto,
   type AssignToSectionItemDto as IAssignToSectionItemDto,
   type UnassignFromSectionItemDto as IUnassignFromSectionItemDto,
 } from '@resitr/api';
@@ -128,7 +129,7 @@ export class UpdateUserExerciseSchemeDto implements IUpdateUserExerciseSchemeDto
   targetTime?: number;
 }
 
-export class UserExerciseSchemeResponseDto extends CreateUserExerciseSchemeDto {
+export class UserExerciseSchemeResponseDto extends CreateUserExerciseSchemeDto implements IUserExerciseSchemeResponseDto {
   @ApiProperty({ description: 'Exercise scheme ID' })
   @IsString()
   id!: string;

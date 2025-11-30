@@ -242,6 +242,7 @@ export function mockWorkoutSectionItem(
 ): CompendiumWorkoutSectionItem {
   return {
     sectionId: 'test-section-1',
+    exerciseId: 'test-exercise-1',
     orderIndex: 0,
     breakBetweenSets: 60,
     breakAfter: 120,

@@ -4,10 +4,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { type CreateExerciseGroupDto as CreateExerciseGroupDtoType, type ExerciseGroupResponseDto } from '@resitr/api';
 
 export class CreateExerciseGroupDto implements CreateExerciseGroupDtoType {
-  @ApiProperty({ description: 'Unique identifier for the exercise group' })
-  @IsString()
-  id!: string;
-
   @ApiProperty({ description: 'Name of the exercise group' })
   @IsString()
   name!: string;
@@ -19,6 +15,10 @@ export class CreateExerciseGroupDto implements CreateExerciseGroupDtoType {
 }
 
 export class CreateExerciseGroupResponseDto extends CreateExerciseGroupDto implements ExerciseGroupResponseDto {
+  @ApiProperty({ description: 'Unique identifier for the exercise group' })
+  @IsString()
+  id!: string;
+
   @ApiProperty({ description: 'User ID of the creator' })
   @IsString()
   createdBy!: string;

@@ -1,9 +1,17 @@
 import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsDate, IsEnum, IsInt, IsNumber, IsOptional, IsString, Min, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { WorkoutSectionType } from '../../../../core/persistence/schemas/compendium-workout-section.schema';
+import {
+  WorkoutSectionType,
+  type UpsertSetDto as IUpsertSetDto,
+  type UpsertSectionItemDto as IUpsertSectionItemDto,
+  type UpsertSectionDto as IUpsertSectionDto,
+  type UpsertWorkoutLogDto as IUpsertWorkoutLogDto,
+  type UpdateSetDto as IUpdateSetDto,
+  type SkipSetsDto as ISkipSetsDto,
+} from '@resitr/api';
 
-export class UpsertSetDto {
+export class UpsertSetDto implements IUpsertSetDto {
   @ApiProperty({ description: 'Set ID (for updates)', required: false })
   @IsOptional()
   @IsString()
@@ -64,7 +72,7 @@ export class UpsertSetDto {
   skipped?: boolean;
 }
 
-export class UpsertSectionItemDto {
+export class UpsertSectionItemDto implements IUpsertSectionItemDto {
   @ApiProperty({ description: 'Section item ID (for updates)', required: false })
   @IsOptional()
   @IsString()
@@ -99,7 +107,7 @@ export class UpsertSectionItemDto {
   sets!: UpsertSetDto[];
 }
 
-export class UpsertSectionDto {
+export class UpsertSectionDto implements IUpsertSectionDto {
   @ApiProperty({ description: 'Section ID (for updates)', required: false })
   @IsOptional()
   @IsString()
@@ -126,7 +134,7 @@ export class UpsertSectionDto {
   items!: UpsertSectionItemDto[];
 }
 
-export class UpsertWorkoutLogDto {
+export class UpsertWorkoutLogDto implements IUpsertWorkoutLogDto {
   @ApiProperty({ description: 'Workout log ID (for updates)', required: false })
   @IsOptional()
   @IsString()
@@ -159,7 +167,7 @@ export class UpsertWorkoutLogDto {
   sections!: UpsertSectionDto[];
 }
 
-export class UpdateSetDto {
+export class UpdateSetDto implements IUpdateSetDto {
   @ApiProperty({ description: 'Achieved number of repetitions', minimum: 0, required: false })
   @IsOptional()
   @IsInt()
@@ -181,7 +189,7 @@ export class UpdateSetDto {
   achievedDistance?: number;
 }
 
-export class SkipSetsDto {
+export class SkipSetsDto implements ISkipSetsDto {
   @ApiProperty({ description: 'List of set IDs to skip', type: [String] })
   @IsString({ each: true })
   setIds!: string[];
