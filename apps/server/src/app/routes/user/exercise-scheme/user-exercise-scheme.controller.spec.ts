@@ -334,12 +334,12 @@ describe('UserExerciseSchemeController', () => {
         const schemeId = 'scheme-1';
         const dto = {
           sectionItemId: 'section-item-1',
-          workoutTemplateId: 'workout-1',
+          userWorkoutId: 'user-workout-1',
         };
 
         const mockJoinData = {
           sectionItemId: dto.sectionItemId,
-          workoutTemplateId: dto.workoutTemplateId,
+          userWorkoutId: dto.userWorkoutId,
           userExerciseSchemeId: schemeId,
         };
 
@@ -351,7 +351,7 @@ describe('UserExerciseSchemeController', () => {
           userId,
           schemeId,
           dto.sectionItemId,
-          dto.workoutTemplateId
+          dto.userWorkoutId
         );
         expect(service.assignToSectionItem).toHaveBeenCalledTimes(1);
         expect(result).toEqual({ success: true, data: mockJoinData });
@@ -364,7 +364,7 @@ describe('UserExerciseSchemeController', () => {
         const schemeId = 'scheme-1';
         const dto = {
           sectionItemId: 'section-item-1',
-          workoutTemplateId: 'workout-1',
+          userWorkoutId: 'user-workout-1',
         };
 
         mockService.unassignFromSectionItem.mockResolvedValue(undefined);
@@ -375,7 +375,7 @@ describe('UserExerciseSchemeController', () => {
           userId,
           schemeId,
           dto.sectionItemId,
-          dto.workoutTemplateId
+          dto.userWorkoutId
         );
         expect(service.unassignFromSectionItem).toHaveBeenCalledTimes(1);
         expect(result).toEqual({ success: true });

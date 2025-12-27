@@ -138,8 +138,10 @@ CREATE TABLE `compendium_workout_section_items` (
 	`exercise_id` text NOT NULL,
 	`break_between_sets` integer NOT NULL,
 	`break_after` integer NOT NULL,
+	`forked_from` text,
 	`created_by` text NOT NULL,
 	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer,
 	FOREIGN KEY (`exercise_id`) REFERENCES `compendium_exercises`(`template_id`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint
@@ -148,12 +150,15 @@ CREATE TABLE `compendium_workout_sections` (
 	`type` text NOT NULL,
 	`name` text NOT NULL,
 	`workout_section_item_ids` text DEFAULT '[]' NOT NULL,
+	`forked_from` text,
 	`created_by` text NOT NULL,
-	`created_at` integer DEFAULT (unixepoch()) NOT NULL
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer
 );
 --> statement-breakpoint
 CREATE TABLE `compendium_workouts` (
 	`template_id` text PRIMARY KEY NOT NULL,
+	`workout_lineage_id` text NOT NULL,
 	`name` text NOT NULL,
 	`description` text,
 	`section_ids` text DEFAULT '[]' NOT NULL,
@@ -167,6 +172,7 @@ CREATE TABLE `user_workout_logs` (
 	`id` text PRIMARY KEY NOT NULL,
 	`original_workout_id` text,
 	`name` text NOT NULL,
+	`section_ids` text DEFAULT '[]' NOT NULL,
 	`started_at` integer NOT NULL,
 	`completed_at` integer,
 	`created_by` text NOT NULL,
@@ -191,35 +197,29 @@ CREATE INDEX `user_workout_schedules_user_day_idx` ON `user_workout_schedules` (
 CREATE UNIQUE INDEX `user_workout_schedules_user_workout_day_unique` ON `user_workout_schedules` (`user_id`,`workout_template_id`,`day_of_week`);--> statement-breakpoint
 CREATE TABLE `user_workout_log_sections` (
 	`id` text PRIMARY KEY NOT NULL,
-	`workout_log_id` text NOT NULL,
 	`name` text NOT NULL,
-	`order_index` integer NOT NULL,
 	`type` text NOT NULL,
+	`item_ids` text DEFAULT '[]' NOT NULL,
 	`completed_at` integer,
 	`created_by` text NOT NULL,
-	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
-	FOREIGN KEY (`workout_log_id`) REFERENCES `user_workout_logs`(`id`) ON UPDATE no action ON DELETE cascade
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `user_workout_log_section_items` (
 	`id` text PRIMARY KEY NOT NULL,
-	`section_id` text NOT NULL,
 	`exercise_id` text NOT NULL,
 	`name` text NOT NULL,
-	`order_index` integer NOT NULL,
 	`rest_between_sets` integer NOT NULL,
 	`break_after` integer NOT NULL,
+	`set_ids` text DEFAULT '[]' NOT NULL,
 	`completed_at` integer,
 	`created_by` text NOT NULL,
 	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
-	FOREIGN KEY (`section_id`) REFERENCES `user_workout_log_sections`(`id`) ON UPDATE no action ON DELETE cascade,
 	FOREIGN KEY (`exercise_id`) REFERENCES `compendium_exercises`(`template_id`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint
 CREATE TABLE `user_workout_log_sets` (
 	`id` text PRIMARY KEY NOT NULL,
-	`item_id` text NOT NULL,
-	`order_index` integer NOT NULL,
 	`target_reps` integer,
 	`achieved_reps` integer,
 	`target_weight` real,
@@ -231,8 +231,7 @@ CREATE TABLE `user_workout_log_sets` (
 	`completed_at` integer,
 	`skipped` integer DEFAULT false,
 	`created_by` text NOT NULL,
-	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
-	FOREIGN KEY (`item_id`) REFERENCES `user_workout_log_section_items`(`id`) ON UPDATE no action ON DELETE cascade
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE `user_exercise_schemes` (
@@ -259,12 +258,24 @@ CREATE INDEX `user_exercise_schemes_exercise_id_idx` ON `user_exercise_schemes` 
 CREATE INDEX `user_exercise_schemes_user_exercise_idx` ON `user_exercise_schemes` (`user_id`,`exercise_id`);--> statement-breakpoint
 CREATE TABLE `user_exercise_scheme_compendium_workout_section_items` (
 	`section_item_id` text NOT NULL,
-	`workout_template_id` text NOT NULL,
+	`user_workout_id` text NOT NULL,
 	`user_exercise_scheme_id` text NOT NULL,
-	PRIMARY KEY(`section_item_id`, `workout_template_id`, `user_exercise_scheme_id`),
+	PRIMARY KEY(`section_item_id`, `user_workout_id`, `user_exercise_scheme_id`),
 	FOREIGN KEY (`section_item_id`) REFERENCES `compendium_workout_section_items`(`id`) ON UPDATE no action ON DELETE cascade,
-	FOREIGN KEY (`workout_template_id`) REFERENCES `compendium_workouts`(`template_id`) ON UPDATE no action ON DELETE cascade,
+	FOREIGN KEY (`user_workout_id`) REFERENCES `user_workouts`(`id`) ON UPDATE no action ON DELETE cascade,
 	FOREIGN KEY (`user_exercise_scheme_id`) REFERENCES `user_exercise_schemes`(`id`) ON UPDATE no action ON DELETE cascade
 );
 --> statement-breakpoint
-CREATE INDEX `user_exercise_scheme_compendium_workout_section_items_workout_template_idx` ON `user_exercise_scheme_compendium_workout_section_items` (`workout_template_id`);
+CREATE INDEX `user_exercise_scheme_compendium_workout_section_items_user_workout_idx` ON `user_exercise_scheme_compendium_workout_section_items` (`user_workout_id`);--> statement-breakpoint
+CREATE TABLE `user_workouts` (
+	`id` text PRIMARY KEY NOT NULL,
+	`user_id` text NOT NULL,
+	`workout_template_id` text NOT NULL,
+	`created_at` integer DEFAULT (unixepoch()) NOT NULL,
+	`updated_at` integer,
+	FOREIGN KEY (`workout_template_id`) REFERENCES `compendium_workouts`(`template_id`) ON UPDATE no action ON DELETE restrict
+);
+--> statement-breakpoint
+CREATE INDEX `user_workouts_user_id_idx` ON `user_workouts` (`user_id`);--> statement-breakpoint
+CREATE INDEX `user_workouts_workout_template_id_idx` ON `user_workouts` (`workout_template_id`);--> statement-breakpoint
+CREATE UNIQUE INDEX `user_workouts_user_workout_unique` ON `user_workouts` (`user_id`,`workout_template_id`);

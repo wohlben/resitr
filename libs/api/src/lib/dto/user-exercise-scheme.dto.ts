@@ -32,10 +32,10 @@ export type UserExerciseSchemeResponseDto = UserExerciseScheme;
 
 export type AssignToSectionItemDto = {
   sectionItemId: string;
-  workoutTemplateId: string;
+  userWorkoutId: string;
 };
 
 export type UnassignFromSectionItemDto = {
   sectionItemId: string;
-  workoutTemplateId: string;
+  userWorkoutId: string;
 };

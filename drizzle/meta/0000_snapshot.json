@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "5fa19fee-1a45-468a-86a6-88ca0ab557fa",
+  "id": "41cbce62-d207-408c-8f08-295614dced36",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "compendium_equipment_fulfillment": {
@@ -953,6 +953,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "forked_from": {
+          "name": "forked_from",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "created_by": {
           "name": "created_by",
           "type": "text",
@@ -967,6 +974,13 @@
           "notNull": true,
           "autoincrement": false,
           "default": "(unixepoch())"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
         }
       },
       "indexes": {},
@@ -1021,6 +1035,13 @@
           "autoincrement": false,
           "default": "'[]'"
         },
+        "forked_from": {
+          "name": "forked_from",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
         "created_by": {
           "name": "created_by",
           "type": "text",
@@ -1035,6 +1056,13 @@
           "notNull": true,
           "autoincrement": false,
           "default": "(unixepoch())"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
         }
       },
       "indexes": {},
@@ -1050,6 +1078,13 @@
           "name": "template_id",
           "type": "text",
           "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "workout_lineage_id": {
+          "name": "workout_lineage_id",
+          "type": "text",
+          "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
@@ -1134,6 +1169,14 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "section_ids": {
+          "name": "section_ids",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'[]'"
         },
         "started_at": {
           "name": "started_at",
@@ -1302,23 +1345,9 @@
           "notNull": true,
           "autoincrement": false
         },
-        "workout_log_id": {
-          "name": "workout_log_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
         "name": {
           "name": "name",
           "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "order_index": {
-          "name": "order_index",
-          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -1329,6 +1358,14 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
+        },
+        "item_ids": {
+          "name": "item_ids",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'[]'"
         },
         "completed_at": {
           "name": "completed_at",
@@ -1354,21 +1391,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "user_workout_log_sections_workout_log_id_user_workout_logs_id_fk": {
-          "name": "user_workout_log_sections_workout_log_id_user_workout_logs_id_fk",
-          "tableFrom": "user_workout_log_sections",
-          "tableTo": "user_workout_logs",
-          "columnsFrom": [
-            "workout_log_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "checkConstraints": {}
@@ -1383,13 +1406,6 @@
           "notNull": true,
           "autoincrement": false
         },
-        "section_id": {
-          "name": "section_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
         "exercise_id": {
           "name": "exercise_id",
           "type": "text",
@@ -1400,13 +1416,6 @@
         "name": {
           "name": "name",
           "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "order_index": {
-          "name": "order_index",
-          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -1425,6 +1434,14 @@
           "notNull": true,
           "autoincrement": false
         },
+        "set_ids": {
+          "name": "set_ids",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "'[]'"
+        },
         "completed_at": {
           "name": "completed_at",
           "type": "integer",
@@ -1450,19 +1467,6 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_workout_log_section_items_section_id_user_workout_log_sections_id_fk": {
-          "name": "user_workout_log_section_items_section_id_user_workout_log_sections_id_fk",
-          "tableFrom": "user_workout_log_section_items",
-          "tableTo": "user_workout_log_sections",
-          "columnsFrom": [
-            "section_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        },
         "user_workout_log_section_items_exercise_id_compendium_exercises_template_id_fk": {
           "name": "user_workout_log_section_items_exercise_id_compendium_exercises_template_id_fk",
           "tableFrom": "user_workout_log_section_items",
@@ -1488,20 +1492,6 @@
           "name": "id",
           "type": "text",
           "primaryKey": true,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "item_id": {
-          "name": "item_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "order_index": {
-          "name": "order_index",
-          "type": "integer",
-          "primaryKey": false,
           "notNull": true,
           "autoincrement": false
         },
@@ -1593,21 +1583,7 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {
-        "user_workout_log_sets_item_id_user_workout_log_section_items_id_fk": {
-          "name": "user_workout_log_sets_item_id_user_workout_log_section_items_id_fk",
-          "tableFrom": "user_workout_log_sets",
-          "tableTo": "user_workout_log_section_items",
-          "columnsFrom": [
-            "item_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "cascade",
-          "onUpdate": "no action"
-        }
-      },
+      "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "checkConstraints": {}
@@ -1775,8 +1751,8 @@
           "notNull": true,
           "autoincrement": false
         },
-        "workout_template_id": {
-          "name": "workout_template_id",
+        "user_workout_id": {
+          "name": "user_workout_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -1791,10 +1767,10 @@
         }
       },
       "indexes": {
-        "user_exercise_scheme_compendium_workout_section_items_workout_template_idx": {
-          "name": "user_exercise_scheme_compendium_workout_section_items_workout_template_idx",
+        "user_exercise_scheme_compendium_workout_section_items_user_workout_idx": {
+          "name": "user_exercise_scheme_compendium_workout_section_items_user_workout_idx",
           "columns": [
-            "workout_template_id"
+            "user_workout_id"
           ],
           "isUnique": false
         }
@@ -1813,15 +1789,15 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "user_exercise_scheme_compendium_workout_section_items_workout_template_id_compendium_workouts_template_id_fk": {
-          "name": "user_exercise_scheme_compendium_workout_section_items_workout_template_id_compendium_workouts_template_id_fk",
+        "user_exercise_scheme_compendium_workout_section_items_user_workout_id_user_workouts_id_fk": {
+          "name": "user_exercise_scheme_compendium_workout_section_items_user_workout_id_user_workouts_id_fk",
           "tableFrom": "user_exercise_scheme_compendium_workout_section_items",
-          "tableTo": "compendium_workouts",
+          "tableTo": "user_workouts",
           "columnsFrom": [
-            "workout_template_id"
+            "user_workout_id"
           ],
           "columnsTo": [
-            "template_id"
+            "id"
           ],
           "onDelete": "cascade",
           "onUpdate": "no action"
@@ -1841,15 +1817,98 @@
         }
       },
       "compositePrimaryKeys": {
-        "user_exercise_scheme_compendium_workout_section_items_section_item_id_workout_template_id_user_exercise_scheme_id_pk": {
+        "user_exercise_scheme_compendium_workout_section_items_section_item_id_user_workout_id_user_exercise_scheme_id_pk": {
           "columns": [
             "section_item_id",
-            "workout_template_id",
+            "user_workout_id",
             "user_exercise_scheme_id"
           ],
-          "name": "user_exercise_scheme_compendium_workout_section_items_section_item_id_workout_template_id_user_exercise_scheme_id_pk"
+          "name": "user_exercise_scheme_compendium_workout_section_items_section_item_id_user_workout_id_user_exercise_scheme_id_pk"
         }
       },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "user_workouts": {
+      "name": "user_workouts",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "workout_template_id": {
+          "name": "workout_template_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(unixepoch())"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {
+        "user_workouts_user_id_idx": {
+          "name": "user_workouts_user_id_idx",
+          "columns": [
+            "user_id"
+          ],
+          "isUnique": false
+        },
+        "user_workouts_workout_template_id_idx": {
+          "name": "user_workouts_workout_template_id_idx",
+          "columns": [
+            "workout_template_id"
+          ],
+          "isUnique": false
+        },
+        "user_workouts_user_workout_unique": {
+          "name": "user_workouts_user_workout_unique",
+          "columns": [
+            "user_id",
+            "workout_template_id"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {
+        "user_workouts_workout_template_id_compendium_workouts_template_id_fk": {
+          "name": "user_workouts_workout_template_id_compendium_workouts_template_id_fk",
+          "tableFrom": "user_workouts",
+          "tableTo": "compendium_workouts",
+          "columnsFrom": [
+            "workout_template_id"
+          ],
+          "columnsTo": [
+            "template_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "checkConstraints": {}
     }

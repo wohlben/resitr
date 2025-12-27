@@ -155,9 +155,9 @@ export class AssignToSectionItemDto implements IAssignToSectionItemDto {
   @IsString()
   sectionItemId!: string;
 
-  @ApiProperty({ description: 'Workout template ID containing the section item' })
+  @ApiProperty({ description: 'User workout ID containing the section item' })
   @IsString()
-  workoutTemplateId!: string;
+  userWorkoutId!: string;
 }
 
 export class UnassignFromSectionItemDto implements IUnassignFromSectionItemDto {
@@ -165,7 +165,7 @@ export class UnassignFromSectionItemDto implements IUnassignFromSectionItemDto {
   @IsString()
   sectionItemId!: string;
 
-  @ApiProperty({ description: 'Workout template ID containing the section item' })
+  @ApiProperty({ description: 'User workout ID containing the section item' })
   @IsString()
-  workoutTemplateId!: string;
+  userWorkoutId!: string;
 }

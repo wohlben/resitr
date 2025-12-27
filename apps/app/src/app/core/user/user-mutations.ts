@@ -5,6 +5,8 @@ import type {
   UpdateSetDto,
   SkipSetsDto,
   WorkoutLogResponseDto,
+  CreateUserWorkoutDto,
+  UserWorkoutResponseDto,
   CreateUserWorkoutScheduleDto,
   UpdateUserWorkoutScheduleDto,
   UserWorkoutScheduleResponseDto,
@@ -23,6 +25,13 @@ export const UserMutations = {
       lastValueFrom(client.post<WorkoutLogResponseDto>(`/api/user/workout-logs/sets/${setId}/complete`, data)),
     skipSets: (client: HttpClient, data: SkipSetsDto) =>
       lastValueFrom(client.post<void>('/api/user/workout-logs/sets/skip', data)),
+  },
+
+  workout: {
+    create: (client: HttpClient, data: CreateUserWorkoutDto) =>
+      lastValueFrom(client.post<UserWorkoutResponseDto>('/api/user/workout', data)),
+    delete: (client: HttpClient, id: string) =>
+      lastValueFrom(client.delete<void>(`/api/user/workout/${id}`)),
   },
 
   workoutSchedule: {

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import type {
   WorkoutLogResponseDto,
+  UserWorkoutResponseDto,
   UserWorkoutScheduleResponseDto,
   UserExerciseSchemeResponseDto,
 } from '@resitr/api';
@@ -12,6 +13,18 @@ export const UserQueries = {
     detail: (id: string) => ({
       key: `user-workout-log-detail-${id}`,
       fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutLogResponseDto>(`/api/user/workout-logs/${id}`))
+    }),
+  },
+
+  // User Workout
+  workout: {
+    list: {
+      key: 'user-workouts',
+      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutResponseDto[]>('/api/user/workout'))
+    },
+    detail: (id: string) => ({
+      key: `user-workout-detail-${id}`,
+      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutResponseDto>(`/api/user/workout/${id}`))
     }),
   },
 

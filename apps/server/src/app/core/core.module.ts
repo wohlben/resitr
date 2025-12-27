@@ -17,6 +17,7 @@ import { UserWorkoutLogSectionItemRepository } from './persistence/repositories/
 import { UserWorkoutLogSetRepository } from './persistence/repositories/user-workout-log-set.repository';
 import { UserWorkoutScheduleRepository } from './persistence/repositories/user-workout-schedule.repository';
 import { UserExerciseSchemeRepository } from './persistence/repositories/user-exercise-scheme.repository';
+import { UserWorkoutRepository } from './persistence/repositories/user-workout.repository';
 import { provideDatabase } from './persistence/database';
 import { CompendiumExerciseService } from './compendium/exercise/compendium-exercise.service';
 import { CompendiumExerciseRelationshipService } from './compendium/exercise-relationship/compendium-exercise-relationship.service';
@@ -28,6 +29,7 @@ import { CompendiumWorkoutService } from './compendium/workout/compendium-workou
 import { UserWorkoutLogService } from './user/workout-log/user-workout-log.service';
 import { UserWorkoutScheduleService } from './user/workout-schedule/user-workout-schedule.service';
 import { UserExerciseSchemeService } from './user/exercise-scheme/user-exercise-scheme.service';
+import { UserWorkoutService } from './user/workout/user-workout.service';
 
 @Module({
   providers: [
@@ -50,6 +52,7 @@ import { UserExerciseSchemeService } from './user/exercise-scheme/user-exercise-
     UserWorkoutLogSetRepository,
     UserWorkoutScheduleRepository,
     UserExerciseSchemeRepository,
+    UserWorkoutRepository,
     CompendiumExerciseService,
     CompendiumExerciseRelationshipService,
     CompendiumExerciseGroupService,
@@ -60,6 +63,7 @@ import { UserExerciseSchemeService } from './user/exercise-scheme/user-exercise-
     UserWorkoutLogService,
     UserWorkoutScheduleService,
     UserExerciseSchemeService,
+    UserWorkoutService,
   ],
   exports: [
     CompendiumEquipmentService,
@@ -73,6 +77,7 @@ import { UserExerciseSchemeService } from './user/exercise-scheme/user-exercise-
     UserWorkoutLogService,
     UserWorkoutScheduleService,
     UserExerciseSchemeService,
+    UserWorkoutService,
   ],
 })
 export class CoreModule { }

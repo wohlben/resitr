@@ -329,7 +329,7 @@ describe('UserExerciseSchemeService', () => {
       it('should assign scheme to section item when user owns the scheme', async () => {
         const joinData = {
           sectionItemId: 'section-item-1',
-          workoutTemplateId: 'workout-1',
+          userWorkoutId: 'user-workout-1',
           userExerciseSchemeId: 'scheme-1',
         };
 
@@ -340,13 +340,13 @@ describe('UserExerciseSchemeService', () => {
           'user-1',
           'scheme-1',
           'section-item-1',
-          'workout-1'
+          'user-workout-1'
         );
 
         expect(mockRepository.findById).toHaveBeenCalledWith('scheme-1');
         expect(mockRepository.assignToSectionItem).toHaveBeenCalledWith({
           sectionItemId: 'section-item-1',
-          workoutTemplateId: 'workout-1',
+          userWorkoutId: 'user-workout-1',
           userExerciseSchemeId: 'scheme-1',
         });
         expect(result).toEqual(joinData);
@@ -356,7 +356,7 @@ describe('UserExerciseSchemeService', () => {
         mockRepository.findById.mockResolvedValue(undefined);
 
         await expect(
-          service.assignToSectionItem('user-1', 'scheme-1', 'section-item-1', 'workout-1')
+          service.assignToSectionItem('user-1', 'scheme-1', 'section-item-1', 'user-workout-1')
         ).rejects.toThrow(NotFoundException);
       });
 
@@ -364,7 +364,7 @@ describe('UserExerciseSchemeService', () => {
         mockRepository.findById.mockResolvedValue(mockScheme);
 
         await expect(
-          service.assignToSectionItem('user-2', 'scheme-1', 'section-item-1', 'workout-1')
+          service.assignToSectionItem('user-2', 'scheme-1', 'section-item-1', 'user-workout-1')
         ).rejects.toThrow(NotFoundException);
 
         expect(mockRepository.assignToSectionItem).not.toHaveBeenCalled();
@@ -380,13 +380,13 @@ describe('UserExerciseSchemeService', () => {
           'user-1',
           'scheme-1',
           'section-item-1',
-          'workout-1'
+          'user-workout-1'
         );
 
         expect(mockRepository.findById).toHaveBeenCalledWith('scheme-1');
         expect(mockRepository.unassignFromSectionItem).toHaveBeenCalledWith(
           'section-item-1',
-          'workout-1',
+          'user-workout-1',
           'scheme-1'
         );
       });
@@ -395,7 +395,7 @@ describe('UserExerciseSchemeService', () => {
         mockRepository.findById.mockResolvedValue(undefined);
 
         await expect(
-          service.unassignFromSectionItem('user-1', 'scheme-1', 'section-item-1', 'workout-1')
+          service.unassignFromSectionItem('user-1', 'scheme-1', 'section-item-1', 'user-workout-1')
         ).rejects.toThrow(NotFoundException);
       });
 
@@ -403,7 +403,7 @@ describe('UserExerciseSchemeService', () => {
         mockRepository.findById.mockResolvedValue(mockScheme);
 
         await expect(
-          service.unassignFromSectionItem('user-2', 'scheme-1', 'section-item-1', 'workout-1')
+          service.unassignFromSectionItem('user-2', 'scheme-1', 'section-item-1', 'user-workout-1')
         ).rejects.toThrow(NotFoundException);
 
         expect(mockRepository.unassignFromSectionItem).not.toHaveBeenCalled();

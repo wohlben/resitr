@@ -81,7 +81,7 @@ export class UserExerciseSchemeRepository {
 
   async unassignFromSectionItem(
     sectionItemId: string,
-    workoutTemplateId: string,
+    userWorkoutId: string,
     userExerciseSchemeId: string
   ): Promise<void> {
     await this.db
@@ -89,7 +89,7 @@ export class UserExerciseSchemeRepository {
       .where(
         and(
           eq(userExerciseSchemeCompendiumWorkoutSectionItems.sectionItemId, sectionItemId),
-          eq(userExerciseSchemeCompendiumWorkoutSectionItems.workoutTemplateId, workoutTemplateId),
+          eq(userExerciseSchemeCompendiumWorkoutSectionItems.userWorkoutId, userWorkoutId),
           eq(userExerciseSchemeCompendiumWorkoutSectionItems.userExerciseSchemeId, userExerciseSchemeId)
         )
       );

@@ -93,13 +93,13 @@ export class UserExerciseSchemeService {
     userId: string,
     schemeId: string,
     sectionItemId: string,
-    workoutTemplateId: string
+    userWorkoutId: string
   ): Promise<UserExerciseSchemeCompendiumWorkoutSectionItem> {
     await this.getSchemeById(userId, schemeId);
 
     return this.schemeRepository.assignToSectionItem({
       sectionItemId,
-      workoutTemplateId,
+      userWorkoutId,
       userExerciseSchemeId: schemeId,
     });
   }
@@ -108,14 +108,14 @@ export class UserExerciseSchemeService {
     userId: string,
     schemeId: string,
     sectionItemId: string,
-    workoutTemplateId: string
+    userWorkoutId: string
   ): Promise<void> {
     // Verify the scheme belongs to the user
     await this.getSchemeById(userId, schemeId);
 
     await this.schemeRepository.unassignFromSectionItem(
       sectionItemId,
-      workoutTemplateId,
+      userWorkoutId,
       schemeId
     );
   }

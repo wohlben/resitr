@@ -1,1 +1,0 @@
-ALTER TABLE `compendium_workouts` ADD `workout_lineage_id` text NOT NULL;

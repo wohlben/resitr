@@ -5,36 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1766829718164,
-      "tag": "0000_adorable_boomer",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1766831226045,
-      "tag": "0001_third_bloodaxe",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "6",
-      "when": 1766834965979,
-      "tag": "0002_fluffy_blue_marvel",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "6",
-      "when": 1766837472030,
-      "tag": "0003_gorgeous_owl",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "6",
-      "when": 1766838000000,
-      "tag": "0004_workout_log_id_arrays",
+      "when": 1766856659629,
+      "tag": "0000_unusual_morg",
       "breakpoints": true
     }
   ]

@@ -114,7 +114,7 @@ export class UserExerciseSchemeController {
       userId,
       schemeId,
       dto.sectionItemId,
-      dto.workoutTemplateId
+      dto.userWorkoutId
     );
     return { success: true, data: result };
   }
@@ -133,7 +133,7 @@ export class UserExerciseSchemeController {
       userId,
       schemeId,
       dto.sectionItemId,
-      dto.workoutTemplateId
+      dto.userWorkoutId
     );
     return { success: true };
   }

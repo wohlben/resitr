@@ -4,8 +4,9 @@ import { CompendiumExerciseRepository } from './compendium-exercise.repository';
 import { CompendiumWorkoutRepository } from './compendium-workout.repository';
 import { CompendiumWorkoutSectionRepository } from './compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from './compendium-workout-section-item.repository';
+import { UserWorkoutRepository } from './user-workout.repository';
 import { provideTestDatabase } from '../database';
-import { mockExercise, mockUserExerciseScheme, mockWorkout, mockWorkoutSection, mockWorkoutSectionItem } from '../test-factories';
+import { mockExercise, mockUserExerciseScheme, mockWorkout, mockWorkoutSection, mockWorkoutSectionItem, mockUserWorkout } from '../test-factories';
 import type { CompendiumExercise } from '../schemas/compendium-exercise.schema';
 import { MeasurementType } from '@resitr/api';
 
@@ -16,6 +17,7 @@ describe('UserExerciseSchemeRepository', () => {
   let workoutRepository: CompendiumWorkoutRepository;
   let sectionRepository: CompendiumWorkoutSectionRepository;
   let sectionItemRepository: CompendiumWorkoutSectionItemRepository;
+  let userWorkoutRepository: UserWorkoutRepository;
   let testExercise1: CompendiumExercise;
   let testExercise2: CompendiumExercise;
 
@@ -28,6 +30,7 @@ describe('UserExerciseSchemeRepository', () => {
         CompendiumWorkoutRepository,
         CompendiumWorkoutSectionRepository,
         CompendiumWorkoutSectionItemRepository,
+        UserWorkoutRepository,
       ],
     }).compile();
 
@@ -36,6 +39,7 @@ describe('UserExerciseSchemeRepository', () => {
     workoutRepository = module.get<CompendiumWorkoutRepository>(CompendiumWorkoutRepository);
     sectionRepository = module.get<CompendiumWorkoutSectionRepository>(CompendiumWorkoutSectionRepository);
     sectionItemRepository = module.get<CompendiumWorkoutSectionItemRepository>(CompendiumWorkoutSectionItemRepository);
+    userWorkoutRepository = module.get<UserWorkoutRepository>(UserWorkoutRepository);
 
     // Create prerequisite test exercises
     testExercise1 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-1', name: 'Squat' }));
@@ -401,6 +405,7 @@ describe('UserExerciseSchemeRepository', () => {
   describe('join table operations', () => {
     let scheme: any;
     let workout: any;
+    let userWorkout: any;
     let section: any;
     let sectionItem: any;
 
@@ -436,19 +441,27 @@ describe('UserExerciseSchemeRepository', () => {
           sectionIds: [section.id],
         })
       );
+
+      // Create user workout (user's reference to the compendium workout)
+      userWorkout = await userWorkoutRepository.create(
+        mockUserWorkout({
+          userId: 'test-user',
+          workoutTemplateId: workout.templateId,
+        })
+      );
     });
 
     describe('assignToSectionItem', () => {
       it('should assign scheme to section item', async () => {
         const result = await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
         expect(result).toMatchObject({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
       });
@@ -456,14 +469,14 @@ describe('UserExerciseSchemeRepository', () => {
       it('should fail when assigning duplicate', async () => {
         await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
         await expect(
           repository.assignToSectionItem({
             sectionItemId: sectionItem.id,
-            workoutTemplateId: workout.templateId,
+            userWorkoutId: userWorkout.id,
             userExerciseSchemeId: scheme.id,
           })
         ).rejects.toThrow();
@@ -474,13 +487,13 @@ describe('UserExerciseSchemeRepository', () => {
       it('should unassign scheme from section item', async () => {
         await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
         await repository.unassignFromSectionItem(
           sectionItem.id,
-          workout.templateId,
+          userWorkout.id,
           scheme.id
         );
 
@@ -503,7 +516,7 @@ describe('UserExerciseSchemeRepository', () => {
       it('should find all section item assignments for a scheme', async () => {
         await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
@@ -512,7 +525,7 @@ describe('UserExerciseSchemeRepository', () => {
         expect(assignments).toHaveLength(1);
         expect(assignments[0]).toMatchObject({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
       });
@@ -534,13 +547,13 @@ describe('UserExerciseSchemeRepository', () => {
 
         await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
         await repository.assignToSectionItem({
           sectionItemId: sectionItem2.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
@@ -553,7 +566,7 @@ describe('UserExerciseSchemeRepository', () => {
       it('should delete join table entries when scheme is deleted', async () => {
         await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
@@ -566,11 +579,24 @@ describe('UserExerciseSchemeRepository', () => {
       it('should delete join table entries when section item is deleted', async () => {
         await repository.assignToSectionItem({
           sectionItemId: sectionItem.id,
-          workoutTemplateId: workout.templateId,
+          userWorkoutId: userWorkout.id,
           userExerciseSchemeId: scheme.id,
         });
 
         await sectionItemRepository.delete(sectionItem.id);
+
+        const assignments = await repository.findSectionItemAssignments(scheme.id);
+        expect(assignments).toHaveLength(0);
+      });
+
+      it('should delete join table entries when user workout is deleted', async () => {
+        await repository.assignToSectionItem({
+          sectionItemId: sectionItem.id,
+          userWorkoutId: userWorkout.id,
+          userExerciseSchemeId: scheme.id,
+        });
+
+        await userWorkoutRepository.delete(userWorkout.id);
 
         const assignments = await repository.findSectionItemAssignments(scheme.id);
         expect(assignments).toHaveLength(0);

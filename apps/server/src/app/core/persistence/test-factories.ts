@@ -22,6 +22,7 @@ import type { CompendiumWorkoutSection } from './schemas/compendium-workout-sect
 import type { CompendiumWorkoutSectionItem } from './schemas/compendium-workout-section-item.schema';
 import type { UserWorkoutSchedule } from './schemas/user-workout-schedule.schema';
 import type { NewUserExerciseScheme } from './schemas/user-exercise-scheme.schema';
+import type { NewUserWorkout } from './schemas/user-workout.schema';
 import {
   ExerciseType,
   ForceType,
@@ -294,4 +295,19 @@ export function mockUserExerciseScheme(
     targetTime: null,
     ...overrides,
   } satisfies NewUserExerciseScheme;
+}
+
+/**
+ * Creates a mock UserWorkout with sensible defaults.
+ * Override any fields by passing a partial object.
+ * Note: id is omitted to allow database auto-generation
+ */
+export function mockUserWorkout(
+  overrides: Partial<NewUserWorkout> = {}
+): NewUserWorkout {
+  return {
+    userId: 'test-user',
+    workoutTemplateId: 'test-workout-1',
+    ...overrides,
+  };
 }

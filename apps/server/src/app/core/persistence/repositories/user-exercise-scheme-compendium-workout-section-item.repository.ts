@@ -23,20 +23,20 @@ export class UserExerciseSchemeCompendiumWorkoutSectionItemRepository {
       .where(eq(userExerciseSchemeCompendiumWorkoutSectionItems.sectionItemId, sectionItemId));
   }
 
-  async findByWorkoutTemplateId(workoutTemplateId: string) {
+  async findByUserWorkoutId(userWorkoutId: string) {
     return await this.db
       .select()
       .from(userExerciseSchemeCompendiumWorkoutSectionItems)
-      .where(eq(userExerciseSchemeCompendiumWorkoutSectionItems.workoutTemplateId, workoutTemplateId));
+      .where(eq(userExerciseSchemeCompendiumWorkoutSectionItems.userWorkoutId, userWorkoutId));
   }
 
-  async delete(sectionItemId: string, workoutTemplateId: string, userExerciseSchemeId: string) {
+  async delete(sectionItemId: string, userWorkoutId: string, userExerciseSchemeId: string) {
     const result = await this.db
       .delete(userExerciseSchemeCompendiumWorkoutSectionItems)
       .where(
         and(
           eq(userExerciseSchemeCompendiumWorkoutSectionItems.sectionItemId, sectionItemId),
-          eq(userExerciseSchemeCompendiumWorkoutSectionItems.workoutTemplateId, workoutTemplateId),
+          eq(userExerciseSchemeCompendiumWorkoutSectionItems.userWorkoutId, userWorkoutId),
           eq(userExerciseSchemeCompendiumWorkoutSectionItems.userExerciseSchemeId, userExerciseSchemeId)
         )
       )
