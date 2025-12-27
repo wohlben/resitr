@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { confirmUnsavedChanges } from './unsaved-changes.guard';
+import { confirmUnsavedChanges, hasFormChanges } from './unsaved-changes.guard';
 import { ConfirmationService } from '../services/confirmation.service';
 
 describe('unsaved-changes.guard', () => {
@@ -242,6 +242,125 @@ describe('unsaved-changes.guard', () => {
           newValue: 'New Section',
         });
       });
+
+      it('should ignore fields that only exist in oldData (not part of payload)', () => {
+        confirmUnsavedChanges(
+          confirmationService,
+          { name: 'Test', createdBy: 'user-123', createdAt: '2024-01-01' },
+          { name: 'Test Changed' }
+        );
+
+        const changes = confirmationService.changes();
+        const fieldNames = changes.map(c => c.field);
+
+        expect(fieldNames).toContain('Name');
+        expect(fieldNames).not.toContain('CreatedBy');
+        expect(fieldNames).not.toContain('CreatedAt');
+        expect(changes.length).toBe(1);
+      });
+
+      it('should ignore fields with undefined value in newData', () => {
+        confirmUnsavedChanges(
+          confirmationService,
+          { name: 'Test', description: 'Old desc' },
+          { name: 'Test Changed', description: undefined }
+        );
+
+        const changes = confirmationService.changes();
+        const fieldNames = changes.map(c => c.field);
+
+        expect(fieldNames).toContain('Name');
+        expect(fieldNames).not.toContain('Description');
+        expect(changes.length).toBe(1);
+      });
+
+      it('should include fields with null value in newData', () => {
+        confirmUnsavedChanges(
+          confirmationService,
+          { name: 'Test', description: 'Old desc' },
+          { name: 'Test', description: null as unknown as string }
+        );
+
+        const changes = confirmationService.changes();
+
+        expect(changes).toContainEqual({
+          field: 'Description',
+          oldValue: 'Old desc',
+          newValue: '',
+        });
+      });
+
+      it('should ignore nested fields not in payload', () => {
+        confirmUnsavedChanges(
+          confirmationService,
+          {
+            sections: [{
+              id: 'section-1',
+              type: 'WARMUP',
+              name: 'Old Section',
+              createdBy: 'user-123',
+              workoutSectionItemIds: ['item-1', 'item-2']
+            }]
+          },
+          {
+            sections: [{
+              type: 'STRENGTH',
+              name: 'New Section'
+            }]
+          }
+        );
+
+        const changes = confirmationService.changes();
+        const fieldNames = changes.map(c => c.field);
+
+        expect(fieldNames).toContain('Sections 1 → Type');
+        expect(fieldNames).toContain('Sections 1 → Name');
+        expect(fieldNames).not.toContain('Sections 1 → Id');
+        expect(fieldNames).not.toContain('Sections 1 → CreatedBy');
+        expect(fieldNames).not.toContain('Sections 1 → WorkoutSectionItemIds');
+      });
+    });
+  });
+
+  describe('hasFormChanges', () => {
+    it('should return true when payload field changed', () => {
+      const result = hasFormChanges(
+        { name: 'Old' },
+        { name: 'New' }
+      );
+      expect(result).toBe(true);
+    });
+
+    it('should return false when payload field unchanged', () => {
+      const result = hasFormChanges(
+        { name: 'Same' },
+        { name: 'Same' }
+      );
+      expect(result).toBe(false);
+    });
+
+    it('should ignore fields only in oldData', () => {
+      const result = hasFormChanges(
+        { name: 'Same', createdBy: 'user-123' },
+        { name: 'Same' }
+      );
+      expect(result).toBe(false);
+    });
+
+    it('should ignore undefined fields in newData', () => {
+      const result = hasFormChanges(
+        { name: 'Same', description: 'Changed' },
+        { name: 'Same', description: undefined }
+      );
+      expect(result).toBe(false);
+    });
+
+    it('should detect null as a valid change', () => {
+      const result = hasFormChanges(
+        { description: 'Old' },
+        { description: null as unknown as string }
+      );
+      expect(result).toBe(true);
     });
   });
 });

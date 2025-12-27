@@ -132,10 +132,11 @@ function computeChanges(
   const oldFlat = flattenObject(oldData);
   const newFlat = flattenObject(newData);
 
-  // Get all unique keys from both objects
-  const allKeys = new Set([...Object.keys(oldFlat), ...Object.keys(newFlat)]);
+  // Only check keys that exist in newFlat (the payload)
+  // Skip keys where the new value is undefined (not part of the payload)
+  for (const key of Object.keys(newFlat)) {
+    if (newFlat[key] === undefined) continue;
 
-  for (const key of allKeys) {
     const oldValue = formatValue(oldFlat[key]);
     const newValue = formatValue(newFlat[key]);
 
@@ -154,6 +155,7 @@ function computeChanges(
 /**
  * Checks if there are any changes to form fields between two data objects.
  * Supports nested objects by flattening them first.
+ * Only considers fields that are part of the payload (not undefined in newData).
  */
 export function hasFormChanges(
   oldData: Record<string, unknown> = {},
@@ -161,9 +163,11 @@ export function hasFormChanges(
 ): boolean {
   const oldFlat = flattenObject(oldData);
   const newFlat = flattenObject(newData);
-  const allKeys = new Set([...Object.keys(oldFlat), ...Object.keys(newFlat)]);
 
-  for (const key of allKeys) {
+  // Only check keys that exist in newFlat (the payload)
+  for (const key of Object.keys(newFlat)) {
+    if (newFlat[key] === undefined) continue;
+
     const oldValue = formatValue(oldFlat[key]);
     const newValue = formatValue(newFlat[key]);
     if (oldValue !== newValue) {
