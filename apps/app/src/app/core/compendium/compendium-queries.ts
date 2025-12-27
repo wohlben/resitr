@@ -134,5 +134,9 @@ export const CompendiumQueries = {
       key: `compendium-workout-detail-${templateId}`,
       fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutResponseDto>(`/api/compendium/workout/${templateId}`))
     }),
+    versionHistory: (lineageId: string) => ({
+      key: `compendium-workout-version-history-${lineageId}`,
+      fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutResponseDto[]>(`/api/compendium/workout/lineage/${lineageId}/versions`))
+    }),
   },
 } as const;
