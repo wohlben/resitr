@@ -218,12 +218,31 @@ describe('CompendiumWorkoutService', () => {
       expect(results).toEqual([]);
     });
 
-    it('should return all workouts', async () => {
+    it('should return all workouts with populated sections and items', async () => {
+      // Create an item first
+      const item = await sectionItemRepository.create({
+        exerciseId: 'exercise-1',
+        breakBetweenSets: 60,
+        breakAfter: 90,
+        forkedFrom: null,
+        createdBy: 'user-1',
+      });
+
+      // Create a section with the item
+      const section = await sectionRepository.create({
+        type: WorkoutSectionType.STRENGTH,
+        name: 'Strength Section',
+        workoutSectionItemIds: [item.id],
+        forkedFrom: null,
+        createdBy: 'user-1',
+      });
+
+      // Create workouts
       await workoutRepository.create({
         templateId: 'workout-1',
         workoutLineageId: 'lineage-1',
         name: 'Workout A',
-        sectionIds: [],
+        sectionIds: [section.id],
         version: 1,
         createdBy: 'user-1',
       });
@@ -240,6 +259,16 @@ describe('CompendiumWorkoutService', () => {
 
       expect(results).toHaveLength(2);
       expect(results.map((w) => w.name)).toEqual(expect.arrayContaining(['Workout A', 'Workout B']));
+
+      // Verify sections are populated
+      const workoutA = results.find(w => w.name === 'Workout A');
+      expect(workoutA?.sections).toHaveLength(1);
+      expect(workoutA?.sections[0].name).toBe('Strength Section');
+      expect(workoutA?.sections[0].items).toHaveLength(1);
+      expect(workoutA?.sections[0].items[0].exerciseId).toBe('exercise-1');
+
+      const workoutB = results.find(w => w.name === 'Workout B');
+      expect(workoutB?.sections).toHaveLength(0);
     });
   });
 
@@ -336,6 +365,127 @@ describe('CompendiumWorkoutService', () => {
       const result = await service.findById('workout-items');
 
       expect(result?.sections[0].items.map((i) => i?.breakBetweenSets)).toEqual([60, 90, 120]);
+    });
+  });
+
+  describe('findVersionHistory', () => {
+    it('should return empty array when lineage does not exist', async () => {
+      const results = await service.findVersionHistory('nonexistent-lineage');
+      expect(results).toEqual([]);
+    });
+
+    it('should return all versions of a lineage ordered by version descending', async () => {
+      // Create v1
+      const v1 = await service.create({
+        templateId: 'workout-v1',
+        name: 'Original Workout',
+        version: 1,
+        sections: [],
+      }, 'user-1');
+
+      // Create v2 via update
+      const v2 = await service.update('workout-v1', { name: 'Updated Workout', sections: [] }, 'user-1');
+
+      // Create v3 via update
+      const v3 = await service.update(v2!.templateId, { name: 'Third Version', sections: [] }, 'user-1');
+
+      const results = await service.findVersionHistory(v1.workoutLineageId);
+
+      expect(results).toHaveLength(3);
+      expect(results[0].version).toBe(3);
+      expect(results[0].name).toBe('Third Version');
+      expect(results[1].version).toBe(2);
+      expect(results[1].name).toBe('Updated Workout');
+      expect(results[2].version).toBe(1);
+      expect(results[2].name).toBe('Original Workout');
+    });
+
+    it('should return versions with populated sections and items', async () => {
+      // Create v1 with sections and items
+      const v1 = await service.create({
+        templateId: 'workout-v1',
+        name: 'Workout',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Strength Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      }, 'user-1');
+
+      // Create v2 with different items
+      await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Strength Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 90, breakAfter: 120 }, // Changed
+              { exerciseId: 'exercise-2', breakBetweenSets: 60, breakAfter: 60 }, // Added
+            ],
+          },
+        ],
+      }, 'user-1');
+
+      const results = await service.findVersionHistory(v1.workoutLineageId);
+
+      expect(results).toHaveLength(2);
+
+      // v2 (first result, newest)
+      expect(results[0].version).toBe(2);
+      expect(results[0].sections).toHaveLength(1);
+      expect(results[0].sections[0].name).toBe('Strength Section');
+      expect(results[0].sections[0].items).toHaveLength(2);
+      expect(results[0].sections[0].items[0].breakBetweenSets).toBe(90);
+      expect(results[0].sections[0].items[1].exerciseId).toBe('exercise-2');
+
+      // v1 (second result, oldest)
+      expect(results[1].version).toBe(1);
+      expect(results[1].sections).toHaveLength(1);
+      expect(results[1].sections[0].items).toHaveLength(1);
+      expect(results[1].sections[0].items[0].breakBetweenSets).toBe(60);
+    });
+
+    it('should return single version when lineage has only one', async () => {
+      const workout = await service.create({
+        templateId: 'single-version',
+        name: 'Single Version Workout',
+        version: 1,
+        sections: [],
+      }, 'user-1');
+
+      const results = await service.findVersionHistory(workout.workoutLineageId);
+
+      expect(results).toHaveLength(1);
+      expect(results[0].name).toBe('Single Version Workout');
+      expect(results[0].version).toBe(1);
+    });
+
+    it('should not return versions from other lineages', async () => {
+      // Create workout in lineage A
+      const lineageA = await service.create({
+        templateId: 'lineage-a-v1',
+        name: 'Lineage A',
+        version: 1,
+        sections: [],
+      }, 'user-1');
+
+      // Create workout in lineage B
+      await service.create({
+        templateId: 'lineage-b-v1',
+        name: 'Lineage B',
+        version: 1,
+        sections: [],
+      }, 'user-1');
+
+      const results = await service.findVersionHistory(lineageA.workoutLineageId);
+
+      expect(results).toHaveLength(1);
+      expect(results[0].name).toBe('Lineage A');
     });
   });
 

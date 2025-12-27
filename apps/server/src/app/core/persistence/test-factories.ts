@@ -231,6 +231,7 @@ export function mockWorkoutSection(
     workoutSectionItemIds: [],
     forkedFrom: null,
     createdBy: 'test-user',
+    updatedAt: null,
     ...overrides,
   } satisfies CompendiumWorkoutSection;
 }
@@ -248,6 +249,7 @@ export function mockWorkoutSectionItem(
     breakAfter: 120,
     forkedFrom: null,
     createdBy: 'test-user',
+    updatedAt: null,
     ...overrides,
   } satisfies CompendiumWorkoutSectionItem;
 }

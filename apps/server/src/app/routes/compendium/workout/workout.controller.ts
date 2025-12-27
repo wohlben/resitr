@@ -18,6 +18,15 @@ export class WorkoutController {
     return workouts.map((workout) => plainToInstance(CreateWorkoutResponseDto, workout));
   }
 
+  @Get('lineage/:lineageId/versions')
+  @ApiOperation({ summary: 'Get version history', description: 'Get all versions of a workout lineage' })
+  @ApiParam({ name: 'lineageId', description: 'Workout lineage ID' })
+  @ApiResponse({ status: 200, description: 'Version history retrieved successfully', type: [CreateWorkoutResponseDto] })
+  async findVersionHistory(@Param('lineageId') lineageId: string): Promise<CreateWorkoutResponseDto[]> {
+    const workouts = await this.compendiumWorkoutService.findVersionHistory(lineageId);
+    return workouts.map((workout) => plainToInstance(CreateWorkoutResponseDto, workout));
+  }
+
   @Get(':templateId')
   @ApiOperation({ summary: 'Get workout by ID', description: 'Retrieve a specific workout template by its ID' })
   @ApiParam({ name: 'templateId', description: 'Workout template ID' })

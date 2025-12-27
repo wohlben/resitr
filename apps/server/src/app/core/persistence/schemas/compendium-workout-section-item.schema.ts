@@ -17,6 +17,7 @@ export const compendiumWorkoutSectionItems = sqliteTable('compendium_workout_sec
   createdAt: integer('created_at', { mode: 'timestamp' })
     .notNull()
     .default(sql`(unixepoch())`),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }),
 });
 
 export type CompendiumWorkoutSectionItem = typeof compendiumWorkoutSectionItems.$inferInsert;

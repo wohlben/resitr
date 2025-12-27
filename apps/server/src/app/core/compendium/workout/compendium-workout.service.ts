@@ -64,43 +64,21 @@ export class CompendiumWorkoutService {
   }
 
   async findAll() {
-    return await this.workoutRepository.findAll();
+    const workouts = await this.workoutRepository.findAll();
+    return this.populateSectionsAndItems(workouts);
+  }
+
+  async findVersionHistory(lineageId: string) {
+    const workouts = await this.workoutRepository.findByLineageId(lineageId);
+    return this.populateSectionsAndItems(workouts);
   }
 
   async findById(templateId: string) {
     const workout = await this.workoutRepository.findById(templateId);
     if (!workout) return null;
 
-    // Fetch sections by IDs from workout.sectionIds
-    const sectionsMap = new Map<string, Awaited<ReturnType<typeof this.sectionRepository.findById>>>();
-    if (workout.sectionIds.length > 0) {
-      const sections = await this.sectionRepository.findByIds(workout.sectionIds);
-      sections.forEach((s) => sectionsMap.set(s.id, s));
-    }
-
-    // Preserve order from sectionIds array
-    const orderedSections = workout.sectionIds.map((id) => sectionsMap.get(id)).filter(Boolean);
-
-    // For each section, fetch items by IDs from section.workoutSectionItemIds
-    const sectionsWithItems = await Promise.all(
-      orderedSections.map(async (section) => {
-        const itemsMap = new Map<string, Awaited<ReturnType<typeof this.sectionItemRepository.findById>>>();
-        if (section!.workoutSectionItemIds.length > 0) {
-          const items = await this.sectionItemRepository.findByIds(section!.workoutSectionItemIds);
-          items.forEach((i) => itemsMap.set(i.id, i));
-        }
-
-        // Preserve order from workoutSectionItemIds array
-        const orderedItems = section!.workoutSectionItemIds.map((id) => itemsMap.get(id)).filter(Boolean);
-
-        return { ...section, items: orderedItems };
-      })
-    );
-
-    return {
-      ...workout,
-      sections: sectionsWithItems,
-    };
+    const [populated] = await this.populateSectionsAndItems([workout]);
+    return populated;
   }
 
   async update(templateId: string, data: Partial<CreateWorkoutDto>, userId: string) {
@@ -141,13 +119,15 @@ export class CompendiumWorkoutService {
               return oldItem.id;
             }
 
-            // Create new item (forked if oldItemId exists, brand new otherwise)
+            // Create new item (forked if oldItem exists, brand new otherwise)
             const newItem = await this.sectionItemRepository.create({
               exerciseId: newItemData.exerciseId,
               breakBetweenSets: newItemData.breakBetweenSets,
               breakAfter: newItemData.breakAfter,
               forkedFrom: oldItemId ?? null,
               createdBy: userId,
+              createdAt: oldItem?.createdAt,  // Preserve original creation time if forking
+              updatedAt: oldItem ? new Date() : null,  // Set update time if forking
             });
             return newItem.id;
           })
@@ -160,6 +140,8 @@ export class CompendiumWorkoutService {
           workoutSectionItemIds: newItemIds,
           forkedFrom: oldSection?.id ?? null,
           createdBy: userId,
+          createdAt: oldSection?.createdAt,  // Preserve original creation time if forking
+          updatedAt: oldSection ? new Date() : null,  // Set update time if forking
         });
         return newSection.id;
       })
@@ -174,6 +156,8 @@ export class CompendiumWorkoutService {
       version: oldWorkout.version + 1,
       sectionIds: newSectionIds,
       createdBy: userId,
+      createdAt: oldWorkout.createdAt,  // Preserve original creation time
+      updatedAt: new Date(),             // Set update time to now
     });
 
     return newWorkout;
@@ -195,5 +179,37 @@ export class CompendiumWorkoutService {
       oldItem.breakBetweenSets === newItemData.breakBetweenSets &&
       oldItem.breakAfter === newItemData.breakAfter
     );
+  }
+
+  private async populateSectionsAndItems<T extends { sectionIds: string[] }>(workouts: T[]) {
+    if (workouts.length === 0) return [];
+
+    // Batch fetch all sections across all workouts
+    const allSectionIds = workouts.flatMap(w => w.sectionIds);
+    const sections = allSectionIds.length > 0
+      ? await this.sectionRepository.findByIds(allSectionIds)
+      : [];
+    const sectionsById = new Map(sections.map(s => [s.id, s]));
+
+    // Batch fetch all items across all sections
+    const allItemIds = sections.flatMap(s => s.workoutSectionItemIds);
+    const items = allItemIds.length > 0
+      ? await this.sectionItemRepository.findByIds(allItemIds)
+      : [];
+    const itemsById = new Map(items.map(i => [i.id, i]));
+
+    // Build nested structure with sections and items populated
+    return workouts.map(workout => ({
+      ...workout,
+      sections: workout.sectionIds
+        .map(sId => sectionsById.get(sId))
+        .filter((s): s is NonNullable<typeof s> => s !== undefined)
+        .map(section => ({
+          ...section,
+          items: section.workoutSectionItemIds
+            .map(iId => itemsById.get(iId))
+            .filter((i): i is NonNullable<typeof i> => i !== undefined),
+        })),
+    }));
   }
 }
