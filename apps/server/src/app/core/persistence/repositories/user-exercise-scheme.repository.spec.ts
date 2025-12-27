@@ -413,27 +413,27 @@ describe('UserExerciseSchemeRepository', () => {
         })
       );
 
-      workout = await workoutRepository.create(
-        mockWorkout({
-          templateId: 'test-workout',
-          name: 'Test Workout',
+      // Create in reverse order: items first, then sections, then workout
+      sectionItem = await sectionItemRepository.create(
+        mockWorkoutSectionItem({
+          exerciseId: testExercise1.templateId,
+          breakBetweenSets: 60,
+          breakAfter: 120,
         })
       );
 
       section = await sectionRepository.create(
         mockWorkoutSection({
-          workoutTemplateId: workout.templateId,
           name: 'Test Section',
-          orderIndex: 0,
+          workoutSectionItemIds: [sectionItem.id],
         })
       );
 
-      sectionItem = await sectionItemRepository.create(
-        mockWorkoutSectionItem({
-          sectionId: section.id,
-          orderIndex: 0,
-          breakBetweenSets: 60,
-          breakAfter: 120,
+      workout = await workoutRepository.create(
+        mockWorkout({
+          templateId: 'test-workout',
+          name: 'Test Workout',
+          sectionIds: [section.id],
         })
       );
     });
@@ -526,8 +526,7 @@ describe('UserExerciseSchemeRepository', () => {
         // Create second section item
         const sectionItem2 = await sectionItemRepository.create(
           mockWorkoutSectionItem({
-            sectionId: section.id,
-            orderIndex: 1,
+            exerciseId: testExercise1.templateId,
             breakBetweenSets: 90,
             breakAfter: 180,
           })

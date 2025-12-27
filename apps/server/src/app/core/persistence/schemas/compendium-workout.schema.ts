@@ -3,6 +3,7 @@ import { sql } from 'drizzle-orm';
 
 export const compendiumWorkouts = sqliteTable('compendium_workouts', {
   templateId: text('template_id').primaryKey(),
+  workoutLineageId: text('workout_lineage_id').notNull(),
   name: text('name').notNull(),
   description: text('description'),
   sectionIds: text('section_ids', { mode: 'json' }).$type<string[]>().notNull().default([]),

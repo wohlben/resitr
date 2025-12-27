@@ -208,6 +208,7 @@ export function mockWorkout(
 ): CompendiumWorkout {
   return {
     templateId: 'test-workout-1',
+    workoutLineageId: 'test-lineage-1',
     name: 'Test Workout',
     description: 'A test workout for unit tests',
     sectionIds: [],

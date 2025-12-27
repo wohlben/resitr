@@ -48,6 +48,11 @@ export class CreateWorkoutDto implements ICreateWorkoutDto {
   @IsString()
   templateId!: string;
 
+  @ApiProperty({ description: 'Lineage ID for version tracking (auto-generated if not provided)', required: false })
+  @IsOptional()
+  @IsString()
+  workoutLineageId?: string;
+
   @ApiProperty({ description: 'Name of the workout' })
   @IsString()
   name!: string;
@@ -118,6 +123,10 @@ export class CreateWorkoutResponseDto implements WorkoutResponseDto {
   @ApiProperty({ description: 'Unique template identifier for the workout' })
   @IsString()
   templateId!: string;
+
+  @ApiProperty({ description: 'Lineage ID for version tracking' })
+  @IsString()
+  workoutLineageId!: string;
 
   @ApiProperty({ description: 'Name of the workout' })
   @IsString()

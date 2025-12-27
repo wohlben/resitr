@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import * as crypto from 'crypto';
 import { CompendiumWorkoutRepository } from '../../persistence/repositories/compendium-workout.repository';
 import { CompendiumWorkoutSectionRepository } from '../../persistence/repositories/compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/compendium-workout-section-item.repository';
 import { CreateWorkoutDto } from '../../../routes/compendium/workout/dto/workout.dto';
-import type { CompendiumWorkout } from '../../persistence/schemas/compendium-workout.schema';
+import type { CompendiumWorkoutSection } from '../../persistence/schemas/compendium-workout-section.schema';
+import type { CompendiumWorkoutSectionItem } from '../../persistence/schemas/compendium-workout-section-item.schema';
 
 @Injectable()
 export class CompendiumWorkoutService {
@@ -48,6 +50,7 @@ export class CompendiumWorkoutService {
     // Create workout with section IDs
     const workout = await this.workoutRepository.create({
       templateId: data.templateId,
+      workoutLineageId: data.workoutLineageId || crypto.randomUUID(),
       name: data.name,
       description: data.description,
       version: data.version,
@@ -99,14 +102,94 @@ export class CompendiumWorkoutService {
   }
 
   async update(templateId: string, data: Partial<CreateWorkoutDto>, userId: string) {
-    const updateData: Partial<CompendiumWorkout> = {
-      ...(data.name !== undefined && { name: data.name }),
-      ...(data.description !== undefined && { description: data.description }),
-      ...(data.version !== undefined && { version: data.version }),
+    // Fetch the old workout to get lineage and version info
+    const oldWorkout = await this.workoutRepository.findById(templateId);
+    if (!oldWorkout) {
+      return null;
+    }
+
+    // Fetch old sections for item comparison
+    type SectionData = { section: CompendiumWorkoutSection & { id: string }; items: (CompendiumWorkoutSectionItem & { id: string })[] };
+    const oldSectionsMap = new Map<number, SectionData>();
+    if (oldWorkout.sectionIds.length > 0) {
+      const oldSections = await this.sectionRepository.findByIds(oldWorkout.sectionIds);
+      for (let i = 0; i < oldWorkout.sectionIds.length; i++) {
+        const section = oldSections.find(s => s.id === oldWorkout.sectionIds[i]);
+        if (section) {
+          const items = section.workoutSectionItemIds.length > 0
+            ? await this.sectionItemRepository.findByIds(section.workoutSectionItemIds)
+            : [];
+          oldSectionsMap.set(i, { section, items });
+        }
+      }
+    }
+
+    // Build new sections with item reuse
+    const newSectionIds: string[] = [];
+    const newSections = data.sections ?? [];
+
+    for (let sectionIndex = 0; sectionIndex < newSections.length; sectionIndex++) {
+      const newSectionData = newSections[sectionIndex];
+      const oldSectionData = oldSectionsMap.get(sectionIndex);
+
+      // Build items for this section with reuse logic
+      const newItemIds: string[] = [];
+      const newItems = newSectionData.items ?? [];
+
+      for (let itemIndex = 0; itemIndex < newItems.length; itemIndex++) {
+        const newItemData = newItems[itemIndex];
+
+        // Try to reuse item if old section exists and has item at same position
+        let reuseItemId: string | null = null;
+        const oldItemIds = oldSectionData?.section.workoutSectionItemIds ?? [];
+        if (oldSectionData && oldItemIds[itemIndex]) {
+          const oldItemId = oldItemIds[itemIndex];
+          const oldItem = oldSectionData.items.find(i => i.id === oldItemId);
+
+          if (oldItem &&
+              oldItem.exerciseId === newItemData.exerciseId &&
+              oldItem.breakBetweenSets === newItemData.breakBetweenSets &&
+              oldItem.breakAfter === newItemData.breakAfter) {
+            reuseItemId = oldItem.id;
+          }
+        }
+
+        if (reuseItemId) {
+          newItemIds.push(reuseItemId);
+        } else {
+          // Create new item
+          const newItem = await this.sectionItemRepository.create({
+            exerciseId: newItemData.exerciseId,
+            breakBetweenSets: newItemData.breakBetweenSets,
+            breakAfter: newItemData.breakAfter,
+            createdBy: userId,
+          });
+          newItemIds.push(newItem.id);
+        }
+      }
+
+      // Always create new section (sections are version-specific)
+      const newSection = await this.sectionRepository.create({
+        type: newSectionData.type,
+        name: newSectionData.name,
+        workoutSectionItemIds: newItemIds,
+        createdBy: userId,
+      });
+      newSectionIds.push(newSection.id);
+    }
+
+    // Create new workout version with same lineageId
+    const newWorkout = await this.workoutRepository.create({
+      templateId: crypto.randomUUID(),
+      workoutLineageId: oldWorkout.workoutLineageId,
+      name: data.name ?? oldWorkout.name,
+      description: data.description !== undefined ? data.description : oldWorkout.description,
+      version: oldWorkout.version + 1,
+      sectionIds: newSectionIds,
       createdBy: userId,
-      updatedAt: new Date(),
-    };
-    return await this.workoutRepository.update(templateId, updateData);
+    });
+
+    return newWorkout;
   }
 
   async delete(templateId: string) {

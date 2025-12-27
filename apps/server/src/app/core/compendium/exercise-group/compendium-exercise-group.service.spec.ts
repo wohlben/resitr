@@ -5,7 +5,6 @@ import { provideTestDatabase } from '../../persistence/database';
 
 describe('CompendiumExerciseGroupService', () => {
   let service: CompendiumExerciseGroupService;
-  let repository: CompendiumExerciseGroupRepository;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -17,7 +16,6 @@ describe('CompendiumExerciseGroupService', () => {
     }).compile();
 
     service = module.get<CompendiumExerciseGroupService>(CompendiumExerciseGroupService);
-    repository = module.get<CompendiumExerciseGroupRepository>(CompendiumExerciseGroupRepository);
   });
 
   it('should be defined', () => {
@@ -27,13 +25,11 @@ describe('CompendiumExerciseGroupService', () => {
   describe('create', () => {
     it('should create an exercise group', async () => {
       const result = await service.create({
-        id: 'group-1',
         name: 'Upper Body',
         description: 'Upper body exercises',
       }, 'user-1');
 
       expect(result).toMatchObject({
-        id: 'group-1',
         name: 'Upper Body',
         description: 'Upper body exercises',
         createdBy: 'user-1',
@@ -43,12 +39,10 @@ describe('CompendiumExerciseGroupService', () => {
 
     it('should create an exercise group without optional description', async () => {
       const result = await service.create({
-        id: 'group-2',
         name: 'Cardio',
       }, 'user-1');
 
       expect(result).toMatchObject({
-        id: 'group-2',
         name: 'Cardio',
         description: null,
         createdBy: 'user-1',
@@ -58,14 +52,14 @@ describe('CompendiumExerciseGroupService', () => {
 
   describe('findAll', () => {
     it('should return all exercise groups', async () => {
-      await service.create({ id: 'group-1', name: 'Upper Body' }, 'user-1');
-      await service.create({ id: 'group-2', name: 'Lower Body' }, 'user-1');
+      const created1 = await service.create({ name: 'Upper Body' }, 'user-1');
+      const created2 = await service.create({ name: 'Lower Body' }, 'user-1');
 
       const result = await service.findAll();
 
       expect(result).toHaveLength(2);
-      expect(result.some((g) => g.id === 'group-1')).toBe(true);
-      expect(result.some((g) => g.id === 'group-2')).toBe(true);
+      expect(result.some((g) => g.id === created1.id)).toBe(true);
+      expect(result.some((g) => g.id === created2.id)).toBe(true);
     });
 
     it('should return empty array when no groups exist', async () => {
@@ -76,16 +70,14 @@ describe('CompendiumExerciseGroupService', () => {
 
   describe('findById', () => {
     it('should find an exercise group by id', async () => {
-      await service.create({
-        id: 'group-1',
+      const created = await service.create({
         name: 'Upper Body',
         description: 'All upper body exercises',
       }, 'user-1');
 
-      const result = await service.findById('group-1');
+      const result = await service.findById(created.id);
 
       expect(result).toMatchObject({
-        id: 'group-1',
         name: 'Upper Body',
         description: 'All upper body exercises',
       });
@@ -99,12 +91,12 @@ describe('CompendiumExerciseGroupService', () => {
 
   describe('findByName', () => {
     it('should find an exercise group by name', async () => {
-      await service.create({ id: 'group-1', name: 'Upper Body' }, 'user-1');
+      const created = await service.create({ name: 'Upper Body' }, 'user-1');
 
       const result = await service.findByName('Upper Body');
 
       expect(result).toMatchObject({
-        id: 'group-1',
+        id: created.id,
         name: 'Upper Body',
       });
     });
@@ -117,13 +109,12 @@ describe('CompendiumExerciseGroupService', () => {
 
   describe('update', () => {
     it('should update an exercise group', async () => {
-      await service.create({
-        id: 'group-1',
+      const created = await service.create({
         name: 'Upper Body',
         description: 'Initial description',
       }, 'user-1');
 
-      const result = await service.update('group-1', {
+      const result = await service.update(created.id, {
         name: 'Upper Body Strength',
         description: 'Updated description',
       });
@@ -136,13 +127,12 @@ describe('CompendiumExerciseGroupService', () => {
     });
 
     it('should update only provided fields', async () => {
-      await service.create({
-        id: 'group-1',
+      const created = await service.create({
         name: 'Upper Body',
         description: 'Original description',
       }, 'user-1');
 
-      const result = await service.update('group-1', {
+      const result = await service.update(created.id, {
         name: 'Upper Body Modified',
       });
 
@@ -155,13 +145,13 @@ describe('CompendiumExerciseGroupService', () => {
 
   describe('delete', () => {
     it('should delete an exercise group', async () => {
-      await service.create({ id: 'group-1', name: 'Upper Body' }, 'user-1');
+      const created = await service.create({name: 'Upper Body' }, 'user-1');
 
-      const result = await service.delete('group-1');
+      const result = await service.delete(created.id);
 
-      expect(result).toMatchObject({ id: 'group-1' });
+      expect(result).toMatchObject({ id: created.id });
 
-      const found = await service.findById('group-1');
+      const found = await service.findById(created.id);
       expect(found).toBeUndefined();
     });
   });
@@ -183,14 +173,13 @@ describe('CompendiumExerciseGroupService', () => {
     });
 
     it('should update an existing exercise group', async () => {
-      await service.create({
-        id: 'group-1',
+      const created = await service.create({
         name: 'Upper Body',
         description: 'Initial',
       }, 'user-1');
 
       const result = await service.upsert({
-        id: 'group-1',
+        id: created.id,
         name: 'Upper Body Modified',
         description: 'Updated',
       }, 'user-2');
@@ -202,7 +191,7 @@ describe('CompendiumExerciseGroupService', () => {
       expect(result.updatedAt).toBeDefined();
 
       const all = await service.findAll();
-      const matches = all.filter((g) => g.id === 'group-1');
+      const matches = all.filter((g) => g.id === result.id);
       expect(matches).toHaveLength(1);
     });
   });

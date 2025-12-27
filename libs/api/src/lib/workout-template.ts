@@ -32,6 +32,7 @@ export type WorkoutSectionTemplate = {
 
 export type WorkoutTemplate = {
   templateId: string;
+  workoutLineageId: string;
   name: string;
   description?: string;
   sections: WorkoutSectionTemplate[];

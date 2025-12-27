@@ -135,7 +135,7 @@ describe('WorkoutController', () => {
             name: 'Warmup',
             items: [
               {
-                exerciseSchemeId: 'scheme-1',
+                exerciseId: 'exercise-1',
                 breakBetweenSets: 30,
                 breakAfter: 60,
               },

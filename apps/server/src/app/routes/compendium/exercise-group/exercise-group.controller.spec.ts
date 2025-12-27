@@ -123,12 +123,12 @@ describe('ExerciseGroupController', () => {
   describe('create', () => {
     it('should create a new exercise group', async () => {
       const createDto: CreateExerciseGroupDto = {
-        id: 'group-1',
         name: 'Upper Body',
         description: 'Upper body exercises',
       };
 
       const mockCreated = {
+        id: 'group-1',
         ...createDto,
         createdBy: 'user-1',
         createdAt: new Date(),
@@ -146,11 +146,11 @@ describe('ExerciseGroupController', () => {
 
     it('should create a group without optional description', async () => {
       const createDto: CreateExerciseGroupDto = {
-        id: 'group-1',
         name: 'Upper Body',
       };
 
       const mockCreated = {
+        id: 'group-1',
         ...createDto,
         createdBy: 'user-1',
         createdAt: new Date(),
@@ -168,12 +168,12 @@ describe('ExerciseGroupController', () => {
   describe('upsert', () => {
     it('should upsert an exercise group', async () => {
       const upsertDto: CreateExerciseGroupDto = {
-        id: 'group-1',
         name: 'Upper Body Modified',
         description: 'Updated description',
       };
 
       const mockUpserted = {
+        id: 'group-1',
         ...upsertDto,
         createdBy: 'user-1',
         createdAt: new Date(),
@@ -194,7 +194,6 @@ describe('ExerciseGroupController', () => {
   describe('update', () => {
     it('should update an exercise group', async () => {
       const updateDto: CreateExerciseGroupDto = {
-        id: 'group-1',
         name: 'Upper Body Strength',
         description: 'Updated description',
       };

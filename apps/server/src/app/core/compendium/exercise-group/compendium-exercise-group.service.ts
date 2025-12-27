@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CompendiumExerciseGroupRepository } from '../../persistence/repositories/compendium-exercise-group.repository';
 import { CreateExerciseGroupDto } from '../../../routes/compendium/exercise-group/dto/exercise-group.dto';
+import { UpdateExerciseGroupDto } from '@resitr/api';
 
 @Injectable()
 export class CompendiumExerciseGroupService {
@@ -30,7 +31,7 @@ export class CompendiumExerciseGroupService {
     return this.repository.delete(id);
   }
 
-  async upsert(data: CreateExerciseGroupDto, userId: string) {
+  async upsert(data: CreateExerciseGroupDto | UpdateExerciseGroupDto, userId: string) {
     return await this.repository.upsert({ ...data, createdBy: userId });
   }
 }

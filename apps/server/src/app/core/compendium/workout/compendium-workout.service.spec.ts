@@ -221,6 +221,7 @@ describe('CompendiumWorkoutService', () => {
     it('should return all workouts', async () => {
       await workoutRepository.create({
         templateId: 'workout-1',
+        workoutLineageId: 'lineage-1',
         name: 'Workout A',
         sectionIds: [],
         version: 1,
@@ -228,6 +229,7 @@ describe('CompendiumWorkoutService', () => {
       });
       await workoutRepository.create({
         templateId: 'workout-2',
+        workoutLineageId: 'lineage-2',
         name: 'Workout B',
         sectionIds: [],
         version: 1,
@@ -281,6 +283,7 @@ describe('CompendiumWorkoutService', () => {
     it('should return workout with empty sections when no sections exist', async () => {
       await workoutRepository.create({
         templateId: 'workout-empty',
+        workoutLineageId: 'lineage-empty',
         name: 'Empty Workout',
         sectionIds: [],
         version: 1,
@@ -337,51 +340,205 @@ describe('CompendiumWorkoutService', () => {
   });
 
   describe('update', () => {
-    it('should update workout name', async () => {
-      await workoutRepository.create({
-        templateId: 'workout-1',
-        name: 'Old Name',
-        sectionIds: [],
+    it('should create new version with different templateId but same lineageId', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Original Workout',
         version: 1,
-        createdBy: 'user-1',
-      });
+        sections: [],
+      };
+      const v1 = await service.create(workoutDto, 'user-1');
 
-      const result = await service.update('workout-1', { name: 'New Name' }, 'user-1');
+      const result = await service.update('workout-v1', { name: 'Updated Workout', sections: [] }, 'user-1');
 
-      expect(result).toMatchObject({
-        templateId: 'workout-1',
-        name: 'New Name',
-      });
+      expect(result).toBeDefined();
+      expect(result?.templateId).not.toBe('workout-v1'); // New templateId
+      expect(result?.workoutLineageId).toBe(v1.workoutLineageId); // Same lineageId
+      expect(result?.version).toBe(2); // Incremented version
+      expect(result?.name).toBe('Updated Workout');
     });
 
-    it('should update workout description', async () => {
-      await workoutRepository.create({
-        templateId: 'workout-1',
-        name: 'Test Workout',
-        description: 'Old description',
-        sectionIds: [],
+    it('should preserve old version when creating new version', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Original Workout',
         version: 1,
-        createdBy: 'user-1',
-      });
+        sections: [],
+      };
+      await service.create(workoutDto, 'user-1');
 
-      const result = await service.update('workout-1', { description: 'New description' }, 'user-1');
+      await service.update('workout-v1', { name: 'Updated Workout', sections: [] }, 'user-1');
 
-      expect(result?.description).toBe('New description');
+      // Old version should still exist
+      const oldVersion = await service.findById('workout-v1');
+      expect(oldVersion).toBeDefined();
+      expect(oldVersion?.name).toBe('Original Workout');
+      expect(oldVersion?.version).toBe(1);
     });
 
-    it('should update version number', async () => {
-      await workoutRepository.create({
-        templateId: 'workout-1',
-        name: 'Test Workout',
-        sectionIds: [],
+    it('should reuse unchanged items at same position', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout with Items',
         version: 1,
-        createdBy: 'user-1',
-      });
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalItemId = v1?.sections[0].items[0]?.id;
 
-      const result = await service.update('workout-1', { version: 2 }, 'user-1');
+      // Update with identical items
+      const result = await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      }, 'user-1');
 
-      expect(result?.version).toBe(2);
-      expect(result?.updatedAt).toBeDefined();
+      const v2 = await service.findById(result!.templateId);
+      expect(v2?.sections[0].items[0]?.id).toBe(originalItemId); // Same item ID reused
+    });
+
+    it('should create new item when properties change', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout with Items',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalItemId = v1?.sections[0].items[0]?.id;
+
+      // Update with changed break time
+      const result = await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 90, breakAfter: 120 }, // Different breakBetweenSets
+            ],
+          },
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      expect(v2?.sections[0].items[0]?.id).not.toBe(originalItemId); // New item created
+      expect(v2?.sections[0].items[0]?.breakBetweenSets).toBe(90);
+    });
+
+    it('should create new item when position changes', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout with Items',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalItemId = v1?.sections[0].items[0]?.id;
+
+      // Insert new item before, pushing original to position 1
+      const result = await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-2', breakBetweenSets: 30, breakAfter: 60 }, // New item at position 0
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 }, // Same content but now position 1
+            ],
+          },
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      // Item at position 1 should be new (position changed from 0 to 1)
+      expect(v2?.sections[0].items[1]?.id).not.toBe(originalItemId);
+    });
+
+    it('should always create new sections (sections are version-specific)', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout with Section',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalSectionId = v1?.sections[0].id;
+
+      // Update with identical section
+      const result = await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [],
+          },
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      expect(v2?.sections[0].id).not.toBe(originalSectionId); // New section created
+    });
+
+    it('should return null when updating non-existent workout', async () => {
+      const result = await service.update('nonexistent', { name: 'New Name', sections: [] }, 'user-1');
+      expect(result).toBeNull();
+    });
+
+    it('should inherit values from old workout when not provided', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Original Name',
+        description: 'Original Description',
+        version: 1,
+        sections: [],
+      };
+      await service.create(workoutDto, 'user-1');
+
+      // Only provide sections, not name or description
+      const result = await service.update('workout-v1', { sections: [] }, 'user-1');
+
+      expect(result?.name).toBe('Original Name');
+      expect(result?.description).toBe('Original Description');
     });
   });
 

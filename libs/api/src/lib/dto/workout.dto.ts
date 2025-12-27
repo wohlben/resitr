@@ -15,6 +15,7 @@ export type CreateWorkoutSectionDto = {
 
 export type CreateWorkoutDto = {
   templateId: string;
+  workoutLineageId?: string;
   name: string;
   description?: string;
   sections: CreateWorkoutSectionDto[];
