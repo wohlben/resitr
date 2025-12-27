@@ -7,6 +7,7 @@ import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loadin
 import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
 import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
 import { TagListComponent } from '../../components/ui/display/tag-list.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import {
   ExerciseTypeLabels,
@@ -27,6 +28,7 @@ import { SpinnerComponent } from '../../components/ui/feedback/spinner.component
     DetailPageHeaderComponent,
     DetailFieldComponent,
     TagListComponent,
+    ButtonComponent,
     ValueLabelPipe,
     RouterLink,
     SpinnerComponent,
@@ -42,9 +44,11 @@ import { SpinnerComponent } from '../../components/ui/feedback/spinner.component
           [title]="exercise.name"
           [subtitle]="(exercise.type | valueLabel:ExerciseTypeLabels) + ' Exercise'"
           backLink="/compendium/exercises"
-          [editLink]="['/compendium/exercises', exercise.templateId, 'edit']"
-          editLabel="Edit Exercise"
-        />
+        >
+          <app-button header-primary-action variant="primary" [link]="['/compendium/exercises', exercise.templateId, 'edit']">
+            Edit Exercise
+          </app-button>
+        </app-detail-page-header>
 
         <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-6">
           @if (exercise.description) {

@@ -1,13 +1,16 @@
 import { Component, inject, computed } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { WorkoutsStore } from '../../features/workouts/workouts.store';
 import { ExercisesStore } from '../../features/exercises/exercises.store';
+import { UserWorkoutsStore } from '../../features/user-workouts/user-workouts.store';
 import { LoadingComponent } from '../../components/ui/feedback/loading.component';
 import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
 import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
 import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
+import { ToastService } from '../../core/services/toast.service';
 import { WorkoutSectionType, WorkoutSectionTypeLabels } from '@resitr/api';
 
 interface SectionConfig {
@@ -52,6 +55,7 @@ const SECTION_STYLES: Record<WorkoutSectionType, SectionConfig> = {
     ErrorLoadingComponent,
     DetailPageHeaderComponent,
     DetailFieldComponent,
+    ButtonComponent,
     ValueLabelPipe,
     RouterLink,
   ],
@@ -68,9 +72,36 @@ const SECTION_STYLES: Record<WorkoutSectionType, SectionConfig> = {
           backLink="/compendium/workouts"
           [actionLink]="store.versionHistory().length > 1 ? ['/compendium/workouts', workout.templateId, 'versions'] : null"
           actionLabel="Version History"
-          [editLink]="isLatestVersion() ? ['/compendium/workouts', workout.templateId, 'edit'] : null"
-          editLabel="Edit Workout"
-        />
+        >
+          <!-- Add to My Workouts action -->
+          <ng-container header-actions>
+            @if (userWorkoutsStore.isWorkoutAdded(workout.templateId)) {
+              <div class="px-3 py-2 text-sm text-green-600 bg-green-50 rounded-lg border border-green-200 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Added
+              </div>
+            } @else {
+              <app-button
+                variant="outline-primary"
+                (click)="addToMyWorkouts(workout)"
+                [disabled]="userWorkoutsStore.isAdding()"
+              >
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                Add to My Workouts
+              </app-button>
+            }
+          </ng-container>
+          <!-- Edit action (only for latest version) -->
+          @if (isLatestVersion()) {
+            <app-button header-primary-action variant="primary" [link]="['/compendium/workouts', workout.templateId, 'edit']">
+              Edit Workout
+            </app-button>
+          }
+        </app-detail-page-header>
 
         <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-6">
           @if (workout.description) {
@@ -184,8 +215,11 @@ const SECTION_STYLES: Record<WorkoutSectionType, SectionConfig> = {
 })
 export class WorkoutDetail {
   store = inject(WorkoutsStore);
+  userWorkoutsStore = inject(UserWorkoutsStore);
   private exercisesStore = inject(ExercisesStore);
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private toast = inject(ToastService);
 
   readonly WorkoutSectionTypeLabels = WorkoutSectionTypeLabels;
 
@@ -245,5 +279,17 @@ export class WorkoutDetail {
       hour: '2-digit',
       minute: '2-digit',
     });
+  }
+
+  async addToMyWorkouts(workout: { templateId: string; name: string }): Promise<void> {
+    const result = await this.userWorkoutsStore.addWorkout({
+      workoutTemplateId: workout.templateId,
+    });
+
+    if (result) {
+      this.router.navigate(['/user/workouts', result.id]);
+    } else {
+      this.toast.error(this.userWorkoutsStore.actionError() ?? 'Failed to add workout');
+    }
   }
 }

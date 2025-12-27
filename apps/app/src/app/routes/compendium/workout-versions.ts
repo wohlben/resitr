@@ -5,6 +5,7 @@ import { WorkoutsStore } from '../../features/workouts/workouts.store';
 import { LoadingComponent } from '../../components/ui/feedback/loading.component';
 import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
 import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 
 @Component({
   selector: 'app-workout-versions',
@@ -13,6 +14,7 @@ import { DetailPageHeaderComponent } from '../../components/ui/display/detail-pa
     LoadingComponent,
     ErrorLoadingComponent,
     DetailPageHeaderComponent,
+    ButtonComponent,
     RouterLink,
   ],
   template: `
@@ -26,9 +28,13 @@ import { DetailPageHeaderComponent } from '../../components/ui/display/detail-pa
           title="Version History"
           [subtitle]="workout.name"
           [backLink]="['/compendium/workouts', workout.templateId]"
-          [editLink]="isLatestVersion() ? ['/compendium/workouts', workout.templateId, 'edit'] : null"
-          editLabel="Edit Current"
-        />
+        >
+          @if (isLatestVersion()) {
+            <app-button header-primary-action variant="primary" [link]="['/compendium/workouts', workout.templateId, 'edit']">
+              Edit Current
+            </app-button>
+          }
+        </app-detail-page-header>
 
         <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
           <table class="w-full">

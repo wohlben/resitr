@@ -7,6 +7,15 @@ export enum MeasurementType {
   ROUNDS_FOR_TIME = 'ROUNDS_FOR_TIME',
 }
 
+export const MeasurementTypeLabels = {
+  [MeasurementType.REP_BASED]: 'Rep Based',
+  [MeasurementType.TIME_BASED]: 'Time Based',
+  [MeasurementType.DISTANCE_BASED]: 'Distance Based',
+  [MeasurementType.AMRAP]: 'AMRAP',
+  [MeasurementType.EMOM]: 'EMOM',
+  [MeasurementType.ROUNDS_FOR_TIME]: 'Rounds for Time',
+} as const satisfies Record<MeasurementType, string>;
+
 export type ExerciseSchemeTemplate = {
   id: string;
   exerciseId: string;

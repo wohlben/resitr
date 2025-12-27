@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WorkoutsComponent } from './workouts';
 import { WorkoutsStore } from '../../features/workouts/workouts.store';
-import {  RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { provideMockStore } from '../../testing/provide-mock-store';
 
 describe('Workouts', () => {

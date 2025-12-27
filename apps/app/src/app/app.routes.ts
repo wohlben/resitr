@@ -102,6 +102,16 @@ export const appRoutes: Route[] = [
         canDeactivate: [unsavedChangesGuard],
       },
       {
+        path: 'user/workouts',
+        loadComponent: () =>
+          import('./routes/user/workouts').then((m) => m.UserWorkoutsComponent),
+      },
+      {
+        path: 'user/workouts/:id',
+        loadComponent: () =>
+          import('./routes/user/workout-detail').then((m) => m.UserWorkoutDetail),
+      },
+      {
         path: 'user/workout-logs',
         loadComponent: () =>
           import('./routes/user/workout-logs').then((m) => m.WorkoutLogsComponent),

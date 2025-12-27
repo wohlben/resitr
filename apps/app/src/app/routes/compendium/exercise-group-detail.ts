@@ -7,6 +7,7 @@ import { LoadingComponent } from '../../components/ui/feedback/loading.component
 import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
 import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
 import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 import { SpinnerComponent } from '../../components/ui/feedback/spinner.component';
 
 @Component({
@@ -17,6 +18,7 @@ import { SpinnerComponent } from '../../components/ui/feedback/spinner.component
     ErrorLoadingComponent,
     DetailPageHeaderComponent,
     DetailFieldComponent,
+    ButtonComponent,
     RouterLink,
     SpinnerComponent,
     DatePipe,
@@ -32,9 +34,11 @@ import { SpinnerComponent } from '../../components/ui/feedback/spinner.component
           [title]="group.name"
           subtitle="Exercise Group"
           backLink="/compendium/exercise-groups"
-          [editLink]="['/compendium/exercise-groups', group.id, 'edit']"
-          editLabel="Edit Group"
-        />
+        >
+          <app-button header-primary-action variant="primary" [link]="['/compendium/exercise-groups', group.id, 'edit']">
+            Edit Group
+          </app-button>
+        </app-detail-page-header>
 
         <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 space-y-6">
           @if (group.description) {

@@ -8,6 +8,7 @@ import { SafeImageComponent } from '../../components/ui/display/safe-image.compo
 import { DetailPageHeaderComponent } from '../../components/ui/display/detail-page-header.component';
 import { DetailFieldComponent } from '../../components/ui/display/detail-field.component';
 import { TagListComponent } from '../../components/ui/display/tag-list.component';
+import { ButtonComponent } from '../../components/ui/buttons/button.component';
 import { ValueLabelPipe } from '../../shared/pipes/value-label.pipe';
 import { EquipmentCategoryLabels } from '@resitr/api';
 
@@ -21,6 +22,7 @@ import { EquipmentCategoryLabels } from '@resitr/api';
     DetailPageHeaderComponent,
     DetailFieldComponent,
     TagListComponent,
+    ButtonComponent,
     ValueLabelPipe,
   ],
   template: `
@@ -37,9 +39,11 @@ import { EquipmentCategoryLabels } from '@resitr/api';
           [title]="equipment.displayName"
           [subtitle]="equipment.name"
           backLink="/compendium/equipments"
-          [editLink]="['/compendium/equipments', equipment.templateId, 'edit']"
-          editLabel="Edit Equipment"
-        />
+        >
+          <app-button header-primary-action variant="primary" [link]="['/compendium/equipments', equipment.templateId, 'edit']">
+            Edit Equipment
+          </app-button>
+        </app-detail-page-header>
 
         <div class="bg-white rounded-lg shadow-sm border border-gray-200">
           @if (equipment.imageUrl) {

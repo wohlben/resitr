@@ -11,7 +11,6 @@ import { ButtonComponent } from '../../components/ui/buttons/button.component';
   selector: 'app-workouts',
   standalone: true,
   imports: [PaginationComponent, WorkoutCardComponent, ErrorLoadingComponent, LoadingComponent, WorkoutsFilterComponent, ButtonComponent],
-  providers: [WorkoutsStore],
   template: `
     <div class="space-y-6">
       <!-- Header -->
