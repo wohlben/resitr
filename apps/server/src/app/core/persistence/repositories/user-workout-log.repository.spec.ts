@@ -13,16 +13,17 @@ describe('UserWorkoutLogRepository', () => {
         repository = module.get<UserWorkoutLogRepository>(UserWorkoutLogRepository);
     });
 
-    describe('create', () => {
+    describe('upsert', () => {
         it('should create a log with all fields', async () => {
             const logData = {
                 name: 'Test Log',
                 startedAt: new Date(),
                 createdBy: 'user-1',
                 originalWorkoutId: null,
+                sectionIds: [],
             };
 
-            const result = await repository.create(logData);
+            const result = await repository.upsert(logData);
 
             expect(result).toMatchObject({
                 name: 'Test Log',
@@ -32,14 +33,36 @@ describe('UserWorkoutLogRepository', () => {
             expect(result.createdAt).toBeDefined();
             expect(result.startedAt).toBeDefined();
         });
+
+        it('should update a log when ID exists', async () => {
+            const created = await repository.upsert({
+                name: 'Initial Name',
+                startedAt: new Date(),
+                createdBy: 'user-1',
+                sectionIds: [],
+            });
+
+            const updated = await repository.upsert({
+                id: created.id,
+                name: 'Updated Name',
+                startedAt: new Date(),
+                createdBy: 'user-1',
+                sectionIds: ['s1'],
+            });
+
+            expect(updated.id).toBe(created.id);
+            expect(updated.name).toBe('Updated Name');
+            expect(updated.sectionIds).toEqual(['s1']);
+        });
     });
 
     describe('findById', () => {
         it('should find a log by id', async () => {
-            const created = await repository.create({
+            const created = await repository.upsert({
                 name: 'Find Me',
                 startedAt: new Date(),
                 createdBy: 'user-1',
+                sectionIds: [],
             });
 
             const result = await repository.findById(created.id);
@@ -58,10 +81,11 @@ describe('UserWorkoutLogRepository', () => {
 
     describe('update', () => {
         it('should update a log', async () => {
-            const created = await repository.create({
+            const created = await repository.upsert({
                 name: 'Update Me',
                 startedAt: new Date(),
                 createdBy: 'user-1',
+                sectionIds: [],
             });
 
             const result = await repository.update(created.id, { name: 'Updated Name' });
@@ -75,10 +99,11 @@ describe('UserWorkoutLogRepository', () => {
 
     describe('delete', () => {
         it('should delete a log', async () => {
-            const created = await repository.create({
+            const created = await repository.upsert({
                 name: 'Delete Me',
                 startedAt: new Date(),
                 createdBy: 'user-1',
+                sectionIds: [],
             });
 
             await repository.delete(created.id);

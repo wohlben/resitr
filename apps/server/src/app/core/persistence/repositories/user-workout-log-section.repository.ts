@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { asc, eq } from 'drizzle-orm';
+import { eq, inArray } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
 import { userWorkoutLogSections, type UserWorkoutLogSection } from '../schemas';
 
@@ -7,13 +7,32 @@ import { userWorkoutLogSections, type UserWorkoutLogSection } from '../schemas';
 export class UserWorkoutLogSectionRepository {
     constructor(@Inject(DATABASE) private readonly db: Database) { }
 
-    async create(data: UserWorkoutLogSection) {
-        const [result] = await this.db.insert(userWorkoutLogSections).values(data).returning();
+    async upsert(data: UserWorkoutLogSection) {
+        const id = data.id ?? crypto.randomUUID();
+        const [result] = await this.db
+            .insert(userWorkoutLogSections)
+            .values({ ...data, id })
+            .onConflictDoUpdate({
+                target: userWorkoutLogSections.id,
+                set: {
+                    name: data.name,
+                    type: data.type,
+                    itemIds: data.itemIds,
+                    completedAt: data.completedAt,
+                },
+            })
+            .returning();
         return result;
     }
 
-    async findByWorkoutLogId(workoutLogId: string) {
-        return this.db.select().from(userWorkoutLogSections).where(eq(userWorkoutLogSections.workoutLogId, workoutLogId)).orderBy(asc(userWorkoutLogSections.orderIndex));
+    async findById(id: string) {
+        const [result] = await this.db.select().from(userWorkoutLogSections).where(eq(userWorkoutLogSections.id, id));
+        return result;
+    }
+
+    async findByIds(ids: string[]) {
+        if (ids.length === 0) return [];
+        return this.db.select().from(userWorkoutLogSections).where(inArray(userWorkoutLogSections.id, ids));
     }
 
     async update(id: string, data: Partial<UserWorkoutLogSection>) {

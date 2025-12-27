@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { asc, eq } from 'drizzle-orm';
+import { eq, inArray } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
 import { userWorkoutLogSectionItems, type UserWorkoutLogSectionItem } from '../schemas';
 
@@ -7,13 +7,34 @@ import { userWorkoutLogSectionItems, type UserWorkoutLogSectionItem } from '../s
 export class UserWorkoutLogSectionItemRepository {
     constructor(@Inject(DATABASE) private readonly db: Database) { }
 
-    async create(data: UserWorkoutLogSectionItem) {
-        const [result] = await this.db.insert(userWorkoutLogSectionItems).values(data).returning();
+    async upsert(data: UserWorkoutLogSectionItem) {
+        const id = data.id ?? crypto.randomUUID();
+        const [result] = await this.db
+            .insert(userWorkoutLogSectionItems)
+            .values({ ...data, id })
+            .onConflictDoUpdate({
+                target: userWorkoutLogSectionItems.id,
+                set: {
+                    exerciseId: data.exerciseId,
+                    name: data.name,
+                    restBetweenSets: data.restBetweenSets,
+                    breakAfter: data.breakAfter,
+                    setIds: data.setIds,
+                    completedAt: data.completedAt,
+                },
+            })
+            .returning();
         return result;
     }
 
-    async findBySectionId(sectionId: string) {
-        return this.db.select().from(userWorkoutLogSectionItems).where(eq(userWorkoutLogSectionItems.sectionId, sectionId)).orderBy(asc(userWorkoutLogSectionItems.orderIndex));
+    async findById(id: string) {
+        const [result] = await this.db.select().from(userWorkoutLogSectionItems).where(eq(userWorkoutLogSectionItems.id, id));
+        return result;
+    }
+
+    async findByIds(ids: string[]) {
+        if (ids.length === 0) return [];
+        return this.db.select().from(userWorkoutLogSectionItems).where(inArray(userWorkoutLogSectionItems.id, ids));
     }
 
     async update(id: string, data: Partial<UserWorkoutLogSectionItem>) {

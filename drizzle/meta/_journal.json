@@ -29,6 +29,13 @@
       "when": 1766837472030,
       "tag": "0003_gorgeous_owl",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1766838000000,
+      "tag": "0004_workout_log_id_arrays",
+      "breakpoints": true
     }
   ]
 }

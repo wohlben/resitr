@@ -3,7 +3,7 @@ import { UserWorkoutLogRepository } from '../../persistence/repositories/user-wo
 import { UserWorkoutLogSectionRepository } from '../../persistence/repositories/user-workout-log-section.repository';
 import { UserWorkoutLogSectionItemRepository } from '../../persistence/repositories/user-workout-log-section-item.repository';
 import { UserWorkoutLogSetRepository } from '../../persistence/repositories/user-workout-log-set.repository';
-import { UserWorkoutLog, UserWorkoutLogSet } from '../../persistence/schemas';
+import { UserWorkoutLogSet } from '../../persistence/schemas';
 import { UpsertWorkoutLogDto } from '../../../routes/user/workout-log/dto/workout-log.dto';
 
 @Injectable()
@@ -16,75 +16,19 @@ export class UserWorkoutLogService {
     ) { }
 
     async upsertLog(dto: UpsertWorkoutLogDto, userId: string) {
-        // If ID exists, we're updating, otherwise creating
-        let log;
-        if (dto.id) {
-            const existingLog = await this.logRepository.findById(dto.id);
-            if (existingLog) {
-                log = await this.logRepository.update(dto.id, {
-                    originalWorkoutId: dto.originalWorkoutId,
-                    name: dto.name,
-                    startedAt: dto.startedAt,
-                    completedAt: dto.completedAt,
-                });
-            } else {
-                // ID provided but not found, create with that ID
-                log = await this.logRepository.create({
-                    id: dto.id,
-                    originalWorkoutId: dto.originalWorkoutId,
-                    name: dto.name,
-                    startedAt: dto.startedAt,
-                    completedAt: dto.completedAt,
-                    createdBy: userId,
-                });
-            }
-        } else {
-            // No ID provided, create new
-            log = await this.logRepository.create({
-                originalWorkoutId: dto.originalWorkoutId,
-                name: dto.name,
-                startedAt: dto.startedAt,
-                completedAt: dto.completedAt,
-                createdBy: userId,
-            });
-        }
+        const sectionIds: string[] = [];
 
-        // Delete all existing sections for this log (cascade will handle items and sets)
-        const existingSections = await this.logSectionRepository.findByWorkoutLogId(log.id);
-        for (const existingSection of existingSections) {
-            await this.logSectionRepository.delete(existingSection.id);
-        }
+        // Bottom-up: sets → items → sections → log
+        for (const sectionDto of dto.sections) {
+            const itemIds: string[] = [];
 
-        // Create/update sections, items, and sets from the provided payload
-        for (const [sectionIndex, sectionDto] of dto.sections.entries()) {
-            const section = await this.logSectionRepository.create({
-                id: sectionDto.id,
-                workoutLogId: log.id,
-                name: sectionDto.name,
-                orderIndex: sectionIndex,
-                type: sectionDto.type,
-                completedAt: sectionDto.completedAt,
-                createdBy: userId,
-            });
+            for (const itemDto of sectionDto.items) {
+                const setIds: string[] = [];
 
-            for (const [itemIndex, itemDto] of sectionDto.items.entries()) {
-                const item = await this.logItemRepository.create({
-                    id: itemDto.id,
-                    sectionId: section.id,
-                    exerciseId: itemDto.exerciseId,
-                    name: itemDto.name,
-                    orderIndex: itemIndex,
-                    restBetweenSets: itemDto.restBetweenSets,
-                    breakAfter: itemDto.breakAfter,
-                    completedAt: itemDto.completedAt,
-                    createdBy: userId,
-                });
-
-                for (const [setIndex, setDto] of itemDto.sets.entries()) {
-                    await this.logSetRepository.create({
+                // Upsert sets first (standalone, no parent reference)
+                for (const setDto of itemDto.sets) {
+                    const set = await this.logSetRepository.upsert({
                         id: setDto.id,
-                        itemId: item.id,
-                        orderIndex: setIndex,
                         targetReps: setDto.targetReps,
                         achievedReps: setDto.achievedReps,
                         targetWeight: setDto.targetWeight,
@@ -97,9 +41,45 @@ export class UserWorkoutLogService {
                         skipped: setDto.skipped,
                         createdBy: userId,
                     });
+                    setIds.push(set.id);
                 }
+
+                // Upsert item with setIds array
+                const item = await this.logItemRepository.upsert({
+                    id: itemDto.id,
+                    exerciseId: itemDto.exerciseId,
+                    name: itemDto.name,
+                    restBetweenSets: itemDto.restBetweenSets,
+                    breakAfter: itemDto.breakAfter,
+                    setIds,
+                    completedAt: itemDto.completedAt,
+                    createdBy: userId,
+                });
+                itemIds.push(item.id);
             }
+
+            // Upsert section with itemIds array
+            const section = await this.logSectionRepository.upsert({
+                id: sectionDto.id,
+                name: sectionDto.name,
+                type: sectionDto.type,
+                itemIds,
+                completedAt: sectionDto.completedAt,
+                createdBy: userId,
+            });
+            sectionIds.push(section.id);
         }
+
+        // Upsert log with sectionIds array
+        const log = await this.logRepository.upsert({
+            id: dto.id,
+            originalWorkoutId: dto.originalWorkoutId,
+            name: dto.name,
+            sectionIds,
+            startedAt: dto.startedAt,
+            completedAt: dto.completedAt,
+            createdBy: userId,
+        });
 
         return log;
     }
@@ -108,46 +88,48 @@ export class UserWorkoutLogService {
         const log = await this.logRepository.findById(id);
         if (!log) throw new NotFoundException(`Log with ID ${id} not found`);
 
-        const sections = await this.logSectionRepository.findByWorkoutLogId(log.id);
-        const sectionsWithItems = await Promise.all(sections.map(async (section) => {
-            const items = await this.logItemRepository.findBySectionId(section.id);
-            const itemsWithSets = await Promise.all(items.map(async (item) => {
-                const sets = await this.logSetRepository.findByItemId(item.id);
-                return { ...item, sets: sets.sort((a, b) => a.orderIndex - b.orderIndex) };
-            }));
-            return { ...section, items: itemsWithSets.sort((a, b) => a.orderIndex - b.orderIndex) };
-        }));
-
-        return { ...log, sections: sectionsWithItems.sort((a, b) => a.orderIndex - b.orderIndex) };
+        const [populated] = await this.populateSectionsItemsSets([log]);
+        return populated;
     }
 
     async completeSet(setId: string, data: Partial<UserWorkoutLogSet>) {
+        // Update the set
         const set = await this.logSetRepository.update(setId, { ...data, completedAt: new Date() });
         if (!set) throw new NotFoundException(`Set with ID ${setId} not found`);
 
-        const allSets = await this.logSetRepository.findByItemId(set.itemId);
-        const allSetsDone = allSets.every(s => s.completedAt || s.skipped);
+        // Find the log containing this set by fetching all logs and populating
+        const allLogs = await this.logRepository.findAll();
+        const populatedLogs = await this.populateSectionsItemsSets(allLogs);
 
-        if (allSetsDone) {
-            const item = await this.logItemRepository.update(set.itemId, { completedAt: new Date() });
-            if (item) {
-                const allItems = await this.logItemRepository.findBySectionId(item.sectionId);
-                const allItemsDone = allItems.every(i => i.completedAt);
+        // Find which log/section/item contains this set and check cascading completion
+        for (const log of populatedLogs) {
+            for (const section of log.sections) {
+                for (const item of section.items) {
+                    if (item.setIds.includes(setId)) {
+                        // Check cascading completion in-memory
+                        const allSetsDone = item.sets.every(s => s.completedAt || s.skipped);
+                        if (allSetsDone) {
+                            await this.logItemRepository.update(item.id, { completedAt: new Date() });
 
-                if (allItemsDone) {
-                    const section = await this.logSectionRepository.update(item.sectionId, { completedAt: new Date() });
-                    if (section) {
-                        const allSections = await this.logSectionRepository.findByWorkoutLogId(section.workoutLogId);
-                        const allSectionsDone = allSections.every(s => s.completedAt);
+                            const allItemsDone = section.items.every(i =>
+                                i.id === item.id || i.completedAt
+                            );
+                            if (allItemsDone) {
+                                await this.logSectionRepository.update(section.id, { completedAt: new Date() });
 
-                        if (allSectionsDone) {
-                            await this.logRepository.update(section.workoutLogId, { completedAt: new Date() });
+                                const allSectionsDone = log.sections.every(s =>
+                                    s.id === section.id || s.completedAt
+                                );
+                                if (allSectionsDone) {
+                                    await this.logRepository.update(log.id, { completedAt: new Date() });
+                                }
+                            }
                         }
+                        return set;
                     }
                 }
             }
         }
-
         return set;
     }
 
@@ -158,5 +140,50 @@ export class UserWorkoutLogService {
             results.push(result);
         }
         return results;
+    }
+
+    private async populateSectionsItemsSets<T extends { sectionIds: string[] }>(logs: T[]) {
+        if (logs.length === 0) return [];
+
+        // Batch fetch all sections
+        const allSectionIds = logs.flatMap(l => l.sectionIds);
+        const sections = allSectionIds.length > 0
+            ? await this.logSectionRepository.findByIds(allSectionIds)
+            : [];
+        const sectionsById = new Map(sections.map(s => [s.id, s]));
+
+        // Batch fetch all items
+        const allItemIds = sections.flatMap(s => s.itemIds);
+        const items = allItemIds.length > 0
+            ? await this.logItemRepository.findByIds(allItemIds)
+            : [];
+        const itemsById = new Map(items.map(i => [i.id, i]));
+
+        // Batch fetch all sets
+        const allSetIds = items.flatMap(i => i.setIds);
+        const sets = allSetIds.length > 0
+            ? await this.logSetRepository.findByIds(allSetIds)
+            : [];
+        const setsById = new Map(sets.map(s => [s.id, s]));
+
+        // Build nested structure
+        return logs.map(log => ({
+            ...log,
+            sections: log.sectionIds
+                .map(sId => sectionsById.get(sId))
+                .filter((s): s is NonNullable<typeof s> => s !== undefined)
+                .map(section => ({
+                    ...section,
+                    items: section.itemIds
+                        .map(iId => itemsById.get(iId))
+                        .filter((i): i is NonNullable<typeof i> => i !== undefined)
+                        .map(item => ({
+                            ...item,
+                            sets: item.setIds
+                                .map(setId => setsById.get(setId))
+                                .filter((s): s is NonNullable<typeof s> => s !== undefined),
+                        })),
+                })),
+        }));
     }
 }

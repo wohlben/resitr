@@ -1,15 +1,10 @@
 import { integer, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
-import { userWorkoutLogSectionItems } from './user-workout-log-section-item.schema';
 
 export const userWorkoutLogSets = sqliteTable('user_workout_log_sets', {
     id: text('id')
         .primaryKey()
         .$defaultFn(() => crypto.randomUUID()),
-    itemId: text('item_id')
-        .notNull()
-        .references(() => userWorkoutLogSectionItems.id, { onDelete: 'cascade' }),
-    orderIndex: integer('order_index').notNull(),
 
     targetReps: integer('target_reps'),
     achievedReps: integer('achieved_reps'),

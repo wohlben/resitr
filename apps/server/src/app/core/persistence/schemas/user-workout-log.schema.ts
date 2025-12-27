@@ -8,6 +8,7 @@ export const userWorkoutLogs = sqliteTable('user_workout_logs', {
         .$defaultFn(() => crypto.randomUUID()),
     originalWorkoutId: text('original_workout_id').references(() => compendiumWorkouts.templateId, { onDelete: 'set null' }),
     name: text('name').notNull(),
+    sectionIds: text('section_ids', { mode: 'json' }).$type<string[]>().notNull().default([]),
 
     startedAt: integer('started_at', { mode: 'timestamp' }).notNull(),
     completedAt: integer('completed_at', { mode: 'timestamp' }),

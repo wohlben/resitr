@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { asc, eq } from 'drizzle-orm';
+import { eq, inArray } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
 import { userWorkoutLogSets, type UserWorkoutLogSet } from '../schemas';
 
@@ -7,13 +7,38 @@ import { userWorkoutLogSets, type UserWorkoutLogSet } from '../schemas';
 export class UserWorkoutLogSetRepository {
     constructor(@Inject(DATABASE) private readonly db: Database) { }
 
-    async create(data: UserWorkoutLogSet) {
-        const [result] = await this.db.insert(userWorkoutLogSets).values(data).returning();
+    async upsert(data: UserWorkoutLogSet) {
+        const id = data.id ?? crypto.randomUUID();
+        const [result] = await this.db
+            .insert(userWorkoutLogSets)
+            .values({ ...data, id })
+            .onConflictDoUpdate({
+                target: userWorkoutLogSets.id,
+                set: {
+                    targetReps: data.targetReps,
+                    achievedReps: data.achievedReps,
+                    targetWeight: data.targetWeight,
+                    achievedWeight: data.achievedWeight,
+                    targetTime: data.targetTime,
+                    achievedTime: data.achievedTime,
+                    targetDistance: data.targetDistance,
+                    achievedDistance: data.achievedDistance,
+                    completedAt: data.completedAt,
+                    skipped: data.skipped,
+                },
+            })
+            .returning();
         return result;
     }
 
-    async findByItemId(itemId: string) {
-        return this.db.select().from(userWorkoutLogSets).where(eq(userWorkoutLogSets.itemId, itemId)).orderBy(asc(userWorkoutLogSets.orderIndex));
+    async findById(id: string) {
+        const [result] = await this.db.select().from(userWorkoutLogSets).where(eq(userWorkoutLogSets.id, id));
+        return result;
+    }
+
+    async findByIds(ids: string[]) {
+        if (ids.length === 0) return [];
+        return this.db.select().from(userWorkoutLogSets).where(inArray(userWorkoutLogSets.id, ids));
     }
 
     async update(id: string, data: Partial<UserWorkoutLogSet>) {
