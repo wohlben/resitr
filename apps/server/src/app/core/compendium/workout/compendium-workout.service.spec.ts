@@ -542,6 +542,159 @@ describe('CompendiumWorkoutService', () => {
     });
   });
 
+  describe('forkedFrom tracking', () => {
+    it('should set forkedFrom to null for items created via create()', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-new',
+        name: 'New Workout',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+
+      await service.create(workoutDto, 'user-1');
+      const result = await service.findById('workout-new');
+
+      expect(result?.sections[0].forkedFrom).toBeNull();
+      expect(result?.sections[0].items[0]?.forkedFrom).toBeNull();
+    });
+
+    it('should set forkedFrom on sections derived from old sections', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Original Section',
+            items: [],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalSectionId = v1?.sections[0].id;
+
+      // Update - new section should track it was derived from original
+      const result = await service.update('workout-v1', {
+        sections: [
+          { type: WorkoutSectionType.STRENGTH, name: 'Modified Section', items: [] },
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      expect(v2?.sections[0].forkedFrom).toBe(originalSectionId);
+    });
+
+    it('should set forkedFrom on items derived from changed old items', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalItemId = v1?.sections[0].items[0]?.id;
+
+      // Update with changed item - new item should track derivation
+      const result = await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 90, breakAfter: 120 }, // Changed breakBetweenSets
+            ],
+          },
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      expect(v2?.sections[0].items[0]?.forkedFrom).toBe(originalItemId);
+    });
+
+    it('should set forkedFrom to null for newly added sections', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout',
+        version: 1,
+        sections: [
+          { type: WorkoutSectionType.WARMUP, name: 'Warmup', items: [] },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+
+      // Update with additional section at new position
+      const result = await service.update('workout-v1', {
+        sections: [
+          { type: WorkoutSectionType.WARMUP, name: 'Warmup', items: [] },
+          { type: WorkoutSectionType.STRENGTH, name: 'New Section', items: [] }, // New section
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      // First section derived from old, second is new
+      expect(v2?.sections[0].forkedFrom).toBeDefined(); // Derived from old
+      expect(v2?.sections[1].forkedFrom).toBeNull(); // New section
+    });
+
+    it('should set forkedFrom to null for newly added items', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-v1',
+        name: 'Workout',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+      await service.create(workoutDto, 'user-1');
+      const v1 = await service.findById('workout-v1');
+      const originalItemId = v1?.sections[0].items[0]?.id;
+
+      // Update with additional item at new position
+      const result = await service.update('workout-v1', {
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 120 }, // Unchanged - reused
+              { exerciseId: 'exercise-2', breakBetweenSets: 90, breakAfter: 180 }, // New item
+            ],
+          },
+        ],
+      }, 'user-1');
+
+      const v2 = await service.findById(result!.templateId);
+      // First item reused (same ID), second is new with forkedFrom: null
+      expect(v2?.sections[0].items[0]?.id).toBe(originalItemId); // Reused
+      expect(v2?.sections[0].items[1]?.forkedFrom).toBeNull(); // New item
+    });
+  });
+
   describe('delete', () => {
     it('should delete a workout', async () => {
       const workoutDto: CreateWorkoutDto = {

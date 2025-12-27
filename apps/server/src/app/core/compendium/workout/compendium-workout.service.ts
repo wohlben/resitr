@@ -30,6 +30,7 @@ export class CompendiumWorkoutService {
               exerciseId: itemData.exerciseId,
               breakBetweenSets: itemData.breakBetweenSets,
               breakAfter: itemData.breakAfter,
+              forkedFrom: null,  // New items are not derived from anything
               createdBy: userId,
             });
             itemIds.push(item.id);
@@ -41,6 +42,7 @@ export class CompendiumWorkoutService {
           type: sectionData.type,
           name: sectionData.name,
           workoutSectionItemIds: itemIds,
+          forkedFrom: null,  // New sections are not derived from anything
           createdBy: userId,
         });
         sectionIds.push(section.id);
@@ -108,75 +110,60 @@ export class CompendiumWorkoutService {
       return null;
     }
 
-    // Fetch old sections for item comparison
-    type SectionData = { section: CompendiumWorkoutSection & { id: string }; items: (CompendiumWorkoutSectionItem & { id: string })[] };
-    const oldSectionsMap = new Map<number, SectionData>();
-    if (oldWorkout.sectionIds.length > 0) {
-      const oldSections = await this.sectionRepository.findByIds(oldWorkout.sectionIds);
-      for (let i = 0; i < oldWorkout.sectionIds.length; i++) {
-        const section = oldSections.find(s => s.id === oldWorkout.sectionIds[i]);
-        if (section) {
-          const items = section.workoutSectionItemIds.length > 0
-            ? await this.sectionItemRepository.findByIds(section.workoutSectionItemIds)
-            : [];
-          oldSectionsMap.set(i, { section, items });
-        }
-      }
-    }
+    // Batch fetch: all old sections in one query
+    const oldSections = oldWorkout.sectionIds.length > 0
+      ? await this.sectionRepository.findByIds(oldWorkout.sectionIds)
+      : [];
+    const oldSectionsById = new Map(oldSections.map(s => [s.id, s]));
 
-    // Build new sections with item reuse
-    const newSectionIds: string[] = [];
+    // Batch fetch: all old items across all sections in one query
+    const allOldItemIds = oldSections.flatMap(s => s.workoutSectionItemIds);
+    const oldItems = allOldItemIds.length > 0
+      ? await this.sectionItemRepository.findByIds(allOldItemIds)
+      : [];
+    const oldItemsById = new Map(oldItems.map(i => [i.id, i]));
+
+    // Map sections to new section IDs with item reuse logic
     const newSections = data.sections ?? [];
+    const newSectionIds = await Promise.all(
+      newSections.map(async (newSectionData, sectionIndex) => {
+        const oldSectionId = oldWorkout.sectionIds[sectionIndex];
+        const oldSection = oldSectionId ? oldSectionsById.get(oldSectionId) : undefined;
 
-    for (let sectionIndex = 0; sectionIndex < newSections.length; sectionIndex++) {
-      const newSectionData = newSections[sectionIndex];
-      const oldSectionData = oldSectionsMap.get(sectionIndex);
+        // Map items: reuse unchanged, fork changed, create new
+        const newItemIds = await Promise.all(
+          (newSectionData.items ?? []).map(async (newItemData, itemIndex) => {
+            const oldItemId = oldSection?.workoutSectionItemIds[itemIndex];
+            const oldItem = oldItemId ? oldItemsById.get(oldItemId) : undefined;
 
-      // Build items for this section with reuse logic
-      const newItemIds: string[] = [];
-      const newItems = newSectionData.items ?? [];
+            // Reuse unchanged item
+            if (oldItem && this.itemsMatch(oldItem, newItemData)) {
+              return oldItem.id;
+            }
 
-      for (let itemIndex = 0; itemIndex < newItems.length; itemIndex++) {
-        const newItemData = newItems[itemIndex];
+            // Create new item (forked if oldItemId exists, brand new otherwise)
+            const newItem = await this.sectionItemRepository.create({
+              exerciseId: newItemData.exerciseId,
+              breakBetweenSets: newItemData.breakBetweenSets,
+              breakAfter: newItemData.breakAfter,
+              forkedFrom: oldItemId ?? null,
+              createdBy: userId,
+            });
+            return newItem.id;
+          })
+        );
 
-        // Try to reuse item if old section exists and has item at same position
-        let reuseItemId: string | null = null;
-        const oldItemIds = oldSectionData?.section.workoutSectionItemIds ?? [];
-        if (oldSectionData && oldItemIds[itemIndex]) {
-          const oldItemId = oldItemIds[itemIndex];
-          const oldItem = oldSectionData.items.find(i => i.id === oldItemId);
-
-          if (oldItem &&
-              oldItem.exerciseId === newItemData.exerciseId &&
-              oldItem.breakBetweenSets === newItemData.breakBetweenSets &&
-              oldItem.breakAfter === newItemData.breakAfter) {
-            reuseItemId = oldItem.id;
-          }
-        }
-
-        if (reuseItemId) {
-          newItemIds.push(reuseItemId);
-        } else {
-          // Create new item
-          const newItem = await this.sectionItemRepository.create({
-            exerciseId: newItemData.exerciseId,
-            breakBetweenSets: newItemData.breakBetweenSets,
-            breakAfter: newItemData.breakAfter,
-            createdBy: userId,
-          });
-          newItemIds.push(newItem.id);
-        }
-      }
-
-      // Always create new section (sections are version-specific)
-      const newSection = await this.sectionRepository.create({
-        type: newSectionData.type,
-        name: newSectionData.name,
-        workoutSectionItemIds: newItemIds,
-        createdBy: userId,
-      });
-      newSectionIds.push(newSection.id);
-    }
+        // Create new section (always new for versioning)
+        const newSection = await this.sectionRepository.create({
+          type: newSectionData.type,
+          name: newSectionData.name,
+          workoutSectionItemIds: newItemIds,
+          forkedFrom: oldSection?.id ?? null,
+          createdBy: userId,
+        });
+        return newSection.id;
+      })
+    );
 
     // Create new workout version with same lineageId
     const newWorkout = await this.workoutRepository.create({
@@ -197,5 +184,16 @@ export class CompendiumWorkoutService {
     // by other workout versions per versioning architecture
     // TODO: implement a cleanup strategy for orphaned sections/items later
     return this.workoutRepository.delete(templateId);
+  }
+
+  private itemsMatch(
+    oldItem: CompendiumWorkoutSectionItem & { id: string },
+    newItemData: { exerciseId: string; breakBetweenSets: number; breakAfter: number }
+  ): boolean {
+    return (
+      oldItem.exerciseId === newItemData.exerciseId &&
+      oldItem.breakBetweenSets === newItemData.breakBetweenSets &&
+      oldItem.breakAfter === newItemData.breakAfter
+    );
   }
 }

@@ -11,6 +11,7 @@ export const compendiumWorkoutSectionItems = sqliteTable('compendium_workout_sec
     .references(() => compendiumExercises.templateId, { onDelete: 'cascade' }),
   breakBetweenSets: integer('break_between_sets').notNull(),
   breakAfter: integer('break_after').notNull(),
+  forkedFrom: text('forked_from'),  // References the old item ID this was derived from
 
   createdBy: text('created_by').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' })

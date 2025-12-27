@@ -229,6 +229,7 @@ export function mockWorkoutSection(
     type: WorkoutSectionType.STRENGTH,
     name: 'Test Section',
     workoutSectionItemIds: [],
+    forkedFrom: null,
     createdBy: 'test-user',
     ...overrides,
   } satisfies CompendiumWorkoutSection;
@@ -245,6 +246,7 @@ export function mockWorkoutSectionItem(
     exerciseId: 'test-exercise-1',
     breakBetweenSets: 60,
     breakAfter: 120,
+    forkedFrom: null,
     createdBy: 'test-user',
     ...overrides,
   } satisfies CompendiumWorkoutSectionItem;

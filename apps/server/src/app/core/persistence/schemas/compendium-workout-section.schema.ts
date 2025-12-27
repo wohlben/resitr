@@ -15,6 +15,7 @@ export const compendiumWorkoutSections = sqliteTable('compendium_workout_section
   type: text('type').$type<WorkoutSectionType>().notNull(),
   name: text('name').notNull(),
   workoutSectionItemIds: text('workout_section_item_ids', { mode: 'json' }).$type<string[]>().notNull().default([]),
+  forkedFrom: text('forked_from'),  // References the old section ID this was derived from
 
   createdBy: text('created_by').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' })
