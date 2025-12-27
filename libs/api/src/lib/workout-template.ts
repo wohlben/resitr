@@ -14,7 +14,6 @@ export const WorkoutSectionTypeLabels = {
 
 export type WorkoutSectionItemTemplate = {
   id: string;
-  sectionId: string;
   exerciseId: string;
   breakBetweenSets: number;
   breakAfter: number;
@@ -24,7 +23,6 @@ export type WorkoutSectionItemTemplate = {
 
 export type WorkoutSectionTemplate = {
   id: string;
-  workoutTemplateId: string;
   type: WorkoutSectionType;
   name: string;
   items: WorkoutSectionItemTemplate[];

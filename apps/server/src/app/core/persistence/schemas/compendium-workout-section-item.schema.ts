@@ -1,19 +1,14 @@
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
-import { compendiumWorkoutSections } from './compendium-workout-section.schema';
 import { compendiumExercises } from './compendium-exercise.schema';
 
 export const compendiumWorkoutSectionItems = sqliteTable('compendium_workout_section_items', {
   id: text('id')
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
-  sectionId: text('section_id')
-    .notNull()
-    .references(() => compendiumWorkoutSections.id, { onDelete: 'cascade' }),
   exerciseId: text('exercise_id')
     .notNull()
     .references(() => compendiumExercises.templateId, { onDelete: 'cascade' }),
-  orderIndex: integer('order_index').notNull(),
   breakBetweenSets: integer('break_between_sets').notNull(),
   breakAfter: integer('break_after').notNull(),
 

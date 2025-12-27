@@ -14,41 +14,46 @@ export class CompendiumWorkoutService {
   ) {}
 
   async create(data: CreateWorkoutDto, userId: string) {
-    // Create the workout
+    const sectionIds: string[] = [];
+
+    // Create sections and items first
+    if (data.sections) {
+      for (const sectionData of data.sections) {
+        const itemIds: string[] = [];
+
+        // Create items first (standalone, no parent reference)
+        if (sectionData.items) {
+          for (const itemData of sectionData.items) {
+            const item = await this.sectionItemRepository.create({
+              exerciseId: itemData.exerciseId,
+              breakBetweenSets: itemData.breakBetweenSets,
+              breakAfter: itemData.breakAfter,
+              createdBy: userId,
+            });
+            itemIds.push(item.id);
+          }
+        }
+
+        // Create section with item IDs
+        const section = await this.sectionRepository.create({
+          type: sectionData.type,
+          name: sectionData.name,
+          workoutSectionItemIds: itemIds,
+          createdBy: userId,
+        });
+        sectionIds.push(section.id);
+      }
+    }
+
+    // Create workout with section IDs
     const workout = await this.workoutRepository.create({
       templateId: data.templateId,
       name: data.name,
       description: data.description,
       version: data.version,
+      sectionIds: sectionIds,
       createdBy: userId,
     });
-
-    // Create sections
-    if (data.sections) {
-      for (const [sectionIndex, sectionData] of data.sections.entries()) {
-        const section = await this.sectionRepository.create({
-          workoutTemplateId: workout.templateId,
-          type: sectionData.type,
-          name: sectionData.name,
-          orderIndex: sectionIndex,
-          createdBy: userId,
-        });
-
-        // Create section items
-        if (sectionData.items) {
-          for (const [itemIndex, itemData] of sectionData.items.entries()) {
-            await this.sectionItemRepository.create({
-              sectionId: section.id,
-              exerciseId: itemData.exerciseId,
-              orderIndex: itemIndex,
-              breakBetweenSets: itemData.breakBetweenSets,
-              breakAfter: itemData.breakAfter,
-              createdBy: userId,
-            });
-          }
-        }
-      }
-    }
 
     return workout;
   }
@@ -61,14 +66,29 @@ export class CompendiumWorkoutService {
     const workout = await this.workoutRepository.findById(templateId);
     if (!workout) return null;
 
-    // Get sections
-    const sections = await this.sectionRepository.findByWorkoutTemplateId(templateId);
+    // Fetch sections by IDs from workout.sectionIds
+    const sectionsMap = new Map<string, Awaited<ReturnType<typeof this.sectionRepository.findById>>>();
+    if (workout.sectionIds.length > 0) {
+      const sections = await this.sectionRepository.findByIds(workout.sectionIds);
+      sections.forEach((s) => sectionsMap.set(s.id, s));
+    }
 
-    // Get items for each section
+    // Preserve order from sectionIds array
+    const orderedSections = workout.sectionIds.map((id) => sectionsMap.get(id)).filter(Boolean);
+
+    // For each section, fetch items by IDs from section.workoutSectionItemIds
     const sectionsWithItems = await Promise.all(
-      sections.map(async (section) => {
-        const items = await this.sectionItemRepository.findBySectionId(section.id);
-        return { ...section, items };
+      orderedSections.map(async (section) => {
+        const itemsMap = new Map<string, Awaited<ReturnType<typeof this.sectionItemRepository.findById>>>();
+        if (section!.workoutSectionItemIds.length > 0) {
+          const items = await this.sectionItemRepository.findByIds(section!.workoutSectionItemIds);
+          items.forEach((i) => itemsMap.set(i.id, i));
+        }
+
+        // Preserve order from workoutSectionItemIds array
+        const orderedItems = section!.workoutSectionItemIds.map((id) => itemsMap.get(id)).filter(Boolean);
+
+        return { ...section, items: orderedItems };
       })
     );
 
@@ -90,7 +110,9 @@ export class CompendiumWorkoutService {
   }
 
   async delete(templateId: string) {
-    // Cascade delete will handle sections and items
+    // Note: Sections and items are NOT deleted - they may be referenced
+    // by other workout versions per versioning architecture
+    // TODO: implement a cleanup strategy for orphaned sections/items later
     return this.workoutRepository.delete(templateId);
   }
 }

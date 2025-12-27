@@ -5,6 +5,7 @@ export const compendiumWorkouts = sqliteTable('compendium_workouts', {
   templateId: text('template_id').primaryKey(),
   name: text('name').notNull(),
   description: text('description'),
+  sectionIds: text('section_ids', { mode: 'json' }).$type<string[]>().notNull().default([]),
 
   createdBy: text('created_by').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' })

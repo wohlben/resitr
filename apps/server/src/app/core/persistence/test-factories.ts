@@ -210,6 +210,7 @@ export function mockWorkout(
     templateId: 'test-workout-1',
     name: 'Test Workout',
     description: 'A test workout for unit tests',
+    sectionIds: [],
     createdBy: 'test-user',
     version: 1,
     ...overrides,
@@ -224,10 +225,9 @@ export function mockWorkoutSection(
   overrides: Partial<CompendiumWorkoutSection> = {}
 ): CompendiumWorkoutSection {
   return {
-    workoutTemplateId: 'test-workout-1',
     type: WorkoutSectionType.STRENGTH,
     name: 'Test Section',
-    orderIndex: 0,
+    workoutSectionItemIds: [],
     createdBy: 'test-user',
     ...overrides,
   } satisfies CompendiumWorkoutSection;
@@ -241,9 +241,7 @@ export function mockWorkoutSectionItem(
   overrides: Partial<CompendiumWorkoutSectionItem> = {}
 ): CompendiumWorkoutSectionItem {
   return {
-    sectionId: 'test-section-1',
     exerciseId: 'test-exercise-1',
-    orderIndex: 0,
     breakBetweenSets: 60,
     breakAfter: 120,
     createdBy: 'test-user',

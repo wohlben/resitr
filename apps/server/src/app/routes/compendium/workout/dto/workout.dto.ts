@@ -75,10 +75,6 @@ export class WorkoutSectionItemResponseDto extends CreateWorkoutSectionItemDto i
   @IsString()
   id!: string;
 
-  @ApiProperty({ description: 'Section ID this item belongs to' })
-  @IsString()
-  sectionId!: string;
-
   @ApiProperty({ description: 'User ID of the creator' })
   @IsString()
   createdBy!: string;
@@ -93,10 +89,6 @@ export class WorkoutSectionResponseDto implements WorkoutSectionTemplate {
   @ApiProperty({ description: 'Unique identifier for the section' })
   @IsString()
   id!: string;
-
-  @ApiProperty({ description: 'Workout template ID this section belongs to' })
-  @IsString()
-  workoutTemplateId!: string;
 
   @ApiProperty({ description: 'Type of workout section', enum: WorkoutSectionType })
   @IsEnum(WorkoutSectionType)

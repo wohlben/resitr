@@ -1,47 +1,35 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CompendiumWorkoutSectionRepository } from './compendium-workout-section.repository';
-import { CompendiumWorkoutRepository } from './compendium-workout.repository';
 import { provideTestDatabase } from '../database';
-import { mockWorkout, mockWorkoutSection } from '../test-factories';
-import type { CompendiumWorkout } from '../schemas/compendium-workout.schema';
+import { mockWorkoutSection } from '../test-factories';
 import { WorkoutSectionType } from '../schemas/compendium-workout-section.schema';
 
 describe('CompendiumWorkoutSectionRepository', () => {
   let repository: CompendiumWorkoutSectionRepository;
-  let workoutRepository: CompendiumWorkoutRepository;
-  let testWorkout1: CompendiumWorkout;
-  let testWorkout2: CompendiumWorkout;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [provideTestDatabase(), CompendiumWorkoutSectionRepository, CompendiumWorkoutRepository],
+      providers: [provideTestDatabase(), CompendiumWorkoutSectionRepository],
     }).compile();
 
     repository = module.get<CompendiumWorkoutSectionRepository>(CompendiumWorkoutSectionRepository);
-    workoutRepository = module.get<CompendiumWorkoutRepository>(CompendiumWorkoutRepository);
-
-    // Create prerequisite test workouts
-    testWorkout1 = await workoutRepository.create(mockWorkout({ templateId: 'workout-1', name: 'Workout A' }));
-    testWorkout2 = await workoutRepository.create(mockWorkout({ templateId: 'workout-2', name: 'Workout B' }));
   });
 
   describe('create', () => {
     it('should create a section with all fields', async () => {
       const sectionData = mockWorkoutSection({
-        workoutTemplateId: testWorkout1.templateId,
         type: WorkoutSectionType.WARMUP,
         name: 'Warm-up Phase',
-        orderIndex: 0,
+        workoutSectionItemIds: ['item-1', 'item-2'],
         createdBy: 'user-1',
       });
 
       const result = await repository.create(sectionData);
 
       expect(result).toMatchObject({
-        workoutTemplateId: testWorkout1.templateId,
         type: WorkoutSectionType.WARMUP,
         name: 'Warm-up Phase',
-        orderIndex: 0,
+        workoutSectionItemIds: ['item-1', 'item-2'],
         createdBy: 'user-1',
       });
       expect(result.id).toBeDefined();
@@ -51,26 +39,20 @@ describe('CompendiumWorkoutSectionRepository', () => {
     it('should create sections with different types', async () => {
       const warmup = await repository.create(
         mockWorkoutSection({
-          workoutTemplateId: testWorkout1.templateId,
           type: WorkoutSectionType.WARMUP,
           name: 'Warmup',
-          orderIndex: 0,
         })
       );
       const strength = await repository.create(
         mockWorkoutSection({
-          workoutTemplateId: testWorkout1.templateId,
           type: WorkoutSectionType.STRENGTH,
           name: 'Strength Training',
-          orderIndex: 1,
         })
       );
       const cooldown = await repository.create(
         mockWorkoutSection({
-          workoutTemplateId: testWorkout1.templateId,
           type: WorkoutSectionType.COOLDOWN,
           name: 'Cooldown',
-          orderIndex: 2,
         })
       );
 
@@ -79,10 +61,14 @@ describe('CompendiumWorkoutSectionRepository', () => {
       expect(cooldown.type).toBe(WorkoutSectionType.COOLDOWN);
     });
 
-    it('should fail when creating section with non-existent workout', async () => {
-      const sectionData = mockWorkoutSection({ workoutTemplateId: 'nonexistent-workout' });
+    it('should create section with empty item IDs array', async () => {
+      const sectionData = mockWorkoutSection({
+        workoutSectionItemIds: [],
+      });
 
-      await expect(repository.create(sectionData)).rejects.toThrow();
+      const result = await repository.create(sectionData);
+
+      expect(result.workoutSectionItemIds).toEqual([]);
     });
   });
 
@@ -92,9 +78,9 @@ describe('CompendiumWorkoutSectionRepository', () => {
       expect(results).toEqual([]);
     });
 
-    it('should return all sections across all workouts', async () => {
-      await repository.create(mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'Section A' }));
-      await repository.create(mockWorkoutSection({ workoutTemplateId: testWorkout2.templateId, name: 'Section B' }));
+    it('should return all sections', async () => {
+      await repository.create(mockWorkoutSection({ name: 'Section A' }));
+      await repository.create(mockWorkoutSection({ name: 'Section B' }));
 
       const results = await repository.findAll();
 
@@ -105,9 +91,7 @@ describe('CompendiumWorkoutSectionRepository', () => {
 
   describe('findById', () => {
     it('should find a section by id', async () => {
-      const created = await repository.create(
-        mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'Test Section' })
-      );
+      const created = await repository.create(mockWorkoutSection({ name: 'Test Section' }));
 
       const result = await repository.findById(created.id);
 
@@ -123,32 +107,41 @@ describe('CompendiumWorkoutSectionRepository', () => {
     });
   });
 
-  describe('findByWorkoutTemplateId', () => {
-    it('should find all sections for a specific workout', async () => {
-      // Create sections for workout 1
-      await repository.create(mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'W1 Section 1' }));
-      await repository.create(mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'W1 Section 2' }));
+  describe('findByIds', () => {
+    it('should find multiple sections by ids', async () => {
+      const section1 = await repository.create(mockWorkoutSection({ name: 'Section 1' }));
+      const section2 = await repository.create(mockWorkoutSection({ name: 'Section 2' }));
+      await repository.create(mockWorkoutSection({ name: 'Section 3' }));
 
-      // Create section for workout 2
-      await repository.create(mockWorkoutSection({ workoutTemplateId: testWorkout2.templateId, name: 'W2 Section 1' }));
-
-      const results = await repository.findByWorkoutTemplateId(testWorkout1.templateId);
+      const results = await repository.findByIds([section1.id, section2.id]);
 
       expect(results).toHaveLength(2);
-      expect(results.map((s) => s.name)).toEqual(expect.arrayContaining(['W1 Section 1', 'W1 Section 2']));
+      expect(results.map((s) => s.name)).toEqual(expect.arrayContaining(['Section 1', 'Section 2']));
     });
 
-    it('should return empty array when workout has no sections', async () => {
-      const results = await repository.findByWorkoutTemplateId(testWorkout1.templateId);
+    it('should return empty array when ids array is empty', async () => {
+      const results = await repository.findByIds([]);
       expect(results).toEqual([]);
+    });
+
+    it('should return empty array when no sections match', async () => {
+      const results = await repository.findByIds(['nonexistent-1', 'nonexistent-2']);
+      expect(results).toEqual([]);
+    });
+
+    it('should return only found sections when some ids do not exist', async () => {
+      const section1 = await repository.create(mockWorkoutSection({ name: 'Section 1' }));
+
+      const results = await repository.findByIds([section1.id, 'nonexistent-id']);
+
+      expect(results).toHaveLength(1);
+      expect(results[0].name).toBe('Section 1');
     });
   });
 
   describe('update', () => {
     it('should update a section name', async () => {
-      const created = await repository.create(
-        mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'Old Name' })
-      );
+      const created = await repository.create(mockWorkoutSection({ name: 'Old Name' }));
 
       const result = await repository.update(created.id, { name: 'New Name' });
 
@@ -159,29 +152,25 @@ describe('CompendiumWorkoutSectionRepository', () => {
     });
 
     it('should update section type', async () => {
-      const created = await repository.create(
-        mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, type: WorkoutSectionType.WARMUP })
-      );
+      const created = await repository.create(mockWorkoutSection({ type: WorkoutSectionType.WARMUP }));
 
       const result = await repository.update(created.id, { type: WorkoutSectionType.STRENGTH });
 
       expect(result?.type).toBe(WorkoutSectionType.STRENGTH);
     });
 
-    it('should update orderIndex', async () => {
-      const created = await repository.create(
-        mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, orderIndex: 0 })
-      );
+    it('should update workoutSectionItemIds', async () => {
+      const created = await repository.create(mockWorkoutSection({ workoutSectionItemIds: ['item-1'] }));
 
-      const result = await repository.update(created.id, { orderIndex: 5 });
+      const result = await repository.update(created.id, { workoutSectionItemIds: ['item-1', 'item-2', 'item-3'] });
 
-      expect(result?.orderIndex).toBe(5);
+      expect(result?.workoutSectionItemIds).toEqual(['item-1', 'item-2', 'item-3']);
     });
   });
 
   describe('delete', () => {
     it('should delete a section', async () => {
-      const created = await repository.create(mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId }));
+      const created = await repository.create(mockWorkoutSection());
 
       const result = await repository.delete(created.id);
 
@@ -194,24 +183,6 @@ describe('CompendiumWorkoutSectionRepository', () => {
     it('should handle deleting non-existent section', async () => {
       const result = await repository.delete('nonexistent-id');
       expect(result).toBeUndefined();
-    });
-  });
-
-  describe('cascading deletes', () => {
-    it('should delete sections when parent workout is deleted', async () => {
-      const section1 = await repository.create(
-        mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'Section 1' })
-      );
-      const section2 = await repository.create(
-        mockWorkoutSection({ workoutTemplateId: testWorkout1.templateId, name: 'Section 2' })
-      );
-
-      await workoutRepository.delete(testWorkout1.templateId);
-
-      const found1 = await repository.findById(section1.id);
-      const found2 = await repository.findById(section2.id);
-      expect(found1).toBeUndefined();
-      expect(found2).toBeUndefined();
     });
   });
 });

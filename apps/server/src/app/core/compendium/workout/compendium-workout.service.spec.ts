@@ -3,11 +3,9 @@ import { CompendiumWorkoutService } from './compendium-workout.service';
 import { CompendiumWorkoutRepository } from '../../persistence/repositories/compendium-workout.repository';
 import { CompendiumWorkoutSectionRepository } from '../../persistence/repositories/compendium-workout-section.repository';
 import { CompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/compendium-workout-section-item.repository';
-import { UserExerciseSchemeCompendiumWorkoutSectionItemRepository } from '../../persistence/repositories/user-exercise-scheme-compendium-workout-section-item.repository';
-import { UserExerciseSchemeRepository } from '../../persistence/repositories/user-exercise-scheme.repository';
 import { CompendiumExerciseRepository } from '../../persistence/repositories/compendium-exercise.repository';
 import { provideTestDatabase } from '../../persistence/database';
-import { mockExercise, mockUserExerciseScheme } from '../../persistence/test-factories';
+import { mockExercise } from '../../persistence/test-factories';
 import type { CreateWorkoutDto } from '../../../routes/compendium/workout/dto/workout.dto';
 import { WorkoutSectionType } from '../../persistence/schemas/compendium-workout-section.schema';
 
@@ -17,9 +15,6 @@ describe('CompendiumWorkoutService', () => {
   let sectionRepository: CompendiumWorkoutSectionRepository;
   let sectionItemRepository: CompendiumWorkoutSectionItemRepository;
   let exerciseRepository: CompendiumExerciseRepository;
-  let schemeRepository: UserExerciseSchemeRepository;
-  let testScheme1Id: string;
-  let testScheme2Id: string;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -28,8 +23,6 @@ describe('CompendiumWorkoutService', () => {
         CompendiumWorkoutRepository,
         CompendiumWorkoutSectionRepository,
         CompendiumWorkoutSectionItemRepository,
-        UserExerciseSchemeCompendiumWorkoutSectionItemRepository,
-        UserExerciseSchemeRepository,
         CompendiumExerciseRepository,
         CompendiumWorkoutService,
       ],
@@ -40,15 +33,10 @@ describe('CompendiumWorkoutService', () => {
     sectionRepository = module.get<CompendiumWorkoutSectionRepository>(CompendiumWorkoutSectionRepository);
     sectionItemRepository = module.get<CompendiumWorkoutSectionItemRepository>(CompendiumWorkoutSectionItemRepository);
     exerciseRepository = module.get<CompendiumExerciseRepository>(CompendiumExerciseRepository);
-    schemeRepository = module.get<UserExerciseSchemeRepository>(UserExerciseSchemeRepository);
 
     // Create prerequisite test data
-    const exercise1 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-1' }));
-    const exercise2 = await exerciseRepository.create(mockExercise({ templateId: 'exercise-2' }));
-    const scheme1 = await schemeRepository.create(mockUserExerciseScheme({ userId: 'test-user', exerciseId: exercise1.templateId }));
-    const scheme2 = await schemeRepository.create(mockUserExerciseScheme({ userId: 'test-user', exerciseId: exercise2.templateId }));
-    testScheme1Id = scheme1.id;
-    testScheme2Id = scheme2.id;
+    await exerciseRepository.create(mockExercise({ templateId: 'exercise-1' }));
+    await exerciseRepository.create(mockExercise({ templateId: 'exercise-2' }));
   });
 
   describe('create', () => {
@@ -64,7 +52,7 @@ describe('CompendiumWorkoutService', () => {
             name: 'Warmup',
             items: [
               {
-                exerciseSchemeId: testScheme1Id,
+                exerciseId: 'exercise-1',
                 breakBetweenSets: 30,
                 breakAfter: 60,
               },
@@ -75,12 +63,12 @@ describe('CompendiumWorkoutService', () => {
             name: 'Strength Training',
             items: [
               {
-                exerciseSchemeId: testScheme1Id,
+                exerciseId: 'exercise-1',
                 breakBetweenSets: 90,
                 breakAfter: 120,
               },
               {
-                exerciseSchemeId: testScheme2Id,
+                exerciseId: 'exercise-2',
                 breakBetweenSets: 90,
                 breakAfter: 120,
               },
@@ -99,16 +87,28 @@ describe('CompendiumWorkoutService', () => {
         createdBy: 'user-1',
       });
 
-      // Verify sections were created
-      const sections = await sectionRepository.findByWorkoutTemplateId(result.templateId);
-      expect(sections).toHaveLength(2);
-      expect(sections[0].type).toBe(WorkoutSectionType.WARMUP);
-      expect(sections[1].type).toBe(WorkoutSectionType.STRENGTH);
+      // Verify sectionIds array was populated
+      expect(result.sectionIds).toHaveLength(2);
 
-      // Verify items were created
-      const warmupItems = await sectionItemRepository.findBySectionId(sections[0].id);
+      // Verify sections were created
+      const sections = await sectionRepository.findByIds(result.sectionIds);
+      expect(sections).toHaveLength(2);
+
+      // Find sections by type for assertions
+      const warmupSection = sections.find((s) => s.type === WorkoutSectionType.WARMUP);
+      const strengthSection = sections.find((s) => s.type === WorkoutSectionType.STRENGTH);
+
+      expect(warmupSection).toBeDefined();
+      expect(strengthSection).toBeDefined();
+
+      // Verify items were created and linked via workoutSectionItemIds
+      expect(warmupSection!.workoutSectionItemIds).toHaveLength(1);
+      expect(strengthSection!.workoutSectionItemIds).toHaveLength(2);
+
+      const warmupItems = await sectionItemRepository.findByIds(warmupSection!.workoutSectionItemIds);
       expect(warmupItems).toHaveLength(1);
-      const strengthItems = await sectionItemRepository.findBySectionId(sections[1].id);
+
+      const strengthItems = await sectionItemRepository.findByIds(strengthSection!.workoutSectionItemIds);
       expect(strengthItems).toHaveLength(2);
     });
 
@@ -128,6 +128,7 @@ describe('CompendiumWorkoutService', () => {
         version: 1,
       });
       expect(result.description).toBeNull();
+      expect(result.sectionIds).toEqual([]);
     });
 
     it('should create a workout with empty sections', async () => {
@@ -140,8 +141,7 @@ describe('CompendiumWorkoutService', () => {
 
       const result = await service.create(workoutDto, 'user-1');
 
-      const sections = await sectionRepository.findByWorkoutTemplateId(result.templateId);
-      expect(sections).toHaveLength(0);
+      expect(result.sectionIds).toHaveLength(0);
     });
 
     it('should create a workout with all section types', async () => {
@@ -173,11 +173,16 @@ describe('CompendiumWorkoutService', () => {
         ],
       };
 
-      await service.create(workoutDto, 'user-1');
+      const result = await service.create(workoutDto, 'user-1');
 
-      const sections = await sectionRepository.findByWorkoutTemplateId('workout-4');
+      expect(result.sectionIds).toHaveLength(4);
+
+      const sections = await sectionRepository.findByIds(result.sectionIds);
       expect(sections).toHaveLength(4);
-      expect(sections.map((s) => s.type)).toEqual([
+
+      // Verify order is preserved by sectionIds array
+      const orderedTypes = result.sectionIds.map((id) => sections.find((s) => s.id === id)?.type);
+      expect(orderedTypes).toEqual([
         WorkoutSectionType.WARMUP,
         WorkoutSectionType.STRETCHING,
         WorkoutSectionType.STRENGTH,
@@ -185,6 +190,26 @@ describe('CompendiumWorkoutService', () => {
       ]);
     });
 
+    it('should preserve section order through sectionIds array', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-5',
+        name: 'Ordered Workout',
+        version: 1,
+        sections: [
+          { type: WorkoutSectionType.COOLDOWN, name: 'First Section', items: [] },
+          { type: WorkoutSectionType.WARMUP, name: 'Second Section', items: [] },
+          { type: WorkoutSectionType.STRENGTH, name: 'Third Section', items: [] },
+        ],
+      };
+
+      const result = await service.create(workoutDto, 'user-1');
+
+      // Fetch and verify order preserved
+      const sections = await sectionRepository.findByIds(result.sectionIds);
+      const orderedNames = result.sectionIds.map((id) => sections.find((s) => s.id === id)?.name);
+
+      expect(orderedNames).toEqual(['First Section', 'Second Section', 'Third Section']);
+    });
   });
 
   describe('findAll', () => {
@@ -197,12 +222,14 @@ describe('CompendiumWorkoutService', () => {
       await workoutRepository.create({
         templateId: 'workout-1',
         name: 'Workout A',
+        sectionIds: [],
         version: 1,
         createdBy: 'user-1',
       });
       await workoutRepository.create({
         templateId: 'workout-2',
         name: 'Workout B',
+        sectionIds: [],
         version: 1,
         createdBy: 'user-1',
       });
@@ -226,7 +253,7 @@ describe('CompendiumWorkoutService', () => {
             name: 'Main Section',
             items: [
               {
-                exerciseSchemeId: testScheme1Id,
+                exerciseId: 'exercise-1',
                 breakBetweenSets: 60,
                 breakAfter: 120,
               },
@@ -243,11 +270,69 @@ describe('CompendiumWorkoutService', () => {
       expect(result?.name).toBe('Test Workout');
       expect(result?.sections).toHaveLength(1);
       expect(result?.sections[0].items).toHaveLength(1);
+      expect(result?.sections[0].items[0]?.exerciseId).toBe('exercise-1');
     });
 
     it('should return null when workout does not exist', async () => {
       const result = await service.findById('nonexistent');
       expect(result).toBeNull();
+    });
+
+    it('should return workout with empty sections when no sections exist', async () => {
+      await workoutRepository.create({
+        templateId: 'workout-empty',
+        name: 'Empty Workout',
+        sectionIds: [],
+        version: 1,
+        createdBy: 'user-1',
+      });
+
+      const result = await service.findById('workout-empty');
+
+      expect(result).toBeDefined();
+      expect(result?.sections).toHaveLength(0);
+    });
+
+    it('should preserve section order from sectionIds array', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-ordered',
+        name: 'Ordered Workout',
+        version: 1,
+        sections: [
+          { type: WorkoutSectionType.COOLDOWN, name: 'First', items: [] },
+          { type: WorkoutSectionType.WARMUP, name: 'Second', items: [] },
+          { type: WorkoutSectionType.STRENGTH, name: 'Third', items: [] },
+        ],
+      };
+
+      await service.create(workoutDto, 'user-1');
+      const result = await service.findById('workout-ordered');
+
+      expect(result?.sections.map((s) => s.name)).toEqual(['First', 'Second', 'Third']);
+    });
+
+    it('should preserve item order from workoutSectionItemIds array', async () => {
+      const workoutDto: CreateWorkoutDto = {
+        templateId: 'workout-items',
+        name: 'Workout with Items',
+        version: 1,
+        sections: [
+          {
+            type: WorkoutSectionType.STRENGTH,
+            name: 'Main Section',
+            items: [
+              { exerciseId: 'exercise-1', breakBetweenSets: 60, breakAfter: 60 },
+              { exerciseId: 'exercise-2', breakBetweenSets: 90, breakAfter: 90 },
+              { exerciseId: 'exercise-1', breakBetweenSets: 120, breakAfter: 120 },
+            ],
+          },
+        ],
+      };
+
+      await service.create(workoutDto, 'user-1');
+      const result = await service.findById('workout-items');
+
+      expect(result?.sections[0].items.map((i) => i?.breakBetweenSets)).toEqual([60, 90, 120]);
     });
   });
 
@@ -256,6 +341,7 @@ describe('CompendiumWorkoutService', () => {
       await workoutRepository.create({
         templateId: 'workout-1',
         name: 'Old Name',
+        sectionIds: [],
         version: 1,
         createdBy: 'user-1',
       });
@@ -273,6 +359,7 @@ describe('CompendiumWorkoutService', () => {
         templateId: 'workout-1',
         name: 'Test Workout',
         description: 'Old description',
+        sectionIds: [],
         version: 1,
         createdBy: 'user-1',
       });
@@ -286,6 +373,7 @@ describe('CompendiumWorkoutService', () => {
       await workoutRepository.create({
         templateId: 'workout-1',
         name: 'Test Workout',
+        sectionIds: [],
         version: 1,
         createdBy: 'user-1',
       });
@@ -298,7 +386,7 @@ describe('CompendiumWorkoutService', () => {
   });
 
   describe('delete', () => {
-    it('should delete a workout and all its nested data', async () => {
+    it('should delete a workout', async () => {
       const workoutDto: CreateWorkoutDto = {
         templateId: 'workout-1',
         name: 'Test Workout',
@@ -309,7 +397,7 @@ describe('CompendiumWorkoutService', () => {
             name: 'Main Section',
             items: [
               {
-                exerciseSchemeId: testScheme1Id,
+                exerciseId: 'exercise-1',
                 breakBetweenSets: 60,
                 breakAfter: 120,
               },
@@ -318,18 +406,22 @@ describe('CompendiumWorkoutService', () => {
         ],
       };
 
-      await service.create(workoutDto, 'user-1');
+      const created = await service.create(workoutDto, 'user-1');
 
       const result = await service.delete('workout-1');
 
       expect(result).toMatchObject({ templateId: 'workout-1' });
 
-      // Verify cascade delete
+      // Verify workout deleted
       const found = await workoutRepository.findById('workout-1');
       expect(found).toBeUndefined();
 
-      const sections = await sectionRepository.findByWorkoutTemplateId('workout-1');
-      expect(sections).toHaveLength(0);
+      // Verify sections and items are NOT deleted (per versioning architecture)
+      const sections = await sectionRepository.findByIds(created.sectionIds);
+      expect(sections).toHaveLength(1);
+
+      const items = await sectionItemRepository.findByIds(sections[0].workoutSectionItemIds);
+      expect(items).toHaveLength(1);
     });
   });
 });

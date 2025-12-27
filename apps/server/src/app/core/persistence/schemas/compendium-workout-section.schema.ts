@@ -1,6 +1,5 @@
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
-import { compendiumWorkouts } from './compendium-workout.schema';
 
 export enum WorkoutSectionType {
   WARMUP = 'warmup',
@@ -13,12 +12,9 @@ export const compendiumWorkoutSections = sqliteTable('compendium_workout_section
   id: text('id')
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
-  workoutTemplateId: text('workout_template_id')
-    .notNull()
-    .references(() => compendiumWorkouts.templateId, { onDelete: 'cascade' }),
   type: text('type').$type<WorkoutSectionType>().notNull(),
   name: text('name').notNull(),
-  orderIndex: integer('order_index').notNull(),
+  workoutSectionItemIds: text('workout_section_item_ids', { mode: 'json' }).$type<string[]>().notNull().default([]),
 
   createdBy: text('created_by').notNull(),
   createdAt: integer('created_at', { mode: 'timestamp' })
