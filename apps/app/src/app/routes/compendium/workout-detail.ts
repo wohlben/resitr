@@ -66,7 +66,9 @@ const SECTION_STYLES: Record<WorkoutSectionType, SectionConfig> = {
           [title]="workout.name"
           subtitle="Workout Template"
           backLink="/compendium/workouts"
-          [editLink]="['/compendium/workouts', workout.templateId, 'edit']"
+          [actionLink]="store.versionHistory().length > 1 ? ['/compendium/workouts', workout.templateId, 'versions'] : null"
+          actionLabel="Version History"
+          [editLink]="isLatestVersion() ? ['/compendium/workouts', workout.templateId, 'edit'] : null"
           editLabel="Edit Workout"
         />
 
@@ -186,6 +188,13 @@ export class WorkoutDetail {
   private route = inject(ActivatedRoute);
 
   readonly WorkoutSectionTypeLabels = WorkoutSectionTypeLabels;
+
+  isLatestVersion = computed(() => {
+    const workout = this.store.currentWorkout();
+    const latest = this.store.latestVersion();
+    if (!workout || !latest) return false;
+    return latest.templateId === workout.templateId;
+  });
 
   private exerciseMap = computed<Map<string, string>>(() => {
     const map = new Map<string, string>();

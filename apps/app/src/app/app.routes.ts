@@ -91,6 +91,11 @@ export const appRoutes: Route[] = [
           import('./routes/compendium/workout-detail').then((m) => m.WorkoutDetail),
       },
       {
+        path: 'compendium/workouts/:id/versions',
+        loadComponent: () =>
+          import('./routes/compendium/workout-versions').then((m) => m.WorkoutVersions),
+      },
+      {
         path: 'compendium/workouts/:id/edit',
         loadComponent: () =>
           import('./routes/compendium/workout-edit').then((m) => m.WorkoutEdit),

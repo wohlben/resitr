@@ -9,6 +9,7 @@ import { safeErrorMessage } from '../../shared/utils/type-guards';
 export interface WorkoutsState {
   workouts: WorkoutResponseDto[];
   currentWorkout: WorkoutResponseDto | null;
+  versionHistory: WorkoutResponseDto[];
   isLoading: boolean;
   isSaving: boolean;
   isDeleting: boolean;
@@ -21,6 +22,7 @@ export interface WorkoutsState {
 const initialState: WorkoutsState = {
   workouts: [],
   currentWorkout: null,
+  versionHistory: [],
   isLoading: false,
   isSaving: false,
   isDeleting: false,
@@ -59,9 +61,16 @@ export const WorkoutsStore = signalStore(
       return !!(store.searchTerm() || store.selectedSectionType());
     });
 
+    const latestVersion = computed(() => {
+      const versions = store.versionHistory();
+      if (versions.length === 0) return null;
+      return versions.reduce((a, b) => (a.version > b.version ? a : b));
+    });
+
     return {
       filteredWorkouts,
       hasActiveFilters,
+      latestVersion,
     };
   }),
   withMethods((store, http = inject(HttpClient)) => ({
@@ -84,6 +93,7 @@ export const WorkoutsStore = signalStore(
         isLoading: true,
         error: null,
         currentWorkout: null,
+        versionHistory: [],
       });
 
       try {
@@ -92,6 +102,14 @@ export const WorkoutsStore = signalStore(
           currentWorkout: workout,
           isLoading: false,
         });
+
+        // Load version history in parallel (non-blocking)
+        if (workout.workoutLineageId) {
+          CompendiumQueries.workout.versionHistory(workout.workoutLineageId)
+            .fn(http)
+            .then((versions) => patchState(store, { versionHistory: versions }))
+            .catch(() => {/* ignore version history errors */});
+        }
       } catch (error) {
         patchState(store, {
           error: safeErrorMessage(error),
