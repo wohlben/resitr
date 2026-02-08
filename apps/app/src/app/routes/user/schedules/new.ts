@@ -1,4 +1,4 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, effect, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -171,11 +171,20 @@ export class CreateWorkoutScheduleComponent {
   formErrors: { workoutTemplateId?: string; dayOfWeek?: string } = {};
 
   constructor() {
+    console.log('[CreateWorkoutSchedule] Component created');
+
     // Initialize form with workout data if provided
     const w = this.workout();
+    console.log('[CreateWorkoutSchedule] Initial workout value:', w);
     if (w) {
+      console.log('[CreateWorkoutSchedule] Setting workoutTemplateId to:', w.workoutTemplateId);
       this.formData.workoutTemplateId = w.workoutTemplateId;
     }
+
+    // Log when workout input changes
+    effect(() => {
+      console.log('[CreateWorkoutSchedule] workout() changed to:', this.workout());
+    });
 
     // Handle query params for pre-selection (day of week)
     this.route.queryParams.subscribe((params) => {

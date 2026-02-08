@@ -21,10 +21,19 @@ export class CreateWorkoutScheduleRouteComponent {
     this.route.params.pipe(
       map((params) => {
         const workoutId = params['id'];
+        console.log('[CreateWorkoutScheduleRoute] Route param id:', workoutId);
+        console.log('[CreateWorkoutScheduleRoute] Store enrichedWorkouts:', this.userWorkoutsStore.enrichedWorkouts());
         if (!workoutId) return null;
-        return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId) ?? null;
+        const found = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
+        console.log('[CreateWorkoutScheduleRoute] Found workout:', found);
+        return found ?? null;
       })
     ),
     { initialValue: null as EnrichedUserWorkout | null }
   );
+
+  constructor() {
+    console.log('[CreateWorkoutScheduleRoute] Component created');
+    console.log('[CreateWorkoutScheduleRoute] Current route snapshot:', this.route.snapshot.url);
+  }
 }
