@@ -1,10 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { SchedulesListComponent } from './index';
 import { UserWorkoutsStore, type EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-workout-schedules-route',
@@ -16,21 +14,19 @@ export class WorkoutSchedulesRouteComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly userWorkoutsStore = inject(UserWorkoutsStore);
 
-  // Resolve workout from route params and store
-  workout = toSignal(
-    this.route.params.pipe(
-      map((params) => {
-        const workoutId = params['id'];
-        console.log('[WorkoutSchedulesRoute] Route param id:', workoutId);
-        console.log('[WorkoutSchedulesRoute] Store enrichedWorkouts:', this.userWorkoutsStore.enrichedWorkouts());
-        if (!workoutId) return null;
-        const found = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
-        console.log('[WorkoutSchedulesRoute] Found workout:', found);
-        return found ?? null;
-      })
-    ),
-    { initialValue: null as EnrichedUserWorkout | null }
-  );
+  // Get workoutId from route once (doesn't change)
+  private readonly workoutId = this.route.snapshot.paramMap.get('id');
+
+  // Computed signal that reacts to store changes
+  workout = computed(() => {
+    const workoutId = this.workoutId;
+    console.log('[WorkoutSchedulesRoute] Computing workout, id:', workoutId);
+    console.log('[WorkoutSchedulesRoute] Store enrichedWorkouts:', this.userWorkoutsStore.enrichedWorkouts());
+    if (!workoutId) return null;
+    const found = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
+    console.log('[WorkoutSchedulesRoute] Found workout:', found);
+    return found ?? null;
+  });
 
   constructor() {
     console.log('[WorkoutSchedulesRoute] Component created');
@@ -38,7 +34,6 @@ export class WorkoutSchedulesRouteComponent {
   }
 
   backLink(): string {
-    const workoutId = this.route.snapshot.paramMap.get('id');
-    return workoutId ? `/user/workouts/${workoutId}` : '/user/workouts';
+    return this.workoutId ? `/user/workouts/${this.workoutId}` : '/user/workouts';
   }
 }

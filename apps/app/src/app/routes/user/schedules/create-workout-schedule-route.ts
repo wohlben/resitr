@@ -1,10 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CreateWorkoutScheduleComponent } from './new';
-import { UserWorkoutsStore, type EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs/operators';
+import { UserWorkoutsStore } from '../../../features/user-workouts/user-workouts.store';
 
 @Component({
   selector: 'app-create-workout-schedule-route',
@@ -16,21 +14,19 @@ export class CreateWorkoutScheduleRouteComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly userWorkoutsStore = inject(UserWorkoutsStore);
 
-  // Resolve workout from route params and store
-  workout = toSignal(
-    this.route.params.pipe(
-      map((params) => {
-        const workoutId = params['id'];
-        console.log('[CreateWorkoutScheduleRoute] Route param id:', workoutId);
-        console.log('[CreateWorkoutScheduleRoute] Store enrichedWorkouts:', this.userWorkoutsStore.enrichedWorkouts());
-        if (!workoutId) return null;
-        const found = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
-        console.log('[CreateWorkoutScheduleRoute] Found workout:', found);
-        return found ?? null;
-      })
-    ),
-    { initialValue: null as EnrichedUserWorkout | null }
-  );
+  // Get workoutId from route once (doesn't change)
+  private readonly workoutId = this.route.snapshot.paramMap.get('id');
+
+  // Computed signal that reacts to store changes
+  workout = computed(() => {
+    const workoutId = this.workoutId;
+    console.log('[CreateWorkoutScheduleRoute] Computing workout, id:', workoutId);
+    console.log('[CreateWorkoutScheduleRoute] Store enrichedWorkouts:', this.userWorkoutsStore.enrichedWorkouts());
+    if (!workoutId) return null;
+    const found = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
+    console.log('[CreateWorkoutScheduleRoute] Found workout:', found);
+    return found ?? null;
+  });
 
   constructor() {
     console.log('[CreateWorkoutScheduleRoute] Component created');

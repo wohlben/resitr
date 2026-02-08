@@ -173,17 +173,14 @@ export class CreateWorkoutScheduleComponent {
   constructor() {
     console.log('[CreateWorkoutSchedule] Component created');
 
-    // Initialize form with workout data if provided
-    const w = this.workout();
-    console.log('[CreateWorkoutSchedule] Initial workout value:', w);
-    if (w) {
-      console.log('[CreateWorkoutSchedule] Setting workoutTemplateId to:', w.workoutTemplateId);
-      this.formData.workoutTemplateId = w.workoutTemplateId;
-    }
-
-    // Log when workout input changes
+    // React when workout input changes and update form
     effect(() => {
-      console.log('[CreateWorkoutSchedule] workout() changed to:', this.workout());
+      const w = this.workout();
+      console.log('[CreateWorkoutSchedule] workout() changed to:', w);
+      if (w) {
+        console.log('[CreateWorkoutSchedule] Setting workoutTemplateId to:', w.workoutTemplateId);
+        this.formData.workoutTemplateId = w.workoutTemplateId;
+      }
     });
 
     // Handle query params for pre-selection (day of week)
