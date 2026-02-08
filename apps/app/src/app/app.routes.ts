@@ -112,6 +112,11 @@ export const appRoutes: Route[] = [
           import('./routes/user/workout-detail').then((m) => m.UserWorkoutDetail),
       },
       {
+        path: 'user/workouts/:id/edit',
+        loadComponent: () =>
+          import('./routes/user/workout-edit').then((m) => m.UserWorkoutEdit),
+      },
+      {
         path: 'user/workout-logs',
         loadComponent: () =>
           import('./routes/user/workout-logs').then((m) => m.WorkoutLogsComponent),

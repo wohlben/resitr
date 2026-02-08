@@ -62,6 +62,7 @@ import type { EnrichedUserWorkout } from '../../features/user-workouts/user-work
               <app-user-workout-card
                 [userWorkout]="userWorkout"
                 (actionTriggered)="onAction($event, userWorkout)"
+                (cardClicked)="onCardClicked(userWorkout)"
               />
             }
           </div>
@@ -75,6 +76,10 @@ export class UserWorkoutsComponent {
   private readonly router = inject(Router);
   private readonly toast = inject(ToastService);
   private readonly confirmation = inject(ConfirmationService);
+
+  onCardClicked(userWorkout: EnrichedUserWorkout): void {
+    this.router.navigate(['/user/workouts', userWorkout.id]);
+  }
 
   async onAction(action: UserWorkoutAction, userWorkout: EnrichedUserWorkout): Promise<void> {
     switch (action) {

@@ -32,7 +32,7 @@ const MENU_ITEMS: ActionMenuItem[] = [
   standalone: true,
   imports: [CommonModule, CardComponent, NgClass, ValueLabelPipe, ActionMenuComponent],
   template: `
-    <app-card>
+    <app-card class="cursor-pointer hover:shadow-md transition-shadow" (click)="onCardClick($event)">
       <div card-title class="flex items-start justify-between gap-2">
         <div class="min-w-0 flex-1">
           @if (userWorkout().workout) {
@@ -105,6 +105,7 @@ export class UserWorkoutCardComponent {
   userWorkout = input.required<EnrichedUserWorkout>();
 
   actionTriggered = output<UserWorkoutAction>();
+  cardClicked = output<void>();
 
   readonly menuItems = MENU_ITEMS;
   readonly WorkoutSectionTypeLabels = WorkoutSectionTypeLabels;
@@ -119,5 +120,14 @@ export class UserWorkoutCardComponent {
 
   onMenuAction(item: ActionMenuItem): void {
     this.actionTriggered.emit(item.id as UserWorkoutAction);
+  }
+
+  onCardClick(event: Event): void {
+    // Don't trigger card click if clicking on the action menu
+    const target = event.target as HTMLElement;
+    if (target.closest('app-action-menu')) {
+      return;
+    }
+    this.cardClicked.emit();
   }
 }

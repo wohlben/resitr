@@ -1,10 +1,11 @@
-import { Component, inject, input, signal, computed, effect } from '@angular/core';
+import { Component, inject, input, output, signal, computed, effect } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import type { WorkoutSectionItemTemplate, CreateUserExerciseSchemeDto, UserExerciseSchemeResponseDto, MeasurementParadigm } from '@resitr/api';
 import { UserExerciseSchemesStore } from '../../features/user-exercise-schemes/user-exercise-schemes.store';
 import { InlineExerciseSchemeFormComponent, ExerciseSchemeFormData } from './inline-exercise-scheme-form.component';
 
 const NEW_SCHEME_VALUE = '__NEW__';
+const NOT_SELECTED_VALUE = '';
 
 interface SchemeOption {
   value: string;
@@ -54,10 +55,22 @@ interface SchemeOption {
               </svg>
               <span class="text-xs text-red-600">{{ error() }}</span>
             </div>
+          } @else if (hasPendingChange()) {
+            <span class="flex items-center gap-1 text-amber-500" title="Unsaved change">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
           } @else if (isAssigned()) {
             <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
+          } @else if (needsConfiguration()) {
+            <span class="flex items-center gap-1 text-gray-400" title="Needs configuration">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
           }
         </div>
       </div>
@@ -128,9 +141,13 @@ export class ExerciseSchemeAssignmentCardComponent {
   exerciseName = input.required<string>();
   suggestedMeasurementParadigms = input<MeasurementParadigm[]>([]);
   itemIndex = input<number>(0);
+  deferAssignment = input<boolean>(false);
+
+  schemeSelected = output<{ sectionItemId: string; schemeId: string }>();
 
   showNewSchemeForm = signal(false);
   showSuccess = signal(false);
+  hasPendingChange = signal(false);
   private selectedSchemeId = signal<string | null>(null);
   private initialized = signal(false);
 
@@ -144,12 +161,25 @@ export class ExerciseSchemeAssignmentCardComponent {
 
   schemeOptions = computed<SchemeOption[]>(() => {
     const schemes = this.schemes();
-    const options: SchemeOption[] = schemes.map(scheme => ({
+    const options: SchemeOption[] = [];
+
+    // Add placeholder when in deferred mode and nothing is assigned yet
+    if (this.deferAssignment() && !this.isAssigned()) {
+      options.push({
+        value: NOT_SELECTED_VALUE,
+        label: '-- Select a scheme --',
+        sublabel: '',
+        scheme: null,
+      });
+    }
+
+    // Add existing schemes
+    options.push(...schemes.map(scheme => ({
       value: scheme.id,
       label: scheme.name,
       sublabel: `${scheme.sets}x${scheme.reps}`,
       scheme,
-    }));
+    })));
 
     // Add "Create New" option at the end
     options.push({
@@ -164,14 +194,24 @@ export class ExerciseSchemeAssignmentCardComponent {
 
   selectedValue = computed(() => {
     const id = this.selectedSchemeId();
-    if (id) return id;
+    if (id !== null) return id;
 
-    // Default selection logic
+    // In deferred mode, don't auto-select - show placeholder
+    if (this.deferAssignment()) {
+      return NOT_SELECTED_VALUE;
+    }
+
+    // In immediate mode, default to first scheme
     const schemes = this.schemes();
     if (schemes.length > 0) {
       return schemes[0].id;
     }
     return NEW_SCHEME_VALUE;
+  });
+
+  // Whether a scheme needs to be configured (nothing selected and nothing assigned)
+  needsConfiguration = computed(() => {
+    return this.selectedValue() === NOT_SELECTED_VALUE && !this.isAssigned();
   });
 
   selectedOption = computed(() => {
@@ -186,19 +226,24 @@ export class ExerciseSchemeAssignmentCardComponent {
       this.store.loadSchemesForExercise(exerciseId);
     });
 
-    // Auto-initialize selection and show form if needed
+    // Auto-initialize selection and show form if needed (only in immediate mode)
     effect(() => {
       const schemes = this.schemes();
       const isLoading = this.isLoading();
+      const deferred = this.deferAssignment();
 
       if (!isLoading && !this.initialized()) {
         this.initialized.set(true);
 
+        // In deferred mode, don't auto-select anything
+        if (deferred) {
+          return;
+        }
+
+        // In immediate mode, auto-select first scheme or show new form
         if (schemes.length > 0) {
-          // Auto-select first scheme
           this.selectedSchemeId.set(schemes[0].id);
         } else {
-          // No schemes exist, select "new" and show form
           this.selectedSchemeId.set(NEW_SCHEME_VALUE);
           this.showNewSchemeForm.set(true);
         }
@@ -212,11 +257,26 @@ export class ExerciseSchemeAssignmentCardComponent {
 
     this.selectedSchemeId.set(value);
 
-    if (value === NEW_SCHEME_VALUE) {
+    if (value === NOT_SELECTED_VALUE) {
+      // User selected placeholder - nothing to do
+      this.showNewSchemeForm.set(false);
+      this.hasPendingChange.set(false);
+    } else if (value === NEW_SCHEME_VALUE) {
       this.showNewSchemeForm.set(true);
+      this.hasPendingChange.set(false);
     } else {
       this.showNewSchemeForm.set(false);
-      this.assignScheme(value);
+      if (this.deferAssignment()) {
+        // In deferred mode, just emit the selection and mark as pending
+        this.hasPendingChange.set(true);
+        this.schemeSelected.emit({
+          sectionItemId: this.sectionItem().id,
+          schemeId: value,
+        });
+      } else {
+        // Immediate mode - save right away
+        this.assignScheme(value);
+      }
     }
   }
 
@@ -267,5 +327,9 @@ export class ExerciseSchemeAssignmentCardComponent {
   private showSuccessIndicator(): void {
     this.showSuccess.set(true);
     setTimeout(() => this.showSuccess.set(false), 2000);
+  }
+
+  clearPendingState(): void {
+    this.hasPendingChange.set(false);
   }
 }
