@@ -41,7 +41,7 @@ Schedules are grouped by day based on their criteria:
 // Schedule with criteria for Mon/Wed/Fri appears on all three days
 {
   id: 'schedule-1',
-  workoutTemplateId: 'workout-abc',
+  userWorkoutId: 'user-workout-abc',  // References user_workouts.id
   criteria: [
     { type: 'DAY_OF_WEEK', days: [1, 3, 5], order: 0 }
   ]
@@ -72,6 +72,7 @@ The `schedulesByDay` computed property aggregates schedules across all criteria 
 - Store: `WorkoutScheduleStore`
 - Route: `/user/schedules`
 - Key computed: `schedulesByDay` - Map<dayIndex, Schedule[]>
+- Filtering: By `userWorkoutId` to show only schedules for a specific workout
 
 ---
 

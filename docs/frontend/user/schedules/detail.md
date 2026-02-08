@@ -14,7 +14,7 @@
 
 ### Schedule Info
 
-- Workout name (read-only)
+- Workout name (read-only, looked up via `userWorkoutId`)
 - Schedule ID and metadata
 - Created/updated timestamps
 
@@ -55,6 +55,7 @@ Each criteria displays:
 - **Delete Schedule** button at bottom
 - Confirmation dialog with warning
 - Permanently removes schedule and all its criteria
+- Does NOT delete the user workout itself
 
 ---
 
@@ -110,6 +111,12 @@ Each criteria displays:
 - `updateCriteria(scheduleId, criteriaId, updateData)` - Modify existing criteria
 - `deleteCriteria(scheduleId, criteriaId)` - Remove specific criteria
 - `deleteSchedule(scheduleId)` - Delete entire schedule
+
+### Data Flow
+
+1. Schedule has `userWorkoutId` field
+2. Component looks up the workout name via `userWorkoutsStore.enrichedWorkouts()`
+3. Filters by matching `userWorkout.id === schedule.userWorkoutId`
 
 ### API Calls
 

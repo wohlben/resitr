@@ -17,7 +17,8 @@ The workout schedule system was completely refactored from a simple single-day-p
 
 **New (3-Table Structure):**
 
-- `workout_schedules` - Main schedule (id, userId, workoutTemplateId)
+- `workout_schedules` - Main schedule (id, userId, **userWorkoutId**)
+  - **Note**: Links to `user_workouts.id` (not `compendium_workouts.templateId`)
 - `workout_schedule_criteria` - Criteria types (id, scheduleId, type, order)
 - `workout_schedule_criteria_day_of_week` - Day values (criteriaId, dayOfWeek)
 
@@ -26,6 +27,7 @@ This enables:
 - Multiple days per workout schedule (e.g., Mon/Wed/Fri)
 - Future extensibility (date-based, interval-based scheduling)
 - Proper prioritization through criteria `order` field
+- Direct association with user's workout instance
 
 #### API Breaking Changes
 
@@ -37,6 +39,7 @@ This enables:
 **New API:**
 
 - `POST /user/workout-schedule` - Creates schedule (no criteria initially)
+  - Body: `{ userWorkoutId: string }` (not `workoutTemplateId`)
 - `POST /user/workout-schedule/:id/criteria` - Add day criteria
 - `PUT /user/workout-schedule/:id/criteria/:criteriaId` - Update criteria (full replacement)
 - `DELETE /user/workout-schedule/:id/criteria/:criteriaId` - Remove criteria
@@ -51,13 +54,20 @@ This enables:
 
 // New
 {
-  id, userId, workoutTemplateId,
+  id, userId, userWorkoutId,  // ← Changed from workoutTemplateId
   criteria: [
     { id, scheduleId, type: 'DAY_OF_WEEK', order, days: [1, 3, 5] }
   ],
   createdAt, updatedAt
 }
 ```
+
+**Key Difference:**
+
+- **Before**: Schedule linked to `workoutTemplateId` (compendium workout)
+- **After**: Schedule linked to `userWorkoutId` (user's specific workout instance)
+
+This ensures the schedule is tied to the user's workout, not the template, allowing schedules to be deleted when the user workout is deleted.
 
 #### Frontend Changes
 
@@ -66,9 +76,11 @@ This enables:
 - New methods: `addCriteria`, `updateCriteria`, `deleteCriteria`
 - Updated: `createSchedule` now takes both schedule and criteria data
 - Changed: `schedulesByDay` computed now aggregates from criteria days
+- Changed: Filtering by `userWorkoutId` instead of `workoutTemplateId`
 
 **Create Form:**
 
+- Uses `userWorkout.id` (not `userWorkout.workoutTemplateId`)
 - Removed: Order field (moved to criteria)
 - Changed: Day selection is now **multi-select** (was single select)
 - Added: Criteria type radio card (currently only "Day of Week")
@@ -78,12 +90,14 @@ This enables:
 - Removed: Per-day "+ Schedule" buttons (only global button remains)
 - Changed: Cards now show comma-separated list of scheduled days
 - Changed: Click navigates to detail view for criteria management
+- Changed: Filters by `userWorkoutId` for workout-specific views
 
 **Detail/Edit View:**
 
 - Renamed: `EditWorkoutScheduleComponent` → `ScheduleDetailComponent`
 - Complete redesign: Now shows criteria management interface
 - Features: Add/Edit/Delete criteria (day sets), Delete entire schedule
+- Changed: Looks up workout by `userWorkoutId` instead of `workoutTemplateId`
 
 ## Affected Documentation Files
 
@@ -92,11 +106,12 @@ This enables:
 1. **docs/frontend/user/schedules/README.md**
 
    - Update "Domain Relationship" section to explain criteria system
+   - Update data structure to show `userWorkoutId`
    - Update implementation status table
 
 2. **docs/frontend/user/schedules/new.md**
 
-   - Update form fields section (remove order, explain multi-select days)
+   - Update form fields section (explain userWorkoutId vs workoutTemplateId)
    - Update validation rules
    - Update component name references
 
@@ -104,12 +119,14 @@ This enables:
 
    - Update "Quick Actions" (remove per-day schedule button mention)
    - Update "Schedule Cards" (show days list instead of order)
+   - Explain filtering by userWorkoutId
 
 4. **docs/frontend/user/schedules/detail.md**
 
    - Complete rewrite needed (was just a placeholder)
    - Document criteria management features
    - Update component name to `ScheduleDetailComponent`
+   - Explain workout lookup by userWorkoutId
 
 5. **docs/frontend/user/workouts/schedules.md**
    - Check and update if workout-specific schedule features changed
@@ -120,7 +137,20 @@ None - existing docs cover the areas, just need updating.
 
 ## Migration Notes
 
-**Database:** Run `npm run db:push` and select "create table" for new tables.
+**Database:**
+
+1. Drop old tables if they exist with wrong schema:
+
+   ```sql
+   DROP TABLE IF EXISTS workout_schedule_criteria_day_of_week;
+   DROP TABLE IF EXISTS workout_schedule_criteria;
+   DROP TABLE IF EXISTS workout_schedules;
+   ```
+
+2. Run migration SQL:
+   ```bash
+   sqlite3 data/server.db < drizzle/0001_pale_hitman.sql
+   ```
 
 **No Data Migration:** As per requirements, no existing data to migrate.
 
@@ -133,3 +163,5 @@ None - existing docs cover the areas, just need updating.
 - [ ] Delete individual criteria
 - [ ] Delete entire schedule
 - [ ] Verify API returns correct nested criteria structure
+- [ ] Verify schedule is linked to user workout (not template)
+- [ ] Verify deleting user workout cascades to schedule

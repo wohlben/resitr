@@ -6,7 +6,7 @@ Weekly workout planning and schedule management with multi-day support.
 
 ## Overview
 
-Schedules allow users to plan their weekly workout routine by assigning workouts to specific days of the week. Each schedule can have multiple "criteria" that define when the workout should occur.
+Schedules allow users to plan their weekly workout routine by assigning workouts to specific days of the week. Each schedule links to a **user workout** (not a workout template) and can have multiple "criteria" that define when the workout should occur.
 
 ### Multi-Day Support
 
@@ -34,20 +34,20 @@ Unlike the previous implementation that only allowed one day per workout, the ne
 ### Schedule Hierarchy
 
 ```
-WorkoutSchedule (1)
+WorkoutSchedule (1) → UserWorkout (1)
   └── Criteria (*)
         └── DaysOfWeek (*)
 ```
 
-- **Schedule** references one workout (many schedules can reference the same workout)
+- **Schedule** references one **user workout** (1:1 relationship - one schedule per user workout)
 - **Criteria** belongs to one schedule, has a type and order
 - **DaysOfWeek** belongs to one criteria, defines which days (0-6)
 
 ### Key Behaviors
 
-- A workout can be scheduled multiple times (different schedules)
+- Each user workout can have at most one schedule
 - Each schedule can have multiple criteria (different day combinations)
-- Deleting a workout cascades to its schedules (via foreign key)
+- Deleting a user workout cascades to its schedule (via foreign key)
 - Deleting a schedule cascades to its criteria
 
 ---
@@ -71,10 +71,10 @@ WorkoutSchedule (1)
 {
   id: string;
   userId: string;
-  workoutTemplateId: string;
+  userWorkoutId: string;  // References user_workouts.id
   criteria: WorkoutScheduleCriteria[];
   createdAt: string;
-  updatedAt?: string;
+  updatedAt: string | undefined;
 }
 ```
 
@@ -97,6 +97,7 @@ WorkoutSchedule (1)
 ### Schedules
 
 - `POST /user/workout-schedule` - Create schedule (returns schedule with empty criteria)
+  - Body: `{ userWorkoutId: string }`
 - `GET /user/workout-schedule[?dayOfWeek=n]` - List schedules with criteria
 - `GET /user/workout-schedule/:id` - Get single schedule with criteria
 - `DELETE /user/workout-schedule/:id` - Delete schedule (cascades to criteria)

@@ -17,7 +17,8 @@
 1. **Workout** (required)
 
    - Dropdown of user's workouts
-   - Pre-selected if `workoutTemplateId` query param provided
+   - Pre-selected if `userWorkoutId` query param provided
+   - Stores the **user workout ID** (not the workout template ID)
 
 2. **Schedule Type**
 
@@ -35,9 +36,9 @@
 
 ### Pre-selection via Query Params
 
-- `?workoutTemplateId=xxx` - Pre-select workout
+- `?userWorkoutId=xxx` - Pre-select workout
 - `?dayOfWeek=n` - Pre-select single day (0-6)
-- `?workoutTemplateId=xxx&dayOfWeek=n` - Pre-select both
+- `?userWorkoutId=xxx&dayOfWeek=n` - Pre-select both
 
 ### Validation
 
@@ -59,7 +60,7 @@ Creating a schedule involves two API calls:
 
 1. **Create Schedule** - `POST /user/workout-schedule`
 
-   - Payload: `{ workoutTemplateId: string }`
+   - Payload: `{ userWorkoutId: string }`
    - Returns: Schedule with empty criteria array
 
 2. **Create Criteria** - `POST /user/workout-schedule/:id/criteria`
