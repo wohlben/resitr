@@ -223,17 +223,8 @@ export class ExerciseSchemeAssignmentCardComponent {
     const id = this.selectedSchemeId();
     if (id !== null) return id;
 
-    // In deferred mode, don't auto-select - show placeholder
-    if (this.deferAssignment()) {
-      return NOT_SELECTED_VALUE;
-    }
-
-    // In immediate mode, default to first scheme
-    const schemes = this.schemes();
-    if (schemes.length > 0) {
-      return schemes[0].id;
-    }
-    return NEW_SCHEME_VALUE;
+    // Default to placeholder if nothing selected yet
+    return NOT_SELECTED_VALUE;
   });
 
   // Whether a scheme needs to be configured (nothing selected and nothing assigned)
