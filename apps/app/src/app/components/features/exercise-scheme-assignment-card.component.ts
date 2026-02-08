@@ -249,15 +249,9 @@ export class ExerciseSchemeAssignmentCardComponent {
       const schemes = this.schemes();
       const isLoading = this.isLoading();
       const deferred = this.deferAssignment();
-      const isAssigned = this.isAssigned();
 
       if (!isLoading && !this.initialized()) {
         this.initialized.set(true);
-
-        // Don't auto-select if something is already assigned
-        if (isAssigned) {
-          return;
-        }
 
         // Auto-select first scheme or show new form
         if (schemes.length > 0) {
