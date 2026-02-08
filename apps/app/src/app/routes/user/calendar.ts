@@ -107,13 +107,14 @@ interface UpcomingScheduleDisplay {
             <div class="space-y-3">
               @for (log of recentLogs(); track log.id) {
               <div
-                class="flex items-center justify-between p-3 rounded-lg border"
+                class="flex items-center justify-between p-3 rounded-lg border cursor-pointer hover:shadow-md transition-shadow"
                 [class.bg-green-50]="log.completedAt"
                 [class.border-green-100]="log.completedAt"
                 [class.bg-yellow-50]="isStartedToday(log)"
                 [class.border-yellow-100]="isStartedToday(log)"
                 [class.bg-red-50]="!log.completedAt && !isStartedToday(log)"
                 [class.border-red-100]="!log.completedAt && !isStartedToday(log)"
+                [routerLink]="['/user/workouts', log.userWorkoutId, 'logs', log.id]"
               >
                 <div>
                   <div class="font-medium text-gray-900">{{ log.name }}</div>
@@ -168,7 +169,7 @@ export class CalendarPageComponent {
   readonly upcomingSchedules = computed((): UpcomingScheduleDisplay[] => {
     const instances = this.schedulesStore.upcomingScheduleInstances();
     const enrichedWorkouts = this.userWorkoutsStore.enrichedWorkouts();
-    const logsByWorkoutName = this.getLogsByWorkout();
+    const logsByWorkout = this.getLogsByWorkout();
 
     return instances
       .map((instance) => {
@@ -181,8 +182,8 @@ export class CalendarPageComponent {
           return name;
         });
 
-        // Filter out dates that already have a log for this workout (by name)
-        const workoutLogs = logsByWorkoutName.get(workoutName) || new Set();
+        // Filter out dates that already have a log for this workout
+        const workoutLogs = logsByWorkout.get(instance.schedule.userWorkoutId) || new Set();
         const filteredDates = instance.upcomingDates.filter((date) => {
           const dateKey = this.formatDateKey(date);
           return !workoutLogs.has(dateKey);
@@ -239,7 +240,7 @@ export class CalendarPageComponent {
           }
         }
 
-        const workoutLogs = logsByWorkout.get(workoutName) || new Set();
+        const workoutLogs = logsByWorkout.get(schedule.userWorkoutId) || new Set();
 
         for (const dayIndex of allDays) {
           // Calculate the date for this schedule day in the current week
@@ -263,18 +264,17 @@ export class CalendarPageComponent {
     return entries;
   });
 
-  // Helper to group logs by workout and date for quick lookup
-  // Uses workout name as key since that's available in WorkoutLogListItemDto
+  // Helper to group logs by userWorkoutId and date for quick lookup
   private getLogsByWorkout(): Map<string, Set<string>> {
     const map = new Map<string, Set<string>>();
 
     for (const log of this.logsStore.logs()) {
       const dateKey = this.formatDateKey(new Date(log.startedAt));
 
-      if (!map.has(log.name)) {
-        map.set(log.name, new Set());
+      if (!map.has(log.userWorkoutId)) {
+        map.set(log.userWorkoutId, new Set());
       }
-      map.get(log.name)!.add(dateKey);
+      map.get(log.userWorkoutId)!.add(dateKey);
     }
 
     return map;
@@ -312,8 +312,12 @@ export class CalendarPageComponent {
   }
 
   onDayClick(date: Date): void {
-    // Day click handler - currently no navigation since log detail
-    // requires workoutId which is not available in WorkoutLogListItemDto
-    // This could be extended to navigate to workout logs list if needed
+    // Find logs for this date and navigate to the first one
+    const dateString = date.toDateString();
+    const logs = this.logsStore.logsByDate().get(dateString);
+    if (logs && logs.length > 0) {
+      const log = logs[0];
+      this.router.navigate(['/user/workouts', log.userWorkoutId, 'logs', log.id]);
+    }
   }
 }

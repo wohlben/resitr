@@ -271,6 +271,7 @@ export class WorkoutRunComponent {
     try {
       // Build the workout log DTO
       const workoutLogDto: UpsertWorkoutLogDto = {
+        userWorkoutId: currentWorkout.id,
         originalWorkoutId: currentWorkout.workoutTemplateId,
         name: currentWorkout.workout?.name || 'Workout',
         startedAt: new Date(),

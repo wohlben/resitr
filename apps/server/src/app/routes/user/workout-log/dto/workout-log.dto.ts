@@ -1,5 +1,16 @@
 import { Type } from 'class-transformer';
-import { IsArray, IsBoolean, IsDate, IsEnum, IsInt, IsNumber, IsOptional, IsString, Min, ValidateNested } from 'class-validator';
+import {
+  IsArray,
+  IsBoolean,
+  IsDate,
+  IsEnum,
+  IsInt,
+  IsNumber,
+  IsOptional,
+  IsString,
+  Min,
+  ValidateNested,
+} from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import {
   WorkoutSectionType,
@@ -139,6 +150,10 @@ export class UpsertWorkoutLogDto implements IUpsertWorkoutLogDto {
   @IsOptional()
   @IsString()
   id?: string;
+
+  @ApiProperty({ description: 'User workout ID this log belongs to' })
+  @IsString()
+  userWorkoutId!: string;
 
   @ApiProperty({ description: 'Original workout template ID this log is based on', required: false })
   @IsOptional()

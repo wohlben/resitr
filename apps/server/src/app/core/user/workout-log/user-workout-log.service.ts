@@ -88,6 +88,7 @@ export class UserWorkoutLogService {
     // Upsert log with sectionIds array
     const log = await this.logRepository.upsert({
       id: dto.id,
+      userWorkoutId: dto.userWorkoutId,
       originalWorkoutId: dto.originalWorkoutId,
       name: dto.name,
       sectionIds,
