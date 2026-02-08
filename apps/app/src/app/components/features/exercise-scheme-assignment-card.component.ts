@@ -188,8 +188,9 @@ export class ExerciseSchemeAssignmentCardComponent {
     const schemes = this.schemes();
     const options: SchemeOption[] = [];
 
-    // Add placeholder when in deferred mode and nothing is assigned yet
-    if (this.deferAssignment() && !this.isAssigned()) {
+    // Add placeholder when in deferred mode and nothing is selected yet
+    // Check selectedSchemeId() to account for auto-selection
+    if (this.deferAssignment() && !this.isAssigned() && this.selectedSchemeId() === null) {
       options.push({
         value: NOT_SELECTED_VALUE,
         label: '-- Select a scheme --',
@@ -221,10 +222,7 @@ export class ExerciseSchemeAssignmentCardComponent {
 
   selectedValue = computed(() => {
     const id = this.selectedSchemeId();
-    const exerciseId = this.sectionItem().exerciseId;
-    const result = id !== null ? id : NOT_SELECTED_VALUE;
-    console.log('[selectedValue]', { exerciseId, selectedSchemeId: id, result });
-    return result;
+    return id !== null ? id : NOT_SELECTED_VALUE;
   });
 
   // Whether a scheme needs to be configured (nothing selected and nothing assigned)
@@ -249,23 +247,12 @@ export class ExerciseSchemeAssignmentCardComponent {
       const schemes = this.schemes();
       const isLoading = this.isLoading();
       const deferred = this.deferAssignment();
-      const exerciseId = this.sectionItem().exerciseId;
-
-      console.log('[AutoSelect] Effect triggered:', {
-        exerciseId,
-        isLoading,
-        initialized: this.initialized(),
-        schemesCount: schemes.length,
-        deferred,
-        selectedSchemeId: this.selectedSchemeId(),
-      });
 
       if (!isLoading && !this.initialized()) {
         this.initialized.set(true);
 
         // Auto-select first scheme or show new form
         if (schemes.length > 0) {
-          console.log('[AutoSelect] Auto-selecting scheme:', schemes[0].id, schemes[0].name);
           this.selectedSchemeId.set(schemes[0].id);
 
           // In deferred mode, emit the selection as a pending change
@@ -277,12 +264,9 @@ export class ExerciseSchemeAssignmentCardComponent {
             });
           }
         } else {
-          console.log('[AutoSelect] No schemes, showing new form');
           this.selectedSchemeId.set(NEW_SCHEME_VALUE);
           this.showNewSchemeForm.set(true);
         }
-      } else {
-        console.log('[AutoSelect] Skipped:', { isLoading, initialized: this.initialized() });
       }
     });
   }
