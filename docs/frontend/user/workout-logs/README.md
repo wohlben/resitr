@@ -77,6 +77,19 @@ User completes workout
 
 ---
 
+## Navigation
+
+Workout Logs are **not** in the main navigation menu. They are accessed through:
+
+- **Individual Workout Detail** - View logs specific to a workout
+- **Calendar Page** - See all logs in the monthly view
+- **Direct URL** - `/user/workout-logs` (shows all logs)
+- **Log Detail** - `/user/workout-logs/:id` (specific session)
+
+This design keeps the main navigation clean while making logs accessible contextually where they matter most.
+
+---
+
 ## Calendar Integration
 
 The Workout Logs page uses the reusable [Calendar component](../../components/calendar.md) to provide a visual overview:

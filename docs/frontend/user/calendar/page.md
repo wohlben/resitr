@@ -1,23 +1,17 @@
 # `/user/calendar` - Workout Calendar
 
-**Goal**: Provide a unified monthly calendar view showing both past workouts and upcoming scheduled workouts.
-
----
-
-## Status
-
-**Implemented**
+Unified view of workout history and upcoming planned workouts.
 
 ---
 
 ## Overview
 
-The Calendar page replaces the old weekly schedule grid with a comprehensive monthly view that combines:
+The Calendar page provides a comprehensive monthly view combining:
 
-- **Past Workouts** - From workout logs (completed, in-progress, incomplete)
-- **Upcoming Schedules** - Planned workouts from schedule criteria
+- **Past Workouts** - Completed workout sessions from logs
+- **Upcoming Schedules** - Planned workouts that haven't been completed yet
 
-This gives users a complete picture of their workout history and upcoming plans in one interface.
+This gives users a complete picture of their workout activity and upcoming plans in one interface.
 
 ---
 
@@ -32,11 +26,11 @@ This gives users a complete picture of their workout history and upcoming plans 
 │                                        │                     │
 │  Upcoming Workouts                     │   Calendar          │
 │  ┌────────────────────────────────┐    │   ┌─────────────┐   │
-│  │ Push Day              Planned  │    │   │  < Feb >    │   │
-│  │ Monday/Wednesday/Friday        │    │   │ S M T W T F S│   │
+│  │ Push Day    Monday, Wednesday │    │   │  < Feb >    │   │
+│  │             9.2., 11.2.       │    │   │ S M T W T F S│   │
 │  ├────────────────────────────────┤    │   │ 1 2 3 4 5 6 7│   │
-│  │ Leg Day               Planned  │    │   │ 8 9...      │   │
-│  │ Tuesday/Thursday               │    │   └─────────────┘   │
+│  │ Leg Day     Tuesday, Thursday │    │   │ 8 9...      │   │
+│  │             10.2., 12.2.      │    │   └─────────────┘   │
 │  └────────────────────────────────┘    │                     │
 │                                        │   Legend            │
 │  Recent Workouts                       │   🟢 Completed      │
@@ -57,12 +51,14 @@ This gives users a complete picture of their workout history and upcoming plans 
 
 ### Upcoming Workouts Panel
 
-Shows scheduled workouts for the next few weeks, sorted by upcoming days:
+Shows scheduled workouts with their upcoming dates:
 
-- **Workout name** - Links to workout detail
-- **Scheduled days** - Which days of the week (e.g., "Mondays")
+- **Workout name** - Name of the scheduled workout
+- **Scheduled days** - Days of the week (e.g., "Monday, Wednesday")
+- **Upcoming dates** - Next 4 dates when the workout is scheduled (e.g., "9.2., 11.2.")
 - **"Planned" indicator** - Purple dot with label
-- Shows up to 5 upcoming schedules
+
+Each schedule appears as a single line entry, combining all its criteria days. Dates that already have a log for that workout are not shown.
 
 ### Recent Workouts Panel
 
@@ -86,38 +82,32 @@ The [Calendar component](../../components/calendar.md) provides:
 - **Today highlight** - Blue ring around current date
 - **Legend** - Dynamic based on entry types present
 
+Scheduled workouts only appear on dates that don't already have a log for that workout.
+
 ---
 
-## Data Sources
+## Smart Filtering
 
-### Past Workouts (Logs)
+The Calendar applies intelligent filtering to avoid duplicate entries:
 
-```typescript
-// From WorkoutLogsStore
-for (const log of logsStore.logs()) {
-  entries.push({
-    on: new Date(log.startedAt),
-    type: log.completedAt ? 'green' : isStartedToday(log) ? 'yellow' : 'red',
-    name: log.name,
-  });
-}
-```
+### For Upcoming Workouts List
 
-### Upcoming Schedules
+- Only shows schedules that have unfulfilled dates
+- Filters out dates where a log already exists for that workout
+- Shows up to 4 upcoming dates per schedule
 
-```typescript
-// From WorkoutScheduleStore - generates next 4 weeks
-for (let weekOffset = 0; weekOffset < 4; weekOffset++) {
-  for (const schedule of schedulesStore.schedules()) {
-    // Calculate dates based on criteria days
-    entries.push({
-      on: scheduleDate,
-      type: 'purple',
-      name: workoutName,
-    });
-  }
-}
-```
+### For Calendar Display
+
+- Purple dots (planned workouts) only appear on dates without existing logs
+- Prevents scheduled workouts from appearing on days they're already completed
+
+### Example
+
+If "Push Day" is scheduled for Mondays and Wednesdays:
+
+- User completes Push Day on Monday Feb 9
+- Calendar shows only Wednesday Feb 11 as upcoming
+- Monday Feb 16 would appear again (future date, no log yet)
 
 ---
 
@@ -134,14 +124,14 @@ for (let weekOffset = 0; weekOffset < 4; weekOffset++) {
 
 ## Entry Points
 
-- **Main navigation** - "Calendar" link
-- **Workout detail** - "Schedule" action (redirects here)
+- **Main navigation** - "Calendar" link under User section
+- **Workout detail** - "Schedule" action navigates to calendar
 - **Direct URL** - `/user/calendar`
 
 ## Exit Points
 
 - Click log entry → `/user/workout-logs/:id`
-- Click workout name → `/user/workouts/:id`
+- Click workout name in upcoming list → `/user/workouts/:id`
 - "Start Workout" button → `/user/workouts`
 
 ---
@@ -156,23 +146,23 @@ for (let weekOffset = 0; weekOffset < 4; weekOffset++) {
 
 ### Stores Used
 
-| Store                  | Purpose                     |
-| ---------------------- | --------------------------- |
-| `WorkoutLogsStore`     | Past workout logs           |
-| `WorkoutScheduleStore` | Upcoming scheduled workouts |
-| `UserWorkoutsStore`    | Workout names and details   |
+| Store                  | Purpose                            |
+| ---------------------- | ---------------------------------- |
+| `WorkoutLogsStore`     | Past workout logs                  |
+| `WorkoutScheduleStore` | Upcoming schedules and their dates |
+| `UserWorkoutsStore`    | Workout names and details          |
 
 ### Computed Properties
 
 ```typescript
-// Calendar entries combining logs and schedules
+// Calendar entries with logs and filtered schedules
 readonly calendarEntries = computed((): CalendarEntry[] => {
-  // Merges logs + generated schedule entries
+  // Combines logs + schedules filtered by existing logs
 });
 
-// Upcoming schedules sorted by next occurrence
-readonly upcomingSchedules = computed(() => {
-  // Sorts by days from today
+// Upcoming schedules with filtered dates
+readonly upcomingSchedules = computed((): UpcomingScheduleDisplay[] => {
+  // Groups by schedule, filters fulfilled dates
 });
 
 // Recent logs (last 10)
@@ -181,31 +171,19 @@ readonly recentLogs = computed(() => {
 });
 ```
 
----
+### Store Integration
 
-## Route Migration
+The `WorkoutScheduleStore` provides `upcomingScheduleInstances()` which:
 
-### From Old Routes
-
-| Old Route                      | New Route        | Behavior              |
-| ------------------------------ | ---------------- | --------------------- |
-| `/user/schedules`              | `/user/calendar` | Direct replacement    |
-| `/user/workouts/:id/schedules` | `/user/calendar` | Redirects to calendar |
-
-### Why Changed
-
-The weekly grid view (`/user/schedules`) only showed schedules without context of completed workouts. The new calendar view provides:
-
-- **Better context** - See what you actually did vs. what was planned
-- **Unified interface** - One place for workout history and planning
-- **Monthly view** - More standard calendar paradigm
-- **Reusable component** - Calendar component can be used elsewhere
+- Generates all scheduled dates for the next 4 weeks
+- Returns schedule + criteria days + upcoming dates
+- Used by the Calendar page for consistent schedule logic
 
 ---
 
 ## Related Documentation
 
-- [Calendar Component](../../components/calendar.md) - Reusable calendar component details
-- [Workout Schedules](../schedules/README.md) - Schedule management (create/edit)
-- [Workout Logs](../workout-logs/README.md) - Log detail view
+- [Calendar Component](../../components/calendar.md) - Reusable calendar component
+- [Workout Schedules](../schedules/README.md) - Schedule management
+- [Workout Logs](../workout-logs/README.md) - Log details
 - [My Workouts](../workouts/README.md) - Workout instances

@@ -10,7 +10,7 @@ Schedules allow users to plan their weekly workout routine by assigning workouts
 
 ### Multi-Day Support
 
-Unlike the previous implementation that only allowed one day per workout, the new criteria-based system supports:
+The criteria-based system supports:
 
 - **Multiple days per workout** - Schedule a workout for Monday, Wednesday, and Friday
 - **Flexible criteria types** - Currently supports "Day of Week", extensible for future types (specific dates, intervals, etc.)
@@ -18,19 +18,19 @@ Unlike the previous implementation that only allowed one day per workout, the ne
 
 ### Calendar Integration
 
-Schedules are now viewed through the **[Calendar page](../calendar/page.md)** which provides:
+Schedules are viewed and managed through the **[Calendar page](../calendar/page.md)** which provides:
 
 - **Unified view** - See both past workouts and upcoming schedules together
-- **Monthly calendar** - More intuitive than the old weekly grid
+- **Monthly calendar** - Standard monthly calendar paradigm
 - **Color coding** - Purple dots indicate planned workouts
-- **Full history** - Completed workouts shown alongside scheduled ones
+- **Smart filtering** - Scheduled dates that already have logs are hidden
 
 ---
 
 ## Route Structure
 
 ```
-/user/calendar                      → View schedules in calendar (replaces /user/schedules)
+/user/calendar                      → View schedules in calendar
 /user/schedules/new                 → Create new schedule
 /user/schedules/:id                 → Schedule detail (manage criteria)
 /user/workouts/:id/schedules        → Redirects to calendar
@@ -68,7 +68,6 @@ WorkoutSchedule (1) → UserWorkout (1)
 | Calendar View | ✅     | `/user/calendar`      | Unified logs + schedules view     |
 | Create        | ✅     | `/user/schedules/new` | Form for creating schedules       |
 | Detail        | ✅     | `/user/schedules/:id` | View and manage schedule criteria |
-| List (Old)    | ❌     | Removed               | Replaced by calendar view         |
 
 ---
 
@@ -124,37 +123,50 @@ WorkoutSchedule (1) → UserWorkout (1)
 
 ### Primary Interface: Calendar Page
 
-The **[Calendar page](../calendar/page.md)** at `/user/calendar` is now the main way to view schedules:
+The **[Calendar page](../calendar/page.md)** at `/user/calendar` is the main way to view schedules:
 
 - Shows upcoming scheduled workouts in the "Upcoming Workouts" panel
 - Displays scheduled workouts as purple dots on the monthly calendar
+- Filters out dates that already have logs for that workout
 - Combines with past workout logs for complete workout history
 
-**Why the change?**
+### Schedule Display Format
 
-The old weekly grid (`/user/schedules`) only showed when workouts were scheduled, but not whether they were actually completed. The Calendar page provides:
+In the Calendar page, each schedule appears as:
 
-1. **Context** - See planned vs. completed workouts
-2. **Better UX** - Monthly view is more standard
-3. **Unified interface** - One place for planning and history
+```
+[WorkoutName]    [Monday, Wednesday]    [9.2., 11.2.]
+```
 
-### Legacy Route Behavior
-
-Routes that previously showed the weekly schedule grid now redirect:
-
-- `/user/schedules` → `/user/calendar`
-- `/user/workouts/:id/schedules` → `/user/calendar`
+- **Workout name** - The scheduled workout
+- **Scheduled days** - Days of the week from all criteria
+- **Upcoming dates** - Next 4 dates when scheduled (excluding completed ones)
 
 ---
 
 ## Creating and Editing
 
-Creating and editing schedules still uses dedicated forms:
+Creating and editing schedules uses dedicated forms:
 
 - **Create**: `/user/schedules/new` (or from workout detail)
 - **Edit Criteria**: `/user/schedules/:id` - Manage schedule criteria
 
-These workflows remain unchanged.
+---
+
+## Store Integration
+
+The `WorkoutScheduleStore` provides centralized schedule logic:
+
+```typescript
+// Get upcoming schedule instances with their dates
+readonly upcomingScheduleInstances = computed(() => {
+  // Returns schedules with criteria days and upcoming dates
+  // Filters out today and past dates
+  // Generates next 4 weeks of scheduled dates
+});
+```
+
+This computed property is used by the Calendar page for consistent schedule date generation.
 
 ---
 
@@ -163,5 +175,4 @@ These workflows remain unchanged.
 - [Calendar Page](../calendar/page.md) - **Primary schedule viewing interface**
 - [Create Schedule](./new.md) - Form for creating new schedules
 - [Schedule Detail](./detail.md) - View and manage schedule criteria
-- [Workout Schedules](../workouts/schedules.md) - Workout-specific schedule documentation (deprecated)
 - [Calendar Component](../../components/calendar.md) - Reusable calendar component
