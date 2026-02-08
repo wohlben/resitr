@@ -103,6 +103,14 @@ export const appRoutes: Route[] = [
         loadComponent: () => import('./routes/user/schedules/index').then((m) => m.SchedulesListComponent),
       },
       {
+        path: 'user/workouts/:id/schedules/new',
+        loadComponent: () => import('./routes/user/schedules/new').then((m) => m.CreateWorkoutScheduleComponent),
+      },
+      {
+        path: 'user/workouts/:id/schedules/:scheduleId/edit',
+        loadComponent: () => import('./routes/user/schedules/edit').then((m) => m.EditWorkoutScheduleComponent),
+      },
+      {
         path: 'user/workout-logs',
         loadComponent: () => import('./routes/user/workout-logs').then((m) => m.WorkoutLogsComponent),
       },

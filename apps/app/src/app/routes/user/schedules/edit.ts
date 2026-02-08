@@ -8,10 +8,10 @@ import { LoadingComponent } from '../../../components/ui/feedback/loading.compon
 import { ErrorLoadingComponent } from '../../../components/ui/feedback/error-loading.component';
 import { ButtonComponent } from '../../../components/ui/buttons/button.component';
 import { ToastService } from '../../../core/services/toast.service';
-import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
+import type { UpdateUserWorkoutScheduleDto, UserWorkoutScheduleResponseDto } from '@resitr/api';
 
 @Component({
-  selector: 'app-create-workout-schedule',
+  selector: 'app-edit-workout-schedule',
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule, LoadingComponent, ErrorLoadingComponent, ButtonComponent],
   template: `
@@ -27,54 +27,34 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
           </app-button>
         </div>
         <div>
-          <h1 class="text-3xl font-bold text-gray-900">Schedule Workout</h1>
-          <p class="text-gray-600 mt-1">Add a workout to your weekly routine</p>
+          <h1 class="text-3xl font-bold text-gray-900">Edit Workout Schedule</h1>
+          <p class="text-gray-600 mt-1">Update your workout schedule</p>
         </div>
       </div>
 
       <!-- Loading State -->
-      @if (userWorkoutsStore.isLoading()) {
-      <app-loading message="Loading your workouts..." />
+      @if (isLoading()) {
+      <app-loading [message]="loadingMessage()" />
       }
 
       <!-- Error State -->
-      @if (userWorkoutsStore.error()) {
-      <app-error-loading title="Error loading workouts" [message]="userWorkoutsStore.error()!" />
+      @if (error()) {
+      <app-error-loading title="Error loading schedule" [message]="error()!" />
       }
 
       <!-- Form -->
-      @if (!userWorkoutsStore.isLoading() && !userWorkoutsStore.error()) {
+      @if (!isLoading() && !error()) {
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <form (submit)="onSubmit($event)" class="space-y-6">
-          <!-- Workout Selection -->
+          <!-- Workout Selection (Read-only) -->
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">
-              Workout <span class="text-red-500">*</span>
-            </label>
-            @if (isWorkoutPreselected()) {
-            <!-- Read-only workout display when pre-selected -->
+            <label class="block text-sm font-medium text-gray-700 mb-2"> Workout </label>
             <div class="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-700">
               {{ selectedWorkoutName() }}
             </div>
-            <input type="hidden" [(ngModel)]="formData.workoutTemplateId" name="workoutTemplateId" />
-            } @else {
-            <!-- Editable dropdown when no workout pre-selected -->
-            <select
-              [(ngModel)]="formData.workoutTemplateId"
-              name="workoutTemplateId"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              required
-            >
-              <option value="">Select a workout...</option>
-              @for (workout of userWorkoutsStore.enrichedWorkouts(); track workout.id) {
-              <option [value]="workout.workoutTemplateId">
-                {{ workout.workout?.name || 'Unknown Workout' }}
-              </option>
-              }
-            </select>
-            } @if (formErrors.workoutTemplateId) {
-            <p class="mt-1 text-sm text-red-600">{{ formErrors.workoutTemplateId }}</p>
-            }
+            <p class="mt-1 text-sm text-gray-500">
+              Workout cannot be changed. Delete and recreate to use a different workout.
+            </p>
           </div>
 
           <!-- Day of Week -->
@@ -130,8 +110,8 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
           <!-- Actions -->
           <div class="flex justify-end gap-3 pt-4 border-t border-gray-200">
             <app-button variant="secondary" [link]="backLink()"> Cancel </app-button>
-            <app-button variant="primary" type="submit" [disabled]="store.isCreating() || !isFormValid()">
-              @if (store.isCreating()) {
+            <app-button variant="primary" type="submit" [disabled]="store.isUpdating() || !isFormValid()">
+              @if (store.isUpdating()) {
               <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path
@@ -140,7 +120,7 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 ></path>
               </svg>
-              Scheduling... } @else { Schedule Workout }
+              Updating... } @else { Update Schedule }
             </app-button>
           </div>
         </form>
@@ -149,7 +129,7 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
     </div>
   `,
 })
-export class CreateWorkoutScheduleComponent {
+export class EditWorkoutScheduleComponent {
   readonly store = inject(WorkoutScheduleStore);
   readonly userWorkoutsStore = inject(UserWorkoutsStore);
   private readonly router = inject(Router);
@@ -160,35 +140,26 @@ export class CreateWorkoutScheduleComponent {
 
   // Route params
   private workoutId = signal<string | null>(null);
+  private scheduleId = signal<string | null>(null);
+  private schedule = signal<UserWorkoutScheduleResponseDto | null>(null);
 
-  formData: CreateUserWorkoutScheduleDto = {
-    workoutTemplateId: '',
-    dayOfWeek: new Date().getDay(),
+  formData: UpdateUserWorkoutScheduleDto = {
+    dayOfWeek: 0,
     order: 0,
   };
 
-  formErrors: { workoutTemplateId?: string; dayOfWeek?: string } = {};
+  formErrors: { dayOfWeek?: string } = {};
 
   constructor() {
-    // Read route params (for workout-specific routes like /user/workouts/:id/schedules/new)
+    // Read route params
     this.route.params.subscribe((params) => {
-      const routeWorkoutId = params['id'];
-      if (routeWorkoutId) {
-        this.workoutId.set(routeWorkoutId);
-        // Find the user's workout to get the template ID
-        const userWorkout = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === routeWorkoutId);
-        if (userWorkout) {
-          this.formData.workoutTemplateId = userWorkout.workoutTemplateId;
-        }
-      }
+      this.workoutId.set(params['id'] || null);
+      this.scheduleId.set(params['scheduleId'] || null);
+      this.loadSchedule();
     });
 
-    // Also check query params (for backward compatibility)
+    // Also check query params for pre-selection
     this.route.queryParams.subscribe((params) => {
-      const workoutTemplateId = params['workoutTemplateId'];
-      if (workoutTemplateId && !this.formData.workoutTemplateId) {
-        this.formData.workoutTemplateId = workoutTemplateId;
-      }
       const dayOfWeek = params['dayOfWeek'];
       if (dayOfWeek !== undefined) {
         const day = parseInt(dayOfWeek, 10);
@@ -199,14 +170,38 @@ export class CreateWorkoutScheduleComponent {
     });
   }
 
-  readonly isWorkoutPreselected = computed(() => {
-    return !!this.workoutId() && !!this.formData.workoutTemplateId;
+  private loadSchedule(): void {
+    const scheduleId = this.scheduleId();
+    if (!scheduleId) return;
+
+    const existingSchedule = this.store.schedules().find((s) => s.id === scheduleId);
+    if (existingSchedule) {
+      this.schedule.set(existingSchedule);
+      this.formData = {
+        dayOfWeek: existingSchedule.dayOfWeek,
+        order: existingSchedule.order,
+      };
+    }
+  }
+
+  readonly isLoading = computed(() => {
+    return this.store.isLoading() || this.userWorkoutsStore.isLoading();
+  });
+
+  readonly loadingMessage = computed(() => {
+    if (this.store.isLoading()) return 'Loading schedule...';
+    if (this.userWorkoutsStore.isLoading()) return 'Loading workouts...';
+    return 'Loading...';
+  });
+
+  readonly error = computed(() => {
+    return this.store.error() || this.userWorkoutsStore.error();
   });
 
   readonly selectedWorkout = computed(() => {
-    const workoutId = this.workoutId();
-    if (!workoutId) return null;
-    return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
+    const schedule = this.schedule();
+    if (!schedule) return null;
+    return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.workoutTemplateId === schedule.workoutTemplateId);
   });
 
   readonly selectedWorkoutName = computed(() => {
@@ -223,15 +218,11 @@ export class CreateWorkoutScheduleComponent {
 
   isFormValid(): boolean {
     const dayOfWeek = this.formData.dayOfWeek ?? -1;
-    return !!this.formData.workoutTemplateId && dayOfWeek >= 0 && dayOfWeek <= 6;
+    return dayOfWeek >= 0 && dayOfWeek <= 6;
   }
 
   validateForm(): boolean {
     this.formErrors = {};
-
-    if (!this.formData.workoutTemplateId) {
-      this.formErrors.workoutTemplateId = 'Please select a workout';
-    }
 
     const dayOfWeek = this.formData.dayOfWeek ?? -1;
     if (dayOfWeek < 0 || dayOfWeek > 6) {
@@ -248,11 +239,19 @@ export class CreateWorkoutScheduleComponent {
       return;
     }
 
-    const schedule = await this.store.createSchedule(this.formData);
+    const scheduleId = this.scheduleId();
+    if (!scheduleId) {
+      this.toast.error('Schedule ID not found');
+      return;
+    }
 
-    if (schedule) {
-      this.toast.success('Workout scheduled successfully');
+    const updated = await this.store.updateSchedule(scheduleId, this.formData);
+
+    if (updated) {
+      this.toast.success('Schedule updated successfully');
       this.router.navigate([this.backLink()]);
+    } else {
+      this.toast.error(this.store.actionError() || 'Failed to update schedule');
     }
   }
 }

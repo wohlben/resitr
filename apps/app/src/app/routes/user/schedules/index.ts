@@ -46,7 +46,7 @@ interface DaySchedule {
             <h1 class="text-3xl font-bold text-gray-900">{{ pageTitle() }}</h1>
             <p class="text-gray-600 mt-1">{{ pageSubtitle() }}</p>
           </div>
-          <app-button variant="primary" link="/user/schedules/new" [queryParams]="createQueryParams()">
+          <app-button variant="primary" [link]="createScheduleLink()" [queryParams]="createQueryParams()">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -91,7 +91,7 @@ interface DaySchedule {
               @for (item of day.schedules; track item.schedule.id) {
               <div
                 class="bg-white rounded border border-gray-200 p-2 shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
-                [routerLink]="['/user/schedules', item.schedule.id]"
+                [routerLink]="scheduleEditLink(item.schedule.id)"
               >
                 <div class="flex items-start justify-between gap-1">
                   <div class="min-w-0 flex-1">
@@ -121,7 +121,7 @@ interface DaySchedule {
             <div class="p-2 border-t border-gray-200">
               <a
                 class="w-full py-1 text-xs text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors flex items-center justify-center gap-1"
-                [routerLink]="['/user/schedules/new']"
+                [routerLink]="createScheduleLink()"
                 [queryParams]="dayCreateQueryParams(day.dayIndex)"
               >
                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,17 +192,29 @@ export class SchedulesListComponent {
     return this.isFiltered() ? 'Weekly schedule for this workout' : 'Manage all your weekly workout schedules';
   });
 
+  readonly createScheduleLink = computed(() => {
+    const id = this.workoutId();
+    if (id) {
+      return `/user/workouts/${id}/schedules/new`;
+    }
+    return '/user/schedules/new';
+  });
+
   readonly createQueryParams = computed(() => {
     const workout = this.currentWorkout();
     return workout ? { workoutTemplateId: workout.workoutTemplateId } : null;
   });
 
   dayCreateQueryParams(dayIndex: number): Record<string, string> | null {
-    const workout = this.currentWorkout();
-    if (workout) {
-      return { dayOfWeek: dayIndex.toString(), workoutTemplateId: workout.workoutTemplateId };
-    }
     return { dayOfWeek: dayIndex.toString() };
+  }
+
+  scheduleEditLink(scheduleId: string): string[] {
+    const workoutId = this.workoutId();
+    if (workoutId) {
+      return ['/user/workouts', workoutId, 'schedules', scheduleId, 'edit'];
+    }
+    return ['/user/schedules', scheduleId];
   }
 
   readonly weekDays = computed(() => {
