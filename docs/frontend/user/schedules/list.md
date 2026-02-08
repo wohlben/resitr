@@ -17,19 +17,38 @@
 - 7-column layout (Sunday through Saturday)
 - Today's column highlighted in blue
 - Each day displays scheduled workouts
-- Order indicator for multiple workouts per day
+- Schedules appear on all days they are configured for
 
 ### Schedule Cards
 
 - Workout name
-- Order number (for sequencing)
+- **Scheduled days** displayed as comma-separated list (e.g., "Mon, Wed, Fri")
 - Hover reveals delete button
-- Click navigates to schedule detail
+- Click navigates to schedule detail for criteria management
 
 ### Quick Actions
 
-- Per-day "Schedule" button → Create schedule for that day
-- Global "Schedule Workout" button → Create schedule with no pre-selection
+- Global **"Schedule Workout"** button → Create schedule with no pre-selection
+- (Removed: Per-day schedule buttons - now only accessible from detail view)
+
+---
+
+## How Schedules are Grouped
+
+Schedules are grouped by day based on their criteria:
+
+```typescript
+// Schedule with criteria for Mon/Wed/Fri appears on all three days
+{
+  id: 'schedule-1',
+  workoutTemplateId: 'workout-abc',
+  criteria: [
+    { type: 'DAY_OF_WEEK', days: [1, 3, 5], order: 0 }
+  ]
+}
+```
+
+The `schedulesByDay` computed property aggregates schedules across all criteria days.
 
 ---
 
@@ -42,9 +61,8 @@
 
 ### Exit Points
 
-- Click schedule card → `/user/schedules/:id`
-- Schedule button → `/user/schedules/new?dayOfWeek=n`
-- Global Schedule button → `/user/schedules/new`
+- Click schedule card → `/user/schedules/:id` (detail view)
+- Schedule button → `/user/schedules/new`
 
 ---
 
@@ -53,6 +71,7 @@
 - Component: `SchedulesListComponent`
 - Store: `WorkoutScheduleStore`
 - Route: `/user/schedules`
+- Key computed: `schedulesByDay` - Map<dayIndex, Schedule[]>
 
 ---
 
