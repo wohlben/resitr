@@ -31,20 +31,12 @@ export const UserExerciseSchemesStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
   withComputed((store) => ({
-    isLoadingExercise: computed(() => (exerciseId: string) =>
-      store.loadingExercises().has(exerciseId)
-    ),
-    isSavingSectionItem: computed(() => (sectionItemId: string) =>
-      store.savingSectionItems().has(sectionItemId)
-    ),
-    getSchemesForExercise: computed(() => (exerciseId: string) =>
-      store.schemesByExercise()[exerciseId] ?? []
-    ),
-    getAssignedSchemeId: computed(() => (sectionItemId: string) =>
-      store.assignedSchemes()[sectionItemId] ?? null
-    ),
-    getErrorForSectionItem: computed(() => (sectionItemId: string) =>
-      store.errorBySectionItem()[sectionItemId] ?? null
+    isLoadingExercise: computed(() => (exerciseId: string) => store.loadingExercises().has(exerciseId)),
+    isSavingSectionItem: computed(() => (sectionItemId: string) => store.savingSectionItems().has(sectionItemId)),
+    getSchemesForExercise: computed(() => (exerciseId: string) => store.schemesByExercise()[exerciseId] ?? []),
+    getAssignedSchemeId: computed(() => (sectionItemId: string) => store.assignedSchemes()[sectionItemId] ?? null),
+    getErrorForSectionItem: computed(
+      () => (sectionItemId: string) => store.errorBySectionItem()[sectionItemId] ?? null
     ),
   })),
   withMethods((store, http = inject(HttpClient)) => ({
@@ -62,22 +54,35 @@ export const UserExerciseSchemesStore = signalStore(
         const schemes = await UserQueries.exerciseScheme.byExercise(exerciseId).fn(http);
         patchState(store, {
           schemesByExercise: { ...store.schemesByExercise(), [exerciseId]: schemes },
-          loadingExercises: new Set([...store.loadingExercises()].filter(id => id !== exerciseId)),
+          loadingExercises: new Set([...store.loadingExercises()].filter((id) => id !== exerciseId)),
         });
       } catch (error) {
         console.error(`Failed to load schemes for exercise ${exerciseId}:`, error);
         patchState(store, {
           schemesByExercise: { ...store.schemesByExercise(), [exerciseId]: [] },
-          loadingExercises: new Set([...store.loadingExercises()].filter(id => id !== exerciseId)),
+          loadingExercises: new Set([...store.loadingExercises()].filter((id) => id !== exerciseId)),
         });
       }
     },
 
-    async assignSchemeToSectionItem(
-      schemeId: string,
-      sectionItemId: string,
-      userWorkoutId: string
-    ): Promise<boolean> {
+    async loadAssignmentsForWorkout(userWorkoutId: string): Promise<void> {
+      try {
+        const assignments = await UserQueries.exerciseScheme.byWorkout(userWorkoutId).fn(http);
+        const assignedSchemes: Record<string, string> = {};
+
+        for (const assignment of assignments) {
+          assignedSchemes[assignment.sectionItemId] = assignment.scheme.id;
+        }
+
+        patchState(store, {
+          assignedSchemes: { ...store.assignedSchemes(), ...assignedSchemes },
+        });
+      } catch (error) {
+        console.error(`Failed to load assignments for workout ${userWorkoutId}:`, error);
+      }
+    },
+
+    async assignSchemeToSectionItem(schemeId: string, sectionItemId: string, userWorkoutId: string): Promise<boolean> {
       patchState(store, {
         savingSectionItems: new Set([...store.savingSectionItems(), sectionItemId]),
         errorBySectionItem: { ...store.errorBySectionItem(), [sectionItemId]: null },
@@ -91,13 +96,13 @@ export const UserExerciseSchemesStore = signalStore(
 
         patchState(store, {
           assignedSchemes: { ...store.assignedSchemes(), [sectionItemId]: schemeId },
-          savingSectionItems: new Set([...store.savingSectionItems()].filter(id => id !== sectionItemId)),
+          savingSectionItems: new Set([...store.savingSectionItems()].filter((id) => id !== sectionItemId)),
         });
         return true;
       } catch (error) {
         patchState(store, {
           errorBySectionItem: { ...store.errorBySectionItem(), [sectionItemId]: safeErrorMessage(error) },
-          savingSectionItems: new Set([...store.savingSectionItems()].filter(id => id !== sectionItemId)),
+          savingSectionItems: new Set([...store.savingSectionItems()].filter((id) => id !== sectionItemId)),
         });
         return false;
       }
@@ -131,13 +136,13 @@ export const UserExerciseSchemesStore = signalStore(
             [data.exerciseId]: [...exerciseSchemes, scheme],
           },
           assignedSchemes: { ...store.assignedSchemes(), [sectionItemId]: scheme.id },
-          savingSectionItems: new Set([...store.savingSectionItems()].filter(id => id !== sectionItemId)),
+          savingSectionItems: new Set([...store.savingSectionItems()].filter((id) => id !== sectionItemId)),
         });
         return true;
       } catch (error) {
         patchState(store, {
           errorBySectionItem: { ...store.errorBySectionItem(), [sectionItemId]: safeErrorMessage(error) },
-          savingSectionItems: new Set([...store.savingSectionItems()].filter(id => id !== sectionItemId)),
+          savingSectionItems: new Set([...store.savingSectionItems()].filter((id) => id !== sectionItemId)),
         });
         return false;
       }

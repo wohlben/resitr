@@ -1,4 +1,4 @@
-import { Component, inject, computed } from '@angular/core';
+import { Component, inject, computed, effect } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { WorkoutSectionType, WorkoutSectionTypeLabels } from '@resitr/api';
@@ -212,6 +212,14 @@ export class UserWorkoutDetail {
   constructor() {
     this.route.paramMap.pipe(takeUntilDestroyed()).subscribe((params) => {
       this.workoutId = params.get('id');
+    });
+
+    // Load assignments when workout data is available
+    effect(() => {
+      const workout = this.currentWorkout();
+      if (workout?.id) {
+        this.schemesStore.loadAssignmentsForWorkout(workout.id);
+      }
     });
   }
 
