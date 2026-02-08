@@ -171,14 +171,10 @@ export class CreateWorkoutScheduleComponent {
   formErrors: { workoutTemplateId?: string; dayOfWeek?: string } = {};
 
   constructor() {
-    console.log('[CreateWorkoutSchedule] Component created');
-
     // React when workout input changes and update form
     effect(() => {
       const w = this.workout();
-      console.log('[CreateWorkoutSchedule] workout() changed to:', w);
       if (w) {
-        console.log('[CreateWorkoutSchedule] Setting workoutTemplateId to:', w.workoutTemplateId);
         this.formData.workoutTemplateId = w.workoutTemplateId;
       }
     });

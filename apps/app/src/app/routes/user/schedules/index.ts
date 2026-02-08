@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { WorkoutScheduleStore } from '../../../features/workout-schedule/workout-schedule.store';
@@ -163,14 +163,6 @@ export class SchedulesListComponent {
 
   // Optional back link input
   backLink = input<string>('/user/workouts');
-
-  constructor() {
-    console.log('[SchedulesList] Component created');
-    // Log when workout input changes
-    effect(() => {
-      console.log('[SchedulesList] workout() changed to:', this.workout());
-    });
-  }
 
   readonly pageTitle = computed(() => {
     const w = this.workout();

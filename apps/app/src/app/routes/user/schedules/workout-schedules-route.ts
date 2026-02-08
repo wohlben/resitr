@@ -19,19 +19,9 @@ export class WorkoutSchedulesRouteComponent {
 
   // Computed signal that reacts to store changes
   workout = computed(() => {
-    const workoutId = this.workoutId;
-    console.log('[WorkoutSchedulesRoute] Computing workout, id:', workoutId);
-    console.log('[WorkoutSchedulesRoute] Store enrichedWorkouts:', this.userWorkoutsStore.enrichedWorkouts());
-    if (!workoutId) return null;
-    const found = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
-    console.log('[WorkoutSchedulesRoute] Found workout:', found);
-    return found ?? null;
+    if (!this.workoutId) return null;
+    return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === this.workoutId) ?? null;
   });
-
-  constructor() {
-    console.log('[WorkoutSchedulesRoute] Component created');
-    console.log('[WorkoutSchedulesRoute] Current route snapshot:', this.route.snapshot.url);
-  }
 
   backLink(): string {
     return this.workoutId ? `/user/workouts/${this.workoutId}` : '/user/workouts';
