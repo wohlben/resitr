@@ -115,12 +115,12 @@ export const appRoutes: Route[] = [
         loadComponent: () => import('./routes/user/schedules/edit').then((m) => m.ScheduleDetailComponent),
       },
       {
-        path: 'user/workout-logs',
-        loadComponent: () => import('./routes/user/workout-logs').then((m) => m.WorkoutLogsComponent),
+        path: 'user/workouts/:workoutId/logs',
+        loadComponent: () => import('./routes/user/workouts/_workoutId/logs').then((m) => m.WorkoutLogsComponent),
       },
       {
-        path: 'user/workout-logs/:id',
-        loadComponent: () => import('./routes/user/workout-log-detail').then((m) => m.WorkoutLogDetail),
+        path: 'user/workouts/:workoutId/logs/:logId',
+        loadComponent: () => import('./routes/user/workouts/_workoutId/log-detail').then((m) => m.WorkoutLogDetail),
       },
       {
         path: 'user/calendar',

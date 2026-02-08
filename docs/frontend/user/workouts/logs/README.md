@@ -1,17 +1,26 @@
 # Workout Logs
 
-Personal history of completed workout sessions with performance tracking.
+Workout history and performance tracking for a specific workout.
 
 ---
 
 ## Overview
 
-Workout logs record each completed workout session, capturing:
+Workout logs record each completed session of a specific workout, capturing:
 
-- Which workout was performed
 - Date and duration of the session
 - Exercise-by-exercise performance data
+- Completion status (completed, in-progress, incomplete)
 - Personal records and progress over time
+
+---
+
+## URL Structure
+
+```
+/user/workouts/{workoutId}/logs           → List of logs for a workout
+/user/workouts/{workoutId}/logs/{logId}   → Detail view of a specific log
+```
 
 ---
 
@@ -21,7 +30,7 @@ Workout logs record each completed workout session, capturing:
 
 ```
 Workout Log
-├── Workout reference (which template/instance)
+├── Workout reference (userWorkoutId)
 ├── Completion timestamp
 ├── Total duration
 ├── Exercise performances
@@ -40,7 +49,7 @@ User completes workout
          ▼
 ┌─────────────────────┐
 │ Create Workout Log  │
-│ - workoutId         │
+│ - userWorkoutId     │
 │ - timestamp         │
 │ - performances[]    │
 └──────────┬──────────┘
@@ -59,7 +68,7 @@ User completes workout
 
 | Feature              | Relationship                                           |
 | -------------------- | ------------------------------------------------------ |
-| **My Workouts**      | Logs reference the workout instance that was performed |
+| **My Workouts**      | Logs belong to a specific user workout instance        |
 | **Calendar**         | Logs appear on the calendar with color-coded status    |
 | **Workout Schedule** | Scheduled sessions become logs when completed          |
 | **Exercise Schemes** | Logs capture actual performance against scheme targets |
@@ -69,24 +78,23 @@ User completes workout
 
 ## Implementation Status
 
-| Component    | Status       | Notes                      |
-| ------------ | ------------ | -------------------------- |
-| Log List     | ✅ Complete  | List with calendar view    |
-| Log Detail   | ✅ Complete  | Full session details       |
-| Log Creation | ✅ Automatic | Triggered from Run Workout |
+| Component    | Status         | Notes                      |
+| ------------ | -------------- | -------------------------- |
+| Log List     | ✅ Complete    | List with calendar view    |
+| Log Detail   | 🚧 Placeholder | Basic template             |
+| Log Creation | ✅ Automatic   | Triggered from Run Workout |
 
 ---
 
 ## Navigation
 
-Workout Logs are **not** in the main navigation menu. They are accessed through:
+Workout Logs are accessed through:
 
-- **Individual Workout Detail** - View logs specific to a workout
-- **Calendar Page** - See all logs in the monthly view
-- **Direct URL** - `/user/workout-logs` (shows all logs)
-- **Log Detail** - `/user/workout-logs/:id` (specific session)
+- **Workout Detail** - "View Logs" button for a specific workout
+- **Calendar Page** - Click on completed workout entries
+- **Direct URL** - `/user/workouts/{workoutId}/logs`
 
-This design keeps the main navigation clean while making logs accessible contextually where they matter most.
+This design keeps logs scoped to the workout they belong to.
 
 ---
 
@@ -104,35 +112,6 @@ The Workout Logs page uses the reusable [Calendar component](../../components/ca
 - **Click a day** to navigate to the first log for that date
 - **Today's date** highlighted with blue ring
 
-### Code Example
-
-```typescript
-import { CalendarComponent } from '../components/ui/calendar';
-
-@Component({
-  imports: [CalendarComponent],
-  template: `
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- Left: Log List -->
-      <div class="lg:col-span-2">
-        @for (log of logs(); track log.id) {
-          <!-- Log cards -->
-        }
-      </div>
-
-      <!-- Right: Calendar -->
-      <div class="lg:col-span-1">
-        <app-calendar
-          [entries]="calendarEntries()"
-          [legend]="calendarLegend"
-          (dayClick)="selectDate($event)"
-        />
-      </div>
-    </div>
-  `
-})
-```
-
 ### Legend Configuration
 
 ```typescript
@@ -147,8 +126,8 @@ readonly calendarLegend = {
 
 ## Related Documentation
 
-- [Log List](./list.md) - Browse completed sessions
-- [Log Detail](./detail.md) - View specific session
+- [Log List](./list.md) - Browse completed sessions for a workout
+- [Log Detail](./detail.md) - View specific session details
 - [Calendar Component](../../components/calendar.md) - Reusable calendar component
-- [Calendar Page](../calendar/page.md) - Combined view of logs and schedules
-- [My Workouts](../workouts/README.md) - Workout instances that generate logs
+- [Calendar Page](../../calendar/page.md) - Combined view of logs and schedules
+- [My Workouts](../README.md) - Workout instances that generate logs

@@ -107,14 +107,13 @@ interface UpcomingScheduleDisplay {
             <div class="space-y-3">
               @for (log of recentLogs(); track log.id) {
               <div
-                class="flex items-center justify-between p-3 rounded-lg border cursor-pointer hover:shadow-md transition-shadow"
+                class="flex items-center justify-between p-3 rounded-lg border"
                 [class.bg-green-50]="log.completedAt"
                 [class.border-green-100]="log.completedAt"
                 [class.bg-yellow-50]="isStartedToday(log)"
                 [class.border-yellow-100]="isStartedToday(log)"
                 [class.bg-red-50]="!log.completedAt && !isStartedToday(log)"
                 [class.border-red-100]="!log.completedAt && !isStartedToday(log)"
-                [routerLink]="['/user/workout-logs', log.id]"
               >
                 <div>
                   <div class="font-medium text-gray-900">{{ log.name }}</div>
@@ -313,11 +312,8 @@ export class CalendarPageComponent {
   }
 
   onDayClick(date: Date): void {
-    // Find logs for this date and navigate to the first one if exists
-    const dateString = date.toDateString();
-    const logs = this.logsStore.logsByDate().get(dateString);
-    if (logs && logs.length > 0) {
-      this.router.navigate(['/user/workout-logs', logs[0].id]);
-    }
+    // Day click handler - currently no navigation since log detail
+    // requires workoutId which is not available in WorkoutLogListItemDto
+    // This could be extended to navigate to workout logs list if needed
   }
 }

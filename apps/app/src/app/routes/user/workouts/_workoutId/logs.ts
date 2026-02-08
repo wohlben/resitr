@@ -1,12 +1,12 @@
 import { Component, computed, inject } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { WorkoutLogsStore } from '../../features/workout-logs/workout-logs.store';
-import { LoadingComponent } from '../../components/ui/feedback/loading.component';
-import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
-import { ButtonComponent } from '../../components/ui/buttons/button.component';
-import { UserWorkoutsStore } from '../../features/user-workouts/user-workouts.store';
-import { CalendarComponent, type CalendarEntry } from '../../components/ui/calendar/calendar.component';
+import { WorkoutLogsStore } from '../../../../features/workout-logs/workout-logs.store';
+import { LoadingComponent } from '../../../../components/ui/feedback/loading.component';
+import { ErrorLoadingComponent } from '../../../../components/ui/feedback/error-loading.component';
+import { ButtonComponent } from '../../../../components/ui/buttons/button.component';
+import { UserWorkoutsStore } from '../../../../features/user-workouts/user-workouts.store';
+import { CalendarComponent, type CalendarEntry } from '../../../../components/ui/calendar/calendar.component';
 import type { WorkoutLogListItemDto } from '@resitr/api';
 
 @Component({
@@ -27,18 +27,14 @@ import type { WorkoutLogListItemDto } from '@resitr/api';
       <div class="flex flex-col gap-4">
         <div class="flex items-start justify-between">
           <div>
-            <h1 class="text-3xl font-bold text-gray-900">
-              {{ workoutName() ? workoutName() + ' - Logs' : 'Workout Logs' }}
-            </h1>
-            <p class="text-gray-600 mt-1">
-              {{ store.workoutTemplateId() ? 'Viewing logs for a specific workout' : 'View all your workout logs' }}
-            </p>
+            <h1 class="text-3xl font-bold text-gray-900">{{ workoutName() }} - Logs</h1>
+            <p class="text-gray-600 mt-1">View workout history and performance</p>
           </div>
-          <app-button variant="secondary" link="/user/workouts">
+          <app-button variant="secondary" [link]="'/user/workouts/' + workoutId()">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to Workouts
+            Back to Workout
           </app-button>
         </div>
       </div>
@@ -69,18 +65,16 @@ import type { WorkoutLogListItemDto } from '@resitr/api';
               />
             </svg>
             <p class="text-gray-600 mb-4">No workout logs found</p>
-            @if (store.workoutTemplateId()) {
-            <app-button variant="primary" [link]="'/user/workouts/' + store.workoutTemplateId() + '/run'">
+            <app-button variant="primary" [link]="'/user/workouts/' + workoutId() + '/run'">
               Start This Workout
             </app-button>
-            }
           </div>
           } @else {
           <div class="space-y-3">
             @for (log of store.logs(); track log.id) {
             <div
               class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow cursor-pointer"
-              [routerLink]="['/user/workout-logs', log.id]"
+              [routerLink]="['/user/workouts', workoutId(), 'logs', log.id]"
             >
               <div class="flex items-start justify-between">
                 <div>
@@ -127,6 +121,9 @@ export class WorkoutLogsComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
+  // Get workoutId from route params
+  readonly workoutId = computed(() => this.route.snapshot.paramMap.get('workoutId') || '');
+
   readonly calendarLegend = {
     green: 'Completed',
     yellow: 'Started (Today)',
@@ -134,22 +131,20 @@ export class WorkoutLogsComponent {
   };
 
   constructor() {
-    // Read query params
-    this.route.queryParams.subscribe((params) => {
-      const workoutTemplateId = params['workoutTemplateId'];
-      if (workoutTemplateId) {
-        this.store.setWorkoutTemplateId(workoutTemplateId);
-        this.store.loadLogs();
-      }
-    });
+    // Load logs for this workout
+    const workoutId = this.workoutId();
+    if (workoutId) {
+      this.store.setWorkoutTemplateId(workoutId);
+      this.store.loadLogs();
+    }
   }
 
   readonly workoutName = computed(() => {
-    const templateId = this.store.workoutTemplateId();
-    if (!templateId) return null;
+    const workoutId = this.workoutId();
+    if (!workoutId) return 'Workout';
 
-    const workout = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.workoutTemplateId === templateId);
-    return workout?.workout?.name ?? null;
+    const workout = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
+    return workout?.workout?.name ?? 'Workout';
   });
 
   readonly calendarEntries = computed((): CalendarEntry[] => {
@@ -197,11 +192,11 @@ export class WorkoutLogsComponent {
   }
 
   selectDate(date: Date): void {
-    // Find logs for this date and potentially navigate to the first one
+    // Find logs for this date and navigate to the first one
     const dateString = date.toDateString();
     const logs = this.store.logsByDate().get(dateString);
     if (logs && logs.length > 0) {
-      this.router.navigate(['/user/workout-logs', logs[0].id]);
+      this.router.navigate(['/user/workouts', this.workoutId(), 'logs', logs[0].id]);
     }
   }
 }
