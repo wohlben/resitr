@@ -99,6 +99,10 @@ export const appRoutes: Route[] = [
         loadComponent: () => import('./routes/user/workout-run').then((m) => m.WorkoutRunComponent),
       },
       {
+        path: 'user/workouts/:id/schedules',
+        loadComponent: () => import('./routes/user/schedules/index').then((m) => m.SchedulesListComponent),
+      },
+      {
         path: 'user/workout-logs',
         loadComponent: () => import('./routes/user/workout-logs').then((m) => m.WorkoutLogsComponent),
       },
@@ -107,12 +111,16 @@ export const appRoutes: Route[] = [
         loadComponent: () => import('./routes/user/workout-log-detail').then((m) => m.WorkoutLogDetail),
       },
       {
-        path: 'user/workout-schedule',
-        loadComponent: () => import('./routes/user/workout-schedule').then((m) => m.WorkoutScheduleComponent),
+        path: 'user/schedules',
+        loadComponent: () => import('./routes/user/schedules/index').then((m) => m.SchedulesListComponent),
       },
       {
-        path: 'user/workout-schedule/:id',
-        loadComponent: () => import('./routes/user/workout-schedule-detail').then((m) => m.WorkoutScheduleDetail),
+        path: 'user/schedules/new',
+        loadComponent: () => import('./routes/user/schedules/new').then((m) => m.CreateWorkoutScheduleComponent),
+      },
+      {
+        path: 'user/schedules/:id',
+        loadComponent: () => import('./routes/user/schedules/[scheduleId]').then((m) => m.WorkoutScheduleDetail),
       },
     ],
   },

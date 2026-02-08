@@ -10,6 +10,15 @@ import type {
 export const UserQueries = {
   // Workout Log
   workoutLog: {
+    list: (workoutTemplateId?: string) => ({
+      key: workoutTemplateId ? `user-workout-logs-${workoutTemplateId}` : 'user-workout-logs',
+      fn: (client: HttpClient) =>
+        lastValueFrom(
+          client.get<WorkoutLogResponseDto[]>(
+            `/api/user/workout-logs${workoutTemplateId ? `?workoutTemplateId=${workoutTemplateId}` : ''}`
+          )
+        ),
+    }),
     detail: (id: string) => ({
       key: `user-workout-log-detail-${id}`,
       fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutLogResponseDto>(`/api/user/workout-logs/${id}`)),

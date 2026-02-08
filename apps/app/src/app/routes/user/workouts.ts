@@ -88,10 +88,12 @@ export class UserWorkoutsComponent {
         this.router.navigate(['/user', 'workouts', userWorkout.id, 'run']);
         break;
       case 'viewLogs':
-        this.router.navigate(['/user/workout-logs']);
+        this.router.navigate(['/user/workout-logs'], {
+          queryParams: { workoutTemplateId: userWorkout.workoutTemplateId },
+        });
         break;
       case 'schedule':
-        this.router.navigate(['/user/workout-schedule']);
+        this.router.navigate(['/user/workouts', userWorkout.id, 'schedules']);
         break;
       case 'delete':
         await this.deleteWorkout(userWorkout);

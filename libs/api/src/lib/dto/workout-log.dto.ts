@@ -75,6 +75,14 @@ export interface UpsertSectionDto {
 }
 
 // Workout Log DTOs
+export interface WorkoutLogListItemDto {
+  id: string;
+  originalWorkoutId?: string;
+  name: string;
+  startedAt: Date;
+  completedAt?: Date;
+}
+
 export interface WorkoutLogResponseDto {
   id: string;
   originalWorkoutId?: string;

@@ -8,11 +8,11 @@ The user section provides personal fitness management features including workout
 
 The user area is organized into personal fitness management features:
 
-| Feature              | Description                                          | Base Route               |
-| -------------------- | ---------------------------------------------------- | ------------------------ |
-| **My Workouts**      | Personal workout collection imported from compendium | `/user/workouts`         |
-| **Workout Logs**     | History of completed workout sessions                | `/user/workout-logs`     |
-| **Workout Schedule** | Calendar of planned workouts                         | `/user/workout-schedule` |
+| Feature               | Description                                          | Base Route           |
+| --------------------- | ---------------------------------------------------- | -------------------- |
+| **My Workouts**       | Personal workout collection imported from compendium | `/user/workouts`     |
+| **Workout Logs**      | History of completed workout sessions                | `/user/workout-logs` |
+| **Workout Schedules** | Calendar of planned workouts                         | `/user/schedules`    |
 
 ---
 
@@ -103,16 +103,18 @@ Conceptual documentation:
 
 - [`./workout-logs/README.md`](./workout-logs/README.md) - Log structure and data flow
 
-### Workout Schedule
+### Workout Schedules
 
 Route-specific documentation:
 
-- [`/user/workout-schedule`](./workout-schedule/list.md) - Calendar view (placeholder)
-- [`/user/workout-schedule/:id`](./workout-schedule/detail.md) - Scheduled workout details (placeholder)
+- [`/user/schedules`](./schedules/list.md) - All schedules overview
+- [`/user/schedules/new`](./schedules/new.md) - Create new schedule
+- [`/user/schedules/:id`](./schedules/detail.md) - Schedule detail/edit
+- [`/user/workouts/:id/schedules`](./workouts/schedules.md) - Workout-specific schedules
 
 Conceptual documentation:
 
-- [`./workout-schedule/README.md`](./workout-schedule/README.md) - Scheduling concepts and lifecycle
+- [`./schedules/README.md`](./schedules/README.md) - Scheduling concepts and lifecycle
 
 ---
 
@@ -143,10 +145,11 @@ user/
 │   ├── list.md (placeholder)
 │   └── detail.md (placeholder)
 │
-└── workout-schedule/
+└── schedules/
     ├── README.md (concepts)
-    ├── list.md (placeholder)
-    └── detail.md (placeholder)
+    ├── list.md - All schedules overview
+    ├── new.md - Create schedule
+    └── detail.md - Schedule detail/edit
 ```
 
 ---

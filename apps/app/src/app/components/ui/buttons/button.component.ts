@@ -2,7 +2,13 @@ import { Component, input, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgTemplateOutlet } from '@angular/common';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'danger-outline' | 'outline-primary' | 'outline-secondary';
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'danger-outline'
+  | 'outline-primary'
+  | 'outline-secondary';
 export type ButtonSize = 'sm' | 'md';
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
@@ -19,7 +25,8 @@ const SIZE_CLASSES: Record<ButtonSize, string> = {
   md: 'px-4 py-2 text-sm',
 };
 
-const BASE_CLASSES = 'font-medium border rounded-lg focus:outline-none focus:ring-2 disabled:opacity-50 disabled:cursor-not-allowed';
+const BASE_CLASSES =
+  'font-medium border rounded-lg focus:outline-none focus:ring-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
 @Component({
   selector: 'app-button',
@@ -27,20 +34,13 @@ const BASE_CLASSES = 'font-medium border rounded-lg focus:outline-none focus:rin
   imports: [RouterLink, NgTemplateOutlet],
   template: `
     @if (link()) {
-      <a
-        [routerLink]="link()"
-        [class]="classes()"
-      >
-        <ng-container *ngTemplateOutlet="content" />
-      </a>
+    <a [routerLink]="link()" [queryParams]="queryParams()" [class]="classes()">
+      <ng-container *ngTemplateOutlet="content" />
+    </a>
     } @else {
-      <button
-        [type]="type()"
-        [disabled]="disabled()"
-        [class]="classes()"
-      >
-        <ng-container *ngTemplateOutlet="content" />
-      </button>
+    <button [type]="type()" [disabled]="disabled()" [class]="classes()">
+      <ng-container *ngTemplateOutlet="content" />
+    </button>
     }
 
     <ng-template #content>
@@ -54,6 +54,7 @@ export class ButtonComponent {
   type = input<'button' | 'submit'>('button');
   disabled = input<boolean>(false);
   link = input<string | string[]>();
+  queryParams = input<Record<string, any> | null>(null);
   fullWidth = input<boolean>(false);
 
   classes = computed(() => {
