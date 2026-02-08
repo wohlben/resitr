@@ -2,6 +2,8 @@
 
 This document describes the fundamental design philosophy for versioning workouts and exercises in ResiTr. All features that interact with these entities must adhere to these principles.
 
+For the overall persistence architecture and how compendium entities relate to user entities, see [Persistence Architecture](./persistence.md).
+
 ## Core Principle: Immutability of Referenced Entities
 
 Once a workout section item is created and potentially referenced by exercise logs, it must never be deleted or modified. This ensures data integrity across the entire system.
@@ -81,6 +83,7 @@ When creating a new version, unchanged section items are reused. Both the old an
 ### What Makes an Item "Unchanged"
 
 An item is considered unchanged and can be reused if ALL of the following are identical:
+
 - `exerciseId`
 - `breakBetweenSets`
 - `breakAfter`
@@ -97,6 +100,7 @@ Items are standalone entities - they don't "belong to" a section via FK. If the 
 ### Items and Sections Are Never Deleted
 
 Section items and sections must never be deleted once created. They may be:
+
 - Referenced by exercise logs (items)
 - Shared across multiple workout versions
 - Part of historical data that must remain intact
@@ -116,6 +120,7 @@ When a user explicitly deletes a workout:
 ## Practical Example
 
 ### Initial State
+
 - User has "Push Day" v1 with:
   - `sectionIds: ["section-A"]`
   - Section "Chest" (id: section-A) with `workoutSectionItemIds: ["item-1"]`
@@ -127,6 +132,7 @@ When a user explicitly deletes a workout:
 User adds "Incline Press" before "Bench Press", changing the order.
 
 **Result:**
+
 - "Push Day" v2 is created (new templateId, same workoutLineageId)
 - New Section "Chest" (id: section-B) is created for v2
 - New Item "Incline Press" (id: item-2) is created
@@ -140,6 +146,7 @@ User adds "Incline Press" before "Bench Press", changing the order.
 User only changes the break time for Bench Press, nothing else.
 
 **Result:**
+
 - "Push Day" v2 is created
 - New Section "Chest" (id: section-B) is created
 - New Item for Bench Press (id: item-2) is created (parameters changed)
@@ -151,6 +158,7 @@ User only changes the break time for Bench Press, nothing else.
 User adds a new section but doesn't touch the existing "Chest" section or its items.
 
 **Result:**
+
 - "Push Day" v2 is created with `sectionIds: ["section-B", "section-C"]`
 - New Section "Chest" (id: section-B) is created for v2
 - section-B has `workoutSectionItemIds: ["item-1"]` - reusing the same item!
@@ -167,3 +175,7 @@ User adds a new section but doesn't touch the existing "Chest" section or its it
 6. **Old versions are immutable** - They exist forever (unless explicitly deleted with safety checks)
 7. **Relationships via JSON arrays** - `sectionIds` and `workoutSectionItemIds` enable N:M sharing and implicit ordering
 8. **No cascade deletes** - Deleting a workout leaves sections and items intact
+
+## Related Documentation
+
+- [Persistence Architecture](./persistence.md) - Overall data model and compendium/user entity relationships
