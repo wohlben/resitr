@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, ActivatedRoute } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute, type NavigationExtras } from '@angular/router';
 import { WorkoutScheduleStore } from '../../../features/workout-schedule/workout-schedule.store';
 import { UserWorkoutsStore } from '../../../features/user-workouts/user-workouts.store';
 import { LoadingComponent } from '../../../components/ui/feedback/loading.component';
@@ -9,6 +9,7 @@ import { ButtonComponent } from '../../../components/ui/buttons/button.component
 import { ConfirmationService } from '../../../core/services/confirmation.service';
 import { ToastService } from '../../../core/services/toast.service';
 import type { UserWorkoutScheduleResponseDto } from '@resitr/api';
+import type { EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
 
 interface DaySchedule {
   dayIndex: number;
@@ -202,7 +203,10 @@ export class SchedulesListComponent {
 
   readonly createQueryParams = computed(() => {
     const workout = this.currentWorkout();
-    return workout ? { workoutTemplateId: workout.workoutTemplateId } : null;
+    if (workout) {
+      return { workoutTemplateId: workout.workoutTemplateId };
+    }
+    return null;
   });
 
   dayCreateQueryParams(dayIndex: number): Record<string, string> | null {

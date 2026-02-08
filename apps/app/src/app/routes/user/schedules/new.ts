@@ -51,14 +51,14 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
             <label class="block text-sm font-medium text-gray-700 mb-2">
               Workout <span class="text-red-500">*</span>
             </label>
-            @if (isWorkoutPreselected()) {
-            <!-- Read-only workout display when pre-selected -->
+            @if (isWorkoutLocked()) {
+            <!-- Read-only workout display when accessed from workout-specific route -->
             <div class="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-700">
               {{ selectedWorkoutName() }}
             </div>
             <input type="hidden" [(ngModel)]="formData.workoutTemplateId" name="workoutTemplateId" />
             } @else {
-            <!-- Editable dropdown when no workout pre-selected -->
+            <!-- Editable dropdown when accessed from general route -->
             <select
               [(ngModel)]="formData.workoutTemplateId"
               name="workoutTemplateId"
@@ -158,9 +158,6 @@ export class CreateWorkoutScheduleComponent {
 
   readonly dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-  // Route params
-  private workoutId = signal<string | null>(null);
-
   formData: CreateUserWorkoutScheduleDto = {
     workoutTemplateId: '',
     dayOfWeek: new Date().getDay(),
@@ -169,24 +166,23 @@ export class CreateWorkoutScheduleComponent {
 
   formErrors: { workoutTemplateId?: string; dayOfWeek?: string } = {};
 
+  // Determine if we're on a workout-specific route by checking for :id param
+  readonly isWorkoutLocked = signal(false);
+
   constructor() {
-    // Read route params (for workout-specific routes like /user/workouts/:id/schedules/new)
+    // Check route params to determine if we're in workout-specific mode
     this.route.params.subscribe((params) => {
       const routeWorkoutId = params['id'];
       if (routeWorkoutId) {
-        this.workoutId.set(routeWorkoutId);
-        // Find the user's workout to get the template ID
-        const userWorkout = this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === routeWorkoutId);
-        if (userWorkout) {
-          this.formData.workoutTemplateId = userWorkout.workoutTemplateId;
-        }
+        // We're on /user/workouts/:id/schedules/new - workout is locked
+        this.isWorkoutLocked.set(true);
       }
     });
 
-    // Also check query params (for backward compatibility)
+    // Handle query params for pre-selection
     this.route.queryParams.subscribe((params) => {
       const workoutTemplateId = params['workoutTemplateId'];
-      if (workoutTemplateId && !this.formData.workoutTemplateId) {
+      if (workoutTemplateId && this.isWorkoutLocked()) {
         this.formData.workoutTemplateId = workoutTemplateId;
       }
       const dayOfWeek = params['dayOfWeek'];
@@ -199,24 +195,40 @@ export class CreateWorkoutScheduleComponent {
     });
   }
 
-  readonly isWorkoutPreselected = computed(() => {
-    return !!this.workoutId() && !!this.formData.workoutTemplateId;
-  });
-
+  // Get the workout from store when in workout-specific mode
   readonly selectedWorkout = computed(() => {
-    const workoutId = this.workoutId();
+    if (!this.isWorkoutLocked()) return null;
+
+    // Get workout ID from current route
+    let workoutId: string | undefined;
+    this.route.params
+      .subscribe((params) => {
+        workoutId = params['id'];
+      })
+      .unsubscribe();
+
     if (!workoutId) return null;
+
     return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
   });
 
   readonly selectedWorkoutName = computed(() => {
-    return this.selectedWorkout()?.workout?.name || 'Unknown Workout';
+    return this.selectedWorkout()?.workout?.name || 'Loading...';
   });
 
   readonly backLink = computed(() => {
-    const workoutId = this.workoutId();
-    if (workoutId) {
-      return `/user/workouts/${workoutId}/schedules`;
+    if (this.isWorkoutLocked()) {
+      // Get workout ID from current route
+      let workoutId: string | undefined;
+      this.route.params
+        .subscribe((params) => {
+          workoutId = params['id'];
+        })
+        .unsubscribe();
+
+      if (workoutId) {
+        return `/user/workouts/${workoutId}/schedules`;
+      }
     }
     return '/user/schedules';
   });
