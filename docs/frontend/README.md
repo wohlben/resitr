@@ -11,10 +11,27 @@ docs/frontend/
 ├── README.md                 # This file - overview and navigation
 ├── compendium/              # Template library documentation
 │   ├── README.md
-│   ├── exercises.md
-│   ├── equipments.md
-│   ├── exercise-groups.md
-│   └── workouts.md
+│   ├── exercises/           # Exercise routes
+│   │   ├── list.md         # /compendium/exercises
+│   │   ├── detail.md       # /compendium/exercises/:id
+│   │   ├── new.md          # /compendium/exercises/new
+│   │   └── edit.md         # /compendium/exercises/:id/edit
+│   ├── equipments/          # Equipment routes
+│   │   ├── list.md         # /compendium/equipments
+│   │   ├── detail.md       # /compendium/equipments/:id
+│   │   ├── new.md          # /compendium/equipments/new
+│   │   └── edit.md         # /compendium/equipments/:id/edit
+│   ├── exercise-groups/     # Exercise group routes
+│   │   ├── list.md         # /compendium/exercise-groups
+│   │   ├── detail.md       # /compendium/exercise-groups/:id
+│   │   ├── new.md          # /compendium/exercise-groups/new
+│   │   └── edit.md         # /compendium/exercise-groups/:id/edit
+│   └── workouts/            # Workout routes
+│       ├── list.md         # /compendium/workouts
+│       ├── detail.md       # /compendium/workouts/:id
+│       ├── new.md          # /compendium/workouts/new
+│       ├── edit.md         # /compendium/workouts/:id/edit
+│       └── versions.md     # /compendium/workouts/:id/versions
 └── user/                    # Personal fitness management
     ├── README.md
     ├── workouts.md          # Conceptual documentation
@@ -131,25 +148,25 @@ Most pages follow a consistent structure:
 
 ### Compendium Routes
 
-| Route                                  | Page                                                   | Description      |
-| -------------------------------------- | ------------------------------------------------------ | ---------------- |
-| `/compendium/exercises`                | [List](./compendium/exercises.md)                      | Browse exercises |
-| `/compendium/exercises/new`            | [Create](./compendium/exercises.md#create-exercise)    | Create exercise  |
-| `/compendium/exercises/:id`            | [Detail](./compendium/exercises.md#exercise-detail)    | View exercise    |
-| `/compendium/exercises/:id/edit`       | [Edit](./compendium/exercises.md#edit-exercise)        | Edit exercise    |
-| `/compendium/equipments`               | [List](./compendium/equipments.md)                     | Browse equipment |
-| `/compendium/equipments/new`           | [Create](./compendium/equipments.md#create-equipment)  | Create equipment |
-| `/compendium/equipments/:id`           | [Detail](./compendium/equipments.md#equipment-detail)  | View equipment   |
-| `/compendium/equipments/:id/edit`      | [Edit](./compendium/equipments.md#edit-equipment)      | Edit equipment   |
-| `/compendium/exercise-groups`          | [List](./compendium/exercise-groups.md)                | Browse groups    |
-| `/compendium/exercise-groups/new`      | [Create](./compendium/exercise-groups.md#create-group) | Create group     |
-| `/compendium/exercise-groups/:id`      | [Detail](./compendium/exercise-groups.md#group-detail) | View group       |
-| `/compendium/exercise-groups/:id/edit` | [Edit](./compendium/exercise-groups.md#edit-group)     | Edit group       |
-| `/compendium/workouts`                 | [List](./compendium/workouts.md)                       | Browse workouts  |
-| `/compendium/workouts/new`             | [Create](./compendium/workouts.md#create-workout)      | Create workout   |
-| `/compendium/workouts/:id`             | [Detail](./compendium/workouts.md#workout-detail)      | View workout     |
-| `/compendium/workouts/:id/edit`        | [Edit](./compendium/workouts.md#edit-workout)          | Edit workout     |
-| `/compendium/workouts/:id/versions`    | [Versions](./compendium/workouts.md#version-history)   | View history     |
+| Route                                  | Page                                             | Description      |
+| -------------------------------------- | ------------------------------------------------ | ---------------- |
+| `/compendium/exercises`                | [List](./compendium/exercises/list.md)           | Browse exercises |
+| `/compendium/exercises/new`            | [Create](./compendium/exercises/new.md)          | Create exercise  |
+| `/compendium/exercises/:id`            | [Detail](./compendium/exercises/detail.md)       | View exercise    |
+| `/compendium/exercises/:id/edit`       | [Edit](./compendium/exercises/edit.md)           | Edit exercise    |
+| `/compendium/equipments`               | [List](./compendium/equipments/list.md)          | Browse equipment |
+| `/compendium/equipments/new`           | [Create](./compendium/equipments/new.md)         | Create equipment |
+| `/compendium/equipments/:id`           | [Detail](./compendium/equipments/detail.md)      | View equipment   |
+| `/compendium/equipments/:id/edit`      | [Edit](./compendium/equipments/edit.md)          | Edit equipment   |
+| `/compendium/exercise-groups`          | [List](./compendium/exercise-groups/list.md)     | Browse groups    |
+| `/compendium/exercise-groups/new`      | [Create](./compendium/exercise-groups/new.md)    | Create group     |
+| `/compendium/exercise-groups/:id`      | [Detail](./compendium/exercise-groups/detail.md) | View group       |
+| `/compendium/exercise-groups/:id/edit` | [Edit](./compendium/exercise-groups/edit.md)     | Edit group       |
+| `/compendium/workouts`                 | [List](./compendium/workouts/list.md)            | Browse workouts  |
+| `/compendium/workouts/new`             | [Create](./compendium/workouts/new.md)           | Create workout   |
+| `/compendium/workouts/:id`             | [Detail](./compendium/workouts/detail.md)        | View workout     |
+| `/compendium/workouts/:id/edit`        | [Edit](./compendium/workouts/edit.md)            | Edit workout     |
+| `/compendium/workouts/:id/versions`    | [Versions](./compendium/workouts/versions.md)    | View history     |
 
 ### User Routes
 

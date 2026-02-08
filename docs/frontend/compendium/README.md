@@ -17,6 +17,38 @@ The compendium is organized into four main content areas:
 
 ---
 
+## Documentation Structure
+
+Each resource has route-specific documentation in subdirectories:
+
+```
+compendium/
+├── README.md                    # This overview
+├── exercises/                   # Exercise routes
+│   ├── list.md                 # /compendium/exercises
+│   ├── detail.md               # /compendium/exercises/:id
+│   ├── new.md                  # /compendium/exercises/new
+│   └── edit.md                 # /compendium/exercises/:id/edit
+├── equipments/                  # Equipment routes
+│   ├── list.md                 # /compendium/equipments
+│   ├── detail.md               # /compendium/equipments/:id
+│   ├── new.md                  # /compendium/equipments/new
+│   └── edit.md                 # /compendium/equipments/:id/edit
+├── exercise-groups/             # Exercise group routes
+│   ├── list.md                 # /compendium/exercise-groups
+│   ├── detail.md               # /compendium/exercise-groups/:id
+│   ├── new.md                  # /compendium/exercise-groups/new
+│   └── edit.md                 # /compendium/exercise-groups/:id/edit
+└── workouts/                    # Workout routes
+    ├── list.md                 # /compendium/workouts
+    ├── detail.md               # /compendium/workouts/:id
+    ├── new.md                  # /compendium/workouts/new
+    ├── edit.md                 # /compendium/workouts/:id/edit
+    └── versions.md             # /compendium/workouts/:id/versions
+```
+
+---
+
 ## Common UX Patterns
 
 ### List Pages
@@ -116,32 +148,40 @@ Applied to all create and edit routes:
 
 ### Exercise Pages
 
-- [`/compendium/exercises`](./exercises.md) - Exercise list with filtering
-- [`/compendium/exercises/new`](./exercises.md#create-exercise) - Create new exercise
-- [`/compendium/exercises/:id`](./exercises.md#exercise-detail) - View exercise details
-- [`/compendium/exercises/:id/edit`](./exercises.md#edit-exercise) - Edit exercise and manage relationships
+**Routes:**
+
+- [`/compendium/exercises`](./exercises/list.md) - Exercise list with filtering
+- [`/compendium/exercises/new`](./exercises/new.md) - Create new exercise
+- [`/compendium/exercises/:id`](./exercises/detail.md) - View exercise details
+- [`/compendium/exercises/:id/edit`](./exercises/edit.md) - Edit exercise and manage relationships
 
 ### Equipment Pages
 
-- [`/compendium/equipments`](./equipments.md) - Equipment list with filtering
-- [`/compendium/equipments/new`](./equipments.md#create-equipment) - Create new equipment
-- [`/compendium/equipments/:id`](./equipments.md#equipment-detail) - View equipment details
-- [`/compendium/equipments/:id/edit`](./equipments.md#edit-equipment) - Edit equipment
+**Routes:**
+
+- [`/compendium/equipments`](./equipments/list.md) - Equipment list with filtering
+- [`/compendium/equipments/new`](./equipments/new.md) - Create new equipment
+- [`/compendium/equipments/:id`](./equipments/detail.md) - View equipment details
+- [`/compendium/equipments/:id/edit`](./equipments/edit.md) - Edit equipment
 
 ### Exercise Group Pages
 
-- [`/compendium/exercise-groups`](./exercise-groups.md) - Group list with filtering
-- [`/compendium/exercise-groups/new`](./exercise-groups.md#create-group) - Create new group
-- [`/compendium/exercise-groups/:id`](./exercise-groups.md#group-detail) - View group details
-- [`/compendium/exercise-groups/:id/edit`](./exercise-groups.md#edit-group) - Edit group and manage members
+**Routes:**
+
+- [`/compendium/exercise-groups`](./exercise-groups/list.md) - Group list with filtering
+- [`/compendium/exercise-groups/new`](./exercise-groups/new.md) - Create new group
+- [`/compendium/exercise-groups/:id`](./exercise-groups/detail.md) - View group details
+- [`/compendium/exercise-groups/:id/edit`](./exercise-groups/edit.md) - Edit group and manage members
 
 ### Workout Pages
 
-- [`/compendium/workouts`](./workouts.md) - Workout list with filtering
-- [`/compendium/workouts/new`](./workouts.md#create-workout) - Create new workout
-- [`/compendium/workouts/:id`](./workouts.md#workout-detail) - View workout structure
-- [`/compendium/workouts/:id/edit`](./workouts.md#edit-workout) - Edit workout (creates new version)
-- [`/compendium/workouts/:id/versions`](./workouts.md#version-history) - View version history
+**Routes:**
+
+- [`/compendium/workouts`](./workouts/list.md) - Workout list with filtering
+- [`/compendium/workouts/new`](./workouts/new.md) - Create new workout
+- [`/compendium/workouts/:id`](./workouts/detail.md) - View workout structure
+- [`/compendium/workouts/:id/edit`](./workouts/edit.md) - Edit workout (creates new version)
+- [`/compendium/workouts/:id/versions`](./workouts/versions.md) - View version history
 
 ---
 
@@ -150,30 +190,37 @@ Applied to all create and edit routes:
 ```
 compendium/
 ├── exercises/
-│   ├── [list] ──> new ──> [detail] <──> edit
-│   │                │        │
-│   │                │        └──> equipment detail
-│   │                │        └──> exercise group detail
-│   │                │        └──> related exercises
-│   │                │
-│   └── exercise detail <──> exercise group detail
+│   ├── list.md ────────────┐
+│   │   ├── new ────────────┤
+│   │   └── view ───────────┼──> detail.md
+│   │                       │
+│   ├── detail.md <─────────┤
+│   │   ├── edit ───────────┼──> edit.md
+│   │   ├── equipment ──────┼──> ../equipments/detail.md
+│   │   ├── group ──────────┼──> ../exercise-groups/detail.md
+│   │   └── related ────────┴──> ./detail.md
+│   │
+│   ├── new.md ─────────────┘
+│   └── edit.md
 │
 ├── equipments/
-│   ├── [list] ──> new ──> [detail] <──> edit
+│   ├── list.md
+│   ├── detail.md
+│   ├── new.md
+│   └── edit.md
 │
 ├── exercise-groups/
-│   ├── [list] ──> new ──> [detail] <──> edit
-│   │                              │
-│   └── exercise detail <──────────┘
+│   ├── list.md
+│   ├── detail.md
+│   ├── new.md
+│   └── edit.md
 │
 └── workouts/
-    ├── [list] ──> new ──> [detail] <──> edit
-    │                         │
-    │                         ├──> version history
-    │                         ├──> add to my workouts
-    │                         └──> exercise detail
-    │
-    └── versions <────────────┘
+    ├── list.md
+    ├── detail.md
+    ├── new.md
+    ├── edit.md
+    └── versions.md
 ```
 
 ---
@@ -218,3 +265,44 @@ Workouts implement immutable versioning:
 - Only latest version is editable
 - Version history page for navigation
 - User workouts reference specific versions
+
+---
+
+## Route Reference
+
+### Exercises
+
+| Route                            | Page                            | Description      |
+| -------------------------------- | ------------------------------- | ---------------- |
+| `/compendium/exercises`          | [List](./exercises/list.md)     | Browse exercises |
+| `/compendium/exercises/new`      | [Create](./exercises/new.md)    | Create exercise  |
+| `/compendium/exercises/:id`      | [Detail](./exercises/detail.md) | View exercise    |
+| `/compendium/exercises/:id/edit` | [Edit](./exercises/edit.md)     | Edit exercise    |
+
+### Equipment
+
+| Route                             | Page                             | Description      |
+| --------------------------------- | -------------------------------- | ---------------- |
+| `/compendium/equipments`          | [List](./equipments/list.md)     | Browse equipment |
+| `/compendium/equipments/new`      | [Create](./equipments/new.md)    | Create equipment |
+| `/compendium/equipments/:id`      | [Detail](./equipments/detail.md) | View equipment   |
+| `/compendium/equipments/:id/edit` | [Edit](./equipments/edit.md)     | Edit equipment   |
+
+### Exercise Groups
+
+| Route                                  | Page                                  | Description   |
+| -------------------------------------- | ------------------------------------- | ------------- |
+| `/compendium/exercise-groups`          | [List](./exercise-groups/list.md)     | Browse groups |
+| `/compendium/exercise-groups/new`      | [Create](./exercise-groups/new.md)    | Create group  |
+| `/compendium/exercise-groups/:id`      | [Detail](./exercise-groups/detail.md) | View group    |
+| `/compendium/exercise-groups/:id/edit` | [Edit](./exercise-groups/edit.md)     | Edit group    |
+
+### Workouts
+
+| Route                               | Page                               | Description     |
+| ----------------------------------- | ---------------------------------- | --------------- |
+| `/compendium/workouts`              | [List](./workouts/list.md)         | Browse workouts |
+| `/compendium/workouts/new`          | [Create](./workouts/new.md)        | Create workout  |
+| `/compendium/workouts/:id`          | [Detail](./workouts/detail.md)     | View workout    |
+| `/compendium/workouts/:id/edit`     | [Edit](./workouts/edit.md)         | Edit workout    |
+| `/compendium/workouts/:id/versions` | [Versions](./workouts/versions.md) | Version history |
