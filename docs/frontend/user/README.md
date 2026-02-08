@@ -1,0 +1,169 @@
+# User Frontend Documentation
+
+The user section provides personal fitness management features including workout collection, exercise scheme configuration, workout logging, and scheduling.
+
+---
+
+## Overview
+
+The user area is organized into personal fitness management features:
+
+| Feature              | Description                                          | Base Route               |
+| -------------------- | ---------------------------------------------------- | ------------------------ |
+| **My Workouts**      | Personal workout collection imported from compendium | `/user/workouts`         |
+| **Workout Logs**     | History of completed workout sessions                | `/user/workout-logs`     |
+| **Workout Schedule** | Calendar of planned workouts                         | `/user/workout-schedule` |
+
+---
+
+## User vs Compendium
+
+The app distinguishes between **global templates** (compendium) and **personal instances** (user):
+
+### Compendium (Templates)
+
+- Exercise, equipment, group, and workout templates
+- Global library shared across all users
+- Versioned (workouts), editable by authorized users
+- Reference data for user instances
+
+### User (Personal)
+
+- Personal workout collection
+- Exercise scheme assignments
+- Workout logs and history
+- Schedule and planning
+
+### Workflow
+
+```
+Browse Compendium ──> Import Workout ──> Configure Schemes ──> Log Performances
+     │                      │                    │                  │
+     ▼                      ▼                    ▼                  ▼
+View Templates      My Workouts List      Exercise Setup       Workout History
+```
+
+---
+
+## Common UX Patterns
+
+### Empty States
+
+User pages show contextual empty states with CTAs:
+
+- **No Workouts**: "Browse Workout Compendium" button
+- Guides users to next action when content is missing
+
+### Action Menus
+
+List items provide contextual actions:
+
+- **My Workouts**: View logs, Schedule, Remove
+- Accessible via card action triggers
+
+### Confirmation Dialogs
+
+Destructive actions require confirmation:
+
+- **Remove Workout**: Confirms removal from personal collection
+- Explains consequences clearly (doesn't delete template)
+
+### Status Indicators
+
+Visual indicators show configuration state:
+
+- **Exercise Schemes**: Checkmark (configured) vs Warning (needs setup)
+- Helps users track progress and complete setup
+
+---
+
+## Page Documentation
+
+### My Workouts
+
+- [`/user/workouts`](./workouts.md#my-workouts-list) - Personal workout collection
+- [`/user/workouts/:id`](./workouts.md#user-workout-detail) - View workout with scheme status
+- [`/user/workouts/:id/edit`](./workouts.md#edit-exercise-schemes) - Configure exercise schemes
+
+### Workout Logs (Placeholder)
+
+- `/user/workout-logs` - Completed workout history (not yet implemented)
+- `/user/workout-logs/:id` - Specific log details (not yet implemented)
+
+### Workout Schedule (Placeholder)
+
+- `/user/workout-schedule` - Calendar view (not yet implemented)
+- `/user/workout-schedule/:id` - Scheduled workout details (not yet implemented)
+
+---
+
+## Navigation Relationships
+
+```
+user/
+├── workouts/
+│   ├── [list] ──> import ──> compendium workouts
+│   │       │
+│   │       └──> [detail] <──> edit schemes
+│   │              │
+│   │              └──> view template (compendium)
+│   │              └──> exercise detail (compendium)
+│   │
+│   └── edit schemes ──> save ──> [detail]
+│
+├── workout-logs/ (placeholder)
+│   ├── [list]
+│   └── [detail]
+│
+└── workout-schedule/ (placeholder)
+    ├── [list]
+    └── [detail]
+```
+
+---
+
+## Key Features
+
+### Exercise Scheme Configuration
+
+User workouts require configuring how to perform each exercise:
+
+1. **Import**: Add workout from compendium
+2. **Configure**: Assign schemes to each exercise
+3. **Track**: Log performances against schemes
+
+### Scheme Assignment UI
+
+- Cards show suggested paradigms from exercise metadata
+- Users select appropriate measurement type
+- Configure parameters (sets, reps, weight, etc.)
+- Batch save all assignments
+
+### Template Reference
+
+Users can always reference the original template:
+
+- "View Template" button on workout pages
+- Links to compendium workout detail
+- Shows version and template structure
+
+---
+
+## Implementation Status
+
+| Feature               | Status         | Notes                       |
+| --------------------- | -------------- | --------------------------- |
+| My Workouts List      | ✅ Implemented | Full CRUD for user workouts |
+| User Workout Detail   | ✅ Implemented | Scheme status indicators    |
+| Edit Exercise Schemes | ✅ Implemented | Batch assignment UI         |
+| Workout Logs          | 🚧 Placeholder | Empty component             |
+| Log Detail            | 🚧 Placeholder | Basic template only         |
+| Workout Schedule      | 🚧 Placeholder | Empty component             |
+| Schedule Detail       | 🚧 Placeholder | Basic template only         |
+
+---
+
+## Related Documentation
+
+- [Compendium](../compendium/README.md) - Template library documentation
+- [Compendium Workouts](../compendium/workouts.md) - Workout template pages
