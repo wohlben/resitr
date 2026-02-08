@@ -33,6 +33,8 @@ Each exercise provides a configuration card with:
 
 2. **Scheme Selection:**
 
+   - **Auto-selection:** First available scheme is automatically selected when page loads
+   - **No schemes available:** "Create New Scheme" is auto-selected with form shown
    - Measurement paradigm dropdown
    - Dynamic fields based on selected paradigm:
      - Reps/Weight: Sets, reps, weight fields
@@ -48,11 +50,10 @@ Each exercise provides a configuration card with:
 
 **Assignment Flow:**
 
-1. User selects measurement paradigm for exercise
-2. Card displays paradigm-specific configuration fields
-3. User enters scheme parameters
-4. Assignment added to **pending changes**
-5. Sticky bar updates with change count
+1. System **auto-selects first scheme** when page loads (or "Create New" if none exist)
+2. User can change selection via dropdown or adjust parameters
+3. Changes (including auto-selections) added to **pending changes**
+4. Sticky bar shows count of unsaved changes
 
 **Supported Paradigms:**
 
@@ -127,13 +128,14 @@ Each exercise provides a configuration card with:
 
 ## Available Actions
 
-| Action           | Trigger                | Destination                                                                       |
-| ---------------- | ---------------------- | --------------------------------------------------------------------------------- |
-| Select Paradigm  | Choose from dropdown   | Same page (adds to pending)                                                       |
-| Configure Scheme | Fill paradigm fields   | Same page (adds to pending)                                                       |
-| Save Changes     | "Save Changes" button  | [`/user/workouts/:id`](./detail.md)                                               |
-| View Template    | "View Template" button | [`/compendium/workouts/:templateId`](../../compendium/workouts.md#workout-detail) |
-| Cancel           | Back button            | [`/user/workouts/:id`](./detail.md)                                               |
+| Action             | Trigger                | Destination                                                                       |
+| ------------------ | ---------------------- | --------------------------------------------------------------------------------- |
+| Auto-Select Scheme | Page load              | Same page (first scheme pre-selected)                                             |
+| Change Selection   | Choose from dropdown   | Same page (adds to pending)                                                       |
+| Create New Scheme  | Select "+ Create New"  | Same page (shows inline form)                                                     |
+| Save Changes       | "Save Changes" button  | [`/user/workouts/:id`](./detail.md)                                               |
+| View Template      | "View Template" button | [`/compendium/workouts/:templateId`](../../compendium/workouts.md#workout-detail) |
+| Cancel             | Back button            | [`/user/workouts/:id`](./detail.md)                                               |
 
 ---
 
@@ -243,9 +245,11 @@ assignSchemeToSectionItem(schemeId, sectionItemId, userWorkoutId)
 
 ### Deferred Assignment
 
-- Scheme cards support deferred initialization
-- Prevents unnecessary API calls on load
-- Only creates/updates when user interacts
+- Controls save behavior: batch vs immediate
+- **When enabled:** Selections emit events to parent, accumulated locally, saved on "Save Changes"
+- **When disabled:** Selections saved to backend immediately
+- Used on edit page to allow batch changes
+- Auto-selections are marked as pending changes when deferred
 
 ### Batch Saving
 
