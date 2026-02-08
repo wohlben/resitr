@@ -1,17 +1,17 @@
 import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { SchedulesListComponent } from './index';
-import { UserWorkoutsStore, type EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserWorkoutsStore } from '../../../features/user-workouts/user-workouts.store';
 
 @Component({
   selector: 'app-workout-schedules-route',
   standalone: true,
-  imports: [CommonModule, SchedulesListComponent],
-  template: ` <app-schedules-list [workout]="workout()" [backLink]="backLink()"> </app-schedules-list> `,
+  imports: [CommonModule],
+  template: ``,
 })
 export class WorkoutSchedulesRouteComponent {
   private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
   private readonly userWorkoutsStore = inject(UserWorkoutsStore);
 
   // Get workoutId from route once (doesn't change)
@@ -23,7 +23,9 @@ export class WorkoutSchedulesRouteComponent {
     return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === this.workoutId) ?? null;
   });
 
-  backLink(): string {
-    return this.workoutId ? `/user/workouts/${this.workoutId}` : '/user/workouts';
+  constructor() {
+    // Redirect to the main Calendar page
+    // In the future, we could add a workout filter to the Calendar page
+    this.router.navigate(['/user/calendar']);
   }
 }

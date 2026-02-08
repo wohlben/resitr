@@ -112,7 +112,7 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'user/workouts/:id/schedules/:scheduleId/edit',
-        loadComponent: () => import('./routes/user/schedules/edit').then((m) => m.EditWorkoutScheduleComponent),
+        loadComponent: () => import('./routes/user/schedules/edit').then((m) => m.ScheduleDetailComponent),
       },
       {
         path: 'user/workout-logs',
@@ -123,8 +123,8 @@ export const appRoutes: Route[] = [
         loadComponent: () => import('./routes/user/workout-log-detail').then((m) => m.WorkoutLogDetail),
       },
       {
-        path: 'user/schedules',
-        loadComponent: () => import('./routes/user/schedules/index').then((m) => m.SchedulesListComponent),
+        path: 'user/calendar',
+        loadComponent: () => import('./routes/user/calendar').then((m) => m.CalendarPageComponent),
       },
       {
         path: 'user/schedules/new',

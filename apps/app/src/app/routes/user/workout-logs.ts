@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { WorkoutLogsStore } from '../../features/workout-logs/workout-logs.store';
@@ -6,19 +6,21 @@ import { LoadingComponent } from '../../components/ui/feedback/loading.component
 import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
 import { ButtonComponent } from '../../components/ui/buttons/button.component';
 import { UserWorkoutsStore } from '../../features/user-workouts/user-workouts.store';
+import { CalendarComponent, type CalendarEntry } from '../../components/ui/calendar/calendar.component';
 import type { WorkoutLogListItemDto } from '@resitr/api';
-
-interface CalendarDay {
-  date: Date;
-  dayOfMonth: number;
-  isCurrentMonth: boolean;
-  logs: WorkoutLogListItemDto[];
-}
 
 @Component({
   selector: 'app-workout-logs',
   standalone: true,
-  imports: [CommonModule, RouterModule, DatePipe, LoadingComponent, ErrorLoadingComponent, ButtonComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    DatePipe,
+    LoadingComponent,
+    ErrorLoadingComponent,
+    ButtonComponent,
+    CalendarComponent,
+  ],
   template: `
     <div class="space-y-6">
       <!-- Header -->
@@ -112,80 +114,7 @@ interface CalendarDay {
 
         <!-- Right: Calendar -->
         <div class="lg:col-span-1">
-          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-            <!-- Calendar Header -->
-            <div class="flex items-center justify-between mb-4">
-              <button class="p-1 hover:bg-gray-100 rounded" (click)="previousMonth()">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <h3 class="font-semibold text-gray-900">
-                {{ currentMonth() | date : 'MMMM yyyy' }}
-              </h3>
-              <button class="p-1 hover:bg-gray-100 rounded" (click)="nextMonth()">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-
-            <!-- Calendar Grid -->
-            <div class="grid grid-cols-7 gap-1">
-              <!-- Weekday headers -->
-              @for (day of ['S', 'M', 'T', 'W', 'T', 'F', 'S']; track $index) {
-              <div class="text-center text-xs font-medium text-gray-500 py-1">
-                {{ day }}
-              </div>
-              }
-
-              <!-- Calendar days -->
-              @for (day of calendarDays(); track day.date.getTime()) {
-              <div
-                class="aspect-square p-1 text-sm rounded cursor-pointer hover:bg-gray-100 transition-colors relative"
-                [class.bg-gray-50]="!day.isCurrentMonth"
-                [class.font-semibold]="isToday(day.date)"
-                [class.ring-2]="isToday(day.date)"
-                [class.ring-blue-500]="isToday(day.date)"
-                (click)="selectDate(day.date)"
-              >
-                <span [class.text-gray-400]="!day.isCurrentMonth">{{ day.dayOfMonth }}</span>
-
-                <!-- Status dots -->
-                @if (day.logs.length > 0) {
-                <div class="absolute bottom-1 left-1 right-1 flex justify-center gap-0.5">
-                  @for (log of day.logs.slice(0, 3); track log.id) {
-                  <div
-                    class="w-1.5 h-1.5 rounded-full"
-                    [class.bg-green-500]="log.completedAt"
-                    [class.bg-yellow-500]="isStartedToday(log)"
-                    [class.bg-red-500]="!log.completedAt && !isStartedToday(log)"
-                  ></div>
-                  } @if (day.logs.length > 3) {
-                  <div class="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
-                  }
-                </div>
-                }
-              </div>
-              }
-            </div>
-
-            <!-- Legend -->
-            <div class="mt-4 pt-4 border-t border-gray-200 space-y-2">
-              <div class="flex items-center gap-2 text-xs">
-                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                <span class="text-gray-600">Completed</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <span class="text-gray-600">Started (Today)</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs">
-                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                <span class="text-gray-600">Incomplete/Aborted</span>
-              </div>
-            </div>
-          </div>
+          <app-calendar [entries]="calendarEntries()" [legend]="calendarLegend" (dayClick)="selectDate($event)" />
         </div>
       </div>
       }
@@ -198,7 +127,11 @@ export class WorkoutLogsComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
 
-  readonly currentMonth = signal(new Date());
+  readonly calendarLegend = {
+    green: 'Completed',
+    yellow: 'Started (Today)',
+    red: 'Incomplete/Aborted',
+  };
 
   constructor() {
     // Read query params
@@ -219,46 +152,23 @@ export class WorkoutLogsComponent {
     return workout?.workout?.name ?? null;
   });
 
-  readonly calendarDays = computed(() => {
-    const year = this.currentMonth().getFullYear();
-    const month = this.currentMonth().getMonth();
+  readonly calendarEntries = computed((): CalendarEntry[] => {
+    return this.store.logs().map((log) => {
+      const logDate = new Date(log.startedAt);
+      let type = 'red';
+      if (log.completedAt) {
+        type = 'green';
+      } else if (this.isStartedToday(log)) {
+        type = 'yellow';
+      }
 
-    const firstDayOfMonth = new Date(year, month, 1);
-    const lastDayOfMonth = new Date(year, month + 1, 0);
-    const startDate = new Date(firstDayOfMonth);
-    startDate.setDate(startDate.getDate() - firstDayOfMonth.getDay());
-
-    const days: CalendarDay[] = [];
-    const currentDate = new Date(startDate);
-
-    // Generate 6 weeks (42 days) to ensure we cover the full month view
-    for (let i = 0; i < 42; i++) {
-      const date = new Date(currentDate);
-      const isCurrentMonth = date.getMonth() === month;
-      const dateString = date.toDateString();
-      const logs = this.store.logsByDate().get(dateString) ?? [];
-
-      days.push({
-        date,
-        dayOfMonth: date.getDate(),
-        isCurrentMonth,
-        logs,
-      });
-
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-
-    return days;
+      return {
+        on: logDate,
+        type,
+        name: log.name,
+      };
+    });
   });
-
-  isToday(date: Date): boolean {
-    const today = new Date();
-    return (
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
-    );
-  }
 
   isStartedToday(log: WorkoutLogListItemDto): boolean {
     if (log.completedAt) return false;
@@ -284,18 +194,6 @@ export class WorkoutLogsComponent {
       return `${hours}h ${minutes}m`;
     }
     return `${minutes}m`;
-  }
-
-  previousMonth(): void {
-    const newDate = new Date(this.currentMonth());
-    newDate.setMonth(newDate.getMonth() - 1);
-    this.currentMonth.set(newDate);
-  }
-
-  nextMonth(): void {
-    const newDate = new Date(this.currentMonth());
-    newDate.setMonth(newDate.getMonth() + 1);
-    this.currentMonth.set(newDate);
   }
 
   selectDate(date: Date): void {

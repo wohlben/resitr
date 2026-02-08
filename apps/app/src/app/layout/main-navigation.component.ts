@@ -78,7 +78,8 @@ export class MainNavigationComponent {
       name: 'User',
       children: [
         { name: 'Workouts', url: '/user/workouts' },
-        { name: 'Schedules', url: '/user/schedules' },
+        { name: 'Calendar', url: '/user/calendar' },
+        { name: 'Logs', url: '/user/workout-logs' },
       ],
     },
   ];

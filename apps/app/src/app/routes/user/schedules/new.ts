@@ -8,7 +8,7 @@ import { LoadingComponent } from '../../../components/ui/feedback/loading.compon
 import { ErrorLoadingComponent } from '../../../components/ui/feedback/error-loading.component';
 import { ButtonComponent } from '../../../components/ui/buttons/button.component';
 import { ToastService } from '../../../core/services/toast.service';
-import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
+import type { CreateWorkoutScheduleDto, CreateWorkoutScheduleCriteriaDto } from '@resitr/api';
 import type { EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
 
 @Component({
@@ -57,68 +57,76 @@ import type { EnrichedUserWorkout } from '../../../features/user-workouts/user-w
             <div class="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-700">
               {{ w.workout?.name || 'Unknown Workout' }}
             </div>
-            <input type="hidden" [(ngModel)]="formData.workoutTemplateId" name="workoutTemplateId" />
+            <input type="hidden" [(ngModel)]="scheduleData.userWorkoutId" name="userWorkoutId" />
             } @else {
             <!-- Editable dropdown when no workout provided -->
             <select
-              [(ngModel)]="formData.workoutTemplateId"
-              name="workoutTemplateId"
+              [(ngModel)]="scheduleData.userWorkoutId"
+              name="userWorkoutId"
               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
             >
               <option value="">Select a workout...</option>
               @for (userWorkout of userWorkoutsStore.enrichedWorkouts(); track userWorkout.id) {
-              <option [value]="userWorkout.workoutTemplateId">
+              <option [value]="userWorkout.id">
                 {{ userWorkout.workout?.name || 'Unknown Workout' }}
               </option>
               }
             </select>
-            } @if (formErrors.workoutTemplateId) {
-            <p class="mt-1 text-sm text-red-600">{{ formErrors.workoutTemplateId }}</p>
+            } @if (formErrors.userWorkoutId) {
+            <p class="mt-1 text-sm text-red-600">{{ formErrors.userWorkoutId }}</p>
             }
           </div>
 
-          <!-- Day of Week -->
+          <!-- Criteria Type (Radio Card) -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Schedule Type</label>
+            <div class="border border-blue-200 bg-blue-50 rounded-lg p-4">
+              <div class="flex items-center gap-3">
+                <input
+                  type="radio"
+                  id="criteria-day-of-week"
+                  [(ngModel)]="criteriaData.type"
+                  name="criteriaType"
+                  value="DAY_OF_WEEK"
+                  disabled
+                  class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500"
+                />
+                <label for="criteria-day-of-week" class="text-sm font-medium text-gray-900 cursor-pointer">
+                  Day of Week
+                </label>
+              </div>
+              <p class="text-xs text-gray-500 mt-2 ml-7">Schedule workout on specific days of the week</p>
+            </div>
+          </div>
+
+          <!-- Day of Week (Multi-select) -->
           <div>
             <label class="block text-sm font-medium text-gray-700 mb-2">
-              Day of Week <span class="text-red-500">*</span>
+              Days of Week <span class="text-red-500">*</span>
             </label>
             <div class="grid grid-cols-7 gap-2">
               @for (dayName of dayNames; track $index) {
               <button
                 type="button"
                 class="py-3 px-2 text-sm font-medium rounded-lg border transition-all"
-                [class.bg-blue-600]="formData.dayOfWeek === $index"
-                [class.text-white]="formData.dayOfWeek === $index"
-                [class.border-blue-600]="formData.dayOfWeek === $index"
-                [class.bg-white]="formData.dayOfWeek !== $index"
-                [class.text-gray-700]="formData.dayOfWeek !== $index"
-                [class.border-gray-300]="formData.dayOfWeek !== $index"
-                [class.hover:bg-gray-50]="formData.dayOfWeek !== $index"
-                (click)="formData.dayOfWeek = $index"
+                [class.bg-blue-600]="isDaySelected($index)"
+                [class.text-white]="isDaySelected($index)"
+                [class.border-blue-600]="isDaySelected($index)"
+                [class.bg-white]="!isDaySelected($index)"
+                [class.text-gray-700]="!isDaySelected($index)"
+                [class.border-gray-300]="!isDaySelected($index)"
+                [class.hover:bg-gray-50]="!isDaySelected($index)"
+                (click)="toggleDay($index)"
               >
                 {{ dayName.slice(0, 3) }}
               </button>
               }
             </div>
-            @if (formErrors.dayOfWeek) {
-            <p class="mt-1 text-sm text-red-600">{{ formErrors.dayOfWeek }}</p>
+            @if (formErrors.days) {
+            <p class="mt-1 text-sm text-red-600">{{ formErrors.days }}</p>
             }
-          </div>
-
-          <!-- Order -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2"> Order </label>
-            <input
-              type="number"
-              [(ngModel)]="formData.order"
-              name="order"
-              min="0"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-            <p class="mt-1 text-sm text-gray-500">
-              Order for multiple workouts on the same day (0 = first, 1 = second, etc.)
-            </p>
+            <p class="mt-1 text-sm text-gray-500">Select one or more days</p>
           </div>
 
           <!-- Error Message -->
@@ -162,20 +170,23 @@ export class CreateWorkoutScheduleComponent {
   // Optional workout input - when provided, workout is locked
   workout = input<EnrichedUserWorkout | null>(null);
 
-  formData: CreateUserWorkoutScheduleDto = {
-    workoutTemplateId: '',
-    dayOfWeek: new Date().getDay(),
-    order: 0,
+  scheduleData: CreateWorkoutScheduleDto = {
+    userWorkoutId: '',
   };
 
-  formErrors: { workoutTemplateId?: string; dayOfWeek?: string } = {};
+  criteriaData: CreateWorkoutScheduleCriteriaDto = {
+    type: 'DAY_OF_WEEK',
+    days: [new Date().getDay()],
+  };
+
+  formErrors: { userWorkoutId?: string; days?: string } = {};
 
   constructor() {
     // React when workout input changes and update form
     effect(() => {
       const w = this.workout();
       if (w) {
-        this.formData.workoutTemplateId = w.workoutTemplateId;
+        this.scheduleData.userWorkoutId = w.id;
       }
     });
 
@@ -185,7 +196,7 @@ export class CreateWorkoutScheduleComponent {
       if (dayOfWeek !== undefined) {
         const day = parseInt(dayOfWeek, 10);
         if (day >= 0 && day <= 6) {
-          this.formData.dayOfWeek = day;
+          this.criteriaData.days = [day];
         }
       }
     });
@@ -196,24 +207,39 @@ export class CreateWorkoutScheduleComponent {
     if (w) {
       return `/user/workouts/${w.id}/schedules`;
     }
-    return '/user/schedules';
+    return '/user/calendar';
   });
 
+  isDaySelected(dayIndex: number): boolean {
+    return this.criteriaData.days.includes(dayIndex);
+  }
+
+  toggleDay(dayIndex: number): void {
+    const index = this.criteriaData.days.indexOf(dayIndex);
+    if (index > -1) {
+      // Remove if already selected (but ensure at least one day remains)
+      if (this.criteriaData.days.length > 1) {
+        this.criteriaData.days = this.criteriaData.days.filter((d) => d !== dayIndex);
+      }
+    } else {
+      // Add if not selected
+      this.criteriaData.days = [...this.criteriaData.days, dayIndex].sort((a, b) => a - b);
+    }
+  }
+
   isFormValid(): boolean {
-    const dayOfWeek = this.formData.dayOfWeek ?? -1;
-    return !!this.formData.workoutTemplateId && dayOfWeek >= 0 && dayOfWeek <= 6;
+    return !!this.scheduleData.userWorkoutId && this.criteriaData.days.length > 0;
   }
 
   validateForm(): boolean {
     this.formErrors = {};
 
-    if (!this.formData.workoutTemplateId) {
-      this.formErrors.workoutTemplateId = 'Please select a workout';
+    if (!this.scheduleData.userWorkoutId) {
+      this.formErrors.userWorkoutId = 'Please select a workout';
     }
 
-    const dayOfWeek = this.formData.dayOfWeek ?? -1;
-    if (dayOfWeek < 0 || dayOfWeek > 6) {
-      this.formErrors.dayOfWeek = 'Please select a day of the week';
+    if (this.criteriaData.days.length === 0) {
+      this.formErrors.days = 'Please select at least one day of the week';
     }
 
     return Object.keys(this.formErrors).length === 0;
@@ -226,7 +252,7 @@ export class CreateWorkoutScheduleComponent {
       return;
     }
 
-    const schedule = await this.store.createSchedule(this.formData);
+    const schedule = await this.store.createSchedule(this.scheduleData, this.criteriaData);
 
     if (schedule) {
       this.toast.success('Workout scheduled successfully');
