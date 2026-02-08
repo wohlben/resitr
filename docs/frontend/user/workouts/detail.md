@@ -54,16 +54,12 @@ Each exercise shows:
 
 ### Scheme Assignment Status
 
-Visual indicators help track configuration progress:
-
-- **✅ Green Checkmark**: Scheme configured for this exercise
-
-  - Tooltip: "Scheme configured"
-  - Indicates ready to perform
+Visual indicator shows when attention is needed:
 
 - **⚠️ Amber Warning**: Needs scheme setup
   - Tooltip: "Needs scheme setup"
   - Indicates configuration required
+  - Only appears when scheme is not configured
 
 ### View Exercise Details
 
