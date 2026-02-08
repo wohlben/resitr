@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -9,6 +9,7 @@ import { ErrorLoadingComponent } from '../../../components/ui/feedback/error-loa
 import { ButtonComponent } from '../../../components/ui/buttons/button.component';
 import { ToastService } from '../../../core/services/toast.service';
 import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
+import type { EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
 
 @Component({
   selector: 'app-create-workout-schedule',
@@ -51,14 +52,14 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
             <label class="block text-sm font-medium text-gray-700 mb-2">
               Workout <span class="text-red-500">*</span>
             </label>
-            @if (isWorkoutLocked()) {
-            <!-- Read-only workout display when accessed from workout-specific route -->
+            @if (workout(); as w) {
+            <!-- Read-only workout display when workout is passed in -->
             <div class="w-full px-4 py-2 border border-gray-200 rounded-lg bg-gray-50 text-gray-700">
-              {{ selectedWorkoutName() }}
+              {{ w.workout?.name || 'Unknown Workout' }}
             </div>
             <input type="hidden" [(ngModel)]="formData.workoutTemplateId" name="workoutTemplateId" />
             } @else {
-            <!-- Editable dropdown when accessed from general route -->
+            <!-- Editable dropdown when no workout provided -->
             <select
               [(ngModel)]="formData.workoutTemplateId"
               name="workoutTemplateId"
@@ -66,9 +67,9 @@ import type { CreateUserWorkoutScheduleDto } from '@resitr/api';
               required
             >
               <option value="">Select a workout...</option>
-              @for (workout of userWorkoutsStore.enrichedWorkouts(); track workout.id) {
-              <option [value]="workout.workoutTemplateId">
-                {{ workout.workout?.name || 'Unknown Workout' }}
+              @for (userWorkout of userWorkoutsStore.enrichedWorkouts(); track userWorkout.id) {
+              <option [value]="userWorkout.workoutTemplateId">
+                {{ userWorkout.workout?.name || 'Unknown Workout' }}
               </option>
               }
             </select>
@@ -158,6 +159,9 @@ export class CreateWorkoutScheduleComponent {
 
   readonly dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+  // Optional workout input - when provided, workout is locked
+  workout = input<EnrichedUserWorkout | null>(null);
+
   formData: CreateUserWorkoutScheduleDto = {
     workoutTemplateId: '',
     dayOfWeek: new Date().getDay(),
@@ -166,25 +170,15 @@ export class CreateWorkoutScheduleComponent {
 
   formErrors: { workoutTemplateId?: string; dayOfWeek?: string } = {};
 
-  // Determine if we're on a workout-specific route by checking for :id param
-  readonly isWorkoutLocked = signal(false);
-
   constructor() {
-    // Check route params to determine if we're in workout-specific mode
-    this.route.params.subscribe((params) => {
-      const routeWorkoutId = params['id'];
-      if (routeWorkoutId) {
-        // We're on /user/workouts/:id/schedules/new - workout is locked
-        this.isWorkoutLocked.set(true);
-      }
-    });
+    // Initialize form with workout data if provided
+    const w = this.workout();
+    if (w) {
+      this.formData.workoutTemplateId = w.workoutTemplateId;
+    }
 
-    // Handle query params for pre-selection
+    // Handle query params for pre-selection (day of week)
     this.route.queryParams.subscribe((params) => {
-      const workoutTemplateId = params['workoutTemplateId'];
-      if (workoutTemplateId && this.isWorkoutLocked()) {
-        this.formData.workoutTemplateId = workoutTemplateId;
-      }
       const dayOfWeek = params['dayOfWeek'];
       if (dayOfWeek !== undefined) {
         const day = parseInt(dayOfWeek, 10);
@@ -195,40 +189,10 @@ export class CreateWorkoutScheduleComponent {
     });
   }
 
-  // Get the workout from store when in workout-specific mode
-  readonly selectedWorkout = computed(() => {
-    if (!this.isWorkoutLocked()) return null;
-
-    // Get workout ID from current route
-    let workoutId: string | undefined;
-    this.route.params
-      .subscribe((params) => {
-        workoutId = params['id'];
-      })
-      .unsubscribe();
-
-    if (!workoutId) return null;
-
-    return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === workoutId);
-  });
-
-  readonly selectedWorkoutName = computed(() => {
-    return this.selectedWorkout()?.workout?.name || 'Loading...';
-  });
-
   readonly backLink = computed(() => {
-    if (this.isWorkoutLocked()) {
-      // Get workout ID from current route
-      let workoutId: string | undefined;
-      this.route.params
-        .subscribe((params) => {
-          workoutId = params['id'];
-        })
-        .unsubscribe();
-
-      if (workoutId) {
-        return `/user/workouts/${workoutId}/schedules`;
-      }
+    const w = this.workout();
+    if (w) {
+      return `/user/workouts/${w.id}/schedules`;
     }
     return '/user/schedules';
   });

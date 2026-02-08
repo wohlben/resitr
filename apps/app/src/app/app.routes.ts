@@ -100,11 +100,15 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'user/workouts/:id/schedules',
-        loadComponent: () => import('./routes/user/schedules/index').then((m) => m.SchedulesListComponent),
+        loadComponent: () =>
+          import('./routes/user/schedules/workout-schedules-route').then((m) => m.WorkoutSchedulesRouteComponent),
       },
       {
         path: 'user/workouts/:id/schedules/new',
-        loadComponent: () => import('./routes/user/schedules/new').then((m) => m.CreateWorkoutScheduleComponent),
+        loadComponent: () =>
+          import('./routes/user/schedules/create-workout-schedule-route').then(
+            (m) => m.CreateWorkoutScheduleRouteComponent
+          ),
       },
       {
         path: 'user/workouts/:id/schedules/:scheduleId/edit',

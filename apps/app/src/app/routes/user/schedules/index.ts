@@ -1,6 +1,6 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, ActivatedRoute, type NavigationExtras } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { WorkoutScheduleStore } from '../../../features/workout-schedule/workout-schedule.store';
 import { UserWorkoutsStore } from '../../../features/user-workouts/user-workouts.store';
 import { LoadingComponent } from '../../../components/ui/feedback/loading.component';
@@ -30,8 +30,8 @@ interface DaySchedule {
     <div class="space-y-6">
       <!-- Header -->
       <div class="flex flex-col gap-4">
-        <!-- Contextual Back Button (only shown when filtered) -->
-        @if (isFiltered()) {
+        <!-- Contextual Back Button (only shown when workout is provided) -->
+        @if (workout()) {
         <div class="flex items-center gap-4">
           <app-button variant="secondary" [link]="backLink()">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ interface DaySchedule {
             <h1 class="text-3xl font-bold text-gray-900">{{ pageTitle() }}</h1>
             <p class="text-gray-600 mt-1">{{ pageSubtitle() }}</p>
           </div>
-          <app-button variant="primary" [link]="createScheduleLink()" [queryParams]="createQueryParams()">
+          <app-button variant="primary" [link]="createScheduleLink()" [queryParams]="dayCreateQueryParams()">
             <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -155,68 +155,44 @@ export class SchedulesListComponent {
   readonly store = inject(WorkoutScheduleStore);
   readonly userWorkoutsStore = inject(UserWorkoutsStore);
   private readonly router = inject(Router);
-  private readonly route = inject(ActivatedRoute);
   private readonly confirmation = inject(ConfirmationService);
   private readonly toast = inject(ToastService);
 
-  // Optional filter by workout ID - read from route params
-  workoutId = signal<string | null>(null);
+  // Optional workout input - when provided, filters to that workout
+  workout = input<EnrichedUserWorkout | null>(null);
 
-  constructor() {
-    // Check if we're in a child route with :id param (workout-specific view)
-    this.route.parent?.params.subscribe((params) => {
-      if (params['id']) {
-        this.workoutId.set(params['id']);
-      }
-    });
-  }
-
-  readonly isFiltered = computed(() => !!this.workoutId());
-
-  readonly currentWorkout = computed(() => {
-    const id = this.workoutId();
-    if (!id) return null;
-    return this.userWorkoutsStore.enrichedWorkouts().find((uw) => uw.id === id);
-  });
-
-  readonly backLink = computed(() => {
-    const id = this.workoutId();
-    return id ? `/user/workouts/${id}` : '/user/workouts';
-  });
+  // Optional back link input
+  backLink = input<string>('/user/workouts');
 
   readonly pageTitle = computed(() => {
-    const workout = this.currentWorkout();
-    return workout?.workout?.name ? `${workout.workout.name} Schedule` : 'All Workout Schedules';
+    const w = this.workout();
+    return w?.workout?.name ? `${w.workout.name} Schedule` : 'All Workout Schedules';
   });
 
   readonly pageSubtitle = computed(() => {
-    return this.isFiltered() ? 'Weekly schedule for this workout' : 'Manage all your weekly workout schedules';
+    return this.workout() ? 'Weekly schedule for this workout' : 'Manage all your weekly workout schedules';
   });
 
   readonly createScheduleLink = computed(() => {
-    const id = this.workoutId();
-    if (id) {
-      return `/user/workouts/${id}/schedules/new`;
+    const w = this.workout();
+    if (w) {
+      return `/user/workouts/${w.id}/schedules/new`;
     }
     return '/user/schedules/new';
   });
 
-  readonly createQueryParams = computed(() => {
-    const workout = this.currentWorkout();
-    if (workout) {
-      return { workoutTemplateId: workout.workoutTemplateId };
+  dayCreateQueryParams(dayIndex?: number): Record<string, string> | null {
+    const params: Record<string, string> = {};
+    if (dayIndex !== undefined) {
+      params['dayOfWeek'] = dayIndex.toString();
     }
-    return null;
-  });
-
-  dayCreateQueryParams(dayIndex: number): Record<string, string> | null {
-    return { dayOfWeek: dayIndex.toString() };
+    return Object.keys(params).length > 0 ? params : null;
   }
 
   scheduleEditLink(scheduleId: string): string[] {
-    const workoutId = this.workoutId();
-    if (workoutId) {
-      return ['/user/workouts', workoutId, 'schedules', scheduleId, 'edit'];
+    const w = this.workout();
+    if (w) {
+      return ['/user/workouts', w.id, 'schedules', scheduleId, 'edit'];
     }
     return ['/user/schedules', scheduleId];
   }
@@ -224,14 +200,14 @@ export class SchedulesListComponent {
   readonly weekDays = computed(() => {
     const today = new Date().getDay();
     const days: DaySchedule[] = [];
-    const workout = this.currentWorkout();
+    const w = this.workout();
 
     for (let i = 0; i < 7; i++) {
       let schedules = this.store.schedulesByDay().get(i) ?? [];
 
-      // Filter to only show schedules for this specific workout if filtered
-      if (workout) {
-        schedules = schedules.filter((s) => s.workoutTemplateId === workout.workoutTemplateId);
+      // Filter to only show schedules for this specific workout if provided
+      if (w) {
+        schedules = schedules.filter((s) => s.workoutTemplateId === w.workoutTemplateId);
       }
 
       const enrichedSchedules = schedules.map((schedule) => {
