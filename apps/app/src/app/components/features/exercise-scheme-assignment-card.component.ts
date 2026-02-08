@@ -1,6 +1,11 @@
 import { Component, inject, input, output, signal, computed, effect } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import type { WorkoutSectionItemTemplate, CreateUserExerciseSchemeDto, UserExerciseSchemeResponseDto, MeasurementParadigm } from '@resitr/api';
+import type {
+  WorkoutSectionItemTemplate,
+  CreateUserExerciseSchemeDto,
+  UserExerciseSchemeResponseDto,
+  MeasurementParadigm,
+} from '@resitr/api';
 import { UserExerciseSchemesStore } from '../../features/user-exercise-schemes/user-exercise-schemes.store';
 import { InlineExerciseSchemeFormComponent, ExerciseSchemeFormData } from './inline-exercise-scheme-form.component';
 
@@ -17,10 +22,7 @@ interface SchemeOption {
 @Component({
   selector: 'app-exercise-scheme-assignment-card',
   standalone: true,
-  imports: [
-    RouterLink,
-    InlineExerciseSchemeFormComponent,
-  ],
+  imports: [RouterLink, InlineExerciseSchemeFormComponent],
   template: `
     <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
       <!-- Header with exercise name and status -->
@@ -40,37 +42,61 @@ interface SchemeOption {
         <!-- Status indicator -->
         <div class="flex-shrink-0 ml-2">
           @if (isSaving()) {
-            <svg class="animate-spin h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
+          <svg class="animate-spin h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
           } @else if (showSuccess()) {
-            <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
+          <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
           } @else if (error()) {
-            <div class="flex items-center gap-1">
-              <svg class="h-5 w-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span class="text-xs text-red-600">{{ error() }}</span>
-            </div>
-          } @else if (hasPendingChange()) {
-            <span class="flex items-center gap-1 text-amber-500" title="Unsaved change">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </span>
-          } @else if (isAssigned()) {
-            <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div class="flex items-center gap-1">
+            <svg class="h-5 w-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
+            <span class="text-xs text-red-600">{{ error() }}</span>
+          </div>
+          } @else if (hasPendingChange()) {
+          <span class="flex items-center gap-1 text-amber-500" title="Unsaved change">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </span>
+          } @else if (isAssigned()) {
+          <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
           } @else if (needsConfiguration()) {
-            <span class="flex items-center gap-1 text-gray-400" title="Needs configuration">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </span>
+          <span class="flex items-center gap-1 text-gray-400" title="Needs configuration">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </span>
           }
         </div>
       </div>
@@ -78,57 +104,56 @@ interface SchemeOption {
       <!-- Scheme selection -->
       <div class="p-4">
         @if (isLoading()) {
-          <div class="flex items-center gap-2 text-sm text-gray-500">
-            <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            Loading schemes...
-          </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+          <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+          Loading schemes...
+        </div>
         } @else {
-          <div class="space-y-3">
-            <label class="block text-sm font-medium text-gray-700">Exercise Scheme</label>
+        <div class="space-y-3">
+          <label class="block text-sm font-medium text-gray-700">Exercise Scheme</label>
 
-            <select
-              [value]="selectedValue()"
-              (change)="onSchemeChange($event)"
-              [disabled]="isSaving()"
-              class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 disabled:bg-gray-100 disabled:cursor-not-allowed"
-            >
-              @for (option of schemeOptions(); track option.value) {
-                <option [value]="option.value">
-                  {{ option.label }}@if (option.sublabel) { - {{ option.sublabel }}}
-                </option>
-              }
-            </select>
+          <select
+            [value]="selectedValue()"
+            (change)="onSchemeChange($event)"
+            [disabled]="isSaving()"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 disabled:bg-gray-100 disabled:cursor-not-allowed"
+          >
+            @for (option of schemeOptions(); track option.value) {
+            <option [value]="option.value">{{ option.label }}@if (option.sublabel) { - {{ option.sublabel }}}</option>
+            }
+          </select>
 
-            <!-- Show selected scheme details -->
-            @if (selectedOption(); as selected) {
-              @if (selected.scheme) {
-                <div class="text-xs text-gray-500 flex gap-4">
-                  <span>{{ selected.scheme.sets }} sets</span>
-                  <span>{{ selected.scheme.reps }} reps</span>
-                  <span>{{ selected.scheme.restBetweenSets }}s rest</span>
-                  @if (selected.scheme.weight) {
-                    <span>{{ selected.scheme.weight }}kg</span>
-                  }
-                </div>
-              }
+          <!-- Show selected scheme details -->
+          @if (selectedOption(); as selected) { @if (selected.scheme) {
+          <div class="text-xs text-gray-500 flex gap-4">
+            <span>{{ selected.scheme.sets }} sets</span>
+            <span>{{ selected.scheme.reps }} reps</span>
+            <span>{{ selected.scheme.restBetweenSets }}s rest</span>
+            @if (selected.scheme.weight) {
+            <span>{{ selected.scheme.weight }}kg</span>
             }
           </div>
+          } }
+        </div>
 
-          <!-- Inline form for new scheme -->
-          @if (showNewSchemeForm()) {
-            <div class="mt-4">
-              <app-inline-exercise-scheme-form
-                [isSaving]="isSaving()"
-                [suggestedMeasurementParadigms]="suggestedMeasurementParadigms()"
-                (formSubmit)="onCreateScheme($event)"
-                (formCancel)="onCancelNewScheme()"
-              />
-            </div>
-          }
-        }
+        <!-- Inline form for new scheme -->
+        @if (showNewSchemeForm()) {
+        <div class="mt-4">
+          <app-inline-exercise-scheme-form
+            [isSaving]="isSaving()"
+            [suggestedMeasurementParadigms]="suggestedMeasurementParadigms()"
+            (formSubmit)="onCreateScheme($event)"
+            (formCancel)="onCancelNewScheme()"
+          />
+        </div>
+        } }
       </div>
     </div>
   `,
@@ -174,12 +199,14 @@ export class ExerciseSchemeAssignmentCardComponent {
     }
 
     // Add existing schemes
-    options.push(...schemes.map(scheme => ({
-      value: scheme.id,
-      label: scheme.name,
-      sublabel: `${scheme.sets}x${scheme.reps}`,
-      scheme,
-    })));
+    options.push(
+      ...schemes.map((scheme) => ({
+        value: scheme.id,
+        label: scheme.name,
+        sublabel: `${scheme.sets}x${scheme.reps}`,
+        scheme,
+      }))
+    );
 
     // Add "Create New" option at the end
     options.push({
@@ -216,7 +243,7 @@ export class ExerciseSchemeAssignmentCardComponent {
 
   selectedOption = computed(() => {
     const value = this.selectedValue();
-    return this.schemeOptions().find(o => o.value === value) ?? null;
+    return this.schemeOptions().find((o) => o.value === value) ?? null;
   });
 
   constructor() {
@@ -226,23 +253,33 @@ export class ExerciseSchemeAssignmentCardComponent {
       this.store.loadSchemesForExercise(exerciseId);
     });
 
-    // Auto-initialize selection and show form if needed (only in immediate mode)
+    // Auto-initialize selection and show form if needed
     effect(() => {
       const schemes = this.schemes();
       const isLoading = this.isLoading();
       const deferred = this.deferAssignment();
+      const isAssigned = this.isAssigned();
 
       if (!isLoading && !this.initialized()) {
         this.initialized.set(true);
 
-        // In deferred mode, don't auto-select anything
-        if (deferred) {
+        // Don't auto-select if something is already assigned
+        if (isAssigned) {
           return;
         }
 
-        // In immediate mode, auto-select first scheme or show new form
+        // Auto-select first scheme or show new form
         if (schemes.length > 0) {
           this.selectedSchemeId.set(schemes[0].id);
+
+          // In deferred mode, emit the selection as a pending change
+          if (deferred) {
+            this.hasPendingChange.set(true);
+            this.schemeSelected.emit({
+              sectionItemId: this.sectionItem().id,
+              schemeId: schemes[0].id,
+            });
+          }
         } else {
           this.selectedSchemeId.set(NEW_SCHEME_VALUE);
           this.showNewSchemeForm.set(true);
@@ -281,11 +318,7 @@ export class ExerciseSchemeAssignmentCardComponent {
   }
 
   async assignScheme(schemeId: string): Promise<void> {
-    const success = await this.store.assignSchemeToSectionItem(
-      schemeId,
-      this.sectionItem().id,
-      this.userWorkoutId()
-    );
+    const success = await this.store.assignSchemeToSectionItem(schemeId, this.sectionItem().id, this.userWorkoutId());
 
     if (success) {
       this.showSuccessIndicator();
@@ -298,11 +331,7 @@ export class ExerciseSchemeAssignmentCardComponent {
       exerciseId: this.sectionItem().exerciseId,
     };
 
-    const success = await this.store.createAndAssignScheme(
-      data,
-      this.sectionItem().id,
-      this.userWorkoutId()
-    );
+    const success = await this.store.createAndAssignScheme(data, this.sectionItem().id, this.userWorkoutId());
 
     if (success) {
       this.showNewSchemeForm.set(false);
