@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, effect } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HttpClient } from '@angular/common/http';
@@ -165,10 +165,15 @@ export class WorkoutRunComponent {
   });
 
   constructor() {
-    this.route.paramMap.pipe(takeUntilDestroyed()).subscribe(async (params) => {
+    this.route.paramMap.pipe(takeUntilDestroyed()).subscribe((params) => {
       this.workoutId = params.get('id');
-      if (this.workoutId) {
-        await this.loadWorkoutPlan();
+    });
+
+    // Load plan when workout data is available (handles refresh case)
+    effect(() => {
+      const currentWorkout = this.workout();
+      if (currentWorkout && this.workoutId) {
+        this.loadWorkoutPlan();
       }
     });
   }
@@ -266,7 +271,7 @@ export class WorkoutRunComponent {
     try {
       // Build the workout log DTO
       const workoutLogDto: UpsertWorkoutLogDto = {
-        originalWorkoutId: currentWorkout.id,
+        originalWorkoutId: currentWorkout.workoutTemplateId,
         name: currentWorkout.workout?.name || 'Workout',
         startedAt: new Date(),
         sections: currentPlan.sections.map((section) => ({
