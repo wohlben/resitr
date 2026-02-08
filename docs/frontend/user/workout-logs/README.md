@@ -60,6 +60,7 @@ User completes workout
 | Feature              | Relationship                                           |
 | -------------------- | ------------------------------------------------------ |
 | **My Workouts**      | Logs reference the workout instance that was performed |
+| **Calendar**         | Logs appear on the calendar with color-coded status    |
 | **Workout Schedule** | Scheduled sessions become logs when completed          |
 | **Exercise Schemes** | Logs capture actual performance against scheme targets |
 | **Compendium**       | Exercise references link back to compendium data       |
@@ -68,11 +69,66 @@ User completes workout
 
 ## Implementation Status
 
-| Component    | Status         | Notes                      |
-| ------------ | -------------- | -------------------------- |
-| Log List     | 🚧 Placeholder | Empty component            |
-| Log Detail   | 🚧 Placeholder | Basic template only        |
-| Log Creation | 🚧 Placeholder | Triggered from Run Workout |
+| Component    | Status       | Notes                      |
+| ------------ | ------------ | -------------------------- |
+| Log List     | ✅ Complete  | List with calendar view    |
+| Log Detail   | ✅ Complete  | Full session details       |
+| Log Creation | ✅ Automatic | Triggered from Run Workout |
+
+---
+
+## Calendar Integration
+
+The Workout Logs page uses the reusable [Calendar component](../../components/calendar.md) to provide a visual overview:
+
+### Calendar Features
+
+- **Monthly view** with navigation (previous/next month)
+- **Color-coded entries**:
+  - 🟢 **Green** - Completed workouts
+  - 🟡 **Yellow** - Workouts in progress (started today)
+  - 🔴 **Red** - Incomplete or aborted workouts
+- **Click a day** to navigate to the first log for that date
+- **Today's date** highlighted with blue ring
+
+### Code Example
+
+```typescript
+import { CalendarComponent } from '../components/ui/calendar';
+
+@Component({
+  imports: [CalendarComponent],
+  template: `
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Left: Log List -->
+      <div class="lg:col-span-2">
+        @for (log of logs(); track log.id) {
+          <!-- Log cards -->
+        }
+      </div>
+
+      <!-- Right: Calendar -->
+      <div class="lg:col-span-1">
+        <app-calendar
+          [entries]="calendarEntries()"
+          [legend]="calendarLegend"
+          (dayClick)="selectDate($event)"
+        />
+      </div>
+    </div>
+  `
+})
+```
+
+### Legend Configuration
+
+```typescript
+readonly calendarLegend = {
+  green: 'Completed',
+  yellow: 'Started (Today)',
+  red: 'Incomplete/Aborted'
+};
+```
 
 ---
 
@@ -80,4 +136,6 @@ User completes workout
 
 - [Log List](./list.md) - Browse completed sessions
 - [Log Detail](./detail.md) - View specific session
+- [Calendar Component](../../components/calendar.md) - Reusable calendar component
+- [Calendar Page](../calendar/page.md) - Combined view of logs and schedules
 - [My Workouts](../workouts/README.md) - Workout instances that generate logs

@@ -16,15 +16,24 @@ Unlike the previous implementation that only allowed one day per workout, the ne
 - **Flexible criteria types** - Currently supports "Day of Week", extensible for future types (specific dates, intervals, etc.)
 - **Prioritization** - Each criteria has an order field for prioritization
 
+### Calendar Integration
+
+Schedules are now viewed through the **[Calendar page](../calendar/page.md)** which provides:
+
+- **Unified view** - See both past workouts and upcoming schedules together
+- **Monthly calendar** - More intuitive than the old weekly grid
+- **Color coding** - Purple dots indicate planned workouts
+- **Full history** - Completed workouts shown alongside scheduled ones
+
 ---
 
 ## Route Structure
 
 ```
-/user/schedules                    → All schedules overview
-/user/schedules/new               → Create new schedule
-/user/schedules/:id               → Schedule detail (manage criteria)
-/user/workouts/:id/schedules      → Schedules for specific workout
+/user/calendar                      → View schedules in calendar (replaces /user/schedules)
+/user/schedules/new                 → Create new schedule
+/user/schedules/:id                 → Schedule detail (manage criteria)
+/user/workouts/:id/schedules        → Redirects to calendar
 ```
 
 ---
@@ -54,12 +63,12 @@ WorkoutSchedule (1) → UserWorkout (1)
 
 ## Implementation Status
 
-| Component      | Status | Location                       |
-| -------------- | ------ | ------------------------------ |
-| List (All)     | ✅     | `/user/schedules`              |
-| List (Workout) | ✅     | `/user/workouts/:id/schedules` |
-| Create         | ✅     | `/user/schedules/new`          |
-| Detail         | ✅     | `/user/schedules/:id`          |
+| Component     | Status | Location              | Notes                             |
+| ------------- | ------ | --------------------- | --------------------------------- |
+| Calendar View | ✅     | `/user/calendar`      | Unified logs + schedules view     |
+| Create        | ✅     | `/user/schedules/new` | Form for creating schedules       |
+| Detail        | ✅     | `/user/schedules/:id` | View and manage schedule criteria |
+| List (Old)    | ❌     | Removed               | Replaced by calendar view         |
 
 ---
 
@@ -111,9 +120,48 @@ WorkoutSchedule (1) → UserWorkout (1)
 
 ---
 
+## Viewing Schedules
+
+### Primary Interface: Calendar Page
+
+The **[Calendar page](../calendar/page.md)** at `/user/calendar` is now the main way to view schedules:
+
+- Shows upcoming scheduled workouts in the "Upcoming Workouts" panel
+- Displays scheduled workouts as purple dots on the monthly calendar
+- Combines with past workout logs for complete workout history
+
+**Why the change?**
+
+The old weekly grid (`/user/schedules`) only showed when workouts were scheduled, but not whether they were actually completed. The Calendar page provides:
+
+1. **Context** - See planned vs. completed workouts
+2. **Better UX** - Monthly view is more standard
+3. **Unified interface** - One place for planning and history
+
+### Legacy Route Behavior
+
+Routes that previously showed the weekly schedule grid now redirect:
+
+- `/user/schedules` → `/user/calendar`
+- `/user/workouts/:id/schedules` → `/user/calendar`
+
+---
+
+## Creating and Editing
+
+Creating and editing schedules still uses dedicated forms:
+
+- **Create**: `/user/schedules/new` (or from workout detail)
+- **Edit Criteria**: `/user/schedules/:id` - Manage schedule criteria
+
+These workflows remain unchanged.
+
+---
+
 ## Related Documentation
 
-- [List All Schedules](./list.md) - Overview of all workout schedules
+- [Calendar Page](../calendar/page.md) - **Primary schedule viewing interface**
 - [Create Schedule](./new.md) - Form for creating new schedules
 - [Schedule Detail](./detail.md) - View and manage schedule criteria
-- [Workout Schedules](../workouts/schedules.md) - Workout-specific schedule view
+- [Workout Schedules](../workouts/schedules.md) - Workout-specific schedule documentation (deprecated)
+- [Calendar Component](../../components/calendar.md) - Reusable calendar component
