@@ -15,7 +15,9 @@ import { UserWorkoutLogRepository } from './persistence/repositories/user-workou
 import { UserWorkoutLogSectionRepository } from './persistence/repositories/user-workout-log-section.repository';
 import { UserWorkoutLogSectionItemRepository } from './persistence/repositories/user-workout-log-section-item.repository';
 import { UserWorkoutLogSetRepository } from './persistence/repositories/user-workout-log-set.repository';
-import { UserWorkoutScheduleRepository } from './persistence/repositories/user-workout-schedule.repository';
+import { WorkoutScheduleRepository } from './persistence/repositories/workout-schedule.repository';
+import { WorkoutScheduleCriteriaRepository } from './persistence/repositories/workout-schedule-criteria.repository';
+import { WorkoutScheduleCriteriaDayOfWeekRepository } from './persistence/repositories/workout-schedule-criteria-day-of-week.repository';
 import { UserExerciseSchemeRepository } from './persistence/repositories/user-exercise-scheme.repository';
 import { UserWorkoutRepository } from './persistence/repositories/user-workout.repository';
 import { provideDatabase } from './persistence/database';
@@ -27,7 +29,8 @@ import { CompendiumExerciseSchemeService } from './compendium/exercise-scheme/co
 import { CompendiumExerciseVideoService } from './compendium/exercise-video/compendium-exercise-video.service';
 import { CompendiumWorkoutService } from './compendium/workout/compendium-workout.service';
 import { UserWorkoutLogService } from './user/workout-log/user-workout-log.service';
-import { UserWorkoutScheduleService } from './user/workout-schedule/user-workout-schedule.service';
+import { WorkoutScheduleService } from './user/workout-schedule/workout-schedule.service';
+import { WorkoutScheduleCriteriaService } from './user/workout-schedule/workout-schedule-criteria.service';
 import { UserExerciseSchemeService } from './user/exercise-scheme/user-exercise-scheme.service';
 import { UserWorkoutService } from './user/workout/user-workout.service';
 
@@ -50,7 +53,9 @@ import { UserWorkoutService } from './user/workout/user-workout.service';
     UserWorkoutLogSectionRepository,
     UserWorkoutLogSectionItemRepository,
     UserWorkoutLogSetRepository,
-    UserWorkoutScheduleRepository,
+    WorkoutScheduleRepository,
+    WorkoutScheduleCriteriaRepository,
+    WorkoutScheduleCriteriaDayOfWeekRepository,
     UserExerciseSchemeRepository,
     UserWorkoutRepository,
     CompendiumExerciseService,
@@ -61,7 +66,8 @@ import { UserWorkoutService } from './user/workout/user-workout.service';
     CompendiumExerciseVideoService,
     CompendiumWorkoutService,
     UserWorkoutLogService,
-    UserWorkoutScheduleService,
+    WorkoutScheduleService,
+    WorkoutScheduleCriteriaService,
     UserExerciseSchemeService,
     UserWorkoutService,
   ],
@@ -75,9 +81,10 @@ import { UserWorkoutService } from './user/workout/user-workout.service';
     CompendiumExerciseVideoService,
     CompendiumWorkoutService,
     UserWorkoutLogService,
-    UserWorkoutScheduleService,
+    WorkoutScheduleService,
+    WorkoutScheduleCriteriaService,
     UserExerciseSchemeService,
     UserWorkoutService,
   ],
 })
-export class CoreModule { }
+export class CoreModule {}

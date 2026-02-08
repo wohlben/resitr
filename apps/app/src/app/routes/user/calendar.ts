@@ -1,5 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { WorkoutLogsStore } from '../../features/workout-logs/workout-logs.store';
 import { WorkoutScheduleStore } from '../../features/workout-schedule/workout-schedule.store';
@@ -14,10 +14,25 @@ interface LegendConfig {
   [key: string]: string;
 }
 
+interface UpcomingScheduleDisplay {
+  scheduleId: string;
+  workoutName: string;
+  dayNames: string[];
+  upcomingDates: Date[];
+}
+
 @Component({
   selector: 'app-calendar-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, LoadingComponent, ErrorLoadingComponent, ButtonComponent, CalendarComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    DatePipe,
+    LoadingComponent,
+    ErrorLoadingComponent,
+    ButtonComponent,
+    CalendarComponent,
+  ],
   template: `
     <div class="space-y-6">
       <!-- Header -->
@@ -58,15 +73,24 @@ interface LegendConfig {
             <p class="text-gray-500 text-center py-4">No upcoming scheduled workouts</p>
             } @else {
             <div class="space-y-3">
-              @for (schedule of upcomingSchedules().slice(0, 5); track schedule.id) {
-              <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg border border-purple-100">
-                <div>
-                  <div class="font-medium text-gray-900">{{ schedule.workoutName }}</div>
-                  <div class="text-sm text-gray-500">{{ schedule.dayName }}s</div>
-                </div>
-                <div class="flex items-center gap-2">
-                  <div class="w-2 h-2 rounded-full bg-purple-500"></div>
-                  <span class="text-sm text-purple-700">Planned</span>
+              @for (schedule of upcomingSchedules(); track schedule.scheduleId) {
+              <div class="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                <div class="flex items-start justify-between">
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-900">{{ schedule.workoutName }}</div>
+                    <div class="flex items-center gap-4 mt-1">
+                      <div class="text-sm text-gray-500">{{ schedule.dayNames.join(', ') }}</div>
+                      @if (schedule.upcomingDates.length > 0) {
+                      <div class="text-sm text-purple-700 font-medium">
+                        {{ formatDates(schedule.upcomingDates) }}
+                      </div>
+                      }
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 ml-4">
+                    <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                    <span class="text-sm text-purple-700">Planned</span>
+                  </div>
                 </div>
               </div>
               }
@@ -141,46 +165,38 @@ export class CalendarPageComponent {
     return this.logsStore.logs().slice(0, 10);
   });
 
-  readonly upcomingSchedules = computed(() => {
-    const today = new Date().getDay();
-    const schedules = this.schedulesStore.schedules();
+  // Get upcoming schedules with filtered dates (excluding dates that already have logs for that workout)
+  readonly upcomingSchedules = computed((): UpcomingScheduleDisplay[] => {
+    const instances = this.schedulesStore.upcomingScheduleInstances();
     const enrichedWorkouts = this.userWorkoutsStore.enrichedWorkouts();
+    const logsByWorkoutName = this.getLogsByWorkout();
 
-    const upcoming: Array<{
-      id: string;
-      workoutName: string;
-      dayIndex: number;
-      dayName: string;
-    }> = [];
+    return instances
+      .map((instance) => {
+        const workout = enrichedWorkouts.find((w) => w.id === instance.schedule.userWorkoutId);
+        const workoutName = workout?.workout?.name || 'Unknown Workout';
 
-    for (const schedule of schedules) {
-      const workout = enrichedWorkouts.find((w) => w.id === schedule.userWorkoutId);
-      const workoutName = workout?.workout?.name || 'Unknown Workout';
-
-      // Get all unique days from all criteria
-      const allDays = new Set<number>();
-      for (const criteria of schedule.criteria) {
-        for (const day of criteria.days) {
-          allDays.add(day);
-        }
-      }
-
-      for (const day of allDays) {
-        upcoming.push({
-          id: schedule.id,
-          workoutName,
-          dayIndex: day,
-          dayName: this.schedulesStore.dayNames()[day],
+        // Get day names from indices
+        const dayNames = instance.criteriaDays.map((dayIndex) => {
+          const name = this.schedulesStore.dayNames()[dayIndex];
+          return name;
         });
-      }
-    }
 
-    // Sort by day of week (today first, then upcoming days)
-    return upcoming.sort((a, b) => {
-      const dayDiffA = (a.dayIndex - today + 7) % 7;
-      const dayDiffB = (b.dayIndex - today + 7) % 7;
-      return dayDiffA - dayDiffB;
-    });
+        // Filter out dates that already have a log for this workout (by name)
+        const workoutLogs = logsByWorkoutName.get(workoutName) || new Set();
+        const filteredDates = instance.upcomingDates.filter((date) => {
+          const dateKey = this.formatDateKey(date);
+          return !workoutLogs.has(dateKey);
+        });
+
+        return {
+          scheduleId: instance.schedule.id,
+          workoutName,
+          dayNames,
+          upcomingDates: filteredDates.slice(0, 4), // Show up to 4 upcoming dates
+        };
+      })
+      .filter((schedule) => schedule.upcomingDates.length > 0); // Only show schedules with unfulfilled dates
   });
 
   readonly calendarEntries = computed((): CalendarEntry[] => {
@@ -208,6 +224,7 @@ export class CalendarPageComponent {
     today.setHours(0, 0, 0, 0);
 
     const enrichedWorkouts = this.userWorkoutsStore.enrichedWorkouts();
+    const logsByWorkout = this.getLogsByWorkout();
 
     // Generate entries for the next 4 weeks
     for (let weekOffset = 0; weekOffset < 4; weekOffset++) {
@@ -223,23 +240,65 @@ export class CalendarPageComponent {
           }
         }
 
+        const workoutLogs = logsByWorkout.get(workoutName) || new Set();
+
         for (const dayIndex of allDays) {
           // Calculate the date for this schedule day in the current week
           const scheduleDate = new Date(today);
           const daysUntilDay = (dayIndex - today.getDay() + 7) % 7;
           scheduleDate.setDate(today.getDate() + daysUntilDay + weekOffset * 7);
 
-          entries.push({
-            on: scheduleDate,
-            type: 'purple',
-            name: workoutName,
-          });
+          // Only add if there's no log for this workout on this date
+          const dateKey = this.formatDateKey(scheduleDate);
+          if (!workoutLogs.has(dateKey)) {
+            entries.push({
+              on: scheduleDate,
+              type: 'purple',
+              name: workoutName,
+            });
+          }
         }
       }
     }
 
     return entries;
   });
+
+  // Helper to group logs by workout and date for quick lookup
+  // Uses workout name as key since that's available in WorkoutLogListItemDto
+  private getLogsByWorkout(): Map<string, Set<string>> {
+    const map = new Map<string, Set<string>>();
+
+    for (const log of this.logsStore.logs()) {
+      const dateKey = this.formatDateKey(new Date(log.startedAt));
+
+      if (!map.has(log.name)) {
+        map.set(log.name, new Set());
+      }
+      map.get(log.name)!.add(dateKey);
+    }
+
+    return map;
+  }
+
+  private formatDateKey(date: Date): string {
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(
+      2,
+      '0'
+    )}`;
+  }
+
+  formatDates(dates: Date[]): string {
+    if (dates.length === 0) return '';
+
+    const formatted = dates.map((date) => {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      return `${day}.${month}.`;
+    });
+
+    return formatted.join(', ');
+  }
 
   isStartedToday(log: WorkoutLogListItemDto): boolean {
     if (log.completedAt) return false;

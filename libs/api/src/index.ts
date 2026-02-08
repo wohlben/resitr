@@ -14,7 +14,7 @@ export * from './lib/exercise-group-template';
 export * from './lib/exercise-group-member-template';
 export * from './lib/exercise-scheme-template';
 export * from './lib/workout-template';
-export * from './lib/user-workout-schedule';
+export * from './lib/workout-schedule';
 export * from './lib/user-exercise-scheme';
 export * from './lib/user-workout';
 
@@ -28,6 +28,6 @@ export * from './lib/dto/exercise-group-member.dto';
 export * from './lib/dto/exercise-relationship.dto';
 export * from './lib/dto/workout.dto';
 export * from './lib/dto/workout-log.dto';
-export * from './lib/dto/user-workout-schedule.dto';
+export * from './lib/dto/workout-schedule.dto';
 export * from './lib/dto/user-exercise-scheme.dto';
 export * from './lib/dto/user-workout.dto';

@@ -3,7 +3,7 @@ import { lastValueFrom } from 'rxjs';
 import type {
   WorkoutLogResponseDto,
   UserWorkoutResponseDto,
-  UserWorkoutScheduleResponseDto,
+  WorkoutScheduleResponseDto,
   UserExerciseSchemeResponseDto,
 } from '@resitr/api';
 
@@ -41,20 +41,24 @@ export const UserQueries = {
   workoutSchedule: {
     list: {
       key: 'user-workout-schedules',
-      fn: (client: HttpClient) =>
-        lastValueFrom(client.get<UserWorkoutScheduleResponseDto[]>('/api/user/workout-schedule')),
+      fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutScheduleResponseDto[]>('/api/user/workout-schedule')),
     },
     byDay: (dayOfWeek: number) => ({
       key: `user-workout-schedules-day-${dayOfWeek}`,
       fn: (client: HttpClient) =>
-        lastValueFrom(
-          client.get<UserWorkoutScheduleResponseDto[]>(`/api/user/workout-schedule?dayOfWeek=${dayOfWeek}`)
-        ),
+        lastValueFrom(client.get<WorkoutScheduleResponseDto[]>(`/api/user/workout-schedule?dayOfWeek=${dayOfWeek}`)),
     }),
     detail: (id: string) => ({
       key: `user-workout-schedule-detail-${id}`,
       fn: (client: HttpClient) =>
-        lastValueFrom(client.get<UserWorkoutScheduleResponseDto>(`/api/user/workout-schedule/${id}`)),
+        lastValueFrom(client.get<WorkoutScheduleResponseDto>(`/api/user/workout-schedule/${id}`)),
+    }),
+    criteria: (scheduleId: string) => ({
+      key: `user-workout-schedule-${scheduleId}-criteria`,
+      fn: (client: HttpClient) =>
+        lastValueFrom(
+          client.get<WorkoutScheduleResponseDto['criteria']>(`/api/user/workout-schedule/${scheduleId}/criteria`)
+        ),
     }),
   },
 

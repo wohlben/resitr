@@ -20,7 +20,9 @@ import type { CompendiumExerciseVideo } from './schemas/compendium-exercise-vide
 import type { CompendiumWorkout } from './schemas/compendium-workout.schema';
 import type { CompendiumWorkoutSection } from './schemas/compendium-workout-section.schema';
 import type { CompendiumWorkoutSectionItem } from './schemas/compendium-workout-section-item.schema';
-import type { UserWorkoutSchedule } from './schemas/user-workout-schedule.schema';
+import type { WorkoutSchedule } from './schemas/workout-schedule.schema';
+import type { WorkoutScheduleCriteria } from './schemas/workout-schedule-criteria.schema';
+import type { WorkoutScheduleCriteriaDayOfWeek } from './schemas/workout-schedule-criteria-day-of-week.schema';
 import type { NewUserExerciseScheme } from './schemas/user-exercise-scheme.schema';
 import type { NewUserWorkout } from './schemas/user-workout.schema';
 import {
@@ -61,7 +63,7 @@ export function mockExercise(overrides: Partial<CompendiumExercise> = {}): Compe
     createdBy: 'test-user',
     version: 1,
     ...overrides,
-  } satisfies CompendiumExercise ;
+  } satisfies CompendiumExercise;
 }
 
 /**
@@ -84,9 +86,7 @@ export function mockEquipment(overrides: Partial<NewCompendiumEquipment> = {}): 
  * Creates a mock CompendiumExerciseGroup with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockExerciseGroup(
-  overrides: Partial<CompendiumExerciseGroup> = {}
-): CompendiumExerciseGroup {
+export function mockExerciseGroup(overrides: Partial<CompendiumExerciseGroup> = {}): CompendiumExerciseGroup {
   return {
     id: 'test-group-1',
     name: 'Test Exercise Group',
@@ -133,9 +133,7 @@ export function mockExerciseRelationship(
  * Creates a mock CompendiumExerciseScheme with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockExerciseScheme(
-  overrides: Partial<CompendiumExerciseScheme> = {}
-): CompendiumExerciseScheme {
+export function mockExerciseScheme(overrides: Partial<CompendiumExerciseScheme> = {}): CompendiumExerciseScheme {
   return {
     exerciseId: 'test-exercise-1',
     name: 'Test Scheme',
@@ -157,9 +155,7 @@ export function mockExerciseScheme(
  * Creates a mock CompendiumExerciseVideo with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockExerciseVideo(
-  overrides: Partial<CompendiumExerciseVideo> = {}
-): CompendiumExerciseVideo {
+export function mockExerciseVideo(overrides: Partial<CompendiumExerciseVideo> = {}): CompendiumExerciseVideo {
   return {
     exerciseTemplateId: 'test-exercise-1',
     url: 'https://example.com/video.mp4',
@@ -189,7 +185,10 @@ export function mockExercises(count: number, baseOverrides: Partial<CompendiumEx
  * Helper to create multiple equipment items with sequential IDs.
  * Useful for tests that need multiple distinct equipment items.
  */
-export function mockEquipments(count: number, baseOverrides: Partial<NewCompendiumEquipment> = {}): NewCompendiumEquipment[] {
+export function mockEquipments(
+  count: number,
+  baseOverrides: Partial<NewCompendiumEquipment> = {}
+): NewCompendiumEquipment[] {
   return Array.from({ length: count }, (_, i) =>
     mockEquipment({
       ...baseOverrides,
@@ -204,9 +203,7 @@ export function mockEquipments(count: number, baseOverrides: Partial<NewCompendi
  * Creates a mock CompendiumWorkout with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockWorkout(
-  overrides: Partial<CompendiumWorkout> = {}
-): CompendiumWorkout {
+export function mockWorkout(overrides: Partial<CompendiumWorkout> = {}): CompendiumWorkout {
   return {
     templateId: 'test-workout-1',
     workoutLineageId: 'test-lineage-1',
@@ -223,9 +220,7 @@ export function mockWorkout(
  * Creates a mock CompendiumWorkoutSection with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockWorkoutSection(
-  overrides: Partial<CompendiumWorkoutSection> = {}
-): CompendiumWorkoutSection {
+export function mockWorkoutSection(overrides: Partial<CompendiumWorkoutSection> = {}): CompendiumWorkoutSection {
   return {
     type: WorkoutSectionType.STRENGTH,
     name: 'Test Section',
@@ -256,19 +251,48 @@ export function mockWorkoutSectionItem(
 }
 
 /**
- * Creates a mock UserWorkoutSchedule with sensible defaults.
+ * Creates a mock WorkoutSchedule with sensible defaults.
  * Override any fields by passing a partial object.
  * Note: id is omitted to allow database auto-generation
  */
-export function mockUserWorkoutSchedule(
-  overrides: Partial<UserWorkoutSchedule> = {}
-): Omit<UserWorkoutSchedule, 'id' | 'createdAt'> & { id?: string; createdAt?: Date } {
+export function mockWorkoutSchedule(
+  overrides: Partial<WorkoutSchedule> = {}
+): Omit<WorkoutSchedule, 'id' | 'createdAt'> & { id?: string; createdAt?: Date } {
   return {
     userId: 'test-user',
-    workoutTemplateId: 'test-workout-1',
-    dayOfWeek: 1, // Monday
+    userWorkoutId: 'test-user-workout-1',
+    updatedAt: null,
+    ...overrides,
+  };
+}
+
+/**
+ * Creates a mock WorkoutScheduleCriteria with sensible defaults.
+ * Override any fields by passing a partial object.
+ * Note: id is omitted to allow database auto-generation
+ */
+export function mockWorkoutScheduleCriteria(
+  overrides: Partial<WorkoutScheduleCriteria> = {}
+): Omit<WorkoutScheduleCriteria, 'id' | 'createdAt'> & { id?: string; createdAt?: Date } {
+  return {
+    scheduleId: 'test-schedule-1',
+    type: 'DAY_OF_WEEK',
     order: 0,
     updatedAt: null,
+    ...overrides,
+  };
+}
+
+/**
+ * Creates a mock WorkoutScheduleCriteriaDayOfWeek with sensible defaults.
+ * Override any fields by passing a partial object.
+ */
+export function mockWorkoutScheduleCriteriaDayOfWeek(
+  overrides: Partial<WorkoutScheduleCriteriaDayOfWeek> = {}
+): WorkoutScheduleCriteriaDayOfWeek {
+  return {
+    criteriaId: 'test-criteria-1',
+    dayOfWeek: 1, // Monday
     ...overrides,
   };
 }
@@ -277,9 +301,7 @@ export function mockUserWorkoutSchedule(
  * Creates a mock UserExerciseScheme with sensible defaults.
  * Override any fields by passing a partial object.
  */
-export function mockUserExerciseScheme(
-  overrides: Partial<NewUserExerciseScheme> = {}
-): NewUserExerciseScheme {
+export function mockUserExerciseScheme(overrides: Partial<NewUserExerciseScheme> = {}): NewUserExerciseScheme {
   return {
     userId: 'test-user',
     exerciseId: 'test-exercise-1',
@@ -302,9 +324,7 @@ export function mockUserExerciseScheme(
  * Override any fields by passing a partial object.
  * Note: id is omitted to allow database auto-generation
  */
-export function mockUserWorkout(
-  overrides: Partial<NewUserWorkout> = {}
-): NewUserWorkout {
+export function mockUserWorkout(overrides: Partial<NewUserWorkout> = {}): NewUserWorkout {
   return {
     userId: 'test-user',
     workoutTemplateId: 'test-workout-1',
