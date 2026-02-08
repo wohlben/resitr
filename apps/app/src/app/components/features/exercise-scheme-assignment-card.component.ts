@@ -221,10 +221,10 @@ export class ExerciseSchemeAssignmentCardComponent {
 
   selectedValue = computed(() => {
     const id = this.selectedSchemeId();
-    if (id !== null) return id;
-
-    // Default to placeholder if nothing selected yet
-    return NOT_SELECTED_VALUE;
+    const exerciseId = this.sectionItem().exerciseId;
+    const result = id !== null ? id : NOT_SELECTED_VALUE;
+    console.log('[selectedValue]', { exerciseId, selectedSchemeId: id, result });
+    return result;
   });
 
   // Whether a scheme needs to be configured (nothing selected and nothing assigned)
@@ -249,12 +249,23 @@ export class ExerciseSchemeAssignmentCardComponent {
       const schemes = this.schemes();
       const isLoading = this.isLoading();
       const deferred = this.deferAssignment();
+      const exerciseId = this.sectionItem().exerciseId;
+
+      console.log('[AutoSelect] Effect triggered:', {
+        exerciseId,
+        isLoading,
+        initialized: this.initialized(),
+        schemesCount: schemes.length,
+        deferred,
+        selectedSchemeId: this.selectedSchemeId(),
+      });
 
       if (!isLoading && !this.initialized()) {
         this.initialized.set(true);
 
         // Auto-select first scheme or show new form
         if (schemes.length > 0) {
+          console.log('[AutoSelect] Auto-selecting scheme:', schemes[0].id, schemes[0].name);
           this.selectedSchemeId.set(schemes[0].id);
 
           // In deferred mode, emit the selection as a pending change
@@ -266,9 +277,12 @@ export class ExerciseSchemeAssignmentCardComponent {
             });
           }
         } else {
+          console.log('[AutoSelect] No schemes, showing new form');
           this.selectedSchemeId.set(NEW_SCHEME_VALUE);
           this.showNewSchemeForm.set(true);
         }
+      } else {
+        console.log('[AutoSelect] Skipped:', { isLoading, initialized: this.initialized() });
       }
     });
   }
