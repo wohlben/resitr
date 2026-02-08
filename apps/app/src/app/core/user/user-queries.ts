@@ -12,7 +12,7 @@ export const UserQueries = {
   workoutLog: {
     detail: (id: string) => ({
       key: `user-workout-log-detail-${id}`,
-      fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutLogResponseDto>(`/api/user/workout-logs/${id}`))
+      fn: (client: HttpClient) => lastValueFrom(client.get<WorkoutLogResponseDto>(`/api/user/workout-logs/${id}`)),
     }),
   },
 
@@ -20,11 +20,11 @@ export const UserQueries = {
   workout: {
     list: {
       key: 'user-workouts',
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutResponseDto[]>('/api/user/workout'))
+      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutResponseDto[]>('/api/user/workout')),
     },
     detail: (id: string) => ({
       key: `user-workout-detail-${id}`,
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutResponseDto>(`/api/user/workout/${id}`))
+      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutResponseDto>(`/api/user/workout/${id}`)),
     }),
   },
 
@@ -32,15 +32,20 @@ export const UserQueries = {
   workoutSchedule: {
     list: {
       key: 'user-workout-schedules',
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutScheduleResponseDto[]>('/api/user/workout-schedule'))
+      fn: (client: HttpClient) =>
+        lastValueFrom(client.get<UserWorkoutScheduleResponseDto[]>('/api/user/workout-schedule')),
     },
     byDay: (dayOfWeek: number) => ({
       key: `user-workout-schedules-day-${dayOfWeek}`,
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutScheduleResponseDto[]>(`/api/user/workout-schedule?dayOfWeek=${dayOfWeek}`))
+      fn: (client: HttpClient) =>
+        lastValueFrom(
+          client.get<UserWorkoutScheduleResponseDto[]>(`/api/user/workout-schedule?dayOfWeek=${dayOfWeek}`)
+        ),
     }),
     detail: (id: string) => ({
       key: `user-workout-schedule-detail-${id}`,
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserWorkoutScheduleResponseDto>(`/api/user/workout-schedule/${id}`))
+      fn: (client: HttpClient) =>
+        lastValueFrom(client.get<UserWorkoutScheduleResponseDto>(`/api/user/workout-schedule/${id}`)),
     }),
   },
 
@@ -48,15 +53,29 @@ export const UserQueries = {
   exerciseScheme: {
     list: {
       key: 'user-exercise-schemes',
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserExerciseSchemeResponseDto[]>('/api/user/exercise-scheme'))
+      fn: (client: HttpClient) =>
+        lastValueFrom(client.get<UserExerciseSchemeResponseDto[]>('/api/user/exercise-scheme')),
     },
     byExercise: (exerciseId: string) => ({
       key: `user-exercise-schemes-exercise-${exerciseId}`,
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserExerciseSchemeResponseDto[]>(`/api/user/exercise-scheme?exerciseId=${exerciseId}`))
+      fn: (client: HttpClient) =>
+        lastValueFrom(
+          client.get<UserExerciseSchemeResponseDto[]>(`/api/user/exercise-scheme?exerciseId=${exerciseId}`)
+        ),
+    }),
+    byWorkout: (userWorkoutId: string) => ({
+      key: `user-exercise-schemes-workout-${userWorkoutId}`,
+      fn: (client: HttpClient) =>
+        lastValueFrom(
+          client.get<Array<{ scheme: UserExerciseSchemeResponseDto; sectionItemId: string }>>(
+            `/api/user/exercise-scheme?userWorkoutId=${userWorkoutId}`
+          )
+        ),
     }),
     detail: (id: string) => ({
       key: `user-exercise-scheme-detail-${id}`,
-      fn: (client: HttpClient) => lastValueFrom(client.get<UserExerciseSchemeResponseDto>(`/api/user/exercise-scheme/${id}`))
+      fn: (client: HttpClient) =>
+        lastValueFrom(client.get<UserExerciseSchemeResponseDto>(`/api/user/exercise-scheme/${id}`)),
     }),
   },
 } as const;

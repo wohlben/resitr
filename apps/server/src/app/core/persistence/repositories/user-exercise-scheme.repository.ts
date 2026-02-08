@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { and, eq } from 'drizzle-orm';
+import { and, eq, inArray } from 'drizzle-orm';
 import { DATABASE, type Database } from '../database';
 import { NewUserExerciseScheme, UserExerciseScheme, userExerciseSchemes } from '../schemas/user-exercise-scheme.schema';
 import {
@@ -102,5 +102,34 @@ export class UserExerciseSchemeRepository {
       .select()
       .from(userExerciseSchemeCompendiumWorkoutSectionItems)
       .where(eq(userExerciseSchemeCompendiumWorkoutSectionItems.userExerciseSchemeId, userExerciseSchemeId));
+  }
+
+  async findByUserWorkoutId(
+    userWorkoutId: string
+  ): Promise<Array<{ scheme: UserExerciseScheme; assignment: UserExerciseSchemeCompendiumWorkoutSectionItem }>> {
+    // First, get all assignments for this workout
+    const assignments = await this.db
+      .select()
+      .from(userExerciseSchemeCompendiumWorkoutSectionItems)
+      .where(eq(userExerciseSchemeCompendiumWorkoutSectionItems.userWorkoutId, userWorkoutId));
+
+    if (assignments.length === 0) {
+      return [];
+    }
+
+    // Get unique scheme IDs
+    const schemeIds = [...new Set(assignments.map((a) => a.userExerciseSchemeId))];
+
+    // Fetch all schemes
+    const schemes = await this.db.select().from(userExerciseSchemes).where(inArray(userExerciseSchemes.id, schemeIds));
+
+    // Create a map for quick lookup
+    const schemeMap = new Map(schemes.map((s) => [s.id, s]));
+
+    // Combine schemes with their assignments
+    return assignments.map((assignment) => ({
+      scheme: schemeMap.get(assignment.userExerciseSchemeId)!,
+      assignment,
+    }));
   }
 }

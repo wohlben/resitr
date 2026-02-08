@@ -207,7 +207,8 @@ describe('UserExerciseSchemeController', () => {
       expect(service.getUserSchemesByExercise).toHaveBeenCalledWith(userId, exerciseId);
       expect(service.getUserSchemesByExercise).toHaveBeenCalledTimes(1);
       expect(result).toHaveLength(2);
-      expect(result.every((s) => s.exerciseId === exerciseId)).toBe(true);
+      // Check if result is array of UserExerciseSchemeResponseDto (not workout format)
+      expect(result.every((s) => 'exerciseId' in s && s.exerciseId === exerciseId)).toBe(true);
     });
 
     it('should return empty array when user has no schemes', async () => {

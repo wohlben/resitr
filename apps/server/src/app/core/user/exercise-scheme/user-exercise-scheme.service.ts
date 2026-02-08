@@ -5,14 +5,9 @@ import { UserExerciseSchemeCompendiumWorkoutSectionItem } from '../../persistenc
 
 @Injectable()
 export class UserExerciseSchemeService {
-  constructor(
-    private readonly schemeRepository: UserExerciseSchemeRepository
-  ) {}
+  constructor(private readonly schemeRepository: UserExerciseSchemeRepository) {}
 
-  async createScheme(
-    userId: string,
-    data: Omit<NewUserExerciseScheme, 'userId'>
-  ): Promise<UserExerciseScheme> {
+  async createScheme(userId: string, data: Omit<NewUserExerciseScheme, 'userId'>): Promise<UserExerciseScheme> {
     return this.schemeRepository.create({
       ...data,
       userId,
@@ -23,17 +18,11 @@ export class UserExerciseSchemeService {
     return this.schemeRepository.findByUserId(userId);
   }
 
-  async getUserSchemesByExercise(
-    userId: string,
-    exerciseId: string
-  ): Promise<UserExerciseScheme[]> {
+  async getUserSchemesByExercise(userId: string, exerciseId: string): Promise<UserExerciseScheme[]> {
     return this.schemeRepository.findByUserIdAndExerciseId(userId, exerciseId);
   }
 
-  async getSchemeById(
-    userId: string,
-    schemeId: string
-  ): Promise<UserExerciseScheme> {
+  async getSchemeById(userId: string, schemeId: string): Promise<UserExerciseScheme> {
     const scheme = await this.schemeRepository.findById(schemeId);
 
     if (!scheme) {
@@ -68,10 +57,7 @@ export class UserExerciseSchemeService {
     await this.schemeRepository.delete(scheme.id);
   }
 
-  async deleteUserSchemesByExercise(
-    userId: string,
-    exerciseId: string
-  ): Promise<void> {
+  async deleteUserSchemesByExercise(userId: string, exerciseId: string): Promise<void> {
     await this.schemeRepository.deleteByUserIdAndExerciseId(userId, exerciseId);
   }
 
@@ -113,10 +99,16 @@ export class UserExerciseSchemeService {
     // Verify the scheme belongs to the user
     await this.getSchemeById(userId, schemeId);
 
-    await this.schemeRepository.unassignFromSectionItem(
-      sectionItemId,
-      userWorkoutId,
-      schemeId
-    );
+    await this.schemeRepository.unassignFromSectionItem(sectionItemId, userWorkoutId, schemeId);
+  }
+
+  async getUserSchemesByWorkout(
+    userId: string,
+    userWorkoutId: string
+  ): Promise<Array<{ scheme: UserExerciseScheme; assignment: UserExerciseSchemeCompendiumWorkoutSectionItem }>> {
+    const results = await this.schemeRepository.findByUserWorkoutId(userWorkoutId);
+
+    // Filter to ensure user owns these schemes
+    return results.filter((result) => result.scheme.userId === userId);
   }
 }

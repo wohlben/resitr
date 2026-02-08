@@ -1,13 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Put,
-  Delete,
-  Body,
-  Param,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Query } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery } from '@nestjs/swagger';
 import { plainToInstance } from 'class-transformer';
 import { UserExerciseSchemeService } from '../../../core/user/exercise-scheme/user-exercise-scheme.service';
@@ -23,13 +14,15 @@ import {
 @ApiTags('user:exercise-scheme')
 @Controller('user/exercise-scheme')
 export class UserExerciseSchemeController {
-  constructor(
-    private readonly schemeService: UserExerciseSchemeService
-  ) {}
+  constructor(private readonly schemeService: UserExerciseSchemeService) {}
 
   @Post()
   @ApiOperation({ summary: 'Create exercise scheme', description: 'Create a new user exercise scheme' })
-  @ApiResponse({ status: 201, description: 'Exercise scheme created successfully', type: UserExerciseSchemeResponseDto })
+  @ApiResponse({
+    status: 201,
+    description: 'Exercise scheme created successfully',
+    type: UserExerciseSchemeResponseDto,
+  })
   @ApiResponse({ status: 400, description: 'Invalid input data' })
   async createScheme(
     @UserId() userId: string,
@@ -40,13 +33,36 @@ export class UserExerciseSchemeController {
   }
 
   @Get()
-  @ApiOperation({ summary: 'Get user exercise schemes', description: 'Retrieve exercise schemes for the user, optionally filtered by exercise' })
+  @ApiOperation({
+    summary: 'Get user exercise schemes',
+    description: 'Retrieve exercise schemes for the user, optionally filtered by exercise or workout',
+  })
   @ApiQuery({ name: 'exerciseId', description: 'Filter by exercise ID', required: false })
-  @ApiResponse({ status: 200, description: 'List of exercise schemes retrieved successfully', type: [UserExerciseSchemeResponseDto] })
+  @ApiQuery({
+    name: 'userWorkoutId',
+    description: 'Filter by user workout ID (returns schemes with their section item assignments)',
+    required: false,
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'List of exercise schemes retrieved successfully',
+    type: [UserExerciseSchemeResponseDto],
+  })
   async getUserSchemes(
     @UserId() userId: string,
-    @Query('exerciseId') exerciseId?: string
-  ): Promise<UserExerciseSchemeResponseDto[]> {
+    @Query('exerciseId') exerciseId?: string,
+    @Query('userWorkoutId') userWorkoutId?: string
+  ): Promise<
+    UserExerciseSchemeResponseDto[] | Array<{ scheme: UserExerciseSchemeResponseDto; sectionItemId: string }>
+  > {
+    if (userWorkoutId) {
+      const results = await this.schemeService.getUserSchemesByWorkout(userId, userWorkoutId);
+      return results.map((result) => ({
+        scheme: plainToInstance(UserExerciseSchemeResponseDto, result.scheme),
+        sectionItemId: result.assignment.sectionItemId,
+      }));
+    }
+
     let schemes;
 
     if (exerciseId) {
@@ -61,12 +77,13 @@ export class UserExerciseSchemeController {
   @Get(':id')
   @ApiOperation({ summary: 'Get exercise scheme by ID', description: 'Retrieve a specific exercise scheme by its ID' })
   @ApiParam({ name: 'id', description: 'Exercise scheme ID' })
-  @ApiResponse({ status: 200, description: 'Exercise scheme retrieved successfully', type: UserExerciseSchemeResponseDto })
+  @ApiResponse({
+    status: 200,
+    description: 'Exercise scheme retrieved successfully',
+    type: UserExerciseSchemeResponseDto,
+  })
   @ApiResponse({ status: 404, description: 'Exercise scheme not found' })
-  async getSchemeById(
-    @UserId() userId: string,
-    @Param('id') schemeId: string
-  ): Promise<UserExerciseSchemeResponseDto> {
+  async getSchemeById(@UserId() userId: string, @Param('id') schemeId: string): Promise<UserExerciseSchemeResponseDto> {
     const scheme = await this.schemeService.getSchemeById(userId, schemeId);
     return plainToInstance(UserExerciseSchemeResponseDto, scheme);
   }
@@ -74,7 +91,11 @@ export class UserExerciseSchemeController {
   @Put(':id')
   @ApiOperation({ summary: 'Update exercise scheme', description: 'Update an existing exercise scheme' })
   @ApiParam({ name: 'id', description: 'Exercise scheme ID' })
-  @ApiResponse({ status: 200, description: 'Exercise scheme updated successfully', type: UserExerciseSchemeResponseDto })
+  @ApiResponse({
+    status: 200,
+    description: 'Exercise scheme updated successfully',
+    type: UserExerciseSchemeResponseDto,
+  })
   @ApiResponse({ status: 404, description: 'Exercise scheme not found' })
   @ApiResponse({ status: 400, description: 'Invalid input data' })
   async updateScheme(
@@ -91,16 +112,16 @@ export class UserExerciseSchemeController {
   @ApiParam({ name: 'id', description: 'Exercise scheme ID' })
   @ApiResponse({ status: 200, description: 'Exercise scheme deleted successfully' })
   @ApiResponse({ status: 404, description: 'Exercise scheme not found' })
-  async deleteScheme(
-    @UserId() userId: string,
-    @Param('id') schemeId: string
-  ) {
+  async deleteScheme(@UserId() userId: string, @Param('id') schemeId: string) {
     await this.schemeService.deleteScheme(userId, schemeId);
     return { success: true };
   }
 
   @Post(':id/assign-to')
-  @ApiOperation({ summary: 'Assign scheme to workout section', description: 'Assign an exercise scheme to a workout section item' })
+  @ApiOperation({
+    summary: 'Assign scheme to workout section',
+    description: 'Assign an exercise scheme to a workout section item',
+  })
   @ApiParam({ name: 'id', description: 'Exercise scheme ID' })
   @ApiResponse({ status: 200, description: 'Exercise scheme assigned successfully' })
   @ApiResponse({ status: 404, description: 'Exercise scheme or section item not found' })
@@ -110,17 +131,15 @@ export class UserExerciseSchemeController {
     @Param('id') schemeId: string,
     @Body() dto: AssignToSectionItemDto
   ) {
-    const result = await this.schemeService.assignToSectionItem(
-      userId,
-      schemeId,
-      dto.sectionItemId,
-      dto.userWorkoutId
-    );
+    const result = await this.schemeService.assignToSectionItem(userId, schemeId, dto.sectionItemId, dto.userWorkoutId);
     return { success: true, data: result };
   }
 
   @Delete(':id/assign-to')
-  @ApiOperation({ summary: 'Unassign scheme from workout section', description: 'Remove an exercise scheme assignment from a workout section item' })
+  @ApiOperation({
+    summary: 'Unassign scheme from workout section',
+    description: 'Remove an exercise scheme assignment from a workout section item',
+  })
   @ApiParam({ name: 'id', description: 'Exercise scheme ID' })
   @ApiResponse({ status: 200, description: 'Exercise scheme unassigned successfully' })
   @ApiResponse({ status: 404, description: 'Exercise scheme or section item not found' })
@@ -129,12 +148,7 @@ export class UserExerciseSchemeController {
     @Param('id') schemeId: string,
     @Body() dto: UnassignFromSectionItemDto
   ) {
-    await this.schemeService.unassignFromSectionItem(
-      userId,
-      schemeId,
-      dto.sectionItemId,
-      dto.userWorkoutId
-    );
+    await this.schemeService.unassignFromSectionItem(userId, schemeId, dto.sectionItemId, dto.userWorkoutId);
     return { success: true };
   }
 }
