@@ -58,7 +58,7 @@ User pages show contextual empty states with CTAs:
 
 List items provide contextual actions:
 
-- **My Workouts**: View logs, Schedule, Remove
+- **My Workouts**: Start Workout, View logs, Schedule, Remove
 - Accessible via card action triggers
 
 ### Confirmation Dialogs
@@ -86,20 +86,33 @@ Route-specific documentation:
 - [`/user/workouts`](./workouts/list.md) - Personal workout collection
 - [`/user/workouts/:id`](./workouts/detail.md) - View workout with scheme status
 - [`/user/workouts/:id/edit`](./workouts/edit.md) - Configure exercise schemes
+- [`/user/workouts/:id/run`](./workouts/run.md) - Execute workout (placeholder)
 
 Conceptual documentation:
 
-- [`./workouts.md`](./workouts.md) - Relationships between workouts and exercise schemes
+- [`./workouts/README.md`](./workouts/README.md) - Relationships between workouts and exercise schemes
 
-### Workout Logs (Placeholder)
+### Workout Logs
 
-- `/user/workout-logs` - Completed workout history (not yet implemented)
-- `/user/workout-logs/:id` - Specific log details (not yet implemented)
+Route-specific documentation:
 
-### Workout Schedule (Placeholder)
+- [`/user/workout-logs`](./workout-logs/list.md) - Completed workout history (placeholder)
+- [`/user/workout-logs/:id`](./workout-logs/detail.md) - Specific log details (placeholder)
 
-- `/user/workout-schedule` - Calendar view (not yet implemented)
-- `/user/workout-schedule/:id` - Scheduled workout details (not yet implemented)
+Conceptual documentation:
+
+- [`./workout-logs/README.md`](./workout-logs/README.md) - Log structure and data flow
+
+### Workout Schedule
+
+Route-specific documentation:
+
+- [`/user/workout-schedule`](./workout-schedule/list.md) - Calendar view (placeholder)
+- [`/user/workout-schedule/:id`](./workout-schedule/detail.md) - Scheduled workout details (placeholder)
+
+Conceptual documentation:
+
+- [`./workout-schedule/README.md`](./workout-schedule/README.md) - Scheduling concepts and lifecycle
 
 ---
 
@@ -110,9 +123,11 @@ user/
 ├── workouts/
 │   ├── list.md ──────────┐
 │   │   ├── import ───────┼──> compendium/workouts
+│   │   ├── start workout─┼──> run.md
 │   │   └── view workout ─┘
 │   │
 │   ├── detail.md <───────┐
+│   │   ├── start workout─┤
 │   │   ├── edit schemes ─┤
 │   │   ├── view template─┼──> compendium/workouts/:id
 │   │   └── view exercise─┘──> compendium/exercises/:id
@@ -120,15 +135,18 @@ user/
 │   ├── edit.md ──────────┘
 │   │   └── save ────────────> detail.md
 │   │
-│   └── workouts.md (concepts)
+│   ├── run.md (placeholder)
+│   └── README.md (concepts)
 │
-├── workout-logs/ (placeholder)
-│   ├── [list]
-│   └── [detail]
+├── workout-logs/
+│   ├── README.md (concepts)
+│   ├── list.md (placeholder)
+│   └── detail.md (placeholder)
 │
-└── workout-schedule/ (placeholder)
-    ├── [list]
-    └── [detail]
+└── workout-schedule/
+    ├── README.md (concepts)
+    ├── list.md (placeholder)
+    └── detail.md (placeholder)
 ```
 
 ---

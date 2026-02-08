@@ -7,6 +7,7 @@ For specific route documentation, see:
 - [`/user/workouts`](./workouts/list.md) - My Workouts list
 - [`/user/workouts/:id`](./workouts/detail.md) - Workout detail with scheme status
 - [`/user/workouts/:id/edit`](./workouts/edit.md) - Configure exercise schemes
+- [`/user/workouts/:id/run`](./workouts/run.md) - Execute workout session
 
 ---
 
@@ -192,33 +193,6 @@ Fully configured workout can be:
 
 ---
 
-## Configuration Status
-
-### Visual Indicators
-
-The detail page shows scheme assignment status for each exercise:
-
-- **✅ Configured**: Green checkmark
-
-  - Scheme assigned and saved
-  - Ready to perform
-  - Shows in detail view
-
-- **⚠️ Needs Setup**: Amber warning
-  - No scheme assigned yet
-  - Configuration required
-  - Prompts user to edit schemes
-
-### Completion Tracking
-
-Users can track configuration progress:
-
-- Count of configured vs total exercises
-- Visual progress indicators
-- Reminders to complete setup
-
----
-
 ## Data Flow
 
 ### Import Flow
@@ -304,7 +278,8 @@ Toast: "All exercise schemes saved"
 
 ## Related Documentation
 
-- [Workout List](./workouts/list.md) - Browse personal workout collection
-- [Workout Detail](./workouts/detail.md) - View workout with scheme status
-- [Edit Schemes](./workouts/edit.md) - Configure exercise schemes
-- [Compendium Workouts](../compendium/workouts.md) - Template library
+- [Workout List](./list.md) - Browse personal workout collection
+- [Workout Detail](./detail.md) - View workout with scheme status
+- [Edit Schemes](./edit.md) - Configure exercise schemes
+- [Run Workout](./run.md) - Execute workout session
+- [Compendium Workouts](../../compendium/workouts.md) - Template library

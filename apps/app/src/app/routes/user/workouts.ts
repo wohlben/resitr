@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserWorkoutsStore } from '../../features/user-workouts/user-workouts.store';
-import { UserWorkoutCardComponent, type UserWorkoutAction } from '../../components/ui/cards/user-workout-card.component';
+import {
+  UserWorkoutCardComponent,
+  type UserWorkoutAction,
+} from '../../components/ui/cards/user-workout-card.component';
 import { ErrorLoadingComponent } from '../../components/ui/feedback/error-loading.component';
 import { LoadingComponent } from '../../components/ui/feedback/loading.component';
 import { ButtonComponent } from '../../components/ui/buttons/button.component';
@@ -33,41 +36,39 @@ import type { EnrichedUserWorkout } from '../../features/user-workouts/user-work
 
       <!-- Loading State -->
       @if (store.isLoading()) {
-        <app-loading message="Loading your workouts..." />
+      <app-loading message="Loading your workouts..." />
       }
 
       <!-- Error State -->
       @if (store.error()) {
-        <app-error-loading
-          title="Error loading workouts"
-          [message]="store.error()!"
-        />
+      <app-error-loading title="Error loading workouts" [message]="store.error()!" />
       }
 
       <!-- Success State -->
-      @if (!store.isLoading() && !store.error()) {
-        @if (store.enrichedWorkouts().length === 0) {
-          <div class="text-center py-12 bg-gray-50 rounded-lg">
-            <svg class="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-            </svg>
-            <p class="text-gray-600 mb-4">You haven't added any workouts yet</p>
-            <app-button variant="primary" link="/compendium/workouts">
-              Browse Workout Compendium
-            </app-button>
-          </div>
-        } @else {
-          <div class="flex flex-col gap-3">
-            @for (userWorkout of store.enrichedWorkouts(); track userWorkout.id) {
-              <app-user-workout-card
-                [userWorkout]="userWorkout"
-                (actionTriggered)="onAction($event, userWorkout)"
-                (cardClicked)="onCardClicked(userWorkout)"
-              />
-            }
-          </div>
+      @if (!store.isLoading() && !store.error()) { @if (store.enrichedWorkouts().length === 0) {
+      <div class="text-center py-12 bg-gray-50 rounded-lg">
+        <svg class="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+          />
+        </svg>
+        <p class="text-gray-600 mb-4">You haven't added any workouts yet</p>
+        <app-button variant="primary" link="/compendium/workouts"> Browse Workout Compendium </app-button>
+      </div>
+      } @else {
+      <div class="flex flex-col gap-3">
+        @for (userWorkout of store.enrichedWorkouts(); track userWorkout.id) {
+        <app-user-workout-card
+          [userWorkout]="userWorkout"
+          (actionTriggered)="onAction($event, userWorkout)"
+          (cardClicked)="onCardClicked(userWorkout)"
+        />
         }
-      }
+      </div>
+      } }
     </div>
   `,
 })
@@ -83,6 +84,9 @@ export class UserWorkoutsComponent {
 
   async onAction(action: UserWorkoutAction, userWorkout: EnrichedUserWorkout): Promise<void> {
     switch (action) {
+      case 'start':
+        this.router.navigate(['/user', 'workouts', userWorkout.id, 'run']);
+        break;
       case 'viewLogs':
         this.router.navigate(['/user/workout-logs']);
         break;

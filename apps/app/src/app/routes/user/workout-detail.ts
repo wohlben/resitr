@@ -74,6 +74,9 @@ const SECTION_STYLES: Record<WorkoutSectionType, SectionConfig> = {
           <app-button variant="outline-secondary" [link]="['/compendium/workouts', workout.workoutTemplateId]">
             View Template
           </app-button>
+          <app-button variant="outline-primary" [link]="['/user', 'workouts', workout.id, 'run']">
+            Start Workout
+          </app-button>
         </ng-container>
         <app-button header-primary-action variant="primary" [link]="['/user/workouts', workout.id, 'edit']">
           Edit Schemes

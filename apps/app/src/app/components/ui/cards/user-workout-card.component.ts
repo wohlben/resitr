@@ -6,9 +6,14 @@ import { ValueLabelPipe } from '../../../shared/pipes/value-label.pipe';
 import { ActionMenuComponent, type ActionMenuItem } from '../menus/action-menu.component';
 import type { EnrichedUserWorkout } from '../../../features/user-workouts/user-workouts.store';
 
-export type UserWorkoutAction = 'viewLogs' | 'schedule' | 'delete';
+export type UserWorkoutAction = 'start' | 'viewLogs' | 'schedule' | 'delete';
 
 const MENU_ITEMS: ActionMenuItem[] = [
+  {
+    id: 'start',
+    label: 'Start Workout',
+    icon: 'M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
   {
     id: 'viewLogs',
     label: 'View Logs',
@@ -36,67 +41,53 @@ const MENU_ITEMS: ActionMenuItem[] = [
       <div card-title class="flex items-start justify-between gap-2">
         <div class="min-w-0 flex-1">
           @if (userWorkout().workout) {
-            <h3 class="text-lg font-semibold text-gray-900">{{ userWorkout().workout!.name }}</h3>
-            @if (userWorkout().workout!.description) {
-              <p class="text-sm text-gray-500 truncate">{{ userWorkout().workout!.description }}</p>
-            }
-          } @else {
-            <h3 class="text-lg font-semibold text-gray-400 italic">Workout not found</h3>
-            <p class="text-sm text-gray-400">Template ID: {{ userWorkout().workoutTemplateId }}</p>
+          <h3 class="text-lg font-semibold text-gray-900">{{ userWorkout().workout!.name }}</h3>
+          @if (userWorkout().workout!.description) {
+          <p class="text-sm text-gray-500 truncate">{{ userWorkout().workout!.description }}</p>
+          } } @else {
+          <h3 class="text-lg font-semibold text-gray-400 italic">Workout not found</h3>
+          <p class="text-sm text-gray-400">Template ID: {{ userWorkout().workoutTemplateId }}</p>
           }
         </div>
-        <app-action-menu
-          [items]="menuItems"
-          (itemSelected)="onMenuAction($event)"
-          ariaLabel="Workout actions"
-        />
+        <app-action-menu [items]="menuItems" (itemSelected)="onMenuAction($event)" ariaLabel="Workout actions" />
       </div>
 
       @if (userWorkout().workout) {
+      <span card-badge class="px-2 py-1 text-xs font-medium rounded bg-purple-100 text-purple-700">
+        {{ userWorkout().workout!.sections.length }} section{{
+          userWorkout().workout!.sections.length !== 1 ? 's' : ''
+        }}
+      </span>
+      } @if (userWorkout().workout) {
+      <div card-content class="flex flex-wrap gap-1">
+        @for (section of userWorkout().workout!.sections; track section.id) {
         <span
-          card-badge
-          class="px-2 py-1 text-xs font-medium rounded bg-purple-100 text-purple-700"
+          class="px-2 py-0.5 text-xs font-medium rounded"
+          [ngClass]="{
+            'bg-orange-100 text-orange-700': section.type === 'warmup',
+            'bg-blue-100 text-blue-700': section.type === 'stretching',
+            'bg-red-100 text-red-700': section.type === 'strength',
+            'bg-green-100 text-green-700': section.type === 'cooldown'
+          }"
         >
-          {{ userWorkout().workout!.sections.length }} section{{ userWorkout().workout!.sections.length !== 1 ? 's' : '' }}
+          {{ section.type | valueLabel : WorkoutSectionTypeLabels }}
         </span>
-      }
-
-      @if (userWorkout().workout) {
-        <div card-content class="flex flex-wrap gap-1">
-          @for (section of userWorkout().workout!.sections; track section.id) {
-            <span
-              class="px-2 py-0.5 text-xs font-medium rounded"
-              [ngClass]="{
-                'bg-orange-100 text-orange-700': section.type === 'warmup',
-                'bg-blue-100 text-blue-700': section.type === 'stretching',
-                'bg-red-100 text-red-700': section.type === 'strength',
-                'bg-green-100 text-green-700': section.type === 'cooldown'
-              }"
-            >
-              {{ section.type | valueLabel : WorkoutSectionTypeLabels }}
-            </span>
-          }
-        </div>
-      }
-
-      @if (userWorkout().workout) {
-        <ng-container card-footer-left>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            />
-          </svg>
-          <span>{{ getTotalItems() }} exercise{{ getTotalItems() !== 1 ? 's' : '' }}</span>
-        </ng-container>
-      }
-
-      @if (userWorkout().workout) {
-        <span card-footer-right class="text-xs">
-          v{{ userWorkout().workout!.version }}
-        </span>
+        }
+      </div>
+      } @if (userWorkout().workout) {
+      <ng-container card-footer-left>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+          />
+        </svg>
+        <span>{{ getTotalItems() }} exercise{{ getTotalItems() !== 1 ? 's' : '' }}</span>
+      </ng-container>
+      } @if (userWorkout().workout) {
+      <span card-footer-right class="text-xs"> v{{ userWorkout().workout!.version }} </span>
       }
     </app-card>
   `,

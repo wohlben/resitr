@@ -11,13 +11,6 @@ npm install -g agent-browser
 agent-browser install  # Download Chromium
 ```
 
-Or via Homebrew (macOS):
-
-```bash
-brew install agent-browser
-agent-browser install  # Download Chromium
-```
-
 ## Core Workflow
 
 ### Basic Interaction Pattern
