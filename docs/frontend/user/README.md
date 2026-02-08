@@ -81,9 +81,15 @@ Visual indicators show configuration state:
 
 ### My Workouts
 
-- [`/user/workouts`](./workouts.md#my-workouts-list) - Personal workout collection
-- [`/user/workouts/:id`](./workouts.md#user-workout-detail) - View workout with scheme status
-- [`/user/workouts/:id/edit`](./workouts.md#edit-exercise-schemes) - Configure exercise schemes
+Route-specific documentation:
+
+- [`/user/workouts`](./workouts/list.md) - Personal workout collection
+- [`/user/workouts/:id`](./workouts/detail.md) - View workout with scheme status
+- [`/user/workouts/:id/edit`](./workouts/edit.md) - Configure exercise schemes
+
+Conceptual documentation:
+
+- [`./workouts.md`](./workouts.md) - Relationships between workouts and exercise schemes
 
 ### Workout Logs (Placeholder)
 
@@ -102,14 +108,19 @@ Visual indicators show configuration state:
 ```
 user/
 ├── workouts/
-│   ├── [list] ──> import ──> compendium workouts
-│   │       │
-│   │       └──> [detail] <──> edit schemes
-│   │              │
-│   │              └──> view template (compendium)
-│   │              └──> exercise detail (compendium)
+│   ├── list.md ──────────┐
+│   │   ├── import ───────┼──> compendium/workouts
+│   │   └── view workout ─┘
 │   │
-│   └── edit schemes ──> save ──> [detail]
+│   ├── detail.md <───────┐
+│   │   ├── edit schemes ─┤
+│   │   ├── view template─┼──> compendium/workouts/:id
+│   │   └── view exercise─┘──> compendium/exercises/:id
+│   │
+│   ├── edit.md ──────────┘
+│   │   └── save ────────────> detail.md
+│   │
+│   └── workouts.md (concepts)
 │
 ├── workout-logs/ (placeholder)
 │   ├── [list]

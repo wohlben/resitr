@@ -1,252 +1,310 @@
-# User Workout Pages
+# User Workouts
 
-This document describes the UX flows and actions available on user workout management pages.
+This document explains the relationship between user workouts and exercise schemes, and the conceptual model for personal workout management.
 
----
+For specific route documentation, see:
 
-## `/user/workouts` - My Workouts List
-
-**Goal**: Display and manage the user's personal workout collection. Shows workouts adopted from the compendium.
-
-### UX Flows
-
-1. **Browse My Workouts**
-
-   - List of user workout cards
-   - Each card displays: workout name, description, section/exercise count, template version
-   - Empty state with CTA to browse compendium when no workouts added
-   - Card click navigates to workout detail
-
-2. **Import New Workout**
-
-   - "Import Workout" button links to compendium
-   - Navigates to `/compendium/workouts` to browse templates
-
-3. **Workout Actions**
-   Each workout card provides action menu:
-
-   - **View Logs**: Navigate to workout logs (placeholder)
-   - **Schedule**: Navigate to schedule page (placeholder)
-   - **Remove**: Delete workout from personal collection
-
-4. **Remove Workout**
-   - Confirmation dialog with workout name
-   - Explains this only removes from user's collection, not compendium
-   - Success toast on removal
-   - Error handling if removal fails
-
-### Available Actions
-
-| Action            | Trigger                        | Destination                                               |
-| ----------------- | ------------------------------ | --------------------------------------------------------- |
-| Import Workout    | "Import Workout" button        | [`/compendium/workouts`](../compendium/workouts.md)       |
-| View Workout      | Click workout card             | [`/user/workouts/:id`](./workouts.md#user-workout-detail) |
-| View Logs         | Action menu "Logs"             | `/user/workout-logs` (placeholder)                        |
-| Schedule          | Action menu "Schedule"         | `/user/workout-schedule` (placeholder)                    |
-| Remove Workout    | Action menu "Remove" + confirm | Same page (list updates)                                  |
-| Browse Compendium | Empty state CTA                | [`/compendium/workouts`](../compendium/workouts.md)       |
+- [`/user/workouts`](./workouts/list.md) - My Workouts list
+- [`/user/workouts/:id`](./workouts/detail.md) - Workout detail with scheme status
+- [`/user/workouts/:id/edit`](./workouts/edit.md) - Configure exercise schemes
 
 ---
 
-## `/user/workouts/:id` - User Workout Detail
+## Conceptual Model
 
-**Goal**: Display user's workout instance with exercise scheme assignments and progress indicators.
+### User Workout vs Compendium Workout
 
-### UX Flows
+The app distinguishes between **global templates** (compendium) and **personal instances** (user):
 
-1. **View Workout Structure**
+| Aspect            | Compendium Workout       | User Workout           |
+| ----------------- | ------------------------ | ---------------------- |
+| **Purpose**       | Template library         | Personal instance      |
+| **Scope**         | Global (all users)       | Private (single user)  |
+| **Structure**     | Fixed sections/exercises | References template    |
+| **Editing**       | Creates new version      | Configure schemes only |
+| **Configuration** | None                     | Exercise schemes       |
+| **History**       | Versioned                | Single instance        |
 
-   - Header with workout name and "My Workout" label
-   - Description from template
-   - Metadata: section count, total exercises, template version
-   - Color-coded sections (Warmup, Stretching, Strength, Cooldown)
+### Relationship Diagram
 
-2. **View Exercise Scheme Status**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      DATA RELATIONSHIPS                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────────┐          ┌──────────────────┐            │
+│  │ Compendium       │          │ User             │            │
+│  │ Workout          │          │ Workout          │            │
+│  │ (Template)       │          │ (Instance)       │            │
+│  └────────┬─────────┘          └────────┬─────────┘            │
+│           │                             │                      │
+│           │ references                  │ references           │
+│           │                             │                      │
+│           ▼                             ▼                      │
+│  ┌──────────────────┐          ┌──────────────────┐            │
+│  │ Sections         │          │ Exercise Schemes │            │
+│  │ (Structure)      │          │ (Configuration)  │            │
+│  └────────┬─────────┘          └────────┬─────────┘            │
+│           │                             │                      │
+│           │ contains                    │ assigned to          │
+│           │                             │                      │
+│           ▼                             ▼                      │
+│  ┌──────────────────┐          ┌──────────────────┐            │
+│  │ Section Items    │◄─────────│ Assignments      │            │
+│  │ (Exercise refs)  │          │ (Scheme links)   │            │
+│  └──────────────────┘          └──────────────────┘            │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-   - Each exercise shows scheme assignment status:
-     - **Green checkmark**: Scheme configured
-     - **Amber warning**: Needs scheme setup
-   - Visual indicators help users track configuration progress
+### Key Principle
 
-3. **View Exercise Details**
-
-   - Exercise names link to compendium exercise detail
-   - Rest period configuration (between sets, after exercise)
-   - Sequential numbering within sections
-
-4. **Edit Exercise Schemes**
-
-   - "Edit Schemes" button in header
-   - Navigates to scheme configuration page
-
-5. **View Template**
-
-   - "View Template" button links to compendium workout
-   - See original template details and version history
-
-6. **Navigate Back**
-   - Back button returns to My Workouts list
-
-### Available Actions
-
-| Action        | Trigger                | Destination                                                               |
-| ------------- | ---------------------- | ------------------------------------------------------------------------- |
-| Edit Schemes  | "Edit Schemes" button  | [`/user/workouts/:id/edit`](./workouts.md#edit-exercise-schemes)          |
-| View Template | "View Template" button | [`/compendium/workouts/:id`](../compendium/workouts.md#workout-detail)    |
-| View Exercise | Click exercise name    | [`/compendium/exercises/:id`](../compendium/exercises.md#exercise-detail) |
-| Back to List  | Back button            | [`/user/workouts`](./workouts.md#my-workouts-list)                        |
-
-### Data Display
-
-- **Enriched Workout Data**: Combines user workout record with template data
-- **Exercise Names**: Resolved from compendium exercise store
-- **Scheme Status**: Checked against user exercise schemes store
+**User workouts don't modify the template** - they add a layer of personal configuration on top of an immutable template reference.
 
 ---
 
-## `/user/workouts/:id/edit` - Edit Exercise Schemes
+## Exercise Schemes
 
-**Goal**: Configure exercise schemes (sets, reps, weight, etc.) for each exercise in the workout.
+### What are Exercise Schemes?
 
-### UX Flows
+Exercise schemes define **how** an exercise should be performed:
 
-1. **View Exercise Scheme Configuration**
+- **Measurement Paradigm**: What metrics to track
 
-   - Same section structure as detail view
-   - Each exercise displays scheme assignment card
-   - Shows suggested measurement paradigms from exercise metadata
+  - Reps × Weight (strength training)
+  - Time (duration-based)
+  - Distance (cardio/ endurance)
+  - Reps only (bodyweight)
+  - Custom paradigms
 
-2. **Select Exercise Schemes**
+- **Scheme Parameters**: Specific values
 
-   - Scheme assignment card for each exercise:
-     - Select measurement paradigm (reps/weight, time/distance, etc.)
-     - Configure scheme parameters based on paradigm
-     - Preview scheme summary
-   - Changes accumulate as pending assignments
+  - Sets, reps, weight
+  - Duration, distance
+  - Rest periods
+  - Target metrics
 
-3. **Manage Pending Changes**
+- **Assignment**: Linked to specific exercise occurrence
+  - One scheme per section item
+  - Different schemes for same exercise in different workouts
+  - Different users can have different schemes for same template
 
-   - Sticky bottom bar shows unsaved changes count
-   - Save button enabled when changes exist
-   - Changes persist locally until explicitly saved
+### Scheme Assignment Model
 
-4. **Save Assignments**
+```
+User Workout
+    │
+    ├── Section 1: Warmup
+    │   ├── Exercise A ──> Scheme A1 (Reps × Weight: 3×10 @ 135lbs)
+    │   └── Exercise B ──> Scheme B1 (Time: 5 minutes)
+    │
+    └── Section 2: Strength
+        ├── Exercise C ──> Scheme C1 (Reps × Weight: 5×5 @ 225lbs)
+        └── Exercise D ──> [No scheme assigned yet]
+```
 
-   - Batch save all pending assignments
-   - Shows loading state during save
-   - Success: Navigate back to workout detail with toast
-   - Partial failure: Shows success count and error message
+### Suggested Paradigms
 
-5. **View Template Reference**
+Compendium exercises provide **suggested measurement paradigms**:
 
-   - "View Template" button links to compendium workout
-   - Reference original workout structure while configuring
-
-6. **Cancel Editing**
-   - Back button returns to workout detail
-   - Warns about unsaved changes (if any pending)
-
-### Available Actions
-
-| Action        | Trigger                          | Destination                                                            |
-| ------------- | -------------------------------- | ---------------------------------------------------------------------- |
-| Select Scheme | Choose scheme on assignment card | Same page (adds to pending)                                            |
-| Save Changes  | "Save Changes" button            | [`/user/workouts/:id`](./workouts.md#user-workout-detail)              |
-| View Template | "View Template" button           | [`/compendium/workouts/:id`](../compendium/workouts.md#workout-detail) |
-| Cancel        | Back button                      | [`/user/workouts/:id`](./workouts.md#user-workout-detail)              |
-
-### Scheme Assignment Flow
-
-1. User selects measurement paradigm for exercise
-2. Scheme card displays paradigm-specific fields
-3. User configures scheme parameters
-4. Assignment added to pending changes map
-5. Sticky bar updates with change count
-6. Save persists all assignments to backend
-7. Success navigation clears pending state
+- Helps guide users to appropriate scheme types
+- Example: "Barbell Squat" suggests "Reps × Weight"
+- Example: "Plank" suggests "Time"
+- Users can override with any paradigm
 
 ---
 
-## Placeholder Pages
+## User Flow
 
-The following pages are defined in routes but currently have minimal/placeholder implementations:
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      USER WORKFLOW                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  1. BROWSE                                                  │
+│     │                                                       │
+│     ▼                                                       │
+│  ┌─────────────────────┐                                    │
+│  │ Compendium          │                                    │
+│  │ Browse templates    │                                    │
+│  └──────────┬──────────┘                                    │
+│             │                                               │
+│  2. IMPORT  │                                               │
+│             ▼                                               │
+│  ┌─────────────────────┐                                    │
+│  │ My Workouts         │                                    │
+│  │ Instance created    │                                    │
+│  │ (no schemes yet)    │                                    │
+│  └──────────┬──────────┘                                    │
+│             │                                               │
+│  3. CONFIGURE│                                              │
+│             ▼                                               │
+│  ┌─────────────────────┐                                    │
+│  │ Edit Schemes        │                                    │
+│  │ Assign schemes to   │                                    │
+│  │ each exercise       │                                    │
+│  └──────────┬──────────┘                                    │
+│             │                                               │
+│  4. USE     │                                               │
+│             ▼                                               │
+│  ┌─────────────────────┐                                    │
+│  │ View/Log/Schedule   │                                    │
+│  │ Fully configured    │                                    │
+│  │ workout ready       │                                    │
+│  └─────────────────────┘                                    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
-### `/user/workout-logs` - Workout Logs
+### Step 1: Browse Compendium
 
-- **Status**: Placeholder (empty component)
-- **Goal**: Display history of completed workout sessions
-- **Future**: List completed workouts with date, duration, performance summary
+User explores workout templates:
 
-### `/user/workout-logs/:id` - Workout Log Detail
+- Views workout structure and exercises
+- Checks version history
+- Decides to add to personal collection
 
-- **Status**: Placeholder (basic template only)
-- **Goal**: View details of a specific completed workout session
-- **Future**: Show exercises performed, actual vs target metrics, notes
+### Step 2: Import Workout
 
-### `/user/workout-schedule` - Workout Schedule
+"Add to My Workouts" creates a user workout instance:
 
-- **Status**: Placeholder (empty component)
-- **Goal**: Calendar view of planned workouts
-- **Future**: Weekly/monthly calendar, scheduled workout instances
+- References the workout template
+- Copies no data (references template)
+- Starts with no exercise schemes assigned
 
-### `/user/workout-schedule/:id` - Schedule Detail
+### Step 3: Configure Schemes
 
-- **Status**: Placeholder (basic template only)
-- **Goal**: View/edit specific scheduled workout
-- **Future**: Date/time, reminder settings, completion status
+User assigns schemes to each exercise:
+
+- Select measurement paradigm per exercise
+- Configure specific parameters
+- Save assignments in batch
+- Visual indicators show completion status
+
+### Step 4: Use Workout
+
+Fully configured workout can be:
+
+- Viewed with scheme details
+- Scheduled for future sessions
+- Logged as completed
+- Tracked over time
+
+---
+
+## Configuration Status
+
+### Visual Indicators
+
+The detail page shows scheme assignment status for each exercise:
+
+- **✅ Configured**: Green checkmark
+
+  - Scheme assigned and saved
+  - Ready to perform
+  - Shows in detail view
+
+- **⚠️ Needs Setup**: Amber warning
+  - No scheme assigned yet
+  - Configuration required
+  - Prompts user to edit schemes
+
+### Completion Tracking
+
+Users can track configuration progress:
+
+- Count of configured vs total exercises
+- Visual progress indicators
+- Reminders to complete setup
 
 ---
 
 ## Data Flow
 
+### Import Flow
+
 ```
-Compendium Workout (Template)
+User clicks "Add to My Workouts"
          │
-         │ Add to My Workouts
          ▼
-User Workout (Instance) ────
-         │                  │
-         │ Edit Schemes     │ View Detail
-         ▼                  ▼
-Exercise Schemes      Workout Structure
-(Assignments)         (Read-only view)
+┌─────────────────────┐
+│ Create User Workout │
+│ - workoutTemplateId │
+│ - userId            │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Response: User      │
+│ Workout with ID     │
+└──────────┬──────────┘
+           │
+           ▼
+Navigate to /user/workouts/:id
+```
+
+### Scheme Assignment Flow
+
+```
+User configures schemes in edit mode
+         │
+         ▼
+┌─────────────────────────────┐
+│ Pending Assignments Map     │
+│ (client-side state)         │
+│ sectionItemId → schemeId    │
+└──────────────┬──────────────┘
+               │
+         User clicks "Save"
+               │
+               ▼
+┌─────────────────────────────┐
+│ Batch API Calls             │
+│ For each pending assignment:│
+│ assignSchemeToSectionItem() │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│ Backend creates/updates     │
+│ UserExerciseScheme records  │
+└──────────────┬──────────────┘
+               │
+               ▼
+Navigate to detail page
+Toast: "All exercise schemes saved"
 ```
 
 ---
 
-## Related Pages
+## Implementation Notes
 
-- [Compendium Workouts](../compendium/workouts.md) - Browse and import workout templates
-- [Compendium Workout Detail](../compendium/workouts.md#workout-detail) - View template details
-- [Compendium Exercises](../compendium/exercises.md) - View exercise information
+### Why Separate Schemes from Templates?
+
+1. **Reusability**: Same template, different configurations
+2. **Progression**: User can change schemes as they improve
+3. **Flexibility**: Different paradigms for different goals
+4. **Sharing**: Templates shared, schemes personal
+
+### Why Batch Scheme Saving?
+
+1. **UX**: Single save action for all changes
+2. **Efficiency**: Fewer API calls
+3. **Atomicity**: All or nothing (mostly)
+4. **Navigation**: Clear save/discard decision point
+
+### Template Immutability
+
+- Workout templates in compendium are versioned
+- Editing creates new version, old versions remain
+- User workouts reference specific template versions
+- User always sees structure from referenced version
 
 ---
 
-## Key Concepts
+## Related Documentation
 
-### User Workout vs Compendium Workout
-
-| Aspect            | Compendium Workout       | User Workout           |
-| ----------------- | ------------------------ | ---------------------- |
-| **Purpose**       | Template library         | Personal instance      |
-| **Editing**       | Creates new version      | Configure schemes only |
-| **Scope**         | Global (all users)       | Private (single user)  |
-| **Structure**     | Fixed sections/exercises | References template    |
-| **Configuration** | None                     | Exercise schemes       |
-| **History**       | Versioned                | Single instance        |
-
-### Exercise Schemes
-
-Exercise schemes define how an exercise should be performed:
-
-- **Measurement Paradigm**: What to track (reps/weight, time, distance, etc.)
-- **Scheme Parameters**: Sets, reps, weight, duration, rest periods
-- **Assignment**: Linked to specific section item in user's workout
-- **Suggestions**: Compendium exercises provide suggested paradigms
-
-### Scheme Assignment Status
-
-Visual indicators help users track configuration:
-
-- **Configured**: Green checkmark, ready to perform
-- **Needs Setup**: Amber warning, requires scheme assignment
+- [Workout List](./workouts/list.md) - Browse personal workout collection
+- [Workout Detail](./workouts/detail.md) - View workout with scheme status
+- [Edit Schemes](./workouts/edit.md) - Configure exercise schemes
+- [Compendium Workouts](../compendium/workouts.md) - Template library

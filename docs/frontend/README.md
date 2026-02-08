@@ -17,7 +17,11 @@ docs/frontend/
 │   └── workouts.md
 └── user/                    # Personal fitness management
     ├── README.md
-    └── workouts.md
+    ├── workouts.md          # Conceptual documentation
+    └── workouts/            # Route-specific documentation
+        ├── list.md          # /user/workouts
+        ├── detail.md        # /user/workouts/:id
+        └── edit.md          # /user/workouts/:id/edit
 ```
 
 ---
@@ -149,15 +153,16 @@ Most pages follow a consistent structure:
 
 ### User Routes
 
-| Route                        | Page                                             | Description           |
-| ---------------------------- | ------------------------------------------------ | --------------------- |
-| `/user/workouts`             | [List](./user/workouts.md#my-workouts-list)      | My workout collection |
-| `/user/workouts/:id`         | [Detail](./user/workouts.md#user-workout-detail) | View workout instance |
-| `/user/workouts/:id/edit`    | [Edit](./user/workouts.md#edit-exercise-schemes) | Configure schemes     |
-| `/user/workout-logs`         | Placeholder                                      | Workout history       |
-| `/user/workout-logs/:id`     | Placeholder                                      | Log details           |
-| `/user/workout-schedule`     | Placeholder                                      | Workout calendar      |
-| `/user/workout-schedule/:id` | Placeholder                                      | Scheduled workout     |
+| Route                        | Page                                | Description                  |
+| ---------------------------- | ----------------------------------- | ---------------------------- |
+| `/user/workouts`             | [List](./user/workouts/list.md)     | My workout collection        |
+| `/user/workouts/:id`         | [Detail](./user/workouts/detail.md) | View workout instance        |
+| `/user/workouts/:id/edit`    | [Edit](./user/workouts/edit.md)     | Configure exercise schemes   |
+| `/user/workouts` (concepts)  | [Concepts](./user/workouts.md)      | Workout/scheme relationships |
+| `/user/workout-logs`         | Placeholder                         | Workout history              |
+| `/user/workout-logs/:id`     | Placeholder                         | Log details                  |
+| `/user/workout-schedule`     | Placeholder                         | Workout calendar             |
+| `/user/workout-schedule/:id` | Placeholder                         | Scheduled workout            |
 
 ---
 
